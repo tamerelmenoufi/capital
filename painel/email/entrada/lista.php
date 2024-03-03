@@ -18,7 +18,7 @@ for($i=0;$i<100;$i++){
             </div>
         </div>
         <div class="p-2 d-flex flex-column align-items-start flex-grow-1">
-            <h5>tecnologia@pfgeotecnologia.com.br</h5>
+            <h5>tecnologia@capitalsolucoes.com.br</h5>
             <span>Agenda das atividades desenvolvidas</span>
         </div>
         <div class="p-2">

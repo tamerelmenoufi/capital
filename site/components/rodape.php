@@ -16,7 +16,7 @@
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div class="copyright">
-            &copy; Copyright <strong><span>PfGeoTecnologia</span></strong>. Todos os direitos reservados
+            &copy; Copyright <strong><span>capitalsolucoes</span></strong>. Todos os direitos reservados
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->

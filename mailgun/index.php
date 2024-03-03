@@ -1,7 +1,7 @@
 <?php
 
     date_default_timezone_set("America/Manaus");
-    include("/pfgeoinc/connect.php");
+    include("/capitalinc/connect.php");
     $con = AppConnect('emails');
 
 

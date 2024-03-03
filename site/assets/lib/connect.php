@@ -1,4 +1,4 @@
 <?php
 
-    include("/pfgeo/connect.php");
-    $con = AppConnect('pfgeo');
+    include("/capital/connect.php");
+    $con = AppConnect('capital');

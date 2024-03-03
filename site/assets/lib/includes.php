@@ -1,7 +1,7 @@
 <?php
     date_default_timezone_set("America/Manaus");
-    include("/pfgeoinc/connect.php");
-    $con = AppConnect('pfgeo');
+    include("/capitalinc/connect.php");
+    $con = AppConnect('capital');
     include("classes.php");
 
     $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/painel/";
