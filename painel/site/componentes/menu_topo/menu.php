@@ -14,7 +14,7 @@
       <div class="d-flex justify-content-start" style="height:50px">
         <i class="fa-solid fa-bars" style="font-size: 16px;margin-right:10px;margin-top: 15px;"></i>
         <div class="d-none d-sm-block">
-          <img src="img/logogeo.svg" style="height:50px; margin-right:20px;" >
+          <img src="img/logo.png" style="height:50px; margin-right:20px;" >
         </div>
       </div>
     </div>
