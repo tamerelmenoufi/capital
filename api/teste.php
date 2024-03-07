@@ -4,5 +4,5 @@
 
     $vctex = new Vctex;
 
-    $retorno = $vctex->Token();
+    echo $retorno = $vctex->Token();
 
