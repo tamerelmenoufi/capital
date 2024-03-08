@@ -30,8 +30,8 @@
 body {
 
     background: url(img/fundopncred.jpg);
-    no-repeat center fixed: ;
-    background-size: auto auto;
+    background-repeat: no-repeat center fixed: ;
+    background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
