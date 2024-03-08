@@ -140,4 +140,14 @@
   }
 }
 
+// Crédito - Criação de proposta 
 
+{
+  "message": "Proposta criada com sucesso!",
+  "data": {
+    "proposalId": "86043f89-fc7c-4f2f-a9ce-13c4362f1f59",
+    "proposalcontractNumber": "0000087477/AS",
+    "formalizationLink": "http://api-fgts-b2b-sandbox:5000/unicoCapture/SMS/Start.aspx?id=6fbd319b-37cc-4e57-b2f9-7b901294da48"
+  },
+  "statusCode": 200
+}
