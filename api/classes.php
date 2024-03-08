@@ -101,7 +101,7 @@ class Vctex {
         return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
     }
 
-    public function Crédito($token){
+    public function Credito($token){
 
         $curl = curl_init();
 
@@ -116,46 +116,46 @@ class Vctex {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => '{
-            feeScheduleId: "number", (int)
-            financialId: "string",
-            borrower: {
-                name: "string",
-                cpf: "string", (sem máscara)
-                birthdate: "string", (formato AAAA-MM-DD)
-                gender: "string",
-                phoneNumber: "string", (número móvel, sem máscara e com ddd - "XX9XXXXXXXX")
-                email: "string",
-                maritalStatus: "string",
-                nationality: "string",
-                naturalness: "string" | "null",
-                motherName: "string",
-                fatherName: "string" | "null",
-                pep: "boolean" (pessoa exposta politicamente)
+            "feeScheduleId": 1,
+            "financialId": "443139a1-22e5-4c5c-a23f-46d17130eafe",
+            "borrower": {
+              "name": "Ayrton Sato",
+              "cpf": "20006161278",
+              "birthdate": "1991-07-26",
+              "gender": "M",
+              "phoneNumber": "11973302222",
+              "email": "ayrton_sato@hotmail.com",
+              "maritalStatus": "solteiro",
+              "nationality": "brasileiro",
+              "naturalness": "brasileiro",
+              "motherName": "Maria Silva",
+              "fatherName": "Joao Silva",
+              "pep": false
             },
-            document: {
-                type: "string", ("cnh" ou "rg")
-                number: "string", (sem máscara)
-                issuingState: "string", (Ex: "CE", "SP", "RS" ...),
-                issuingAuthority: "string",
-                issueDate: "string" (formato AAAA-MM-DD)
+            "document": {
+              "type": "cnh",
+              "number": "12345555",
+              "issuingState": "SP",
+              "issuingAuthority": "SSP",
+              "issueDate": "2022-01-01"
             },
-            address: {
-                zipCode: "string", (sem máscara)
-                street: "string",
-                number: "string",
-                complement: "string" | "null",
-                neighborhood: "string",
-                city: "string",
-                state: "string", (Ex: "CE", "SP", "RS" ...)
+            "address": {
+              "zipCode": "03431120",
+              "street": "Rua Juca",
+              "number": "321",
+              "complement": null,
+              "neighborhood": "Casa",
+              "city": "São Paulo",
+              "state": "SP"
             },
-            disbursementBankAccount: {
-                bankCode: "string",
-                accountType: "string", ("corrente" ou "poupanca"),
-                accountNumber: "string",
-                accountDigit: "string",
-                branchNumber: "string"
+            "disbursementBankAccount": {
+              "bankCode": "652",
+              "accountType": "corrente",
+              "accountNumber": "173090",
+              "accountDigit": "1",
+              "branchNumber": "2"
             }
-        }',
+          }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'x-api-token: '.$this->apiKey($this->ambiente),

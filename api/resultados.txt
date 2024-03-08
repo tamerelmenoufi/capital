@@ -1,6 +1,143 @@
-{"statusCode":200,"message":"Login realizado com sucesso.","token":{"accessToken":"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjOWZhODZlLWY3ZmYtNDJjNC04N2FmLWI5NjExYjAyZDVjYSIsImlhdCI6MTcwOTkxMzI0NywiaXNzIjoidmN0ZXhfdGVzdCIsImF1ZCI6InZjdGV4X3Rlc3QiLCJleHAiOjE3MDk5MjA0NDd9.k6jWn5akclGnSzTYM75wx8hM2354g6A3d-gxkrTKjn8","expires":7200,"type":"bearer"},"data":{"id":"4c9fa86e-f7ff-42c4-87af-b9611b02d5ca","name":"JOZE BEZERRA LIMA NETO","role":"filler","permissions":["simulate","create_proposal","list_proposals_created_by_the_user","update_proposal_created_by_the_user","list_available_balance_created_by_the_user","request_filling_report_created_by_the_user"],"organization":{"id":"575a2681-cb74-4232-9c13-1d453f95c99d","fantasyName":"Capital Soluções","organizationType":"Corban"}}}
+// Obter o token
+
+{
+  "statusCode": 200,
+  "message": "Login realizado com sucesso.",
+  "token": {
+    "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjRjOWZhODZlLWY3ZmYtNDJjNC04N2FmLWI5NjExYjAyZDVjYSIsImlhdCI6MTcwOTkxMzI0NywiaXNzIjoidmN0ZXhfdGVzdCIsImF1ZCI6InZjdGV4X3Rlc3QiLCJleHAiOjE3MDk5MjA0NDd9.k6jWn5akclGnSzTYM75wx8hM2354g6A3d-gxkrTKjn8",
+    "expires": 7200,
+    "type": "bearer"
+  },
+  "data": {
+    "id": "4c9fa86e-f7ff-42c4-87af-b9611b02d5ca",
+    "name": "JOZE BEZERRA LIMA NETO",
+    "role": "filler",
+    "permissions": [
+      "simulate",
+      "create_proposal",
+      "list_proposals_created_by_the_user",
+      "update_proposal_created_by_the_user",
+      "list_available_balance_created_by_the_user",
+      "request_filling_report_created_by_the_user"
+    ],
+    "organization": {
+      "id": "575a2681-cb74-4232-9c13-1d453f95c99d",
+      "fantasyName": "Capital Soluções",
+      "organizationType": "Corban"
+    }
+  }
+}
+
+
+
 
 //tabelas
-{"statusCode":200,"message":"feeSchedule recuperado com sucesso","data":[{"id":0,"name":"Tabela Exponencial","displayOrder":1,"minDisbursedAmount":100,"maxDisbursedAmount":249.99,"minNumberOfYearsAntecipated":3,"maxNumberOfYearsAntecipated":10,"monthlyFee":2.04,"annualFee":0.238720531575528},{"id":4,"name":"Tabela Vendex","displayOrder":2,"minDisbursedAmount":250,"maxDisbursedAmount":700,"minNumberOfYearsAntecipated":3,"maxNumberOfYearsAntecipated":10,"monthlyFee":2.04,"annualFee":0.238720531575528},{"id":1,"name":"Tabela 1 - Master","displayOrder":3,"minDisbursedAmount":150,"maxDisbursedAmount":30000,"minNumberOfYearsAntecipated":3,"maxNumberOfYearsAntecipated":10,"monthlyFee":2.04,"annualFee":0.238720531575528},{"id":2,"name":"Tabela 2 - Prime","displayOrder":4,"minDisbursedAmount":250,"maxDisbursedAmount":27900,"minNumberOfYearsAntecipated":3,"maxNumberOfYearsAntecipated":10,"monthlyFee":2.04,"annualFee":0.238720531575528},{"id":3,"name":"Tabela 3 - Linear","displayOrder":5,"minDisbursedAmount":200,"maxDisbursedAmount":29800,"minNumberOfYearsAntecipated":3,"maxNumberOfYearsAntecipated":10,"monthlyFee":2.04,"annualFee":0.238720531575528}]}
+{
+  "statusCode": 200,
+  "message": "feeSchedule recuperado com sucesso",
+  "data": [
+    {
+      "id": 0,
+      "name": "Tabela Exponencial",
+      "displayOrder": 1,
+      "minDisbursedAmount": 100,
+      "maxDisbursedAmount": 249.99,
+      "minNumberOfYearsAntecipated": 3,
+      "maxNumberOfYearsAntecipated": 10,
+      "monthlyFee": 2.04,
+      "annualFee": 0.238720531575528
+    },
+    {
+      "id": 4,
+      "name": "Tabela Vendex",
+      "displayOrder": 2,
+      "minDisbursedAmount": 250,
+      "maxDisbursedAmount": 700,
+      "minNumberOfYearsAntecipated": 3,
+      "maxNumberOfYearsAntecipated": 10,
+      "monthlyFee": 2.04,
+      "annualFee": 0.238720531575528
+    },
+    {
+      "id": 1,
+      "name": "Tabela 1 - Master",
+      "displayOrder": 3,
+      "minDisbursedAmount": 150,
+      "maxDisbursedAmount": 30000,
+      "minNumberOfYearsAntecipated": 3,
+      "maxNumberOfYearsAntecipated": 10,
+      "monthlyFee": 2.04,
+      "annualFee": 0.238720531575528
+    },
+    {
+      "id": 2,
+      "name": "Tabela 2 - Prime",
+      "displayOrder": 4,
+      "minDisbursedAmount": 250,
+      "maxDisbursedAmount": 27900,
+      "minNumberOfYearsAntecipated": 3,
+      "maxNumberOfYearsAntecipated": 10,
+      "monthlyFee": 2.04,
+      "annualFee": 0.238720531575528
+    },
+    {
+      "id": 3,
+      "name": "Tabela 3 - Linear",
+      "displayOrder": 5,
+      "minDisbursedAmount": 200,
+      "maxDisbursedAmount": 29800,
+      "minNumberOfYearsAntecipated": 3,
+      "maxNumberOfYearsAntecipated": 10,
+      "monthlyFee": 2.04,
+      "annualFee": 0.238720531575528
+    }
+  ]
+}
+
+
+
+
+
+// Simulação
+{
+  "statusCode": 200,
+  "message": "Simulação realizada com sucesso.",
+  "data": {
+    "simulationData": {
+      "installments": [
+        {
+          "dueDate": "2024-05-01",
+          "amount": 5128.51
+        },
+        {
+          "dueDate": "2025-05-01",
+          "amount": 4872.09
+        },
+        {
+          "dueDate": "2026-05-01",
+          "amount": 22043.1
+        },
+        {
+          "dueDate": "2027-05-01",
+          "amount": 20940.95
+        },
+        {
+          "dueDate": "2028-05-01",
+          "amount": 4767.74
+        }
+      ],
+      "iofAmount": 1089.94,
+      "totalReleasedAmount": 30000,
+      "totalAmount": 35331.53,
+      "contractTACAmount": 4029.6000000000004,
+      "contractCETRate": 0.337813,
+      "contractRate": 0.018,
+      "minDisbursedAmount": 7556.67
+    },
+    "isExponentialFeeScheduleAvailable": false,
+    "isVendexFeeScheduleAvailable": false,
+    "financialId": "443139a1-22e5-4c5c-a23f-46d17130eafe"
+  }
+}
 
 
