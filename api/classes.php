@@ -88,7 +88,7 @@ class Vctex {
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>'{
             clientCpf: "20006161278",
-            feeScheduleId: "1"
+            feeScheduleId: 1
         }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
