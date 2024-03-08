@@ -158,9 +158,8 @@ class Vctex {
           }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey($this->ambiente),
-            // 'x-integrator-token: '.$this->integradora($this->ambiente, $loja),
-            'accept: application/json'
+            'Accept: application/json',
+            'Authorization: Bearer '.$token
         ),
         ));
 
