@@ -87,12 +87,12 @@ class Vctex {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>'{
-            clientCpf: "string",
-            feeScheduleId: "number",
-            targetDisbursedAmount: "number"
+            clientCpf: "20006161278",
+            feeScheduleId: "1",
+            targetDisbursedAmount: "10750.50"
         }',
         CURLOPT_HTTPHEADER => array(
-            // 'Content-Type: application/json',
+            'Content-Type: application/json',
             'Accept: application/json',
             'Authorization: Bearer '.$token
         ),
