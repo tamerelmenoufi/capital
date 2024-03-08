@@ -31,6 +31,7 @@ class Vctex {
             "password":"KG23gvwLD@"
         }',
         CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json',
             'Accept: application/json'
         ),
         ));
