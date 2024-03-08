@@ -86,10 +86,7 @@ class Vctex {
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>'{
-            clientCpf: "20006161278",
-            feeScheduleId: 1
-        }',
+        CURLOPT_POSTFIELDS =>'{"clientCpf":"20006161278","feeScheduleId":1}',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'Accept: application/json',
