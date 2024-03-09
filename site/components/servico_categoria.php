@@ -47,9 +47,7 @@
               <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
                 <button type="button" class="btn btn-outline-primary">Leia Mais<i class="bi bi-arrow-right"></i></button>
               </a>
-              <a style="color:#fff" href="./">
-                  <button style="margin-top:10px"  type="button"  class="float-end btn btn-primary">
-                Principal</button></a>
+
 
             </div>
           </div>
@@ -102,6 +100,12 @@
   </nav>
 </center> -->
 
+        <div class="col-lg-12" style="padding:10px">
+
+    <a style="color:#fff" href="./">
+    <button style="margin-top:10px"  type="button"  class="float-end btn btn-primary">
+                Principal</button></a>
+ </div>
 </div>
 
       </div>
