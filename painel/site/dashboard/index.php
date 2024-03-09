@@ -35,7 +35,7 @@
                 <h1><?=$total?></h1>        
             </div>
             <canvas 
-                    class="grafico"
+                    class="grafico2"
                     height="100"
                     width="100"
                     bloqueado="<?=$bloqueado?>"
@@ -140,6 +140,45 @@
                 label: 'Publicações',
                 data: [bloqueado,liberado],
                 backgroundColor: ['Red', 'Green'],
+                }
+            ]
+            };
+
+            const config = {
+            type: 'doughnut',
+            data: data,
+            options: {
+                    responsive: false,
+                    plugins: {
+                    // legend: {
+                    //     position: 'top',
+                    // },
+                    legend:false,
+                    title:false,
+                    // title: {
+                    //     display: true,
+                    //     text: 'Chart.js Doughnut Chart'
+                    // }
+                    }
+                },
+            };
+
+            const chart = new Chart(obj, config);
+        })
+
+        $(".grafico2").each(function(){
+
+            const obj = $(this);
+            const bloqueado = obj.attr("bloqueado");
+            const liberado = obj.attr("liberado");
+
+            const data = {
+            labels: ['Acessos', 'On Line'],
+            datasets: [
+                {
+                label: 'Publicações',
+                data: [bloqueado,liberado],
+                backgroundColor: ['Blue', 'Green'],
                 }
             ]
             };
