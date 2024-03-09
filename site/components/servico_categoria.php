@@ -102,7 +102,7 @@
 
         <div class="col-lg-12" style="padding:10px">
 
-    <a style="color:#fff" href="javascript:history.back()">
+    <a style="color:#fff" href="./">
     <button style="margin-top:10px"  type="button"  class="float-end btn btn-primary">
                 Voltar</button></a>
  </div>
