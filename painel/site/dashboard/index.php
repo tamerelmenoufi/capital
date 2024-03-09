@@ -29,7 +29,7 @@
 ?> 
 <div class="col p-3">
     <div class="alert alert-primary" style="height:140px;">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between align-items-center">
             <div class="flex-fill" style="border:solid 1px red">
                 <b><?=$titulo?></b>
                 <h2><?=$total?></h2>        
