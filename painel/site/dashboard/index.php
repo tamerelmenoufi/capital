@@ -34,10 +34,7 @@
                 <b><?=$titulo?></b>
                 <h2><?=$total?></h2>        
             </div>
-            <div style="width:100px">
-                <canvas class="grafico" height="100"></canvas>
-            </div>
-                    
+            <canvas class="grafico" height="100"></canvas>        
         </div>
     </div>
 </div>
