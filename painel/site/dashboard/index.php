@@ -68,7 +68,7 @@
                             },
                         };
 
-        const chart = new Chart('.grafico', config);
+        const chart = new Chart($(".grafico"), config);
 
 
     })
