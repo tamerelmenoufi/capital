@@ -7,17 +7,26 @@ Relatórios
 <?php
 
     $placas = [
-        'banners' => 'Nammers',
+        'banners' => 'Banners',
         'servicos' => 'Produtos',
         'time' => 'Time da empresa',
         'depoimentos' => 'Depoimentos',
     ];
-    
+
     foreach($placas as $tabela => $titulo){
+        $r = mysqli_query($con, "select count(*) as qt, situacao from {$tabela} group by situacao");
+        $total = $bloqueado = $liberado;
+        while($p = mysqli_fetch_object($r)){
+            $total += $p->qt;
+            if($p->situacao != 1) $bloqueado += $p->qt;
+            else $liberado += $p->qt;
+        }
+
 ?> 
 <div class="col p-3">
     <div class="alert alert-primary" style="height:90px;">
         <h2><?=$titulo?></h2>
+        <b><?=$total?></b>
     </div>
 </div>
 <?php
