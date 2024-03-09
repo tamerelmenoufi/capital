@@ -1,10 +1,10 @@
 
   <style>
 
-.footer .footer-legal {
+/* .footer .footer-legal {
   padding: 30px 0;
   background: #057a34!important;
-}
+} */
   </style>
 
   <!-- ======= Footer ======= -->
