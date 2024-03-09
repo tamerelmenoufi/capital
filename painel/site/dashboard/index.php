@@ -77,7 +77,10 @@
                             },
                         };
 
-        const chart = new Chart($(".grafico"), config);
+        $(".grafico").each(function(){
+            const chart = new Chart($(this), config);
+        })
+        
 
 
     })
