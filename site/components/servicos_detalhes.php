@@ -302,7 +302,7 @@
         <div class="col-lg-12">
 
     <button style="margin-top:10px"  type="button"  class="float-end  btn btn-primary">
-                 <a style="color:#fff" href="./">Voltar</a></button>
+                 <a style="color:#fff" href="./">Principal</a></button>
  </div>
 
 
