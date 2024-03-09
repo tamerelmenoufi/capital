@@ -3,7 +3,7 @@
 ?>
 <style>
     .grafico{
-        height:100px;
+        margin-bottom:10px;
     }
 </style>
 <div class="row g-0">
