@@ -2771,3 +2771,29 @@ section {
   background: var(--color-primary);
   text-decoration: none;
 }
+.popup{
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background-color: #fff;
+  overflow: auto;
+  z-index:999;
+  display:none;
+}
+.popup span{
+  position:fixed;
+  right:20px;
+  top:20px;
+  color:#333;
+  font-size: 30px;
+  cursor: pointer;
+  /* border:solid 1px red; */
+  z-index: 1;
+}
+.popup .body{
+  position: absolute;
+  top:30px;
+  width:100%;
+}
