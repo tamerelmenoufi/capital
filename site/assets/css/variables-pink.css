@@ -1,6 +1,6 @@
 /**
 * Template Name: HeroBiz
-* File: variables-green.css
+* File: variables-pink.css
 * Description: Easily customize colors, typography, and other repetitive properties used in the template main stylesheet file main.css
 * 
 * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
@@ -33,26 +33,26 @@
   --color-default-rgb: 26, 31, 36;
 
   /* Defult links color */
-  --color-links: #05c46b;
-  --color-links-hover: #1de789;
+  --color-links: #f3268c;
+  --color-links-hover: #ff83c1;
 
   /* Primay colors */
-  --color-primary: #05c46b;
-  --color-primary-light: #1de789;
-  --color-primary-dark: #01a156;
+  --color-primary: #f3268c;
+  --color-primary-light: #ff83c1;
+  --color-primary-dark: #cc1571;
 
-  --color-primary-rgb: 5, 196, 107;
-  --color-primary-light-rgb: 29, 231, 137;
-  --color-primary-dark-rgb: 1, 161, 86;
+  --color-primary-rgb: 243, 38, 140;
+  --color-primary-light-rgb: 255, 131, 193;
+  --color-primary-dark-rgb: 204, 21, 113;
 
   /* Secondary colors */
-  --color-secondary: #485664;
-  --color-secondary-light: #8f9fae;
-  --color-secondary-dark: #3a4753;
+  --color-secondary: #61768b;
+  --color-secondary-light: #778da3;
+  --color-secondary-dark: #4e6377;
 
-  --color-secondary-rgb: 72, 86, 100;
-  --color-secondary-light-rgb: 143, 159, 174;
-  --color-secondary-dark-rgb: 58, 71, 83;
+  --color-secondary-rgb: 97, 118, 139;
+  --color-secondary-light-rgb: 119, 141, 163;
+  --color-secondary-dark-rgb: 78, 99, 119;
 
   /* General colors */
   --color-blue: #0d6efd;

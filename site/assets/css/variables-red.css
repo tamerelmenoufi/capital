@@ -1,6 +1,6 @@
 /**
 * Template Name: HeroBiz
-* File: variables-green.css
+* File: variables-red.css
 * Description: Easily customize colors, typography, and other repetitive properties used in the template main stylesheet file main.css
 * 
 * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
@@ -33,17 +33,17 @@
   --color-default-rgb: 26, 31, 36;
 
   /* Defult links color */
-  --color-links: #05c46b;
-  --color-links-hover: #1de789;
+  --color-links: #df1529;
+  --color-links-hover: #ff2b2b;
 
   /* Primay colors */
-  --color-primary: #05c46b;
-  --color-primary-light: #1de789;
-  --color-primary-dark: #01a156;
+  --color-primary: #df1529;
+  --color-primary-light: #ff2b2b;
+  --color-primary-dark: #c00719;
 
-  --color-primary-rgb: 5, 196, 107;
-  --color-primary-light-rgb: 29, 231, 137;
-  --color-primary-dark-rgb: 1, 161, 86;
+  --color-primary-rgb: 223, 21, 41;
+  --color-primary-light-rgb: 255, 43, 43;
+  --color-primary-dark-rgb: 192, 7, 25;
 
   /* Secondary colors */
   --color-secondary: #485664;

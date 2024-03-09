@@ -1,14 +1,14 @@
 /**
 * Template Name: HeroBiz
-* File: variables-green.css
+* File: variables-blue.css
 * Description: Easily customize colors, typography, and other repetitive properties used in the template main stylesheet file main.css
-* 
+*
 * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
-* 
+*
 * Contents:
-* 1. HeroBiz template variables 
+* 1. HeroBiz template variables
 * 2. Override default Bootstrap variables
 * 3. Set color and background class names
 *
@@ -16,7 +16,7 @@
 */
 
 /*--------------------------------------------------------------
-# 1. HeroBiz template variables 
+# 1. HeroBiz template variables
 --------------------------------------------------------------*/
 :root {
 
@@ -33,26 +33,38 @@
   --color-default-rgb: 26, 31, 36;
 
   /* Defult links color */
-  --color-links: #05c46b;
-  --color-links-hover: #1de789;
+  --color-links: #3279fc;
+  --color-links-hover: #4797ff;
 
   /* Primay colors */
-  --color-primary: #05c46b;
-  --color-primary-light: #1de789;
-  --color-primary-dark: #01a156;
+  --color-primary: #3279fc;
+  --color-primary-light: #4797ff;
+  --color-primary-dark: #1c61e2;
 
-  --color-primary-rgb: 5, 196, 107;
-  --color-primary-light-rgb: 29, 231, 137;
-  --color-primary-dark-rgb: 1, 161, 86;
+  --color-primary-rgb: 50, 121, 252;
+  --color-primary-light-rgb: 71, 151, 255;
+  --color-primary-dark-rgb: 28, 97, 226;
+
+  /* Secondary colors
+  --color-secondary: #5670a0;
+  --color-secondary-light: #6e87b6;
+  --color-secondary-dark: #3b5380;
+
+  --color-secondary-rgb: 86, 112, 160;
+  --color-secondary-light-rgb: 110, 135, 182;
+  --color-secondary-dark-rgb: 59, 83, 128; */
 
   /* Secondary colors */
-  --color-secondary: #485664;
-  --color-secondary-light: #8f9fae;
-  --color-secondary-dark: #3a4753;
+  --color-secondary: #512314;
+  --color-secondary-light: #b57662;
+  --color-secondary-dark: #7a4b3c;
 
-  --color-secondary-rgb: 72, 86, 100;
-  --color-secondary-light-rgb: 143, 159, 174;
-  --color-secondary-dark-rgb: 58, 71, 83;
+  --color-secondary-rgb: 86, 112, 160;
+  --color-secondary-light-rgb: 110, 135, 182;
+  --color-secondary-dark-rgb: 59, 83, 128;
+
+
+
 
   /* General colors */
   --color-blue: #0d6efd;
@@ -93,7 +105,7 @@
 
   --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
-  
+
 }
 
 /*--------------------------------------------------------------
