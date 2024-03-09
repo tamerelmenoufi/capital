@@ -19,7 +19,7 @@
 
     foreach($placas as $tabela => $titulo){
         $r = mysqli_query($con, "select count(*) as qt, situacao from {$tabela} group by situacao");
-        $total = $bloqueado = $liberado;
+        $total = $bloqueado = $liberado = 0;
         while($p = mysqli_fetch_object($r)){
             $total += $p->qt;
             if($p->situacao != 1) $bloqueado += $p->qt;
