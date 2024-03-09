@@ -28,12 +28,13 @@
         <h2><?=$total?></h2>
     </div>
 </div>
-
-<canvas id="grafico" style="margin-top:30px;"></canvas>
 <?php
     }
 ?>
 </div>
+
+<canvas id="grafico" style="margin-top:30px;"></canvas>
+
 <script>
     $(function(){
 
