@@ -67,7 +67,7 @@
                         type: 'doughnut',
                         data: data,
                         options: {
-                                responsive: true,
+                                responsive: false,
                                 plugins: {
                                 // legend: {
                                 //     position: 'top',
