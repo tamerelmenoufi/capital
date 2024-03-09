@@ -32,7 +32,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <div class="flex-fill">
                 <b><?=$titulo?></b>
-                <h2><?=$total?></h2>        
+                <h1><?=$total?></h1>        
             </div>
             <canvas 
                     class="grafico"
