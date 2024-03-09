@@ -1,6 +1,11 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 ?>
+<style>
+    .grafico{
+        height:100px;
+    }
+</style>
 <div class="row g-0">
     <div class="m-3"></div>
 <?php
@@ -23,7 +28,7 @@
 
 ?> 
 <div class="col p-3">
-    <div class="alert alert-primary" style="height:90px;">
+    <div class="alert alert-primary" style="height:120px;">
         <div class="row">
             <div class="col-6">
                 <b><?=$titulo?></b>
