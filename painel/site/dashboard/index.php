@@ -61,10 +61,10 @@
                 (select count(*) from log_acessos) as geral,
                 (select count(*) from log_acessos where data like '2024-02%') as mes_passado,
                 (select count(*) from log_acessos where data like '2024-03%') as mes_atual,
-                (select count(*) from log_acessos where data like '2024-03-09%') as hoje
+                (select count(*) from log_acessos where data like '2024-03-09%') as hoje,
                 (select count(*) from log_acessos where data >= '2024-03-09 16:00:00%') as on_line
     ";
-    $r = mysqli_query($con, "select count(*) as qt, situacao from {$tabela} group by situacao");
+    $r = mysqli_query($con, $q);
     $p = mysqli_fetch_object($r);
 ?> 
     <div class="col p-3">
