@@ -30,11 +30,11 @@
 <div class="col p-3">
     <div class="alert alert-primary" style="height:140px;">
         <div class="d-flex justify-content-between align-items-center">
-            <div class="flex-fill" style="border:solid 1px red">
+            <div class="flex-fill">
                 <b><?=$titulo?></b>
                 <h2><?=$total?></h2>        
             </div>
-            <canvas class="grafico" height="100" width="100" style="border:solid 1px green"></canvas>        
+            <canvas class="grafico" height="100" width="100"></canvas>        
         </div>
     </div>
 </div>
