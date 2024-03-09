@@ -15,7 +15,7 @@
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary" class="breadcrumbs" style="margin-top:20px; color:#fff">
+    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -45,7 +45,7 @@
               <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
 
               <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
-                <button type="button" class="btn btn-outline-success">Leia Mais<i class="bi bi-arrow-right"></i></button>
+                <button type="button" class="btn btn-outline-primary">Leia Mais<i class="bi bi-arrow-right"></i></button>
               </a>
 
 
