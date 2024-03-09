@@ -33,7 +33,7 @@
 ?>
 </div>
 
-<canvas id="grafico" style="margin-top:30px;"></canvas>
+<canvas class="grafico" style="margin-top:30px;"></canvas>
 
 <script>
     $(function(){
@@ -68,7 +68,7 @@
                             },
                         };
 
-        const chart = new Chart('grafico', config);
+        const chart = new Chart('.grafico', config);
 
 
     })
