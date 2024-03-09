@@ -172,7 +172,7 @@
             const bloqueado = obj.attr("bloqueado");
             const liberado = obj.attr("liberado");
 
-            const data1 = {
+            const data = {
             labels: ['Acessos', 'On Line'],
             datasets: [
                 {
@@ -183,9 +183,9 @@
             ]
             };
 
-            const config1 = {
+            const config = {
             type: 'doughnut',
-            data: data1,
+            data: data,
             options: {
                     responsive: false,
                     plugins: {
@@ -202,7 +202,7 @@
                 },
             };
 
-            const chart = new Chart(obj, config1);
+            const chart = new Chart(obj, config);
         })
         
 
