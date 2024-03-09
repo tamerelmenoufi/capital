@@ -273,7 +273,7 @@
 
 
                 </div>
-               <center style="margin-top:20px"> <a href='servico_categoria.php' type="button" class="btn btn-outline-success">Mais Servicos</a></center>
+               <center style="margin-top:20px"> <a href='servico_categoria.php' type="button" class="btn btn-outline-primary">Mais Servicos</a></center>
               </div><!-- End sidebar recent posts-->
 
               <!-- <div class="sidebar-item tags">
@@ -301,7 +301,7 @@
 
         <div class="col-lg-12">
 
-    <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
+    <button style="margin-top:10px"  type="button"  class="float-end  btn btn-primary">
                  <a style="color:#fff" href="javascript:history.back()">Voltar</a></button>
  </div>
 
