@@ -64,13 +64,15 @@
                         options: {
                                 responsive: true,
                                 plugins: {
-                                legend: {
-                                    position: 'top',
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'Chart.js Doughnut Chart'
-                                }
+                                // legend: {
+                                //     position: 'top',
+                                // },
+                                legend:false,
+                                title:false,
+                                // title: {
+                                //     display: true,
+                                //     text: 'Chart.js Doughnut Chart'
+                                // }
                                 }
                             },
                         };
