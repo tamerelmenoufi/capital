@@ -29,14 +29,12 @@
 ?> 
 <div class="col p-3">
     <div class="alert alert-primary" style="height:140px;">
-        <div class="row">
-            <div class="col-6">
+        <div class="d-flex justify-content-between">
+            <div>
                 <b><?=$titulo?></b>
                 <h2><?=$total?></h2>        
             </div>
-            <div class="col-6">
-                <canvas class="grafico" height="100"></canvas>        
-            </div>
+            <canvas class="grafico" height="100"></canvas>        
         </div>
     </div>
 </div>
