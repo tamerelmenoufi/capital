@@ -1,7 +1,6 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 ?>
-Relatórios
 <div class="row g-0">
     <div class="m-3"></div>
 <?php
