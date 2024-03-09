@@ -26,7 +26,6 @@
     <div class="alert alert-primary" style="height:90px;">
         <b><?=$titulo?></b>
         <h2><?=$total?></h2>
-        <div class="grafico"></div>
     </div>
 </div>
 
