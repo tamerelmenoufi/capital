@@ -5,17 +5,17 @@
 
   .botaoazul{
     background: var(--color-primary);
-  border: 0;
-  padding: 10px 35px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 0;
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 0;
   }
 
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div style="font-weight:450;background:#057a34;color:#fff" class="breadcrumbs">
+    <div class="bg-primary" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -103,7 +103,7 @@
         <div class="col-lg-12" style="padding:10px">
 
     <a style="color:#fff" href="javascript:history.back()">
-    <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
+    <button style="margin-top:10px"  type="button"  class="float-end btn btn-primary">
                 Voltar</button></a>
  </div>
 </div>
