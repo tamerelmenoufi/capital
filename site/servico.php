@@ -29,8 +29,8 @@
 
   <!-- Variables CSS Files. Uncomment your preferred color scheme -->
   <!-- <link href="assets/css/variables.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-blue.css" rel="stylesheet"> -->
-  <link href="assets/css/variables-green.css" rel="stylesheet">
+  <link href="assets/css/variables-blue.css" rel="stylesheet">
+  <!-- <link href="assets/css/variables-green.css" rel="stylesheet"> -->
   <!-- <link href="assets/css/variables-orange.css" rel="stylesheet"> -->
   <!-- <link href="assets/css/variables-purple.css" rel="stylesheet"> -->
   <!-- <link href="assets/css/variables-red.css" rel="stylesheet"> -->
@@ -89,7 +89,8 @@
         // 'pagina_interna',
         // 'pagina_interna2',
         // 'mais_noticias',
-         'servicos_detalhes',
+        'noticias_detalhes',
+        // 'servico_categoria',
         // 'produtos_servicos',
         // 'clientes',
         // 'destaque',
@@ -102,7 +103,6 @@
         //'contato',
         'rodape',
 
-
     ];
 
     foreach($componentes as $i => $v){
@@ -112,7 +112,7 @@
 ?>
 </main><!-- End #main -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center" style="background:#242323">
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center" style="bg-primary">
     <i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
@@ -135,6 +135,25 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/js.js"></script>
+
+
+  <script>
+    $(function(){
+
+      $.ajax({
+        url:"assets/lib/log_acessos.php",
+        success:function(dados){
+          //Retorno da função
+          // console.log(dados);
+        }
+      });
+
+
+      setTimeout(() => {
+        $("#loom-companion-mv3").remove();
+      }, 1000);
+  })
+  </script>
 </body>
 
 </html>
