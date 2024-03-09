@@ -24,8 +24,15 @@
 ?> 
 <div class="col p-3">
     <div class="alert alert-primary" style="height:90px;">
-        <b><?=$titulo?></b>
-        <h2><?=$total?></h2>
+        <div class="row">
+            <div class="col-6">
+                <b><?=$titulo?></b>
+                <h2><?=$total?></h2>        
+            </div>
+            <div class="col-6">
+                <canvas class="grafico"></canvas>        
+            </div>
+        </div>
     </div>
 </div>
 <?php
@@ -33,7 +40,7 @@
 ?>
 </div>
 
-<canvas class="grafico" style="margin-top:30px;"></canvas>
+
 
 <script>
     $(function(){
