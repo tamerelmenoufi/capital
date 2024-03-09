@@ -4,7 +4,7 @@
 Relatórios
 <div class="row">
 <?php
-    for($i=10;$i<12;$i++){
+    for($i=0;$i<12;$i++){
 ?> 
 <div class="col">
     <div class="alert alert-primary" style="height:60px;">
