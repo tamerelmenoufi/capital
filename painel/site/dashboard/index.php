@@ -34,7 +34,14 @@
                 <b><?=$titulo?></b>
                 <h2><?=$total?></h2>        
             </div>
-            <canvas class="grafico" height="100" width="100"></canvas>        
+            <canvas 
+                    class="grafico"
+                    height="100"
+                    width="100"
+                    bloqueado="<?=$bloqueado?>"
+                    liberado="<?=$liberado?>"
+                    total="<?=$total?>"
+            ></canvas>        
         </div>
     </div>
 </div>
@@ -50,38 +57,43 @@
 
         Carregando('none');
 
-        const data = {
-        labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-        datasets: [
-            {
-            label: 'Dataset 1',
-            data: [10,20,24,11,33],
-            backgroundColor: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-            }
-        ]
-        };
-
-        const config = {
-                        type: 'doughnut',
-                        data: data,
-                        options: {
-                                responsive: false,
-                                plugins: {
-                                // legend: {
-                                //     position: 'top',
-                                // },
-                                legend:false,
-                                title:false,
-                                // title: {
-                                //     display: true,
-                                //     text: 'Chart.js Doughnut Chart'
-                                // }
-                                }
-                            },
-                        };
-
         $(".grafico").each(function(){
-            const chart = new Chart($(this), config);
+
+            const obj = $(this);
+            const bloqueado = obj.attr("bloqueado");
+            const liberado = obj.attr("liberado");
+
+            const data = {
+            labels: ['Bloqueado', 'Liberado'],
+            datasets: [
+                {
+                label: 'Publicações',
+                data: [bloqueado,liberado],
+                backgroundColor: ['Red', 'Green'],
+                }
+            ]
+            };
+
+            const config = {
+            type: 'doughnut',
+            data: data,
+            options: {
+                    responsive: false,
+                    plugins: {
+                    // legend: {
+                    //     position: 'top',
+                    // },
+                    legend:false,
+                    title:false,
+                    // title: {
+                    //     display: true,
+                    //     text: 'Chart.js Doughnut Chart'
+                    // }
+                    }
+                },
+            };
+
+            const chart = new Chart(obj, config);
         })
         
 
