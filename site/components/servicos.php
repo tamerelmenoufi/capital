@@ -77,7 +77,7 @@
 
           <center style="margin-top:20px">
           <a href="servico_categoria.php">
-         <button type="button" class="btn btn-success botaoverde">
+         <button type="button" class="btn btn-primary botaoverde">
           Outros serviços
         </button></a>
       </center>
