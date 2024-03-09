@@ -25,8 +25,8 @@ Relatórios
 ?> 
 <div class="col p-3">
     <div class="alert alert-primary" style="height:90px;">
-        <h2><?=$titulo?></h2>
-        <b><?=$total?></b>
+        <b><?=$titulo?></b>
+        <h2><?=$total?></h2>
     </div>
 </div>
 <?php
