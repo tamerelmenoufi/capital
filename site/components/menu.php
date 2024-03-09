@@ -40,7 +40,7 @@
 
       <a href="index.php" class=" d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" style="height:50px !important;" alt="">
+        <img src="assets/img/logo.png" style="height:40px !important;" alt="">
        
       </a>
 
