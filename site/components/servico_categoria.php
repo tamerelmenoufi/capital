@@ -15,7 +15,7 @@
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary" class="breadcrumbs mt-3">
+    <div class="bg-primary" class="breadcrumbs" style="margin-top:20px; color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
