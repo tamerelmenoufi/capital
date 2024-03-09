@@ -40,6 +40,7 @@
 
         Carregando('none');
 
+        const Utils;
         const DATA_COUNT = 5;
         const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
