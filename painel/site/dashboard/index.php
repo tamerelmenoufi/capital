@@ -109,7 +109,7 @@
                         class="grafico"
                         height="100"
                         width="100"
-                        bloqueado="<?=$p->hoje?>"
+                        bloqueado="<?=($p->hoje - $p->on_line)?>"
                         liberado="<?=$p->on_line?>"
                         total="<?=$p->hoje?>"
                 ></canvas>        
