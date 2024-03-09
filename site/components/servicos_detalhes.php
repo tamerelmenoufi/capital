@@ -23,7 +23,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2 style=""><?=$d->titulo?>XXX</h2>
+          <h2 style=""><?=$d->titulo?></h2>
 
         </div>
 
