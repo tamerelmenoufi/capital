@@ -35,7 +35,7 @@
                 <h2><?=$total?></h2>        
             </div>
             <div class="col-6">
-                <canvas class="grafico" height="100"></canvas>        
+                <canvas class="grafico" height="100" style="margin-bottom:10px;"></canvas>        
             </div>
         </div>
     </div>
