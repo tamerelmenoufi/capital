@@ -28,14 +28,14 @@
 
 ?> 
 <div class="col p-3">
-    <div class="alert alert-primary" style="height:120px;">
+    <div class="alert alert-primary" style="height:140px;">
         <div class="row">
             <div class="col-6">
                 <b><?=$titulo?></b>
                 <h2><?=$total?></h2>        
             </div>
             <div class="col-6">
-                <div class="grafico" height="100"></div>        
+                <canvas class="grafico" height="100"></canvas>        
             </div>
         </div>
     </div>
