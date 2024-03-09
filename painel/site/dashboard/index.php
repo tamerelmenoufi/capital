@@ -29,6 +29,8 @@
         <div class="grafico"></div>
     </div>
 </div>
+
+<canvas id="grafico" style="margin-top:30px;"></canvas>
 <?php
     }
 ?>
@@ -69,7 +71,7 @@
                             },
                         };
 
-        const chart = new Chart('.grafico', config);
+        const chart = new Chart('grafico', config);
 
 
     })
