@@ -63,13 +63,13 @@
       </div>
     </div>
 
-    <div class="row  mb-1 menu-cinza">
+    <!-- <div class="row  mb-1 menu-cinza">
       <div class="col">
         <a url="site/noticias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-regular fa-newspaper"></i> Eventos
         </a>
       </div>
-    </div>
+    </div> -->
 
     <div class="row  mb-1 menu-cinza">
       <div class="col">
@@ -79,13 +79,13 @@
       </div>
     </div>
 
-    <div class="row  mb-1 menu-cinza">
+    <!-- <div class="row  mb-1 menu-cinza">
       <div class="col">
         <a url="site/portifolio/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
          <i class="fa-solid fa-box-open"></i> Portifólio
         </a>
       </div>
-    </div>
+    </div> -->
 
 
     <div class="row  mb-1 menu-cinza">
