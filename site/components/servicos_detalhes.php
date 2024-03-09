@@ -19,7 +19,7 @@
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary breadcrumbs" style="margin-top:20px; color:#fff">
+    <div style="font-weight:450;background:#057a34;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
