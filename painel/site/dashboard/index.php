@@ -1,6 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 ?>
+Relatórios
 <div class="row">
 <?php
     for($i=10;$i<12;$i++){
