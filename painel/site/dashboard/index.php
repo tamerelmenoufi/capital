@@ -68,7 +68,7 @@
     $p = mysqli_fetch_object($r);
 ?> 
     <div class="col p-3">
-        <div class="alert alert-primary" style="height:140px;">
+        <div class="alert alert-warning" style="height:140px;">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="flex-fill">
                     <b>Geral</b>
@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="col p-3">
-        <div class="alert alert-primary" style="height:140px;">
+        <div class="alert alert-warning" style="height:140px;">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="flex-fill">
                     <b>02/2023</b>
@@ -88,7 +88,7 @@
         </div>
     </div>
     <div class="col p-3">
-        <div class="alert alert-primary" style="height:140px;">
+        <div class="alert alert-warning" style="height:140px;">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="flex-fill">
                     <b>03/2024</b>
@@ -99,7 +99,7 @@
     </div>
 
     <div class="col p-3">
-        <div class="alert alert-primary" style="height:140px;">
+        <div class="alert alert-warning" style="height:140px;">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="flex-fill">
                     <b>Hoje</b>
