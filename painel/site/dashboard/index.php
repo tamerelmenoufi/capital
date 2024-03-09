@@ -202,7 +202,7 @@
                 },
             };
 
-            const chart = new Chart(obj, config);
+            const chart = new Chart(obj, config1);
         })
         
 
