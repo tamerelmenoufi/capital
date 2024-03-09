@@ -52,6 +52,76 @@
 
 
 
+<div class="row g-0">
+    <div class="m-3"></div>
+<?php
+
+
+    $q = "select 
+                (select count(*) from log_acessos) as geral,
+                (select count(*) from log_acessos where data like '2024-02%') as mes_passado,
+                (select count(*) from log_acessos where data like '2024-03%') as mes_atual,
+                (select count(*) from log_acessos where data like '2024-03-09%') as hoje
+                (select count(*) from log_acessos where data >= '2024-03-09 16:00:00%') as on_line
+    ";
+    $r = mysqli_query($con, "select count(*) as qt, situacao from {$tabela} group by situacao");
+    $p = mysqli_fetch_object($r);
+?> 
+    <div class="col p-3">
+        <div class="alert alert-primary" style="height:140px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="flex-fill">
+                    <b>Geral</b>
+                    <h1><?=$p->geral?></h1>        
+                </div>      
+            </div>
+        </div>
+    </div>
+    <div class="col p-3">
+        <div class="alert alert-primary" style="height:140px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="flex-fill">
+                    <b>02/2023</b>
+                    <h1><?=$p->mes_passado?></h1>        
+                </div>      
+            </div>
+        </div>
+    </div>
+    <div class="col p-3">
+        <div class="alert alert-primary" style="height:140px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="flex-fill">
+                    <b>03/2024</b>
+                    <h1><?=$p->mes_atual?></h1>        
+                </div>      
+            </div>
+        </div>
+    </div>
+
+    <div class="col p-3">
+        <div class="alert alert-primary" style="height:140px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="flex-fill">
+                    <b>Hoje</b>
+                    <h1><?=$p->hoje?></h1>        
+                </div>
+                <canvas 
+                        class="grafico"
+                        height="100"
+                        width="100"
+                        bloqueado="<?=$p->hoje?>"
+                        liberado="<?=$p->on_line?>"
+                        total="<?=$p->hoje?>"
+                ></canvas>        
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
 <script>
     $(function(){
 
