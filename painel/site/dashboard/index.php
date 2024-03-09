@@ -35,7 +35,7 @@
                 <h1><?=$total?></h1>        
             </div>
             <canvas 
-                    class="grafico2"
+                    class="grafico"
                     height="100"
                     width="100"
                     bloqueado="<?=$bloqueado?>"
@@ -106,7 +106,7 @@
                     <h1><?=$p->hoje?></h1>        
                 </div>
                 <canvas 
-                        class="grafico"
+                        class="grafico2"
                         height="100"
                         width="100"
                         bloqueado="<?=($p->hoje - $p->on_line)?>"
