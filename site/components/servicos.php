@@ -2,13 +2,32 @@
 
     <style>
 
+.recent-blog-posts .post-box .post-title {
+    font-size: 24px;
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
+}
 
+.recent-blog-posts .post-box .post-title:hover {
+    font-size: 24px;
+    color: #574ec2;
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
+}
     .botaoverde{
       padding: 15px;
       padding-left: 35px;
       padding-right: 35px;
       border-radius: 25px 2px 25px;
       font-size: 17px;
+      color: #fff;
+    background-color: #393287;
+    border-color: #393287;
     }
 
     .botaoroxo:hover {
@@ -106,7 +125,7 @@
 
           <center style="margin-top:20px">
           <a href="servico_categoria.php">
-         <button type="button" class="botao botaoroxo">
+         <button type="button" class=" botaoverde">
           Outros produtos
         </button></a>
       </center>
