@@ -1,8 +1,6 @@
     <!-- ======= Recent Blog Posts Section ======= -->
 
     <style>
-  .recent-blog-posts .post-box:hover .post-title {
-    color: #057a34;}
 
     .botaoverde{
       padding: 15px;
@@ -52,7 +50,7 @@
 
         <div class="section-header">
           <h2>Eventos</h2>
-          <p>Fique por dentro das atualizações no ramo de crédito de carbono, regularização fundiária entre outros.
+          <p>Fique por dentro das atualizações no ramo de assessoria financeira com as nossas publicações.
           </p>
         </div>
 
