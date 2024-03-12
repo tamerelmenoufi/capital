@@ -40,6 +40,13 @@
                 <div class="row">
 
                     <div class="col-4">
+                        <div app="financeira" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
+                            <h3><i class="fa-solid fa-hand-holding-dollar"></i></h3>
+                            <span>Financeira</span>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
                         <div app="email" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
                             <h3><i class="fa-solid fa-envelope-open-text"></i></h3>
                             <span>E-mail</span>
