@@ -49,7 +49,7 @@
         <?php
             foreach($tabelas->data as $i => $v){
         ?>
-            <tr class="<?=(($v->id == $d->tabela_padrao)?'bg-primary':false)?>">
+            <tr class="<?=(($v->id == $d->api_tabela_padrao)?'bg-primary':false)?>">
                 <td><?=$v->name?></td>
                 <td><?=$v->monthlyFee?></td>
                 <td><?=$v->annualFee?></td>
@@ -58,7 +58,7 @@
                 <td><?=$v->minNumberOfYearsAntecipated?></td>
                 <td><?=$v->maxNumberOfYearsAntecipated?></td>
                 <td>
-                    <input padrao type="checkbox" class="form-check-input" value="<?=$v->id?>">
+                    <input padrao type="checkbox" class="form-check-input" value="<?=$v->id?>" <?=(($v->id == $d->api_tabela_padrao)?'checked':false)?>>
                 </td>
             </tr>
         <?php
