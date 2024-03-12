@@ -1,6 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+
+    if($_POST['acao'] == 'padrao'){
+
+        mysqli_query($con, "update configuracoes set api_tabela_padrao = '{$_POST['id']}' where codigo = '1'");
+
+    }
+
     $tab_disc = [
         'name' => 'Nome',
         'annualFee' => 'Taxa Anual',
@@ -42,7 +49,7 @@
         <?php
             foreach($tabelas->data as $i => $v){
         ?>
-            <tr>
+            <tr class="<?=(($v->id == $d->tabela_padrao)?'bg-primary':false)?>">
                 <td><?=$v->name?></td>
                 <td><?=$v->monthlyFee?></td>
                 <td><?=$v->annualFee?></td>
@@ -51,7 +58,7 @@
                 <td><?=$v->minNumberOfYearsAntecipated?></td>
                 <td><?=$v->maxNumberOfYearsAntecipated?></td>
                 <td>
-
+                    <input padrao type="checkbox" class="form-check-input" value="<?=$v->id?>">
                 </td>
             </tr>
         <?php
@@ -74,6 +81,22 @@
             Carregando();
             $.ajax({
                 url:"financeira/vctex/index.php",
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            })
+        })
+
+        $("input[padrao]").click(function(){
+            id = $(this).val();
+            Carregando();
+            $.ajax({
+                url:"financeira/vctex/index.php",
+                type:"POST",
+                data:{
+                    acao:'padrao',
+                    id
+                },
                 success:function(dados){
                     $("#paginaHome").html(dados);
                 }
