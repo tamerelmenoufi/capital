@@ -20,6 +20,7 @@ $tabelas = json_decode($d->api_tabelas);
             <tr>
             <th scope="col">name</th>
             <th scope="col">annualFee</th>
+            <th scope="col">monthlyFee</th>
             <th scope="col">maxDisbursedAmount</th>
             <th scope="col">minDisbursedAmount</th>
             <th scope="col">maxNumberOfYearsAntecipated</th>
@@ -34,6 +35,7 @@ $tabelas = json_decode($d->api_tabelas);
             <tr>
                 <td><?=$v->name?></td>
                 <td><?=$v->annualFee?></td>
+                <td><?=$v->monthlyFee?></td>
                 <td><?=$v->maxDisbursedAmount?></td>
                 <td><?=$v->minDisbursedAmount?></td>
                 <td><?=$v->maxNumberOfYearsAntecipated?></td>
