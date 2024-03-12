@@ -18,7 +18,6 @@ $tabelas = json_decode($d->api_tabelas);
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">id</th>
             <th scope="col">name</th>
             <th scope="col">annualFee</th>
             <th scope="col">maxDisbursedAmount</th>
