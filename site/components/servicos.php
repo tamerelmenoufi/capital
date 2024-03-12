@@ -29,7 +29,12 @@
     background-color: #393287;
     border-color: #393287;
     }
-
+    .botaoverde:hover {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+    
     .botaoroxo:hover {
     color: #fff;
     background-color: #574ec2;
