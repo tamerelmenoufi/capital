@@ -29,8 +29,8 @@
         <thead>
             <tr>
             <th scope="col"><?=$tab_disc['name']?></th>
-            <th scope="col"><?=$tab_disc['annualFee']?></th>
             <th scope="col"><?=$tab_disc['monthlyFee']?></th>
+            <th scope="col"><?=$tab_disc['annualFee']?></th>
             <th scope="col"><?=$tab_disc['minDisbursedAmount']?></th>
             <th scope="col"><?=$tab_disc['maxDisbursedAmount']?></th>
             <th scope="col"><?=$tab_disc['minNumberOfYearsAntecipated']?></th>
@@ -44,8 +44,8 @@
         ?>
             <tr>
                 <td><?=$v->name?></td>
-                <td><?=$v->annualFee?></td>
                 <td><?=$v->monthlyFee?></td>
+                <td><?=$v->annualFee?></td>
                 <td><?=$v->minDisbursedAmount?></td>
                 <td><?=$v->maxDisbursedAmount?></td>
                 <td><?=$v->minNumberOfYearsAntecipated?></td>
