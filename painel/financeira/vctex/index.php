@@ -13,7 +13,16 @@ $tabelas = json_decode($d->api_tabelas);
   <h5 class="card-header">Sistema Capital Financeira - VCTEX</h5>
   <div class="card-body">
     <h5 class="card-title">Tabelas disponíveis</h5>
-    <p class="card-text"><?=var_dump($tabelas)?></p>
+    <p class="card-text"><?=var_dump($tabelas)?>
+        <?php
+            foreach($tabelas->data as $i => $v){
+                foreach($v as $campo => $valor){
+                    echo "{$campo}:".$valor."<br>";
+                }
+                echo "<hr>";
+            }
+        ?>
+    </p>
     <button atualiza class="btn btn-primary">Atualizar</button>
   </div>
 </div>
