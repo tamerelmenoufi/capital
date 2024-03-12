@@ -29,6 +29,28 @@
     <h5 class="card-title">Consultas / Simulações /Propostas</h5>
     <p class="card-text">
         
+    <div class="input-group mb-3">
+        <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">CPF</button>
+        <ul class="dropdown-menu">
+            <li><a selecione="cpf" class="dropdown-item" href="#">CPF</a></li>
+            <li><a selecione="nome" class="dropdown-item" href="#">Nome</a></li>
+        </ul>
+        <input 
+            type="text" 
+            class="form-control" 
+            aria-label="Text input with dropdown button"
+            busca
+        >
+        <button
+            buscar
+            type="button" 
+            class="btn btn-outline-secondary"
+            campo="cpf"
+            rotulo="CPF"            
+        >Buscar</button>
+    </div>
+
+
     </p>
     <button atualiza class="btn btn-primary">Atualizar</button>
   </div>
@@ -50,7 +72,27 @@
             })
         })
 
-        
+        $("a[selecione]").click(function(){
+            campo = $(this).attr("selecione");
+            rotulo = $(this).text();
+            $("button[buscar]").attr("campo", campo);
+            $("button[buscar]").attr("rotulo", rotulo);
+            $("button[opcao_busca]").text(rotulo);
+        })
+
+        $("button[buscar]").click(function(){
+            // Carregando();
+            // $.ajax({
+            //     url:"financeira/vctex/consulta.php",
+            //     success:function(dados){
+            //         $("#paginaHome").html(dados);
+            //     }
+            // })
+            campo = $(this).attr("campo");
+            valor = $("input[busca]").val();
+            console.log(`Buscar: ${valor} em ${campo}`);
+
+        })        
 
 
     })
