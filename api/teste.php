@@ -21,12 +21,22 @@
         }
     }
 
-    echo $retorno;
+    if($tabelas){
+        echo "<h1>Tabelas</h1>";
 
-    echo "<hr>";
+        echo $tabelas;
 
-    echo print_r($dados);
+        echo "<hr>";
+    }else{
 
+        echo "<h1>Conexão</h1>";
+
+        echo $retorno;
+
+        echo "<hr>";
+
+        echo print_r($dados);
+    }
 exit();
 
 
