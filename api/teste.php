@@ -16,29 +16,20 @@
     }else{
         $retorno = $vctex->Token();
         $dados = json_decode($retorno);
-        echo "Retorno: ".print_r($dados). "<br>";
         if($dados->statusCode == 200){
-            echo "Expira: ".$dados->token->expires. "<br>";
             mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_dados = '{$retorno}' where codigo = '1'");
+            $tabelas = $vctex->Tabelas($dados->token->accessToken);
         }
     }
 
-    if($tabelas){
-        echo "<h1>Tabelas</h1>";
 
-        echo $tabelas;
+    echo "<h1>Tabelas</h1>";
 
-        echo "<hr>";
-    }else{
+    echo $tabelas;
 
-        echo "<h1>Conexão</h1>";
+    echo "<hr>";
 
-        echo $retorno;
 
-        echo "<hr>";
-
-        echo print_r($dados);
-    }
 exit();
 
 
