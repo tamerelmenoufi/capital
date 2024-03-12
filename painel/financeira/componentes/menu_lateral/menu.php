@@ -34,7 +34,15 @@
     <div class="row mb-1 menu-cinza">
       <div class="col">
         <a url="financeira/vctex/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-solid fa-chart-line"></i> VCTEX
+          <i class="fa-solid fa-chart-line"></i> VCTEX - Tabelas
+        </a>
+      </div>
+    </div>
+
+    <div class="row mb-1 menu-cinza">
+      <div class="col">
+        <a url="financeira/vctex/consulta.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-chart-line"></i> VCTEX - Consultas
         </a>
       </div>
     </div>
