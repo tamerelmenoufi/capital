@@ -8,9 +8,6 @@
       padding: 15px;
     padding-left: 35px;
     padding-right: 35px;
-    border: 1px solid #198754;
-    background: #198754;
-    color: #fff;
     border-radius: 25px 2px 25px;
     font-size: 17px;
     }
@@ -119,7 +116,7 @@
 
           <center style="margin-top:20px">
           <a href="noticia_categoria.php">
-         <button type="button" class="botaoverde">
+         <button type="button" class="btn btn-primary botaoverde">
           Outros eventos
         </button></a>
       </center>
