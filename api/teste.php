@@ -16,6 +16,7 @@
     }else{
         $retorno = $vctex->Token();
         $dados = json_encode($retorno);
+        echo "Retorno: ".print_r($dados). "<br>";
         if($dados->statusCode == 200){
             echo "Expira: ".$dados['token']['expires']. "<br>";
             echo "Retorno: ".print_r($dados). "<br>";
