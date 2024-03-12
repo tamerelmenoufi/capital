@@ -11,6 +11,35 @@
       font-size: 17px;
     }
 
+    .botaoroxo {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+ .botaoroxo {
+    color: #fff;
+    background-color: #393287;
+    border-color: #393287;
+}
+.botao {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  }
   </style>
     <section id="servicos"  style="padding:0px" class="recent-blog-posts">
 
@@ -39,7 +68,7 @@
               <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
               <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
               <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
-                <button type="button" class="btn btn-outline-primary">Leia Mais<i class="bi bi-arrow-right"></i></button>
+                <button type="button" class="botao botaoroxo">Leia Mais<i class="bi bi-arrow-right"></i></button>
               </a>
             </div>
           </div>
