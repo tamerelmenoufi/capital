@@ -49,7 +49,7 @@
     }
 
   </style>
-    <section id="noticias"  style="padding:0px" class="recent-blog-posts">
+    <section id="noticias"  style="padding:0px; margin-bottom:30px;" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
 
