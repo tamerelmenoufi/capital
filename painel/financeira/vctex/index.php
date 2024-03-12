@@ -18,9 +18,32 @@
         'minNumberOfYearsAntecipated' => 'Mínimo Antecipação',
     ];
 
-    $query = "select * from configuracoes where codigo = '1'";
+
+    $vctex = new Vctex;
+
+    $query = "select *, api_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
+
+    $agora = time();
+
+    if($agora < $d->api_expira){
+        $tabelas = $d->api_tabelas;
+    }else{
+        $retorno = $vctex->Token();
+        $dados = json_decode($retorno);
+        if($dados->statusCode == 200){
+            $tabelas = $vctex->Tabelas($dados->token->accessToken);
+            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_dados = '{$retorno}', api_tabelas = '{$tabelas}' where codigo = '1'");
+        }else{
+            $tabelas = 'error';
+        }
+    }
+
+
+    // $query = "select * from configuracoes where codigo = '1'";
+    // $result = mysqli_query($con, $query);
+    // $d = mysqli_fetch_object($result);
 
     $tabelas = json_decode($d->api_tabelas);
 
