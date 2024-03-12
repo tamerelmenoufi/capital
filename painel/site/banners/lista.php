@@ -65,7 +65,7 @@
                   <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
-                    <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 0)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> situacao="<?=$d->codigo?>">
+                    <input class="form-check-input situacao" type="checkbox" <?=(($d->situacao)?'checked':false)?> situacao="<?=$d->codigo?>">
                   </div>
 
                   </td>
