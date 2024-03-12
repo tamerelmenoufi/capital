@@ -48,8 +48,7 @@
   <h5 class="card-header">Sistema Capital Financeira - VCTEX</h5>
   <div class="card-body">
     <h5 class="card-title">Tabelas disponíveis</h5>
-    <p class="card-text"><?=var_dump($tabelas)?>
-
+    <p class="card-text">
         <table class="table">
             <thead>
                 <tr>
