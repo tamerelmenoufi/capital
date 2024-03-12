@@ -17,6 +17,9 @@
         $retorno = $vctex->Token();
         $dados = json_encode($retorno);
         if($dados->statusCode == 200){
+            echo "Expira: ".$dados['token']['expires']. "<br>";
+            echo "Retorno: ".print_r($dados). "<br>";
+
             mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados['token']['expires'])."', api_dados = '{$retorno}' where codigo = '1'");
         }
     }
