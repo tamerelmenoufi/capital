@@ -31,10 +31,10 @@
             <th scope="col"><?=$tab_disc['name']?></th>
             <th scope="col"><?=$tab_disc['annualFee']?></th>
             <th scope="col"><?=$tab_disc['monthlyFee']?></th>
-            <th scope="col"><?=$tab_disc['maxDisbursedAmount']?></th>
             <th scope="col"><?=$tab_disc['minDisbursedAmount']?></th>
-            <th scope="col"><?=$tab_disc['maxNumberOfYearsAntecipated']?></th>
+            <th scope="col"><?=$tab_disc['maxDisbursedAmount']?></th>
             <th scope="col"><?=$tab_disc['minNumberOfYearsAntecipated']?></th>
+            <th scope="col"><?=$tab_disc['maxNumberOfYearsAntecipated']?></th>
             <th scope="col">Padrão</th>
             </tr>
         </thead>
@@ -46,10 +46,10 @@
                 <td><?=$v->name?></td>
                 <td><?=$v->annualFee?></td>
                 <td><?=$v->monthlyFee?></td>
-                <td><?=$v->maxDisbursedAmount?></td>
                 <td><?=$v->minDisbursedAmount?></td>
-                <td><?=$v->maxNumberOfYearsAntecipated?></td>
+                <td><?=$v->maxDisbursedAmount?></td>
                 <td><?=$v->minNumberOfYearsAntecipated?></td>
+                <td><?=$v->maxNumberOfYearsAntecipated?></td>
                 <td>
 
                 </td>
