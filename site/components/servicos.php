@@ -11,7 +11,7 @@
       font-size: 17px;
     }
 
-    .botaoroxo {
+    .botaoroxo:hover {
     color: #fff;
     background-color: #574ec2;
     border-color: #574ec2;
@@ -106,8 +106,8 @@
 
           <center style="margin-top:20px">
           <a href="servico_categoria.php">
-         <button type="button" class="btn btn-primary botaoverde">
-          Outros serviços
+         <button type="button" class="botao botaoroxo">
+          Outros produtos
         </button></a>
       </center>
 
