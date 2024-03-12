@@ -17,7 +17,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Nossos serviços</h2>
+          <h2>Nossos Produtos</h2>
         </div>
 
         <div class="row">
