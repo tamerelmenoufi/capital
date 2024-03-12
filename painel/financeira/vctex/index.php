@@ -33,19 +33,19 @@ $tabelas = json_decode($d->api_tabelas);
             foreach($tabelas->data as $i => $v){
         ?>
             <tr>
-        <?php
-                foreach($v as $campo => $valor){
-                    echo "{$campo}:".$valor."<br>";
-        ?>
-                <td><?=$valor?></td>
-        <?php
-                }
-        ?>
+                <td><?=$v->name?></td>
+                <td><?=$v->annualFee?></td>
+                <td><?=$v->maxDisbursedAmount?></td>
+                <td><?=$v->minDisbursedAmount?></td>
+                <td><?=$v->maxNumberOfYearsAntecipated?></td>
+                <td><?=$v->minNumberOfYearsAntecipated?></td>
+                <td>
+
+                </td>
             </tr>
         <?php
             }
         ?>
-    
         </tbody>
     </table>
     </p>
