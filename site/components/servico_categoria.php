@@ -10,16 +10,82 @@
     color: #fff;
     transition: 0.4s;
     border-radius: 0;
+
+
   }
 
+
+
+  .recent-blog-posts .post-box .post-title {
+    font-size: 24px;
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
+}
+
+.recent-blog-posts .post-box .post-title:hover {
+    font-size: 24px;
+    color: #574ec2;
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
+}
+    .botaoverde{
+      padding: 15px;
+      padding-left: 35px;
+      padding-right: 35px;
+      border-radius: 25px 2px 25px;
+      font-size: 17px;
+      color: #fff;
+    background-color: #393287;
+    border-color: #393287;
+    }
+    .botaoverde:hover {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+    
+    .botaoroxo:hover {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+ .botaoroxo {
+    color: #fff;
+    background-color: #393287;
+    border-color: #393287;
+}
+.botao {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  }
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; color:#fff">
+    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; background:#3a338b !important;color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2 style="">Todos os Serviços</h2>
+          <h2 style="">Todos os Produtos</h2>
 
         </div>
 
@@ -45,7 +111,7 @@
               <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
 
               <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
-                <button type="button" class="btn btn-outline-primary">Leia Mais<i class="bi bi-arrow-right"></i></button>
+                <button type="button" class="botao botaoroxo">Leia Mais<i class="bi bi-arrow-right"></i></button>
               </a>
 
 
@@ -103,8 +169,8 @@
         <div class="col-lg-12" style="padding:10px">
 
     <a style="color:#fff" href="./">
-    <button style="margin-top:10px"  type="button"  class="float-end btn btn-primary">
-                Principal</button></a>
+    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
+                Voltar ao inicio</button></a>
  </div>
 </div>
 
