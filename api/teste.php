@@ -12,13 +12,15 @@
     $agora = time();
 
     if($agora < $d->api_expira){
-        $tabelas = $vctex->Tabelas($d->token);
+        $tabelas = $d->api_tabelas;
     }else{
         $retorno = $vctex->Token();
         $dados = json_decode($retorno);
         if($dados->statusCode == 200){
-            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_dados = '{$retorno}' where codigo = '1'");
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
+            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_dados = '{$retorno}', api_tabelas = '{$tabelas}' where codigo = '1'");
+        }else{
+            $tabelas = 'error';
         }
     }
 
