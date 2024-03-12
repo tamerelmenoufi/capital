@@ -9,6 +9,8 @@
     // include("/appinc/connect.php");
     include("fn.php");
 
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/api/vctex.php");
+
     $md5 = md5(date("YmdHis"));
 
     $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/painel/";
