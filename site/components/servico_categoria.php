@@ -170,7 +170,7 @@
 
     <a style="color:#fff" href="./">
     <button style="margin-top:10px"  type="button"  class=" botaoverde pull-right">
-                Volte para o inicio</button></a>
+                Voltar ao inicio</button></a>
  </div>
 </div>
 
