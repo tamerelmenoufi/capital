@@ -72,7 +72,7 @@
         <?php
             foreach($tabelas->data as $i => $v){
         ?>
-            <tr class="<?=(($v->id == $d->api_tabela_padrao)?'bg-primary':false)?>">
+            <tr class="<?=(($v->id == $d->api_tabela_padrao)?'bg-info bg-gradient':false)?>">
                 <td><?=$v->name?></td>
                 <td><?=$v->monthlyFee?></td>
                 <td><?=$v->annualFee?></td>
