@@ -1,8 +1,34 @@
 <?php
-
+    include("/capitalinc/connect.php");
+    $con = AppConnect('capital');
     include("classes.php");
 
     $vctex = new Vctex;
+
+    $query = "select *, api_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    $agora = time();
+
+    if($agora < $d->api_expira){
+        $tabelas = $vctex->Tabelas($d->token);
+    }else{
+        $retorno = $vctex->Token();
+        $dados = json_encode($retorno);
+        if($result['statusCode'] == 200){
+            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados['token']['expires'])."', api_dados = '{$retorno}' where codigo = '1'");
+        }
+    }
+
+    echo $retorno;
+
+    echo "<hr>";
+
+    echo print_r($dados);
+
+exit();
+
 
     // echo $retorno = $vctex->Token();
 
