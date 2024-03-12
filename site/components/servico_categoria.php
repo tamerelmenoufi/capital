@@ -81,7 +81,7 @@
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; background:#3a338b !important">
+    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; background:#3a338b !important;color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -169,8 +169,8 @@
         <div class="col-lg-12" style="padding:10px">
 
     <a style="color:#fff" href="./">
-    <button style="margin-top:10px"  type="button"  class=" botaoverde">
-                Principal</button></a>
+    <button style="margin-top:10px"  type="button"  class=" botaoverde pull-right">
+                Volte para o inicio</button></a>
  </div>
 </div>
 
