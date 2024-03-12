@@ -1,11 +1,21 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-$query = "select * from configuracoes where codigo = '1'";
-$result = mysqli_query($con, $query);
-$d = mysqli_fetch_object($result);
+    $tab_disc = [
+        'name' => 'Nome',
+        'annualFee' => 'Taxa Anual',
+        'monthlyFee' => 'Taxa Mensal',
+        'maxDisbursedAmount' => 'Valor Máximo',
+        'minDisbursedAmount' => 'Valor Mínimo',
+        'maxNumberOfYearsAntecipated' => 'Máximo Antecipação',
+        'minNumberOfYearsAntecipated' => 'Mínimo Antecipação',
+    ];
 
-$tabelas = json_decode($d->api_tabelas);
+    $query = "select * from configuracoes where codigo = '1'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    $tabelas = json_decode($d->api_tabelas);
 
 ?>
 
@@ -18,14 +28,14 @@ $tabelas = json_decode($d->api_tabelas);
     <table class="table">
         <thead>
             <tr>
-            <th scope="col">name</th>
-            <th scope="col">annualFee</th>
-            <th scope="col">monthlyFee</th>
-            <th scope="col">maxDisbursedAmount</th>
-            <th scope="col">minDisbursedAmount</th>
-            <th scope="col">maxNumberOfYearsAntecipated</th>
-            <th scope="col">minNumberOfYearsAntecipated</th>
-            <th scope="col">Ação</th>
+            <th scope="col"><?=$tab_disc['name']?></th>
+            <th scope="col"><?=$tab_disc['annualFee']?></th>
+            <th scope="col"><?=$tab_disc['monthlyFee']?></th>
+            <th scope="col"><?=$tab_disc['maxDisbursedAmount']?></th>
+            <th scope="col"><?=$tab_disc['minDisbursedAmount']?></th>
+            <th scope="col"><?=$tab_disc['maxNumberOfYearsAntecipated']?></th>
+            <th scope="col"><?=$tab_disc['minNumberOfYearsAntecipated']?></th>
+            <th scope="col">Padrão</th>
             </tr>
         </thead>
         <tbody>
