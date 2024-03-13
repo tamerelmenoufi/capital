@@ -163,9 +163,9 @@
 
         <div class="col-lg-12" style="padding:10px">
 
-    <a style="color:#fff" href="javascript:history.back()">
-    <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
-                Voltar</button></a>
+        <a style="color:#fff" href="./">
+    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
+                Voltar ao inicio</button></a>
  </div>
 </div>
 
