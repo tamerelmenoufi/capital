@@ -45,7 +45,7 @@
     <div class="card-text" style="min-height:400px;">
         
     <div class="input-group mb-3">
-        <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">CPF</button>
+        <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=(($_SESSION['vctex_rotulo'])?:'CPF')?></button>
         <ul class="dropdown-menu">
             <li><a selecione="cpf" class="dropdown-item" href="#">CPF</a></li>
             <li><a selecione="nome" class="dropdown-item" href="#">Nome</a></li>
@@ -55,13 +55,14 @@
             class="form-control" 
             aria-label="Text input with dropdown button"
             busca
+            value="<?=$_SESSION['vctex_valor']?>"
         >
         <button
             buscar
             type="button" 
             class="btn btn-outline-secondary"
-            campo="cpf"
-            rotulo="CPF"    
+            campo="<?=(($_SESSION['vctex_campo'])?:'cpf')?>"
+            rotulo="<?=(($_SESSION['vctex_rotulo'])?:'CPF')?>"    
         >Buscar</button>
     </div>
 
