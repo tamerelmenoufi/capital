@@ -54,7 +54,11 @@
             'cliente' => str_replace(['-',' ','.'],false,trim($d->cpf)),
             'tabela' => $d->tabela_padrao
         ]);
-
+print_r([
+    'token' => $token,
+    'cliente' => str_replace(['-',' ','.'],false,trim($d->cpf)),
+    'tabela' => $d->tabela_padrao
+]);
         $consulta = uniqid();
 
 
