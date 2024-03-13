@@ -51,9 +51,11 @@
 
         $simulacao = $vctex->Simular([
             'token' => $token,
-            'cliente' => $d->codigo,
+            'cliente' => str_replace(['-',' ','.'],false,trim($d->cpf)),
             'tabela' => $d->tabela_padrao
         ]);
+
+        $consulta = uniqid();
 
 
         echo $query = "insert into consultas set 
