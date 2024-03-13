@@ -33,9 +33,9 @@
   <h5 class="card-header">Sistema Capital Financeira - VCTEX</h5>
   <div class="card-body">
     <h5 class="card-title">Consultas / Simulações /Propostas</h5>
-    <p class="card-text">
+    <p class="card-text" style="min-height:400px;">
         
-    <div class="input-group mb-3" style="min-height:400px;">
+    <div class="input-group mb-3">
         <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">CPF</button>
         <ul class="dropdown-menu">
             <li><a selecione="cpf" class="dropdown-item" href="#">CPF</a></li>
