@@ -1,3 +1,35 @@
+
+<style>
+    
+    .botaodiferente{background: #ffffff;
+    border: 0;
+    padding: 13px 50px;
+    color: #393286;
+    transition: 0.4s;
+    border-radius: 25px;
+    border-left: 10px #393286 solid;
+    border-right: #393286 10px solid;
+    border-top: #393286 solid 1px;
+    border-bottom: #393286 solid 1px;
+}
+
+.botaodiferente:hover{
+    background: #393286;
+    border: 0;
+    padding: 13px 50px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 25px;
+    border-left: 10px #393286 solid;
+    border-right: #393286 10px solid;
+    border-top: #393286 solid 1px;
+    border-bottom: #393286 solid 1px;
+}
+
+
+
+  </style>
+
 <?php
 
     $query = "select * from configuracoes where codigo = '1'";
@@ -71,7 +103,7 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" id="message" placeholder="Sua mensagem" required></textarea>
               </div>
-              <div class="text-center"><button type="submit" class="btn btn-success">Enviar</button></div>
+              <div class="text-center"><button type="submit" class="botaodiferente">Enviar</button></div>
             </form>
           </div><!-- End Contact Form -->
 
