@@ -33,7 +33,7 @@
   <h5 class="card-header">Sistema Capital Financeira - VCTEX</h5>
   <div class="card-body">
     <h5 class="card-title">Consultas / Simulações /Propostas</h5>
-    <p class="card-text" style="min-height:400px;">
+    <div class="card-text" style="min-height:400px;">
         
     <div class="input-group mb-3">
         <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">CPF</button>
@@ -68,7 +68,7 @@
     </div>
 
 
-    </p>
+    </div>
     <button atualiza class="btn btn-primary">Atualizar</button>
   </div>
 </div>
