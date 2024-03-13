@@ -20,6 +20,12 @@
         }
     }
 
+    if($_POST['acao'] == 'consulta'){
+        $query = "select * from clientes where {$_POST['campo']} like '%${$_POST['valor']}%'";
+        $result = mysqli_query($con, $query);
+        $cliente = mysqli_fetch_object($result);
+    }
+
 
 ?>
 
@@ -46,8 +52,17 @@
             type="button" 
             class="btn btn-outline-secondary"
             campo="cpf"
-            rotulo="CPF"            
+            rotulo="CPF"    
         >Buscar</button>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-secondary" role="alert">
+                <div class="d-flex justify-content-center align-items-center" style="height:300px;">
+                    <h1 class="text-color-secondary">Busca sem resultados <i class="fa-regular fa-face-frown-open"></i></h1>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -90,23 +105,35 @@
 
         $("button[buscar]").click(function(){
             // Carregando();
-            // $.ajax({
-            //     url:"financeira/vctex/consulta.php",
-            //     success:function(dados){
-            //         $("#paginaHome").html(dados);
-            //     }
-            // })
+
             campo = $(this).attr("campo");
+            rotulo = $(this).attr("rotulo");
             valor = $("input[busca]").val();
             console.log(`Buscar: ${valor} em ${campo}`);
             if(campo == 'cpf'){
-                if(validarCPF(valor)){
-                    console.log(`CPF ${valor} Válido`);
-                }else{
-                    console.log(`CPF ${valor} Inválido`);
-
+                if(!validarCPF(valor)){
+                    $.alert({
+                        content:"CPF inválido!",
+                        title:"Erro",
+                        type:'red'
+                    });
+                    return false;
                 }
             }
+
+            $.ajax({
+                url:"financeira/vctex/consulta.php",
+                type:"POST",
+                data:{
+                    campo,
+                    rotulo,
+                    valor,
+                    acao:'consulta'
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            })            
             
 
         })        
