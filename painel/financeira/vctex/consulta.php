@@ -259,6 +259,7 @@
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
+                                    console.log(dados);
                                 },
                                 error:function(){
                                     alert('Erro')
