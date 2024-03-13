@@ -31,6 +31,23 @@
   color: #0dacad!important;
   font-weight: 500;
 }
+
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: #373085;
+}
+.navbar > ul > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #393287;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
 </style>
 
   <!-- ======= Header ======= -->
