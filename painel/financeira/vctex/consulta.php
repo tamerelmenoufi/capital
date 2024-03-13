@@ -73,7 +73,7 @@
             <div class="alert alert-secondary" role="alert">
                 <div class="d-flex flex-column justify-content-center align-items-center" style="height:300px;">
                     <h1 class="text-color-secondary">Busca sem resultados <i class="fa-regular fa-face-frown-open"></i></h1>
-                    <button novo type="button" class="btn btn-outline-primary btn-sm mt-3">Cadastrar um novo cliente</button>
+                    <button novo type="button" class="btn btn-outline-primary btn-sm mt-3"><i class="fa-regular fa-user"></i> Cadastrar um novo cliente</button>
                 </div>
             </div>
         </div>
