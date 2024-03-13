@@ -7,6 +7,8 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
+    $token = $d->token;
+
     $agora = time();
 
     if($agora > $d->api_expira){
@@ -14,6 +16,7 @@
         $dados = json_decode($retorno);
         if($dados->statusCode == 200){
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
+            $token = $dados->token->accessToken;
             mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_dados = '{$retorno}', api_tabelas = '{$tabelas}' where codigo = '1'");
         }else{
             $tabelas = 'error';
@@ -36,10 +39,22 @@
     }
 
     if($_POST['acao'] == 'simulacao'){
-        
+
         $_SESSION['vctex_campo'] = $_POST['campo'];
         $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
         $_SESSION['vctex_valor'] = $_POST['valor'];
+
+
+        $query = "select *, (select api_tabela_padrao from configuracoes where codigo = '1') as tabela_padrao from clientes where codigo = '{$_POST['cliente']}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+
+        $simulacao = $vctex->Simular([
+            'token' => $token,
+            'cliente' => $d->codigo,
+            'tabela' => $d->tabela_padrao
+        ]);
+
 
         $query = "insert into consultas set 
                                             consulta = '{$consulta}',
@@ -47,7 +62,7 @@
                                             cliente = '{$_POST['cliente']}',
                                             data = NOW(),
                                             tipo = 'simulacao',
-                                            dados = '{}'
+                                            dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
 
@@ -106,7 +121,7 @@
         </div>
     </div>
     <?php
-    }else{
+    }else if($cliente->codigo){
     ?>
     <div class="input-group mb-3">
         <span class="input-group-text"><?=$cliente->nome?></span>
@@ -114,6 +129,15 @@
         <button simulacao class="btn btn-outline-secondary" type="button" id="button-addon1">Criar uma Simulação</button>
     </div>
     <?php
+
+    $query = "select * from consultas where cliente = '{$cliente->codigo}' order by codigo desc";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+    ?>
+    <p>Consulta: <?=$d->codigo?></p>
+    <p><?php print_r($d->dados); ?></p>
+    <?php
+    }
     }
     ?>
     </div>
