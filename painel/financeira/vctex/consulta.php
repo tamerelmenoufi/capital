@@ -45,7 +45,7 @@
     <div class="card-text" style="min-height:400px;">
         
     <div class="input-group mb-3">
-        <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">CPF</button>
+        <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=(($_SESSION['vctex_rotulo'])?:'CPF')?></button>
         <ul class="dropdown-menu">
             <li><a selecione="cpf" class="dropdown-item" href="#">CPF</a></li>
             <li><a selecione="nome" class="dropdown-item" href="#">Nome</a></li>
@@ -55,13 +55,14 @@
             class="form-control" 
             aria-label="Text input with dropdown button"
             busca
+            value="<?=$_SESSION['vctex_valor']?>"
         >
         <button
             buscar
             type="button" 
             class="btn btn-outline-secondary"
-            campo="cpf"
-            rotulo="CPF"    
+            campo="<?=(($_SESSION['vctex_campo'])?:'cpf')?>"
+            rotulo="<?=(($_SESSION['vctex_rotulo'])?:'CPF')?>"    
         >Buscar</button>
     </div>
 
@@ -73,7 +74,15 @@
             <div class="alert alert-secondary" role="alert">
                 <div class="d-flex flex-column justify-content-center align-items-center" style="height:300px;">
                     <h1 class="text-color-secondary">Busca sem resultados <i class="fa-regular fa-face-frown-open"></i></h1>
-                    <button novo type="button" class="btn btn-outline-primary btn-sm mt-3"><i class="fa-regular fa-user"></i> Cadastrar um novo cliente</button>
+                    <button 
+                        novo
+                        type="button"
+                        class="btn btn-outline-primary btn-sm mt-3"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                    ><i class="fa-regular fa-user"></i> Cadastrar um novo cliente</button>
                 </div>
             </div>
         </div>
@@ -92,8 +101,13 @@
 
         Carregando('none');
 
+        <?php
+        if($_SESSION['vctex_rotulo'] == 'CPF'){
+        ?>
         $("input[busca]").mask("999.999.999-99");
-
+        <?php
+        }
+        ?>
         $("button[atualiza]").click(function(){
             Carregando();
             $.ajax({
