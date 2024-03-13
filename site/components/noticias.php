@@ -29,6 +29,17 @@
     background-color: #fff;
     border-color: #393287;
     }
+    
+    .botaonovoroxo:hover{
+      padding: 15px;
+      padding-left: 35px;
+      padding-right: 35px;
+      border-radius: 25px 2px 25px;
+      font-size: 17px;
+      color: #393287;
+    background-color: #393287;
+    border-color: #393287;
+    }
     .botaoverde:hover {
     color: #fff;
     background-color: #574ec2;
