@@ -20,10 +20,19 @@
         }
     }
 
+    if($_POST['acao'] == 'limpar'){
+        $_SESSION['vctex_campo'] = false;
+        $_SESSION['vctex_rotulo'] = false;
+        $_SESSION['vctex_valor'] = false;
+    }
+
     if($_POST['acao'] == 'consulta'){
         $query = "select * from clientes where {$_POST['campo']} like '%${$_POST['valor']}%'";
         $result = mysqli_query($con, $query);
         $cliente = mysqli_fetch_object($result);
+        $_SESSION['vctex_campo'] = $_POST['campo'];
+        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
+        $_SESSION['vctex_valor'] = $_POST['valor'];
     }
 
 
@@ -106,7 +115,7 @@
         })
 
         $("button[buscar]").click(function(){
-            // Carregando();
+            
 
             campo = $(this).attr("campo");
             rotulo = $(this).attr("rotulo");
@@ -122,7 +131,7 @@
                     return false;
                 }
             }
-
+            Carregando();
             $.ajax({
                 url:"financeira/vctex/consulta.php",
                 type:"POST",
@@ -138,7 +147,24 @@
             })            
             
 
-        })        
+        })     
+        
+        $("button[limpar]").click(function(){
+            Carregando();
+
+            $.ajax({
+                url:"financeira/vctex/consulta.php",
+                type:"POST",
+                data:{
+                    acao:'limpar'
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            })            
+            
+
+        })     
 
 
     })
