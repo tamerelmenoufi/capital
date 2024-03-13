@@ -62,6 +62,8 @@
 
         Carregando('none');
 
+        $("input[busca]").mask("999.999.999-99");
+
         $("button[atualiza]").click(function(){
             Carregando();
             $.ajax({
@@ -78,6 +80,12 @@
             $("button[buscar]").attr("campo", campo);
             $("button[buscar]").attr("rotulo", rotulo);
             $("button[opcao_busca]").text(rotulo);
+            if(campo == 'cpf'){
+                $("input[busca]").mask("999.999.999-99");
+            }else{
+                $("input[busca]").unmask();
+            }
+            $("input[busca]").val('');
         })
 
         $("button[buscar]").click(function(){
@@ -91,7 +99,6 @@
             campo = $(this).attr("campo");
             valor = $("input[busca]").val();
             console.log(`Buscar: ${valor} em ${campo}`);
-
         })        
 
 
