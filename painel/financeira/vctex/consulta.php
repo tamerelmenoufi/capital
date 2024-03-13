@@ -35,6 +35,22 @@
         $_SESSION['vctex_valor'] = $_POST['valor'];
     }
 
+    if($_POST['acao'] == 'simulacao'){
+        $_SESSION['vctex_campo'] = $_POST['campo'];
+        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
+        $_SESSION['vctex_valor'] = $_POST['valor'];
+
+        $query = "insert into consultas set 
+                                            consulta = '{$consulta}',
+                                            operadora = 'VCTEX',
+                                            cliente = '{$_POST[']}',
+                                            data
+                                            tipo
+                                            dados
+                                            ";
+
+    }
+
 
 ?>
 
@@ -86,6 +102,14 @@
                 </div>
             </div>
         </div>
+    </div>
+    <?php
+    }else{
+    ?>
+    <div class="input-group mb-3">
+        <span class="input-group-text"><?=$cliente->nome?></span>
+        <span class="input-group-text"><?=$cliente->cpf?></span>
+        <button simulacao class="btn btn-outline-secondary" type="button" id="button-addon1">Criar uma Simulação</button>
     </div>
     <?php
     }
@@ -183,6 +207,49 @@
             
 
         })     
+
+        $("button[simulacao]").click(function(){
+
+            $.confirm({
+                title:"Simulação",
+                content:"Confirma a solicitação para simulação?",
+                type:"orange",
+                buttons:{
+                    'sim':{
+                        text:'Sim',
+                        btnClass:'btn btn-success btn-sm',
+                        actio:function(){
+                            Carregando();
+
+                            $.ajax({
+                                url:"financeira/vctex/consulta.php",
+                                type:"POST",
+                                data:{
+                                    acao:'similacao',
+                                    campo:'<?=$_SESSION['vctex_campo']?>',
+                                    rotulo:'<?=$_SESSION['vctex_rotulo']?>',
+                                    valor:'<?=$_SESSION['vctex_valor']?>',
+                                    cliente:'<?=$cliente->codigo?>'
+                                },
+                                success:function(dados){
+                                    $("#paginaHome").html(dados);
+                                }
+                            })  
+                        }
+                    },
+                    'nao':{
+                        text:'Não',
+                        btnClass:'btn btn-danger btn-sm',
+                        actio:function(){
+                            
+                        }
+                    }
+                }
+            })
+          
+            
+
+        })  
 
 
     })
