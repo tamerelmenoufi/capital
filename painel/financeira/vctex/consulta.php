@@ -51,7 +51,7 @@
 
         $simulacao = $vctex->Simular([
             'token' => $token,
-            'cliente' => str_replace(['-',' ','.'],false,trim($d->cpf)),
+            'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
             'tabela' => $d->tabela_padrao
         ]);
 print_r([
