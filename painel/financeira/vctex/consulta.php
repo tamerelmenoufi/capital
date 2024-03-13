@@ -35,7 +35,7 @@
     <h5 class="card-title">Consultas / Simulações /Propostas</h5>
     <p class="card-text">
         
-    <div class="input-group mb-3">
+    <div class="input-group mb-3" style="min-height:400px;">
         <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">CPF</button>
         <ul class="dropdown-menu">
             <li><a selecione="cpf" class="dropdown-item" href="#">CPF</a></li>
@@ -55,6 +55,8 @@
             rotulo="CPF"    
         >Buscar</button>
     </div>
+
+
     <div class="row">
         <div class="col">
             <div class="alert alert-secondary" role="alert">
