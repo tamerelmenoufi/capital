@@ -149,6 +149,34 @@ print_r([
             </div>
             <div class="card-body">
             <table class="table table-hover">
+
+                <thead>
+                    <tr>
+                        <th>c1</th>
+                        <th>c2</th>
+                        <th>c3</th>
+                        <th>c4</th>
+                        <th>c5</th>
+                        <th>c6</th>
+                        <th>c7</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?=$dados->data->simulationData->iofAmount?></td>
+                        <td><?=$dados->data->simulationData->totalReleasedAmount?></td>
+                        <td><?=$dados->data->simulationData->totalAmount?></td>
+                        <td><?=$dados->data->simulationData->contractTACAmount?></td>
+                        <td><?=$dados->data->simulationData->contractCETRate?></td>
+                        <td><?=$dados->data->simulationData->contractRate?></td>
+                        <td><?=$dados->data->simulationData->minDisbursedAmount?></td>
+                    </tr>
+                </tbody>
+
+
+
+
+
                 <thead>
                     <tr>
                         <th>c1</th>
