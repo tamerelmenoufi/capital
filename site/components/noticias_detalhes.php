@@ -7,19 +7,81 @@
 ?>
 <style>
 
-.botaoazul{
-  background: var(--color-primary);
-  border: 0;
-  padding: 10px 35px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 0;
+.recent-blog-posts .post-box .post-title {
+    font-size: 24px;
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
 }
+
+.recent-blog-posts .post-box .post-title:hover {
+    font-size: 24px;
+    color: #574ec2;
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
+}
+    .botaonovoroxo{
+      padding: 15px;
+
+      border-radius: 2px 2px 25px;
+      font-size: 17px;
+      color: #393287;
+    background-color: #fff;
+    border-color: #393287;
+    }
+    
+    .botaonovoroxo:hover{
+      padding: 15px;
+      border-radius: 2px 2px 25px;
+      font-size: 17px;
+      color: #fff;
+    background-color: #393287;
+    border-color: #393287;
+    }
+    .botaoverde:hover {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+    
+    .botaoroxo:hover {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+ .botaoroxo {
+    color: #fff;
+    background-color: #393287;
+    border-color: #393287;
+}
+.botao {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  }
 
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div style="font-weight:450;background:#057a34;color:#fff" class="breadcrumbs">
+    <div style="font-weight:450;background:#3a338b !important;color:#fff" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -252,7 +314,7 @@
               <!-- End sidebar categories-->
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title">Mais Eventos</h3>
+                <h3 class="sidebar-title ">Mais noticias</h3>
 
                 <div class="mt-3">
                   <?php
@@ -273,7 +335,7 @@
 
 
                 </div>
-               <center style="margin-top:20px"> <a href='noticia_categoria.php' type="button" class="btn btn-outline-success">Mais eventos</a></center>
+               <center style="margin-top:20px"> <a href='noticia_categoria.php' type="button" class="botao botaoroxo">Mais noticias</a></center>
               </div><!-- End sidebar recent posts-->
 
               <!-- <div class="sidebar-item tags">
@@ -299,12 +361,13 @@
           </div>
         </div>
 
-        <div class="col-lg-12">
+        <div class="col-lg-12" style="padding:10px;text-align:right">
 
-    <button style="margin-top:10px"  type="button"  class="float-end  botaoazul">
-                 <a style="color:#fff" href="javascript:history.back()">Voltar</a></button>
+        <a style="color:#fff" href="./">
+    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoroxo ">
+                Voltar ao inicio</button></a>
  </div>
-
+ 
 
 
       </div>
