@@ -96,8 +96,8 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
               <div class="post-img evento">
-                <div style="background-image:url(<?=$localPainel?>volume/noticias/<?=$d->imagem?>);" class="imagemEventoFundo"></div>
-                <div style="background-image:url(<?=$localPainel?>volume/noticias/<?=$d->imagem?>);" class="imagemEvento"></div>
+                <div style="background-image:url(<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>);" class="imagemEventoFundo"></div>
+                <div style="background-image:url(<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>);" class="imagemEvento"></div>
               </div>
               <!-- <div class="meta">
                 <span class="post-date">Tue, December 12</span>
