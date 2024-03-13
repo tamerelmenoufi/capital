@@ -1,7 +1,8 @@
 
 <style>
     
-    .botaodiferente{background: #ffffff;
+    .botaodiferente{
+      background: #ffffff;
     border: 0;
     padding: 13px 50px;
     color: #393286;
@@ -103,7 +104,19 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" id="message" placeholder="Sua mensagem" required></textarea>
               </div>
-              <div class="text-center"><button type="submit" class="botaodiferente">Enviar</button></div>
+              <div class="text-center"><button type="submit" class="botaodiferente" style="
+                background: #ffffff;
+    border: 0;
+    padding: 13px 50px;
+    color: #393286;
+    transition: 0.4s;
+    border-radius: 25px;
+    border-left: 10px #393286 solid;
+    border-right: #393286 10px solid;
+    border-top: #393286 solid 1px;
+    border-bottom: #393286 solid 1px;
+              "
+              >Enviar</button></div>
             </form>
           </div><!-- End Contact Form -->
 
