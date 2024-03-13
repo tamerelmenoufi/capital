@@ -56,7 +56,7 @@
         ]);
 
 
-        $query = "insert into consultas set 
+        echo $query = "insert into consultas set 
                                             consulta = '{$consulta}',
                                             operadora = 'VCTEX',
                                             cliente = '{$_POST['cliente']}',
