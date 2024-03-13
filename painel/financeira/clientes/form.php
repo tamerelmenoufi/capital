@@ -65,7 +65,7 @@
                     <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
                     <label for="cpf">CPF*</label>
                 </div>
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                     <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
                     <label for="telefone">Telefone*</label>
                 </div>
@@ -125,7 +125,7 @@
                 </div>
                 <?php
                 }
-                ?>
+                ?> -->
             </div>
         </div>
 
