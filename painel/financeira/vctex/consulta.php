@@ -251,7 +251,7 @@
                                 url:"financeira/vctex/consulta.php",
                                 type:"POST",
                                 data:{
-                                    acao:'similacao',
+                                    acao:'simulacao',
                                     campo:'<?=$_SESSION['vctex_campo']?>',
                                     rotulo:'<?=$_SESSION['vctex_rotulo']?>',
                                     valor:'<?=$_SESSION['vctex_valor']?>',
