@@ -99,6 +99,16 @@
             campo = $(this).attr("campo");
             valor = $("input[busca]").val();
             console.log(`Buscar: ${valor} em ${campo}`);
+            if(campo == 'cpf'){
+                if(validarCpf(valor)){
+                    console.log(`CPF ${valor} Válido`);
+                }else{
+                    console.log(`CPF ${valor} Inválido`);
+
+                }
+            }
+            
+
         })        
 
 
