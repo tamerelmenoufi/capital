@@ -31,7 +31,7 @@
     
     .botaonovoroxo:hover{
       padding: 15px;
-      border-radius: 22px 2px 25px;
+      border-radius: 2px 2px 25px;
       font-size: 17px;
       color: #fff;
     background-color: #393287;
