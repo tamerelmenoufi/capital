@@ -36,6 +36,7 @@
     }
 
     if($_POST['acao'] == 'simulacao'){
+        
         $_SESSION['vctex_campo'] = $_POST['campo'];
         $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
         $_SESSION['vctex_valor'] = $_POST['valor'];
@@ -43,11 +44,12 @@
         $query = "insert into consultas set 
                                             consulta = '{$consulta}',
                                             operadora = 'VCTEX',
-                                            cliente = '{$_POST[']}',
-                                            data
-                                            tipo
-                                            dados
+                                            cliente = '{$_POST['cliente']}',
+                                            data = NOW(),
+                                            tipo = 'simulacao',
+                                            dados = '{}'
                                             ";
+        mysqli_query($con, $query);
 
     }
 
