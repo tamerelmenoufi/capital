@@ -65,18 +65,22 @@
         >Buscar</button>
     </div>
 
-
+    <?php
+    if($_POST['acao'] == 'consulta' and !$cliente->codigo){
+    ?>
     <div class="row">
         <div class="col">
             <div class="alert alert-secondary" role="alert">
                 <div class="d-flex justify-content-center align-items-center" style="height:300px;">
                     <h1 class="text-color-secondary">Busca sem resultados <i class="fa-regular fa-face-frown-open"></i></h1>
+                    <button novo type="button" class="btn btn-outline-primary">Cadastrar um novo cliente</button>
                 </div>
             </div>
         </div>
     </div>
-
-
+    <?php
+    }
+    ?>
     </div>
     <button atualiza class="btn btn-primary">Atualizar</button>
   </div>
