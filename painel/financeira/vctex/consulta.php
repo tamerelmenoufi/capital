@@ -65,6 +65,7 @@
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
+        exit();
 
     }
 
