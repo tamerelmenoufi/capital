@@ -143,7 +143,7 @@ print_r([
         $dados = json_decode($d->dados);
         if($dados->statusCode == 200){
     ?>
-        <div class="card">
+        <div class="card mb-2">
             <div class="card-header">
             Simulação - <?=$d->consulta?>
             </div>
@@ -177,7 +177,7 @@ print_r([
     <?php
         }else{
     ?>
-    <div class="card">
+    <div class="card mb-2">
         <div class="card-header">
         Simulação - <?=$d->consulta?>
         </div>
