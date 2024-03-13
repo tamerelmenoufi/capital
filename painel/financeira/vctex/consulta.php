@@ -93,8 +93,13 @@
 
         Carregando('none');
 
+        <?php
+        if($_SESSION['vctex_rotulo'] == 'CPF'){
+        ?>
         $("input[busca]").mask("999.999.999-99");
-
+        <?php
+        }
+        ?>
         $("button[atualiza]").click(function(){
             Carregando();
             $.ajax({
