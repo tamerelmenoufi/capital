@@ -65,7 +65,7 @@
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
-        exit();
+        // exit();
 
     }
 
@@ -245,7 +245,7 @@
                     'sim':{
                         text:'Sim',
                         btnClass:'btn btn-success btn-sm',
-                        actio:function(){
+                        action:function(){
                             Carregando();
 
                             $.ajax({
@@ -260,7 +260,7 @@
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
-                                    console.log(dados);
+                                    // console.log(dados);
                                 },
                                 error:function(){
                                     alert('Erro')
@@ -271,7 +271,7 @@
                     'nao':{
                         text:'Não',
                         btnClass:'btn btn-danger btn-sm',
-                        actio:function(){
+                        action:function(){
                             
                         }
                     }
