@@ -259,6 +259,9 @@
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
+                                },
+                                error:function(){
+                                    alert('Erro')
                                 }
                             })  
                         }
