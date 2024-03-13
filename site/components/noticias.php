@@ -21,9 +21,8 @@
 }
     .botaonovoroxo{
       padding: 15px;
-      padding-left: 35px;
-      padding-right: 35px;
-      border-radius: 25px 2px 25px;
+
+      border-radius: 2px 2px 25px;
       font-size: 17px;
       color: #393287;
     background-color: #fff;
@@ -32,11 +31,9 @@
     
     .botaonovoroxo:hover{
       padding: 15px;
-      padding-left: 35px;
-      padding-right: 35px;
-      border-radius: 25px 2px 25px;
+      border-radius: 22px 2px 25px;
       font-size: 17px;
-      color: #393287;
+      color: #fff;
     background-color: #393287;
     border-color: #393287;
     }
