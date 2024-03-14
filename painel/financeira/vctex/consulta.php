@@ -30,9 +30,6 @@
     }
 
     if($_POST['acao'] == 'consulta'){
-        $query = "select * from clientes where {$_POST['campo']} like '%${$_POST['valor']}%'";
-        $result = mysqli_query($con, $query);
-        $cliente = mysqli_fetch_object($result);
         $_SESSION['vctex_campo'] = $_POST['campo'];
         $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
         $_SESSION['vctex_valor'] = $_POST['valor'];
@@ -54,11 +51,11 @@
             'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
             'tabela' => $d->tabela_padrao
         ]);
-print_r([
-    'token' => $token,
-    'cliente' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-    'tabela' => $d->tabela_padrao
-]);
+        // print_r([
+        //     'token' => $token,
+        //     'cliente' => str_replace(['-',' ','.'],false,trim($d->cpf)),
+        //     'tabela' => $d->tabela_padrao
+        // ]);
         $consulta = uniqid();
 
 
@@ -75,6 +72,11 @@ print_r([
 
     }
 
+
+
+    $query = "select * from clientes where {$_SESSION['vctex_campo']} like '%${$_SESSION['vctex_valor']}%'";
+    $result = mysqli_query($con, $query);
+    $cliente = mysqli_fetch_object($result);
 
 ?>
 
