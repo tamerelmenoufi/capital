@@ -204,8 +204,8 @@
     <?php
         }else{
     ?>
-    <div class="card mb-2">
-        <div class="card-header">
+    <div class="card mb-2 border-danger">
+        <div class="card-header bg-danger text-white">
         Simulação - <?=$d->consulta?>
         </div>
         <table class="table table-hover">
