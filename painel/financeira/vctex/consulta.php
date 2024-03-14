@@ -149,9 +149,6 @@
             <div class="card-header">
             Simulação - <?=$d->consulta?>
             </div>
-            <div class="card-body">
-            
-            </div>
             <table class="table table-hover table-striped">
 
             <!-- "installments": [
@@ -211,7 +208,6 @@
         <div class="card-header">
         Simulação - <?=$d->consulta?>
         </div>
-        <div class="card-body">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -226,7 +222,6 @@
                 </tr>
             </tbody>    
         </table>
-        </div>
     </div>
     <?php
         }
