@@ -88,6 +88,50 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
+        echo "
+                        {
+                            \"feeScheduleId\": {$d->tabela},
+                            \"financialId\": \"{$d->financialId}\",
+                            \"borrower\": {
+                            \"name\": \"{$d->nome}\",
+                            \"cpf\": \"{$d->cpf}\",
+                            \"birthdate\": \"{$d->birthdate}\",
+                            \"gender\": \"{$d->gender}\",
+                            \"phoneNumber\": \"{$d->phoneNumber}\",
+                            \"email\": \"{$d->email}\",
+                            \"maritalStatus\": \"{$d->maritalStatus}\",
+                            \"nationality\": \"{$d->nationality}\",
+                            \"naturalness\": \"{$d->naturalness}\",
+                            \"motherName\": \"{$d->motherName}\",
+                            \"fatherName\": \"{$d->fatherName}\",
+                            \"pep\": {$d->pep}
+                            },
+                            \"document\": {
+                            \"type\": \"{$d->document_type}\",
+                            \"number\": \"{$d->document_number}\",
+                            \"issuingState\": \"{$d->document_issuingState}\",
+                            \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
+                            \"issueDate\": \"{$d->document_issueDate}\"
+                            },
+                            \"address\": {
+                            \"zipCode\": \"{$d->address_zipCode}\",
+                            \"street\": \"{$d->address_street}\",
+                            \"number\": \"{$d->address_number}\",
+                            \"complement\": \"{$d->address_complement}\",
+                            \"neighborhood\": \"{$d->address_neighborhood}\",
+                            \"city\": \"{$d->address_city}\",
+                            \"state\": \"{$d->address_state}\"
+                            },
+                            \"disbursementBankAccount\": {
+                            \"bankCode\": \"{$d->bankCode}\",
+                            \"accountType\": \"{$d->accountType}\",
+                            \"accountNumber\": \"{$d->accountNumber}\",
+                            \"accountDigit\": \"{$d->accountDigit}\",
+                            \"branchNumber\": \"{$d->branchNumber}\"
+                            }
+                        }
+            ";
+
         $proposta = $vctex->Simular([
             'token' => $token,
             'json' => "
