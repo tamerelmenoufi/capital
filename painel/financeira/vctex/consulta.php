@@ -149,8 +149,8 @@
             <div class="card-header bg-primary text-white">
             Simulação - <?=strtoupper($d->consulta)?>
             </div>
-            <div class="d-flex justify-content-between">
-                <?=strtoupper($d->tipo)?> realizada em <?=dataBR($d->data)?>
+            <div class="d-flex justify-content-between p-2">
+                <span style="color:#a1a1a1; font-size:12px;"><?=strtoupper($d->tipo)?> realizada em <?=dataBR($d->data)?></span>
             </div>
             <table class="table table-hover table-striped">
                 <thead>
