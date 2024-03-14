@@ -196,7 +196,7 @@
                     // "isVendexFeeScheduleAvailable": false,
                     // "isExponentialFeeScheduleAvailable": false
 
-                if($dados->data->isExponentialFeeScheduleAvailable){
+                if(!$dados->data->isExponentialFeeScheduleAvailable){
             ?>
             <p>
                 A simulação apresenta uma tabela <b><?=$dados->data->financialId?></b> mais vantajoso.
