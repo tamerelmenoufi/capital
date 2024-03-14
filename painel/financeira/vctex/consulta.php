@@ -137,7 +137,7 @@
         // }";
 
             // cpf,phoneNumber,document_number, zipCode, bankCode, accountNumber, accountDigit, branchNumber
-        $proposta = $vctex->Simular([
+        $proposta = $vctex->Credito([
             'token' => $token,
             'json' => "{
                             \"feeScheduleId\": {$d->tabela},
