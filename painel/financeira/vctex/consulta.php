@@ -144,10 +144,11 @@
     }
 
 
-
-    $query = "select * from clientes where {$_SESSION['vctex_campo']} like '%${$_SESSION['vctex_valor']}%'";
-    $result = mysqli_query($con, $query);
-    $cliente = mysqli_fetch_object($result);
+    if($_SESSION['vctex_campo'] and $_SESSION['vctex_valor']){
+        $query = "select * from clientes where {$_SESSION['vctex_campo']} like '%${$_SESSION['vctex_valor']}%'";
+        $result = mysqli_query($con, $query);
+        $cliente = mysqli_fetch_object($result);
+    }
 
 ?>
 
