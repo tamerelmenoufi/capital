@@ -51,7 +51,7 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-        $simulacao = $vctex->Simular([
+        echo $simulacao = $vctex->Simular([
             'token' => $token,
             'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
             'tabela' => $d->tabela_padrao
