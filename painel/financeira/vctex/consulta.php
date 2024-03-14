@@ -145,8 +145,8 @@
         $dados = json_decode($d->dados);
         if($dados->statusCode == 200){
     ?>
-        <div class="card mb-2">
-            <div class="card-header">
+        <div class="card mb-2 border-primary">
+            <div class="card-header bg-primary">
             Simulação - <?=$d->consulta?>
             </div>
             <table class="table table-hover table-striped">
