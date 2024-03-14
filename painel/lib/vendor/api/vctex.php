@@ -103,29 +103,31 @@ class Vctex {
 
     public function Credito($dados){
 
-        $curl = curl_init();
+        return $dados['json'];
 
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente)."service/proposal",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => $dados['json'],
-        CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/json',
-            'Accept: application/json',
-            'Authorization: Bearer '.$dados['token']
-        ),
-        ));
+        // $curl = curl_init();
 
-        $response = curl_exec($curl);
-        curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."/orders/preview"."\n".$this->apiKey($this->ambiente)."\n";
+        // curl_setopt_array($curl, array(
+        // CURLOPT_URL => $this->Ambiente($this->ambiente)."service/proposal",
+        // CURLOPT_RETURNTRANSFER => true,
+        // CURLOPT_ENCODING => '',
+        // CURLOPT_MAXREDIRS => 10,
+        // CURLOPT_TIMEOUT => 0,
+        // CURLOPT_FOLLOWLOCATION => true,
+        // CURLOPT_SSL_VERIFYPEER => false,
+        // CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        // CURLOPT_CUSTOMREQUEST => 'POST',
+        // CURLOPT_POSTFIELDS => $dados['json'],
+        // CURLOPT_HTTPHEADER => array(
+        //     'Content-Type: application/json',
+        //     'Accept: application/json',
+        //     'Authorization: Bearer '.$dados['token']
+        // ),
+        // ));
+
+        // $response = curl_exec($curl);
+        // curl_close($curl);
+        // return $response; //."\n".$this->Ambiente($this->ambiente)."/orders/preview"."\n".$this->apiKey($this->ambiente)."\n";
 
     }
 
