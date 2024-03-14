@@ -13,10 +13,12 @@
         unset($data['senha']);
 
         foreach ($data as $name => $value) {
-            $attr[] = "{$name} = '" . addslashes($value) . "'";
-        }
-        if($_POST['senha']){
-            $attr[] = "senha = '" . md5($_POST['senha']) . "'";
+            if($name == 'birthdate' or $name = 'document_issueDate'){
+                $attr[] = "{$name} = '" . dataMysql($value) . "'";
+            }else{
+                $attr[] = "{$name} = '" . addslashes($value) . "'";
+            }
+            
         }
 
         $attr = implode(', ', $attr);
