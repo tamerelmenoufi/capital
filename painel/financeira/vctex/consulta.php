@@ -194,7 +194,7 @@
     </div>
     <?php
 
-    $query = "select * from consultas where cliente = '{$cliente->codigo}' order by codigo desc";
+    $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as proposta from consultas where cliente = '{$cliente->codigo}' order by codigo desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
@@ -202,7 +202,7 @@
     ?>
         <div class="card mb-3 border-primary">
             <div class="card-header bg-primary text-white">
-            <?=(($d->tipo == 'simulacao')?'SIMIULAÇÃO':strtoupper($d->tipo))?> - <?=strtoupper($d->consulta)?>
+            <?=(($d->proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
             <table class="table table-hover table-striped">
                 <thead>
@@ -264,7 +264,7 @@
     ?>
     <div class="card mb-3 border-danger">
         <div class="card-header bg-danger text-white">
-        <?=(($d->tipo == 'simulacao')?'SIMIULAÇÃO':strtoupper($d->tipo))?> - <?=strtoupper($d->consulta)?>
+        SIMULAÇÃO - <?=strtoupper($d->consulta)?>
         </div>
         <table class="table table-hover">
             <thead>
