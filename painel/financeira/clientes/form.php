@@ -158,7 +158,7 @@
                 <div class="form-floating mb-3">
                     <select name="document_issuingState" id="document_issuingState" class="form-select">
                         <?php
-                        foreach($sigals => $i $sigla){
+                        foreach($sigals as $i => $sigla){
                         ?>
                         <option value="<?=$sigla?>" <?=(($d->document_issuingState == $sigla)?'selected':false)?>><?=$sigla?></option>
                         <?php
@@ -223,7 +223,7 @@
                 <div class="form-floating mb-3">
                     <select name="address_state" id="address_state" class="form-select">
                         <?php
-                        foreach($sigals => $i $sigla){
+                        foreach($sigals as $i => $sigla){
                         ?>
                         <option value="<?=$sigla?>" <?=(($d->address_state == $sigla)?'selected':false)?>><?=$sigla?></option>
                         <?php
