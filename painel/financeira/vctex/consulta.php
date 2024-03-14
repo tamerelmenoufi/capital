@@ -150,31 +150,30 @@ print_r([
             <div class="card-body">
             <table class="table table-hover">
 
+            <!-- "installments": [
+                {
+                    "amount": 5128.51,
+                    "dueDate": "2024-05-01"
+                }, -->
+
                 <thead>
                     <tr>
-                        <th>c1</th>
-                        <th>c2</th>
-                        <th>c3</th>
-                        <th>c4</th>
-                        <th>c5</th>
-                        <th>c6</th>
-                        <th>c7</th>
+                        <th colspan="6">Período</th>
+                        <th>Valor</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    foreach($dados->data->simulationData->installments as $periodo => $valor){
+                    ?>
                     <tr>
-                        <td><?=$dados->data->simulationData->iofAmount?></td>
-                        <td><?=$dados->data->simulationData->totalReleasedAmount?></td>
-                        <td><?=$dados->data->simulationData->totalAmount?></td>
-                        <td><?=$dados->data->simulationData->contractTACAmount?></td>
-                        <td><?=$dados->data->simulationData->contractCETRate?></td>
-                        <td><?=$dados->data->simulationData->contractRate?></td>
-                        <td><?=$dados->data->simulationData->minDisbursedAmount?></td>
+                        <td colspan="6"><?=$perido?></td>
+                        <td><?=$valor?></td>
                     </tr>
+                    <?php                       
+                    }
+                    ?>
                 </tbody>
-
-
-
 
 
                 <thead>
