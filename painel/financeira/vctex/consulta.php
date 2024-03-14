@@ -147,7 +147,7 @@
     ?>
         <div class="card mb-3 border-primary">
             <div class="card-header bg-primary text-white">
-            Simulação - <?=$d->consulta?>
+            Simulação - <?=strtoupper($d->consulta)?>
             </div>
             <table class="table table-hover table-striped">
 
@@ -206,7 +206,7 @@
     ?>
     <div class="card mb-3 border-danger">
         <div class="card-header bg-danger text-white">
-        Simulação - <?=$d->consulta?>
+        Simulação - <?=strtoupper($d->consulta)?>
         </div>
         <table class="table table-hover">
             <thead>
