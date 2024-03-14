@@ -182,8 +182,6 @@
                         }"
         ]);
 
-        echo $proposta;
-
         $query = "update consultas set 
                     proposta = '{$proposta}'
                     where codigo = '{$_POST['proposta']}'
