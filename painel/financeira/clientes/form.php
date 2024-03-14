@@ -68,13 +68,16 @@
 
 
 <div class="form-floating mb-3">
-    <input type="text" name="birthdate" id="birthdate" class="form-control" placeholder="birthdate" value="<?=$d->birthdate?>">
+    <input type="text" name="birthdate" id="birthdate" class="form-control" placeholder="birthdate" value="<?=dataBr($d->birthdate)?>">
     <label for="birthdate">birthdate*</label>
 </div>
 
 
 <div class="form-floating mb-3">
-    <input type="text" name="gender" id="gender" class="form-control" placeholder="gender" value="<?=$d->gender?>">
+    <select name="gender" id="gender" class="form-select">
+        <option value="Masculino">Masculino</option>
+        <option value="Feminino">Feminino</option>
+    </select>
     <label for="gender">gender*</label>
 </div>
 
@@ -86,13 +89,19 @@
 
 
 <div class="form-floating mb-3">
-    <input type="text" name="email" id="email" class="form-control" placeholder="email" value="<?=$d->email?>">
+    <input type="email" name="email" id="email" class="form-control" placeholder="email" value="<?=$d->email?>">
     <label for="email">email*</label>
 </div>
 
 
 <div class="form-floating mb-3">
-    <input type="text" name="maritalStatus" id="maritalStatus" class="form-control" placeholder="maritalStatus" value="<?=$d->maritalStatus?>">
+    <select name="maritalStatus" id="maritalStatus" class="form-select">
+        <option value="Solteiro">Solteiro</option>
+        <option value="Casado">Casado</option>
+        <option value="Divorciado">Divorciado</option>
+        <option value="Separado">Separado</option>
+        <option value="Viúvo">Viúvo</option>
+    </select>
     <label for="maritalStatus">maritalStatus*</label>
 </div>
 
@@ -122,13 +131,19 @@
 
 
 <div class="form-floating mb-3">
-    <input type="text" name="pep" id="pep" class="form-control" placeholder="pep" value="<?=$d->pep?>">
+    <select name="pep" id="pep" class="form-select">
+        <option value="0">Não</option>
+        <option value="1">Sim</option>
+    </select>
     <label for="pep">pep*</label>
 </div>
 
 
 <div class="form-floating mb-3">
-    <input type="text" name="document_type" id="document_type" class="form-control" placeholder="document_type" value="<?=$d->document_type?>">
+    <select name="document_type" id="document_type" class="form-select">
+        <option value="RG">RG</option>
+        <option value="CNH">CNH</option>
+    </select>
     <label for="document_type">document_type*</label>
 </div>
 
