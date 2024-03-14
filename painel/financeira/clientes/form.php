@@ -76,8 +76,8 @@
 
                 <div class="form-floating mb-3">
                     <select name="gender" id="gender" class="form-select">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino" <?=(($d->gender == 'Masculino')?'selected':false)?>>Masculino</option>
+                        <option value="Feminino" <?=(($d->gender == 'Feminino')?'selected':false)?>>Feminino</option>
                     </select>
                     <label for="gender">gender*</label>
                 </div>
@@ -97,11 +97,11 @@
 
                 <div class="form-floating mb-3">
                     <select name="maritalStatus" id="maritalStatus" class="form-select">
-                        <option value="Solteiro">Solteiro</option>
-                        <option value="Casado">Casado</option>
-                        <option value="Divorciado">Divorciado</option>
-                        <option value="Separado">Separado</option>
-                        <option value="Viúvo">Viúvo</option>
+                        <option value="Solteiro" <?=(($d->maritalStatus == 'Solteiro')?'selected':false)?>>Solteiro</option>
+                        <option value="Casado" <?=(($d->maritalStatus == 'Casado')?'selected':false)?>>Casado</option>
+                        <option value="Divorciado" <?=(($d->maritalStatus == 'Divorciado')?'selected':false)?>>Divorciado</option>
+                        <option value="Separado" <?=(($d->maritalStatus == 'Separado')?'selected':false)?>>Separado</option>
+                        <option value="Viúvo" <?=(($d->maritalStatus == 'Viúvo')?'selected':false)?>>Viúvo</option>
                     </select>
                     <label for="maritalStatus">maritalStatus*</label>
                 </div>
@@ -133,8 +133,8 @@
 
                 <div class="form-floating mb-3">
                     <select name="pep" id="pep" class="form-select">
-                        <option value="0">Não</option>
-                        <option value="1">Sim</option>
+                        <option value="0" <?=(($d->pep == '0')?'selected':false)?>>Não</option>
+                        <option value="1" <?=(($d->pep == '1')?'selected':false)?>>Sim</option>
                     </select>
                     <label for="pep">pep*</label>
                 </div>
@@ -142,8 +142,8 @@
                 <h5>Documentação</h5>
                 <div class="form-floating mb-3">
                     <select name="document_type" id="document_type" class="form-select">
-                        <option value="RG">RG</option>
-                        <option value="CNH">CNH</option>
+                        <option value="RG" <?=(($d->document_type == 'RG')?'selected':false)?>>RG</option>
+                        <option value="CNH" <?=(($d->document_type == 'CNH')?'selected':false)?>>CNH</option>
                     </select>
                     <label for="document_type">document_type*</label>
                 </div>
@@ -244,7 +244,10 @@
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="accountType" id="accountType" class="form-control" placeholder="accountType" value="<?=$d->accountType?>">
+                    <select name="accountType" id="accountType" class="form-select">
+                        <option value="corrente" <?=(($d->accountType == 'corrente')?'selected':false)?>>Corrente</option>
+                        <option value="poupanca" <?=(($d->accountType == 'poupanca')?'selected':false)?>>Poupança</option>
+                    </select>
                     <label for="accountType">accountType*</label>
                 </div>
 
