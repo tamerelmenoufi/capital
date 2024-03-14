@@ -150,6 +150,8 @@
             Simulação - <?=$d->consulta?>
             </div>
             <div class="card-body">
+            
+            </div>
             <table class="table table-hover table-striped">
 
             <!-- "installments": [
@@ -201,7 +203,6 @@
                     </tr>
                 </tbody>    
             </table>
-            </div>
         </div>
     <?php
         }else{
