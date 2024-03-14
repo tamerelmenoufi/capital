@@ -210,7 +210,7 @@
     </div>
     <?php
 
-    $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as proposta from consultas where cliente = '{$cliente->codigo}' order by codigo desc";
+    $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as status_proposta from consultas where cliente = '{$cliente->codigo}' order by codigo desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
@@ -273,12 +273,14 @@
             </div>
             <?php
                 }
-                if(!$d->proposta){
+                if(!$d->status_proposta){
             ?>
             <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm">
                 Solicitar proposta para esta simulação
             </button>
             <?php
+                }else{
+                    var_dump($d->proposta)
                 }
 
             ?>
