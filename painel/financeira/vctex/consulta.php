@@ -280,9 +280,9 @@
                 Solicitar proposta para esta simulação
             </button>
             <?php
-                }else{
-                    var_dump($d->proposta);
                 }
+                    var_dump($d->proposta);
+                
 
             ?>
         </div>
