@@ -170,7 +170,7 @@
                 </tbody>
                 <thead>
                     <tr>
-                        <th>Data</th>
+                        <th>Data operação</th>
                         <th>IOF</th>
                         <th>Liberado</th>
                         <th>Emissão</th>
@@ -214,7 +214,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Data</th>
+                    <th>Data operação</th>
                     <th>Erro</th>
                     <th>Descrição</th>
                 </tr>
