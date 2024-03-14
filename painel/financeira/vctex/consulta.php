@@ -51,16 +51,26 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-        echo $simulacao = $vctex->Simular([
+        $simulacao = $vctex->Simular([
             'token' => $token,
             'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
             'tabela' => $d->tabela_padrao
         ]);
-        // print_r([
-        //     'token' => $token,
-        //     'cliente' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-        //     'tabela' => $d->tabela_padrao
-        // ]);
+        
+        $verifica = json_decode($simulacao);
+        if($verifica->data->isExponentialFeeScheduleAvailable == true){
+
+            $simulacao = $vctex->Simular([
+                'token' => $token,
+                'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
+                'tabela' => 0
+            ]);
+
+            $d->tabela_padrao = 0;
+
+        }
+
+
         $consulta = uniqid();
 
 
