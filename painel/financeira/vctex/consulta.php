@@ -480,7 +480,7 @@
                                     campo:'<?=$_SESSION['vctex_campo']?>',
                                     rotulo:'<?=$_SESSION['vctex_rotulo']?>',
                                     valor:'<?=$_SESSION['vctex_valor']?>',
-                                    proposta:'<?=$cliente->codigo?>'
+                                    proposta
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
