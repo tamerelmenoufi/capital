@@ -199,7 +199,7 @@
                 if(!$dados->data->isExponentialFeeScheduleAvailable){
             ?>
             <p class="p-1">
-                A simulação apresenta uma tabela <b><?=$dados->data->financialId?></b> mais vantajoso.
+                A simulação apresenta uma tabela <b><?=$dados->data->isVendexFeeScheduleAvailable?></b> mais vantajoso.
             </p>
             <?php
                 }
