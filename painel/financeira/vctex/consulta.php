@@ -169,8 +169,8 @@
                     foreach($dados->data->simulationData->installments as $periodo => $valor){
                     ?>
                     <tr>
-                        <td colspan="6"><?=$periodo?></td>
-                        <td><?=$valor?></td>
+                        <td colspan="6"><?=$valor->dueDate?></td>
+                        <td><?=$valor->amount?></td>
                     </tr>
                     <?php                       
                     }
