@@ -149,13 +149,10 @@
             <div class="card-header bg-primary text-white">
             <?=(($d->tipo == 'simulacao')?'SIMIULAÇÃO':strtoupper($d->tipo))?> - <?=strtoupper($d->consulta)?>
             </div>
-            <div class="d-flex justify-content-between p-2">
-                <span style="color:#a1a1a1; font-size:12px;">Em <?=dataBR($d->data)?></span>
-            </div>
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
-                        <th colspan="6">Período</th>
+                        <th colspan="7">Período</th>
                         <th>Valor</th>
                     </tr>
                 </thead>
@@ -173,6 +170,7 @@
                 </tbody>
                 <thead>
                     <tr>
+                        <th>Data</th>
                         <th>IOF</th>
                         <th>Liberado</th>
                         <th>Emissão</th>
@@ -184,6 +182,7 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td><?=dataBR($d->data)?></td>
                         <td><?=$dados->data->simulationData->iofAmount?></td>
                         <td><?=$dados->data->simulationData->totalReleasedAmount?></td>
                         <td><?=$dados->data->simulationData->totalAmount?></td>
@@ -212,18 +211,17 @@
         <div class="card-header bg-danger text-white">
         <?=(($d->tipo == 'simulacao')?'SIMIULAÇÃO':strtoupper($d->tipo))?> - <?=strtoupper($d->consulta)?>
         </div>
-        <div class="d-flex justify-content-between p-2">
-            <span style="color:#a1a1a1; font-size:12px;">Em <?=dataBR($d->data)?></span>
-        </div>
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th>Data</th>
                     <th>Erro</th>
                     <th>Descrição</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td><?=dataBR($d->data)?></td>
                     <td><?=$dados->statusCode?></td>
                     <td><?=$dados->message?></td>
                 </tr>
