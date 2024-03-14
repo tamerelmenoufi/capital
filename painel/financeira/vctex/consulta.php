@@ -88,13 +88,13 @@
             'token' => $token,
             'json' => "
                         {
-                            \"feeScheduleId\": 1,
-                            \"financialId\": \"443139a1-22e5-4c5c-a23f-46d17130eafe\",
+                            \"feeScheduleId\": {$d->tabela},
+                            \"financialId\": \"{$d->financialId}\",
                             \"borrower\": {
-                            \"name\": \"Ayrton Sato\",
-                            \"cpf\": \"20006161278\",
-                            \"birthdate\": \"1991-07-26\",
-                            \"gender\": \"M\",
+                            \"name\": \"{$d->nome}\",
+                            \"cpf\": \"{$d->cpf}\",
+                            \"birthdate\": \"{$d->birthdate}\",
+                            \"gender\": \"{$d->gender}\",
                             \"phoneNumber\": \"11973302222\",
                             \"email\": \"ayrton_sato@hotmail.com\",
                             \"maritalStatus\": \"solteiro\",

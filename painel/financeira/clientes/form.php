@@ -77,8 +77,8 @@
 
                 <div class="form-floating mb-3">
                     <select name="gender" id="gender" class="form-select">
-                        <option value="Masculino" <?=(($d->gender == 'Masculino')?'selected':false)?>>Masculino</option>
-                        <option value="Feminino" <?=(($d->gender == 'Feminino')?'selected':false)?>>Feminino</option>
+                        <option value="M" <?=(($d->gender == 'M')?'selected':false)?>>Masculino</option>
+                        <option value="F" <?=(($d->gender == 'F')?'selected':false)?>>Feminino</option>
                     </select>
                     <label for="gender">gender*</label>
                 </div>
@@ -134,8 +134,8 @@
 
                 <div class="form-floating mb-3">
                     <select name="pep" id="pep" class="form-select">
-                        <option value="0" <?=(($d->pep == '0')?'selected':false)?>>Não</option>
-                        <option value="1" <?=(($d->pep == '1')?'selected':false)?>>Sim</option>
+                        <option value="false" <?=(($d->pep == 'false')?'selected':false)?>>Não</option>
+                        <option value="true" <?=(($d->pep == 'true')?'selected':false)?>>Sim</option>
                     </select>
                     <label for="pep">pep*</label>
                 </div>
