@@ -69,7 +69,7 @@
                                             operadora = 'VCTEX',
                                             cliente = '{$_POST['cliente']}',
                                             data = NOW(),
-                                            tabela = '{$d->tabela_padrao}'
+                                            tabela = '{$d->tabela_padrao}',
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
