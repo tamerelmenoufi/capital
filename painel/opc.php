@@ -1,6 +1,6 @@
 <?php
 
-$campo = [
+$campos = [
     'nome',
     'data_cadastro',
     'birthdate',
