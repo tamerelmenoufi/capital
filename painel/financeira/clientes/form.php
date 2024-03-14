@@ -35,7 +35,7 @@
 
         $retorno = [
             'status' => true,
-            'codigo' => $query
+            'codigo' => $cod
         ];
 
         echo json_encode($retorno);
@@ -327,7 +327,7 @@
                     mimeType: 'multipart/form-data',
                     data: campos,
                     success:function(dados){
-                        console.log(dados)
+                        // console.log(dados)
                         // if(dados.status){
                             $.ajax({
                                 url:"financeira/clientes/index.php",
