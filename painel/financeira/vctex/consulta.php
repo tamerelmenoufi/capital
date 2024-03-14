@@ -161,7 +161,7 @@
                     foreach($dados->data->simulationData->installments as $periodo => $valor){
                     ?>
                     <tr>
-                        <td colspan="6"><?=dataBr($valor->dueDate)?></td>
+                        <td colspan="7"><?=dataBr($valor->dueDate)?></td>
                         <td>R$ <?=number_format($valor->amount,2,',','.')?></td>
                     </tr>
                     <?php                       
