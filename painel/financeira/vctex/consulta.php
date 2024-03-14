@@ -179,13 +179,13 @@
 
                 <thead>
                     <tr>
-                        <th>c1</th>
-                        <th>c2</th>
-                        <th>c3</th>
-                        <th>c4</th>
-                        <th>c5</th>
-                        <th>c6</th>
-                        <th>c7</th>
+                        <th>IOF</th>
+                        <th>Liberado</th>
+                        <th>Emissão</th>
+                        <th>TAC</th>
+                        <th>CET anual</th>
+                        <th>Taxa anual</th>
+                        <th>Mínimo</th>
                     </tr>
                 </thead>
                 <tbody>
