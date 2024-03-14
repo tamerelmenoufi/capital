@@ -59,7 +59,7 @@
         $consulta = uniqid();
 
 
-        echo $query = "insert into consultas set 
+        $query = "insert into consultas set 
                                             consulta = '{$consulta}',
                                             operadora = 'VCTEX',
                                             cliente = '{$_POST['cliente']}',
