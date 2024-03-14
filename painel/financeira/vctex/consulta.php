@@ -145,7 +145,7 @@
         $dados = json_decode($d->dados);
         if($dados->statusCode == 200){
     ?>
-        <div class="card mb-2 border-primary">
+        <div class="card mb-3 border-primary">
             <div class="card-header bg-primary text-white">
             Simulação - <?=$d->consulta?>
             </div>
@@ -204,7 +204,7 @@
     <?php
         }else{
     ?>
-    <div class="card mb-2 border-danger">
+    <div class="card mb-3 border-danger">
         <div class="card-header bg-danger text-white">
         Simulação - <?=$d->consulta?>
         </div>
