@@ -94,47 +94,47 @@
         $d = mysqli_fetch_object($result);
 
 
-        echo "{
-            \"feeScheduleId\": {$d->tabela},
-            \"financialId\": \"{$d->financialId}\",
-            \"borrower\": {
-            \"name\": \"{$d->nome}\",
-            \"cpf\": \"".numero($d->cpf)."\",
-            \"birthdate\": \"{$d->birthdate}\",
-            \"gender\": \"{$d->gender}\",
-            \"phoneNumber\": \"".numero($d->phoneNumber)."\",
-            \"email\": \"{$d->email}\",
-            \"maritalStatus\": \"{$d->maritalStatus}\",
-            \"nationality\": \"{$d->nationality}\",
-            \"naturalness\": \"{$d->naturalness}\",
-            \"motherName\": \"{$d->motherName}\",
-            \"fatherName\": \"{$d->fatherName}\",
-            \"pep\": {$d->pep}
-            },
-            \"document\": {
-            \"type\": \"{$d->document_type}\",
-            \"number\": \"".numero($d->document_number)."\",
-            \"issuingState\": \"{$d->document_issuingState}\",
-            \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
-            \"issueDate\": \"{$d->document_issueDate}\"
-            },
-            \"address\": {
-            \"zipCode\": \"".numero($d->address_zipCode)."\",
-            \"street\": \"{$d->address_street}\",
-            \"number\": \"{$d->address_number}\",
-            \"complement\": null,
-            \"neighborhood\": \"{$d->address_neighborhood}\",
-            \"city\": \"{$d->address_city}\",
-            \"state\": \"{$d->address_state}\"
-            },
-            \"disbursementBankAccount\": {
-            \"bankCode\": \"".numero($d->bankCode)."\",
-            \"accountType\": \"".numero($d->accountType)."\",
-            \"accountNumber\": \"".numero($d->accountNumber)."\",
-            \"accountDigit\": \"".numero($d->accountDigit)."\",
-            \"branchNumber\": \"".numero($d->branchNumber)."\"
-            }
-        }";
+        // echo "{
+        //     \"feeScheduleId\": {$d->tabela},
+        //     \"financialId\": \"{$d->financialId}\",
+        //     \"borrower\": {
+        //     \"name\": \"{$d->nome}\",
+        //     \"cpf\": \"".numero($d->cpf)."\",
+        //     \"birthdate\": \"{$d->birthdate}\",
+        //     \"gender\": \"{$d->gender}\",
+        //     \"phoneNumber\": \"".numero($d->phoneNumber)."\",
+        //     \"email\": \"{$d->email}\",
+        //     \"maritalStatus\": \"{$d->maritalStatus}\",
+        //     \"nationality\": \"{$d->nationality}\",
+        //     \"naturalness\": \"{$d->naturalness}\",
+        //     \"motherName\": \"{$d->motherName}\",
+        //     \"fatherName\": \"{$d->fatherName}\",
+        //     \"pep\": {$d->pep}
+        //     },
+        //     \"document\": {
+        //     \"type\": \"{$d->document_type}\",
+        //     \"number\": \"".numero($d->document_number)."\",
+        //     \"issuingState\": \"{$d->document_issuingState}\",
+        //     \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
+        //     \"issueDate\": \"{$d->document_issueDate}\"
+        //     },
+        //     \"address\": {
+        //     \"zipCode\": \"".numero($d->address_zipCode)."\",
+        //     \"street\": \"{$d->address_street}\",
+        //     \"number\": \"{$d->address_number}\",
+        //     \"complement\": null,
+        //     \"neighborhood\": \"{$d->address_neighborhood}\",
+        //     \"city\": \"{$d->address_city}\",
+        //     \"state\": \"{$d->address_state}\"
+        //     },
+        //     \"disbursementBankAccount\": {
+        //     \"bankCode\": \"".numero($d->bankCode)."\",
+        //     \"accountType\": \"".numero($d->accountType)."\",
+        //     \"accountNumber\": \"".numero($d->accountNumber)."\",
+        //     \"accountDigit\": \"".numero($d->accountDigit)."\",
+        //     \"branchNumber\": \"".numero($d->branchNumber)."\"
+        //     }
+        // }";
 
             // cpf,phoneNumber,document_number, zipCode, bankCode, accountNumber, accountDigit, branchNumber
         $proposta = $vctex->Simular([
@@ -181,6 +181,8 @@
                             }
                         }"
         ]);
+
+        echo $proposta;
 
         $query = "update consultas set 
                     proposta = '{$proposta}'
