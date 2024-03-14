@@ -181,7 +181,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="document_issueDate" value="<?=$d->document_issueDate?>">
+                    <input required type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="document_issueDate" value="<?=dataBr($d->document_issueDate)?>">
                     <label for="document_issueDate">document_issueDate*</label>
                 </div>
 
