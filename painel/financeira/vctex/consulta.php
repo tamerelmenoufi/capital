@@ -198,11 +198,9 @@
 
                 if(!$dados->data->isExponentialFeeScheduleAvailable){
             ?>
-            <p class="p-1">
-                <div class="alert alert-success" role="alert">
-                    A simulação apresenta uma tabela <b><?=$dados->data->isVendexFeeScheduleAvailable?></b> mais vantajoso.
-                </div>
-            </p>
+            <div class="alert alert-success p-1" role="alert">
+                A simulação apresenta uma tabela <b><?=$dados->data->isVendexFeeScheduleAvailable?></b> mais vantajoso.
+            </div>
             <?php
                 }
             ?>
