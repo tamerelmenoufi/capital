@@ -31,9 +31,7 @@ $campos = [
 
 foreach($campos as $i => $campo){
 ?>
-
 <option value="<?=$campo?>" <?='<?=(($d->document_issuingState == \''.$campo.'\')?\'selected\':false)?>'?>><?=$campo?></option>
-
 <?php
 }
 ?>
