@@ -74,6 +74,10 @@
 
     if($_POST['acao'] == 'proposta'){
 
+        $_SESSION['vctex_campo'] = $_POST['campo'];
+        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
+        $_SESSION['vctex_valor'] = $_POST['valor'];
+
         $query = "select 
                         b.*,
                         a.tabela,
@@ -84,7 +88,7 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-        $simulacao = $vctex->Simular([
+        $proposta = $vctex->Simular([
             'token' => $token,
             'json' => "
                         {
@@ -95,41 +99,47 @@
                             \"cpf\": \"{$d->cpf}\",
                             \"birthdate\": \"{$d->birthdate}\",
                             \"gender\": \"{$d->gender}\",
-                            \"phoneNumber\": \"11973302222\",
-                            \"email\": \"ayrton_sato@hotmail.com\",
-                            \"maritalStatus\": \"solteiro\",
-                            \"nationality\": \"brasileiro\",
-                            \"naturalness\": \"brasileiro\",
-                            \"motherName\": \"Maria Silva\",
-                            \"fatherName\": \"Joao Silva\",
-                            \"pep\": false
+                            \"phoneNumber\": \"{$d->phoneNumber}\",
+                            \"email\": \"{$d->email}\",
+                            \"maritalStatus\": \"{$d->maritalStatus}\",
+                            \"nationality\": \"{$d->nationality}\",
+                            \"naturalness\": \"{$d->naturalness}\",
+                            \"motherName\": \"{$d->motherName}\",
+                            \"fatherName\": \"{$d->fatherName}\",
+                            \"pep\": {$d->pep}
                             },
                             \"document\": {
-                            \"type\": \"cnh\",
-                            \"number\": \"12345555\",
-                            \"issuingState\": \"SP\",
-                            \"issuingAuthority\": \"SSP\",
-                            \"issueDate\": \"2022-01-01\"
+                            \"type\": \"{$d->document_type}\",
+                            \"number\": \"{$d->document_number}\",
+                            \"issuingState\": \"{$d->document_issuingState}\",
+                            \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
+                            \"issueDate\": \"{$d->document_issueDate}\"
                             },
                             \"address\": {
-                            \"zipCode\": \"03431120\",
-                            \"street\": \"Rua Juca\",
-                            \"number\": \"321\",
-                            \"complement\": null,
-                            \"neighborhood\": \"Casa\",
-                            \"city\": \"São Paulo\",
-                            \"state\": \"SP\"
+                            \"zipCode\": \"{$d->address_zipCode}\",
+                            \"street\": \"{$d->address_street}\",
+                            \"number\": \"{$d->address_number}\",
+                            \"complement\": \"{$d->address_complement}\",
+                            \"neighborhood\": \"{$d->address_neighborhood}\",
+                            \"city\": \"{$d->address_city}\",
+                            \"state\": \"{$d->address_state}\"
                             },
                             \"disbursementBankAccount\": {
-                            \"bankCode\": \"652\",
-                            \"accountType\": \"corrente\",
-                            \"accountNumber\": \"173090\",
-                            \"accountDigit\": \"1\",
-                            \"branchNumber\": \"2\"
+                            \"bankCode\": \"{$d->bankCode}\",
+                            \"accountType\": \"{$d->accountType}\",
+                            \"accountNumber\": \"{$d->accountNumber}\",
+                            \"accountDigit\": \"{$d->accountDigit}\",
+                            \"branchNumber\": \"{$d->branchNumber}\"
                             }
                         }
             "
         ]);
+
+        $query = "update consultas set 
+                    proposta = '{$proposta}'
+                    where codigo = '{$_POST['proposta']}'
+                ";
+        mysqli_query($con, $query);
 
     }
 
@@ -263,6 +273,14 @@
             </div>
             <?php
                 }
+                if(!$d->proposta){
+            ?>
+            <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm">
+                Solicitar proposta para esta simulação
+            </button>
+            <?php
+                }
+
             ?>
         </div>
     <?php
@@ -432,6 +450,54 @@
             })
           
             
+
+        })  
+
+
+        $("button[proposta]").click(function(){
+
+            proposta = $(this).attr("proposta");
+
+            $.confirm({
+                title:"Proposta",
+                content:"Confirma a solicitação de proposta?",
+                type:"orange",
+                buttons:{
+                    'sim':{
+                        text:'Sim',
+                        btnClass:'btn btn-success btn-sm',
+                        action:function(){
+                            Carregando();
+
+                            $.ajax({
+                                url:"financeira/vctex/consulta.php",
+                                type:"POST",
+                                data:{
+                                    acao:'proposta',
+                                    campo:'<?=$_SESSION['vctex_campo']?>',
+                                    rotulo:'<?=$_SESSION['vctex_rotulo']?>',
+                                    valor:'<?=$_SESSION['vctex_valor']?>',
+                                    proposta:'<?=$cliente->codigo?>'
+                                },
+                                success:function(dados){
+                                    $("#paginaHome").html(dados);
+                                    // console.log(dados);
+                                },
+                                error:function(){
+                                    alert('Erro')
+                                }
+                            })  
+                        }
+                    },
+                    'nao':{
+                        text:'Não',
+                        btnClass:'btn btn-danger btn-sm',
+                        action:function(){
+                            
+                        }
+                    }
+                }
+            })
 
         })  
 
