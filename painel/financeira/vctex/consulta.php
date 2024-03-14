@@ -64,11 +64,66 @@
                                             operadora = 'VCTEX',
                                             cliente = '{$_POST['cliente']}',
                                             data = NOW(),
-                                            tipo = 'simulacao',
+                                            tabela = '{$d->tabela_padrao}'
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
         // exit();
+
+    }
+
+    if($_POST['acao'] == 'proposta'){
+
+        $query = "select * from consultas where codigo = '{$_POST['proposta']}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+
+        $simulacao = $vctex->Simular([
+            'token' => $token,
+            'json' => "
+                        {
+                            \"feeScheduleId\": 1,
+                            \"financialId\": \"443139a1-22e5-4c5c-a23f-46d17130eafe\",
+                            \"borrower\": {
+                            \"name\": \"Ayrton Sato\",
+                            \"cpf\": \"20006161278\",
+                            \"birthdate\": \"1991-07-26\",
+                            \"gender\": \"M\",
+                            \"phoneNumber\": \"11973302222\",
+                            \"email\": \"ayrton_sato@hotmail.com\",
+                            \"maritalStatus\": \"solteiro\",
+                            \"nationality\": \"brasileiro\",
+                            \"naturalness\": \"brasileiro\",
+                            \"motherName\": \"Maria Silva\",
+                            \"fatherName\": \"Joao Silva\",
+                            \"pep\": false
+                            },
+                            \"document\": {
+                            \"type\": \"cnh\",
+                            \"number\": \"12345555\",
+                            \"issuingState\": \"SP\",
+                            \"issuingAuthority\": \"SSP\",
+                            \"issueDate\": \"2022-01-01\"
+                            },
+                            \"address\": {
+                            \"zipCode\": \"03431120\",
+                            \"street\": \"Rua Juca\",
+                            \"number\": \"321\",
+                            \"complement\": null,
+                            \"neighborhood\": \"Casa\",
+                            \"city\": \"São Paulo\",
+                            \"state\": \"SP\"
+                            },
+                            \"disbursementBankAccount\": {
+                            \"bankCode\": \"652\",
+                            \"accountType\": \"corrente\",
+                            \"accountNumber\": \"173090\",
+                            \"accountDigit\": \"1\",
+                            \"branchNumber\": \"2\"
+                            }
+                        }
+            ";
+        ]);
 
     }
 

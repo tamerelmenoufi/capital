@@ -101,7 +101,7 @@ class Vctex {
         return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
     }
 
-    public function Credito($token){
+    public function Credito($dados){
 
         $curl = curl_init();
 
@@ -159,7 +159,7 @@ class Vctex {
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'Accept: application/json',
-            'Authorization: Bearer '.$token
+            'Authorization: Bearer '.$dados['token']
         ),
         ));
 
