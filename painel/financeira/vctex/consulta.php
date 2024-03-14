@@ -150,13 +150,6 @@
             Simulação - <?=strtoupper($d->consulta)?>
             </div>
             <table class="table table-hover table-striped">
-
-            <!-- "installments": [
-                {
-                    "amount": 5128.51,
-                    "dueDate": "2024-05-01"
-                }, -->
-
                 <thead>
                     <tr>
                         <th colspan="6">Período</th>
@@ -175,8 +168,6 @@
                     }
                     ?>
                 </tbody>
-
-
                 <thead>
                     <tr>
                         <th>IOF</th>
@@ -200,6 +191,19 @@
                     </tr>
                 </tbody>    
             </table>
+            
+            <?php
+                    // "isVendexFeeScheduleAvailable": false,
+                    // "isExponentialFeeScheduleAvailable": false
+
+                if($dados->data->isExponentialFeeScheduleAvailable){
+            ?>
+            <p>
+                A simulação apresenta uma tabela <b><?=$dados->data->financialId?></b> mais vantajoso.
+            </p>
+            <?php
+                }
+            ?>
         </div>
     <?php
         }else{
