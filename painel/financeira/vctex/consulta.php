@@ -74,7 +74,13 @@
 
     if($_POST['acao'] == 'proposta'){
 
-        $query = "select * from consultas where codigo = '{$_POST['proposta']}'";
+        $query = "select 
+                        b.*,
+                        a.tabela,
+                        a.dados->>'$.data.financialId' as financialId
+                    from consultas a
+                         left join clientes b on a.cliente = b.codigo
+                    where a.codigo = '{$_POST['proposta']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
