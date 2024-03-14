@@ -210,7 +210,10 @@
     ?>
     <div class="card mb-3 border-danger">
         <div class="card-header bg-danger text-white">
-        Simulação - <?=strtoupper($d->consulta)?>
+        <?=(($d->tipo == 'simulacao')?'SIMIULAÇÃO':strtoupper($d->tipo))?> - <?=strtoupper($d->consulta)?>
+        </div>
+        <div class="d-flex justify-content-between p-2">
+            <span style="color:#a1a1a1; font-size:12px;">Em <?=dataBR($d->data)?></span>
         </div>
         <table class="table table-hover">
             <thead>
