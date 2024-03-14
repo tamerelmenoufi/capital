@@ -59,17 +59,17 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
+                    <input required type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
                     <label for="nome">Nome*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
+                    <input required type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
                     <label for="cpf">CPF*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="birthdate" id="birthdate" class="form-control" placeholder="birthdate" value="<?=dataBr($d->birthdate)?>">
+                    <input required type="text" name="birthdate" id="birthdate" class="form-control" placeholder="birthdate" value="<?=dataBr($d->birthdate)?>">
                     <label for="birthdate">birthdate*</label>
                 </div>
 
@@ -84,14 +84,14 @@
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="phoneNumber" value="<?=$d->phoneNumber?>">
+                    <input required type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="phoneNumber" value="<?=$d->phoneNumber?>">
                     <label for="phoneNumber">phoneNumber*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
                     <input type="email" name="email" id="email" class="form-control" placeholder="email" value="<?=$d->email?>">
-                    <label for="email">email*</label>
+                    <label for="email">email</label>
                 </div>
 
 
@@ -108,26 +108,26 @@
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="nationality" id="nationality" class="form-control" placeholder="nationality" value="<?=$d->nationality?>">
+                    <input required type="text" name="nationality" id="nationality" class="form-control" placeholder="nationality" value="<?=$d->nationality?>">
                     <label for="nationality">nationality*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="naturalness" id="naturalness" class="form-control" placeholder="naturalness" value="<?=$d->naturalness?>">
+                    <input required type="text" name="naturalness" id="naturalness" class="form-control" placeholder="naturalness" value="<?=$d->naturalness?>">
                     <label for="naturalness">naturalness*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="motherName" id="motherName" class="form-control" placeholder="motherName" value="<?=$d->motherName?>">
+                    <input required type="text" name="motherName" id="motherName" class="form-control" placeholder="motherName" value="<?=$d->motherName?>">
                     <label for="motherName">motherName*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
                     <input type="text" name="fatherName" id="fatherName" class="form-control" placeholder="fatherName" value="<?=$d->fatherName?>">
-                    <label for="fatherName">fatherName*</label>
+                    <label for="fatherName">fatherName</label>
                 </div>
 
 
@@ -150,15 +150,16 @@
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="document_number" id="document_number" class="form-control" placeholder="document_number" value="<?=$d->document_number?>">
+                    <input required type="text" name="document_number" id="document_number" class="form-control" placeholder="document_number" value="<?=$d->document_number?>">
                     <label for="document_number">document_number*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <select name="document_issuingState" id="document_issuingState" class="form-select">
+                    <select required name="document_issuingState" id="document_issuingState" class="form-select">
+                        <option value="">:: Selecione o estado ::</option>
                         <?php
-                        foreach($sigals as $i => $sigla){
+                        foreach($siglas as $i => $sigla){
                         ?>
                         <option value="<?=$sigla?>" <?=(($d->document_issuingState == $sigla)?'selected':false)?>><?=$sigla?></option>
                         <?php
@@ -172,58 +173,59 @@
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="document_issuingAuthority" id="document_issuingAuthority" class="form-control" placeholder="document_issuingAuthority" value="<?=$d->document_issuingAuthority?>">
+                    <input required type="text" name="document_issuingAuthority" id="document_issuingAuthority" class="form-control" placeholder="document_issuingAuthority" value="<?=$d->document_issuingAuthority?>">
                     <label for="document_issuingAuthority">document_issuingAuthority*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="document_issueDate" value="<?=$d->document_issueDate?>">
+                    <input required type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="document_issueDate" value="<?=$d->document_issueDate?>">
                     <label for="document_issueDate">document_issueDate*</label>
                 </div>
 
                 <h5>Endereço</h5>
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="address_zipCode" id="address_zipCode" class="form-control" placeholder="address_zipCode" value="<?=$d->address_zipCode?>">
+                    <input required type="text" name="address_zipCode" id="address_zipCode" class="form-control" placeholder="address_zipCode" value="<?=$d->address_zipCode?>">
                     <label for="address_zipCode">address_zipCode*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="address_street" id="address_street" class="form-control" placeholder="address_street" value="<?=$d->address_street?>">
+                    <input required type="text" name="address_street" id="address_street" class="form-control" placeholder="address_street" value="<?=$d->address_street?>">
                     <label for="address_street">address_street*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="address_number" id="address_number" class="form-control" placeholder="address_number" value="<?=$d->address_number?>">
+                    <input required type="text" name="address_number" id="address_number" class="form-control" placeholder="address_number" value="<?=$d->address_number?>">
                     <label for="address_number">address_number*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
                     <input type="text" name="address_complement" id="address_complement" class="form-control" placeholder="address_complement" value="<?=$d->address_complement?>">
-                    <label for="address_complement">address_complement*</label>
+                    <label for="address_complement">address_complement</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
                     <input type="text" name="address_neighborhood" id="address_neighborhood" class="form-control" placeholder="address_neighborhood" value="<?=$d->address_neighborhood?>">
-                    <label for="address_neighborhood">address_neighborhood*</label>
+                    <label for="address_neighborhood">address_neighborhood</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="address_city" id="address_city" class="form-control" placeholder="address_city" value="<?=$d->address_city?>">
+                    <input required type="text" name="address_city" id="address_city" class="form-control" placeholder="address_city" value="<?=$d->address_city?>">
                     <label for="address_city">address_city*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <select name="address_state" id="address_state" class="form-select">
+                    <select required name="address_state" id="address_state" class="form-select">
+                        <option value="">:: Selecione o Estado ::</option>
                         <?php
-                        foreach($sigals as $i => $sigla){
+                        foreach($siglas as $i => $sigla){
                         ?>
                         <option value="<?=$sigla?>" <?=(($d->address_state == $sigla)?'selected':false)?>><?=$sigla?></option>
                         <?php
@@ -236,31 +238,31 @@
                 <h5>Dados Bancários</h5>
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="bankCode" id="bankCode" class="form-control" placeholder="bankCode" value="<?=$d->bankCode?>">
+                    <input required type="text" name="bankCode" id="bankCode" class="form-control" placeholder="bankCode" value="<?=$d->bankCode?>">
                     <label for="bankCode">bankCode*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="accountType" id="accountType" class="form-control" placeholder="accountType" value="<?=$d->accountType?>">
+                    <input required type="text" name="accountType" id="accountType" class="form-control" placeholder="accountType" value="<?=$d->accountType?>">
                     <label for="accountType">accountType*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="accountNumber" id="accountNumber" class="form-control" placeholder="accountNumber" value="<?=$d->accountNumber?>">
+                    <input required type="text" name="accountNumber" id="accountNumber" class="form-control" placeholder="accountNumber" value="<?=$d->accountNumber?>">
                     <label for="accountNumber">accountNumber*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="accountDigit" id="accountDigit" class="form-control" placeholder="accountDigit" value="<?=$d->accountDigit?>">
+                    <input required type="text" name="accountDigit" id="accountDigit" class="form-control" placeholder="accountDigit" value="<?=$d->accountDigit?>">
                     <label for="accountDigit">accountDigit*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="branchNumber" id="branchNumber" class="form-control" placeholder="branchNumber" value="<?=$d->branchNumber?>">
+                    <input required type="text" name="branchNumber" id="branchNumber" class="form-control" placeholder="branchNumber" value="<?=$d->branchNumber?>">
                     <label for="branchNumber">branchNumber*</label>
                 </div>
 
@@ -283,7 +285,10 @@
             Carregando('none');
 
             $("#cpf").mask("999.999.999-99");
-            $("#telefone").mask("(99) 99999-9999");
+            $("#phoneNumber").mask("(99) 99999-9999");
+            $("#birthdate, #document_issueDate").mask("99/99/9999");
+            $("#address_zipCode").mask("99999-999");
+
 
             $('#form-<?=$md5?>').submit(function (e) {
 
