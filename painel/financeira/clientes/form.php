@@ -13,7 +13,7 @@
         unset($data['senha']);
 
         foreach ($data as $name => $value) {
-            if($name == 'birthdate' or $name = 'document_issueDate'){
+            if($name == 'birthdate' or $name == 'document_issueDate'){
                 $attr[] = "{$name} = '" . dataMysql($value) . "'";
             }else{
                 $attr[] = "{$name} = '" . addslashes($value) . "'";
