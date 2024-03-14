@@ -193,10 +193,7 @@
             </table>
             
             <?php
-                    // "isVendexFeeScheduleAvailable": false,
-                    // "isExponentialFeeScheduleAvailable": false
-
-                if(!$dados->data->isExponentialFeeScheduleAvailable){
+                if($dados->data->isExponentialFeeScheduleAvailable){
             ?>
             <div class="alert alert-success p-1 m-2" role="alert">
                 A simulação apresenta uma tabela <b><?=$dados->data->isVendexFeeScheduleAvailable?></b> mais vantajoso.
