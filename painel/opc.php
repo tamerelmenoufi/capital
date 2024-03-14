@@ -36,7 +36,7 @@ foreach($campos as $i => $campo){
 ?>
 
 <div class="form-floating mb-3">
-    <input type="text" name="<?=$campo?>" id="<?=$campo?>" class="form-control" placeholder="<?=$campo?>" value="<?=$d->$campo?>">
+    <input type="text" name="<?=$campo?>" id="<?=$campo?>" class="form-control" placeholder="<?=$campo?>" value="<?='<?=$d->'.$campo.'?>'?>">
     <label for="<?=$campo?>"><?=$campo?>*</label>
 </div>
 

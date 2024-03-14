@@ -65,67 +65,171 @@
                     <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
                     <label for="cpf">CPF*</label>
                 </div>
-                <!-- <div class="form-floating mb-3">
-                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone" value="<?=$d->telefone?>">
-                    <label for="telefone">Telefone*</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
-                    <label for="email">E-mail</label>
-                </div>
-                <?php
-                if($d->codigo != 1 and $_SESSION['ProjectPainel']->perfil == 'adm'){
-                ?>
-                <div class="form-floating mb-3">
-                    <select name="perfil" class="form-control" id="perfil">
-                        <option value="usr" <?=(($d->perfil == 'usr')?'selected':false)?>>Usuário</option>
-                        <option value="adm" <?=(($d->perfil == 'adm')?'selected':false)?>>Administrador</option>
-                        <option value="crd" <?=(($d->perfil == 'crd')?'selected':false)?>>Coordenador</option>
-                    </select>
-                    <label for="email">Perfil</label>
-                </div>
+
+
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
-                    <label for="login">Login</label>
-                </div>
-                <?php
-                }
-                ?>
-                <div class="form-floating mb-3">
-                    <input type="text" name="senha" id="senha" class="form-control" placeholder="E-mail" value="">
-                    <label for="senha">Senha</label>
-                </div>
-                <?php
-                if($d->codigo != 1 and $_SESSION['ProjectPainel']->perfil == 'adm' ){
-                ?>
-
-                <div class="form-floating mb-3">
-                    <select name="coordenador" id="coordenador" class="form-control" placeholder="Coordenador">
-                        <option value="">::Selecione o Coordenador::</option>
-                        <?php
-                            $q = "select * from clientes where perfil in ('adm', 'crd') and situacao = '1' order by nome";
-                            $r = mysqli_query($con, $q);
-                            while($s = mysqli_fetch_object($r)){
-                        ?>
-                        <option value="<?=$s->codigo?>" <?=(($d->coordenador == $s->codigo)?'selected':false)?>><?=$s->nome?></option>
-                        <?php
-                            }
-                        ?>
-                    </select>
-                    <label for="coordenador">Coordenador</label>
+                    <input type="text" name="birthdate" id="birthdate" class="form-control" placeholder="birthdate" value="">
+                    <label for="birthdate">birthdate*</label>
                 </div>
 
+
                 <div class="form-floating mb-3">
-                    <select name="situacao" class="form-control" id="situacao">
-                        <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
-                        <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
-                    </select>
-                    <label for="email">Situação</label>
+                    <input type="text" name="gender" id="gender" class="form-control" placeholder="gender" value="">
+                    <label for="gender">gender*</label>
                 </div>
-                <?php
-                }
-                ?> -->
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="phoneNumber" value="">
+                    <label for="phoneNumber">phoneNumber*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="email" value="">
+                    <label for="email">email*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="maritalStatus" id="maritalStatus" class="form-control" placeholder="maritalStatus" value="">
+                    <label for="maritalStatus">maritalStatus*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="nationality" id="nationality" class="form-control" placeholder="nationality" value="">
+                    <label for="nationality">nationality*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="naturalness" id="naturalness" class="form-control" placeholder="naturalness" value="">
+                    <label for="naturalness">naturalness*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="motherName" id="motherName" class="form-control" placeholder="motherName" value="">
+                    <label for="motherName">motherName*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="fatherName" id="fatherName" class="form-control" placeholder="fatherName" value="">
+                    <label for="fatherName">fatherName*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="pep" id="pep" class="form-control" placeholder="pep" value="">
+                    <label for="pep">pep*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="document_type" id="document_type" class="form-control" placeholder="document_type" value="">
+                    <label for="document_type">document_type*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="document_number" id="document_number" class="form-control" placeholder="document_number" value="">
+                    <label for="document_number">document_number*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="document_issuingState" id="document_issuingState" class="form-control" placeholder="document_issuingState" value="">
+                    <label for="document_issuingState">document_issuingState*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="document_issuingAuthority" id="document_issuingAuthority" class="form-control" placeholder="document_issuingAuthority" value="">
+                    <label for="document_issuingAuthority">document_issuingAuthority*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="document_issueDate" value="">
+                    <label for="document_issueDate">document_issueDate*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="address_zipCode" id="address_zipCode" class="form-control" placeholder="address_zipCode" value="">
+                    <label for="address_zipCode">address_zipCode*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="address_street" id="address_street" class="form-control" placeholder="address_street" value="">
+                    <label for="address_street">address_street*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="address_number" id="address_number" class="form-control" placeholder="address_number" value="">
+                    <label for="address_number">address_number*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="address_complement" id="address_complement" class="form-control" placeholder="address_complement" value="">
+                    <label for="address_complement">address_complement*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="address_neighborhood" id="address_neighborhood" class="form-control" placeholder="address_neighborhood" value="">
+                    <label for="address_neighborhood">address_neighborhood*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="address_city" id="address_city" class="form-control" placeholder="address_city" value="">
+                    <label for="address_city">address_city*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="address_state" id="address_state" class="form-control" placeholder="address_state" value="">
+                    <label for="address_state">address_state*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="bankCode" id="bankCode" class="form-control" placeholder="bankCode" value="">
+                    <label for="bankCode">bankCode*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="accountType" id="accountType" class="form-control" placeholder="accountType" value="">
+                    <label for="accountType">accountType*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="accountNumber" id="accountNumber" class="form-control" placeholder="accountNumber" value="">
+                    <label for="accountNumber">accountNumber*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="accountDigit" id="accountDigit" class="form-control" placeholder="accountDigit" value="">
+                    <label for="accountDigit">accountDigit*</label>
+                </div>
+
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="branchNumber" id="branchNumber" class="form-control" placeholder="branchNumber" value="">
+                    <label for="branchNumber">branchNumber*</label>
+                </div>
+
+
             </div>
         </div>
 
