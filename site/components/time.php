@@ -1,4 +1,72 @@
     <!-- ======= Team Section ======= -->
+
+
+
+    <style>
+
+.recent-blog-posts .post-box .post-title {
+    font-size: 24px;
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
+}
+
+.recent-blog-posts .post-box .post-title:hover {
+    font-size: 24px;
+    color: #574ec2;
+    font-weight: 700;
+    margin: 15px 0 0 0;
+    position: relative;
+    transition: 0.3s;
+}
+    .botaoverde{
+      padding: 15px;
+      padding-left: 35px;
+      padding-right: 35px;
+      border-radius: 25px 2px 25px;
+      font-size: 17px;
+      color: #fff;
+    background-color: #393287;
+    border-color: #393287;
+    }
+    .botaoverde:hover {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+    
+    .botaoroxo:hover {
+    color: #fff;
+    background-color: #574ec2;
+    border-color: #574ec2;
+}
+ .botaoroxo {
+    color: #fff;
+    background-color: #393287;
+    border-color: #393287;
+}
+.botao {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, 
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  }
+  </style>
     <section id="time" class="team">
       <div class="container" data-aos="fade-up">
 
@@ -97,6 +165,14 @@
             <?php
             //*/
             ?>
+
+<center style="margin-top:20px">
+          <a href="servico_categoria.php">
+         <button type="button" class=" botaoverde">
+          Conheça a Equipe Completa
+        </button></a>
+      </center>
+
         </div>
 
       </div>
