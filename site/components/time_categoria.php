@@ -91,87 +91,113 @@
 
       </div>
     </div><!-- End Breadcrumbs -->
- <div class="container aos-init aos-animate">
-        <div class="row">
+    <section id="time" class="team">
+      <div class="container" data-aos="fade-up">
 
-          <?php
-          $query = "select * from time where situacao = '1' order by codigo desc";
-          $result = mysqli_query($con, $query);
-          while($d = mysqli_fetch_object($result)){
-          ?>
+        <div class="section-header">
+          <h2>Time</h2>
+        </div>
 
-          <div style="margin-top:15px" class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <div class="post-img"><img src="<?=$localPainel?>site/volume/time/<?=$d->imagem?>" class="img-fluid" alt=""></div>
-              <!-- <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div> -->
-              <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
-              <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
-
-             
+        <div class="row gy-5">
 
 
+        <?php
+            $query = "select * from time where situacao = '1'  order by codigo  desc";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+
+              $midias = json_decode($d->canais_contatos);
+
+        ?>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img" style="height:320px">
+                <img src="<?=$localPainel?>site/volume/time/<?=$d->imagem?>" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <div class="social">
+                  <?php
+                    $midias_sociais = [
+                      'facebook' => 'https://www.facebook.com/',
+                      'twitter' => 'https://twitter.com/',
+                      'instagram' => 'https://www.instagram.com/',
+                      'youtube' => 'https://www.youtube.com/',
+                      'linkedin' => 'https://www.linkedin.com/',
+                      'whatsapp' => 'https://api.whatsapp.com/send?phone='
+                    ];
+
+                    foreach($midias_sociais as $ind => $url){
+                      if($midias->$ind){
+                  ?>
+                  <a href="<?=$url.$midias->$ind?>" target="_black"><i class="bi bi-<?=$ind?>"></i></a>
+                  <?php
+                      }
+                    }
+                  ?>
+                  <!-- <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a> -->
+                </div>
+                <h4><?=$d->nome?></h4>
+                <span><?=$d->cargo?></span>
+              </div>
             </div>
           </div>
-
           <?php
-          }
+            }
+
+            /*
           ?>
 
-          <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis aliquid necessitatibus tempora consectetur doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
+          <!-- End Team Member -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
               </div>
-              <h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam veritatis dicta nihil...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <div class="member-info">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+                <h4>Sarah Jhonson</h4>
+                <span>Programadora Senior</span>
+              </div>
             </div>
-          </div> -->
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+                <h4>William Anderson</h4>
+                <span>Designer de Web</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+            <?php
+            //*/
+            ?>
+<a style="color:#fff" href="./">
+    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
+                Voltar ao inicio</button></a>
 
         </div>
 
-<!-- <center style="margin-top:20px">
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Proximo</a>
-      </li>
-    </ul>
-  </nav>
-</center> -->
-
-        <div class="col-lg-12" style="padding:10px">
-
-    <a style="color:#fff" href="./">
-    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
-                Voltar ao inicio</button></a>
- </div>
-</div>
-
       </div>
+    </section><!-- End Team Section -->
 
-    </section><!-- End Recent Blog Posts Section -->
+    </section><!-- End Recent Blog Posts Section --> 
+    
+    
