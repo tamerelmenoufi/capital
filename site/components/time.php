@@ -10,7 +10,7 @@
 
 
         <?php
-            $query = "select * from time where situacao = '1' limit 4 order by codigo desc";
+            $query = "select * from time where situacao = '1'  order by codigo desc limit 0,4";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
 
