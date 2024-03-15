@@ -1,4 +1,11 @@
-    <!-- ======= Team Section ======= -->
+<head>
+  <title>My Now Amazing Webpage</title>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  </head>
+   
+   
+   <!-- ======= Team Section ======= -->
     <section id="time" class="team">
       <div class="container" data-aos="fade-up">
 
