@@ -10,7 +10,7 @@
 
 
         <?php
-            $query = "select * from time where situacao = '1'  order by codigo rand() limit 0,4";
+            $query = "select * from time where situacao = '1'  order by rand() limit 0,4";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
 
