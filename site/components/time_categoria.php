@@ -94,9 +94,7 @@
     <section id="time" class="team">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Time</h2>
-        </div>
+        
 
         <div class="row gy-5">
 
