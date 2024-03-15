@@ -1,11 +1,4 @@
-<head>
-  <title>My Now Amazing Webpage</title>
-  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-  </head>
-   
-   
-   <!-- ======= Team Section ======= -->
+    <!-- ======= Team Section ======= -->
     <section id="time" class="team">
       <div class="container" data-aos="fade-up">
 
@@ -108,32 +101,3 @@
 
       </div>
     </section><!-- End Team Section -->
-
-
-
-   <div> <img src="https://w7.pngwing.com/pngs/562/239/png-transparent-powder-gold-particles-gold-gold-elements-powder.png" /></div>
-    <div>your content</div>
-    <div><img src="https://png.pngtree.com/png-clipart/20190710/ourlarge/pngtree-golden-glitter-frame-background-png-image_1540565.jpg" /></div> 
-  <div class="autoplay">
-    <div> <img src="https://w7.pngwing.com/pngs/562/239/png-transparent-powder-gold-particles-gold-gold-elements-powder.png" /></div>
-    <div>your content</div>
-    <div><img src="https://png.pngtree.com/png-clipart/20190710/ourlarge/pngtree-golden-glitter-frame-background-png-image_1540565.jpg" /></div>
-  
-  </div>
-
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="slick/slick.min.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.autoplay').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-});
-    });
-
-    
-  </script>
