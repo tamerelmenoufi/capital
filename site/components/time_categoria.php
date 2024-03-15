@@ -189,7 +189,7 @@
             <?php
             //*/
             ?>
-<a style="color:#fff" href="./">
+<a style="color:#fff;text-align:right" href="./">
     <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
                 Voltar ao inicio</button></a>
 
