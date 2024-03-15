@@ -10,14 +10,14 @@
 
 
         <?php
-            $query = "select * from time where situacao = '1'  order by codigo desc limit 0,4";
+            $query = "select * from time where situacao = '1'  order by codigo rand() limit 0,4";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
 
               $midias = json_decode($d->canais_contatos);
 
         ?>
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img" style="height:320px">
                 <img src="<?=$localPainel?>site/volume/time/<?=$d->imagem?>" class="img-fluid" alt="">
