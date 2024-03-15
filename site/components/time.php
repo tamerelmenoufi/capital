@@ -167,7 +167,7 @@
             ?>
 
 <center style="margin-top:20px">
-          <a href="servico_categoria.php">
+          <a href="time_categoria.php">
          <button type="button" class=" botaoverde">
           Conheça a Equipe Completa
         </button></a>
