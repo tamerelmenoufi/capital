@@ -435,7 +435,7 @@
                         <div class="input-group">
                             <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
                             <div class="form-control"><?=$proposta->data->formalizationLink?></div>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar o link" copy="<?=$proposta->data->formalizationLink?>"><i class="fa-solid fa-copy"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar o link" copiar="<?=$proposta->data->formalizationLink?>"><i class="fa-solid fa-copy"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por whatsApp" wapp="<?=$d->codigo?>"><i class="fa-brands fa-whatsapp"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por SMS" sms="<?=$d->codigo?>"><i class="fa-solid fa-comment-sms"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por e-mail" email="<?=$d->codigo?>"><i class="fa-solid fa-at"></i></button>
@@ -492,6 +492,15 @@
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
+
+        $("button[copiar]").click(function(){
+            obj = $(this);
+            texto = $(this).attr("copiar");
+            CopyMemory(texto);
+            obj.removeClass('btn-secondary');
+            obj.addClass('btn-success');
+            // obj.children("span").text("Código PIX Copiado!");
+        });
 
         $("input[busca]").mask("999.999.999-99");
 
