@@ -261,6 +261,11 @@
             type="button" 
             class="btn btn-outline-danger"   
         >Limpar</button>
+        <button
+            clientes
+            type="button" 
+            class="btn btn-outline-danger"   
+        ><i class="fa-solid fa-users"></i> Clientes</button>
     </div>
 
     <?php
@@ -502,6 +507,16 @@
             obj.removeClass('btn-outline-secondary');
             obj.addClass('btn-outline-success');
             // obj.children("span").text("Código PIX Copiado!");
+        });
+
+        $("button[clientes]").click(function(){
+            Carregando();
+            $.ajax({
+                url:"financeira/clientes/index.php",
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            });
         });
 
         $("button[novo]").click(function(){
