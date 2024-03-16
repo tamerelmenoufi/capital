@@ -251,6 +251,7 @@
     </div>
 
     <?php
+    echo $q;
     if($_POST['acao'] == 'consulta' and !$cliente->codigo){
     ?>
     <div class="row">
