@@ -402,7 +402,7 @@
                         <div class="input-group">
                             <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
                             <div class="form-control"><?=$proposta->data->formalizationLink?></div>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-copy"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"><i class="fa-solid fa-copy"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-brands fa-whatsapp"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-comment-sms"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-at"></i></button>
