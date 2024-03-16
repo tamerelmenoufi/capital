@@ -514,7 +514,7 @@
                     retorno:"financeira/vctex/consulta.php"
                 },
                 success:function(dados){
-                $("#paginaHome").html(dados);
+                    $(".LateralDireita").html(dados);
                 }
             });
         });
