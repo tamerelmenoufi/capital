@@ -397,16 +397,18 @@
                 </tbody> 
             </table>
             <div class="row">
-                <div class="col p-2">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
-                        <div class="form-control"><?=$proposta->data->formalizationLink?></div>
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-copy"></i></button>
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-brands fa-whatsapp"></i></button>
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-comment-sms"></i></button>
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-at"></i></button>
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-rotate"></i></button>
-                    </div>                    
+                <div class="col">
+                    <div class="m-2">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
+                            <div class="form-control"><?=$proposta->data->formalizationLink?></div>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-copy"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-brands fa-whatsapp"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-comment-sms"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-at"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-rotate"></i></button>
+                        </div>           
+                    </div>         
                 </div>
             </div>
 
