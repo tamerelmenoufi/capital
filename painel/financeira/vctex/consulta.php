@@ -205,7 +205,7 @@
 
 
     if($_SESSION['vctex_campo'] and $_SESSION['vctex_valor']){
-        echo $query = "select * from clientes where {$_SESSION['vctex_campo']} like '%{$_SESSION['vctex_valor']}%'";
+        $query = "select * from clientes where {$_SESSION['vctex_campo']} like '%{$_SESSION['vctex_valor']}%'";
         $result = mysqli_query($con, $query);
         $cliente = mysqli_fetch_object($result);
     }
@@ -291,7 +291,12 @@
     </div>
     <?php
 
-    $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as status_proposta from consultas where cliente = '{$cliente->codigo}' order by codigo desc";
+    $query = "select a.*, 
+                    a.dados->>'$.statusCode' as simulacao,
+                    a.proposta->>'$.statusCode' as status_proposta,
+                    (select api_tabelas->>'$.data.name' from configuracoes where api_tabelas->>'$.data.id' == a.tabela_sugerida) as tabela_sugerida,
+                    (select api_tabelas->>'$.data.name' from configuracoes where api_tabelas->>'$.data.id' == a.tabela_resultado) as tabela_resultado
+                from consultas a where a.cliente = '{$cliente->codigo}' order by a.codigo desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
@@ -302,6 +307,18 @@
             <?=(($d->proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
             <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Tabela Sugerida</th>
+                        <th>Resultado da Tabela</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?=$d->tabela_sugerida?></td>
+                        <td><?=$d->tabela_resultado?></td>
+                    </tr>
+                </tbody>    
                 <thead>
                     <tr>
                         <th colspan="7">Período</th>
