@@ -296,7 +296,7 @@
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
 
-        list($tabela_sugerida, $tabela_resultado) = mysqli_fect_row(mysqli_query($con, "select 
+        list($tabela_sugerida, $tabela_resultado) = mysqli_fetch_row(mysqli_query($con, "select 
                         (select api_tabelas->>'$.data[{$dados->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
                         (select api_tabelas->>'$.data[{$dados->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
                 "));
