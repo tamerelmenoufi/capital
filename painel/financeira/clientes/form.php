@@ -64,7 +64,7 @@
                     <label for="nome">Nome*</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input required type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=$d->cpf?>">
+                    <input required type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF" value="<?=(($_POST['cpf'])?:$d->cpf)?>">
                     <label for="cpf">CPF*</label>
                 </div>
 
@@ -279,6 +279,7 @@
                 <div style="display:flex; justify-content:end">
                     <button type="submit" class="btn btn-success btn-ms">Salvar</button>
                     <input type="hidden" id="codigo" value="<?=$_POST['cod']?>" />
+                    <input type="hidden" id="retorno" value="<?=($_POST['retorno']?:'financeira/clientes/index.php')?>" />
                 </div>
             </div>
         </div>
@@ -299,6 +300,7 @@
                 e.preventDefault();
 
                 var codigo = $('#codigo').val();
+                var retorno = $('#retorno').val();
                 var campos = $(this).serializeArray();
 
                 if (codigo) {
@@ -329,7 +331,7 @@
                         // console.log(dados)
                         // if(dados.status){
                             $.ajax({
-                                url:"financeira/clientes/index.php",
+                                url:retorno,
                                 type:"POST",
                                 success:function(dados){
                                     $("#paginaHome").html(dados);

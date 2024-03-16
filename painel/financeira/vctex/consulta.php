@@ -276,10 +276,10 @@
                         novo
                         type="button"
                         class="btn btn-outline-primary btn-sm mt-3"
-                        XXXdata-bs-toggle="offcanvas"
-                        XXXhref="#offcanvasDireita"
-                        XXXrole="button"
-                        XXXaria-controls="offcanvasDireita"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
                     ><i class="fa-regular fa-user"></i> Cadastrar um novo cliente</button>
                 </div>
             </div>
@@ -507,7 +507,12 @@
         $("button[novo]").click(function(){
             Carregando();
             $.ajax({
-                url:"financeira/clientes/index.php",
+                url:"financeira/clientes/form.php",
+                type:"POST",
+                data:{
+                    cpf:'<?=$_SESSION['vctex_valor']?>',
+                    retorno:"financeira/vctex/consulta.php"
+                }
                 success:function(dados){
                 $("#paginaHome").html(dados);
                 }
