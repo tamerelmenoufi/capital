@@ -500,7 +500,7 @@
             texto = $(this).attr("copiar");
             CopyMemory(texto);
             obj.removeClass('btn-outline-secondary');
-            obj.addClass('btn-success');
+            obj.addClass('btn-outline-secondary');
             // obj.children("span").text("Código PIX Copiado!");
         });
 
