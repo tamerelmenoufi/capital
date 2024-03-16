@@ -216,11 +216,12 @@
     <div class="card-text" style="min-height:400px;">
         
     <div class="input-group mb-3">
-        <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=(($_SESSION['vctex_rotulo'])?:'CPF')?></button>
+        <!-- <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=(($_SESSION['vctex_rotulo'])?:'CPF')?></button>
         <ul class="dropdown-menu">
             <li><a selecione="cpf" class="dropdown-item" href="#">CPF</a></li>
             <li><a selecione="nome" class="dropdown-item" href="#">Nome</a></li>
-        </ul>
+        </ul> -->
+        <span class="input-group-text">CPF</span>
         <input 
             type="text" 
             class="form-control" 
@@ -402,13 +403,8 @@
 
         Carregando('none');
 
-        <?php
-        if($_SESSION['vctex_rotulo'] == 'CPF'){
-        ?>
         $("input[busca]").mask("999.999.999-99");
-        <?php
-        }
-        ?>
+
         $("button[atualiza]").click(function(){
             Carregando();
             $.ajax({
@@ -419,19 +415,19 @@
             })
         })
 
-        $("a[selecione]").click(function(){
-            campo = $(this).attr("selecione");
-            rotulo = $(this).text();
-            $("button[buscar]").attr("campo", campo);
-            $("button[buscar]").attr("rotulo", rotulo);
-            $("button[opcao_busca]").text(rotulo);
-            if(campo == 'cpf'){
-                $("input[busca]").mask("999.999.999-99");
-            }else{
-                $("input[busca]").unmask();
-            }
-            $("input[busca]").val('');
-        })
+        // $("a[selecione]").click(function(){
+        //     campo = $(this).attr("selecione");
+        //     rotulo = $(this).text();
+        //     $("button[buscar]").attr("campo", campo);
+        //     $("button[buscar]").attr("rotulo", rotulo);
+        //     $("button[opcao_busca]").text(rotulo);
+        //     if(campo == 'cpf'){
+        //         $("input[busca]").mask("999.999.999-99");
+        //     }else{
+        //         $("input[busca]").unmask();
+        //     }
+        //     $("input[busca]").val('');
+        // })
 
         $("button[buscar]").click(function(){
             
