@@ -54,7 +54,7 @@
         $simulacao = $vctex->Simular([
             'token' => $token,
             'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-            'tabela' => $_POST['tabela'];
+            'tabela' => $_POST['tabela']
         ]);
         
         $verifica = json_decode($simulacao);
