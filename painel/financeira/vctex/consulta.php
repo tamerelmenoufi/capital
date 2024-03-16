@@ -392,7 +392,7 @@
                 <tbody>
                     <tr>
                         <td colspan="4"><?=$proposta->data->proposalcontractNumber?></td>
-                        <td colspan="4"><?=$proposta->data->message?></td>
+                        <td colspan="4"><?="{$proposta->statusCode} - {$proposta->message}"?></td>
                     </tr>
                 </tbody> 
             </table>
