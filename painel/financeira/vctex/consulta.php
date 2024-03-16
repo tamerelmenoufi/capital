@@ -291,7 +291,7 @@
     </div>
     <?php
 
-    $query = "select a.*, 
+    echo $query = "select a.*, 
                     a.dados->>'$.statusCode' as simulacao,
                     a.proposta->>'$.statusCode' as status_proposta,
                     (select api_tabelas->>'$.data.name' from configuracoes where api_tabelas->>'$.data.id' == a.tabela_sugerida) as tabela_sugerida,
