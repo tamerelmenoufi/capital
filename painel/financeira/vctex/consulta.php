@@ -235,6 +235,11 @@
             campo="<?=(($_SESSION['vctex_campo'])?:'cpf')?>"
             rotulo="<?=(($_SESSION['vctex_rotulo'])?:'CPF')?>"    
         >Buscar</button>
+        <button
+            limpar
+            type="button" 
+            class="btn btn-outline-danger"   
+        >Limpar</button>
     </div>
 
     <?php
