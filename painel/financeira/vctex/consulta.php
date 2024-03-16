@@ -397,7 +397,7 @@
                 </tbody> 
             </table>
             <div class="row">
-                <div class="row">
+                <div class="col">
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
                         <div class="form-control"><?=$proposta->data->formalizationLink?></div>
