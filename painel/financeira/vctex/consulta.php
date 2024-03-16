@@ -411,14 +411,8 @@
                     </div>         
                 </div>
             </div>
-
-            
-            
             <?php
                 }
-                    var_dump($d->proposta);
-                
-
             ?>
         </div>
     <?php
