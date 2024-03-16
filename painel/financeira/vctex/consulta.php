@@ -305,7 +305,7 @@
     ?>
         <div class="card mb-3 border-primary">
             <div class="card-header bg-primary text-white">
-            <?=(($d->proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
+            <?=(($d->status_proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
             <table class="table table-hover table-striped">
                 <thead>
