@@ -276,10 +276,10 @@
                         novo
                         type="button"
                         class="btn btn-outline-primary btn-sm mt-3"
-                        data-bs-toggle="offcanvas"
-                        href="#offcanvasDireita"
-                        role="button"
-                        aria-controls="offcanvasDireita"
+                        XXXdata-bs-toggle="offcanvas"
+                        XXXhref="#offcanvasDireita"
+                        XXXrole="button"
+                        XXXaria-controls="offcanvasDireita"
                     ><i class="fa-regular fa-user"></i> Cadastrar um novo cliente</button>
                 </div>
             </div>
@@ -502,6 +502,16 @@
             obj.removeClass('btn-outline-secondary');
             obj.addClass('btn-outline-success');
             // obj.children("span").text("Código PIX Copiado!");
+        });
+
+        $("button[novo]").click(function(){
+            Carregando();
+            $.ajax({
+                "financeira/clientes/index.php",
+                success:function(dados){
+                $("#paginaHome").html(dados);
+                }
+            });
         });
 
         $("input[busca]").mask("999.999.999-99");
