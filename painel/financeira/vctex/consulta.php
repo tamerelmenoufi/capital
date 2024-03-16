@@ -507,7 +507,7 @@
         $("button[novo]").click(function(){
             Carregando();
             $.ajax({
-                "financeira/clientes/index.php",
+                url:"financeira/clientes/index.php",
                 success:function(dados){
                 $("#paginaHome").html(dados);
                 }
