@@ -378,6 +378,27 @@
                 Solicitar proposta para esta simulação
             </button>
             <?php
+                }else{
+
+                    $proposta = json_decode($d->proposta);
+            ?>
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th colspan="4">Número do Contrato</th>
+                        <th colspan="4">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4"><?=$proposta->data->proposalcontractNumber?></td>
+                        <td colspan="4"><?=$proposta->data->message?></td>
+                    </tr>
+                </tbody> 
+            </table>
+            
+            
+            <?php
                 }
                     var_dump($d->proposta);
                 
