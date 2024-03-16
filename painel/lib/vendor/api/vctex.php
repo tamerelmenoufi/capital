@@ -130,7 +130,7 @@ class Vctex {
     }
 
 
-    public function Conculta($token){
+    public function Conculta($dados){
 
         $curl = curl_init();
 
@@ -146,7 +146,7 @@ class Vctex {
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPHEADER => array(
             'Accept: application/json',
-            'Authorization: Bearer '.$token
+            'Authorization: Bearer '.$dados['token']
         ),
         ));
 
