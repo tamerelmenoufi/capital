@@ -294,8 +294,8 @@
     echo $query = "select a.*, 
                     a.dados->>'$.statusCode' as simulacao,
                     a.proposta->>'$.statusCode' as status_proposta,
-                    (select api_tabelas->>'$.data.name' from configuracoes where api_tabelas->>'$.data.id' = a.tabela_escolhida) as tabela_sugerida,
-                    (select api_tabelas->>'$.data.name' from configuracoes where api_tabelas->>'$.data.id' = a.tabela) as tabela_resultado
+                    (select api_tabelas->>'$.data[a.tabela_escolhida].name' from configuracoes where codigo = 1) as tabela_sugerida,
+                    (select api_tabelas->>'$.[a.tabela_escolhida]data.name' from configuracoes where codigo = 1) as tabela_resultado
                 from consultas a where a.cliente = '{$cliente->codigo}' order by a.codigo desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
