@@ -1,10 +1,22 @@
-    <!-- ======= Team Section ======= -->
+    <!-- ======= Recent Blog Posts Section ======= -->
+<section id="recent-blog-posts" class="recent-blog-posts">
+
+<style>
+
+  .botaoazul{
+    background: var(--color-primary);
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 0;
+
+
+  }
 
 
 
-    <style>
-
-.recent-blog-posts .post-box .post-title {
+  .recent-blog-posts .post-box .post-title {
     font-size: 24px;
     color: var(--color-secondary);
     font-weight: 700;
@@ -66,19 +78,29 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   }
-  </style>
+</style>
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; background:#3a338b !important;color:#fff">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 style="">Time Completo</h2>
+
+        </div>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
     <section id="time" class="team">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Time</h2>
-        </div>
+        
 
         <div class="row gy-5">
 
 
         <?php
-            $query = "select * from time where situacao = '1'  order by rand() limit 0,4";
+            $query = "select * from time where situacao = '1'  order by codigo  desc";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
 
@@ -165,15 +187,15 @@
             <?php
             //*/
             ?>
-
-<center style="margin-top:20px">
-          <a href="time_categoria.php">
-         <button type="button" class=" botaoverde">
-          Conheça a Equipe Completa
-        </button></a>
-      </center>
+<a style="color:#fff;text-align:right" href="./">
+    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
+                Voltar ao inicio</button></a>
 
         </div>
 
       </div>
     </section><!-- End Team Section -->
+
+    </section><!-- End Recent Blog Posts Section --> 
+    
+    

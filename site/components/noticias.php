@@ -19,19 +19,11 @@
     position: relative;
     transition: 0.3s;
 }
-    .botaonovoroxo{
+    .botaoverde{
       padding: 15px;
-
-      border-radius: 2px 2px 25px;
-      font-size: 17px;
-      color: #393287;
-    background-color: #fff;
-    border-color: #393287;
-    }
-    
-    .botaonovoroxo:hover{
-      padding: 15px;
-      border-radius: 2px 2px 25px;
+      padding-left: 35px;
+      padding-right: 35px;
+      border-radius: 25px 2px 25px;
       font-size: 17px;
       color: #fff;
     background-color: #393287;
@@ -145,7 +137,7 @@
 
           <center style="margin-top:20px">
           <a href="noticia_categoria.php">
-         <button type="button" class=" botaonovoroxo">
+         <button type="button" class=" botaoverde">
           Outras noticias
         </button></a>
       </center>
