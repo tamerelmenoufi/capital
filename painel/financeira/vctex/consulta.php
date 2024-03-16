@@ -265,7 +265,7 @@
 
     <?php
     echo $q;
-    if($_POST['acao'] == 'consulta' and !$cliente->codigo){
+    if($_SESSION['vctex_campo'] and $_SESSION['vctex_valor'] and !$cliente->codigo){
     ?>
     <div class="row">
         <div class="col">
