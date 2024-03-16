@@ -153,7 +153,7 @@ class Vctex {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        return $response."<br>".$this->Ambiente($this->ambiente)."<br>".$dados['proposalId']."<br>".$dados['token']."\n";
 
     }
 
