@@ -296,11 +296,6 @@
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
 
-        echo "select 
-        (select api_tabelas->>'$.data[{$d->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
-        (select api_tabelas->>'$.data[{$d->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
-";
-
         list($tabela_sugerida, $tabela_resultado) = mysqli_fetch_row(mysqli_query($con, "select 
                         (select api_tabelas->>'$.data[{$d->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
                         (select api_tabelas->>'$.data[{$d->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
@@ -315,14 +310,14 @@
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>Tabela Sugerida</th>
-                        <th>Resultado da Tabela</th>
+                        <th colspan="4">Tabela Sugerida</th>
+                        <th colspan="4">Resultado da Tabela</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?=$tabela_sugerida?></td>
-                        <td><?=$tabela_resultado?></td>
+                        <td colspan="4"><?=$tabela_sugerida?></td>
+                        <td colspan="4"><?=$tabela_resultado?></td>
                     </tr>
                 </tbody>    
                 <thead>
