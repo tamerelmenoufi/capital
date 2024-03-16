@@ -397,10 +397,10 @@
             <?php
                 if($d->status_proposta){
                     $proposta = json_decode($d->proposta);
-                    var_dump($proposta);
+                    // var_dump($proposta);
             ?>
                 <div class="alert alert-danger m-3" role="alert">
-                A simple danger alert—check it out!
+                    <?="{$proposta->statusCode} - {$proposta->message}"?>
                 </div>
             <?php
                 }
