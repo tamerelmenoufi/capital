@@ -317,6 +317,14 @@
                         (select api_tabelas->>'$.data[{$d->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
                         (select api_tabelas->>'$.data[{$d->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
                 "));
+        $q = "select * from configuracoes where codigo = '1'";
+        $r = mysqli_query($con, $q);
+        $t = mysqli_fetch_object($r);
+        $tab = json_decode($t->api_tabelas);
+        foreach($tab->data as $i => $v){
+            if($v->id == $d->tabela_escolhida) $tabela_sugerida = $v->name;
+            if($v->id == $d->tabela) $tabela_resultado = $v->name;
+        }
 
         if($dados->statusCode == 200){
     ?>
