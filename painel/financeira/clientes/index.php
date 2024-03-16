@@ -63,6 +63,14 @@
 
                   </td> -->
                   <td>
+
+                    <button vctex="<?=$d->cpf?>" class="btn btn-warning">
+                      VCTEX
+                    </button>
+                    <button facta="<?=$d->cpf?>" disabled class="btn btn-warning">
+                      FACTA
+                    </button>
+
                     <button
                       class="btn btn-primary"
                       style="margin-bottom:1px"
@@ -102,6 +110,22 @@
                 url:"financeira/clientes/form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
+                }
+            })
+        })
+
+        $("button[vctex]").click(function(){
+            valor = $(this).attr("vctex");
+            $.ajax({
+                url:"financeira/vctex/consulta.php",
+                type:"POST",
+                data:{
+                  campo:'cpf',
+                  rotulo:"CPF",
+                  valor
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
                 }
             })
         })

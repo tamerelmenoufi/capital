@@ -264,7 +264,7 @@
         <button
             clientes
             type="button" 
-            class="btn btn-outline-danger"   
+            class="btn btn-outline-primary"   
         ><i class="fa-solid fa-users"></i> Clientes</button>
     </div>
 
