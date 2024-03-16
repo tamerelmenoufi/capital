@@ -565,6 +565,9 @@
                 type:"POST",
                 data:{
                     acao:'atualiza_proposta',
+                    campo:'<?=$_SESSION['vctex_campo']?>',
+                    rotulo:'<?=$_SESSION['vctex_rotulo']?>',
+                    valor:'<?=$_SESSION['vctex_valor']?>',
                     proposalId,
                     atualiza_proposta
                 },
