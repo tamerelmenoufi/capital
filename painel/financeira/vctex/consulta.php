@@ -297,13 +297,13 @@
         $dados = json_decode($d->dados);
 
         echo "select 
-        (select api_tabelas->>'$.data[{$dados->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
-        (select api_tabelas->>'$.data[{$dados->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
+        (select api_tabelas->>'$.data[{$d->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
+        (select api_tabelas->>'$.data[{$d->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
 ";
 
         list($tabela_sugerida, $tabela_resultado) = mysqli_fetch_row(mysqli_query($con, "select 
-                        (select api_tabelas->>'$.data[{$dados->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
-                        (select api_tabelas->>'$.data[{$dados->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
+                        (select api_tabelas->>'$.data[{$d->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
+                        (select api_tabelas->>'$.data[{$d->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
                 "));
 
         if($dados->statusCode == 200){
