@@ -396,7 +396,7 @@
                     </tr>
                 </tbody> 
             </table>
-            <div class="input-group w-100 m-3">
+            <div class="input-group m-3">
                 <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
                 <div class="form-control"><?=$proposta->data->formalizationLink?></div>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-copy"></i></button>
