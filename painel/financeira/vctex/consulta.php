@@ -51,10 +51,12 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
+        $tabela_padrao = $_POST['tabela'];
+
         $simulacao = $vctex->Simular([
             'token' => $token,
             'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-            'tabela' => $_POST['tabela']
+            'tabela' => $tabela_padrao
         ]);
         
         $verifica = json_decode($simulacao);
@@ -66,7 +68,7 @@
                 'tabela' => 0
             ]);
 
-            $d->tabela_padrao = 0;
+            $tabela_padrao = 0;
 
         }
 
@@ -79,7 +81,8 @@
                                             operadora = 'VCTEX',
                                             cliente = '{$_POST['cliente']}',
                                             data = NOW(),
-                                            tabela = '{$d->tabela_padrao}',
+                                            tabela_escolhida = '{$_POST['tabela']}',
+                                            tabela = '{$tabela_padrao}',
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
