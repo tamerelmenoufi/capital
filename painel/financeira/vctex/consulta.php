@@ -76,18 +76,18 @@
             'tabela' => $tabela_padrao
         ]);
         
-        $verifica = json_decode($simulacao);
-        if($verifica->data->isExponentialFeeScheduleAvailable == true and $verifica->statusCode == 200){
+        // $verifica = json_decode($simulacao);
+        // if($verifica->data->isExponentialFeeScheduleAvailable == true and $verifica->statusCode == 200){
 
-            $simulacao = $vctex->Simular([
-                'token' => $token,
-                'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-                'tabela' => 0
-            ]);
+        //     $simulacao = $vctex->Simular([
+        //         'token' => $token,
+        //         'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
+        //         'tabela' => 0
+        //     ]);
 
-            $tabela_padrao = 0;
+        //     $tabela_padrao = 0;
 
-        }
+        // }
 
 
         $consulta = uniqid();
