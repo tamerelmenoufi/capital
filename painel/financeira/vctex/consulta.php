@@ -232,7 +232,7 @@
             <?php
                 $q = "select * from configuracoes where codigo = '1'";
                 $r = mysqli_query($con, $q);
-                $ab = mysqli_fetch_object($r);
+                $tab = mysqli_fetch_object($r);
                 $t = json_decode($tab->api_tabelas);
                 foreach($t->data as $i => $v){
             ?>
