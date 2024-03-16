@@ -303,8 +303,8 @@
 
         if($dados->statusCode == 200){
     ?>
-        <div class="card mb-3 border-primary">
-            <div class="card-header bg-primary text-white">
+        <div class="card mb-3 border-<?=(($d->status_proposta == 200)?'success':'primary')?>">
+            <div class="card-header bg-<?=(($d->status_proposta == 200)?'success':'primary')?> text-white">
             <?=(($d->status_proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
             <table class="table table-hover table-striped">
