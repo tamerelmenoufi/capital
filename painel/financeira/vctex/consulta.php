@@ -405,7 +405,7 @@
             ?>
                 <div class="alert alert-danger m-3" role="alert">
                     <?="{$proposta->statusCode} - {$proposta->message}"?>
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar o link" copiar="<?="{$proposta->statusCode} - {$proposta->message}"?>"><i class="fa-solid fa-copy"></i></button>
+                    <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar o link" copiar="<?="{$proposta->statusCode} - {$proposta->message}"?>"><i class="fa-solid fa-copy"></i></button> -->
 
                 </div>
             <?php
