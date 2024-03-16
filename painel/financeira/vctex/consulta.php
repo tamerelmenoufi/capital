@@ -391,7 +391,7 @@
                 }
                 if($d->status_proposta != 200){
             ?>
-            <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm">
+            <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm m-3">
                 Solicitar proposta para esta simulação
             </button>
             <?php
