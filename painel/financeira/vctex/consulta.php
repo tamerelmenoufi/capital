@@ -397,7 +397,7 @@
                 </tbody> 
             </table>
             <div class="input-group">
-                <span class="input-group-text">First and last name</span>
+                <span class="input-group-text w-100"><?=$proposta->data->formalizationLink?></span>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-brands fa-whatsapp"></i></button>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-comment-sms"></i></button>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-paper-plane"></i></button>
