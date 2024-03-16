@@ -135,7 +135,7 @@ class Vctex {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'/status/:'.$dados['proposalId'],
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'status/:'.$dados['proposalId'],
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
