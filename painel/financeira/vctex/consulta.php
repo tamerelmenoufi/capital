@@ -47,14 +47,14 @@
         $_SESSION['vctex_valor'] = $_POST['valor'];
 
 
-        $query = "select *, (select api_tabela_padrao from configuracoes where codigo = '1') as tabela_padrao from clientes where codigo = '{$_POST['cliente']}'";
+        $query = "select * from clientes where codigo = '{$_POST['cliente']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
         $simulacao = $vctex->Simular([
             'token' => $token,
             'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-            'tabela' => $d->tabela_padrao
+            'tabela' => $_POST['tabela'];
         ]);
         
         $verifica = json_decode($simulacao);
@@ -483,6 +483,8 @@
 
         $("button[simulacao]").click(function(){
 
+            tabela = $("#tabela").val();
+
             $.confirm({
                 title:"Simulação",
                 content:"Confirma a solicitação para simulação?",
@@ -502,7 +504,8 @@
                                     campo:'<?=$_SESSION['vctex_campo']?>',
                                     rotulo:'<?=$_SESSION['vctex_rotulo']?>',
                                     valor:'<?=$_SESSION['vctex_valor']?>',
-                                    cliente:'<?=$cliente->codigo?>'
+                                    cliente:'<?=$cliente->codigo?>',
+                                    tabela
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
