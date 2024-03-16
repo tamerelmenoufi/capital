@@ -34,6 +34,21 @@
         $_SESSION['vctex_valor'] = false;
     }
 
+    if($_POST['acao'] == 'atualiza_proposta'){
+        $_SESSION['vctex_campo'] = $_POST['campo'];
+        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
+        $_SESSION['vctex_valor'] = $_POST['valor'];
+
+        $consulta = $vctex->Conculta([
+            'token' => $token,
+            'proposalId' => $_POST['proposalId']
+        ]);
+
+        $query = "update consultas set lixo = '{$consulta}' where codigo = '{$_POST['atualiza_proposta']}'";
+        $result = mysqli_query($con, $query);
+
+    }
+
     if($_POST['acao'] == 'consulta'){
         $_SESSION['vctex_campo'] = $_POST['campo'];
         $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
@@ -406,7 +421,7 @@
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por whatsApp"><i class="fa-brands fa-whatsapp"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por SMS"><i class="fa-solid fa-comment-sms"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por e-mail"><i class="fa-solid fa-at"></i></button>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Atualizar Status da proposta" proposalId="<?=$proposta->data->proposalId?>"><i class="fa-solid fa-rotate"></i></button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Atualizar Status da proposta" proposalId="<?=$proposta->data->proposalId?>" atualiza_proposta="<?=$d->codigo?>"><i class="fa-solid fa-rotate"></i></button>
                         </div>           
                     </div>         
                 </div>
@@ -529,6 +544,29 @@
                 type:"POST",
                 data:{
                     acao:'limpar'
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            })            
+            
+
+        })     
+
+        $("button[atualiza_proposta]").click(function(){
+
+            proposalId = $(this).attr("proposalId");
+            atualiza_proposta = $(this).attr("atualiza_proposta");
+
+            Carregando();
+
+            $.ajax({
+                url:"financeira/vctex/consulta.php",
+                type:"POST",
+                data:{
+                    acao:'atualiza_proposta',
+                    proposalId,
+                    atualiza_proposta
                 },
                 success:function(dados){
                     $("#paginaHome").html(dados);
