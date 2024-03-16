@@ -512,7 +512,7 @@
                 data:{
                     cpf:'<?=$_SESSION['vctex_valor']?>',
                     retorno:"financeira/vctex/consulta.php"
-                }
+                },
                 success:function(dados){
                 $("#paginaHome").html(dados);
                 }
