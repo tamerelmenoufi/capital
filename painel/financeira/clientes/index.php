@@ -54,7 +54,7 @@
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td><?=$d->phoneNumber?></td>
-                  <td><?=$d->matherName?></td>
+                  <td><?=$d->motherName?></td>
                   <!-- <td>
 
                   <div class="form-check form-switch">
