@@ -395,6 +395,16 @@
                 Solicitar proposta para esta simulação
             </button>
             <?php
+                if($d->status_proposta){
+                    $proposta = json_decode($d->proposta);
+                    var_dump($proposta);
+            ?>
+
+            <?php
+                }
+
+
+
                 }else{
 
                     $proposta = json_decode($d->proposta);
