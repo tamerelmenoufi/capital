@@ -38,9 +38,9 @@
                 <tr>
                   <th scope="col">Nome</th>
                   <th scope="col">CPF</th>
-                  <!-- <th scope="col">Telefone</th>
-                  <th scope="col">E-mail</th>
-                  <th scope="col">Situação</th> -->
+                  <th scope="col">Telefone</th>
+                  <th scope="col">Nome da Mãe</th>
+                  <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
@@ -53,9 +53,9 @@
                 <tr>
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
-                  <!-- <td><?=$d->telefone?></td>
-                  <td><?=$d->email?></td>
-                  <td>
+                  <td><?=$d->phoneNumber?></td>
+                  <td><?=$d->matherName?></td>
+                  <!-- <td>
 
                   <div class="form-check form-switch">
                     <input class="form-check-input situacao" type="checkbox" <?=(($d->codigo == 1)?'disabled':false)?> <?=(($d->situacao)?'checked':false)?> usuario="<?=$d->codigo?>">
