@@ -120,6 +120,7 @@
                 url:"financeira/vctex/consulta.php",
                 type:"POST",
                 data:{
+                  acao:'consulta',
                   campo:'cpf',
                   rotulo:"CPF",
                   valor
