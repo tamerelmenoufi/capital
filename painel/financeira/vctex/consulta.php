@@ -313,10 +313,6 @@
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
 
-        // list($tabela_sugerida, $tabela_resultado) = mysqli_fetch_row(mysqli_query($con, "select 
-        //                 (select api_tabelas->>'$.data[{$d->tabela_escolhida}].name' from configuracoes where codigo = 1) as tabela_sugerida,
-        //                 (select api_tabelas->>'$.data[{$d->tabela}].name' from configuracoes where codigo = 1) as tabela_resultado
-        //         "));
         $q = "select * from configuracoes where codigo = '1'";
         $r = mysqli_query($con, $q);
         $t = mysqli_fetch_object($r);
