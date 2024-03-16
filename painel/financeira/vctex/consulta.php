@@ -228,6 +228,19 @@
             busca
             value="<?=$_SESSION['vctex_valor']?>"
         >
+        <select id="tabela" class="form-select">
+            <?php
+                $q = "select * from configuracoes where codigo = '1'";
+                $r = mysqli_query($con, $q);
+                $ab = mysqli_fetch_object($r);
+                $t = json_decode($tab->api_tabelas);
+                foreach($t->data as $i => $v){
+            ?>
+            <option value="<?=$v->id?>" <?=(($tab->api_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
+            <?php
+                }
+            ?>
+        </select>
         <button
             buscar
             type="button" 
