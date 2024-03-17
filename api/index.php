@@ -5,7 +5,7 @@
 
     $facta = new Facta;
 
-    $retorno = $facta->Saldo();
+    $retorno = $facta->Calculo();
 
     var_dump($retorno);
 
