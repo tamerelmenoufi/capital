@@ -38,7 +38,7 @@ class Facta {
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf=60110970225');
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf=00000000000');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
