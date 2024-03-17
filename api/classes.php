@@ -14,33 +14,9 @@ class Facta {
 
     public function Token(){
 
-        // $curl = curl_init();
-
-        // $dt = array(
-        // CURLOPT_URL => 'https://webservice-homol.facta.com.br/gera-token', //$this->Ambiente($this->ambiente).'gera-token',
-        // CURLOPT_RETURNTRANSFER => true,
-        // CURLOPT_ENCODING => '',
-        // CURLOPT_MAXREDIRS => 10,
-        // CURLOPT_TIMEOUT => 0,
-        // CURLOPT_FOLLOWLOCATION => true,
-        // CURLOPT_HTTPS_VERSION => CURL_HTTPS_VERSION_1_1,
-        // CURLOPT_SSL_VERIFYPEER => false,
-        // CURLOPT_CUSTOMREQUEST => 'GET',
-        // CURLOPT_HTTPSHEADER => array(
-        //     "Authorization: Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ="
-        //     )
-        // );
-
-        // var_dump($dt);
-
-        // curl_setopt_array($curl, $dt);
-        // $response = curl_exec($curl);
-        // curl_close($curl);
-        // return $response;
-
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, 'https://webservice-homol.facta.com.br/gera-token');
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'gera-token');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
