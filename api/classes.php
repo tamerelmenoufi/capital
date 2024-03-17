@@ -67,7 +67,7 @@ class Facta {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, "{
-                                                \"cpf\" : \"00000000000\",
+                                                \"cpf\" : \"60110970225\",
                                                 \"taxa\" : 2.04,
                                                 \"tabela\" : 38601,
                                                 \"parcelas\" : [
