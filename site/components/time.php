@@ -85,7 +85,7 @@
               $midias = json_decode($d->canais_contatos);
 
         ?>
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img" style="height:320px">
                 <img src="<?=$localPainel?>site/volume/time/<?=$d->imagem?>" class="img-fluid" alt="">
