@@ -112,7 +112,7 @@
           <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
               <div class="post-img evento">
-              <div style="margin-top:10px;height:267px" class="post-img"><img src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
+              <div style="margin-top:10px;height:200px" class="post-img"><img src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
                 <!-- <div style="background-image:url(<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>);" class="imagemEventoFundo"></div>
                 <div style="background-image:url(<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>);" class="imagemEvento"></div> -->
               </div>
