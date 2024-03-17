@@ -25,9 +25,7 @@ class Facta {
         CURLOPT_HTTPS_VERSION => CURL_HTTPS_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPSHEADER => array(
-            "Authorization Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ=",
-            'Content-Type: application/json',
-            'Accept: application/json'
+            "Authorization: Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ="
             )
         ));
         $response = curl_exec($curl);
