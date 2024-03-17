@@ -60,7 +60,7 @@
             )
         ));
 
-        $result = file_get_contents("http://137.184.15.211/mailgun/send.php", null, $context);
+        $result = file_get_contents("http://mailgun.mohatron.com/send.php", null, $context);
         #############################################################################
 
         #############################################################################
@@ -73,7 +73,7 @@
             )
         ));
 
-        $result = file_get_contents("http://137.184.15.211/mailgun/send.php", null, $context);
+        $result = file_get_contents("http://mailgun.mohatron.com/send.php", null, $context);
         #############################################################################
         $result = json_decode($result);
 
