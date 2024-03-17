@@ -6,3 +6,10 @@
 
 <h3>Sistema de Assessoria Financeira</h3>
 
+<?php
+
+$facta = new Facta;
+
+echo $token = $facta->Token();
+
+?>

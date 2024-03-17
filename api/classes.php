@@ -1,14 +1,14 @@
 <?php
 
-class Vctex {
+class Facta {
 
     public $ambiente = 'homologacao'; //homologacao ou producao
 
     public function Ambiente($opc){
         if($opc == 'homologacao'){
-            return 'https://fgts.sandbox.salaryfits.com.br/api/';
+            return 'https://webservice-homol.facta.com.br/';
         }else{
-            return 'https://appvctex.com.br/api/';
+            return 'https://webservice.facta.com.br/';
         }
     }
 
@@ -17,7 +17,7 @@ class Vctex {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'authentication/login',
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'gera-token',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -25,15 +25,10 @@ class Vctex {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>'{
-            "cpf":"99713047249",
-            "password":"bpKqLXNKKLxy9gG"
-        }',
-        CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/json',
-            'Accept: application/json'
-        ),
+        CURLOPT_CUSTOMREQUEST => 'GET',
+        CURLOPT_HTTPSHEADER => array(
+            'Authorization: Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ='
+            ),
         ));
 
         $response = curl_exec($curl);
@@ -43,13 +38,12 @@ class Vctex {
 
     }
 
-
-    public function Tabelas($token){
+    public function Saldo($token){
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'service/fee-schedule',
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'fgts/saldo',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -59,7 +53,6 @@ class Vctex {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPHEADER => array(
-            'Accept: application/json',
             'Authorization: Bearer '.$token
         ),
         ));
@@ -72,12 +65,12 @@ class Vctex {
     }
 
 
-    public function Simular($token){
+    public function Calculo($token){
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'service/simulation',
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'fgts/calculo',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -86,86 +79,215 @@ class Vctex {
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>'{"clientCpf":"20006161278","feeScheduleId":1}',
-        CURLOPT_HTTPHEADER => array(
-            'Content-Type: application/json',
-            'Accept: application/json',
-            'Authorization: Bearer '.$token
-        ),
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
-    }
-
-    public function Credito($token){
-
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente)."service/proposal",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => '{
-            "feeScheduleId": 1,
-            "financialId": "443139a1-22e5-4c5c-a23f-46d17130eafe",
-            "borrower": {
-              "name": "Ayrton Sato",
-              "cpf": "20006161278",
-              "birthdate": "1991-07-26",
-              "gender": "M",
-              "phoneNumber": "11973302222",
-              "email": "ayrton_sato@hotmail.com",
-              "maritalStatus": "solteiro",
-              "nationality": "brasileiro",
-              "naturalness": "brasileiro",
-              "motherName": "Maria Silva",
-              "fatherName": "Joao Silva",
-              "pep": false
-            },
-            "document": {
-              "type": "cnh",
-              "number": "12345555",
-              "issuingState": "SP",
-              "issuingAuthority": "SSP",
-              "issueDate": "2022-01-01"
-            },
-            "address": {
-              "zipCode": "03431120",
-              "street": "Rua Juca",
-              "number": "321",
-              "complement": null,
-              "neighborhood": "Casa",
-              "city": "São Paulo",
-              "state": "SP"
-            },
-            "disbursementBankAccount": {
-              "bankCode": "652",
-              "accountType": "corrente",
-              "accountNumber": "173090",
-              "accountDigit": "1",
-              "branchNumber": "2"
-            }
+        CURLOPT_POSTFIELDS =>'{
+            "cpf": "00000000000",
+            "taxa": 2.04,
+            "tabela": 38601,
+            "parcelas": [
+              {
+                "dataRepasse_1": "01/03/2022",
+                "valor_1": 2059.05
+              },
+              {
+                "dataRepasse_2": "01/03/2023",
+                "valor_2": 1645.86
+              },
+              {
+                "dataRepasse_3": "01/03/2024",
+                "valor_3": 1152.10
+              },
+              {
+                "dataRepasse_4": "01/03/2025",
+                "valor_4": 806.47
+              },
+              {
+                "dataRepasse_5": "01/03/2026",
+                "valor_5": 564.53
+              },
+              {
+                "dataRepasse_6": "01/03/2027",
+                "valor_6": 376.90
+              },
+              {
+                "dataRepasse_7": "01/03/2028",
+                "valor_7": 220.18
+              },
+              {
+                "dataRepasse_8": "01/03/2029",
+                "valor_8": 0.00
+              },
+              {
+                "dataRepasse_9": "01/03/2030",
+                "valor_9": 0.00
+              },
+              {
+                "dataRepasse_10": "01/03/2031",
+                "valor_10": 0.00
+              },
+              {
+                "dataRepasse_11": "01/03/2032",
+                "valor_11": 0.00
+              },
+              {
+                "dataRepasse_12": "01/03/2033",
+                "valor_12": 0.00
+              }
+            ]
           }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Accept: application/json',
-            'Authorization: Bearer '.$token
+            'Authorization: Bearer '.$dados['token']
         ),
         ));
 
         $response = curl_exec($curl);
+
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."/orders/preview"."\n".$this->apiKey($this->ambiente)."\n";
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+
+    }
+
+
+    public function Simulador1($token){
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/etapa1-simulador',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>array('produto' => 'D','tipo_operacao' => '13','averbador' =>
+        '20095','convenio' => '3','cpf' => '00000000000','data_nascimento' => '00/00/0000',
+        'login_certificado' => '0000_teste','simulacao_fgts' => '000000'),
+        CURLOPT_HTTPHEADER => array(
+            'Authorization: Bearer '.$dados['token']
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+
+    }
+
+
+
+
+    public function DadosPessoais($token){
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/etapa2-dados-pessoais',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array(
+                                    'id_simulador' => '0000000',
+                                    'cpf' => '00000000000',
+                                    'nome' => 'Fulano de Tal',
+                                    'sexo' => 'M',
+                                    'estado_civil' => '6',
+                                    'data_nascimento' => '01/01/2000',
+                                    'rg' => '000000',
+                                    'estado_rg' => 'RS',
+                                    'data_expedicao' => '01/01/2000',
+                                    'orgao_emissor' => 'SSP',
+                                    'estado_natural' => 'RS',
+                                    'cidade_natural' => '35',
+                                    'nacionalidade' => '1',
+                                    'celular' =>'(000) 00000-0000',
+                                    'renda' => '1100',
+                                    'cep' => '00000000',
+                                    'endereco' => 'Rua A',
+                                    'numero' => '1',
+                                    'bairro' => 'Centro',
+                                    'cidade' => '35',
+                                    'estado' => 'RS',
+                                    'nome_mae' => 'NAO DECLARADO',
+                                    'nome_pai' => 'NAO DECLARADO',
+                                    'valor_patrimonio' => '1',
+                                    'cliente_iletrado_impossibilitado' => 'N',
+                                    'banco' => '999',
+                                    'agencia' => '9999',
+                                    'conta' => '9999999'),
+        CURLOPT_HTTPHEADER => array(
+            'Authorization: Bearer '.$dados['token']
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+
+    }
+
+
+
+    public function Cadastro($token){
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/etapa3-proposta-cadastro',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array('codigo_cliente' => 0000204,'id_simulador' => '0000765'),
+        CURLOPT_HTTPHEADER => array(
+            'Authorization: Bearer '.$dados['token']
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+
+    }
+
+    public function Envio($token){
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/envio-link',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array('codigo_af' => 00005127,'tipo_envio' => 'whatsapp'), //whatsapp ou sms
+        CURLOPT_HTTPHEADER => array(
+            'Authorization: Bearer '.$dados['token']
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
