@@ -169,56 +169,53 @@ class Facta {
 
     public function DadosPessoais($token){
 
-        $curl = curl_init();
+        $ch = curl_init();
 
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/etapa2-dados-pessoais',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array(
-                                    'id_simulador' => '0000000',
-                                    'cpf' => '00000000000',
-                                    'nome' => 'Fulano de Tal',
-                                    'sexo' => 'M',
-                                    'estado_civil' => '6',
-                                    'data_nascimento' => '01/01/2000',
-                                    'rg' => '000000',
-                                    'estado_rg' => 'RS',
-                                    'data_expedicao' => '01/01/2000',
-                                    'orgao_emissor' => 'SSP',
-                                    'estado_natural' => 'RS',
-                                    'cidade_natural' => '35',
-                                    'nacionalidade' => '1',
-                                    'celular' =>'(000) 00000-0000',
-                                    'renda' => '1100',
-                                    'cep' => '00000000',
-                                    'endereco' => 'Rua A',
-                                    'numero' => '1',
-                                    'bairro' => 'Centro',
-                                    'cidade' => '35',
-                                    'estado' => 'RS',
-                                    'nome_mae' => 'NAO DECLARADO',
-                                    'nome_pai' => 'NAO DECLARADO',
-                                    'valor_patrimonio' => '1',
-                                    'cliente_iletrado_impossibilitado' => 'N',
-                                    'banco' => '999',
-                                    'agencia' => '9999',
-                                    'conta' => '9999999'),
-        CURLOPT_HTTPHEADER => array(
-            'Authorization: Bearer '.$dados['token']
-        ),
-        ));
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'proposta/etapa2-dados-pessoais');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        $post = array(
+            'id_simulador' => '0000000',
+            'cpf' => '00000000000',
+            'nome' => 'Fulano de Tal',
+            'sexo' => 'M',
+            'estado_civil' => '6',
+            'data_nascimento' => '01/01/2000',
+            'rg' => '000000',
+            'estado_rg' => 'RS',
+            'data_expedicao' => '01/01/2000',
+            'orgao_emissor' => 'SSP',
+            'estado_natural' => 'RS',
+            'cidade_natural' => '35',
+            'nacionalidade' => '1',
+            'celular' =>'(000) 00000-0000',
+            'renda' => '1100',
+            'cep' => '00000000',
+            'endereco' => 'Rua A',
+            'numero' => '1',
+            'bairro' => 'Centro',
+            'cidade' => '35',
+            'estado' => 'RS',
+            'nome_mae' => 'NAO DECLARADO',
+            'nome_pai' => 'NAO DECLARADO',
+            'valor_patrimonio' => '1',
+            'cliente_iletrado_impossibilitado' => 'N',
+            'banco' => '999',
+            'agencia' => '9999',
+            'conta' => '9999999');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-        $response = curl_exec($curl);
+        $headers = array();
+        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-        curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        return $result;
 
     }
 
@@ -226,55 +223,45 @@ class Facta {
 
     public function Cadastro($token){
 
-        $curl = curl_init();
+        $ch = curl_init();
 
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/etapa3-proposta-cadastro',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array('codigo_cliente' => 0000204,'id_simulador' => '0000765'),
-        CURLOPT_HTTPHEADER => array(
-            'Authorization: Bearer '.$dados['token']
-        ),
-        ));
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'proposta/etapa3-proposta-cadastro');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        $post = array('codigo_cliente' => 0000204,'id_simulador' => '0000765'); //whatsapp ou sms
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-        $response = curl_exec($curl);
+        $headers = array();
+        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-        curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
 
     }
 
     public function Envio($token){
 
-        $curl = curl_init();
+        $ch = curl_init();
 
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/envio-link',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array('codigo_af' => 00005127,'tipo_envio' => 'whatsapp'), //whatsapp ou sms
-        CURLOPT_HTTPHEADER => array(
-            'Authorization: Bearer '.$dados['token']
-        ),
-        ));
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'proposta/envio-link');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        $post = array('codigo_af' => 00005127,'tipo_envio' => 'whatsapp'); //whatsapp ou sms
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-        $response = curl_exec($curl);
+        $headers = array();
+        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-        curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
 
     }
 
