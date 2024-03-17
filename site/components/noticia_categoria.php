@@ -97,7 +97,7 @@
 
           <div style="margin-top:15px" class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
-              <div class="post-img"><img src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
+              <div class="post-img" style="margin-top:10px;height:267px"><img src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
               <!-- <div class="meta">
                 <span class="post-date">Tue, December 12</span>
                 <span class="post-author"> / Julia Parker</span>
