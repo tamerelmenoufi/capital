@@ -3,11 +3,11 @@
     $con = AppConnect('capital');
     include("classes.php");
 
-$facta = new Facta;
+    $facta = new Facta;
 
-$retorno = $facta->Token();
+    $retorno = $facta->Token();
 
-var_dump($retorno);
+    var_dump($retorno);
 
 
 ?>
