@@ -15,7 +15,8 @@ class Facta {
     public function Token(){
 
         $curl = curl_init();
-        curl_setopt_array($curl, array(
+
+        $dt = array(
         CURLOPT_URL => 'https://webservice-homol.facta.com.br/gera-token', //$this->Ambiente($this->ambiente).'gera-token',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
@@ -28,7 +29,11 @@ class Facta {
         CURLOPT_HTTPSHEADER => array(
             "Authorization: Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ="
             )
-        ));
+        );
+
+        var_dump($dt);
+
+        curl_setopt_array($curl, $dt);
         $response = curl_exec($curl);
         curl_close($curl);
         return $response;
