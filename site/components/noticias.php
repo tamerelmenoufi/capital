@@ -19,7 +19,7 @@
     position: relative;
     transition: 0.3s;
 }
-    .botaoverde{
+.botaoverde{
       padding: 15px;
       padding-left: 35px;
       padding-right: 35px;
@@ -28,14 +28,14 @@
       color: #fff;
     background-color: #393287;
     border-color: #393287;
-    }
-    .botaoverde:hover {
+}
+.botaoverde:hover {
     color: #fff;
     background-color: #574ec2;
     border-color: #574ec2;
 }
     
-    .botaoroxo:hover {
+.botaoroxo:hover {
     color: #fff;
     background-color: #574ec2;
     border-color: #574ec2;
