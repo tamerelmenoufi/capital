@@ -10,6 +10,9 @@
 
 $facta = new Facta;
 
-echo $token = $facta->Token();
+$retorno = $facta->Token();
+
+var_dump($retorno);
+
 
 ?>
