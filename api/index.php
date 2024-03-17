@@ -5,7 +5,8 @@
 
     $facta = new Facta;
 
-    $retorno = $facta->Saldo();
+    $retorno = $facta->Simulador1();
+
 
     var_dump($retorno);
 

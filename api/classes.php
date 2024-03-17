@@ -138,32 +138,29 @@ class Facta {
     }
 
 
-    public function Simulador1($token){
+    public function Simulador1($token = false){
 
-        $curl = curl_init();
+        $ch = curl_init();
 
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'proposta/etapa1-simulador',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>array('produto' => 'D','tipo_operacao' => '13','averbador' =>
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'proposta/etapa1-simulador');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        $post = array('produto' => 'D','tipo_operacao' => '13','averbador' =>
         '20095','convenio' => '3','cpf' => '00000000000','data_nascimento' => '00/00/0000',
-        'login_certificado' => '0000_teste','simulacao_fgts' => '000000'),
-        CURLOPT_HTTPHEADER => array(
-            'Authorization: Bearer '.$dados['token']
-        ),
-        ));
+        'login_certificado' => '0000_teste','simulacao_fgts' => '000000');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-        $response = curl_exec($curl);
+        $headers = array();
+        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-        curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        return $result;
 
     }
 
