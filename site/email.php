@@ -5,7 +5,7 @@
 $dados = [
     'from_name' => 'Mailgun - MOHATRON',
     'from_email' => 'mailgun@moh1.com.br',
-    'subject' => 'Envio html API\'Mailgun Do CredCabon'. date("d/m/Y H:i:s"),
+    'subject' => 'Envio html API\'Mailgun da Capital Financeira'. date("d/m/Y H:i:s"),
     'html' => '<html><h2>Título da html de teste</h2><p>Descrição da html de teste da API</p></html>',
 /*    'attachment' => [
             './img_bk.png',
