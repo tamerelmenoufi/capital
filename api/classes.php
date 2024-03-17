@@ -167,7 +167,7 @@ class Facta {
 
 
 
-    public function DadosPessoais($token){
+    public function DadosPessoais($token = false){
 
         $ch = curl_init();
 
@@ -221,7 +221,7 @@ class Facta {
 
 
 
-    public function Cadastro($token){
+    public function Cadastro($token = false){
 
         $ch = curl_init();
 
@@ -243,7 +243,7 @@ class Facta {
 
     }
 
-    public function Envio($token){
+    public function Envio($token = false){
 
         $ch = curl_init();
 
