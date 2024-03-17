@@ -146,7 +146,7 @@ class Facta {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
         $post = array('produto' => 'D','tipo_operacao' => '13','averbador' =>
-        '20095','convenio' => '3','cpf' => '00000000000','data_nascimento' => '00/00/0000',
+        '20095','convenio' => '3','cpf' => '00000000000','data_nascimento' => '28/08/1976',
         'login_certificado' => '0000_teste','simulacao_fgts' => '000000');
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
