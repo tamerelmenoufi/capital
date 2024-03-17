@@ -20,7 +20,7 @@ class Facta {
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
+        //CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTPS_VERSION => CURL_HTTPS_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
