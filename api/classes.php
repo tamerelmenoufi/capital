@@ -14,8 +14,9 @@ class Facta {
 
     public function Token(){
 
-        $curl = curl_init();
 
+
+        $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_URL => $this->Ambiente($this->ambiente).'gera-token',
         CURLOPT_RETURNTRANSFER => true,
@@ -23,18 +24,37 @@ class Facta {
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_HTTPS_VERSION => CURL_HTTPS_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPSHEADER => array(
-            'Authorization: Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ='
-            ),
+        'Authorization: Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ='
+        ),
         ));
-
         $response = curl_exec($curl);
-
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        return $response;
+
+        // $curl = curl_init();
+
+        // curl_setopt_array($curl, array(
+        // CURLOPT_URL => $this->Ambiente($this->ambiente).'gera-token',
+        // CURLOPT_RETURNTRANSFER => true,
+        // CURLOPT_ENCODING => '',
+        // CURLOPT_MAXREDIRS => 10,
+        // CURLOPT_TIMEOUT => 0,
+        // CURLOPT_FOLLOWLOCATION => true,
+        // CURLOPT_SSL_VERIFYPEER => false,
+        // CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        // CURLOPT_CUSTOMREQUEST => 'GET',
+        // CURLOPT_HTTPSHEADER => array(
+        //     'Authorization: Basic OTY3NTM6a2M4emRmZjljdWxoajFjbGpoZWQ='
+        //     ),
+        // ));
+
+        // $response = curl_exec($curl);
+
+        // curl_close($curl);
+        // return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
