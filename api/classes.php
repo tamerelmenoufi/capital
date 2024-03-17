@@ -59,7 +59,7 @@ class Facta {
     }
 
 
-    public function Calculo($token){
+    public function Calculo($token = false){
 
         $ch = curl_init();
 
