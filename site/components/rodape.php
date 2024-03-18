@@ -5,6 +5,11 @@
   padding: 30px 0;
   background: #057a34!important;
 } */
+
+.footer .footer-legal .social-links a:hover {
+    background: #534ab3;
+    text-decoration: none;
+}
   </style>
 
   <!-- ======= Footer ======= -->
