@@ -323,7 +323,7 @@
                   while($d = mysqli_fetch_object($result)){
                   ?>
                   <div class="post-item mt-3">
-                    <img src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" alt="" class="flex-shrink-0">
+                    <img style="height:100px" src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" alt="" class="flex-shrink-0">
                     <div>
                       <h4><a href="noticia.php?cod=<?=$d->codigo?>"><?=$d->titulo?></a></h4>
                       <!-- <time datetime="2020-01-01">Jan 1, 2020</time> -->
