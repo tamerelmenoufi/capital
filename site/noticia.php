@@ -112,7 +112,7 @@
 ?>
 </main><!-- End #main -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center" style="background:#242323">
+  <a href="#" style="background-color: #393287;border-color: #393287;" class="scroll-top d-flex align-items-center justify-content-center" style="background:#242323">
     <i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
