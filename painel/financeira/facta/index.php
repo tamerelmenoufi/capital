@@ -25,7 +25,7 @@
         $retorno = $facta->Token();
         $dados = json_decode($retorno);
         $tabelas = '{
-            "dados":{
+            "data":{
                 {"id":"40703", "name":"Tabela GOLD", "taxa":"2.04"},
                 {"id":"40711", "name":"Tabela PLUS", "taxa":"2.04"},
                 {"id":"40762", "name":"Tabela FLEX", "taxa":"1.89"},
