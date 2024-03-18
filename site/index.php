@@ -114,7 +114,7 @@
 ?>
 </main><!-- End #main -->
 
-  <a href="#" style="color: #fff ;background-color: #393287;border-color: #393287;" class="scroll-top d-flex align-items-center justify-content-center btn btn-primary">
+  <a href="#" style="color: #fff ;background-color: #534ab3;border-color: #534ab3;" class="scroll-top d-flex align-items-center justify-content-center btn btn-primary">
     <i class="bi bi-arrow-up-short"></i></a>
 
   <!-- <div id="preloader"></div> -->

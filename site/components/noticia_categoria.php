@@ -3,7 +3,30 @@
 
 <style>
 
-.recent-blog-posts .post-box .post-title {
+.botaoazul{
+  background: var(--color-primary);
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 0;
+}
+
+
+.botaoazul{
+    background: var(--color-primary);
+    border: 0;
+    padding: 10px 35px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 0;
+
+
+  }
+
+
+
+  .recent-blog-posts .post-box .post-title {
     font-size: 24px;
     color: var(--color-secondary);
     font-weight: 700;
@@ -20,19 +43,11 @@
     position: relative;
     transition: 0.3s;
 }
-    .botaonovoroxo{
+    .botaoverde{
       padding: 15px;
-
-      border-radius: 2px 2px 25px;
-      font-size: 17px;
-      color: #393287;
-    background-color: #fff;
-    border-color: #393287;
-    }
-    
-    .botaonovoroxo:hover{
-      padding: 15px;
-      border-radius: 2px 2px 25px;
+      padding-left: 35px;
+      padding-right: 35px;
+      border-radius: 25px 2px 25px;
       font-size: 17px;
       color: #fff;
     background-color: #393287;
@@ -73,6 +88,7 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   }
+
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
@@ -179,7 +195,7 @@
         <div class="col-lg-12" style="padding:10px;text-align:right">
 
         <a style="color:#fff" href="./">
-    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoroxo ">
+    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
                 Voltar ao inicio</button></a>
  </div>
 </div>

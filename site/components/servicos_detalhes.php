@@ -329,7 +329,7 @@
               <!-- End sidebar categories-->
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title" style="color:#393287">Mais produtos</h3>
+                <h3 class="sidebar-title" style="color:#393287">Nossos produtos</h3>
 
                 <div class="mt-3">
                   <?php
@@ -351,7 +351,7 @@
 
                 </div>
                <center style="margin-top:20px"> 
-               <a href='servico_categoria.php' type="button" class="botao botaoroxo">Mais produtos</a>
+               <a href='servico_categoria.php' type="button" class="botao botaoroxo"> Mais produtos</a>
                <a href='./' type="button" class="botao botaoroxo">Voltar ao inicio</a>
               </center>
               </div><!-- End sidebar recent posts-->
