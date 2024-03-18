@@ -19,7 +19,7 @@
 
     $agora = time();
 
-    if($agora < $d->api_expira){
+    if($agora < $d->api_facta_expira){
         $tabelas = $d->api_facta_tabelas;
     }else{
         $retorno = $facta->Token();
