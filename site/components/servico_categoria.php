@@ -168,8 +168,8 @@
 
         <div class="col-lg-12" style="padding:10px">
 
-    <a style="color:#fff" href="./">
-    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoverde ">
+    <a style="color:#fff;text-align:right" href="./">
+    <button style="margin-top:10px;padding:10px;"  type="button"  class=" botaoverde ">
                 Voltar ao inicio</button></a>
  </div>
 </div>
