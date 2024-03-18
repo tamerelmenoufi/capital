@@ -166,9 +166,9 @@
   </nav>
 </center> -->
 
-        <div class="col-lg-12" style="padding:10px">
+        <div class="col-lg-12" style="padding:10px;text-align:right">
 
-    <a style="color:#fff;text-align:right" href="./">
+    <a style="color:#fff;" href="./">
     <button style="margin-top:10px;padding:10px;"  type="button"  class=" botaoverde ">
                 Voltar ao inicio</button></a>
  </div>
