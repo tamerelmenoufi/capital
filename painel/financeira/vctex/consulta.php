@@ -8,7 +8,7 @@
 
     $vctex = new Vctex;
 
-    $query = "select *, api_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
+    $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
@@ -22,7 +22,7 @@
         if($dados->statusCode == 200){
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
             $token = $dados->token->accessToken;
-            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_dados = '{$retorno}', api_tabelas = '{$tabelas}' where codigo = '1'");
+            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
         }else{
             $tabelas = 'error';
         }
@@ -302,10 +302,10 @@
                 $q = "select * from configuracoes where codigo = '1'";
                 $r = mysqli_query($con, $q);
                 $tab = mysqli_fetch_object($r);
-                $t = json_decode($tab->api_tabelas);
+                $t = json_decode($tab->api_vctex_tabelas);
                 foreach($t->data as $i => $v){
             ?>
-            <option value="<?=$v->id?>" <?=(($tab->api_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
+            <option value="<?=$v->id?>" <?=(($tab->api_vctex_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
             <?php
                 }
             ?>
@@ -322,7 +322,7 @@
         $q = "select * from configuracoes where codigo = '1'";
         $r = mysqli_query($con, $q);
         $t = mysqli_fetch_object($r);
-        $tab = json_decode($t->api_tabelas);
+        $tab = json_decode($t->api_vctex_tabelas);
         foreach($tab->data as $i => $v){
             if($v->id == $d->tabela_escolhida) $tabela_sugerida = $v->name;
             if($v->id == $d->tabela) $tabela_resultado = $v->name;
