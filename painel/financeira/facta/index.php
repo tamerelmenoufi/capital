@@ -25,13 +25,13 @@
         $retorno = $facta->Token();
         $dados = json_decode($retorno);
         $tabelas = '{
-            "data":{
+            "data":[{
                 {"id":"40703", "name":"Tabela GOLD", "taxa":"2.04"},
                 {"id":"40711", "name":"Tabela PLUS", "taxa":"2.04"},
                 {"id":"40762", "name":"Tabela FLEX", "taxa":"1.89"},
                 {"id":"40770", "name":"Tabela FLEX 1", "taxa":"1.75"},
                 {"id":"40789", "name":"Tabela FLEX 2", "taxa":"1.69"}
-            }
+            }]
         }';
         //if($dados->statusCode == 200){
             mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + $dados->token->expires)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
