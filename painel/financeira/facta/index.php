@@ -13,26 +13,34 @@
 
     $facta = new facta;
 
-    $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
+    $query = "select *, api_facta_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
     $agora = time();
 
     if($agora < $d->api_expira){
-        $tabelas = $d->api_vctex_tabelas;
+        $tabelas = $d->api_facta_tabelas;
     }else{
         $retorno = $facta->Token();
         $dados = json_decode($retorno);
+        $tabelas = {
+            "dados":{
+                {"id":"40703", "name":"Tabela GOLD", "taxa":"2.04"},
+                {"id":"40711", "name":"Tabela PLUS", "taxa":"2.04"},
+                {"id":"40762", "name":"Tabela FLEX", "taxa":"1.89"},
+                {"id":"40770", "name":"Tabela FLEX 1", "taxa":"1.75"},
+                {"id":"40789", "name":"Tabela FLEX 2", "taxa":"1.69"}
+            }
+        }
         if($dados->statusCode == 200){
-            $tabelas = $facta->Tabelas($dados->token->accessToken);
-            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
-        }else{
-            $tabelas = 'error';
+            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
         }
     }
 
-    $tabelas = json_decode($d->api_vctex_tabelas);
+    $tabelas = json_decode($d->api_facta_tabelas);
+
+    var_dump($tabelas);
 
 ?>
 
@@ -58,7 +66,7 @@
             <?php
                 foreach($tabelas->data as $i => $v){
             ?>
-                <tr class="<?=(($v->id == $d->api_vctex_tabela_padrao)?'bg-info bg-gradient':false)?>">
+                <tr class="<?=(($v->id == $d->api_facta_tabela_padrao)?'bg-info bg-gradient':false)?>">
                     <td><?=$v->name?></td>
                     <td><?=$v->monthlyFee?></td>
                     <td><?=$v->annualFee?></td>
@@ -67,7 +75,7 @@
                     <td><?=$v->minNumberOfYearsAntecipated?></td>
                     <td><?=$v->maxNumberOfYearsAntecipated?></td>
                     <td>
-                        <input padrao type="checkbox" class="form-check-input" value="<?=$v->id?>" <?=(($v->id == $d->api_vctex_tabela_padrao)?'checked':false)?>>
+                        <input padrao type="checkbox" class="form-check-input" value="<?=$v->id?>" <?=(($v->id == $d->api_facta_tabela_padrao)?'checked':false)?>>
                     </td>
                 </tr>
             <?php
