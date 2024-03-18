@@ -33,9 +33,9 @@
                 {"id":"40789", "name":"Tabela FLEX 2", "taxa":"1.69"}
             }
         }';
-        if($dados->statusCode == 200){
+        //if($dados->statusCode == 200){
             mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + $dados->token->expires)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
-        }
+        //}
     }
 
     $tabelas = json_decode($d->api_facta_tabelas);
