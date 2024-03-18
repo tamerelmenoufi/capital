@@ -314,7 +314,7 @@
               <!-- End sidebar categories-->
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title ">Mais noticias</h3>
+                <h3 class="sidebar-title ">Nossas noticias</h3>
 
                 <div class="mt-3">
                   <?php
@@ -335,7 +335,10 @@
 
 
                 </div>
-               <center style="margin-top:20px"> <a href='noticia_categoria.php' type="button" class="botao botaoroxo">Mais noticias</a></center>
+                <center style="margin-top:20px"> 
+               <a href='noticia_categoria.php' type="button" class="botao botaoroxo"> Mais noticias</a>
+               <a href='./' type="button" class="botao botaoroxo">Voltar ao inicio</a>
+              </center>
               </div><!-- End sidebar recent posts-->
 
               <!-- <div class="sidebar-item tags">
@@ -361,12 +364,7 @@
           </div>
         </div>
 
-        <div class="col-lg-12" style="padding:10px;text-align:right">
-
-        <a style="color:#fff" href="./">
-    <button style="margin-top:10px;padding:10px;text-align:right"  type="button"  class=" botaoroxo ">
-                Voltar ao inicio</button></a>
- </div>
+   
  
 
 
