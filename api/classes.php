@@ -2,7 +2,7 @@
 
 class Facta {
 
-    public $ambiente = 'homologacao'; //homologacao ou producao
+    public $ambiente = 'producao'; //homologacao ou producao
 
     public $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA3NzQ0NjMsImV4cCI6MTcxMDc3ODA2M30.1jzD5eO1cUvqK-d4pAQGT0iCvRtzvvqXdnThlY0OB-c';
 
@@ -40,7 +40,7 @@ class Facta {
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf=00000000000');
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf=02687561126');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
