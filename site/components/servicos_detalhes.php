@@ -329,7 +329,7 @@
               <!-- End sidebar categories-->
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title" style="color:#393287">Mais produtos</h3>
+                <h3 class="sidebar-title" style="color:#393287">Nossos produtos</h3>
 
                 <div class="mt-3">
                   <?php
