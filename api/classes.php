@@ -4,7 +4,7 @@ class Facta {
 
     public $ambiente = 'producao'; //homologacao ou producao
 
-    public $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA3NzQ0NjMsImV4cCI6MTcxMDc3ODA2M30.1jzD5eO1cUvqK-d4pAQGT0iCvRtzvvqXdnThlY0OB-c';
+    public $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA3OTEyMTIsImV4cCI6MTcxMDc5NDgxMn0.3NifAuyPI-UYQ7fKIwLsztF7Pjx0IHBE_aK1AUoyA44';
 
     public function Ambiente($opc){
         if($opc == 'homologacao'){
