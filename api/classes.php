@@ -4,6 +4,8 @@ class Facta {
 
     public $ambiente = 'homologacao'; //homologacao ou producao
 
+    public $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+
     public function Ambiente($opc){
         if($opc == 'homologacao'){
             return 'https://webservice-homol.facta.com.br/';
@@ -44,7 +46,7 @@ class Facta {
 
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        $headers[] = 'Authorization: Bearer '.$this->token;
         $headers[] = 'Content-Type: application/x-www-form-urlencoded';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
@@ -123,7 +125,7 @@ class Facta {
             ]');
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        $headers[] = 'Authorization: Bearer '.$this->token;
         $headers[] = 'Content-Type: application/json';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
@@ -151,7 +153,7 @@ class Facta {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        $headers[] = 'Authorization: Bearer '.$this->token;
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         $result = curl_exec($ch);
@@ -206,7 +208,7 @@ class Facta {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        $headers[] = 'Authorization: Bearer '.$this->token;
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         $result = curl_exec($ch);
@@ -232,7 +234,7 @@ class Facta {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        $headers[] = 'Authorization: Bearer '.$this->token;
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         $result = curl_exec($ch);
@@ -254,7 +256,7 @@ class Facta {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNDAzIiwibHZsIjoiMiIsInVzciI6Ijk2NzUzIiwiY3J0IjoiOTY3NTMiLCJpYXQiOjE3MTA2ODY2OTYsImV4cCI6MTcxMDY5MDI5Nn0.X1MTKY9R5g3zitDr0t-8vOrRyFf_0dTVHsRPMNonHms';
+        $headers[] = 'Authorization: Bearer '.$this->token;
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         $result = curl_exec($ch);
