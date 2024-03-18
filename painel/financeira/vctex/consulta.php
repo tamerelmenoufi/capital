@@ -77,6 +77,7 @@
         ]);
         
         $verifica = json_decode($simulacao);
+        var_dump($verifica);
         if($verifica->data->isExponentialFeeScheduleAvailable == true and $verifica->statusCode == 200){
 
             $simulacao = $vctex->Simular([
