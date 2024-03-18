@@ -10,6 +10,7 @@
     include("fn.php");
 
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/api/vctex.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/api/facta.php");
 
     $md5 = md5(date("YmdHis"));
 
