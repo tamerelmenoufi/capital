@@ -351,7 +351,7 @@
 
                 </div>
                <center style="margin-top:20px"> 
-               <a href='servico_categoria.php' type="button" class="botao botaoroxo">Mais produtos</a>
+               <a href='servico_categoria.php' type="button" class="botao botaoroxo"> + produtos</a>
                <a href='./' type="button" class="botao botaoroxo">Voltar ao inicio</a>
               </center>
               </div><!-- End sidebar recent posts-->
