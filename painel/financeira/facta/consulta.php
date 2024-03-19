@@ -79,7 +79,7 @@
 ?>
 
 <div class="card m-3">
-  <h5 class="card-header">Sistema Capital Financeira - facta</h5>
+  <h5 class="card-header">Sistema Capital Financeira - FACTA</h5>
   <div class="card-body">
     <h5 class="card-title">Consultas / Simulações /Propostas</h5>
     <div class="card-text" style="min-height:400px;">
