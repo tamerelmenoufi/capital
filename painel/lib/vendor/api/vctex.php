@@ -8,7 +8,7 @@ class Vctex {
         if($opc == 'homologacao'){
             return 'https://fgts.sandbox.salaryfits.com.br/api/';
         }else{
-            return 'https://appvctex.com.br/api/';
+            return 'https://www.appvctex.com.br/api/';
         }
     }
 
