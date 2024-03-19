@@ -60,8 +60,6 @@
 
     $tabelas = json_decode($d->api_facta_tabelas);
 
-    var_dump($tabelas);
-
 ?>
 
 <div class="card m-3">
