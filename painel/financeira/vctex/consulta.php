@@ -22,7 +22,7 @@
         if($dados->statusCode == 200){
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
             $token = $dados->token->accessToken;
-            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
+            mysqli_query($con, "update configuracoes set api_vctex_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
         }else{
             $tabelas = 'error';
         }
