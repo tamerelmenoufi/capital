@@ -52,7 +52,7 @@
         $cliente = mysqli_fetch_object($result);
         $retorno = $facta->Saldo([
             'token'=>$token,
-            'cpf' => numero($cliente->cpf);
+            'cpf' => numero($cliente->cpf)
         ]);
 
         $query = "insert into consultas_facta set 
