@@ -60,7 +60,7 @@
                                                     operadora = 'FACTA',
                                                     cliente = '{$cliente->codigo}',
                                                     data = NOW(),
-                                                    tabela_escolhida = '{$_POST['tabela']}',
+                                                    tabela_taxa = '{$_POST['taxa']}',
                                                     tabela = '{$_POST['tabela']}',
                                                     saldo = '{$retorno}'
                                                     
@@ -152,7 +152,7 @@
                 $t = json_decode($tab->api_facta_tabelas);
                 foreach($t->data as $i => $v){
             ?>
-            <option value="<?=$v->id?>" <?=(($tab->api_facta_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
+            <option value="<?=$v->id?>" taxa<?=$v->id?>="<?=$v->taxa?>" <?=(($tab->api_facta_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
             <?php
                 }
             ?>
@@ -216,11 +216,15 @@
             <tr>
                 <th>Data Consulta do Saldo</th>
                 <th>Saldo Total</th>
+                <th>Tablea</th>
+                <th>Taxa</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><?="{$saldo->retorno->data_saldo} {$saldo->retorno->horaSaldo}"?></td>
+                <td><?="{$saldo->retorno->saldo_total}"?></td>
+                <td><?="{$saldo->retorno->saldo_total}"?></td>
                 <td><?="{$saldo->retorno->saldo_total}"?></td>
             </tr>
         </tbody>
@@ -392,6 +396,7 @@
         $("button[saldo]").click(function(){
 
             tabela = $("#tabela").val();
+            taxa = $(`option[taxa${tabela}]`).attr(`taxa${tabela}`);
 
             $.confirm({
                 title:"Saldo",
@@ -413,7 +418,8 @@
                                     rotulo:'<?=$_SESSION['facta_rotulo']?>',
                                     valor:'<?=$_SESSION['facta_valor']?>',
                                     cliente:'<?=$cliente->codigo?>',
-                                    tabela
+                                    tabela,
+                                    taxa
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
