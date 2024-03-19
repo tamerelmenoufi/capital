@@ -67,7 +67,7 @@
                     <button vctex="<?=$d->cpf?>" class="btn btn-warning">
                       VCTEX
                     </button>
-                    <button facta="<?=$d->cpf?>" disabled class="btn btn-warning">
+                    <button facta="<?=$d->cpf?>" class="btn btn-warning">
                       FACTA
                     </button>
 
@@ -118,6 +118,23 @@
             valor = $(this).attr("vctex");
             $.ajax({
                 url:"financeira/vctex/consulta.php",
+                type:"POST",
+                data:{
+                  acao:'consulta',
+                  campo:'cpf',
+                  rotulo:"CPF",
+                  valor
+                },
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            })
+        })
+
+        $("button[facta]").click(function(){
+            valor = $(this).attr("facta");
+            $.ajax({
+                url:"financeira/facta/consulta.php",
                 type:"POST",
                 data:{
                   acao:'consulta',
