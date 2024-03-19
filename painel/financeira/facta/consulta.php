@@ -174,16 +174,12 @@
         <thead>
             <tr>
                 <th>Código</th>
-            </tr>
-            <tr>
                 <th>Mensagem</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><?=$saldo->codigo?></td>
-            </tr>
-            <tr>
                 <td><?=$saldo->msg?></td>
             </tr>
         </tbody>
