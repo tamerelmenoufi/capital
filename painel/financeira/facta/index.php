@@ -13,7 +13,7 @@
 
     $facta = new facta;
 
-    $query = "select *, api_facta_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
+    $query = "select *, api_facta_dados->>'$.token' as token from configuracoes where codigo = '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
