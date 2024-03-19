@@ -150,7 +150,9 @@
                 $r = mysqli_query($con, $q);
                 $tab = mysqli_fetch_object($r);
                 $t = json_decode($tab->api_facta_tabelas);
+                $tabela_descricao = [];
                 foreach($t->data as $i => $v){
+                    $tabela_descricao[$v->id] = $v->nome;
             ?>
             <option value="<?=$v->id?>" taxa<?=$v->id?>="<?=$v->taxa?>" <?=(($tab->api_facta_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
             <?php
@@ -224,7 +226,7 @@
             <tr>
                 <td><?="{$saldo->retorno->data_saldo} {$saldo->retorno->horaSaldo}"?></td>
                 <td><?="{$saldo->retorno->saldo_total}"?></td>
-                <td><?="{$d->tabela}"?></td>
+                <td><?="{$d->tabela} - {$tabela_descricao[$d->tabela]}"?></td>
                 <td><?="{$d->tabela_taxa}"?></td>
             </tr>
         </tbody>
