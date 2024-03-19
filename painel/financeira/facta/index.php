@@ -72,13 +72,9 @@
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col"><?=$tab_disc['name']?></th>
-                <th scope="col"><?=$tab_disc['monthlyFee']?></th>
-                <th scope="col"><?=$tab_disc['annualFee']?></th>
-                <th scope="col"><?=$tab_disc['minDisbursedAmount']?></th>
-                <th scope="col"><?=$tab_disc['maxDisbursedAmount']?></th>
-                <th scope="col"><?=$tab_disc['minNumberOfYearsAntecipated']?></th>
-                <th scope="col"><?=$tab_disc['maxNumberOfYearsAntecipated']?></th>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Taxa</th>
                 <th scope="col">Padrão</th>
                 </tr>
             </thead>
@@ -87,13 +83,9 @@
                 foreach($tabelas->data as $i => $v){
             ?>
                 <tr class="<?=(($v->id == $d->api_facta_tabela_padrao)?'bg-info bg-gradient':false)?>">
+                    <td><?=$v->id?></td>
                     <td><?=$v->name?></td>
-                    <td><?=$v->monthlyFee?></td>
-                    <td><?=$v->annualFee?></td>
-                    <td><?=$v->minDisbursedAmount?></td>
-                    <td><?=$v->maxDisbursedAmount?></td>
-                    <td><?=$v->minNumberOfYearsAntecipated?></td>
-                    <td><?=$v->maxNumberOfYearsAntecipated?></td>
+                    <td><?=$v->taxa?></td>
                     <td>
                         <input padrao type="checkbox" class="form-check-input" value="<?=$v->id?>" <?=(($v->id == $d->api_facta_tabela_padrao)?'checked':false)?>>
                     </td>
