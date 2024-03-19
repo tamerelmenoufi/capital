@@ -194,7 +194,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th style="width:10px;"><input type="checkbox" class="form-check-input" todas_parcelas ></th>
+                <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas ></th>
                 <th>Período</th>
                 <th>Valor</th>
             </tr>
@@ -218,6 +218,8 @@
             }
             ?>
         </tbody>
+    </table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Data Consulta do Saldo</th>
