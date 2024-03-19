@@ -162,7 +162,72 @@
     </div>
     <?php
     }
+    
+    $query = "select * from consultas_facta where cliente = '{$cliente->codigo}' order by codigo desc";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+        $saldo = json_decode($d->saldo);
+        if($saldo->erro == true){
     ?>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+            </tr>
+            <tr>
+                <th>Mensagem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?=$saldo->codigo?></td>
+            </tr>
+            <tr>
+                <td><?=$saldo->msg?></td>
+            </tr>
+        </tbody>
+    </table>
+    <?php
+        }else{
+    ?>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Período</th>
+            </tr>
+            <tr>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            for($i = 1; $i <= 12; $i++){
+                eval("\$valor = \$saldo->retorno->valor_{$i};");
+                eval("\$periodo = \$saldo->retorno->dataRepasse_{$i};");
+                if($periodo){
+            ?>
+            <tr>
+                <td><?=$periodo?></td>
+            </tr>
+            <tr>
+                <td><?=$valor?></td>
+            </tr>
+            <?php
+                }
+            }
+            ?>
+        </tbody>
+    </table>
+    <?php
+        }
+    }
+    ?>
+    
+    
+
+
+
+
     </div>
     <button atualiza class="btn btn-primary">Atualizar</button>
   </div>
