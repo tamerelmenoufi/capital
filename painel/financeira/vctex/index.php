@@ -30,7 +30,7 @@
     if($agora < $d->api_expira){
         $tabelas = $d->api_vctex_tabelas;
     }else{
-        $retorno = $vctex->Token();
+        echo $retorno = $vctex->Token();
         $dados = json_decode($retorno);
         if($dados->statusCode == 200){
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
