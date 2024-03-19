@@ -6,9 +6,9 @@
         return str_replace($remove, false, $v);
     }
 
-    $vctex = new Vctex;
+    $facta = new facta;
 
-    $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
+    $query = "select *, api_facta_dados->>'$.token' as token from configuracoes where codigo = '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
@@ -17,213 +17,32 @@
     $agora = time();
 
     if($agora > $d->api_expira){
-        $retorno = $vctex->Token();
+        $retorno = $facta->Token();
         $dados = json_decode($retorno);
-        if($dados->statusCode == 200){
-            $tabelas = $vctex->Tabelas($dados->token->accessToken);
-            $token = $dados->token->accessToken;
-            mysqli_query($con, "update configuracoes set api_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
+        if($dados->erro == false){
+            $token = $dados->token;
+            mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + 7200)."', api_facta_dados = '{$retorno}' where codigo = '1'");
         }else{
             $tabelas = 'error';
         }
     }
 
     if($_POST['acao'] == 'limpar'){
-        $_SESSION['vctex_campo'] = false;
-        $_SESSION['vctex_rotulo'] = false;
-        $_SESSION['vctex_valor'] = false;
+        $_SESSION['facta_campo'] = false;
+        $_SESSION['facta_rotulo'] = false;
+        $_SESSION['facta_valor'] = false;
     }
 
-    if($_POST['acao'] == 'atualiza_proposta'){
-        $_SESSION['vctex_campo'] = $_POST['campo'];
-        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
-        $_SESSION['vctex_valor'] = $_POST['valor'];
-
-        $consulta = $vctex->Conculta([
-            'token' => $token,
-            'proposalId' => $_POST['proposalId']
-        ]);
-
-        $query = "update consultas set lixo = '{$consulta}' where codigo = '{$_POST['atualiza_proposta']}'";
-        $result = mysqli_query($con, $query);
-
-        var_dump($consulta);
-
-    }
 
     if($_POST['acao'] == 'consulta'){
-        $_SESSION['vctex_campo'] = $_POST['campo'];
-        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
-        $_SESSION['vctex_valor'] = $_POST['valor'];
-    }
-
-    if($_POST['acao'] == 'simulacao'){
-
-        $_SESSION['vctex_campo'] = $_POST['campo'];
-        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
-        $_SESSION['vctex_valor'] = $_POST['valor'];
-
-
-        $query = "select * from clientes where codigo = '{$_POST['cliente']}'";
-        $result = mysqli_query($con, $query);
-        $d = mysqli_fetch_object($result);
-
-        $tabela_padrao = $_POST['tabela'];
-
-        $simulacao = $vctex->Simular([
-            'token' => $token,
-            'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-            'tabela' => $tabela_padrao
-        ]);
-        
-        $verifica = json_decode($simulacao);
-        var_dump($verifica);
-        if($verifica->data->isExponentialFeeScheduleAvailable == true and $verifica->statusCode == 200){
-
-            $simulacao = $vctex->Simular([
-                'token' => $token,
-                'cpf' => str_replace(['-',' ','.'],false,trim($d->cpf)),
-                'tabela' => 0
-            ]);
-
-            $tabela_padrao = 0;
-
-        }
-
-
-        $consulta = uniqid();
-
-
-        $query = "insert into consultas set 
-                                            consulta = '{$consulta}',
-                                            operadora = 'VCTEX',
-                                            cliente = '{$_POST['cliente']}',
-                                            data = NOW(),
-                                            tabela_escolhida = '{$_POST['tabela']}',
-                                            tabela = '{$tabela_padrao}',
-                                            dados = '{$simulacao}'
-                                            ";
-        mysqli_query($con, $query);
-        // exit();
-
-    }
-
-    if($_POST['acao'] == 'proposta'){
-
-        $_SESSION['vctex_campo'] = $_POST['campo'];
-        $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
-        $_SESSION['vctex_valor'] = $_POST['valor'];
-
-        $query = "select 
-                        b.*,
-                        a.tabela,
-                        a.dados->>'$.data.financialId' as financialId
-                    from consultas a
-                         left join clientes b on a.cliente = b.codigo
-                    where a.codigo = '{$_POST['proposta']}'";
-        $result = mysqli_query($con, $query);
-        $d = mysqli_fetch_object($result);
-
-
-        // echo "{
-        //     \"feeScheduleId\": {$d->tabela},
-        //     \"financialId\": \"{$d->financialId}\",
-        //     \"borrower\": {
-        //     \"name\": \"{$d->nome}\",
-        //     \"cpf\": \"".numero($d->cpf)."\",
-        //     \"birthdate\": \"{$d->birthdate}\",
-        //     \"gender\": \"{$d->gender}\",
-        //     \"phoneNumber\": \"".numero($d->phoneNumber)."\",
-        //     \"email\": \"{$d->email}\",
-        //     \"maritalStatus\": \"{$d->maritalStatus}\",
-        //     \"nationality\": \"{$d->nationality}\",
-        //     \"naturalness\": \"{$d->naturalness}\",
-        //     \"motherName\": \"{$d->motherName}\",
-        //     \"fatherName\": \"{$d->fatherName}\",
-        //     \"pep\": {$d->pep}
-        //     },
-        //     \"document\": {
-        //     \"type\": \"{$d->document_type}\",
-        //     \"number\": \"".numero($d->document_number)."\",
-        //     \"issuingState\": \"{$d->document_issuingState}\",
-        //     \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
-        //     \"issueDate\": \"{$d->document_issueDate}\"
-        //     },
-        //     \"address\": {
-        //     \"zipCode\": \"".numero($d->address_zipCode)."\",
-        //     \"street\": \"{$d->address_street}\",
-        //     \"number\": \"{$d->address_number}\",
-        //     \"complement\": null,
-        //     \"neighborhood\": \"{$d->address_neighborhood}\",
-        //     \"city\": \"{$d->address_city}\",
-        //     \"state\": \"{$d->address_state}\"
-        //     },
-        //     \"disbursementBankAccount\": {
-        //     \"bankCode\": \"".numero($d->bankCode)."\",
-        //     \"accountType\": \"".numero($d->accountType)."\",
-        //     \"accountNumber\": \"".numero($d->accountNumber)."\",
-        //     \"accountDigit\": \"".numero($d->accountDigit)."\",
-        //     \"branchNumber\": \"".numero($d->branchNumber)."\"
-        //     }
-        // }";
-
-            // cpf,phoneNumber,document_number, zipCode, bankCode, accountNumber, accountDigit, branchNumber
-        $proposta = $vctex->Credito([
-            'token' => $token,
-            'json' => "{
-                            \"feeScheduleId\": {$d->tabela},
-                            \"financialId\": \"{$d->financialId}\",
-                            \"borrower\": {
-                            \"name\": \"{$d->nome}\",
-                            \"cpf\": \"".numero($d->cpf)."\",
-                            \"birthdate\": \"{$d->birthdate}\",
-                            \"gender\": \"{$d->gender}\",
-                            \"phoneNumber\": \"".numero($d->phoneNumber)."\",
-                            \"email\": \"{$d->email}\",
-                            \"maritalStatus\": \"{$d->maritalStatus}\",
-                            \"nationality\": \"{$d->nationality}\",
-                            \"naturalness\": \"{$d->naturalness}\",
-                            \"motherName\": \"{$d->motherName}\",
-                            \"fatherName\": \"{$d->fatherName}\",
-                            \"pep\": {$d->pep}
-                            },
-                            \"document\": {
-                            \"type\": \"{$d->document_type}\",
-                            \"number\": \"".numero($d->document_number)."\",
-                            \"issuingState\": \"{$d->document_issuingState}\",
-                            \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
-                            \"issueDate\": \"{$d->document_issueDate}\"
-                            },
-                            \"address\": {
-                            \"zipCode\": \"".numero($d->address_zipCode)."\",
-                            \"street\": \"{$d->address_street}\",
-                            \"number\": \"{$d->address_number}\",
-                            \"complement\": null,
-                            \"neighborhood\": \"{$d->address_neighborhood}\",
-                            \"city\": \"{$d->address_city}\",
-                            \"state\": \"{$d->address_state}\"
-                            },
-                            \"disbursementBankAccount\": {
-                            \"bankCode\": \"".numero($d->bankCode)."\",
-                            \"accountType\": \"".numero($d->accountType)."\",
-                            \"accountNumber\": \"".numero($d->accountNumber)."\",
-                            \"accountDigit\": \"".numero($d->accountDigit)."\",
-                            \"branchNumber\": \"".numero($d->branchNumber)."\"
-                            }
-                        }"
-        ]);
-
-        $query = "update consultas set 
-                    proposta = '{$proposta}'
-                    where codigo = '{$_POST['proposta']}'
-                ";
-        mysqli_query($con, $query);
-
+        $_SESSION['facta_campo'] = $_POST['campo'];
+        $_SESSION['facta_rotulo'] = $_POST['rotulo'];
+        $_SESSION['facta_valor'] = $_POST['valor'];
     }
 
 
-    if($_SESSION['vctex_campo'] and $_SESSION['vctex_valor']){
-        $query = "select * from clientes where {$_SESSION['vctex_campo']} like '%{$_SESSION['vctex_valor']}%'";
+    if($_SESSION['facta_campo'] and $_SESSION['facta_valor']){
+        $query = "select * from clientes where {$_SESSION['facta_campo']} like '%{$_SESSION['facta_valor']}%'";
         $result = mysqli_query($con, $query);
         $cliente = mysqli_fetch_object($result);
     }
@@ -231,13 +50,13 @@
 ?>
 
 <div class="card m-3">
-  <h5 class="card-header">Sistema Capital Financeira - VCTEX</h5>
+  <h5 class="card-header">Sistema Capital Financeira - facta</h5>
   <div class="card-body">
     <h5 class="card-title">Consultas / Simulações /Propostas</h5>
     <div class="card-text" style="min-height:400px;">
         
     <div class="input-group mb-3">
-        <!-- <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=(($_SESSION['vctex_rotulo'])?:'CPF')?></button>
+        <!-- <button opcao_busca class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><?=(($_SESSION['facta_rotulo'])?:'CPF')?></button>
         <ul class="dropdown-menu">
             <li><a selecione="cpf" class="dropdown-item" href="#">CPF</a></li>
             <li><a selecione="nome" class="dropdown-item" href="#">Nome</a></li>
@@ -248,14 +67,14 @@
             class="form-control" 
             aria-label="Text input with dropdown button"
             busca
-            value="<?=$_SESSION['vctex_valor']?>"
+            value="<?=$_SESSION['facta_valor']?>"
         >
         <button
             buscar
             type="button" 
             class="btn btn-outline-secondary"
-            campo="<?=(($_SESSION['vctex_campo'])?:'cpf')?>"
-            rotulo="<?=(($_SESSION['vctex_rotulo'])?:'CPF')?>"    
+            campo="<?=(($_SESSION['facta_campo'])?:'cpf')?>"
+            rotulo="<?=(($_SESSION['facta_rotulo'])?:'CPF')?>"    
         >Buscar</button>
         <button
             limpar
@@ -271,7 +90,7 @@
 
     <?php
     echo $q;
-    if($_SESSION['vctex_campo'] and $_SESSION['vctex_valor'] and !$cliente->codigo){
+    if($_SESSION['facta_campo'] and $_SESSION['facta_valor'] and !$cliente->codigo){
     ?>
     <div class="row">
         <div class="col">
@@ -302,189 +121,16 @@
                 $q = "select * from configuracoes where codigo = '1'";
                 $r = mysqli_query($con, $q);
                 $tab = mysqli_fetch_object($r);
-                $t = json_decode($tab->api_vctex_tabelas);
+                $t = json_decode($tab->api_facta_tabelas);
                 foreach($t->data as $i => $v){
             ?>
-            <option value="<?=$v->id?>" <?=(($tab->api_vctex_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
+            <option value="<?=$v->id?>" <?=(($tab->api_facta_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
             <?php
                 }
             ?>
         </select>
         <button simulacao class="btn btn-outline-secondary" type="button" id="button-addon1">Criar uma Simulação</button>
     </div>
-    <?php
-
-    $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as status_proposta from consultas where cliente = '{$cliente->codigo}' order by codigo desc";
-    $result = mysqli_query($con, $query);
-    while($d = mysqli_fetch_object($result)){
-        $dados = json_decode($d->dados);
-
-        $q = "select * from configuracoes where codigo = '1'";
-        $r = mysqli_query($con, $q);
-        $t = mysqli_fetch_object($r);
-        $tab = json_decode($t->api_vctex_tabelas);
-        foreach($tab->data as $i => $v){
-            if($v->id == $d->tabela_escolhida) $tabela_sugerida = $v->name;
-            if($v->id == $d->tabela) $tabela_resultado = $v->name;
-        }
-
-        if($dados->statusCode == 200){
-    ?>
-        <div class="card mb-3 border-<?=(($d->status_proposta == 200)?'success':'primary')?>">
-            <div class="card-header bg-<?=(($d->status_proposta == 200)?'success':'primary')?> text-white">
-            <?=(($d->status_proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
-            </div>
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th colspan="4">Tabela Sugerida</th>
-                        <th colspan="4">Resultado da Tabela</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="4"><?=$tabela_sugerida?></td>
-                        <td colspan="4"><?=$tabela_resultado?></td>
-                    </tr>
-                </tbody>    
-                <thead>
-                    <tr>
-                        <th colspan="7">Período</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach($dados->data->simulationData->installments as $periodo => $valor){
-                    ?>
-                    <tr>
-                        <td colspan="7"><?=dataBr($valor->dueDate)?></td>
-                        <td>R$ <?=number_format($valor->amount,2,',','.')?></td>
-                    </tr>
-                    <?php                       
-                    }
-                    ?>
-                </tbody>
-                <thead>
-                    <tr>
-                        <th>Data operação</th>
-                        <th>IOF</th>
-                        <th>Liberado</th>
-                        <th>Emissão</th>
-                        <th>TAC</th>
-                        <th>CET anual</th>
-                        <th>Taxa anual</th>
-                        <th>Mínimo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><?=dataBR($d->data)?></td>
-                        <td><?=$dados->data->simulationData->iofAmount?></td>
-                        <td><?=$dados->data->simulationData->totalReleasedAmount?></td>
-                        <td><?=$dados->data->simulationData->totalAmount?></td>
-                        <td><?=$dados->data->simulationData->contractTACAmount?></td>
-                        <td><?=$dados->data->simulationData->contractCETRate?></td>
-                        <td><?=$dados->data->simulationData->contractRate?></td>
-                        <td><?=$dados->data->simulationData->minDisbursedAmount?></td>
-                    </tr>
-                </tbody>    
-            </table>
-            
-            <?php
-                if($dados->data->isExponentialFeeScheduleAvailable){
-            ?>
-            <div class="alert alert-success p-1 m-2" role="alert">
-                A simulação apresenta uma tabela <b><?=$dados->data->isVendexFeeScheduleAvailable?></b> mais vantajoso.
-            </div>
-            <?php
-                }
-                if($d->status_proposta != 200){
-            ?>
-            <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm m-3">
-                Solicitar proposta para esta simulação
-            </button>
-            <?php
-                if($d->status_proposta){
-                    $proposta = json_decode($d->proposta);
-                    // var_dump($proposta);
-            ?>
-                <div class="alert alert-danger m-3" role="alert">
-                    <?="{$proposta->statusCode} - {$proposta->message}"?>
-                    <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar o link" copiar="<?="{$proposta->statusCode} - {$proposta->message}"?>"><i class="fa-solid fa-copy"></i></button> -->
-
-                </div>
-            <?php
-                }
-
-
-
-                }else{
-
-                    $proposta = json_decode($d->proposta);
-            ?>
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th colspan="4">Número do Contrato</th>
-                        <th colspan="4">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="4"><?=$proposta->data->proposalcontractNumber?></td>
-                        <td colspan="4"><?="{$proposta->statusCode} - {$proposta->message}"?></td>
-                    </tr>
-                </tbody> 
-            </table>
-            <div class="row">
-                <div class="col">
-                    <div class="m-2">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
-                            <div class="form-control"><?=$proposta->data->formalizationLink?></div>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar o link" copiar="<?=$proposta->data->formalizationLink?>"><i class="fa-solid fa-copy"></i></button>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por whatsApp" wapp="<?=$d->codigo?>"><i class="fa-brands fa-whatsapp"></i></button>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por SMS" sms="<?=$d->codigo?>"><i class="fa-solid fa-comment-sms"></i></button>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por e-mail" email="<?=$d->codigo?>"><i class="fa-solid fa-at"></i></button>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Atualizar Status da proposta" proposalId="<?=$proposta->data->proposalId?>" atualiza_proposta="<?=$d->codigo?>"><i class="fa-solid fa-rotate"></i></button>
-                        </div>           
-                    </div>         
-                </div>
-            </div>
-            <?php
-                }
-            ?>
-        </div>
-    <?php
-        }else{
-    ?>
-    <div class="card mb-3 border-danger">
-        <div class="card-header bg-danger text-white">
-        SIMULAÇÃO - <?=strtoupper($d->consulta)?>
-        </div>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Data operação</th>
-                    <th>Erro</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><?=dataBR($d->data)?></td>
-                    <td><?=$dados->statusCode?></td>
-                    <td><?=$dados->message?></td>
-                </tr>
-            </tbody>    
-        </table>
-    </div>
-    <?php
-        }
-    }
-    }
-    ?>
     </div>
     <button atualiza class="btn btn-primary">Atualizar</button>
   </div>
@@ -526,8 +172,8 @@
                 url:"financeira/clientes/form.php",
                 type:"POST",
                 data:{
-                    cpf:'<?=$_SESSION['vctex_valor']?>',
-                    retorno:"financeira/vctex/consulta.php"
+                    cpf:'<?=$_SESSION['facta_valor']?>',
+                    retorno:"financeira/facta/consulta.php"
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
@@ -540,7 +186,7 @@
         $("button[atualiza]").click(function(){
             Carregando();
             $.ajax({
-                url:"financeira/vctex/consulta.php",
+                url:"financeira/facta/consulta.php",
                 success:function(dados){
                     $("#paginaHome").html(dados);
                 }
@@ -580,7 +226,7 @@
             }
             Carregando();
             $.ajax({
-                url:"financeira/vctex/consulta.php",
+                url:"financeira/facta/consulta.php",
                 type:"POST",
                 data:{
                     campo,
@@ -600,7 +246,7 @@
             Carregando();
 
             $.ajax({
-                url:"financeira/vctex/consulta.php",
+                url:"financeira/facta/consulta.php",
                 type:"POST",
                 data:{
                     acao:'limpar'
@@ -621,13 +267,13 @@
             Carregando();
 
             $.ajax({
-                url:"financeira/vctex/consulta.php",
+                url:"financeira/facta/consulta.php",
                 type:"POST",
                 data:{
                     acao:'atualiza_proposta',
-                    campo:'<?=$_SESSION['vctex_campo']?>',
-                    rotulo:'<?=$_SESSION['vctex_rotulo']?>',
-                    valor:'<?=$_SESSION['vctex_valor']?>',
+                    campo:'<?=$_SESSION['facta_campo']?>',
+                    rotulo:'<?=$_SESSION['facta_rotulo']?>',
+                    valor:'<?=$_SESSION['facta_valor']?>',
                     proposalId,
                     atualiza_proposta
                 },
@@ -655,13 +301,13 @@
                             Carregando();
 
                             $.ajax({
-                                url:"financeira/vctex/consulta.php",
+                                url:"financeira/facta/consulta.php",
                                 type:"POST",
                                 data:{
                                     acao:'simulacao',
-                                    campo:'<?=$_SESSION['vctex_campo']?>',
-                                    rotulo:'<?=$_SESSION['vctex_rotulo']?>',
-                                    valor:'<?=$_SESSION['vctex_valor']?>',
+                                    campo:'<?=$_SESSION['facta_campo']?>',
+                                    rotulo:'<?=$_SESSION['facta_rotulo']?>',
+                                    valor:'<?=$_SESSION['facta_valor']?>',
                                     cliente:'<?=$cliente->codigo?>',
                                     tabela
                                 },
@@ -706,13 +352,13 @@
                             Carregando();
 
                             $.ajax({
-                                url:"financeira/vctex/consulta.php",
+                                url:"financeira/facta/consulta.php",
                                 type:"POST",
                                 data:{
                                     acao:'proposta',
-                                    campo:'<?=$_SESSION['vctex_campo']?>',
-                                    rotulo:'<?=$_SESSION['vctex_rotulo']?>',
-                                    valor:'<?=$_SESSION['vctex_valor']?>',
+                                    campo:'<?=$_SESSION['facta_campo']?>',
+                                    rotulo:'<?=$_SESSION['facta_rotulo']?>',
+                                    valor:'<?=$_SESSION['facta_valor']?>',
                                     proposta
                                 },
                                 success:function(dados){
