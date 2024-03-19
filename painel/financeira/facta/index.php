@@ -22,9 +22,9 @@
     if($agora < $d->api_facta_expira){
         $tabelas = $d->api_facta_tabelas;
     }else{
-        echo $retorno = $facta->Token();
+        $retorno = $facta->Token();
         $dados = json_decode($retorno);
-        echo $tabelas = '{
+        $tabelas = '{
             "data": [
               {
                 "id": "40703",
@@ -54,7 +54,6 @@
             ]
           }';
         //if($dados->statusCode == 200){
-            echo "update configuracoes set api_facta_expira = '".($agora + $dados->token->expires)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'";
             mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + $dados->token->expires)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
         //}
     }
