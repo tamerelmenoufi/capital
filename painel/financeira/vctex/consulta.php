@@ -47,8 +47,6 @@
         $query = "update consultas set lixo = '{$consulta}' where codigo = '{$_POST['atualiza_proposta']}'";
         $result = mysqli_query($con, $query);
 
-        var_dump($consulta);
-
     }
 
     if($_POST['acao'] == 'consulta'){
