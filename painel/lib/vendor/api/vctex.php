@@ -2,7 +2,7 @@
 
 class Vctex {
 
-    public $ambiente = 'producao'; //homologacao ou producao
+    public $ambiente = 'homologacao'; //homologacao ou producao
 
     public function Ambiente($opc){
         if($opc == 'homologacao'){
@@ -28,7 +28,7 @@ class Vctex {
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>'{
             "cpf":"99713047249",
-            "password":"SeNjb2x18zTmB0L"
+            "password":"bpKqLXNKKLxy9gG"
         }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
