@@ -168,6 +168,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $saldo = json_decode($d->saldo);
+        $calculo = json_decode($d->calculo);
         if($saldo->erro == true){
     ?>
     <table class="table">
@@ -222,6 +223,13 @@
                 <th>Saldo Total</th>
                 <th>Tablea</th>
                 <th>Taxa</th>
+                <?php
+                if(!$calculo){
+                ?>
+                <th>Cálculo</th>
+                <?php
+                }
+                ?>
             </tr>
         </thead>
         <tbody>
@@ -230,6 +238,15 @@
                 <td><?="{$saldo->retorno->saldo_total}"?></td>
                 <td><?="{$d->tabela} - {$tabela_descricao[$d->tabela]}"?></td>
                 <td><?="{$d->tabela_taxa}"?></td>
+                <?php
+                if(!$calculo){
+                ?>
+                <td>
+                    <button calculo="<?=$d->codigo?>" class="btn btn-primary btn-sm">Gerar Cálculo</button>
+                </td>
+                <?php
+                }
+                ?>
             </tr>
         </tbody>
     </table>
@@ -239,9 +256,6 @@
     ?>
     
     
-
-
-
 
     </div>
     <button atualiza class="btn btn-primary">Atualizar</button>
@@ -263,19 +277,19 @@
             }
         })
 
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+        // var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        // var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        //     return new bootstrap.Tooltip(tooltipTriggerEl)
+        // })
 
-        $("button[copiar]").click(function(){
-            obj = $(this);
-            texto = $(this).attr("copiar");
-            CopyMemory(texto);
-            obj.removeClass('btn-outline-secondary');
-            obj.addClass('btn-outline-success');
-            // obj.children("span").text("Código PIX Copiado!");
-        });
+        // $("button[copiar]").click(function(){
+        //     obj = $(this);
+        //     texto = $(this).attr("copiar");
+        //     CopyMemory(texto);
+        //     obj.removeClass('btn-outline-secondary');
+        //     obj.addClass('btn-outline-success');
+        //     // obj.children("span").text("Código PIX Copiado!");
+        // });
 
         $("button[clientes]").click(function(){
             Carregando();
@@ -287,20 +301,20 @@
             });
         });
 
-        $("button[novo]").click(function(){
-            Carregando();
-            $.ajax({
-                url:"financeira/clientes/form.php",
-                type:"POST",
-                data:{
-                    cpf:'<?=$_SESSION['facta_valor']?>',
-                    retorno:"financeira/facta/consulta.php"
-                },
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            });
-        });
+        // $("button[novo]").click(function(){
+        //     Carregando();
+        //     $.ajax({
+        //         url:"financeira/clientes/form.php",
+        //         type:"POST",
+        //         data:{
+        //             cpf:'<?=$_SESSION['facta_valor']?>',
+        //             retorno:"financeira/facta/consulta.php"
+        //         },
+        //         success:function(dados){
+        //             $(".LateralDireita").html(dados);
+        //         }
+        //     });
+        // });
 
         $("input[busca]").mask("999.999.999-99");
 
@@ -380,31 +394,31 @@
 
         })     
 
-        $("button[atualiza_proposta]").click(function(){
+        // $("button[atualiza_proposta]").click(function(){
 
-            proposalId = $(this).attr("proposalId");
-            atualiza_proposta = $(this).attr("atualiza_proposta");
+        //     proposalId = $(this).attr("proposalId");
+        //     atualiza_proposta = $(this).attr("atualiza_proposta");
 
-            Carregando();
+        //     Carregando();
 
-            $.ajax({
-                url:"financeira/facta/consulta.php",
-                type:"POST",
-                data:{
-                    acao:'atualiza_proposta',
-                    campo:'<?=$_SESSION['facta_campo']?>',
-                    rotulo:'<?=$_SESSION['facta_rotulo']?>',
-                    valor:'<?=$_SESSION['facta_valor']?>',
-                    proposalId,
-                    atualiza_proposta
-                },
-                success:function(dados){
-                    $("#paginaHome").html(dados);
-                }
-            })            
+        //     $.ajax({
+        //         url:"financeira/facta/consulta.php",
+        //         type:"POST",
+        //         data:{
+        //             acao:'atualiza_proposta',
+        //             campo:'<?=$_SESSION['facta_campo']?>',
+        //             rotulo:'<?=$_SESSION['facta_rotulo']?>',
+        //             valor:'<?=$_SESSION['facta_valor']?>',
+        //             proposalId,
+        //             atualiza_proposta
+        //         },
+        //         success:function(dados){
+        //             $("#paginaHome").html(dados);
+        //         }
+        //     })            
             
 
-        })     
+        // })     
 
         $("button[saldo]").click(function(){
 
@@ -454,18 +468,16 @@
                 }
             })
           
-            
-
-        })  
+        }) 
 
 
-        $("button[proposta]").click(function(){
+        $("button[calculo]").click(function(){
 
-            proposta = $(this).attr("proposta");
+            calculo = $(this).attr("calculo");
 
             $.confirm({
-                title:"Proposta",
-                content:"Confirma a solicitação de proposta?",
+                title:"Cálculo",
+                content:"Confirma a verificação do cálculo?",
                 type:"orange",
                 buttons:{
                     'sim':{
@@ -478,11 +490,11 @@
                                 url:"financeira/facta/consulta.php",
                                 type:"POST",
                                 data:{
-                                    acao:'proposta',
+                                    acao:'calculo',
                                     campo:'<?=$_SESSION['facta_campo']?>',
                                     rotulo:'<?=$_SESSION['facta_rotulo']?>',
                                     valor:'<?=$_SESSION['facta_valor']?>',
-                                    proposta
+                                    calculo
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
@@ -504,7 +516,55 @@
                 }
             })
 
-        })  
+        }) 
+
+
+        // $("button[proposta]").click(function(){
+
+        //     proposta = $(this).attr("proposta");
+
+        //     $.confirm({
+        //         title:"Proposta",
+        //         content:"Confirma a solicitação de proposta?",
+        //         type:"orange",
+        //         buttons:{
+        //             'sim':{
+        //                 text:'Sim',
+        //                 btnClass:'btn btn-success btn-sm',
+        //                 action:function(){
+        //                     Carregando();
+
+        //                     $.ajax({
+        //                         url:"financeira/facta/consulta.php",
+        //                         type:"POST",
+        //                         data:{
+        //                             acao:'proposta',
+        //                             campo:'<?=$_SESSION['facta_campo']?>',
+        //                             rotulo:'<?=$_SESSION['facta_rotulo']?>',
+        //                             valor:'<?=$_SESSION['facta_valor']?>',
+        //                             proposta
+        //                         },
+        //                         success:function(dados){
+        //                             $("#paginaHome").html(dados);
+        //                             // console.log(dados);
+        //                         },
+        //                         error:function(){
+        //                             alert('Erro')
+        //                         }
+        //                     })  
+        //                 }
+        //             },
+        //             'nao':{
+        //                 text:'Não',
+        //                 btnClass:'btn btn-danger btn-sm',
+        //                 action:function(){
+                            
+        //                 }
+        //             }
+        //         }
+        //     })
+
+        // })  
 
 
     })
