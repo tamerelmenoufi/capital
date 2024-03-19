@@ -36,17 +36,17 @@ class Facta {
        
     }
 
-    public function Saldo($token = false){
+    public function Saldo($dados){
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf=02687561126');
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf='+$dados['cpf']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer '.$this->token;
+        $headers[] = 'Authorization: Bearer '.$dados['token'];
         $headers[] = 'Content-Type: application/x-www-form-urlencoded';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 

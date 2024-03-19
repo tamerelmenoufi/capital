@@ -41,6 +41,35 @@
     }
 
 
+    //consulta do saldo
+    if($_POST['acao'] == 'saldo'){
+        $_SESSION['facta_campo'] = $_POST['campo'];
+        $_SESSION['facta_rotulo'] = $_POST['rotulo'];
+        $_SESSION['facta_valor'] = $_POST['valor'];
+
+        $query = "select * from clientes where codigo = '{$_POST['cliente']}'";
+        $result = mysqli_query($con, $query);
+        $cliente = mysqli_fetch_object($result);
+        $retorno = $facta->Saldo([
+            'token'=>$token,
+            'cpf' => numero($cliente->cpf);
+        ]);
+
+        $query = "insert into consultas_facta set 
+                                                    consulta = '{$consulta}',
+                                                    operadora = 'FACTA',
+                                                    cliente = '{$cliente->codigo}',
+                                                    data = NOW(),
+                                                    tabela_escolhida = '{$_POST['tabela']}',
+                                                    tabela = '{$_POST['tabela']}',
+                                                    saldo = '{$retorno}'
+                                                    
+                ";
+        mysqli_query($con, $query);
+
+    }    
+
+
     if($_SESSION['facta_campo'] and $_SESSION['facta_valor']){
         $query = "select * from clientes where {$_SESSION['facta_campo']} like '%{$_SESSION['facta_valor']}%'";
         $result = mysqli_query($con, $query);
@@ -129,7 +158,7 @@
                 }
             ?>
         </select>
-        <button simulacao class="btn btn-outline-secondary" type="button" id="button-addon1">Criar uma Simulação</button>
+        <button saldo class="btn btn-outline-secondary" type="button" id="button-addon1">Verificar Saldo</button>
     </div>
     <?php
     }
@@ -288,13 +317,13 @@
 
         })     
 
-        $("button[simulacao]").click(function(){
+        $("button[saldo]").click(function(){
 
             tabela = $("#tabela").val();
 
             $.confirm({
-                title:"Simulação",
-                content:"Confirma a solicitação para simulação?",
+                title:"Saldo",
+                content:"Confirma a consulta do Saldo?",
                 type:"orange",
                 buttons:{
                     'sim':{
@@ -307,7 +336,7 @@
                                 url:"financeira/facta/consulta.php",
                                 type:"POST",
                                 data:{
-                                    acao:'simulacao',
+                                    acao:'saldo',
                                     campo:'<?=$_SESSION['facta_campo']?>',
                                     rotulo:'<?=$_SESSION['facta_rotulo']?>',
                                     valor:'<?=$_SESSION['facta_valor']?>',
