@@ -191,9 +191,10 @@
     <?php
         }else{
     ?>
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
+                <th><input type="checkbox" class="form-check-input" todas_parcelas ></th>
                 <th>Período</th>
                 <th>Valor</th>
             </tr>
@@ -206,6 +207,9 @@
                 if($periodo){
             ?>
             <tr>
+                <td>
+                    <input type="checkbox" class="form-check-input" parcelas value="<?=$i?>">
+                </td>
                 <td><?=$periodo?></td>
                 <td><?=$valor?></td>
             </tr>
@@ -251,6 +255,15 @@
     $(function(){
 
         Carregando('none');
+
+        $("input[todas_parcelas]").click(function(){
+            opc = $(this).prop("checked");
+            if(opc == true){
+                $("input[parcelas]").prop("checked", true);
+            }else{
+                $("input[parcelas]").prop("checked", false);
+            }
+        })
 
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
