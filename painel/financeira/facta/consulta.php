@@ -194,8 +194,6 @@
         <thead>
             <tr>
                 <th>Período</th>
-            </tr>
-            <tr>
                 <th>Valor</th>
             </tr>
         </thead>
@@ -208,8 +206,6 @@
             ?>
             <tr>
                 <td><?=$periodo?></td>
-            </tr>
-            <tr>
                 <td><?=$valor?></td>
             </tr>
             <?php
