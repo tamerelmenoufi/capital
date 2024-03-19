@@ -40,7 +40,7 @@ class Facta {
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf='+$dados['cpf']);
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/saldo?cpf='.$dados['cpf']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
