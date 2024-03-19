@@ -224,8 +224,8 @@
             <tr>
                 <td><?="{$saldo->retorno->data_saldo} {$saldo->retorno->horaSaldo}"?></td>
                 <td><?="{$saldo->retorno->saldo_total}"?></td>
-                <td><?="{$saldo->retorno->saldo_total}"?></td>
-                <td><?="{$saldo->retorno->saldo_total}"?></td>
+                <td><?="{$d->tabela}"?></td>
+                <td><?="{$d->tabela_taxa}"?></td>
             </tr>
         </tbody>
     </table>
