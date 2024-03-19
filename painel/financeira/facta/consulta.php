@@ -50,12 +50,12 @@
         $query = "select * from clientes where codigo = '{$_POST['cliente']}'";
         $result = mysqli_query($con, $query);
         $cliente = mysqli_fetch_object($result);
-        echo $retorno = $facta->Saldo([
+        $retorno = $facta->Saldo([
             'token'=>$token,
             'cpf' => numero($cliente->cpf)
         ]);
 
-        echo $query = "insert into consultas_facta set 
+        $query = "insert into consultas_facta set 
                                                     consulta = '{$consulta}',
                                                     operadora = 'FACTA',
                                                     cliente = '{$cliente->codigo}',
@@ -118,7 +118,6 @@
     </div>
 
     <?php
-    echo $q;
     if($_SESSION['facta_campo'] and $_SESSION['facta_valor'] and !$cliente->codigo){
     ?>
     <div class="row">
@@ -213,6 +212,18 @@
                 }
             }
             ?>
+        </tbody>
+        <thead>
+            <tr>
+                <th>Data Consulta do Saldo</th>
+                <th>Saldo Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?="{$saldo->retorno->data_saldo} {$saldo->retorno->horaSaldo}"?></td>
+                <td><?="{$saldo->retorno->saldo_total}"?></td>
+            </tr>
         </tbody>
     </table>
     <?php
