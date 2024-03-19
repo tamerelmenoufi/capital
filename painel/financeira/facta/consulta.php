@@ -225,7 +225,7 @@
         <tbody>
             <tr>
                 <td><?="{$saldo->retorno->data_saldo} {$saldo->retorno->horaSaldo}"?></td>
-                <td><?="{$saldo->retorno->saldo_total}"?></td>
+                <td><?="{$saldo->retorno->saldo_total}".var_dump($tabela_descricao)?></td>
                 <td><?="{$d->tabela} - {$tabela_descricao[$d->tabela]}"?></td>
                 <td><?="{$d->tabela_taxa}"?></td>
             </tr>
