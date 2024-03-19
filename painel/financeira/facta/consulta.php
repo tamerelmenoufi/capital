@@ -194,7 +194,7 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th><input type="checkbox" class="form-check-input" todas_parcelas ></th>
+                <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas ></th>
                 <th>Período</th>
                 <th>Valor</th>
             </tr>
@@ -207,7 +207,7 @@
                 if($periodo){
             ?>
             <tr>
-                <td>
+                <td style="width:20px;">
                     <input type="checkbox" class="form-check-input" parcelas value="<?=$i?>">
                 </td>
                 <td><?=$periodo?></td>
