@@ -131,6 +131,9 @@
         </select>
         <button simulacao class="btn btn-outline-secondary" type="button" id="button-addon1">Criar uma Simulação</button>
     </div>
+    <?php
+    }
+    ?>
     </div>
     <button atualiza class="btn btn-primary">Atualizar</button>
   </div>
