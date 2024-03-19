@@ -50,12 +50,12 @@
         $query = "select * from clientes where codigo = '{$_POST['cliente']}'";
         $result = mysqli_query($con, $query);
         $cliente = mysqli_fetch_object($result);
-        $retorno = $facta->Saldo([
+        echo $retorno = $facta->Saldo([
             'token'=>$token,
             'cpf' => numero($cliente->cpf)
         ]);
 
-        $query = "insert into consultas_facta set 
+        echo $query = "insert into consultas_facta set 
                                                     consulta = '{$consulta}',
                                                     operadora = 'FACTA',
                                                     cliente = '{$cliente->codigo}',
