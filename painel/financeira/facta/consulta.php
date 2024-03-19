@@ -166,7 +166,8 @@
     $query = "select * from consultas_facta where cliente = '{$cliente->codigo}' order by codigo desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
-        echo $saldo = json_decode($d->saldo);
+        echo $d->saldo;
+        $saldo = json_decode($d->saldo);
         if($saldo->erro == true){
     ?>
     <table class="table">
