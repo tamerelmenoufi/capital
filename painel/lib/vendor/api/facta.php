@@ -32,7 +32,7 @@ class Facta {
             echo 'Error:' . curl_error($ch);
         }
         curl_close($ch);
-        return $result;
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
        
     }
 
@@ -56,7 +56,7 @@ class Facta {
         }
         curl_close($ch);
 
-        return $result;
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
 
     }
 
@@ -86,7 +86,7 @@ class Facta {
     }
 
 
-    public function Simulador1($token = false){
+    public function Simulador($token = false){
 
         $ch = curl_init();
 
@@ -108,7 +108,7 @@ class Facta {
         }
         curl_close($ch);
 
-        return $result;
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
 
     }
 
@@ -163,7 +163,7 @@ class Facta {
         }
         curl_close($ch);
 
-        return $result;
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
 
     }
 
@@ -189,6 +189,8 @@ class Facta {
         }
         curl_close($ch);
 
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
+
     }
 
     public function Envio($token = false){
@@ -210,6 +212,8 @@ class Facta {
             echo 'Error:' . curl_error($ch);
         }
         curl_close($ch);
+
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
 
     }
 

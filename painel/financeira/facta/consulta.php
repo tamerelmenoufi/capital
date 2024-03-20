@@ -112,6 +112,8 @@
             'json' => $json
         ]);
 
+        $q = "update consultas_facta set simulador = '{$retorno}' where codigo = '{$_POST['calculo']}'";
+        mysqli_query($con, $q);
 
     }
 
@@ -301,6 +303,23 @@
                     ?>
                 </tr>
             </tbody>
+            <?php
+            if($calculo){
+                if($calculo->permitido == 'NAO'){
+            ?>
+            <tbody>
+                <tr>
+                    <td colspan="4">Permitido: NÃO, <?="{$calculo->msg}"?></td>
+                </tr>
+            </tbody>
+            <?php
+                }else{
+            ?>
+
+            <?php
+                }
+            }
+            ?>
         </table>
     <?php
         }
