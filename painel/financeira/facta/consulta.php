@@ -360,7 +360,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <td colspan="4">Permitido: NÃO, <?="{$calculo->msg}"?></td>
                 </tr>
             </tbody>
             <?php
