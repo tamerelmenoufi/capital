@@ -138,10 +138,10 @@
             'tipo_operacao' => '13',
             'averbador' => '20095',
             'convenio' => '3',
-            'cpf' => '00000000000',
+            'cpf' => '02687561126',
             'data_nascimento' => '28/08/1976',
-            'login_certificado' => '0000_teste',
-            'simulacao_fgts' => '000000'
+            'login_certificado' => '9971221024120436',
+            'simulacao_fgts' => ''
         ];
 
         echo $retorno = $facta->Simulador([
