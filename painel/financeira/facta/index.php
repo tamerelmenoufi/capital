@@ -54,7 +54,7 @@
             ]
           }';
         //if($dados->statusCode == 200){
-            mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + $dados->token->expires)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
+            mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + 7200)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
         //}
     }
 
