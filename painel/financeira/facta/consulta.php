@@ -487,7 +487,7 @@
                 });
                 return false;
             }
-
+            console.log(parcelas)
             $.confirm({
                 title:"Cálculo",
                 content:"Confirma a verificação do cálculo?",
