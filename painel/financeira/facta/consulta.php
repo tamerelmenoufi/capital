@@ -112,7 +112,7 @@
             'json' => $json
         ]);
 
-        $q = "update consultas_facta set simulador = '{$retorno}' where codigo = '{$_POST['calculo']}'";
+        $q = "update consultas_facta set calculo = '{$retorno}' where codigo = '{$_POST['calculo']}'";
         mysqli_query($con, $q);
 
     }
