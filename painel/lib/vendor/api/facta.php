@@ -81,7 +81,7 @@ class Facta {
         }
         curl_close($ch);
 
-        return $result;
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
 
     }
 
