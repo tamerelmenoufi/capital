@@ -20,7 +20,7 @@
         echo $retorno = $facta->Token();
         $dados = json_decode($retorno);
         if($dados->erro == false){
-            $token = $dados->token;
+            echo $token = $dados->token;
             mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + 7200)."', api_facta_dados = '{$retorno}' where codigo = '1'");
         }else{
             $tabelas = 'error';
