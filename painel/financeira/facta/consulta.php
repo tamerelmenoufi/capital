@@ -283,7 +283,7 @@
             <thead>
                 <tr>
                     <?php
-                    if(!$calculo){
+                    if(!$calculo or $calculo->permitido == 'NAO'){
                     ?>
                     <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas="<?=$d->codigo?>" ></th>
                     <?php
@@ -302,7 +302,7 @@
                 ?>
                 <tr>
                     <?php
-                    if(!$calculo){
+                    if(!$calculo or $calculo->permitido == 'NAO'){
                     ?>
                     <td>
                         <input type="checkbox" class="form-check-input" parcelas<?=$d->codigo?> value="<?=$i?>">
