@@ -239,6 +239,27 @@
                     <label for="address_state">Estado*</label>
                 </div>
 
+
+                <div class="form-floating mb-3">
+                    <input required type="text" name="renda" id="renda" class="form-control" placeholder="Cidade" value="<?=$d->renda?>">
+                    <label for="renda">Renda*</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input required type="text" name="valor_patrimonio" id="valor_patrimonio" class="form-control" placeholder="Cidade" value="<?=$d->valor_patrimonio?>">
+                    <label for="valor_patrimonio">Valor do Patrimônio*</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <select name="cliente_iletrado_impossibilitado" id="cliente_iletrado_impossibilitado" class="form-select">
+                        <option value="nao" <?=(($d->cliente_iletrado_impossibilitado == 'nao')?'selected':false)?>>Não</option>
+                        <option value="sim" <?=(($d->cliente_iletrado_impossibilitado == 'sim')?'selected':false)?>>Sim</option>
+                    </select>
+                    <label for="cliente_iletrado_impossibilitado">Cliente Iletrado Impossibilitado*</label>
+                </div>
+
+
+
                 <h5>Dados Bancários</h5>
                 <div class="form-floating mb-3">
                     <select required name="bankCode" id="bankCode" class="form-select">
