@@ -213,12 +213,14 @@
     while($d = mysqli_fetch_object($result)){
         $saldo = json_decode($d->saldo);
         $calculo = json_decode($d->calculo);
-        if($saldo->erro == true){
     ?>
     <div class="card mb-3 border-<?=(($d->status_proposta == 200)?'success':'primary')?>">
         <div class="card-header bg-<?=(($d->status_proposta == 200)?'success':'primary')?> text-white">
-        <?=(($d->status_proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
+            <?=(($d->status_proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
         </div>
+    <?php
+        if($saldo->erro == true){
+    ?>
         <table class="table">
             <thead>
                 <tr>
@@ -298,9 +300,11 @@
                 </tr>
             </tbody>
         </table>
-    </div>
     <?php
         }
+    ?>
+    </div>
+    <?php
     }
     ?>
     
