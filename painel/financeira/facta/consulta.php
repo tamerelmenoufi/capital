@@ -67,7 +67,41 @@
                 ";
         mysqli_query($con, $query);
 
-    }    
+    }   
+    
+    //calculo
+    if($_POST['acao'] == 'calculo'){
+
+        $_SESSION['facta_campo'] = $_POST['campo'];
+        $_SESSION['facta_rotulo'] = $_POST['rotulo'];
+        $_SESSION['facta_valor'] = $_POST['valor'];
+
+        $query = "select a.*,  from consultas_facta where codigo = '{$_POST['consulta']}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+
+        $saldo = json_decode($d->saldo);
+
+        $datas = $saldo->retorno;
+        $parcelas = [];
+        for($i = 1; $i <= 12; $i++){
+            eval("\$data = \$datas->dataRepasse_$i;");
+            eval("\$valor = \$datas->valor_$i;");
+            if($data and in_array($i, $_POST['parcelas'])){
+                $parcelas[] = ["dataRepasse_{$i}" => $data, "valor_{$i}" => $valor];
+            }
+        }
+
+        $retorno = [
+            "cpf" => "00000000000",
+            "taxa" => 2.04,
+            "tabela" => 38601,
+            $parcelas
+        ];
+
+        echo json_encode($retorno);
+
+    }
 
 
     if($_SESSION['facta_campo'] and $_SESSION['facta_valor']){
@@ -487,7 +521,6 @@
                 });
                 return false;
             }
-            console.log(parcelas)
             $.confirm({
                 title:"Cálculo",
                 content:"Confirma a verificação do cálculo?",
