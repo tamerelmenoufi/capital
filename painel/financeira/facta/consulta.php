@@ -21,7 +21,7 @@
         $dados = json_decode($retorno);
         if($dados->erro == false){
             $token = $dados->token;
-            $q = "update configuracoes set api_facta_expira = '".($agora + 7200)."', api_facta_dados = '{$retorno}' where codigo = '1'";
+            echo $q = "update configuracoes set api_facta_expira = '".($agora + 7200)."', api_facta_dados = '{$retorno}' where codigo = '1'";
             mysqli_query($con, $q);
         }else{
             $tabelas = 'error';
