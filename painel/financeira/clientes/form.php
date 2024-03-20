@@ -88,7 +88,7 @@
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Telefone" value="<?=dataBr($d->phoneNumber)?>">
+                    <input required type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Telefone" value="<?=$d->phoneNumber?>">
                     <label for="phoneNumber">Telefone*</label>
                 </div>
 
