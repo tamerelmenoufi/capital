@@ -372,8 +372,7 @@
                 success:function(dados){
                     $("#paginaHome").html(dados);
                 }
-            })            
-            
+            })
 
         })     
         
@@ -389,9 +388,7 @@
                 success:function(dados){
                     $("#paginaHome").html(dados);
                 }
-            })            
-            
-
+            })
         })     
 
         // $("button[atualiza_proposta]").click(function(){
@@ -475,6 +472,22 @@
 
             calculo = $(this).attr("calculo");
 
+            parcelas = [];
+            $("input[parcelas]").each(function(){
+                if($(this).prop("checked")){
+                    parcelas.push($(this).val());
+                }
+            })
+
+            if(!parcelas){
+                $.alert({
+                    type:"red",
+                    title:"Intervalo de Período",
+                    content:'Favor definir o intervalo de período que deseja antecipar.'
+                });
+                return false;
+            }
+
             $.confirm({
                 title:"Cálculo",
                 content:"Confirma a verificação do cálculo?",
@@ -494,6 +507,7 @@
                                     campo:'<?=$_SESSION['facta_campo']?>',
                                     rotulo:'<?=$_SESSION['facta_rotulo']?>',
                                     valor:'<?=$_SESSION['facta_valor']?>',
+                                    periodo,
                                     calculo
                                 },
                                 success:function(dados){
@@ -517,6 +531,8 @@
             })
 
         }) 
+
+
 
 
         // $("button[proposta]").click(function(){
