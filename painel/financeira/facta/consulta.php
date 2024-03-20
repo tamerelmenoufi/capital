@@ -76,7 +76,7 @@
         $_SESSION['facta_rotulo'] = $_POST['rotulo'];
         $_SESSION['facta_valor'] = $_POST['valor'];
 
-        $query = "select *  from consultas_facta where codigo = '{$_POST['calculo']}'";
+        $query = "select a.*, b.cpf from consultas_facta a left join clientes b on a.cliente = b.codigo where a.codigo = '{$_POST['calculo']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
@@ -97,9 +97,9 @@
         }
 
         $retorno = [
-            "cpf" => "00000000000",
-            "taxa" => 2.04,
-            "tabela" => 38601,
+            "cpf" => numero($d->cpf),
+            "taxa" => $d->tabela_taxa,
+            "tabela" => $d->tabela,
             "parcelas" => $parcelas
         ];
 
