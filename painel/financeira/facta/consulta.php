@@ -89,6 +89,8 @@
             eval("\$valor = \$datas->valor_$i;");
             if($data and in_array($i, $_POST['parcelas'])){
                 $parcelas[] = ["dataRepasse_{$i}" => $data, "valor_{$i}" => $valor];
+            }else{
+                $parcelas[] = ["dataRepasse_{$i}" => $data, "valor_{$i}" => '0.00'];
             }
         }
 
