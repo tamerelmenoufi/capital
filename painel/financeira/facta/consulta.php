@@ -16,7 +16,7 @@
 
     $agora = time();
 
-    if($agora > $d->api_expira){
+    // if($agora > $d->api_expira){
         $retorno = $facta->Token();
         $dados = json_decode($retorno);
         if($dados->erro == false){
@@ -26,7 +26,7 @@
         }else{
             $tabelas = 'error';
         }
-    }
+    // }
 
     if($_POST['acao'] == 'limpar'){
         $_SESSION['facta_campo'] = false;
@@ -138,8 +138,8 @@
             'tipo_operacao' => '13',
             'averbador' => '20095',
             'convenio' => '3',
-            'cpf' => '02687561126',
-            'data_nascimento' => '28/08/1976',
+            'cpf' => numero($d->cpf),
+            'data_nascimento' => dataBr($d->birthdate),
             'login_certificado' => '96753',
             'simulacao_fgts' => ''
         ];
