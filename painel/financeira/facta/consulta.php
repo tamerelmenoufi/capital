@@ -144,12 +144,12 @@
             'simulacao_fgts' => '000000'
         ];
 
-        $retorno = $facta->Simulador([
+        echo $retorno = $facta->Simulador([
             'token'=> $token,
             'dados' => $dados
         ]);
 
-        $q = "update consultas_facta set simulador = '{$retorno}' where codigo = '{$_POST['simulador']}'";
+        echo $q = "update consultas_facta set simulador = '{$retorno}' where codigo = '{$_POST['simulador']}'";
         mysqli_query($con, $q);
 
     }
