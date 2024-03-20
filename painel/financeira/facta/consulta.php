@@ -241,7 +241,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas ></th>
+                    <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas="<?=$d->codigo?>" ></th>
                     <th>Período</th>
                     <th>Valor</th>
                 </tr>
@@ -255,7 +255,7 @@
                 ?>
                 <tr>
                     <td>
-                        <input type="checkbox" class="form-check-input" parcelas value="<?=$i?>">
+                        <input type="checkbox" class="form-check-input" parcelas<?=$d->codigo?> value="<?=$i?>">
                     </td>
                     <td><?=$periodo?></td>
                     <td><?=$valor?></td>
@@ -323,10 +323,11 @@
 
         $("input[todas_parcelas]").click(function(){
             opc = $(this).prop("checked");
+            cod = $(this).attr("todas_parcelas");
             if(opc == true){
-                $("input[parcelas]").prop("checked", true);
+                $(`input[parcelas${cod}]`).prop("checked", true);
             }else{
-                $("input[parcelas]").prop("checked", false);
+                $(`input[parcelas${cod}]`).prop("checked", false);
             }
         })
 
@@ -526,7 +527,7 @@
             calculo = $(this).attr("calculo");
 
             parcelas = [];
-            $("input[parcelas]").each(function(){
+            $(`input[parcelas${calculo}]`).each(function(){
                 if($(this).prop("checked")){
                     parcelas.push($(this).val());
                 }
