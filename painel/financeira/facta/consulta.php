@@ -76,7 +76,7 @@
         $_SESSION['facta_rotulo'] = $_POST['rotulo'];
         $_SESSION['facta_valor'] = $_POST['valor'];
 
-        echo $query = "select *  from consultas_facta where codigo = '{$_POST['consulta']}'";
+        echo $query = "select *  from consultas_facta where codigo = '{$_POST['calculo']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
