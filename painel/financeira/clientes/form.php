@@ -103,6 +103,7 @@
                     <select name="maritalStatus" id="maritalStatus" class="form-select">
                         <option value="Solteiro" <?=(($d->maritalStatus == 'Solteiro')?'selected':false)?>>Solteiro</option>
                         <option value="Casado" <?=(($d->maritalStatus == 'Casado')?'selected':false)?>>Casado</option>
+                        <option value="Uniao Estavel" <?=(($d->maritalStatus == 'Uniao Estavel')?'selected':false)?>>União Estável</option>
                         <option value="Divorciado" <?=(($d->maritalStatus == 'Divorciado')?'selected':false)?>>Divorciado</option>
                         <option value="Separado" <?=(($d->maritalStatus == 'Separado')?'selected':false)?>>Separado</option>
                         <option value="Viúvo" <?=(($d->maritalStatus == 'Viúvo')?'selected':false)?>>Viúvo</option>
