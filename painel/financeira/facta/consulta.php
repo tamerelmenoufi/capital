@@ -327,15 +327,6 @@
             <?php
                 }else{
             ?>
-
-<!-- {
-  "permitido": "SIM",
-  "simulacao_fgts": "000000",
-  "valor_liquido": "2.617,50",
-  "parcelas_selecionadas": 12,
-  "tabela": "38601 – FGTS GOLD AG",
-  "data_solicitacao": "06/12/2021 11:25:50"
-} -->
             <tbody>
                 <tr>
                     <table class="table">
@@ -347,6 +338,15 @@
                                 <th>Valor Líquido</th>
                                 <th>Parcelas</th>
                                 <th>Tabela</th>
+                                <?php
+                                if(!$simulador){
+                                ?>
+                                <td>
+                                    Simulador
+                                </td>
+                                <?php
+                                }
+                                ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -356,7 +356,16 @@
                                 <td><?=$calculo->data_solicitacao?></td>
                                 <td><?=$calculo->valor_liquido?></td>
                                 <td><?=$calculo->parcelas_selecionadas?></td>
-                                <td><?=$calculo->tabela?></td>                                
+                                <td><?=$calculo->tabela?></td>    
+                                <?php
+                                if(!$simulador){
+                                ?>
+                                <td>
+                                    <button simulador="<?=$d->codigo?>" class="btn btn-primary btn-sm">Ativar Simulador</button>
+                                </td>
+                                <?php
+                                }
+                                ?>                            
                             </tr>
                         </tbody>
                     </table>
