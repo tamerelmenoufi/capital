@@ -247,7 +247,7 @@
                         <?php
                         foreach($bancos as $cod => $banco){
                         ?>
-                        <option value="<?=$cod?>" <?=(($d->bankCode == $cod)?'selected':false)?>><?=$banco?></option>
+                        <option value="<?=$cod?>" ><?=$banco?></option>
                         <?php
                         }
                         ?>
