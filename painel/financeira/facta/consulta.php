@@ -106,7 +106,7 @@
             "parcelas" => $parcelas
         ];
 
-        $json = json_encode($retorno);
+        echo $json = json_encode($retorno);
 
         $retorno = $facta->Calculo([
             'token'=>$token,
