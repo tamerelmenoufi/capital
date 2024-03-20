@@ -55,6 +55,8 @@
             'cpf' => numero($cliente->cpf)
         ]);
 
+        $consulta = uniqid();
+
         $query = "insert into consultas_facta set 
                                                     consulta = '{$consulta}',
                                                     operadora = 'FACTA',
