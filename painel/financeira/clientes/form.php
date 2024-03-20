@@ -244,9 +244,10 @@
                     <select required name="bankCode" id="bankCode" class="form-select">
                         <option value="">:: Selecione o Banco ::</option>
                         <?php
+                        arsort($banco);
                         foreach($bancos as $cod => $banco){
                         ?>
-                        <option value="<?=$banco->value?>" <?=(($d->bankCode == $banco->value)?'selected':false)?>><?=$banco->label?></option>
+                        <option value="<?=$banco->value?>" <?=(($d->bankCode == $banco->value)?'selected':false)?>><?="{$banco->value} - {$banco->label}"?></option>
                         <?php
                         }
                         ?>
