@@ -61,71 +61,17 @@ class Facta {
     }
 
 
-    public function Calculo($token = false){
+    public function Calculo($dados){
 
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'fgts/calculo');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, '{
-            "cpf" : "00000000000",
-            "taxa" : 2.04,
-            "tabela" : 38601,
-            "parcelas" : [
-            {
-            "dataRepasse_1": "01/03/2022",
-            "valor_1": 2059.05
-            },
-            {
-            "dataRepasse_2": "01/03/2023",
-            "valor_2": 1645.86
-            },
-            {
-            "dataRepasse_3": "01/03/2024",
-            "valor_3": 1152.10
-            },
-            {
-            "dataRepasse_4": "01/03/2025",
-            "valor_4": 806.47
-            },
-            {
-            "dataRepasse_5": "01/03/2026",
-            "valor_5": 564.53
-            },
-            {
-            "dataRepasse_6": "01/03/2027",
-            "valor_6": 376.90
-            },
-            {
-            "dataRepasse_7": "01/03/2028",
-            "valor_7": 220.18
-            },
-            {
-            "dataRepasse_8": "01/03/2029",
-            "valor_8": 0.00
-            },
-            {
-            "dataRepasse_9": "01/03/2030",
-            "valor_9": 0.00
-            },
-            {
-            "dataRepasse_10": "01/03/2031",
-            "valor_10": 0.00
-            },
-            {
-            Atualizado em 30/03/2023"dataRepasse_11": "01/03/2032",
-            "valor_11": 0.00
-            },
-            {
-            "dataRepasse_12": "01/03/2033",
-            "valor_12": 0.00
-            }
-            }
-            ]');
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $dados['json']);
 
         $headers = array();
-        $headers[] = 'Authorization: Bearer '.$this->token;
+        $headers[] = 'Authorization: Bearer '.$dados['token'];
         $headers[] = 'Content-Type: application/json';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
