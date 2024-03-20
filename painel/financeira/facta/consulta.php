@@ -118,6 +118,42 @@
     }
 
 
+    //Simulador
+    if($_POST['acao'] == 'simulador'){
+
+        $_SESSION['facta_campo'] = $_POST['campo'];
+        $_SESSION['facta_rotulo'] = $_POST['rotulo'];
+        $_SESSION['facta_valor'] = $_POST['valor'];
+
+        $query = "select a.*, b.cpf, b.birthdate from consultas_facta a left join clientes b on a.cliente = b.codigo where a.codigo = '{$_POST['simulador']}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+
+        $calculo = json_decode($d->calculo);
+
+
+        $dados = [
+            'produto' => 'D',
+            'tipo_operacao' => '13',
+            'averbador' => '20095',
+            'convenio' => '3',
+            'cpf' => '00000000000',
+            'data_nascimento' => '28/08/1976',
+            'login_certificado' => '0000_teste',
+            'simulacao_fgts' => '000000'
+        ];
+
+        $retorno = $facta->Simulador([
+            'token'=> $token,
+            'dados' => $dados
+        ]);
+
+        $q = "update consultas_facta set simulador = '{$retorno}' where codigo = '{$_POST['simulador']}'";
+        mysqli_query($con, $q);
+
+    }
+
+
     if($_SESSION['facta_campo'] and $_SESSION['facta_valor']){
         $query = "select * from clientes where {$_SESSION['facta_campo']} like '%{$_SESSION['facta_valor']}%'";
         $result = mysqli_query($con, $query);
@@ -638,6 +674,53 @@
                                     valor:'<?=$_SESSION['facta_valor']?>',
                                     parcelas,
                                     calculo
+                                },
+                                success:function(dados){
+                                    $("#paginaHome").html(dados);
+                                    // console.log(dados);
+                                },
+                                error:function(){
+                                    alert('Erro')
+                                }
+                            })  
+                        }
+                    },
+                    'nao':{
+                        text:'Não',
+                        btnClass:'btn btn-danger btn-sm',
+                        action:function(){
+                            
+                        }
+                    }
+                }
+            })
+
+        }) 
+
+        $("button[simulador]").click(function(){
+
+            simulador = $(this).attr("silulador");
+
+            $.confirm({
+                title:"Simulador",
+                content:"Confirma a ativação do simulador?",
+                type:"orange",
+                buttons:{
+                    'sim':{
+                        text:'Sim',
+                        btnClass:'btn btn-success btn-sm',
+                        action:function(){
+                            Carregando();
+
+                            $.ajax({
+                                url:"financeira/facta/consulta.php",
+                                type:"POST",
+                                data:{
+                                    acao:'simulador',
+                                    campo:'<?=$_SESSION['facta_campo']?>',
+                                    rotulo:'<?=$_SESSION['facta_rotulo']?>',
+                                    valor:'<?=$_SESSION['facta_valor']?>',
+                                    simulador
                                 },
                                 success:function(dados){
                                     $("#paginaHome").html(dados);
