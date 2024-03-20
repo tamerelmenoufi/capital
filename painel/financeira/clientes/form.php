@@ -1,6 +1,9 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+        list($bancos) = mysqli_fetch_row(mysqli_query($con, "select bancos from configuracoes where codigo = '1'"));
+        $bancos = json_decode($bancos);
+
         $siglas = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'];
 
     if($_POST['acao'] == 'salvar'){
@@ -239,10 +242,18 @@
                 <h5>Dados Bancários</h5>
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="bankCode" id="bankCode" class="form-control" placeholder="Banco" value="<?=$d->bankCode?>">
+                    <select required name="bankCode" id="bankCode" class="form-select">
+                        <option value="">:: Selecione o Banco ::</option>
+                        <?php
+                        foreach($bancos as $cod => $banco){
+                        ?>
+                        <option value="<?=$cod?>" <?=(($d->bankCode == $cod)?'selected':false)?>><?=$banco?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
                     <label for="bankCode">Banco*</label>
                 </div>
-
 
                 <div class="form-floating mb-3">
                     <select name="accountType" id="accountType" class="form-select">
