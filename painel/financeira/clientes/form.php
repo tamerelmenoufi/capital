@@ -240,14 +240,16 @@
                 </div>
 
                 <h5>Dados Bancários</h5>
-
+                        <?php
+                        print_r($bancos);
+                        ?>
                 <div class="form-floating mb-3">
                     <select required name="bankCode" id="bankCode" class="form-select">
                         <option value="">:: Selecione o Banco ::</option>
                         <?php
                         foreach($bancos as $cod => $banco){
                         ?>
-                        <option value="<?=$cod?>" ><?=$banco?></option>
+                        <option value="<?=$cod?>" <?=(($d->bankCode == $cod)?'selected':false)?>><?=$banco?></option>
                         <?php
                         }
                         ?>
