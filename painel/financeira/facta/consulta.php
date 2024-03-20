@@ -327,7 +327,7 @@
                     <th>Tablea</th>
                     <th>Taxa</th>
                     <?php
-                    if(!$calculo){
+                    if(!$calculo or $calculo->permitido == 'NAO'){
                     ?>
                     <th>Cálculo</th>
                     <?php
@@ -342,7 +342,7 @@
                     <td><?="{$d->tabela} - {$tabela_descricao[$d->tabela]}"?></td>
                     <td><?="{$d->tabela_taxa}"?></td>
                     <?php
-                    if(!$calculo){
+                    if(!$calculo or $calculo->permitido == 'NAO'){
                     ?>
                     <td>
                         <button calculo="<?=$d->codigo?>" class="btn btn-primary btn-sm">Gerar Cálculo</button>
