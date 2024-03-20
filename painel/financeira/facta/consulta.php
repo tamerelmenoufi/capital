@@ -215,85 +215,90 @@
         $calculo = json_decode($d->calculo);
         if($saldo->erro == true){
     ?>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Código</th>
-                <th>Mensagem</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><?=$saldo->codigo?></td>
-                <td><?=$saldo->msg?></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="card mb-3 border-<?=(($d->status_proposta == 200)?'success':'primary')?>">
+        <div class="card-header bg-<?=(($d->status_proposta == 200)?'success':'primary')?> text-white">
+        <?=(($d->status_proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Mensagem</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?=$saldo->codigo?></td>
+                    <td><?=$saldo->msg?></td>
+                </tr>
+            </tbody>
+        </table>
     <?php
         }else{
     ?>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas ></th>
-                <th>Período</th>
-                <th>Valor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            for($i = 1; $i <= 12; $i++){
-                eval("\$valor = \$saldo->retorno->valor_{$i};");
-                eval("\$periodo = \$saldo->retorno->dataRepasse_{$i};");
-                if($periodo){
-            ?>
-            <tr>
-                <td>
-                    <input type="checkbox" class="form-check-input" parcelas value="<?=$i?>">
-                </td>
-                <td><?=$periodo?></td>
-                <td><?=$valor?></td>
-            </tr>
-            <?php
-                }
-            }
-            ?>
-        </tbody>
-    </table>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Data Consulta do Saldo</th>
-                <th>Saldo Total</th>
-                <th>Tablea</th>
-                <th>Taxa</th>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas ></th>
+                    <th>Período</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
                 <?php
-                if(!$calculo){
+                for($i = 1; $i <= 12; $i++){
+                    eval("\$valor = \$saldo->retorno->valor_{$i};");
+                    eval("\$periodo = \$saldo->retorno->dataRepasse_{$i};");
+                    if($periodo){
                 ?>
-                <th>Cálculo</th>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="form-check-input" parcelas value="<?=$i?>">
+                    </td>
+                    <td><?=$periodo?></td>
+                    <td><?=$valor?></td>
+                </tr>
                 <?php
+                    }
                 }
                 ?>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><?="{$saldo->retorno->data_saldo} {$saldo->retorno->horaSaldo}"?></td>
-                <td><?="{$saldo->retorno->saldo_total}"?></td>
-                <td><?="{$d->tabela} - {$tabela_descricao[$d->tabela]}"?></td>
-                <td><?="{$d->tabela_taxa}"?></td>
-                <?php
-                if(!$calculo){
-                ?>
-                <td>
-                    <button calculo="<?=$d->codigo?>" class="btn btn-primary btn-sm">Gerar Cálculo</button>
-                </td>
-                <?php
-                }
-                ?>
-            </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Data Consulta do Saldo</th>
+                    <th>Saldo Total</th>
+                    <th>Tablea</th>
+                    <th>Taxa</th>
+                    <?php
+                    if(!$calculo){
+                    ?>
+                    <th>Cálculo</th>
+                    <?php
+                    }
+                    ?>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?="{$saldo->retorno->data_saldo} {$saldo->retorno->horaSaldo}"?></td>
+                    <td><?="{$saldo->retorno->saldo_total}"?></td>
+                    <td><?="{$d->tabela} - {$tabela_descricao[$d->tabela]}"?></td>
+                    <td><?="{$d->tabela_taxa}"?></td>
+                    <?php
+                    if(!$calculo){
+                    ?>
+                    <td>
+                        <button calculo="<?=$d->codigo?>" class="btn btn-primary btn-sm">Gerar Cálculo</button>
+                    </td>
+                    <?php
+                    }
+                    ?>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <?php
         }
     }
