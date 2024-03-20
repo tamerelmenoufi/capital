@@ -107,7 +107,7 @@
 
         $json = json_encode($retorno);
 
-        echo $retorno = $facta->Calculo([
+        $retorno = $facta->Calculo([
             'token'=>$token,
             'json' => $json
         ]);
@@ -245,7 +245,13 @@
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <?php
+                    if(!$calculo){
+                    ?>
                     <th style="width:20px;"><input type="checkbox" class="form-check-input" todas_parcelas="<?=$d->codigo?>" ></th>
+                    <?php
+                    }
+                    ?>
                     <th>Período</th>
                     <th>Valor</th>
                 </tr>
@@ -258,9 +264,15 @@
                     if($periodo){
                 ?>
                 <tr>
+                    <?php
+                    if(!$calculo){
+                    ?>
                     <td>
                         <input type="checkbox" class="form-check-input" parcelas<?=$d->codigo?> value="<?=$i?>">
                     </td>
+                    <?php
+                    }
+                    ?>
                     <td><?=$periodo?></td>
                     <td><?=$valor?></td>
                 </tr>
