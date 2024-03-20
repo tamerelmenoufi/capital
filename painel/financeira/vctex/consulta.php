@@ -17,7 +17,7 @@
     $agora = time();
 
     if($agora > $d->api_expira){
-        $retorno = $vctex->Token();
+        echo $retorno = $vctex->Token();
         $dados = json_decode($retorno);
         if($dados->statusCode == 200){
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
