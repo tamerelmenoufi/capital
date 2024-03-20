@@ -87,10 +87,12 @@
         for($i = 1; $i <= 12; $i++){
             eval("\$data = \$datas->dataRepasse_$i;");
             eval("\$valor = \$datas->valor_$i;");
-            if($data and in_array($i, $_POST['parcelas'])){
-                $parcelas[] = ["dataRepasse_{$i}" => $data, "valor_{$i}" => $valor];
-            }else{
-                $parcelas[] = ["dataRepasse_{$i}" => $data, "valor_{$i}" => '0.00'];
+            if($data){
+                if(in_array($i, $_POST['parcelas'])){
+                    $parcelas[] = ["dataRepasse_{$i}" => $data, "valor_{$i}" => $valor];
+                }else{
+                    $parcelas[] = ["dataRepasse_{$i}" => $data, "valor_{$i}" => '0.00'];
+                }   
             }
         }
 
@@ -98,7 +100,7 @@
             "cpf" => "00000000000",
             "taxa" => 2.04,
             "tabela" => 38601,
-            $parcelas
+            "parcelas" => $parcelas
         ];
 
         echo json_encode($retorno);
