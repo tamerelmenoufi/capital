@@ -700,7 +700,7 @@
 
         $("button[simulador]").click(function(){
 
-            simulador = $(this).attr("silulador");
+            simulador = $(this).attr("simulador");
 
             $.confirm({
                 title:"Simulador",
