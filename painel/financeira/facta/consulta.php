@@ -239,7 +239,7 @@
                 foreach($t->data as $i => $v){
                     $tabela_descricao[$v->id] = $v->name;
             ?>
-            <option value="<?=$v->id?>" taxa<?=$v->id?>="<?=$v->taxa?>" <?=(($tab->api_facta_tabela_padrao == $v->id)?'selected':false)?>><?=$v->name?></option>
+            <option value="<?=$v->id?>" taxa<?=$v->id?>="<?=$v->taxa?>" <?=(($tab->api_facta_tabela_padrao == $v->id)?'selected':false)?>><?="{$v->id} - {$v->name} ({$v->taxa})"?></option>
             <?php
                 }
             ?>
