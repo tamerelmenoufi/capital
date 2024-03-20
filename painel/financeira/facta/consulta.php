@@ -140,7 +140,7 @@
             'convenio' => '3',
             'cpf' => '02687561126',
             'data_nascimento' => '28/08/1976',
-            'login_certificado' => '9971221024120436',
+            'login_certificado' => '96753',
             'simulacao_fgts' => ''
         ];
 

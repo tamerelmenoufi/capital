@@ -70,8 +70,8 @@
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="birthdate" id="birthdate" class="form-control" placeholder="birthdate" value="<?=dataBr($d->birthdate)?>">
-                    <label for="birthdate">birthdate*</label>
+                    <input required type="text" name="birthdate" id="birthdate" class="form-control" placeholder="Data de Nascimento" value="<?=dataBr($d->birthdate)?>">
+                    <label for="birthdate">Data de Nascimento*</label>
                 </div>
 
 
@@ -80,19 +80,19 @@
                         <option value="M" <?=(($d->gender == 'M')?'selected':false)?>>Masculino</option>
                         <option value="F" <?=(($d->gender == 'F')?'selected':false)?>>Feminino</option>
                     </select>
-                    <label for="gender">gender*</label>
+                    <label for="gender">Gênero*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="phoneNumber" value="<?=dataBr(trim($d->phoneNumber))?>">
-                    <label for="phoneNumber">phoneNumber*</label>
+                    <input required type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Telefone" value="<?=dataBr(trim($d->phoneNumber))?>">
+                    <label for="phoneNumber">Telefone*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="email" name="email" id="email" class="form-control" placeholder="email" value="<?=$d->email?>">
-                    <label for="email">email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="E-mail" value="<?=$d->email?>">
+                    <label for="email">E-mail</label>
                 </div>
 
 
@@ -104,31 +104,31 @@
                         <option value="Separado" <?=(($d->maritalStatus == 'Separado')?'selected':false)?>>Separado</option>
                         <option value="Viúvo" <?=(($d->maritalStatus == 'Viúvo')?'selected':false)?>>Viúvo</option>
                     </select>
-                    <label for="maritalStatus">maritalStatus*</label>
+                    <label for="maritalStatus">Estado Civil*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="nationality" id="nationality" class="form-control" placeholder="nationality" value="<?=$d->nationality?>">
-                    <label for="nationality">nationality*</label>
+                    <input required type="text" name="nationality" id="nationality" class="form-control" placeholder="Nacionalidade" value="<?=$d->nationality?>">
+                    <label for="nationality">Nacionalidade*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="naturalness" id="naturalness" class="form-control" placeholder="naturalness" value="<?=$d->naturalness?>">
-                    <label for="naturalness">naturalness*</label>
+                    <input required type="text" name="naturalness" id="naturalness" class="form-control" placeholder="Naturalidade" value="<?=$d->naturalness?>">
+                    <label for="naturalness">Naturalidade*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="motherName" id="motherName" class="form-control" placeholder="motherName" value="<?=$d->motherName?>">
-                    <label for="motherName">motherName*</label>
+                    <input required type="text" name="motherName" id="motherName" class="form-control" placeholder="Nome da Mãe" value="<?=$d->motherName?>">
+                    <label for="motherName">Nome da Mãe*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="fatherName" id="fatherName" class="form-control" placeholder="fatherName" value="<?=$d->fatherName?>">
-                    <label for="fatherName">fatherName</label>
+                    <input type="text" name="fatherName" id="fatherName" class="form-control" placeholder="Nome do Pai" value="<?=$d->fatherName?>">
+                    <label for="fatherName">Nome do Pai</label>
                 </div>
 
 
@@ -137,7 +137,7 @@
                         <option value="false" <?=(($d->pep == 'false')?'selected':false)?>>Não</option>
                         <option value="true" <?=(($d->pep == 'true')?'selected':false)?>>Sim</option>
                     </select>
-                    <label for="pep">pep*</label>
+                    <label for="pep">Exposta Politicamente*</label>
                 </div>
 
                 <h5>Documentação</h5>
@@ -146,13 +146,13 @@
                         <option value="RG" <?=(($d->document_type == 'RG')?'selected':false)?>>RG</option>
                         <option value="CNH" <?=(($d->document_type == 'CNH')?'selected':false)?>>CNH</option>
                     </select>
-                    <label for="document_type">document_type*</label>
+                    <label for="document_type">Tipo de Documento*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="document_number" id="document_number" class="form-control" placeholder="document_number" value="<?=$d->document_number?>">
-                    <label for="document_number">document_number*</label>
+                    <input required type="text" name="document_number" id="document_number" class="form-control" placeholder="Número do Documento" value="<?=$d->document_number?>">
+                    <label for="document_number">Número do Documento*</label>
                 </div>
 
 
@@ -167,58 +167,58 @@
                         }
                         ?>
                     </select>    
-                    <label for="document_issuingState">document_issuingState*</label>
+                    <label for="document_issuingState">Origem do Documento*</label>
 
 
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="document_issuingAuthority" id="document_issuingAuthority" class="form-control" placeholder="document_issuingAuthority" value="<?=$d->document_issuingAuthority?>">
-                    <label for="document_issuingAuthority">document_issuingAuthority*</label>
+                    <input required type="text" name="document_issuingAuthority" id="document_issuingAuthority" class="form-control" placeholder="Orgão Emissor" value="<?=$d->document_issuingAuthority?>">
+                    <label for="document_issuingAuthority">Orgão Emissor*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="document_issueDate" value="<?=dataBr(trim($d->document_issueDate))?>">
-                    <label for="document_issueDate">document_issueDate*</label>
+                    <input required type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="Data da Emissão" value="<?=dataBr(trim($d->document_issueDate))?>">
+                    <label for="document_issueDate">Data da Emissão*</label>
                 </div>
 
                 <h5>Endereço</h5>
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="address_zipCode" id="address_zipCode" class="form-control" placeholder="address_zipCode" value="<?=$d->address_zipCode?>">
-                    <label for="address_zipCode">address_zipCode*</label>
+                    <input required type="text" name="address_zipCode" id="address_zipCode" class="form-control" placeholder="CEP" value="<?=$d->address_zipCode?>">
+                    <label for="address_zipCode">CEP*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="address_street" id="address_street" class="form-control" placeholder="address_street" value="<?=$d->address_street?>">
-                    <label for="address_street">address_street*</label>
+                    <input required type="text" name="address_street" id="address_street" class="form-control" placeholder="Avenida, rua ou Beco" value="<?=$d->address_street?>">
+                    <label for="address_street">Logradouro*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="address_number" id="address_number" class="form-control" placeholder="address_number" value="<?=$d->address_number?>">
-                    <label for="address_number">address_number*</label>
+                    <input required type="text" name="address_number" id="address_number" class="form-control" placeholder="Número da Moradia" value="<?=$d->address_number?>">
+                    <label for="address_number">Número da Moradia*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="address_complement" id="address_complement" class="form-control" placeholder="address_complement" value="<?=$d->address_complement?>">
-                    <label for="address_complement">address_complement</label>
+                    <input type="text" name="address_complement" id="address_complement" class="form-control" placeholder="Conjunto, Edifício, Condomínio, Bloco" value="<?=$d->address_complement?>">
+                    <label for="address_complement">Complemento</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input type="text" name="address_neighborhood" id="address_neighborhood" class="form-control" placeholder="address_neighborhood" value="<?=$d->address_neighborhood?>">
-                    <label for="address_neighborhood">address_neighborhood</label>
+                    <input type="text" name="address_neighborhood" id="address_neighborhood" class="form-control" placeholder="Bairro" value="<?=$d->address_neighborhood?>">
+                    <label for="address_neighborhood">Bairro</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="address_city" id="address_city" class="form-control" placeholder="address_city" value="<?=$d->address_city?>">
-                    <label for="address_city">address_city*</label>
+                    <input required type="text" name="address_city" id="address_city" class="form-control" placeholder="Cidade" value="<?=$d->address_city?>">
+                    <label for="address_city">Cidade*</label>
                 </div>
 
 
@@ -233,14 +233,14 @@
                         }
                         ?>
                     </select>   
-                    <label for="address_state">address_state*</label>
+                    <label for="address_state">Estado*</label>
                 </div>
 
                 <h5>Dados Bancários</h5>
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="bankCode" id="bankCode" class="form-control" placeholder="bankCode" value="<?=$d->bankCode?>">
-                    <label for="bankCode">bankCode*</label>
+                    <input required type="text" name="bankCode" id="bankCode" class="form-control" placeholder="Banco" value="<?=$d->bankCode?>">
+                    <label for="bankCode">Banco*</label>
                 </div>
 
 
@@ -249,25 +249,25 @@
                         <option value="corrente" <?=(($d->accountType == 'corrente')?'selected':false)?>>Corrente</option>
                         <option value="poupanca" <?=(($d->accountType == 'poupanca')?'selected':false)?>>Poupança</option>
                     </select>
-                    <label for="accountType">accountType*</label>
+                    <label for="accountType">Tipo da Conta*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="accountNumber" id="accountNumber" class="form-control" placeholder="accountNumber" value="<?=$d->accountNumber?>">
-                    <label for="accountNumber">accountNumber*</label>
+                    <input required type="text" name="accountNumber" id="accountNumber" class="form-control" placeholder="Número da Conta" value="<?=$d->accountNumber?>">
+                    <label for="accountNumber">Número da Conta*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="accountDigit" id="accountDigit" class="form-control" placeholder="accountDigit" value="<?=$d->accountDigit?>">
-                    <label for="accountDigit">accountDigit*</label>
+                    <input required type="text" name="accountDigit" id="accountDigit" class="form-control" placeholder="Dígito da Conta" value="<?=$d->accountDigit?>">
+                    <label for="accountDigit">Dígito da Conta*</label>
                 </div>
 
 
                 <div class="form-floating mb-3">
-                    <input required type="text" name="branchNumber" id="branchNumber" class="form-control" placeholder="branchNumber" value="<?=$d->branchNumber?>">
-                    <label for="branchNumber">branchNumber*</label>
+                    <input required type="text" name="branchNumber" id="branchNumber" class="form-control" placeholder="Agência" value="<?=$d->branchNumber?>">
+                    <label for="branchNumber">Agência*</label>
                 </div>
 
 
