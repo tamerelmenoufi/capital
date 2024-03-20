@@ -83,6 +83,7 @@
         $saldo = json_decode($d->saldo);
 
         $datas = $saldo->retorno;
+        print_r($datas);
         $parcelas = [];
         for($i = 1; $i <= 12; $i++){
             eval("\$data = \$datas->dataRepasse_$i;");
