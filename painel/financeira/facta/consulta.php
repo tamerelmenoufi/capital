@@ -479,7 +479,7 @@
                 }
             })
 
-            if(parcelas.length > 0){
+            if(!parcelas.length){
                 $.alert({
                     type:"red",
                     title:"Intervalo de Período",
