@@ -328,6 +328,41 @@
                 }else{
             ?>
 
+<!-- {
+  "permitido": "SIM",
+  "simulacao_fgts": "000000",
+  "valor_liquido": "2.617,50",
+  "parcelas_selecionadas": 12,
+  "tabela": "38601 – FGTS GOLD AG",
+  "data_solicitacao": "06/12/2021 11:25:50"
+} -->
+            <tbody>
+                <tr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Permitido</th>
+                                <th>Simulação</th>
+                                <th>Data</th>
+                                <th>Valor Líquido</th>
+                                <th>Parcelas</th>
+                                <th>Tabela</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?=$calculo->permitido?></td>
+                                <td><?=$calculo->simulacao_fgts?></td>
+                                <td><?=$calculo->data_solicitacao?></td>
+                                <td><?=$calculo->valor_liquido?></td>
+                                <td><?=$calculo->parcelas_selecionadas?></td>
+                                <td><?=$calculo->tabela?></td>                                
+                            </tr>
+                        </tbody>
+                    </table>
+                    <td colspan="4">Permitido: NÃO, <?="{$calculo->msg}"?></td>
+                </tr>
+            </tbody>
             <?php
                 }
             }
