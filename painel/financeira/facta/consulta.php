@@ -507,7 +507,7 @@
                                     campo:'<?=$_SESSION['facta_campo']?>',
                                     rotulo:'<?=$_SESSION['facta_rotulo']?>',
                                     valor:'<?=$_SESSION['facta_valor']?>',
-                                    periodo,
+                                    parcelas,
                                     calculo
                                 },
                                 success:function(dados){
