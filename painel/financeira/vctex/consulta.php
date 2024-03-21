@@ -403,7 +403,7 @@
             </div>
             <?php
                 }
-                if($d->status_proposta >= 400){
+                if(!$d->status_proposta or $d->status_proposta >= 400){
             ?>
             <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm m-3">
                 Solicitar proposta para esta simulação
