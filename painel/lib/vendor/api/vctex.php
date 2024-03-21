@@ -154,7 +154,7 @@ class Vctex {
 
         curl_close($curl);
         // return $response; //."<br>".$this->Ambiente($this->ambiente).'status/:'.$dados['proposalId']."<br>".$dados['proposalId']."<br>".$dados['token']."\n";
-        return $this->Ambiente($this->ambiente).'status/:'.$dados['proposalId']."<br>".$dados['proposalId']."<br>".$dados['token']."\n";
+        return $response.$this->Ambiente($this->ambiente).'status/:'.$dados['proposalId']."<br>".$dados['proposalId']."<br>".$dados['token']."\n";
 
     }
 
