@@ -43,8 +43,14 @@
             'token' => $token,
             'proposalId' => $_POST['proposalId']
         ]);
+        $status_cod = $consulta->proposalStatusId;
+        $status_msg = $consulta->proposalStatusDisplayTitle;
 
-        $query = "update consultas set lixo = '{$consulta}' where codigo = '{$_POST['atualiza_proposta']}'";
+        $query = "update `consultas` set 
+                                        proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
+                                        proposta = JSON_SET(proposta, '$.message', '{$status_msg}')
+                        where codigo = '{$_POST['atualiza_proposta']}'";
+
         $result = mysqli_query($con, $query);
 
     }
