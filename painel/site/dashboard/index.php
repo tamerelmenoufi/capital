@@ -7,7 +7,9 @@
     }
 </style>
 <div class="row g-0">
-    <div class="m-3"></div>
+    <div class="m-3">
+        <h5>Dados do Site</h5>
+    </div>
 <?php
 
     $placas = [
@@ -53,7 +55,9 @@
 
 
 <div class="row g-0">
-    <div class="m-3"></div>
+    <div class="m-3">
+        <h5>Dados dos Acessos</h5>
+    </div>
 <?php
 
 
