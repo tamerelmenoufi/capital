@@ -28,6 +28,10 @@
         }
     // }
 
+    echo $tabelas = $facta->Tabelas(['token' => $token]);
+
+
+
     if($_POST['acao'] == 'limpar'){
         $_SESSION['facta_campo'] = false;
         $_SESSION['facta_rotulo'] = false;

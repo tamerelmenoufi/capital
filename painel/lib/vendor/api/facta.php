@@ -36,6 +36,30 @@ class Facta {
        
     }
 
+    public function Tabelas($dados){
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'comercial/tabelas-coeficientes/?averbador=3&tipo_operacao=13');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+
+        $headers = array();
+        $headers[] = 'Authorization: Bearer '.$dados['token'];
+        $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
+
+        return json_encode(json_decode($result),JSON_UNESCAPED_UNICODE);
+
+    }
+
     public function Saldo($dados){
 
         $ch = curl_init();
