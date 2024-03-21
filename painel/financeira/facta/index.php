@@ -21,7 +21,7 @@
 
     if($agora < $d->api_facta_expira){
         $tabelas = $d->api_facta_tabelas;
-        $dados = json_decode($$d->api_facta_dados);
+        $dados = json_decode($d->api_facta_dados);
         $token = $dados->token;
     }else{
         $retorno = $facta->Token();
