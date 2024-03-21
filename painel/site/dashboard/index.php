@@ -6,11 +6,12 @@
         margin-bottom:10px;
     }
 </style>
-<div class="row g-0">
-    <div class="card">
-        <div class="card-header">
-            Dados do Site
-        </div>
+
+<div class="card">
+    <div class="card-header">
+        Dados do Site
+    </div>
+    <div class="row g-0">       
 <?php
 
     $placas = [
@@ -56,12 +57,12 @@
 
 
 
-<div class="row g-0">
-    <div class="card">
-        <div class="card-header">
-            Dados dos Acessos
-        </div>
 
+<div class="card">
+    <div class="card-header">
+        Dados dos Acessos
+    </div>
+    <div class="row g-0">
 
         <?php
 
