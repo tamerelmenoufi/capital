@@ -46,7 +46,7 @@
                         </div>
                     </div>
 
-                    <div class="col-4">
+                    <!-- <div class="col-4">
                         <div app="email" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
                             <h3><i class="fa-solid fa-envelope-open-text"></i></h3>
                             <span>E-mail</span>
@@ -58,7 +58,7 @@
                             <h3><i class="fa-solid fa-calendar-days"></i></h3>
                             <span>Agenda</span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-4">
                         <div app="site" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
@@ -67,12 +67,12 @@
                         </div>
                     </div>
 
-                    <div class="col-4">
+                    <!-- <div class="col-4">
                         <div app="chats" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
                             <h3><i class="fa-regular fa-comments"></i></h3>
                             <span>Chat</span>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </li>
