@@ -28,8 +28,6 @@
         }
     // }
 
-    echo $tabelas = $facta->Tabelas(['token' => $token]);
-
 
 
     if($_POST['acao'] == 'limpar'){

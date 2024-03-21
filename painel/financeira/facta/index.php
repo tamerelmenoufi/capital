@@ -21,9 +21,12 @@
 
     if($agora < $d->api_facta_expira){
         $tabelas = $d->api_facta_tabelas;
+        $dados = json_decode($$d->api_facta_dados);
+        $token = $dados->token;
     }else{
         $retorno = $facta->Token();
         $dados = json_decode($retorno);
+        $token = $dados->token;
         $tabelas = '{
             "data": [
               {
@@ -54,11 +57,13 @@
             ]
           }';
         //if($dados->statusCode == 200){
-            mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + 7200)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
+            mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + 3600)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
         //}
     }
 
     $tabelas = json_decode($d->api_facta_tabelas);
+
+    echo $Tabelas = $facta->tabelas(['token' => $token]);
 
 ?>
 
