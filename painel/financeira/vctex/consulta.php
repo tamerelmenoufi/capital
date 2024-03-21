@@ -39,7 +39,7 @@
         $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
         $_SESSION['vctex_valor'] = $_POST['valor'];
 
-        echo $consulta = $vctex->Conculta([
+        $consulta = $vctex->Conculta([
             'token' => $token,
             'proposalId' => $_POST['proposalId']
         ]);
@@ -275,7 +275,6 @@
     </div>
 
     <?php
-    echo $q;
     if($_SESSION['vctex_campo'] and $_SESSION['vctex_valor'] and !$cliente->codigo){
     ?>
     <div class="row">
