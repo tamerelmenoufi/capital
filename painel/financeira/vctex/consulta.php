@@ -17,7 +17,7 @@
     $agora = time();
 
     if($agora > $d->api_expira){
-        echo $retorno = $vctex->Token();
+        $retorno = $vctex->Token();
         $dados = json_decode($retorno);
         if($dados->statusCode == 200){
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
@@ -39,7 +39,7 @@
         $_SESSION['vctex_rotulo'] = $_POST['rotulo'];
         $_SESSION['vctex_valor'] = $_POST['valor'];
 
-        $consulta = $vctex->Conculta([
+        echo $consulta = $vctex->Conculta([
             'token' => $token,
             'proposalId' => $_POST['proposalId']
         ]);
@@ -75,7 +75,7 @@
         ]);
         
         $verifica = json_decode($simulacao);
-        var_dump($verifica);
+        // var_dump($verifica);
         if($verifica->data->isExponentialFeeScheduleAvailable == true and $verifica->statusCode == 200){
 
             $simulacao = $vctex->Simular([
