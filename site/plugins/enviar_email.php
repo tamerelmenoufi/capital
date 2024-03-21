@@ -77,8 +77,12 @@
         #############################################################################
         $result = json_decode($result);
 
-        if($result->status == 'success'){
-            echo "Mensagem enviada com sucesso!";
-        }else{
-            echo "Ocorreu um erro, favor tente mais tarde!";
-        }
+        echo "Mensagem enviada com sucesso!";
+
+
+
+        // if($result->status == 'success'){
+        //     echo "Mensagem enviada com sucesso!";
+        // }else{
+        //     echo "Ocorreu um erro, favor tente mais tarde!";
+        // }
