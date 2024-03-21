@@ -7,9 +7,10 @@
     }
 </style>
 <div class="row g-0">
-    <div class="m-3">
-        <h5>Dados do Site</h5>
-    </div>
+    <div class="card">
+        <div class="card-header">
+            Dados do Site
+        </div>
 <?php
 
     $placas = [
@@ -51,76 +52,83 @@
     }
 ?>
 </div>
+</div>
 
 
 
 <div class="row g-0">
-    <div class="m-3">
-        <h5>Dados dos Acessos</h5>
-    </div>
-<?php
+    <div class="card">
+        <div class="card-header">
+            Dados dos Acessos
+        </div>
 
 
-    $q = "select 
-                (select count(*) from log_acessos) as geral,
-                (select count(*) from log_acessos where data like '2024-02%') as mes_passado,
-                (select count(*) from log_acessos where data like '2024-03%') as mes_atual,
-                (select count(*) from log_acessos where data like '2024-03-09%') as hoje,
-                (select count(*) from log_acessos where data >= '2024-03-09 16:00:00%') as on_line
-    ";
-    $r = mysqli_query($con, $q);
-    $p = mysqli_fetch_object($r);
-?> 
-    <div class="col p-3">
-        <div class="alert alert-warning" style="height:140px;">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="flex-fill">
-                    <b>Geral</b>
-                    <h1><?=$p->geral?></h1>        
-                </div>      
-            </div>
-        </div>
-    </div>
-    <div class="col p-3">
-        <div class="alert alert-warning" style="height:140px;">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="flex-fill">
-                    <b>02/2023</b>
-                    <h1><?=$p->mes_passado?></h1>        
-                </div>      
-            </div>
-        </div>
-    </div>
-    <div class="col p-3">
-        <div class="alert alert-warning" style="height:140px;">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="flex-fill">
-                    <b>03/2024</b>
-                    <h1><?=$p->mes_atual?></h1>        
-                </div>      
-            </div>
-        </div>
-    </div>
+        <?php
 
-    <div class="col p-3">
-        <div class="alert alert-warning" style="height:140px;">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="flex-fill">
-                    <b>Hoje</b>
-                    <h1><?=$p->hoje?></h1>        
+
+            $q = "select 
+                        (select count(*) from log_acessos) as geral,
+                        (select count(*) from log_acessos where data like '2024-02%') as mes_passado,
+                        (select count(*) from log_acessos where data like '2024-03%') as mes_atual,
+                        (select count(*) from log_acessos where data like '2024-03-09%') as hoje,
+                        (select count(*) from log_acessos where data >= '2024-03-09 16:00:00%') as on_line
+            ";
+            $r = mysqli_query($con, $q);
+            $p = mysqli_fetch_object($r);
+        ?> 
+            <div class="col p-3">
+                <div class="alert alert-warning" style="height:140px;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="flex-fill">
+                            <b>Geral</b>
+                            <h1><?=$p->geral?></h1>        
+                        </div>      
+                    </div>
                 </div>
-                <canvas 
-                        class="grafico2"
-                        height="100"
-                        width="100"
-                        bloqueado="<?=($p->hoje - $p->on_line)?>"
-                        liberado="<?=$p->on_line?>"
-                        total="<?=$p->hoje?>"
-                ></canvas>        
             </div>
-        </div>
-    </div>
+            <div class="col p-3">
+                <div class="alert alert-warning" style="height:140px;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="flex-fill">
+                            <b>02/2023</b>
+                            <h1><?=$p->mes_passado?></h1>        
+                        </div>      
+                    </div>
+                </div>
+            </div>
+            <div class="col p-3">
+                <div class="alert alert-warning" style="height:140px;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="flex-fill">
+                            <b>03/2024</b>
+                            <h1><?=$p->mes_atual?></h1>        
+                        </div>      
+                    </div>
+                </div>
+            </div>
 
+            <div class="col p-3">
+                <div class="alert alert-warning" style="height:140px;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="flex-fill">
+                            <b>Hoje</b>
+                            <h1><?=$p->hoje?></h1>        
+                        </div>
+                        <canvas 
+                                class="grafico2"
+                                height="100"
+                                width="100"
+                                bloqueado="<?=($p->hoje - $p->on_line)?>"
+                                liberado="<?=$p->on_line?>"
+                                total="<?=$p->hoje?>"
+                        ></canvas>        
+                    </div>
+                </div>
+            </div>
+
+
+        
+    </div>
 </div>
 
 
