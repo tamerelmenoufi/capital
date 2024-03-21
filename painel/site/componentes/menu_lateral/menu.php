@@ -66,7 +66,7 @@
     <div class="row  mb-1 menu-cinza">
       <div class="col">
         <a url="site/noticias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-          <i class="fa-regular fa-newspaper"></i> Eventos
+          <i class="fa-regular fa-newspaper"></i> Notícias
         </a>
       </div>
     </div>
@@ -74,7 +74,7 @@
     <div class="row  mb-1 menu-cinza">
       <div class="col">
         <a url="site/servicos/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
-         <i class="fa-solid fa-box-open"></i> Serviços
+         <i class="fa-solid fa-box-open"></i> Produtos
         </a>
       </div>
     </div>

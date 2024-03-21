@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Eventos</h5>
+          <h5 class="card-header">Lista de Notícias</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button

@@ -71,14 +71,14 @@
   }
 </style>
 
-<h3 class="titulo<?=$md5?>">Gerenciamento de Eventos</h3>
+<h3 class="titulo<?=$md5?>">Gerenciamento de Notícias</h3>
 
     <form id="acaoMenu">
 
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título do Banner" value="<?=$d->titulo?>">
         <label for="titulo">Título</label>
-        <div class="form-text">Digite o título da Evento.</div>
+        <div class="form-text">Digite o título da Notícia.</div>
       </div>
 
       <div class="form-floating mb-3">
