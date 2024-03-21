@@ -28,8 +28,8 @@ class Vctex {
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>'{
             "cpf":"99713047249",
-            "password":"hrB35yHac@"
-        }',
+            "password":"Capital@224"
+        }', //hrB35yHac@
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'Accept: application/json'
