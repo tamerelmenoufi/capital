@@ -7,7 +7,7 @@
     }
 </style>
 
-<div class="card">
+<div class="card m-3">
     <div class="card-header">
         Dados do Site
     </div>
@@ -58,7 +58,7 @@
 
 
 
-<div class="card">
+<div class="card m-3">
     <div class="card-header">
         Dados dos Acessos
     </div>
