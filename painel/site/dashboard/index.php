@@ -66,11 +66,13 @@
 
         <?php
 
+            $mes_atual = date("Y-m",mktime(0,0,0,date("m"),date("d"),date("Y")));
+            $mes_passado = date("Y-m",mktime(0,0,0,date("m"),1-1,date("Y")));
 
             $q = "select 
                         (select count(*) from log_acessos) as geral,
-                        (select count(*) from log_acessos where data like '2024-02%') as mes_passado,
-                        (select count(*) from log_acessos where data like '2024-03%') as mes_atual,
+                        (select count(*) from log_acessos where data like '{$mes_passado}%') as mes_passado,
+                        (select count(*) from log_acessos where data like '{$mes_atual}%') as mes_atual,
                         (select count(*) from log_acessos where data like '2024-03-09%') as hoje,
                         (select count(*) from log_acessos where data >= '2024-03-09 16:00:00%') as on_line
             ";
