@@ -40,7 +40,7 @@ class Facta {
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'comercial/tabelas-coeficientes/?averbador=3&tipo_operacao=13');
+        curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->ambiente).'comercial/tabelas-coeficientes?averbador=3&tipo_operacao=13');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
