@@ -27,43 +27,13 @@
         $retorno = $facta->Token();
         $dados = json_decode($retorno);
         $token = $dados->token;
-        $tabelas = '{
-            "data": [
-              {
-                "id": "40703",
-                "name": "Tabela GOLD",
-                "taxa": "2.04"
-              },
-              {
-                "id": "40711",
-                "name": "Tabela PLUS",
-                "taxa": "2.04"
-              },
-              {
-                "id": "40762",
-                "name": "Tabela FLEX",
-                "taxa": "1.89"
-              },
-              {
-                "id": "40770",
-                "name": "Tabela FLEX 1",
-                "taxa": "1.75"
-              },
-              {
-                "id": "40789",
-                "name": "Tabela FLEX 2",
-                "taxa": "1.69"
-              }
-            ]
-          }';
+        $tabelas = $facta->tabelas(['token' => $token]);
         //if($dados->statusCode == 200){
             mysqli_query($con, "update configuracoes set api_facta_expira = '".($agora + 3600)."', api_facta_dados = '{$retorno}', api_facta_tabelas = '{$tabelas}' where codigo = '1'");
         //}
     }
 
     $tabelas = json_decode($d->api_facta_tabelas);
-
-    echo $Tabelas = $facta->tabelas(['token' => $token]);
 
 ?>
 
@@ -85,12 +55,12 @@
             <?php
                 foreach($tabelas->data as $i => $v){
             ?>
-                <tr class="<?=(($v->id == $d->api_facta_tabela_padrao)?'bg-info bg-gradient':false)?>">
-                    <td><?=$v->id?></td>
-                    <td><?=$v->name?></td>
-                    <td><?=$v->taxa?></td>
+                <tr class="<?=(($v->CD_TABELA_FF == $d->api_facta_tabela_padrao)?'bg-info bg-gradient':false)?>">
+                    <td><?=$v->CD_TABELA_FF?></td>
+                    <td><?=$v->TABELA?></td>
+                    <td><?=$v->TX_MENSAL?></td>
                     <td>
-                        <input padrao type="checkbox" class="form-check-input" value="<?=$v->id?>" <?=(($v->id == $d->api_facta_tabela_padrao)?'checked':false)?>>
+                        <input padrao type="checkbox" class="form-check-input" value="<?=$v->CD_TABELA_FF?>" <?=(($v->CD_TABELA_FF == $d->api_facta_tabela_padrao)?'checked':false)?>>
                     </td>
                 </tr>
             <?php

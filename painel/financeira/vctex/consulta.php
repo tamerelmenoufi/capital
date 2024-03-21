@@ -332,7 +332,7 @@
             if($v->id == $d->tabela) $tabela_resultado = $v->name;
         }
 
-        if($dados->statusCode == 200){
+        if($dados->statusCode == 200 and $dados->data->simulationData->installments){
     ?>
         <div class="card mb-3 border-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?>">
             <div class="card-header bg-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?> text-white">
