@@ -43,8 +43,9 @@
             'token' => $token,
             'proposalId' => $_POST['proposalId']
         ]);
-        $status_cod = $consulta->proposalStatusId;
-        $status_msg = $consulta->proposalStatusDisplayTitle;
+        $retorno = json_decode($consulta);
+        $status_cod = $retorno->proposalStatusId;
+        $status_msg = $retorno->proposalStatusDisplayTitle;
 
         $query = "update `consultas` set 
                                         proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
