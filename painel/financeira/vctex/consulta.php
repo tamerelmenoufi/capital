@@ -334,9 +334,9 @@
 
         if($dados->statusCode == 200){
     ?>
-        <div class="card mb-3 border-<?=(($d->status_proposta == 200)?'success':'primary')?>">
-            <div class="card-header bg-<?=(($d->status_proposta == 200)?'success':'primary')?> text-white">
-            <?=(($d->status_proposta == 200)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
+        <div class="card mb-3 border-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?>">
+            <div class="card-header bg-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?> text-white">
+            <?=(($d->status_proposta and $d->status_proposta < 400)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
             <table class="table table-hover table-striped">
                 <thead>
@@ -403,7 +403,7 @@
             </div>
             <?php
                 }
-                if($d->status_proposta >= 400){
+                if($d->status_proposta and $d->status_proposta < 400){
             ?>
             <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm m-3">
                 Solicitar proposta para esta simulação
