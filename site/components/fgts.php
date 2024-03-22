@@ -9,7 +9,7 @@
         }
         .linha{
             position:absolute;
-            width:90%;
+            width:100%;
             height:10px;
             background-color:green;
             border:0;
