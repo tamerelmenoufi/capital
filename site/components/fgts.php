@@ -30,7 +30,7 @@
         <div class="row gy-5">
             <div class="fluxo">
                 <div class="linha"></div>
-                <i class="fa-solid fa-circle etapas" style="left:-5px"></i>
+                <i class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
             </div>
         </div>
       </div>
