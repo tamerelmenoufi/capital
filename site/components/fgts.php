@@ -25,7 +25,7 @@
         .legenda{
             position:absolute;
             top:30px;
-            font-size:40px;
+            font-size:12px;
             color:green;
             width:100px;
             border:solid 1px red;
@@ -45,6 +45,7 @@
                     <i class="fa-solid fa-circle etapas" style="left:calc(66% - 20px)"></i>
                     <i class="fa-solid fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
+                    <div class="legenda" style="left:calc(0% - 5px)">Etapa 1</div>
                     <div class="legenda" style="left:calc(33% - 20px)">Etapa 1</div>
                     <div class="legenda" style="left:calc(66% - 20px)">Etapa 2</div>
                     <div class="legenda" style="left:calc(100% - 35px)">Etapa 3</div>
