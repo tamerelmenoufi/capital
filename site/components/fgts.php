@@ -31,6 +31,10 @@
             <div class="fluxo">
                 <div class="linha"></div>
                 <i class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
+                <i class="fa-solid fa-circle etapas" style="left:calc(20% - 35px)"></i>
+                <i class="fa-solid fa-circle etapas" style="left:calc(40% - 35px)"></i>
+                <i class="fa-solid fa-circle etapas" style="left:calc(60% - 35px)"></i>
+                <i class="fa-solid fa-circle etapas" style="left:calc(80% - 35px)"></i>
                 <i class="fa-solid fa-circle etapas" style="left:calc(100% - 35px)"></i>
             </div>
         </div>
