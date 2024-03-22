@@ -19,3 +19,7 @@
 
     $localPainel = "http://capital.mohatron.com/painel/";
     $localSite = "http://capital.mohatron.com/site/";
+
+
+    $localPainel = "http://painel.capitalsolucoesam.com.br/";
+    $localSite = "http://capitalsolucoesam.com.br/";
