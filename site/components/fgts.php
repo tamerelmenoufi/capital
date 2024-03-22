@@ -45,10 +45,10 @@
                     <i class="fa-solid fa-circle etapas" style="left:calc(66% - 20px)"></i>
                     <i class="fa-solid fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
-                    <div class="legenda" style="left:calc(0% - 5px)">Etapa 1</div>
-                    <div class="legenda" style="left:calc(33% - 20px)">Etapa 1</div>
-                    <div class="legenda" style="left:calc(66% - 20px)">Etapa 2</div>
-                    <div class="legenda" style="left:calc(100% - 35px)">Etapa 3</div>
+                    <div class="legenda" style="left:calc(0% - 50px)">Etapa 1</div>
+                    <div class="legenda" style="left:calc(33% - 50px)">Etapa 1</div>
+                    <div class="legenda" style="left:calc(66% - 50px)">Etapa 2</div>
+                    <div class="legenda" style="left:calc(100% - 50px)">Etapa 3</div>
 
                 </div>
             </div>
