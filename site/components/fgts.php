@@ -1,7 +1,7 @@
     <!-- ======= FGTS Section ======= -->
     <style>
         .fluxo{
-            width:100%;
+            width:90%;
             height:50px;
             position:relative;
             border:solid 1px red;
