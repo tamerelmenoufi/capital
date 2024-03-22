@@ -17,8 +17,8 @@
         }
         .etapas{
             position:absolute;
-            top:10px;
-            font-size:30px;
+            top:15px;
+            font-size:40px;
             color:green;
         }
     </style>
