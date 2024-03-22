@@ -16,3 +16,6 @@
 
     $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/painel/";
     $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/site/";
+
+    $localPainel = "http://painel.capitalsolucoesam.com.br/";
+    $localSite = "http://capitalsolucoesam.com.br/";
