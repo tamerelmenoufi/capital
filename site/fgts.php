@@ -101,7 +101,7 @@
         // 'planos',
         // 'faq',
         'fgts',
-        'contato',
+        // 'contato',
         'rodape'
     ];
 
