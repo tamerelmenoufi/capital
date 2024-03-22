@@ -17,8 +17,9 @@
         }
         .etapas{
             position:absolute;
-            top:20px;
+            top:10px;
             font-size:30px;
+            color:green;
         }
     </style>
     <section id="fgts" class="team">
@@ -29,7 +30,7 @@
         <div class="row gy-5">
             <div class="fluxo">
                 <div class="linha"></div>
-                <i class="fa-solid fa-circle etapas" style="left:0%"></i>
+                <i class="fa-solid fa-circle etapas" style="left:-5px"></i>
             </div>
         </div>
       </div>
