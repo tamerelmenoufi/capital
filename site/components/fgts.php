@@ -13,7 +13,7 @@
             background-color:green;
             border:0;
             left:0;
-            top:10px;
+            top:20px;
         }
     </style>
     <section id="fgts" class="team">
