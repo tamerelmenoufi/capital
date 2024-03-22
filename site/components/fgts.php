@@ -24,7 +24,7 @@
         }
         .legenda{
             position:absolute;
-            top:30px;
+            top:50px;
             font-size:12px;
             color:green;
             width:100px;
