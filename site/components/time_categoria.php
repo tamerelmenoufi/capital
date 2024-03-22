@@ -110,7 +110,7 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
             <div class="team-member">
               <div class="member-img" style="height:320px">
-                <img src="<?=$localPainel?>volume/time/<?=$d->imagem?>" class="img-fluid" alt="">
+                <img src="<?=$localPainel?>site/volume/time/<?=$d->imagem?>" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <div class="social">

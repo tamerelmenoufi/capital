@@ -113,7 +113,7 @@
 
           <!-- <div style="margin-top:15px" class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
-              <div class="post-img" style="margin-top:10px;height:267px"><img src="<?=$localPainel?>volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
+              <div class="post-img" style="margin-top:10px;height:267px"><img src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
               <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
               <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
 
@@ -128,9 +128,9 @@
           <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
               <div class="post-img evento">
-              <div style="margin-top:10px;height:200px" class="post-img"><img src="<?=$localPainel?>volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
-                <!-- <div style="background-image:url(<?=$localPainel?>volume/noticias/<?=$d->imagem?>);" class="imagemEventoFundo"></div>
-                <div style="background-image:url(<?=$localPainel?>volume/noticias/<?=$d->imagem?>);" class="imagemEvento"></div> -->
+              <div style="margin-top:10px;height:200px" class="post-img"><img src="<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>" class="img-fluid" alt=""></div>
+                <!-- <div style="background-image:url(<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>);" class="imagemEventoFundo"></div>
+                <div style="background-image:url(<?=$localPainel?>site/volume/noticias/<?=$d->imagem?>);" class="imagemEvento"></div> -->
               </div>
               <!-- <div class="meta">
                 <span class="post-date">Tue, December 12</span>

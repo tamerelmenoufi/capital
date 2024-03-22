@@ -10,7 +10,7 @@ if($_GET['cod']){
 ?>
 <section id="hero-animated">
     <div class="col-md-12" data-aos="">
-      <img src="<?=$localPainel?>volume/banners/<?=$d->imagem?>" class="img-responsive" style="width:100%;margin-top:25px">
+      <img src="<?=$localPainel?>site/volume/banners/<?=$d->imagem?>" class="img-responsive" style="width:100%;margin-top:25px">
     </div>
     <div class="container" data-aos="fade-up">
         <div class="section-header">

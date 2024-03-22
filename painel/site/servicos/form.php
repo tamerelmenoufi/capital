@@ -90,7 +90,7 @@
       </div>
 
       <div showImage class="form-floating" style="display:<?=(($d->imagem)?'block':'none')?>">
-        <img src="<?=$localPainel?>volume/servicos/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
+        <img src="<?=$localPainel?>site/volume/servicos/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
       </div>
 
       <!-- <div class="form-floating"> -->
