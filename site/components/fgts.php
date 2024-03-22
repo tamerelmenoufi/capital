@@ -2,7 +2,7 @@
     <style>
         .fluxo{
             width:100%;
-            padding:30px;
+            height:50px;
             position:relative;
             border:solid 1px red;
         }
@@ -12,6 +12,8 @@
             height:10px;
             background-color:green;
             border:0;
+            left:0;
+            top:10px;
         }
     </style>
     <section id="fgts" class="team">
