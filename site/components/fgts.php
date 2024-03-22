@@ -29,7 +29,7 @@
           <h2>Antecipação de FGTS</h2>
         </div>
         <div class="row gy-5">
-            <div class="fluxo">
+            <div class="fluxo d-flex justify-content-center">
                 <div class="linha"></div>
                 <i class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
                 <i class="fa-solid fa-circle etapas" style="left:calc(20% - 35px)"></i>
