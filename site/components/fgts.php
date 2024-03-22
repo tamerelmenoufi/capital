@@ -1,14 +1,15 @@
     <!-- ======= FGTS Section ======= -->
     <style>
         .fluxo{
-            width:90%;
+            width:100%;
             height:50px;
             position:relative;
             border:solid 1px red;
+            text-align:center;
         }
         .linha{
             position:absolute;
-            width:100%;
+            width:90%;
             height:10px;
             background-color:green;
             border:0;
