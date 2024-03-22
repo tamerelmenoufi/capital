@@ -4,7 +4,7 @@
             width:90%;
             height:50px;
             position:relative;
-            border:solid 1px red;
+            border:solid 0px red;
             text-align:center;
         }
         .linha{
@@ -28,7 +28,7 @@
             font-size:12px;
             color:green;
             width:100px;
-            border:solid 1px red;
+            border:solid 0px red;
         }
     </style>
     <section id="fgts" class="team">
@@ -45,10 +45,10 @@
                     <i class="fa-solid fa-circle etapas" style="left:calc(66% - 20px)"></i>
                     <i class="fa-solid fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
-                    <div class="legenda" style="left:calc(0% - 50px)">Etapa 1</div>
-                    <div class="legenda" style="left:calc(33% - 50px)">Etapa 1</div>
-                    <div class="legenda" style="left:calc(66% - 50px)">Etapa 2</div>
-                    <div class="legenda" style="left:calc(100% - 50px)">Etapa 3</div>
+                    <div class="legenda" style="left:calc(0% - 35px)">Etapa 1</div>
+                    <div class="legenda" style="left:calc(33% - 45px)">Etapa 1</div>
+                    <div class="legenda" style="left:calc(66% - 45px)">Etapa 2</div>
+                    <div class="legenda" style="left:calc(100% - 60px)">Etapa 3</div>
 
                 </div>
             </div>
