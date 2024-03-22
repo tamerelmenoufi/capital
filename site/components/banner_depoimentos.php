@@ -13,7 +13,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="<?=$localPainel?>site/volume/depoimentos/<?=$d->imagem?>" class="testimonial-img" alt="">
+                <img src="<?=$localPainel?>volume/depoimentos/<?=$d->imagem?>" class="testimonial-img" alt="">
                 <h3><?=$d->nome?></h3>
                 <h4><?=$d->empresa?></h4>
                 <div class="stars">

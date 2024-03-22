@@ -119,7 +119,7 @@
       </div>
 
       <div showImage class="form-floating" style="display:<?=(($d->imagem)?'block':'none')?>">
-        <img src="<?=$localPainel?>site/volume/banners/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
+        <img src="<?=$localPainel?>volume/banners/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
       </div>
 
       <!-- <div class="form-floating"> -->
@@ -136,7 +136,7 @@
 
 
       <div showImage_mb class="form-floating" style="display:<?=(($d->imagem_mb)?'block':'none')?>">
-        <img src="<?=$localPainel?>site/volume/banners/<?=$d->imagem_mb?>" class="img-fluid mt-3 mb-3" alt="" />
+        <img src="<?=$localPainel?>volume/banners/<?=$d->imagem_mb?>" class="img-fluid mt-3 mb-3" alt="" />
       </div>
 
       <!-- <div class="form-floating"> -->

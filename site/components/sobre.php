@@ -21,7 +21,7 @@
 
           <div class="col-lg-5">
             <div class="about-img">
-              <img src="<?=$localPainel?>site/volume/paginas_topicos/<?=$d->imagem?>" class="img-fluid" style="border-radius:20px;">
+              <img src="<?=$localPainel?>volume/paginas_topicos/<?=$d->imagem?>" class="img-fluid" style="border-radius:20px;">
 
               <!-- <video  class="img-fluid" style="border-radius:20px; height:300px;" controls autoplay>
                 <source src="<?=$localSite?>assets/videos/institucional.mp4" type="video/mp4">
