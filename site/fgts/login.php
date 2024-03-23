@@ -51,7 +51,7 @@
 
                 return false;
             }
-            if($("#telefone").lenght != 15){
+            if($("#telefone").length != 15){
                 $.alert({
                     type:"red",
                     title:"Erro der Identificação",
