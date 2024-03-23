@@ -1,6 +1,11 @@
 <?php
     session_start();
 
+    if($_SERVER["HTTP_HOST"] == 'capital.mohatron.com'){
+        header("location:http://painel.capitalsolucoesam.com.br");
+        exit();
+    }
+
     // include("connect_local.php");
 
     include("/capitalinc/connect.php");
