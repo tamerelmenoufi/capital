@@ -107,6 +107,7 @@ $d = mysqli_fetch_object($result);
                 <div class="mb-3">
                     <label class="form-label" for="gender">Gênero*</label>
                     <select acao name="gender" id="gender" class="form-select">
+                        <option value="">:: Selecione ::</option>
                         <option value="M" <?=(($d->gender == 'M')?'selected':false)?>>Masculino</option>
                         <option value="F" <?=(($d->gender == 'F')?'selected':false)?>>Feminino</option>
                     </select>
@@ -131,6 +132,7 @@ $d = mysqli_fetch_object($result);
                 <div class="mb-3">
                     <label class="form-label" for="maritalStatus">Estado Civil*</label>
                     <select acao name="maritalStatus" id="maritalStatus" class="form-select">
+                        <option value="">:: Selecione ::</option>
                         <option value="Solteiro" <?=(($d->maritalStatus == 'Solteiro')?'selected':false)?>>Solteiro</option>
                         <option value="Casado" <?=(($d->maritalStatus == 'Casado')?'selected':false)?>>Casado</option>
                         <option value="Uniao Estavel" <?=(($d->maritalStatus == 'Uniao Estavel')?'selected':false)?>>União Estável</option>
@@ -173,6 +175,7 @@ $d = mysqli_fetch_object($result);
                 <div class="mb-3">
                     <label class="form-label" for="pep">Exposta Politicamente*</label>
                     <select acao name="pep" id="pep" class="form-select">
+                        <option value="">:: Selecione ::</option>
                         <option value="false" <?=(($d->pep == 'false')?'selected':false)?>>Não</option>
                         <option value="true" <?=(($d->pep == 'true')?'selected':false)?>>Sim</option>
                     </select>
@@ -183,6 +186,7 @@ $d = mysqli_fetch_object($result);
                 <div class="mb-3">
                     <label class="form-label" for="document_type">Tipo de Documento*</label>
                     <select acao name="document_type" id="document_type" class="form-select">
+                        <option value="">:: Selecione ::</option>
                         <option value="RG" <?=(($d->document_type == 'RG')?'selected':false)?>>RG</option>
                         <option value="CNH" <?=(($d->document_type == 'CNH')?'selected':false)?>>CNH</option>
                     </select>
@@ -301,6 +305,7 @@ $d = mysqli_fetch_object($result);
                 <div class="mb-3">
                     <label class="form-label" for="cliente_iletrado_impossibilitado">Cliente Iletrado Impossibilitado*</label>
                     <select acao name="cliente_iletrado_impossibilitado" id="cliente_iletrado_impossibilitado" class="form-select">
+                        <option value="">:: Selecione ::</option>
                         <option value="nao" <?=(($d->cliente_iletrado_impossibilitado == 'nao')?'selected':false)?>>Não</option>
                         <option value="sim" <?=(($d->cliente_iletrado_impossibilitado == 'sim')?'selected':false)?>>Sim</option>
                     </select>
@@ -329,6 +334,7 @@ $d = mysqli_fetch_object($result);
                 <div class="mb-3">
                     <label class="form-label" for="accountType">Tipo da Conta*</label>
                     <select acao name="accountType" id="accountType" class="form-select">
+                        <option value="">:: Selecione ::</option>
                         <option value="corrente" <?=(($d->accountType == 'corrente')?'selected':false)?>>Corrente</option>
                         <option value="poupanca" <?=(($d->accountType == 'poupanca')?'selected':false)?>>Poupança</option>
                     </select>
@@ -355,13 +361,6 @@ $d = mysqli_fetch_object($result);
                     <input acao type="text" name="branchNumber" id="branchNumber" class="form-control" placeholder="Agência" value="<?=$d->branchNumber?>">
                     <div id="nome" class="form-text"></div>
                 </div>
-
-
-
-
-
-
-
 
 
 
