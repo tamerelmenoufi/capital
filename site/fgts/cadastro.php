@@ -19,7 +19,13 @@ if($_POST['acao'] == 'salvar'){
         }
     }
 
-    $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSION['codUsr']}'";
+    if($_POST['tipo'] == 'data'){
+        $valor = dataMysql($_POST['valor']);
+    }else{
+        $valor = $_POST['valor'];
+    }
+
+    $query = "update clientes set {$_POST['campo']} = '{$valor}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
     echo 'success';
     exit();
@@ -405,6 +411,7 @@ $d = mysqli_fetch_object($result);
         $("input[acao]").blur(function(){
             campo = $(this).attr("id");
             valor = $(this).val();
+            tipo = $(this).attr("tipo");
             if(campo == 'cpf'){
 
                 if(!validarCPF(valor)){
@@ -425,6 +432,7 @@ $d = mysqli_fetch_object($result);
                 data:{
                     campo,
                     valor,
+                    tipo,
                     acao:'salvar'
                 },
                 success:function(dados){
