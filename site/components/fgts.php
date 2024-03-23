@@ -11,7 +11,7 @@
             position:absolute;
             width:100%;
             height:10px;
-            background-color:green;
+            background-color:blue;
             border:0;
             left:0;
             top:20px;
@@ -27,7 +27,7 @@
             position:absolute;
             top:50px;
             font-size:12px;
-            color:green;
+            color:blue;
             width:100px;
             border:solid 0px red;
         }
