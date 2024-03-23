@@ -121,7 +121,7 @@ if($_POST['telefone']){
                     codigo = dados.codigo
                     console.log(codigo);
                     if(codigo){
-                        localStorage.setItem("codUsr", dados.codigo);
+                        localStorage.setItem("codUsr", codigo);
                         $.ajax({
                             url:"fgts/home.php",
                             data:{
