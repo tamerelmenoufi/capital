@@ -35,7 +35,7 @@
     <section id="fgts" class="team">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h3>Antecipação de FGTS</h3>
+          <h2>Antecipação de FGTS</h2>
         </div>
         <pspan style="font-size:14px; color:#a1a1a1; font-weight:bold; margin-left:10px;">Etapas para solicitação</span>
         <div class="row gy-5">
