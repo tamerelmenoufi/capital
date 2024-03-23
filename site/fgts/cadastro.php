@@ -99,7 +99,7 @@ $d = mysqli_fetch_object($result);
 
                 <div class="mb-3">
                     <label class="form-label" for="birthdate">Data de Nascimento*</label>
-                    <input acao type="text" name="birthdate" id="birthdate" class="form-control" placeholder="Data de Nascimento" value="<?=dataBr($d->birthdate)?>">
+                    <input acao type="text" tipo="data" name="birthdate" id="birthdate" class="form-control" placeholder="Data de Nascimento" value="<?=dataBr($d->birthdate)?>">
                     <div id="nome" class="form-text"></div>
                 </div>
 
