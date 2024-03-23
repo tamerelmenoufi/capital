@@ -61,13 +61,13 @@ $d = mysqli_fetch_object($result);
         
         <div class="mb-3">
             <label for="nome" class="form-label">Nome Completo</label>
-            <input acao type="text" class="form-control" id="nome" aria-describedby="nome">
+            <input acao type="text" class="form-control" id="nome" aria-describedby="nome" value="<?=$d->nome?>">
             <div id="nome" class="form-text">Digite seu nome completo conforme seu documento de identificação</div>
         </div>
 
         <div class="mb-3">
             <label for="cpf" class="form-label">Número CPF</label>
-            <input acao type="text" class="form-control" id="cpf" aria-describedby="cpf">
+            <input acao type="text" class="form-control" id="cpf" aria-describedby="cpf" value="<?=$d->cpf?>">
             <div id="cpf" class="form-text">Digite seu CPF confira o número antes de confirmar</div>
         </div>
 
