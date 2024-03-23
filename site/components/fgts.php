@@ -20,7 +20,7 @@
             position:absolute;
             top:5px;
             font-size:40px;
-            color:green;
+            color:blue;
             background-color:#fff;
         }
         .legenda{
