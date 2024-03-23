@@ -37,7 +37,7 @@
         <div class="section-header">
           <h2>Antecipação de FGTS</h2>
         </div>
-        <span style="font-size:14px; color:#a1a1a1; font-weight:bold; width:100%; text-align:center">Etapas para solicitação</span>
+        <div style="font-size:14px; color:#a1a1a1; font-weight:bold; width:100%; text-align:center">Etapas para solicitação</div>
         <div class="row gy-5">
             <div class="d-flex justify-content-center">
                 <div class="fluxo">
