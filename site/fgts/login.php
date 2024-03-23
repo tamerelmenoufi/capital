@@ -51,7 +51,6 @@
 
                 return false;
             }
-            alert($("#telefone").val().length)
 
             if($("#telefone").val().length != 15){
                 $.alert({
