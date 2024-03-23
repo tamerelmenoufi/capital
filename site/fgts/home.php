@@ -8,7 +8,7 @@ if($_POST['telefone']){
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
     if(!$d->codigo){
-        $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', validar_telefone = '1'";
+        $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', data_cadastro = NOW(), validar_telefone = '1'";
         $result = mysqli_query($con, $query);
         $_SESSION['codUsr'] = mysqli_insert_id($con); 
     }else{
