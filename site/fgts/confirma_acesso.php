@@ -46,7 +46,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 <script>
     $(function(){
-        $("#telefone").mask("(99) 99999-9999");
+        $("#codigo_acesso").mask("9999");
 
         $(".acessar").click(function(){
 
