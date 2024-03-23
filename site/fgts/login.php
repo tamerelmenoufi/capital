@@ -8,10 +8,10 @@
         color:#fff;
     }
     .card-title{
-        color:#534ab3,
+        color:#534ab3;
     }
     .card-text{
-        color:#534ab3,
+        color:#534ab3;
     }
 
 </style>
