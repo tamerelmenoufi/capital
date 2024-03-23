@@ -8,6 +8,7 @@
         color:#fff;
     }
     .card-title{
+        font-weight:bold;
         color:#534ab3;
     }
     .card-text{
