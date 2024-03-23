@@ -119,6 +119,7 @@ if($_POST['telefone']){
                 type:"POST",
                 success:function(dados){
                     codigo = dados.codigo
+                    console.log(dados);
                     console.log(codigo);
                     if(codigo){
                         localStorage.setItem("codUsr", codigo);
