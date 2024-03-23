@@ -40,7 +40,7 @@
     $(function(){
         $("#telefone").mask("(99) 99999-9999");
 
-        $("#enviar").click(function(){
+        $(".enviar").click(function(){
             telefone = $("#telefone").val();
             if(!telefone){
                 $.alert({
