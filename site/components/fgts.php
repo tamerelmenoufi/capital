@@ -64,3 +64,14 @@
 
 
     </section><!-- End Team Section -->
+
+    <script>
+        $(function(){
+            $.ajax({
+                url:"fgts/login.php",
+                success:function(dados){
+                    $(".palco").html(dados);
+                }
+            })
+        })
+    </script>
