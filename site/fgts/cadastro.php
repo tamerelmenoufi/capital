@@ -226,7 +226,7 @@ $d = mysqli_fetch_object($result);
 
                 <div class="mb-3">
                     <label class="form-label" for="document_issueDate">Data da Emissão*</label>
-                    <input acao type="text" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="Data da Emissão" value="<?=dataBr(trim($d->document_issueDate))?>">
+                    <input acao type="text" tipo="data" name="document_issueDate" id="document_issueDate" class="form-control" placeholder="Data da Emissão" value="<?=dataBr(trim($d->document_issueDate))?>">
                     <div id="nome" class="form-text"></div>
                 </div>
 
