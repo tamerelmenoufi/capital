@@ -4,10 +4,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 if($_POST['acao'] == 'salvar'){
 
-    $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSIO['codUsr']}'";
+    $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
     exit();
-    
+
 }
 
 if($_POST['telefone']){
