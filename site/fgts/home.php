@@ -76,7 +76,7 @@ $d = mysqli_fetch_object($result);
 
         <div class="mb-3">
             <label for="cpf" class="form-label">Número CPF</label>
-            <input acao type="text" class="form-control" id="cpf" aria-describedby="cpf" value="<?=$d->cpf?>">
+            <input acao type="text" class="form-control" inputmode="numeric" id="cpf" aria-describedby="cpf" value="<?=$d->cpf?>">
             <div id="cpf" class="form-text">Digite seu CPF confira o número antes de confirmar</div>
         </div>
 
