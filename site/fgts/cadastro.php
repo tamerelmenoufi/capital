@@ -407,7 +407,7 @@ $d = mysqli_fetch_object($result);
         }
         ?>
 
-        $("input[acao]").blur(function(){
+        $("input[acao], select[acao]").blur(function(){
             campo = $(this).attr("id");
             valor = $(this).val();
             tipo = $(this).attr("tipo");
