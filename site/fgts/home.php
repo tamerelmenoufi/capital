@@ -30,15 +30,18 @@ $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
         Pré-Cadastro
     </div>
     <div class="card-body">
-        <h5 class="card-title">Faça a sua identificação</h5>
+        <h5 class="card-title">Identificação do Usuários</h5>
         <p class="card-text">Digite o seu telefone de contato para receber as credencias de acesso</p>
         
-        <div class="input-group flex-nowrap">
+        <!-- <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-mobile-screen-button"></i></span>
             <input type="text" id="telefone" class="form-control" inputmode="numeric" placeholder="Digite seu telefone" aria-label="Telefone" aria-describedby="addon-wrapping" >
             <button class="btn btn-outline-secondary enviar" type="button" id="button-addon1">Enviar</button>
         </div>
-        <p style="color:#534ab3; font-size:12px">Enviaremos um SMS ou WhatsApp com código de confirmação do seu do seu acesso.</p>
+        <p style="color:#534ab3; font-size:12px">Enviaremos um SMS ou WhatsApp com código de confirmação do seu do seu acesso.</p> -->
+
+
+        <button class="btn btn-danger btn-sm sair"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</button>
 
     </div>
     </div>
@@ -46,61 +49,56 @@ $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
 
 <script>
     $(function(){
-        $("#telefone").mask("(99) 99999-9999");
 
-        $(".enviar").click(function(){
+        $(".sair").click(function(){
             telefone = $("#telefone").val();
-            if(!telefone){
-                $.alert({
-                    type:"red",
-                    title:"Erro der Identificação",
-                    content: 'Favor Digite o número de seu telefone!'
-                })
+            
+            $.confirm({
+                title:"Sair do Login",
+                content:'Deseja realmente sair do login da sua área restrita?',
+                type:'orange',
+                buttons:{
+                    'Sim':{
+                        text:'SIM',
+                        btnClass:'btn btn-danger btn-sm',
+                        action:function(){
+                            localStorage.removeItem("codUsr");
+                            $.ajax({
+                                url:"fgts/sessao.php",
+                                data:{
+                                    codUsr:''
+                                },
+                                type:"POST",
+                                success:function(dados){
 
-                return false;
-            }
+                                    $.ajax({
+                                        url:"fgts/login.php",
+                                        data:{
+                                            codigo
+                                        },
+                                        success:function(dados){
+                                            $(".palco").html(dados);
+                                        }
+                                    })
 
-            if($("#telefone").val().length != 15){
-                $.alert({
-                    type:"red",
-                    title:"Erro der Identificação",
-                    content: 'O telefone informado não está correto!'
-                })
+                                }
+                            });
 
-                return false;                
-            }
 
-            $.ajax({
-                url:"fgts/login.php",
-                dataType:"JSON",
-                data:{
-                    telefone
-                },
-                type:"POST",
-                success:function(dados){
-                    codigo = dados.codigo
-                    console.log(dados);
-                    console.log(codigo);
-                    if(codigo){
-                        localStorage.setItem("codUsr", codigo);
-                        $.ajax({
-                            url:"fgts/home.php",
-                            data:{
-                                codigo
-                            },
-                            success:function(dados){
-                                $(".palco").html(dados);
-                            }
-                        })
-                    }else{
-                        $.alert({
-                            title:"Erro na identificação",
-                            content:"O número do telefone está incorreto ou validação indisponível.",
-                            type:"red"
-                        })
-                    }
+                        }
+                    },
+                    'não':{
+                        text:'NÃO',
+                        btnClass:'btn btn-primary btn-sm',
+                        action:function(){
+
+                        }
+                    },
+                    
                 }
-            });
+            })
+
+            
 
 
         })
