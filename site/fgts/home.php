@@ -73,9 +73,6 @@ $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
 
                                     $.ajax({
                                         url:"fgts/login.php",
-                                        data:{
-                                            codigo
-                                        },
                                         success:function(dados){
                                             $(".palco").html(dados);
                                         }
