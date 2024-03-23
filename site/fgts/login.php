@@ -28,7 +28,6 @@ if($_POST['telefone']){
     $telefone = str_replace(['-',' ','(',')'],false,trim($_POST['telefone']));
     if(strlen($telefone) != 11){
         echo "{\"status\":\"error\", \"codigo\":\"\"}";
-        $_SESSION['idUnico'] = false;
         exit();
     }
 
@@ -38,8 +37,6 @@ if($_POST['telefone']){
     $d4 = rand(0,9);
 
     $cod = $d1.$d2.$d3.$d4;
-
-
 
     $result = EnviarWapp($_POST['telefone'],"Capital Soluções informe: Seu código de acesso é *{$cod}*");
 
@@ -122,14 +119,13 @@ if($_POST['telefone']){
                 type:"POST",
                 success:function(dados){
                     codigo = dados.codigo
-                    console.log(dados);
-                    console.log(codigo);
                     if(codigo){
-                        localStorage.setItem("codUsr", codigo);
+                        // localStorage.setItem("codUsr", codigo);
                         $.ajax({
-                            url:"fgts/home.php",
+                            url:"fgts/confirma_acesso.php",
                             data:{
-                                codigo
+                                codigo,
+                                telefone
                             },
                             success:function(dados){
                                 $(".palco").html(dados);

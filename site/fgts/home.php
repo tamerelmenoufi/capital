@@ -2,7 +2,25 @@
 
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+if($_POST['telefone']){
+
+    $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    if(!$d->codigo){
+        $query = "insert into clientes set telefone = '{$_POST['telefone']}'";
+        $result = mysqli_query($con, $query);
+        $_SESSION['codUsr'] = mysqli_insert_id($con); 
+    }else{
+        $_SESSION['codUsr'] = $d->codigo; 
+    }
+
+}
+
+
 $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
+$result = mysqli_query($con, $query);
+$d = mysqli_fetch_object($result);
 
 ?>
 
@@ -49,6 +67,25 @@ $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
 
 <script>
     $(function(){
+
+        <?php
+        if($_SESSION['codUsr']){
+        ?>
+        localStorage.setItem("codUsr", '<?=$_SESSION['codUsr']?>');
+        $.ajax({
+            url:"fgts/sessao.php",
+            type:"POST",
+            data:{
+                codUsr:'<?=$_SESSION['codUsr']?>'
+            },
+            success:function(dados){
+                // $(".palco").html(dados);
+                console.log(dados)
+            }
+        })
+        <?php
+        }
+        ?>
 
         $(".sair").click(function(){
             telefone = $("#telefone").val();
