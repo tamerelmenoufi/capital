@@ -86,9 +86,13 @@ $d = mysqli_fetch_object($result);
             <div class="form-control"><?=$d->phoneNumber?></div>
             <div class="form-text">Telefone confirmado no login</div>
         </div>
-        <button class="btn btn-primary btn-sm" local="fgts/autorizacao.php"><i class="fa-solid fa-angles-right"></i> Autorizar para Consultas</button>
+        <div class="mt-2">
+            <button class="btn btn-primary btn-sm" local="fgts/autorizacao.php"><i class="fa-solid fa-angles-right"></i> Autorizar para Consultas</button>
+        </div>
 
-        <a class="text-danger text-decoration-none sair"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
+        <div class="mt-3">
+            <a class="text-danger text-decoration-none sair"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
+        </div>
 
     </div>
     </div>
