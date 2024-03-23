@@ -86,7 +86,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         })
 
 
-        $(".sair").click(function(){
+        $(".voltar").click(function(){
             
             $.ajax({
                 url:"fgts/login.php",
