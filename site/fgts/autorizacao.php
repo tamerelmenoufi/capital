@@ -59,6 +59,10 @@ $d = mysqli_fetch_object($result);
         
         <img src="fgts/img/passo_a_passo.png" class="img-fluid" alt="Passo a Passo">
 
+        <div class="mt-2">
+            <button class="btn btn-primary btn-sm" local="fgts/cadastro.php"><i class="fa-solid fa-angles-right"></i> Realizar o Cadastro Completo</button>
+        </div>
+
         <div class="mt-3 text-end">
             <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
         </div>
