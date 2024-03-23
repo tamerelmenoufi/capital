@@ -46,10 +46,10 @@
                     <i class="fa-solid fa-circle etapas" style="left:calc(66% - 20px)"></i>
                     <i class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
-                    <div class="legenda" style="left:calc(0% - 35px)">Etapa 1</div>
-                    <div class="legenda" style="left:calc(33% - 45px)">Etapa 1</div>
-                    <div class="legenda" style="left:calc(66% - 45px)">Etapa 2</div>
-                    <div class="legenda" style="left:calc(100% - 60px)">Etapa 3</div>
+                    <div class="legenda" style="left:calc(0% - 35px)">Pré-Cadastro</div>
+                    <div class="legenda" style="left:calc(33% - 45px)">Autorização</div>
+                    <div class="legenda" style="left:calc(66% - 45px)">Cadastro Completo</div>
+                    <div class="legenda" style="left:calc(100% - 60px)">Antecipação FGTS</div>
 
                 </div>
             </div>
