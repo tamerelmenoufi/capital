@@ -92,7 +92,7 @@ $d = mysqli_fetch_object($result);
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="cpf">CPF*</label>
-                    <div class="form-control"><?=$d->cpf?>"</div>
+                    <div class="form-control"><?=$d->cpf?></div>
                     <div id="nome" class="form-text"></div>
                 </div>
 
@@ -117,7 +117,7 @@ $d = mysqli_fetch_object($result);
 
                 <div class="mb-3">
                     <label class="form-label" for="phoneNumber">Telefone*</label>
-                    <div class="form-control"><?=$d->phoneNumber?>"</div>
+                    <div class="form-control"><?=$d->phoneNumber?></div>
                     <div id="nome" class="form-text"></div>
                 </div>
 
