@@ -126,6 +126,7 @@ $d = mysqli_fetch_object($result);
             console.log("2 - "+campo);
 
                 if(!validarCPF(valor)){
+                    console.log("3 - "+campo);
                     $.alert({
                         title:"Erro CPF",
                         content:"O CPF Informado não é válido!",
