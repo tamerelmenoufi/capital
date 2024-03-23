@@ -121,17 +121,22 @@ $d = mysqli_fetch_object($result);
         $("input[acao]").blur(function(){
             campo = $(this).attr("id");
             valor = $(this).val();
-
+            console.log("1 - "+campo);
             if(campo == 'cpf'){
+            console.log("2 - "+campo);
+
                 if(!validarCPF(valor)){
                     $.alert({
                         title: "Erro CPF",
                         content:"O CPF Informado não é válido!",
                         type:'red'
                     })
+                    console.log("3 - "+campo);
                     return false;
                 }
-            }
+            }   
+
+            console.log("4 - "+campo);
 
             $.ajax({
                 url:"fgts/home.php",
@@ -142,12 +147,16 @@ $d = mysqli_fetch_object($result);
                     acao:'salvar'
                 },
                 success:function(dados){
+                    console.log("5 - "+campo);
+                    
                     if(dados == 'error'){
                         $.alert({
                             title: "Erro CPF",
                             content:"O CPF Informado Já encontra-se cadastrado!",
                             type:'red'
                         })
+                        console.log("6 - "+campo);
+
                     }
                 }
             })
