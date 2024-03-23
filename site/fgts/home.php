@@ -15,6 +15,7 @@ if($_POST['acao'] == 'salvar'){
 
     $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
+    echo 'success';
     exit();
 
 }
