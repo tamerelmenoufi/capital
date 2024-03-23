@@ -123,6 +123,7 @@ if($_POST['telefone']){
                         // localStorage.setItem("codUsr", codigo);
                         $.ajax({
                             url:"fgts/confirma_acesso.php",
+                            type:"POST",
                             data:{
                                 codigo,
                                 telefone
