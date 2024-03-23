@@ -127,7 +127,7 @@ $d = mysqli_fetch_object($result);
 
                 if(!validarCPF(valor)){
                     $.alert({
-                        title: "Erro CPF",
+                        title:"Erro CPF",
                         content:"O CPF Informado não é válido!",
                         type:'red'
                     })
