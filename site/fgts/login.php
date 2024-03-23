@@ -43,6 +43,8 @@ if($_POST['telefone']){
     $result = EnviarWapp($_POST['telefone'],"Capital Soluções informe: Seu código de acesso é *{$cod}*");
 
     echo "{\"status\":\"success\", \"codigo\":\"{$cod}\"}";
+
+    exit();
 }
 ?>
 
