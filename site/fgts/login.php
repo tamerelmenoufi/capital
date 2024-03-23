@@ -51,9 +51,9 @@
 
                 return false;
             }
-            alert($("#telefone").lenght())
+            alert($("#telefone").val().length)
 
-            if($("#telefone").length != 15){
+            if($("#telefone").val().length != 15){
                 $.alert({
                     type:"red",
                     title:"Erro der Identificação",
