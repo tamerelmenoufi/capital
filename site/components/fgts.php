@@ -56,4 +56,11 @@
             </div>
         </div>
       </div>
+
+
+      <div class="row g-0">
+        <div class="col palco"></div>
+      </div>
+
+
     </section><!-- End Team Section -->
