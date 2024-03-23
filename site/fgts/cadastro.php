@@ -79,13 +79,6 @@ $d = mysqli_fetch_object($result);
 
 
 
-
-
-
-
-
-
-
                 <div class="mb-3">
                     <label class="form-label" for="nome">Nome*</label>
                     <input acao type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" value="<?=$d->nome?>">
@@ -427,7 +420,7 @@ $d = mysqli_fetch_object($result);
 
 
             $.ajax({
-                url:"fgts/home.php",
+                url:"fgts/cadastro.php",
                 type:"POST",
                 data:{
                     campo,
@@ -512,17 +505,5 @@ $d = mysqli_fetch_object($result);
         })
 
 
-        $("button[local]").click(function(){
-
-            url = $(this).attr("local");
-
-            $.ajax({
-                url,
-                success:function(dados){
-                    $(".palco").html(dados);
-                }
-            })
-
-        })
     })
 </script>
