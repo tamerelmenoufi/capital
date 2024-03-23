@@ -509,6 +509,17 @@ $d = mysqli_fetch_object($result);
         })
 
 
+        $("button[local]").click(function(){
 
+            url = $(this).attr("local");
+
+            $.ajax({
+                url,
+                success:function(dados){
+                    $(".palco").html(dados);
+                }
+            })
+
+        })
     })
 </script>
