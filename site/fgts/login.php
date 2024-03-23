@@ -17,7 +17,7 @@
 
 </style>
 
-<div class="card">
+<div class="card" data-aos="zoom-in" data-aos-delay="200">
     <div class="card-header">
         Pré-Cadastro
     </div>
