@@ -73,14 +73,36 @@
             codUsr = localStorage.getItem("codUsr");
 
             if(codUsr){
-                $.alert('Dados com o codigo:'+ codUsr);
+                $.ajax({
+                    url:"fgts/home.php",
+                    success:function(dados){
+                        $(".palco").html(dados);
+                    }
+                })
+            }else{
+                $.ajax({
+                    url:"fgts/login.php",
+                    success:function(dados){
+                        $(".palco").html(dados);
+                    }
+                })                
             }
 
-            $.ajax({
-                url:"fgts/login.php",
-                success:function(dados){
-                    $(".palco").html(dados);
-                }
-            })
+            setInterval(() => {
+                codUsr = localStorage.getItem("codUsr");
+                $.ajax({
+                    url:"fgts/sessao.php",
+                    type:"POST",
+                    data:{
+                        codUsr
+                    },
+                    success:function(dados){
+                        // $(".palco").html(dados);
+                        console.log(dados)
+                    }
+                })                   
+            }, 5000);
+
+
         })
     </script>
