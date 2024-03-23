@@ -51,6 +51,8 @@
 
                 return false;
             }
+            alert($("#telefone").length)
+
             if($("#telefone").length != 15){
                 $.alert({
                     type:"red",
