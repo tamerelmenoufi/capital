@@ -91,7 +91,7 @@ $d = mysqli_fetch_object($result);
         </div>
 
         <div class="mt-3 text-end">
-            <a class="text-danger text-decoration-none sair"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
+            <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
         </div>
 
     </div>
