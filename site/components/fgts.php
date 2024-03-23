@@ -43,8 +43,8 @@
                 <div class="fluxo">
                     <div class="linha"></div>
                     <i class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
-                    <i class="fa-solid fa-circle etapas" style="left:calc(33% - 20px)"></i>
-                    <i class="fa-solid fa-circle etapas" style="left:calc(66% - 20px)"></i>
+                    <i class="fa-regular fa-circle etapas" style="left:calc(33% - 20px)"></i>
+                    <i class="fa-regular fa-circle etapas" style="left:calc(66% - 20px)"></i>
                     <i class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
                     <div class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
