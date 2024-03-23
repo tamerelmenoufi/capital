@@ -20,20 +20,7 @@ if($_POST['acao'] == 'salvar'){
 
 }
 
-if($_POST['telefone']){
 
-    $query = "select * from clientes where phoneNumber = '{$_POST['telefone']}'";
-    $result = mysqli_query($con, $query);
-    $d = mysqli_fetch_object($result);
-    if(!$d->codigo){
-        $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', data_cadastro = NOW(), validar_telefone = '1'";
-        $result = mysqli_query($con, $query);
-        $_SESSION['codUsr'] = mysqli_insert_id($con); 
-    }else{
-        $_SESSION['codUsr'] = $d->codigo; 
-    }
-
-}
 
 
 $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
@@ -63,32 +50,18 @@ $d = mysqli_fetch_object($result);
 
 <div class="card" data-aos="zoom-in" data-aos-delay="200">
     <div class="card-header">
-        Pré-Cadastro
+        Autorização para FGTS
     </div>
     <div class="card-body">
-        <h5 class="card-title">Tela de Identificação</h5>
-        <p class="card-text">Formulário de Pré-Cadastro. Os dados a seguir são obrigatório para confirmação do seu pré-cadastro.</p>
+        <h5 class="card-title">Tela de Autorização</h5>
+        <p class="card-text">Antes de fazer a suas simulações e contratação de antecipação do FGTS, é necessário que autorize os bancos parceiros que possibilitam o acessos do seu saldo na CAIXA.</p>
+        <p class="card-text">Preparamos um passo a passo pra você seguir e realizar a autorização de forma simples e prática.</p>
         
-        <div class="mb-3">
-            <label for="nome" class="form-label">Nome Completo</label>
-            <input acao type="text" class="form-control" id="nome" aria-describedby="nome" value="<?=$d->nome?>">
-            <div id="nome" class="form-text">Digite seu nome completo conforme seu documento de identificação</div>
+        <img src="fgts/img/passo_a_passo.png" class="img-fluid" alt="Passo a Passo">
+
+        <div class="mt-3 text-end">
+            <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
         </div>
-
-        <div class="mb-3">
-            <label for="cpf" class="form-label">Número CPF</label>
-            <input acao type="text" class="form-control" inputmode="numeric" id="cpf" aria-describedby="cpf" value="<?=$d->cpf?>">
-            <div id="cpf" class="form-text">Digite seu CPF confira o número antes de confirmar</div>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Telefone de Contato</label>
-            <div class="form-control"><?=$d->phoneNumber?></div>
-            <div class="form-text">Telefone confirmado no login</div>
-        </div>
-
-
-        <button class="btn btn-danger btn-sm sair"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</button>
 
     </div>
     </div>
