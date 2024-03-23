@@ -1,3 +1,21 @@
+<style>
+
+    .card{
+        border-color:#534ab3,
+    }
+    .card-header{
+        background-color:#534ab3;
+        color:#fff;
+    }
+    .card-title{
+        color:#534ab3,
+    }
+    .card-text{
+        color:#534ab3,
+    }
+
+</style>
+
 <div class="card">
     <div class="card-header">
         Pré-Cadastro
