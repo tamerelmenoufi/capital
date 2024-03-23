@@ -49,7 +49,7 @@
                     <div class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
                     <div class="legenda" style="left:calc(33% - 45px)">Autorização<br>Para FGTS</div>
                     <div class="legenda" style="left:calc(66% - 45px)">Cadastro<br>Completo</div>
-                    <div class="legenda" style="left:calc(100% - 60px)">Antecipação<br>FGTS</div>
+                    <div class="legenda" style="left:calc(100% - 65px)">Antecipação<br>FGTS</div>
 
                 </div>
             </div>
