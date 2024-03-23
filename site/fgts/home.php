@@ -2,6 +2,14 @@
 
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+if($_POST['acao'] == 'salvar'){
+
+    $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSIO['codUsr']}'";
+    mysqli_query($con, $query);
+    exit();
+    
+}
+
 if($_POST['telefone']){
 
     $query = "select * from clientes where phoneNumber = '{$_POST['telefone']}'";
@@ -48,15 +56,26 @@ $d = mysqli_fetch_object($result);
         Pré-Cadastro
     </div>
     <div class="card-body">
-        <h5 class="card-title">Identificação do Usuários</h5>
-        <p class="card-text">Digite o seu telefone de contato para receber as credencias de acesso</p>
+        <h5 class="card-title">Tela de Identificação</h5>
+        <p class="card-text">Formulário de Pré-Cadastro. Os dados a seguir são obrigatório para confirmação do seu pré-cadastro.</p>
         
-        <!-- <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-mobile-screen-button"></i></span>
-            <input type="text" id="telefone" class="form-control" inputmode="numeric" placeholder="Digite seu telefone" aria-label="Telefone" aria-describedby="addon-wrapping" >
-            <button class="btn btn-outline-secondary enviar" type="button" id="button-addon1">Enviar</button>
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome Completo</label>
+            <input acao type="text" class="form-control" id="nome" aria-describedby="nome">
+            <div id="nome" class="form-text">Digite seu nome completo conforme seu documento de identificação</div>
         </div>
-        <p style="color:#534ab3; font-size:12px">Enviaremos um SMS ou WhatsApp com código de confirmação do seu do seu acesso.</p> -->
+
+        <div class="mb-3">
+            <label for="cpf" class="form-label">Número CPF</label>
+            <input acao type="text" class="form-control" id="cpf" aria-describedby="cpf">
+            <div id="cpf" class="form-text">Digite seu CPF confira o número antes de confirmar</div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Telefone de Contato</label>
+            <div class="form-control"><?=$d->phoneNumber?></div>
+            <div class="form-text">Telefone confirmado no login</div>
+        </div>
 
 
         <button class="btn btn-danger btn-sm sair"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</button>
@@ -67,6 +86,8 @@ $d = mysqli_fetch_object($result);
 
 <script>
     $(function(){
+
+        $("#cpf").mask("999.999.999-99");
 
         <?php
         if($_SESSION['codUsr']){
@@ -86,6 +107,23 @@ $d = mysqli_fetch_object($result);
         <?php
         }
         ?>
+
+        $("input[acao]").blur(function(){
+            campo = $(this).attr("id");
+            valor = $(this).val();
+            $.ajax({
+                url:"fgts/home.php",
+                type:"POST",
+                data:{
+                    campo,
+                    valor,
+                    acao:'salvar'
+                },
+                success:function(dados){
+
+                }
+            })
+        })
 
         $(".sair").click(function(){
             telefone = $("#telefone").val();
