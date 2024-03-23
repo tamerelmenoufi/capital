@@ -33,7 +33,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         <p class="card-text">Digite no campo abaixo o número enviado para o seu WhatsApp</p>
         
         <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-unlock"></i>/span>
+            <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-unlock"></i></span>
             <input type="text" id="codigo_acesso" class="form-control" inputmode="numeric" placeholder="Digite o código" aria-label="Código de acesso" aria-describedby="addon-wrapping" >
             <button class="btn btn-outline-secondary acessar" type="button" id="button-addon1">Acessar</button>
         </div>
