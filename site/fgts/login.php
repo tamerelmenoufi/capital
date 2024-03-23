@@ -1,3 +1,51 @@
+<?php
+
+
+function EnviarWapp($n, $m){
+    $postdata = http_build_query(
+            array(
+                    'numero' => $n, // Receivers phonei
+                    'mensagem' => $m,
+                    //'cnf' => ['instancia' => 'bk', 'template' => 'start_template_1_ice75ebh', 'namespace' => '893ce1ab_31f5_478d_87e1_b257eb83813e', 'language' => 'en'],
+              )
+            );
+    $opts = array('http' =>
+            array(
+                    'method' => 'POST',
+                    'header' => 'Content-type: application/x-www-form-urlencoded',
+                    'content' => $postdata
+            )
+    );
+    $context = stream_context_create($opts);
+    //$result = file_get_contents('http://wapp.mohatron.com/', false, $context);
+    $result = file_get_contents('http://wapp.mohatron.com/', false, $context);
+}
+
+
+if($_POST['telefone']){
+
+    $telefone = str_replace(['-',' ','(',')'],false,trim($_POST['telefone']));
+    if(strlen($telefone) != 11){
+        echo "{\"status\":\"error\", \"codigo\":\"\"}";
+        $_SESSION['idUnico'] = false;
+        exit();
+    }
+
+    $d1 = rand(1,9);
+    $d2 = rand(0,9);
+    $d3 = rand(0,9);
+    $d4 = rand(0,9);
+
+    $cod = $d1.$d2.$d3.$d4;
+
+
+
+    $result = EnviarWapp($_POST['telefone'],"Capital Soluções informe: Seu código de acesso é *{$cod}*");
+
+    echo "{\"status\":\"success\", \"codigo\":\"{$cod}\"}";
+}
+?>
+
 <style>
 
     .card{
@@ -61,7 +109,42 @@
 
                 return false;                
             }
+
+            $.ajax({
+                url:"fgts/login.php",
+                dataType:"JSON",
+                data:{
+                    telefone
+                },
+                type:"POST",
+                success:function(dados){
+                    codigo = dados.codigo
+                    console.log(codigo);
+                    if(codigo){
+                        localStorage.setItem("codUsr", dados.codigo);
+                        $.ajax({
+                            url:"fgts/home.php",
+                            data:{
+                                codigo
+                            },
+                            success:function(dados){
+                                $(".palco").html(dados);
+                            }
+                        })
+                    }else{
+                        $.alert({
+                            title:"Erro na identificação",
+                            content:"O número do telefone está incorreto ou validação indisponível.",
+                            type:"red"
+                        })
+                    }
+                }
+            });
+
+
         })
+
+
 
     })
 </script>

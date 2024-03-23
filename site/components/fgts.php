@@ -69,6 +69,13 @@
 
     <script>
         $(function(){
+
+            codUsr = localStorage.getItem("codUsr");
+
+            if(codUsr){
+                $.alert('Dados com o codigo:'+ codUsr);
+            }
+
             $.ajax({
                 url:"fgts/login.php",
                 success:function(dados){
