@@ -4,6 +4,15 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 if($_POST['acao'] == 'salvar'){
 
+    if($_POST['campo'] == 'cpf'){
+        $query = "select * from clientes where cpf = '{$_POST['valor']}' and codigo != '{$_SESSION['codUsr']}'";
+        $result = mysqli_query($con, $query);
+        if(mysqli_num_rows($result)){
+            echo 'error';
+            exit();
+        }
+    }
+
     $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
     exit();
@@ -132,7 +141,13 @@ $d = mysqli_fetch_object($result);
                     acao:'salvar'
                 },
                 success:function(dados){
-
+                    if(dados == 'error'){
+                        $.alert({
+                            title: "Erro CPF",
+                            content:"O CPF Informado Já encontra-se cadastrado!",
+                            type:'red'
+                        })
+                    }
                 }
             })
         })
