@@ -11,7 +11,7 @@
             <input type="text" class="form-control" inputmode="numeric" placeholder="Digite seu telefone" aria-label="Telefone" aria-describedby="addon-wrapping" >
             <button class="btn btn-outline-secondary" type="button" id="button-addon1">Enviar</button>
         </div>
-        <p style="color:#534ab3">Enviaremos um SMS ou WhatsApp com código de confirmação do seu do seu acesso.</p>
+        <p style="color:#534ab3; font-size:12px">Enviaremos um SMS ou WhatsApp com código de confirmação do seu do seu acesso.</p>
 
     </div>
     </div>
