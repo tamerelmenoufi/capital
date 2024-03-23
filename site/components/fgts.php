@@ -58,7 +58,7 @@
       </div>
 
 
-      <div class="row g-0">
+      <div class="row g-0" style="margin-top:50px;">
         <div class="col">
             <div class="palco m-3"></div>
         </div>
