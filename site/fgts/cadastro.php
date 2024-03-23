@@ -182,13 +182,13 @@ $d = mysqli_fetch_object($result);
                     <div id="nome" class="form-text"></div>
                 </div>
 
-                <h5>Documentação</h5>
+                <h3>Documentação</h3>
                 <div class="mb-3">
                     <label class="form-label" for="document_type">Tipo de Documento*</label>
                     <select acao name="document_type" id="document_type" class="form-select">
                         <option value="">:: Selecione ::</option>
-                        <option value="RG" <?=(($d->document_type == 'RG')?'selected':false)?>>RG</option>
-                        <option value="CNH" <?=(($d->document_type == 'CNH')?'selected':false)?>>CNH</option>
+                        <option value="rg" <?=(($d->document_type == 'rg')?'selected':false)?>>RG</option>
+                        <option value="cnh" <?=(($d->document_type == 'cnh')?'selected':false)?>>CNH</option>
                     </select>
                     <div id="nome" class="form-text"></div>
                 </div>
@@ -230,7 +230,7 @@ $d = mysqli_fetch_object($result);
                     <div id="nome" class="form-text"></div>
                 </div>
 
-                <h5>Endereço</h5>
+                <h3>Endereço</h3>
 
                 <div class="mb-3">
                     <label class="form-label" for="address_zipCode">CEP*</label>
@@ -314,7 +314,7 @@ $d = mysqli_fetch_object($result);
 
 
 
-                <h5>Dados Bancários</h5>
+                <h3>Dados Bancários</h3>
                 <div class="mb-3">
                     <label class="form-label" for="bankCode">Banco*</label>
                     <select acao name="bankCode" id="bankCode" class="form-select">

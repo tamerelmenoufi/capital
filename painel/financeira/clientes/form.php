@@ -147,8 +147,8 @@
                 <h5>Documentação</h5>
                 <div class="form-floating mb-3">
                     <select name="document_type" id="document_type" class="form-select">
-                        <option value="RG" <?=(($d->document_type == 'RG')?'selected':false)?>>RG</option>
-                        <option value="CNH" <?=(($d->document_type == 'CNH')?'selected':false)?>>CNH</option>
+                        <option value="rg" <?=(($d->document_type == 'rg')?'selected':false)?>>RG</option>
+                        <option value="cnh" <?=(($d->document_type == 'cnh')?'selected':false)?>>CNH</option>
                     </select>
                     <label for="document_type">Tipo de Documento*</label>
                 </div>
