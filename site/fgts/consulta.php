@@ -187,7 +187,12 @@
 <div class="card m-3">
   <h5 class="card-header">Antecipação - FGTS</h5>
   <div class="card-body">
-    <h5 class="card-title">Simulações /Propostas</h5>
+    <h5 class="card-title">
+        <div class="d-flex justify-content-between">
+            <span>Simulações /Propostas</span>
+        </div>
+        <button class="btn btn-success btn-sm" simulacao>Verificar Saldo</button>
+    </h5>
     <div class="card-text" style="min-height:400px;">
 
     <?php
@@ -409,8 +414,6 @@
 
         $("button[simulacao]").click(function(){
 
-            tabela = $("#tabela").val();
-
             $.confirm({
                 title:"Simulação",
                 content:"Confirma a solicitação para simulação?",
@@ -426,8 +429,7 @@
                                 url:"fgts/consulta.php",
                                 type:"POST",
                                 data:{
-                                    acao:'simulacao',
-                                    tabela
+                                    acao:'simulacao'
                                 },
                                 success:function(dados){
                                     $(".palco").html(dados);
