@@ -339,13 +339,13 @@
             <div class="col-md-4">
                 <div class="coluna">
                     <label>Data da Operação</label>
-                    <span><?=dataBR($d->data)?></span>
+                    <div><?=dataBR($d->data)?></div>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="coluna">
                     <label>Erro - Descrição</label>
-                    <span><?="{$dados->statusCode} - {$dados->message}"?></span>
+                    <div><?="{$dados->statusCode} - {$dados->message}"?></div>
                 </div>                
             </div>
         </div>
