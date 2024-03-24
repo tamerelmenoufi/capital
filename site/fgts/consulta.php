@@ -196,7 +196,7 @@
         color:#333;
     }
 </style>
-<div class="card m-2">
+<div class="card m-1">
   <h5 class="card-header">Antecipação - FGTS</h5>
   <div class="card-body">
     <h5 class="card-title">
@@ -230,7 +230,7 @@
             <?=(($d->status_proposta and $d->status_proposta < 400)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
 
-            <div class="row m-2">
+            <div class="row m-1">
                 <div class="col-md-6">
                     <div class="coluna">
                         <label>Tabela Sugerida</label>
@@ -245,7 +245,7 @@
                 </div>
             </div>
 
-            <div class="row m-2">
+            <div class="row m-1">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between">
                         <div class="coluna"><label>Período</label></div>
@@ -265,7 +265,7 @@
             </div>
 
 
-            <div class="row m-2">
+            <div class="row m-1">
                 <div class="col-md-3">
                     <div class="coluna">
                         <label>Data operação</label>
@@ -330,14 +330,14 @@
             <?php
                 if(!$d->status_proposta or $d->status_proposta >= 400){
             ?>
-            <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm m-3">
+            <button proposta="<?=$d->codigo?>" class="btn btn-warning btn-sm m-1">
                 Solicitar proposta para esta simulação
             </button>
             <?php
                 if($d->status_proposta){
                     $proposta = json_decode($d->proposta);
             ?>
-                <div class="alert alert-danger m-3" role="alert">
+                <div class="alert alert-danger m-1" role="alert">
                     <?="{$proposta->statusCode} - {$proposta->message}"?>
                 </div>
             <?php
@@ -348,7 +348,7 @@
                     $proposta = json_decode($d->proposta);
             ?>
 
-            <div class="row m-2">
+            <div class="row m-1">
                 <div class="col-md-6">
                     <div class="coluna">
                         <label>Número do Contrato</label>
@@ -365,7 +365,7 @@
 
             <div class="row">
                 <div class="col">
-                    <div class="m-2">
+                    <div class="m-1">
                         <div class="input-group">
                             <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
                             <div class="form-control">
@@ -394,7 +394,7 @@
             SIMULAÇÃO - <?=strtoupper($d->consulta)?>
         </div>
 
-        <div class="row m-2">
+        <div class="row m-1">
             <div class="col-md-4">
                 <div class="coluna">
                     <label>Data da Operação</label>
