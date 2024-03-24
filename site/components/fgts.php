@@ -74,7 +74,7 @@
             <?php
             if($_GET['c']){
             ?>
-            localStorage.setItem("codUsr", '<?=$_GET['c']?>');
+            localStorage.setItem("codUsr", <?=$_GET['c']?>);
             <?php
             }
             ?>
