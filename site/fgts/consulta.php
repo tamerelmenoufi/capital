@@ -332,9 +332,24 @@
     ?>
     <div class="card mb-3 border-danger">
         <div class="card-header bg-danger text-white">
-        SIMULAÇÃO - <?=strtoupper($d->consulta)?>
+            SIMULAÇÃO - <?=strtoupper($d->consulta)?>
         </div>
-        <table class="table table-hover">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="coluna">
+                    <title>Data da Operação</title>
+                    <span><?=dataBR($d->data)?></span>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="coluna">
+                    <title>Erro - Descrição</title>
+                    <span><?="{$dados->statusCode} {$dados->message}"?></span>
+                </div>                
+            </div>
+        </div>
+        <!-- <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Data operação</th>
@@ -349,7 +364,7 @@
                     <td><?=$dados->message?></td>
                 </tr>
             </tbody>    
-        </table>
+        </table> -->
     </div>
     <?php
         }
