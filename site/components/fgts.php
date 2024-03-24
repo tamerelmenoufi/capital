@@ -75,11 +75,16 @@
             if($_GET['c']){
             ?>
             localStorage.setItem("codUsr", <?=$_GET['c']?>);
+            codUsr = localStorage.getItem("codUsr");
+            <?php
+            }else{
+            ?>
+            codUsr = localStorage.getItem("codUsr");
             <?php
             }
             ?>
 
-            codUsr = localStorage.getItem("codUsr");
+            
 
             if(codUsr){
                 $.ajax({
