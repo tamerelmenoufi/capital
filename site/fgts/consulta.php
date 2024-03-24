@@ -168,7 +168,22 @@
     $cliente = mysqli_fetch_object($result);
 
 ?>
-
+<style>
+    .card{
+        border-color:#534ab3,
+    }
+    .card-header{
+        background-color:#534ab3;
+        color:#fff;
+    }
+    .card-title{
+        font-weight:bold;
+        color:#534ab3;
+    }
+    .card-text{
+        color:#534ab3;
+    }
+</style>
 <div class="card m-3">
   <h5 class="card-header">Sistema Capital Financeira - VCTEX</h5>
   <div class="card-body">
