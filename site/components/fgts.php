@@ -31,6 +31,9 @@
             width:100px;
             border:solid 0px red;
         }
+        i[etapa], div[etapa]{
+            cursor:pointer;
+        }
     </style>
     <section id="fgts" class="team">
       <div class="container" data-aos="fade-up">
@@ -42,15 +45,15 @@
             <div class="d-flex justify-content-center">
                 <div class="fluxo">
                     <div class="linha"></div>
-                    <i class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
-                    <i class="fa-regular fa-circle etapas" style="left:calc(33% - 20px)"></i>
-                    <i class="fa-regular fa-circle etapas" style="left:calc(66% - 20px)"></i>
-                    <i class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
+                    <i etapa="fgts/home.php" class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
+                    <i etapa="fgts/autorizacao.php" class="fa-regular fa-circle etapas" style="left:calc(33% - 20px)"></i>
+                    <i etapa="fgts/cadastro.php" class="fa-regular fa-circle etapas" style="left:calc(66% - 20px)"></i>
+                    <i etapa="fgts/consulta.php" class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
-                    <div class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
-                    <div class="legenda" style="left:calc(33% - 50px)">Autorização<br>Para FGTS</div>
-                    <div class="legenda" style="left:calc(66% - 50px)">Cadastro<br>Completo</div>
-                    <div class="legenda" style="left:calc(100% - 65px)">Antecipação<br>FGTS</div>
+                    <div etapa="fgts/home.php" class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
+                    <div etapa="fgts/autorizacao.php" class="legenda" style="left:calc(33% - 50px)">Autorização<br>Para FGTS</div>
+                    <div etapa="fgts/cadastro.php" class="legenda" style="left:calc(66% - 50px)">Cadastro<br>Completo</div>
+                    <div etapa="fgts/consulta.php" class="legenda" style="left:calc(100% - 65px)">Antecipação<br>FGTS</div>
 
                 </div>
             </div>
@@ -111,6 +114,16 @@
                     }
                 })                   
             }, 5000);
+
+            $("i[etapa], div[etapa]").click(function(){
+                url = $(this).attr("etapa");
+                $.ajax({
+                    url,
+                    success:function(dados){
+                        $(".palco").html(dados);
+                    }
+                })                  
+            })
 
 
         })
