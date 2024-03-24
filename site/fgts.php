@@ -69,7 +69,19 @@
     <span><i class="bi bi-x"></i></span>
     <div class="body"></div>
 </div>
+<script>
+  $(function(){
 
+    <?php
+      if($_GET['c']){
+      ?>
+      localStorage.setItem("codUsr", '<?=$_GET['c']?>');
+      <?php
+      }
+      ?>
+
+  })
+</script>
 <main id="main">
 <?php
 
@@ -141,14 +153,6 @@
 
   <script>
     $(function(){
-
-      <?php
-      if($_GET['c']){
-      ?>
-      localStorage.setItem("codUsr", '<?=$_GET['c']?>');
-      <?php
-      }
-      ?>
 
       $.ajax({
         url:"assets/lib/log_acessos.php",
