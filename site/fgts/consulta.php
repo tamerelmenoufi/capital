@@ -379,7 +379,7 @@
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por e-mail" email="<?=$d->codigo?>" disabled><i class="fa-solid fa-at"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Atualizar Status da proposta" proposalId="<?=$proposta->data->proposalId?>" atualiza_proposta="<?=$d->codigo?>"><i class="fa-solid fa-rotate"></i></button> -->
                         </div> 
-                        <p style="font-size:12px; text-align:center">Acesse o linque acima utilizando os botões de copiar o link (<i class="fa-solid fa-copy"></i>) ou abrir o link (<i class="fa-solid fa-up-right-from-square"></i>) para a finalização do seu contrato.</p>          
+                        <p style="font-size:12px; text-align:center; color:#333;">Acesse o linque acima utilizando os botões de copiar o link (<i class="fa-solid fa-copy"></i>) ou abrir o link (<i class="fa-solid fa-up-right-from-square"></i>) para a finalização do seu contrato.</p>          
                     </div>         
                 </div>
             </div>
