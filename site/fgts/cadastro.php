@@ -369,7 +369,7 @@ $d = mysqli_fetch_object($result);
 
 
         <div class="mt-2">
-            <button class="btn btn-primary btn-sm" local="fgts/cadastro.php"><i class="fa-solid fa-angles-right"></i> Antecipação do FGTS</button>
+            <button class="btn btn-primary btn-sm" local="fgts/consulta.php"><i class="fa-solid fa-angles-right"></i> Antecipação do FGTS</button>
         </div>
 
         <div class="mt-3 text-end">
