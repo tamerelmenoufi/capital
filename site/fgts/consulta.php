@@ -185,9 +185,9 @@
     }
 </style>
 <div class="card m-3">
-  <h5 class="card-header">Sistema Capital Financeira - VCTEX</h5>
+  <h5 class="card-header">Antecipação - FGTS</h5>
   <div class="card-body">
-    <h5 class="card-title">Consultas / Simulações /Propostas</h5>
+    <h5 class="card-title">Simulações /Propostas</h5>
     <div class="card-text" style="min-height:400px;">
 
     <?php
@@ -352,11 +352,21 @@
     ?>
     </div>
   </div>
+  <button class="btn btn-primary btn-sm">Atualizar</button>
 </div>
 
 
 <script>
     $(function(){
+
+        $(".atualiza").click(function(){
+            $.ajax({
+                url:"fgts/consulta.php",
+                success:function(dados){
+                    $(".palco").html(dados);
+                }
+            })
+        })
 
         // Carregando('none');
 
