@@ -338,7 +338,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="coluna">
-                    <title>Data da Operação</title>
+                    <label>Data da Operação</label>
                     <span><?=dataBR($d->data)?></span>
                 </div>
             </div>
