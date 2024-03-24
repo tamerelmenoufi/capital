@@ -383,6 +383,9 @@
                     </div>         
                 </div>
             </div>
+            <div class="mt-3 text-end">
+                <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
+            </div>
             <?php
                 }
             ?>
@@ -555,6 +558,57 @@
             })
 
         })  
+
+
+        $(".sair").click(function(){
+            telefone = $("#telefone").val();
+            
+            $.confirm({
+                title:"Sair do Login",
+                content:'Deseja realmente sair do login da sua área restrita?',
+                type:'orange',
+                buttons:{
+                    'Sim':{
+                        text:'SIM',
+                        btnClass:'btn btn-danger btn-sm',
+                        action:function(){
+                            localStorage.removeItem("codUsr");
+                            $.ajax({
+                                url:"fgts/sessao.php",
+                                data:{
+                                    codUsr:''
+                                },
+                                type:"POST",
+                                success:function(dados){
+
+                                    $.ajax({
+                                        url:"fgts/login.php",
+                                        success:function(dados){
+                                            $(".palco").html(dados);
+                                        }
+                                    })
+
+                                }
+                            });
+
+
+                        }
+                    },
+                    'não':{
+                        text:'NÃO',
+                        btnClass:'btn btn-primary btn-sm',
+                        action:function(){
+
+                        }
+                    },
+                    
+                }
+            })
+
+            
+
+
+        })
 
 
     })
