@@ -142,6 +142,14 @@
   <script>
     $(function(){
 
+      <?php
+      if($_GET['c']){
+      ?>
+      localStorage.setItem("codUsr", '<?=$_GET['c']?>');
+      <?php
+      }
+      ?>
+
       $.ajax({
         url:"assets/lib/log_acessos.php",
         success:function(dados){
