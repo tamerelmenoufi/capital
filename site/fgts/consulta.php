@@ -197,7 +197,7 @@
 
     <?php
 
-   echo  $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as status_proposta from consultas where cliente = '{$_SESSSION['codUsr']}' order by codigo desc";
+   echo  $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as status_proposta from consultas where cliente = '{$_SESSION['codUsr']}' order by codigo desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
