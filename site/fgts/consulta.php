@@ -352,7 +352,7 @@
     ?>
     </div>
   </div>
-  <button class="btn btn-primary btn-sm">Atualizar</button>
+  <button class="btn btn-primary btn-sm atualiza">Atualizar</button>
 </div>
 
 
