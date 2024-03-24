@@ -383,12 +383,14 @@
                     </div>         
                 </div>
             </div>
-            <div class="mt-3 text-end">
-                <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
-            </div>
+
             <?php
                 }
             ?>
+        </div>
+
+        <div class="mt-3 text-end">
+            <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
         </div>
     <?php
         }else{
