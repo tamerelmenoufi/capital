@@ -190,8 +190,8 @@
     <h5 class="card-title">
         <div class="d-flex justify-content-between">
             <span>Simulações /Propostas</span>
+            <button class="btn btn-success btn-sm" simulacao>Verificar Saldo</button>
         </div>
-        <button class="btn btn-success btn-sm" simulacao>Verificar Saldo</button>
     </h5>
     <div class="card-text" style="min-height:400px;">
 
