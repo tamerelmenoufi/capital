@@ -368,7 +368,11 @@
                     <div class="m-2">
                         <div class="input-group">
                             <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
-                            <div class="form-control"><?=$proposta->data->formalizationLink?></div>
+                            <div class="form-control">
+                                <div style="overflow: hidden; border:1px; white-space:nowrap;">
+                                    <?=$proposta->data->formalizationLink?>
+                                </div>
+                            </div>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Copiar o link" copiar="<?=$proposta->data->formalizationLink?>"><i class="fa-solid fa-copy"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por whatsApp" wapp="<?=$d->codigo?>" disabled><i class="fa-brands fa-whatsapp"></i></button>
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1" data-bs-toggle="tooltip" data-bs-placement="top" title="Enviar link por SMS" sms="<?=$d->codigo?>" disabled><i class="fa-solid fa-comment-sms"></i></button>
