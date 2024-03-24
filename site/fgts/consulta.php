@@ -185,7 +185,7 @@
     }
 
     .coluna{
-        margin-bottom:10px;
+        margin-bottom:5px;
     }
     .coluna label{
         font-size:12px;
