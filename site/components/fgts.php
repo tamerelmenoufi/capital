@@ -70,6 +70,16 @@
     <script>
         $(function(){
 
+
+            <?php
+            if($_GET['c']){
+            ?>
+            localStorage.removeItem("codUsr");
+            localStorage.setItem("codUsr", '<?=$_GET['c']?>');
+            <?php
+            }
+            ?>
+
             codUsr = localStorage.getItem("codUsr");
 
             if(codUsr){

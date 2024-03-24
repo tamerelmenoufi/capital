@@ -69,20 +69,7 @@
     <span><i class="bi bi-x"></i></span>
     <div class="body"></div>
 </div>
-<script>
-  $(function(){
 
-    <?php
-      if($_GET['c']){
-      ?>
-      localStorage.removeItem("codUsr");
-      localStorage.setItem("codUsr", '<?=$_GET['c']?>');
-      <?php
-      }
-      ?>
-
-  })
-</script>
 <main id="main">
 <?php
 
