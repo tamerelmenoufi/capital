@@ -394,7 +394,7 @@
             proposalId = $(this).attr("proposalId");
             atualiza_proposta = $(this).attr("atualiza_proposta");
 
-            Carregando();
+            // Carregando();
 
             $.ajax({
                 url:"fgts/consulta.php",
@@ -423,7 +423,7 @@
                         text:'Sim',
                         btnClass:'btn btn-success btn-sm',
                         action:function(){
-                            Carregando();
+                            // Carregando();
 
                             $.ajax({
                                 url:"fgts/consulta.php",
