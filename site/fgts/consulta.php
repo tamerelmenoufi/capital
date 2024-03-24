@@ -185,7 +185,7 @@
     }
 
     .coluna{
-        margin-bottom:20px;
+        margin-bottom:10px;
     }
     .coluna label{
         font-size:12px;
@@ -196,7 +196,7 @@
         color:#333;
     }
 </style>
-<div class="card m-3">
+<div class="card m-2">
   <h5 class="card-header">Antecipação - FGTS</h5>
   <div class="card-body">
     <h5 class="card-title">
@@ -225,12 +225,12 @@
 
         if($dados->statusCode == 200 and $dados->data->simulationData->installments){
     ?>
-        <div class="card mb-3 border-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?>">
+        <div class="card mb-2 border-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?>">
             <div class="card-header bg-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?> text-white">
             <?=(($d->status_proposta and $d->status_proposta < 400)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
 
-            <div class="row m-3">
+            <div class="row m-2">
                 <div class="col-md-6">
                     <div class="coluna">
                         <label>Tabela Sugerida</label>
@@ -245,7 +245,7 @@
                 </div>
             </div>
 
-            <div class="row m-3">
+            <div class="row m-2">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between">
                         <div class="coluna"><label>Período</label></div>
@@ -265,7 +265,7 @@
             </div>
 
 
-            <div class="row m-3">
+            <div class="row m-2">
                 <div class="col-md-3">
                     <div class="coluna">
                         <label>Data operação</label>
@@ -348,7 +348,7 @@
                     $proposta = json_decode($d->proposta);
             ?>
 
-            <div class="row m-3">
+            <div class="row m-2">
                 <div class="col-md-6">
                     <div class="coluna">
                         <label>Número do Contrato</label>
@@ -389,12 +389,12 @@
     <?php
         }else{
     ?>
-    <div class="card mb-3 border-danger">
+    <div class="card mb-2 border-danger">
         <div class="card-header bg-danger text-white">
             SIMULAÇÃO - <?=strtoupper($d->consulta)?>
         </div>
 
-        <div class="row m-3">
+        <div class="row m-2">
             <div class="col-md-4">
                 <div class="coluna">
                     <label>Data da Operação</label>
