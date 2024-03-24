@@ -230,7 +230,7 @@
             <?=(($d->status_proposta and $d->status_proposta < 400)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
 
-            <div class="row">
+            <div class="row m-3">
                 <div class="col-md-6">
                     <div class="coluna">
                         <label>Tabela Sugerida</label>
@@ -245,7 +245,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row m-3">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between">
                         <div class="coluna"><label>Período</label></div>
