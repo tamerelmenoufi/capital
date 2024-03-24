@@ -335,7 +335,7 @@
             SIMULAÇÃO - <?=strtoupper($d->consulta)?>
         </div>
 
-        <div class="row">
+        <div class="row m-3">
             <div class="col-md-4">
                 <div class="coluna">
                     <label>Data da Operação</label>
@@ -349,6 +349,7 @@
                 </div>                
             </div>
         </div>
+        
         <!-- <table class="table table-hover">
             <thead>
                 <tr>
