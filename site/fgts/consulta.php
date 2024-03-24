@@ -323,6 +323,9 @@
                 </div>
 
             </div>
+
+
+
             
             <?php
                 if(!$d->status_proposta or $d->status_proposta >= 400){
@@ -344,20 +347,22 @@
 
                     $proposta = json_decode($d->proposta);
             ?>
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th colspan="4">Número do Contrato</th>
-                        <th colspan="4">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="4"><?=$proposta->data->proposalcontractNumber?></td>
-                        <td colspan="4"><?="{$proposta->statusCode} - {$proposta->message}"?></td>
-                    </tr>
-                </tbody> 
-            </table>
+
+            <div class="row m-3">
+                <div class="col-md-6">
+                    <div class="coluna">
+                        <label>Número do Contrato</label>
+                        <div><?=$proposta->data->proposalcontractNumber?></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="coluna">
+                        <label>Status</label>
+                        <div><?="{$proposta->statusCode} - {$proposta->message}"?></div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col">
                     <div class="m-2">
@@ -400,22 +405,6 @@
             </div>
         </div>
 
-        <!-- <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Data operação</th>
-                    <th>Erro</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><?=dataBR($d->data)?></td>
-                    <td><?=$dados->statusCode?></td>
-                    <td><?=$dados->message?></td>
-                </tr>
-            </tbody>    
-        </table> -->
     </div>
     <?php
         }
