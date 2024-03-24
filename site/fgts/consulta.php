@@ -229,6 +229,44 @@
             <div class="card-header bg-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?> text-white">
             <?=(($d->status_proposta and $d->status_proposta < 400)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
             </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="coluna">
+                        <label>Tabela Sugerida</label>
+                        <div><?=$tabela_sugerida?></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="coluna">
+                        <label>Resultado da Tabela</label>
+                        <div><?=$tabela_resultado?></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-between">
+                        <div class="coluna"><label>Período</label></div>
+                        <div class="coluna"><label>Valor</label></div>
+                    </div>
+                    <?php
+                    foreach($dados->data->simulationData->installments as $periodo => $valor){
+                    ?>
+                    <div class="d-flex justify-content-between">
+                        <div class="coluna"><div><?=dataBr($valor->dueDate)?></div></div>
+                        <div class="coluna"><div>R$ <?=number_format($valor->amount,2,',','.')?></div></div>
+                    </div>
+                    <?php                       
+                    }
+                    ?>
+                </div>
+            </div>
+
+
+
+
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
