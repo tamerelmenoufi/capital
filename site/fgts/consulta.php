@@ -344,8 +344,8 @@
             </div>
             <div class="col-md-8">
                 <div class="coluna">
-                    <title>Erro - Descrição</title>
-                    <span><?="{$dados->statusCode} {$dados->message}"?></span>
+                    <label>Erro - Descrição</label>
+                    <span><?="{$dados->statusCode} - {$dados->message}"?></span>
                 </div>                
             </div>
         </div>
