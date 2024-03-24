@@ -183,6 +183,18 @@
     .card-text{
         color:#534ab3;
     }
+
+    .coluna{
+        margin-bottom:20px;
+    }
+    .coluna label{
+        font-size:12px;
+        color:#a1a1a1;
+    }
+    .coluna div{
+        font-size:14px;
+        color:#333;
+    }
 </style>
 <div class="card m-3">
   <h5 class="card-header">Antecipação - FGTS</h5>
@@ -349,7 +361,7 @@
                 </div>                
             </div>
         </div>
-        
+
         <!-- <table class="table table-hover">
             <thead>
                 <tr>
