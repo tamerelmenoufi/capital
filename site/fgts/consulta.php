@@ -265,64 +265,64 @@
             </div>
 
 
+            <div class="row m-3">
+                <div class="col-md-3">
+                    <div class="coluna">
+                        <label>Data operação</label>
+                        <div><?=dataBR($d->data)?></div>
+                    </div>
+                </div>
 
+                <div class="col-md-1">
+                    <div class="coluna">
+                        <label>IOF</label>
+                        <div><?=$dados->data->simulationData->iofAmount?></div>
+                    </div>
+                </div>
 
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th colspan="4">Tabela Sugerida</th>
-                        <th colspan="4">Resultado da Tabela</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="4"><?=$tabela_sugerida?></td>
-                        <td colspan="4"><?=$tabela_resultado?></td>
-                    </tr>
-                </tbody>    
-                <thead>
-                    <tr>
-                        <th colspan="7">Período</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach($dados->data->simulationData->installments as $periodo => $valor){
-                    ?>
-                    <tr>
-                        <td colspan="7"><?=dataBr($valor->dueDate)?></td>
-                        <td>R$ <?=number_format($valor->amount,2,',','.')?></td>
-                    </tr>
-                    <?php                       
-                    }
-                    ?>
-                </tbody>
-                <thead>
-                    <tr>
-                        <th>Data operação</th>
-                        <th>IOF</th>
-                        <th>Liberado</th>
-                        <th>Emissão</th>
-                        <th>TAC</th>
-                        <th>CET anual</th>
-                        <th>Taxa anual</th>
-                        <th>Mínimo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><?=dataBR($d->data)?></td>
-                        <td><?=$dados->data->simulationData->iofAmount?></td>
-                        <td><?=$dados->data->simulationData->totalReleasedAmount?></td>
-                        <td><?=$dados->data->simulationData->totalAmount?></td>
-                        <td><?=$dados->data->simulationData->contractTACAmount?></td>
-                        <td><?=$dados->data->simulationData->contractCETRate?></td>
-                        <td><?=$dados->data->simulationData->contractRate?></td>
-                        <td><?=$dados->data->simulationData->minDisbursedAmount?></td>
-                    </tr>
-                </tbody>    
-            </table>
+                <div class="col-md-1">
+                    <div class="coluna">
+                        <label>Liberado</label>
+                        <div><?=$dados->data->simulationData->totalReleasedAmount?></div>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="coluna">
+                        <label>Emissão</label>
+                        <div><?=$dados->data->simulationData->totalAmount?></div>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="coluna">
+                        <label>TAC</label>
+                        <div><?=$dados->data->simulationData->contractTACAmount?></div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="coluna">
+                        <label>CET anual</label>
+                        <div><?=$dados->data->simulationData->contractCETRate?></div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="coluna">
+                        <label>Taxa anual</label>
+                        <div><?=$dados->data->simulationData->contractRate?></div>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="coluna">
+                        <label>Mínimo</label>
+                        <div><?=$dados->data->simulationData->minDisbursedAmount?></div>
+                    </div>
+                </div>
+
+            </div>
             
             <?php
                 if(!$d->status_proposta or $d->status_proposta >= 400){
