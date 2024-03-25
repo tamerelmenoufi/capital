@@ -7,7 +7,7 @@ $bancos = json_decode($bancos);
 
 $siglas = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'];
 
-if($_POST['acao'] = 'cadastro_percentual'){
+if($_POST['acao'] == 'cadastro_percentual'){
 
     $query = "update clientes set cadastro_percentual = '{$_POST['cadastro_percentual']}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
