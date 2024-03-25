@@ -149,7 +149,11 @@
         <div class="form-text mb-3">Selecione a imagem para o Banner (Versão Mobile)</div>
       <!-- </div> -->
 
-
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="url" name="url" placeholder="Endereço do link do Banner" value="<?=$d->url?>">
+        <label for="url">Endereço (URL)</label>
+        <div class="form-text">Digite o caminho do link que deseja direcionar com o banner.</div>
+      </div>
 
       <div class="form-floating">
         <select id="situacao" name="situacao" class="form-control" placeholder="Situação">
