@@ -13,8 +13,8 @@ if($_GET['cod']){
     while($d = mysqli_fetch_object($result)){
     ?>
     <div class="carousel-item <?=(($active)?'active':false)?>">
-            <img src="<?=$localPainel?>site/volume/banners/<?=$d->imagem?>" alt="" class="d-block w-100 d-none d-md-block">
-            <img src="<?=$localPainel?>site/volume/banners/<?=$d->imagem_mb?>" alt="" class="d-block w-100 d-block d-md-none">
+            <img banner="./fgts.php" src="<?=$localPainel?>site/volume/banners/<?=$d->imagem?>" alt="" class="d-block w-100 d-none d-md-block">
+            <img banner="./fgts.php" src="<?=$localPainel?>site/volume/banners/<?=$d->imagem_mb?>" alt="" class="d-block w-100 d-block d-md-none">
     </div><!-- End Carousel Item -->
     <?php
     $active = false;
@@ -68,3 +68,13 @@ if($_GET['cod']){
     <ol class="carousel-indicators" style="margin-bottom:2rem !important;"></ol>
 
   </section><!-- End Hero Section -->
+
+  <script>
+    $(function(){
+      $("img[banner]").click(function(){
+        caminho = $(this).attr("banner");
+        window.location.href=caminho;
+
+      })
+    })
+  </script>
