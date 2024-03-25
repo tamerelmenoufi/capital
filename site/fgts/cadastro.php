@@ -9,7 +9,7 @@ $siglas = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MG','PA','PB'
 
 if($_POST['acao'] == 'cadastro_percentual'){
 
-    $campos_pendentes = json_encode($_POST['campos_pendentes']);
+    $campos_pendentes = json_encode($_POST['campos_pendentes'], JSON_UNESCAPED_UNICODE);
     $query = "update clientes set cadastro_percentual = '{$_POST['cadastro_percentual']}', campos_pendentes='{$campos_pendentes}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
     exit();
