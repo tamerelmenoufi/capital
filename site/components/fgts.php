@@ -9,7 +9,7 @@
         }
         .linha{
             position:absolute;
-            width:100%;
+            width:33%;
             height:10px;
             background-color:#534ab3;
             border:0;
@@ -18,7 +18,7 @@
         }
         .linha2{
             position:absolute;
-            width:33%;
+            width:100%;
             height:10px;
             background-color:#ccc;
             border:0;
@@ -53,8 +53,8 @@
         <div class="row gy-5">
             <div class="d-flex justify-content-center">
                 <div class="fluxo">
-                    <div class="linha"></div>
                     <div class="linha2"></div>
+                    <div class="linha"></div>
                     <i etapa="fgts/home.php" class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
                     <i etapa="fgts/autorizacao.php" class="fa-regular fa-circle etapas" style="left:calc(33% - 20px)"></i>
                     <i etapa="fgts/cadastro.php" class="fa-regular fa-circle etapas" style="left:calc(66% - 20px)"></i>
