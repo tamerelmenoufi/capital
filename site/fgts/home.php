@@ -215,6 +215,17 @@ $d = mysqli_fetch_object($result);
 
             url = $(this).attr("local");
 
+            nome = $("#nome").val();
+            cpf = $("#cpf").val();
+
+            if(!nome || !cpf){
+                $.alert({
+                    title:'Dados Incompletos',
+                    content:"Para prosseguir é necessáro preencher os dados completos do formulário.",
+                    type:'red'
+                })
+                return false;
+            }
             $.ajax({
                 url,
                 success:function(dados){
