@@ -424,7 +424,7 @@ $d = mysqli_fetch_object($result);
             qtcp = campos.length;
             qtct = conteudo.length;
 
-            pct = ((qtcp*qtct)/100).indexOf(0);
+            pct = ((qtcp*qtct)/100).tofixed(0);
 
             //style="width: 10%" aria-valuenow="10"
             $("#progresso").attr("aria-valuenow", pct);
