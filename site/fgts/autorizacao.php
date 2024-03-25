@@ -72,7 +72,7 @@ $d = mysqli_fetch_object($result);
         <img src="fgts/img/passo_a_passo.png" class="img-fluid" alt="Passo a Passo">
 
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="autorizacao" <?=(($d->autorizacao_vctex > 0)?'checked':false)?>>
+            <input type="checkbox" class="form-check-input" <?=(($d->autorizacao_vctex > 0)?'checked disabled':' id="autorizacao"')?>>
             <label class="form-check-label" for="autorizacao">Marque aqui, caso tenha realizado a autorização dos parceiros do banco.</label>
         </div>
 
