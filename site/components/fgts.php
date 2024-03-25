@@ -16,6 +16,15 @@
             left:0;
             top:20px;
         }
+        .linha2{
+            position:absolute;
+            width:100%;
+            height:10px;
+            background-color:#ccc;
+            border:0;
+            left:0;
+            top:20px;
+        }
         .etapas{
             position:absolute;
             top:5px;
@@ -45,6 +54,7 @@
             <div class="d-flex justify-content-center">
                 <div class="fluxo">
                     <div class="linha"></div>
+                    <div class="linha2"></div>
                     <i etapa="fgts/home.php" class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
                     <i etapa="fgts/autorizacao.php" class="fa-regular fa-circle etapas" style="left:calc(33% - 20px)"></i>
                     <i etapa="fgts/cadastro.php" class="fa-regular fa-circle etapas" style="left:calc(66% - 20px)"></i>
