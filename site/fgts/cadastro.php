@@ -429,7 +429,7 @@ $d = mysqli_fetch_object($result);
             //style="width: 10%" aria-valuenow="10"
             $("#progresso").attr("aria-valuenow", pct);
             $("#progresso").html(pct);
-            $("#progresso").css("width", pct);
+            $("#progresso").css("width", `${pct}%`);
 
 
             console.log(`Temos ${qtct} do total de ${qtcp}`)
