@@ -4,9 +4,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 if($_POST['acao'] == 'autorizacao'){
     if($_POST['autorizacao'] == 'marcar'){
-        $autorizacao_vctex = "NOW()",
+        $autorizacao_vctex = "NOW()";
     }else{
-        $autorizacao_vctex = "0",
+        $autorizacao_vctex = "0";
     }
     mysqli_query($con, "update clientes set autorizacao_vctex = {$autorizacao_vctex} where codigo = '{$_SESSION['codUsr']}'");
 
