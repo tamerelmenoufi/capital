@@ -407,6 +407,26 @@ $d = mysqli_fetch_object($result);
         }
         ?>
 
+        function preenchimento(){
+            campos = [];
+            conteudo = []
+            $("input[acao]").each(function(){
+                valor = $(this).val(); 
+                if(valor){
+                    conteudo.push(valor);
+                }
+                campos.push($(this).attr("id"));
+            })
+
+            qtcp = campos.length;
+            qtct = conteudo.length;
+
+            console.log(`Temos ${qtct} do total de ${qtcp}`)
+
+        }
+
+        preenchimento();
+
         $("input[acao], select[acao]").blur(function(){
             campo = $(this).attr("id");
             valor = $(this).val();
