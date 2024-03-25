@@ -522,7 +522,7 @@
         })  
 
 
-        $("button[simulacao]").click(function(){
+        $("button[pendentes]").click(function(){
 
             $.alert({
                 title:"Pendência no Cadastro",
