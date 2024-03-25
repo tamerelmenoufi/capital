@@ -40,13 +40,14 @@
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
                   <th scope="col">Nome da Mãe</th>
+                  <th scope="col">Data de Cadastro</th>
                   <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from clientes order by nome asc";
+                  $query = "select * from clientes order by data_cadastro desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
@@ -54,6 +55,7 @@
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td><?=$d->phoneNumber?></td>
+                  <td><?=dataBr($d->data_cadastro)?></td>
                   <td><?=$d->motherName?></td>
                   <!-- <td>
 
