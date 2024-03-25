@@ -526,7 +526,7 @@
 
             $.alert({
                 title:"Pendência no Cadastro",
-                content:"Favor retornar a tela de cadastro e completar os dados pendentes:<p><?=$pendentes?></p>",
+                content:"Favor retornar a tela de cadastro e completar os dados pendentes:<br><br><p style='color:red'><?=$pendentes?></p>",
                 type:"orange",
             })
 
