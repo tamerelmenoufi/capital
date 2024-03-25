@@ -70,7 +70,8 @@ $d = mysqli_fetch_object($result);
         <p class="card-text">Preparamos um passo a passo pra você seguir e realizar a autorização de forma simples e prática.</p>
         
         <p class="card-text">1. Baixe e instale o aplicativo FGTS.</p>
-        <img src="fgts/img/app_fgts.png?1" class="img-fluid" alt="Passo a Passo">
+        <p>
+        <img src="fgts/img/app_fgts.png?1" class="img-fluid" alt="Passo a Passo"></p>
 
         <p class="card-text">2. Autorize essas duas instituições:</p>
         <p class="card-text">QI SOCIEDADE DE CREDITO DIRETO S.A.</p>
