@@ -18,7 +18,7 @@
         }
         .linha2{
             position:absolute;
-            width:100%;
+            width:33%;
             height:10px;
             background-color:#ccc;
             border:0;
