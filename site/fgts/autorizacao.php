@@ -69,13 +69,13 @@ $d = mysqli_fetch_object($result);
         <p class="card-text">Antes de fazer a suas simulações e contratação de antecipação do FGTS, é necessário que autorize os bancos parceiros que possibilitam o acessos do seu saldo na CAIXA.</p>
         <p class="card-text">Preparamos um passo a passo pra você seguir e realizar a autorização de forma simples e prática.</p>
         
-        <p class="card-text">Baixe e instale o aplicativo FGTS.</p>
+        <p class="card-text">1. Baixe e instale o aplicativo FGTS.</p>
         <img src="fgts/img/passo_a_passo.png?1" class="img-fluid" alt="Passo a Passo">
 
-        <p class="card-text">Autorize essas duas instituições:</p>
+        <p class="card-text">2. Autorize essas duas instituições:</p>
         <p class="card-text">QI SOCIEDADE DE CREDITO DIRETO S.A.</p>
         <p class="card-text">CDC SOCEDADE DE CREDITO AO MICROEMPREENDEDOR X E A EMPRESA DE PEQUENO PORTE LTDA</p>
-        <p class="card-text">Logo em seguida clique em CONFIRMAR</p>
+        <p class="card-text">3. Logo em seguida clique em CONFIRMAR</p>
         
 
         <div class="mb-3 form-check">
