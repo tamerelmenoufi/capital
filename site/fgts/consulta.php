@@ -167,6 +167,9 @@
     $result = mysqli_query($con, $query);
     $cliente = mysqli_fetch_object($result);
 
+    $pendentes = json_decode($cliente->campos_pendentes);
+    $pendentes = explode("<br>", $pendentes);
+
 ?>
 <style>
     .card{
@@ -202,7 +205,7 @@
     <h5 class="card-title">
         <div class="d-flex justify-content-between">
             <span>Simulações /Propostas</span>
-            <button class="btn btn-success btn-sm" simulacao>Verificar Saldo</button>
+            <button class="btn btn-success btn-sm" <?=(($cliente->cadastro_percentual < 100)?'pendentes':'simulacao')?>>Verificar Saldo</button>
         </div>
     </h5>
     <div class="card-text" style="min-height:400px;">
@@ -517,6 +520,17 @@
             })
 
         })  
+
+
+        $("button[simulacao]").click(function(){
+
+            $.alert({
+                title:"Pendência no Cadastro",
+                content:"Favor retornar a tela de cadastro e completar os dados pendentes:<p><?=$pendentes?></p>",
+                type:"orange",
+            })
+
+        }) 
 
 
         $("button[proposta]").click(function(){
