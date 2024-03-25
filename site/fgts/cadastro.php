@@ -432,6 +432,16 @@ $d = mysqli_fetch_object($result);
                 campos.push($(this).attr("id"));
             })
 
+            $("select[acao]").each(function(){
+                valor = $(this).val(); 
+                if(valor){
+                    conteudo.push(valor);
+                }else{
+                    pendentes.push($(this).parent("div").children("label").text());
+                }
+                campos.push($(this).attr("id"));
+            })
+
             qtcp = campos.length;
             qtct = conteudo.length;
 
