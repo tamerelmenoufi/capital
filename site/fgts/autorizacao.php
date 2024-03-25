@@ -2,7 +2,7 @@
 
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-mysqli_query($con, "update cliente set pre_cadastro = NOW() where pre_cadastro = 0 and codigo = '{$_SESSION['codUsr']}'");
+mysqli_query($con, "update clientes set pre_cadastro = NOW() where pre_cadastro = 0 and codigo = '{$_SESSION['codUsr']}'");
 
 if($_POST['acao'] == 'salvar'){
 
