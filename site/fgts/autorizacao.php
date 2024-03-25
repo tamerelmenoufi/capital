@@ -2,6 +2,16 @@
 
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+if($_POST['acao'] == 'autorizacao'){
+    if($_POST['autorizacao'] == 'marcar'){
+        $autorizacao_vctex = "NOW()",
+    }else{
+        $autorizacao_vctex = "0",
+    }
+    mysqli_query($con, "update clientes set autorizacao_vctex = {$autorizacao_vctex} where codigo = '{$_SESSION['codUsr']}'");
+
+}
+
 mysqli_query($con, "update clientes set pre_cadastro = NOW() where pre_cadastro = 0 and codigo = '{$_SESSION['codUsr']}'");
 
 if($_POST['acao'] == 'salvar'){
@@ -61,6 +71,11 @@ $d = mysqli_fetch_object($result);
         
         <img src="fgts/img/passo_a_passo.png" class="img-fluid" alt="Passo a Passo">
 
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="autorizacao">
+            <label class="form-check-label" for="autorizacao" <?=(($d->autorizacao_vctex > 0)?'checked':false)?>>Marque aqui, caso tenha realizado a autorização dos parceiros do banco.</label>
+        </div>
+
         <div class="mt-2">
             <button class="btn btn-primary btn-sm" local="fgts/cadastro.php"><i class="fa-solid fa-angles-right"></i> Realizar o Cadastro Completo</button>
         </div>
@@ -77,6 +92,23 @@ $d = mysqli_fetch_object($result);
     $(function(){
 
         $("#cpf").mask("999.999.999-99");
+
+        $("#autorizacao").click(function(){
+            opc = (($(this).prop("checked") == true)?'marcar':'desmarcar');
+            $.ajax({
+            url:"fgts/autorizacao.php",
+            type:"POST",
+            data:{
+                autorizacao:opc,
+                acao:'autorizacao'
+            },
+            success:function(dados){
+                // $(".palco").html(dados);
+                console.log(dados)
+            }
+        })
+        })
+
 
         <?php
         if($_SESSION['codUsr']){
