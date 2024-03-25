@@ -580,12 +580,16 @@ $d = mysqli_fetch_object($result);
 
             url = $(this).attr("local");
 
-            $.ajax({
-                url,
-                success:function(dados){
-                    $(".palco").html(dados);
-                }
-            })
+            setTimeout(() => {
+
+                $.ajax({
+                    url,
+                    success:function(dados){
+                        $(".palco").html(dados);
+                    }
+                })  
+                              
+            }, 2000);
 
         })
 
