@@ -84,7 +84,7 @@ $d = mysqli_fetch_object($result);
         
         <span style="color:#a1a1a1">Barra de preenchimento</span>
         <div class="progress mb-3">
-            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+            <div class="progress-bar progress-bar-striped" id="progresso" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
         </div>
 
 
@@ -424,6 +424,14 @@ $d = mysqli_fetch_object($result);
             qtcp = campos.length;
             qtct = conteudo.length;
 
+            pct = ((qtcp*qtct)/100).indexOf(0);
+
+            //style="width: 10%" aria-valuenow="10"
+            $("#progresso").attr("aria-valuenow", pct);
+            $("#progresso").html(pct);
+            $("#progresso").css("width", pct);
+
+
             console.log(`Temos ${qtct} do total de ${qtcp}`)
 
         }
@@ -467,6 +475,8 @@ $d = mysqli_fetch_object($result);
                         })
                         $("#cpf").val('');
                     }
+
+                    preenchimento();
                 }
             })
         })
