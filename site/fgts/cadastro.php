@@ -9,7 +9,8 @@ $siglas = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MG','PA','PB'
 
 if($_POST['acao'] == 'cadastro_percentual'){
 
-    $query = "update clientes set cadastro_percentual = '{$_POST['cadastro_percentual']}' where codigo = '{$_SESSION['codUsr']}'";
+    $campos_pendentes = json_encode($_POST['campos_pendentes']);
+    $query = "update clientes set cadastro_percentual = '{$_POST['cadastro_percentual']}', campos_pendentes='{$campos_pendentes}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
     exit();
 
@@ -419,11 +420,14 @@ $d = mysqli_fetch_object($result);
 
         function preenchimento(){
             campos = [];
-            conteudo = []
+            conteudo = [];
+            pendentes = [];
             $("input[acao]").each(function(){
                 valor = $(this).val(); 
                 if(valor){
                     conteudo.push(valor);
+                }else{
+                    pendentes.push($(this).parent("div").children("label").text());
                 }
                 campos.push($(this).attr("id"));
             })
@@ -444,7 +448,8 @@ $d = mysqli_fetch_object($result);
                 type:"POST",
                 data:{
                     cadastro_percentual:pct,
-                    acao:'cadastro_percentual'
+                    acao:'cadastro_percentual',
+                    campos_pendentes:pendentes
                 },
                 success:function(dados){
                     
