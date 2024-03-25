@@ -70,14 +70,14 @@ $d = mysqli_fetch_object($result);
         <p class="card-text">Preparamos um passo a passo pra você seguir e realizar a autorização de forma simples e prática.</p>
         
         <p class="card-text">1. Baixe e instale o aplicativo FGTS.</p>
-        <img src="fgts/img/passo_a_passo.png?1" class="img-fluid" alt="Passo a Passo">
+        <img src="fgts/img/app_fgts.png?1" class="img-fluid" alt="Passo a Passo">
 
         <p class="card-text">2. Autorize essas duas instituições:</p>
         <p class="card-text">QI SOCIEDADE DE CREDITO DIRETO S.A.</p>
         <p class="card-text">CDC SOCEDADE DE CREDITO AO MICROEMPREENDEDOR X E A EMPRESA DE PEQUENO PORTE LTDA</p>
+        <img src="fgts/img/passo_a_passo.png?1" class="img-fluid" alt="Passo a Passo">
         <p class="card-text">3. Logo em seguida clique em CONFIRMAR</p>
         
-
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" <?=(($d->autorizacao_vctex > 0)?'checked disabled':' id="autorizacao"')?>>
             <label class="form-check-label" for="autorizacao">Marque aqui, caso tenha realizado a autorização dos parceiros do banco.</label>
