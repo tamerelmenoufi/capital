@@ -55,8 +55,8 @@
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td><?=$d->phoneNumber?></td>
-                  <td><?=dataBr($d->data_cadastro)?></td>
                   <td><?=$d->motherName?></td>
+                  <td><?=dataBr($d->data_cadastro)?></td>
                   <!-- <td>
 
                   <div class="form-check form-switch">
