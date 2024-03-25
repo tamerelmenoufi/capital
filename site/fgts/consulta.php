@@ -168,7 +168,7 @@
     $cliente = mysqli_fetch_object($result);
 
     $pendentes = json_decode($cliente->campos_pendentes);
-    $pendentes = explode("<br>", $pendentes);
+    if($pendentes) $pendentes = implode("<br>", $pendentes);
 
 ?>
 <style>
