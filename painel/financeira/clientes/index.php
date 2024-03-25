@@ -69,9 +69,9 @@
                     <button vctex="<?=$d->cpf?>" class="btn btn-warning">
                       VCTEX
                     </button>
-                    <button facta="<?=$d->cpf?>" class="btn btn-warning">
+                    <!-- <button facta="<?=$d->cpf?>" class="btn btn-warning">
                       FACTA
-                    </button>
+                    </button> -->
 
                     <button
                       class="btn btn-primary"
