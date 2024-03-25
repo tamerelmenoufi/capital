@@ -301,7 +301,7 @@ $d = mysqli_fetch_object($result);
                 </div>
 
 
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label class="form-label" for="renda">Renda*</label>
                     <input acao type="text" name="renda" id="renda" class="form-control" placeholder="Cidade" value="<?=$d->renda?>">
                     <div id="nome" class="form-text"></div>
@@ -311,9 +311,9 @@ $d = mysqli_fetch_object($result);
                     <label class="form-label" for="valor_patrimonio">Valor do Patrimônio*</label>
                     <input acao type="text" name="valor_patrimonio" id="valor_patrimonio" class="form-control" placeholder="Cidade" value="<?=$d->valor_patrimonio?>">
                     <div id="nome" class="form-text"></div>
-                </div>
+                </div> -->
                 
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label class="form-label" for="cliente_iletrado_impossibilitado">Cliente Iletrado Impossibilitado*</label>
                     <select acao name="cliente_iletrado_impossibilitado" id="cliente_iletrado_impossibilitado" class="form-select">
                         <option value="">:: Selecione ::</option>
@@ -321,7 +321,7 @@ $d = mysqli_fetch_object($result);
                         <option value="sim" <?=(($d->cliente_iletrado_impossibilitado == 'sim')?'selected':false)?>>Sim</option>
                     </select>
                     <div id="nome" class="form-text"></div>
-                </div>
+                </div> -->
 
 
 
