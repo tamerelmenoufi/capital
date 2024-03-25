@@ -473,10 +473,12 @@ $d = mysqli_fetch_object($result);
 
         preenchimento();
 
-        $("input[acao], select[acao]").blur(function(){
-            campo = $(this).attr("id");
-            valor = $(this).val();
-            tipo = $(this).attr("tipo");
+
+        function mudanca(obj){
+
+            campo = obj.attr("id");
+            valor = obj.val();
+            tipo = obj.attr("tipo");
             if(campo == 'cpf'){
 
                 if(!validarCPF(valor)){
@@ -514,6 +516,14 @@ $d = mysqli_fetch_object($result);
                     preenchimento();
                 }
             })
+        }
+
+        $("input[acao]").blur(function(){
+            mudanca($(this));
+        })
+
+        $("select[acao]").change(function(){
+            mudanca($(this));
         })
 
         $(".sair").click(function(){
