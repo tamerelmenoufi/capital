@@ -18,8 +18,8 @@ if($_GET['cod']){
     while($d = mysqli_fetch_object($result)){
     ?>
     <div class="carousel-item <?=(($active)?'active':false)?>">
-            <img banner="./fgts.php" src="<?=$localPainel?>site/volume/banners/<?=$d->imagem?>" alt="" class="d-block w-100 d-none d-md-block">
-            <img banner="./fgts.php" src="<?=$localPainel?>site/volume/banners/<?=$d->imagem_mb?>" alt="" class="d-block w-100 d-block d-md-none">
+            <img banner="<?=(($d->url)?:"#")?>" src="<?=$localPainel?>site/volume/banners/<?=$d->imagem?>" alt="" class="d-block w-100 d-none d-md-block">
+            <img banner="<?=(($d->url)?:"#")?>" src="<?=$localPainel?>site/volume/banners/<?=$d->imagem_mb?>" alt="" class="d-block w-100 d-block d-md-none">
     </div><!-- End Carousel Item -->
     <?php
     $active = false;
