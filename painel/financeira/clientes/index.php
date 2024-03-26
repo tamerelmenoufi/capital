@@ -14,10 +14,7 @@
 ?>
 <style>
   .legenda_status{
-    width:10px;
-    height:100%;
-    background-color:#ccc;
-    border:0;
+    border-left:10px solid red;
   }
 </style>
 <div class="col">
@@ -76,8 +73,7 @@
                   <td><?=$d->phoneNumber?></td>
                   <!-- <td><?=$d->motherName?></td> -->
                   <td><?=dataBr($d->data_cadastro)?></td>
-                  <td>
-                    <hr class="legenda_status">
+                  <td class="legenda_status">
                     <?=$situacao?>
                   </td>
                   <!-- <td>
