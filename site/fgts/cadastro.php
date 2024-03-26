@@ -30,7 +30,7 @@ if($_POST['acao'] == 'salvar'){
     if($_POST['tipo'] == 'data'){
         $valor = dataMysql($_POST['valor']);
     }else{
-        $valor = $_POST['valor'];
+        $valor = addslashes($_POST['valor']);
     }
 
     $query = "update clientes set {$_POST['campo']} = '{$valor}' where codigo = '{$_SESSION['codUsr']}'";
