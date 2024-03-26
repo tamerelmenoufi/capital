@@ -61,10 +61,17 @@
 
                     if($log->statusCode){
                       $situacao = "{$log->statusCode} - {$log->message}";
+                      $cor:"orange";
                     }else if($log->proposalStatusId){
                       $situacao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
+                      if($log->proposalStatusId == 130){
+                        $cor="green";
+                      }else{
+                        $cor="red";
+                      }
                     }else{
                       $situacao = "000 - Cliente sem movimentação";
+                      $cor:"#ccc";
                     }
 
                 ?>
@@ -74,7 +81,7 @@
                   <td><?=$d->phoneNumber?></td>
                   <!-- <td><?=$d->motherName?></td> -->
                   <td><?=dataBr($d->data_cadastro)?></td>
-                  <td class="legenda_status">
+                  <td class="legenda_status" style="border-left-color:<?=$cor?>;">
                     <?=$situacao?>
                   </td>
                   <!-- <td>
