@@ -11,6 +11,7 @@
         global $con;
         $query = "insert into `consultas_log` set 
                                             consulta = '{$dados['proposta']}',
+                                            cliente = (select cliente from consulta where codigo = '{$dados['proposta']}'),
                                             data = NOW(),
                                             sessoes = '".json_encode($_SESSION)."',
                                             log = '{$dados['consulta']}'";

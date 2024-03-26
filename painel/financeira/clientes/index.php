@@ -41,15 +41,19 @@
                   <th scope="col">Telefone</th>
                   <th scope="col">Nome da Mãe</th>
                   <th scope="col">Data de Cadastro</th>
+                  <th scope="col">Situação</th>
                   <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from clientes order by data_cadastro desc";
+                  $query = "select a.*/*, (select log from consultas_log where )*/ from clientes a order by a.data_cadastro desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
+
+
+
                 ?>
                 <tr>
                   <td><?=$d->nome?></td>
@@ -57,6 +61,7 @@
                   <td><?=$d->phoneNumber?></td>
                   <td><?=$d->motherName?></td>
                   <td><?=dataBr($d->data_cadastro)?></td>
+                  <td><?=$situacao?></td>
                   <!-- <td>
 
                   <div class="form-check form-switch">
