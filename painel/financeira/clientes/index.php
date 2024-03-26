@@ -39,7 +39,7 @@
                   <th scope="col">Nome</th>
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
-                  <th scope="col">Nome da Mãe</th>
+                  <!-- <th scope="col">Nome da Mãe</th> -->
                   <th scope="col">Data de Cadastro</th>
                   <th scope="col">Situação</th>
                   <!-- <th scope="col">Situação</th> -->
@@ -67,7 +67,7 @@
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td><?=$d->phoneNumber?></td>
-                  <td><?=$d->motherName?></td>
+                  <!-- <td><?=$d->motherName?></td> -->
                   <td><?=dataBr($d->data_cadastro)?></td>
                   <td><?=$situacao?></td>
                   <!-- <td>
