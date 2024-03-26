@@ -15,6 +15,8 @@
 <style>
   .legenda_status{
     border-left:10px solid red;
+    border-top:solid 1px var(--bs-border-color);
+    border-bottom:solid 1px var(--bs-border-color);
   }
 </style>
 <div class="col">
