@@ -6,6 +6,18 @@
         return str_replace($remove, false, $v);
     }
 
+    function consulta_logs($dados){
+        global $_SESSION;
+        global $con;
+        $query = "insert into `consultas_log` set 
+                                            consulta = '{$dados['proposta']}',
+                                            data = NOW(),
+                                            sessoes = '".json_encode($_SESSION)."',
+                                            log = '{$dados['consulta']}'";
+
+        $result = mysqli_query($con, $query);
+    }
+
     $vctex = new Vctex;
 
     $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
@@ -39,6 +51,11 @@
         $retorno = json_decode($consulta);
         $status_cod = $retorno->proposalStatusId;
         $status_msg = $retorno->proposalStatusDisplayTitle;
+
+        consulta_logs([
+            'proposta' => $_POST['atualiza_proposta'],
+            'consulta' => $consulta
+        ]);
 
         $query = "update `consultas` set 
                                         proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
@@ -93,6 +110,13 @@
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
+
+
+        consulta_logs([
+            'proposta' => mysqli_insert_id($con),
+            'consulta' => $simulacao
+        ]);
+
         // exit();
 
     }
@@ -152,6 +176,11 @@
                             \"branchNumber\": \"".numero($d->branchNumber)."\"
                             }
                         }"
+        ]);
+
+        consulta_logs([
+            'proposta' => $_POST['proposta'],
+            'consulta' => $proposta
         ]);
 
         $query = "update consultas set 

@@ -6,6 +6,18 @@
         return str_replace($remove, false, $v);
     }
 
+    function consulta_logs($dados){
+        global $_SESSION;
+        global $con;
+        $query = "insert into `consultas_log` set 
+                                            consulta = '{$dados['proposta']}',
+                                            data = NOW(),
+                                            sessoes = '".json_encode($_SESSION)."',
+                                            log = '{$dados['consulta']}'";
+
+        $result = mysqli_query($con, $query);
+    }
+
     $vctex = new Vctex;
 
     $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
@@ -46,6 +58,11 @@
         $retorno = json_decode($consulta);
         $status_cod = $retorno->proposalStatusId;
         $status_msg = $retorno->proposalStatusDisplayTitle;
+
+        consulta_logs([
+            'proposta' => $_POST['atualiza_proposta'],
+            'consulta' => $consulta
+        ]);
 
         $query = "update `consultas` set 
                                         proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
@@ -111,6 +128,11 @@
         mysqli_query($con, $query);
         // exit();
 
+        consulta_logs([
+            'proposta' => mysqli_insert_id($con),
+            'consulta' => $simulacao
+        ]);
+
     }
 
     if($_POST['acao'] == 'proposta'){
@@ -129,50 +151,6 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
-
-        // echo "{
-        //     \"feeScheduleId\": {$d->tabela},
-        //     \"financialId\": \"{$d->financialId}\",
-        //     \"borrower\": {
-        //     \"name\": \"{$d->nome}\",
-        //     \"cpf\": \"".numero($d->cpf)."\",
-        //     \"birthdate\": \"{$d->birthdate}\",
-        //     \"gender\": \"{$d->gender}\",
-        //     \"phoneNumber\": \"".numero($d->phoneNumber)."\",
-        //     \"email\": \"{$d->email}\",
-        //     \"maritalStatus\": \"{$d->maritalStatus}\",
-        //     \"nationality\": \"{$d->nationality}\",
-        //     \"naturalness\": \"{$d->naturalness}\",
-        //     \"motherName\": \"{$d->motherName}\",
-        //     \"fatherName\": \"{$d->fatherName}\",
-        //     \"pep\": {$d->pep}
-        //     },
-        //     \"document\": {
-        //     \"type\": \"{$d->document_type}\",
-        //     \"number\": \"".numero($d->document_number)."\",
-        //     \"issuingState\": \"{$d->document_issuingState}\",
-        //     \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
-        //     \"issueDate\": \"{$d->document_issueDate}\"
-        //     },
-        //     \"address\": {
-        //     \"zipCode\": \"".numero($d->address_zipCode)."\",
-        //     \"street\": \"{$d->address_street}\",
-        //     \"number\": \"{$d->address_number}\",
-        //     \"complement\": null,
-        //     \"neighborhood\": \"{$d->address_neighborhood}\",
-        //     \"city\": \"{$d->address_city}\",
-        //     \"state\": \"{$d->address_state}\"
-        //     },
-        //     \"disbursementBankAccount\": {
-        //     \"bankCode\": \"".numero($d->bankCode)."\",
-        //     \"accountType\": \"".numero($d->accountType)."\",
-        //     \"accountNumber\": \"".numero($d->accountNumber)."\",
-        //     \"accountDigit\": \"".numero($d->accountDigit)."\",
-        //     \"branchNumber\": \"".numero($d->branchNumber)."\"
-        //     }
-        // }";
-
-            // cpf,phoneNumber,document_number, zipCode, bankCode, accountNumber, accountDigit, branchNumber
         $proposta = $vctex->Credito([
             'token' => $token,
             'json' => "{
@@ -223,6 +201,11 @@
                     where codigo = '{$_POST['proposta']}'
                 ";
         mysqli_query($con, $query);
+
+        consulta_logs([
+            'proposta' => $_POST['proposta'],
+            'consulta' => $proposta
+        ]);
 
     }
 
