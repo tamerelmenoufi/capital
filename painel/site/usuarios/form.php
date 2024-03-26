@@ -78,9 +78,9 @@
                 ?>
                 <div class="form-floating mb-3">
                     <select name="perfil" class="form-control" id="perfil">
-                        <option value="usr" <?=(($d->perfil == 'usr')?'selected':false)?>>Usuário</option>
                         <option value="adm" <?=(($d->perfil == 'adm')?'selected':false)?>>Administrador</option>
-                        <option value="crd" <?=(($d->perfil == 'crd')?'selected':false)?>>Coordenador</option>
+                        <option value="site" <?=(($d->perfil == 'site')?'selected':false)?>>Site</option>
+                        <option value="financeiro" <?=(($d->perfil == 'financeiro')?'selected':false)?>>Financeiro</option>
                     </select>
                     <label for="email">Perfil</label>
                 </div>
