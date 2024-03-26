@@ -120,7 +120,7 @@ if($_POST['telefone']){
                 success:function(dados){
                     codigo = dados.codigo
                     if(codigo){
-                        // localStorage.setItem("codUsr", codigo);
+                        localStorage.setItem("codUsr", codigo);
                         $.ajax({
                             url:"fgts/confirma_acesso.php",
                             type:"POST",
