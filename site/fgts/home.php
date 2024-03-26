@@ -12,8 +12,8 @@ if($_POST['acao'] == 'salvar'){
             exit();
         }
     }
-
-    $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSION['codUsr']}'";
+    $valor = addslashes($_POST['valor']);
+    $query = "update clientes set {$_POST['campo']} = '{$valor}' where codigo = '{$_SESSION['codUsr']}'";
     mysqli_query($con, $query);
     echo 'success';
     exit();
