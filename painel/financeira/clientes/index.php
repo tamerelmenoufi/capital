@@ -61,7 +61,7 @@
 
                     if($log->statusCode){
                       $situacao = "{$log->statusCode} - {$log->message}";
-                      $cor:"orange";
+                      $cor="orange";
                     }else if($log->proposalStatusId){
                       $situacao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
                       if($log->proposalStatusId == 130){
@@ -71,7 +71,7 @@
                       }
                     }else{
                       $situacao = "000 - Cliente sem movimentação";
-                      $cor:"#ccc";
+                      $cor="#ccc";
                     }
 
                 ?>
