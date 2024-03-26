@@ -12,7 +12,14 @@
       exit();
     }
 ?>
-
+<style>
+  .legenda_status{
+    width:10px;
+    height:100%;
+    background-color:#ccc;
+    border:0;
+  }
+</style>
 <div class="col">
   <div class="m-3">
 
@@ -69,7 +76,10 @@
                   <td><?=$d->phoneNumber?></td>
                   <!-- <td><?=$d->motherName?></td> -->
                   <td><?=dataBr($d->data_cadastro)?></td>
-                  <td><?=$situacao?></td>
+                  <td>
+                    <span class="legenda_status"></span>
+                    <?=$situacao?>
+                  </td>
                   <!-- <td>
 
                   <div class="form-check form-switch">
