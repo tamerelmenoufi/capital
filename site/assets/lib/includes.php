@@ -7,5 +7,5 @@
     // $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/painel/";
     // $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/site/";
 
-    $localPainel = "https://capital.mohatron.com/painel/";
-    $localSite = "https://capital.mohatron.com/site/";
+    $localPainel = "https://painel.capitalsolucoesam.com.br/";
+    $localSite = "https://capitalsolucoesam.com.br/";
