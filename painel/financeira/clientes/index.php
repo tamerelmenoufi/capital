@@ -59,7 +59,7 @@
                     }else if($log->proposalStatusId){
                       $situacao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
                     }else{
-                      $situacao = "Cliente sem movimentação";
+                      $situacao = "000 - Cliente sem movimentação";
                     }
 
                 ?>
