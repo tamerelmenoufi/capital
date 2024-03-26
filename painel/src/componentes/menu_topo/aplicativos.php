@@ -38,14 +38,18 @@
         <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown2">
             <li class="MenuLogin">
                 <div class="row">
-
+                <?php
+                if($_SESSION['ProjectPainel']->perfil == 'adm' or $_SESSION['ProjectPainel']->perfil == 'financeiro'){
+                ?>
                     <div class="col-4">
                         <div app="financeira" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
                             <h3><i class="fa-solid fa-hand-holding-dollar"></i></h3>
                             <span>Financeira</span>
                         </div>
                     </div>
-
+                <?php
+                }
+                ?>
                     <!-- <div class="col-4">
                         <div app="email" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
                             <h3><i class="fa-solid fa-envelope-open-text"></i></h3>
@@ -59,14 +63,18 @@
                             <span>Agenda</span>
                         </div>
                     </div> -->
-
+                    <?php
+                    if($_SESSION['ProjectPainel']->perfil == 'adm' or $_SESSION['ProjectPainel']->perfil == 'site'){
+                    ?>
                     <div class="col-4">
                         <div app="site" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
                             <h3><i class="fa-solid fa-house"></i></h3>
                             <span>Site</span>
                         </div>
                     </div>
-
+                    <?php
+                    }
+                    ?>
                     <!-- <div class="col-4">
                         <div app="chats" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
                             <h3><i class="fa-regular fa-comments"></i></h3>

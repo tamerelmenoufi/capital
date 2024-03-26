@@ -7,10 +7,14 @@
         exit();
     }
 
-    $app = (($_GET['app'])?:'site');
+    $app = (($_GET['app'])?:'financeiro');
 
-    if($_SESSION['ProjectPainel']){
+    if($_SESSION['ProjectPainel']->perfil == 'adm'){
         $url = "{$app}/home/index.php";
+    }else if($_SESSION['ProjectPainel']->perfil == 'financeiro'){
+        $url = "financeiro/home/index.php";
+    }else if($_SESSION['ProjectPainel']->perfil == 'site'){
+        $url = "site/home/index.php";
     }else{
         $url = "src/login/index.php";
     }
