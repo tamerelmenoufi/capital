@@ -48,7 +48,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*/*, (select log from consultas_log where )*/ from clientes a order by a.data_cadastro desc";
+                  $query = "select a.*, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a order by a.data_cadastro desc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
 
