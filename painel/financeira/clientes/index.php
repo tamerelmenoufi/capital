@@ -39,7 +39,7 @@
                 >Novo</button>
             </div>
 
-<div class="table-responsive">
+            <div class="table-responsive">
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
@@ -77,7 +77,7 @@
                   <!-- <td><?=$d->motherName?></td> -->
                   <td><?=dataBr($d->data_cadastro)?></td>
                   <td>
-                    <span class="legenda_status"></span>
+                    <hr class="legenda_status">
                     <?=$situacao?>
                   </td>
                   <!-- <td>
