@@ -19,12 +19,12 @@
 
     $md5 = md5(date("YmdHis"));
 
-    $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/painel/";
-    $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/site/";
+    // $localPainel = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/painel/";
+    // $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/site/";
 
-    $localPainel = "http://capital.mohatron.com/painel/";
-    $localSite = "http://capital.mohatron.com/site/";
+    // $localPainel = "http://capital.mohatron.com/painel/";
+    // $localSite = "http://capital.mohatron.com/site/";
 
 
-    $localPainel = "http://painel.capitalsolucoesam.com.br/";
-    $localSite = "http://capitalsolucoesam.com.br/";
+    $localPainel = "https://painel.capitalsolucoesam.com.br/";
+    $localSite = "https://capitalsolucoesam.com.br/";
