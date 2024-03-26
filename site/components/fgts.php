@@ -95,12 +95,25 @@
             codUsr = localStorage.getItem("codUsr");
 
             if(codUsr){
+
+
                 $.ajax({
-                    url:"fgts/home.php",
+                    url:"fgts/sessao.php",
+                    type:"POST",
+                    data:{
+                        codUsr
+                    },
                     success:function(dados){
-                        $(".palco").html(dados);
+                        $.ajax({
+                            url:"fgts/home.php",
+                            success:function(dados){
+                                $(".palco").html(dados);
+                            }
+                        })
                     }
-                })
+                })   
+
+
             }else{
                 $.ajax({
                     url:"fgts/login.php",
