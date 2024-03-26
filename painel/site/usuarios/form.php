@@ -100,7 +100,7 @@
                 if($d->codigo != 1 and $_SESSION['ProjectPainel']->perfil == 'adm' ){
                 ?>
 
-                <div class="form-floating mb-3">
+                <!-- <div class="form-floating mb-3">
                     <select name="coordenador" id="coordenador" class="form-control" placeholder="Coordenador">
                         <option value="">::Selecione o Coordenador::</option>
                         <?php
@@ -114,7 +114,7 @@
                         ?>
                     </select>
                     <label for="coordenador">Coordenador</label>
-                </div>
+                </div> -->
 
                 <div class="form-floating mb-3">
                     <select name="situacao" class="form-control" id="situacao">
