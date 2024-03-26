@@ -52,7 +52,15 @@
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
 
+                    $log = json_decode($d->log);
 
+                    if($log->statusCode){
+                      $situacao = "{$log->statusCode} - {$log->message}";
+                    }else if($log->proposalStatusId){
+                      $situacao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
+                    }else{
+                      $situacao = "Cliente sem movimentação";
+                    }
 
                 ?>
                 <tr>
