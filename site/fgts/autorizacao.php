@@ -62,11 +62,11 @@ $d = mysqli_fetch_object($result);
 
 <div class="card" data-aos="zoom-in" data-aos-delay="200">
     <div class="card-header">
-        Autorização para FGTS
+        Autorização saldo FGTS
     </div>
     <div class="card-body">
         <h5 class="card-title">Tela de Autorização</h5>
-        <p class="card-text">Antes de fazer a suas simulações e contratação de antecipação do FGTS, é necessário que autorize os bancos parceiros que possibilitam o acessos do seu saldo na CAIXA.</p>
+        <p class="card-text">Antes de fazer a suas simulações e contratação de antecipação do FGTS, é necessário que autorize os bancos parceiros que possibilitam o acessos do seu saldo de antecipação do FGTS na CAIXA.</p>
         <p class="card-text">Preparamos um passo a passo pra você seguir e realizar a autorização de forma simples e prática.</p>
         
         <p class="card-text">1. Baixe e instale o aplicativo FGTS.</p>
