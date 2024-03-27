@@ -145,7 +145,7 @@ $d = mysqli_fetch_object($result);
         }
 
         //verificação da autorização
-        if($d->cadastro_completo > 0){
+        if($d->cadastro_percentual == 100){
         ?>
             $(`i[etapa="fgts/consulta.php"], div[etapa="fgts/consulta.php"]`).attr("acao", "lib");
         <?php
