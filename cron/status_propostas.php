@@ -3,11 +3,16 @@
 
     function consulta_logs($dados){
         global $con;
-        echo $query = "insert into `consultas_log` set 
+        $sessoes = [
+            $dados['proposta'],
+            $dados['codUsr'],
+            $dados['consulta']
+        ];
+        $query = "insert into `consultas_log` set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
-                                            sessoes = '".json_encode($dados)."',
+                                            sessoes = '".json_encode($sessoes)."',
                                             log = '{$dados['consulta']}'";
 
         $result = mysqli_query($con, $query);
