@@ -55,15 +55,16 @@
                 <div class="fluxo">
                     <div class="linha2"></div>
                     <div class="linha"></div>
-                    <i etapa="fgts/home.php" class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
-                    <i etapa="fgts/autorizacao.php" class="fa-regular fa-circle etapas" style="left:calc(33% - 20px)"></i>
-                    <i etapa="fgts/cadastro.php" class="fa-regular fa-circle etapas" style="left:calc(66% - 20px)"></i>
-                    <i etapa="fgts/consulta.php" class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
-                    <div etapa="fgts/home.php" class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
-                    <div etapa="fgts/autorizacao.php" class="legenda" style="left:calc(33% - 50px)">Autorização<br>Para FGTS</div>
-                    <div etapa="fgts/cadastro.php" class="legenda" style="left:calc(66% - 50px)">Cadastro<br>Completo</div>
-                    <div etapa="fgts/consulta.php" class="legenda" style="left:calc(100% - 65px)">Antecipação<br>FGTS</div>
+                    <i etapa="fgts/home.php" acao="blq" class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
+                    <i etapa="fgts/autorizacao.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(33% - 20px)"></i>
+                    <i etapa="fgts/cadastro.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(66% - 20px)"></i>
+                    <i etapa="fgts/consulta.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
+
+                    <div etapa="fgts/home.php" acao="blq" class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
+                    <div etapa="fgts/autorizacao.php" acao="blq" class="legenda" style="left:calc(33% - 50px)">Autorização<br>Para FGTS</div>
+                    <div etapa="fgts/cadastro.php" acao="blq" class="legenda" style="left:calc(66% - 50px)">Cadastro<br>Completo</div>
+                    <div etapa="fgts/consulta.php" acao="blq" class="legenda" style="left:calc(100% - 65px)">Antecipação<br>FGTS</div>
 
                 </div>
             </div>
@@ -140,6 +141,8 @@
 
             $("i[etapa], div[etapa]").click(function(){
                 url = $(this).attr("etapa");
+                acao = $(this).attr("acao");
+                if(acao == 'blq') return false;
                 $.ajax({
                     url,
                     success:function(dados){
