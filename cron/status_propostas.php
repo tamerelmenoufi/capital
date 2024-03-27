@@ -35,13 +35,11 @@
     }
 
 
-
-
     $query = "select *, proposta->>'$.data.proposalId' as proposalId from consultas where proposta->>'$.statusCode' in ('200', '60')";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
-        echo $consulta = $vctex->Conculta([
+        $consulta = $vctex->Conculta([
             'token' => $token,
             'proposalId' => $d->proposalId
         ]);
@@ -49,17 +47,17 @@
         $status_cod = $retorno->proposalStatusId;
         $status_msg = $retorno->proposalStatusDisplayTitle;
 
-        // consulta_logs([
-        //     'proposta' => $d->codigo,
-        //     'consulta' => $consulta,
-        //     'codUsr' => $d->cliente
-        // ]);
+        consulta_logs([
+            'proposta' => $d->codigo,
+            'consulta' => $consulta,
+            'codUsr' => $d->cliente
+        ]);
 
-        // $query = "update `consultas` set 
-        //                                 proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
-        //                                 proposta = JSON_SET(proposta, '$.message', '{$status_msg}')
-        //                 where codigo = '{$d->codigo}'";
+        $query = "update `consultas` set 
+                                        proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
+                                        proposta = JSON_SET(proposta, '$.message', '{$status_msg}')
+                        where codigo = '{$d->codigo}'";
 
-        // $result = mysqli_query($con, $query);
+        $result = mysqli_query($con, $query);
 
     }
