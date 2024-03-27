@@ -272,30 +272,29 @@ $d = mysqli_fetch_object($result);
         })
 
         $("button[local]").click(function(){
-
-            url = $(this).attr("local");
-console.log(`${url}`);
-            nome = $("#nome").val();
-            cpf = $("#cpf").val();
+            $.alert('acao')
+            // url = $(this).attr("local");
+            // nome = $("#nome").val();
+            // cpf = $("#cpf").val();
 
             
 
-            if(!nome || !cpf){
-                $.alert({
-                    title:'Dados Incompletos',
-                    content:"Para prosseguir é necessáro preencher os dados completos do formulário.",
-                    type:'red'
-                });
+            // if(!nome || !cpf){
+            //     $.alert({
+            //         title:'Dados Incompletos',
+            //         content:"Para prosseguir é necessáro preencher os dados completos do formulário.",
+            //         type:'red'
+            //     });
 
-                return false;
-            }
+            //     return false;
+            // }
 
-            $.ajax({
-                url,
-                success:function(dados){
-                    $(".palco").html(dados);
-                }
-            })
+            // $.ajax({
+            //     url,
+            //     success:function(dados){
+            //         $(".palco").html(dados);
+            //     }
+            // })
 
         })
 
