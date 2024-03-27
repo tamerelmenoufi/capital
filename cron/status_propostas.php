@@ -4,11 +4,11 @@
     function consulta_logs($dados){
         global $con;
         $sessoes = [
-            $dados['proposta'],
-            $dados['codUsr'],
-            $dados['consulta']
+            'proposta' => $dados['proposta'],
+            'codUsr' => $dados['codUsr'],
+            'acao' => 'cron'
         ];
-        echo $query = "insert into `consultas_log` set 
+        $query = "insert into `consultas_log` set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
