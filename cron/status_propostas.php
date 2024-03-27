@@ -35,7 +35,7 @@
     }
 
 
-    $query = "select *, proposta->>'$.data.proposalId' as proposalId from consultas where proposta->>'$.statusCode' in ('200', '60')";
+    echo $query = "select *, proposta->>'$.data.proposalId' as proposalId from consultas where proposta->>'$.statusCode' in ('200', '60')";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
