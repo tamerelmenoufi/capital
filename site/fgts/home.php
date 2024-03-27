@@ -278,14 +278,15 @@ $d = mysqli_fetch_object($result);
             nome = $("#nome").val();
             cpf = $("#cpf").val();
 
-            console.log(`${nome} & ${cpf}`);
+            console.log(`${nome} & ${cpf} & ${url}`);
 
             if(!nome || !cpf){
                 $.alert({
                     title:'Dados Incompletos',
                     content:"Para prosseguir é necessáro preencher os dados completos do formulário.",
                     type:'red'
-                })
+                });
+
                 return false;
             }
 
