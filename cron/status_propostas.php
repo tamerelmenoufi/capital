@@ -13,6 +13,8 @@
         $result = mysqli_query($con, $query);
     }
 
+    $vctex = new Vctex;
+
     $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
@@ -32,7 +34,7 @@
         }
     }
 
-    $vctex = new Vctex;
+
 
 
     $query = "select *, proposta->>'$.data.proposalId' as proposalId from consultas where proposta->>'$.statusCode' in ('200', '60')";
