@@ -29,7 +29,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
     </div>
     <div class="card-body">
         <h5 class="card-title">VOCÊ JÁ ANTECIPOU SEU FGTS?</h5>
-        <p class="card-text">Clique nas opções abaixo e vamos te explicar em detalhes do que precisa e como fazer.</p>
+        <p class="card-text">Clique em uma das opções abaixo e vamos te explicar em detalhes do que precisa e como fazer.</p>
         
         <div class="mt-2">
             <button class="btn btn-primary w-100" local="fgts/explicacao.php"><i class="fa-solid fa-angles-right"></i> NÃO, é a primeira vez</button>
