@@ -116,7 +116,7 @@
 
             }else{
                 $.ajax({
-                    url:"fgts/login.php",
+                    url:"fgts/<?=(($_GET['v'])?'index.php':'login.php')?>",
                     success:function(dados){
                         $(".palco").html(dados);
                     }
