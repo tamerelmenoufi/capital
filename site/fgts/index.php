@@ -36,7 +36,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         </div>
 
         <div class="mt-2">
-            <button class="btn btn-primary w-100" local="fgts/home.php"><i class="fa-solid fa-angles-right"></i> SIM, quero fazer nova consulta do saldo</button>
+            <button class="btn btn-primary w-100" local="fgts/login.php"><i class="fa-solid fa-angles-right"></i> SIM, quero fazer nova consulta do saldo</button>
         </div>
 
     </div>
