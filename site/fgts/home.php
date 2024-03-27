@@ -278,6 +278,8 @@ $d = mysqli_fetch_object($result);
             nome = $("#nome").val();
             cpf = $("#cpf").val();
 
+            console.log(`${nome} & ${cpf}`);
+
             if(!nome || !cpf){
                 $.alert({
                     title:'Dados Incompletos',
@@ -286,7 +288,7 @@ $d = mysqli_fetch_object($result);
                 })
                 return false;
             }
-            
+
             $.ajax({
                 url,
                 success:function(dados){
