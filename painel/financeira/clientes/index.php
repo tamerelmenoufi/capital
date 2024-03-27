@@ -41,6 +41,7 @@
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
+                  <th scope="col">#</th>
                   <th scope="col">Nome</th>
                   <th scope="col">CPF</th>
                   <th scope="col">Telefone</th>
@@ -55,6 +56,7 @@
                 <?php
                   $query = "select a.*, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a order by a.data_cadastro desc";
                   $result = mysqli_query($con, $query);
+                  $k = 1;
                   while($d = mysqli_fetch_object($result)){
 
                     $log = json_decode($d->log);
@@ -76,6 +78,7 @@
 
                 ?>
                 <tr>
+                  <td><?=$k?></td>
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td><?=$d->phoneNumber?></td>
@@ -117,6 +120,7 @@
                   </td>
                 </tr>
                 <?php
+                $k++;
                   }
                 ?>
               </tbody>
