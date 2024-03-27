@@ -408,9 +408,9 @@ $d = mysqli_fetch_object($result);
             $(`i[etapa="fgts/autorizacao.php"], div[etapa="fgts/autorizacao.php"]`).attr("acao", "lib");
             $(".linha").css("width","33%");
             $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-regular");
-            $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-solid");
+            $(`i[etapa="fgts/autorizacao.php"]`).addClass("fa-solid");
             $(`i[etapa="fgts/home.php"]`).removeClass("fa-regular");
-            $(`i[etapa="fgts/home.php"]`).removeClass("fa-solid");
+            $(`i[etapa="fgts/home.php"]`).addClass("fa-solid");
         <?php
         }else{
         ?>
@@ -418,9 +418,9 @@ $d = mysqli_fetch_object($result);
             $(`i[etapa="fgts/autorizacao.php"], div[etapa="fgts/autorizacao.php"]`).attr("acao", "blq");
             $(".linha").css("width","0%");
             $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-solid");
-            $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-regular");
+            $(`i[etapa="fgts/autorizacao.php"]`).addClass("fa-regular");
             $(`i[etapa="fgts/home.php"]`).removeClass("fa-solid");
-            $(`i[etapa="fgts/home.php"]`).removeClass("fa-regular");
+            $(`i[etapa="fgts/home.php"]`).addClass("fa-regular");
         <?php
         }
 
@@ -430,14 +430,14 @@ $d = mysqli_fetch_object($result);
             $(`i[etapa="fgts/cadastro.php"], div[etapa="fgts/cadastro.php"]`).attr("acao", "lib");
             $(".linha").css("width","66%");
             $(`i[etapa="fgts/cadastro.php"]`).removeClass("fa-regular");
-            $(`i[etapa="fgts/cadastro.php"]`).removeClass("fa-solid");
+            $(`i[etapa="fgts/cadastro.php"]`).addClass("fa-solid");
         <?php
         }else{
         ?>
             $(`i[etapa="fgts/cadastro.php"], div[etapa="fgts/cadastro.php"]`).attr("acao", "blq");
             $(".linha").css("width","33%");
             $(`i[etapa="fgts/cadastro.php"]`).removeClass("fa-solid");
-            $(`i[etapa="fgts/cadastro.php"]`).removeClass("fa-regular");
+            $(`i[etapa="fgts/cadastro.php"]`).addClass("fa-regular");
         <?php
         }
 
@@ -447,14 +447,14 @@ $d = mysqli_fetch_object($result);
             $(`i[etapa="fgts/consulta.php"], div[etapa="fgts/consulta.php"]`).attr("acao", "lib");
             $(".linha").css("width","100%");
             $(`i[etapa="fgts/consulta.php"]`).removeClass("fa-regular");
-            $(`i[etapa="fgts/consulta.php"]`).removeClass("fa-solid");
+            $(`i[etapa="fgts/consulta.php"]`).addClass("fa-solid");
         <?php
         }else{
         ?>
             $(`i[etapa="fgts/consulta.php"], div[etapa="fgts/consulta.php"]`).attr("acao", "blq");
             $(".linha").css("width","66%");
             $(`i[etapa="fgts/consulta.php"]`).removeClass("fa-solid");
-            $(`i[etapa="fgts/consulta.php"]`).removeClass("fa-regular");
+            $(`i[etapa="fgts/consulta.php"]`).addClass("fa-regular");
         <?php
         }
         
