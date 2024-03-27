@@ -8,7 +8,7 @@
             $dados['codUsr'],
             $dados['consulta']
         ];
-        $query = "insert into `consultas_log` set 
+        echo $query = "insert into `consultas_log` set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
@@ -59,7 +59,7 @@
                 'codUsr' => $d->cliente
             ]);
 
-            $query = "update `consultas` set 
+            echo $query = "update `consultas` set 
                                             proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
                                             proposta = JSON_SET(proposta, '$.message', '{$status_msg}')
                             where codigo = '{$d->codigo}'";
