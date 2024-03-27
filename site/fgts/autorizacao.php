@@ -127,9 +127,9 @@ $d = mysqli_fetch_object($result);
             $(`i[etapa="fgts/autorizacao.php"], div[etapa="fgts/autorizacao.php"]`).attr("acao", "lib");
             $(".linha").css("width","33%");
             $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-regular");
-            $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-solid");
+            $(`i[etapa="fgts/autorizacao.php"]`).addClass("fa-solid");
             $(`i[etapa="fgts/home.php"]`).removeClass("fa-regular");
-            $(`i[etapa="fgts/home.php"]`).removeClass("fa-solid");
+            $(`i[etapa="fgts/home.php"]`).addClass("fa-solid");
         <?php
         }else{
         ?>
@@ -137,9 +137,9 @@ $d = mysqli_fetch_object($result);
             $(`i[etapa="fgts/autorizacao.php"], div[etapa="fgts/autorizacao.php"]`).attr("acao", "blq");
             $(".linha").css("width","0%");
             $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-solid");
-            $(`i[etapa="fgts/autorizacao.php"]`).removeClass("fa-regular");
+            $(`i[etapa="fgts/autorizacao.php"]`).addClass("fa-regular");
             $(`i[etapa="fgts/home.php"]`).removeClass("fa-solid");
-            $(`i[etapa="fgts/home.php"]`).removeClass("fa-regular");
+            $(`i[etapa="fgts/home.php"]`).addClass("fa-regular");
         <?php
         }
 
