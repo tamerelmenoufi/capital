@@ -620,6 +620,15 @@ $d = mysqli_fetch_object($result);
 
             setTimeout(() => {
 
+                if($(`div[aria-valuenow]`).attr("aria-valuenow") != 100){
+                    $.alert({
+                        type:"red",
+                        title:"Erro Cadastro",
+                        content:"Para prosseguir é necessário o preenchimento do formulário completo."
+                    });
+                    return false;
+                }
+
                 $.ajax({
                     url,
                     success:function(dados){
