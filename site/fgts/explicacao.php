@@ -29,7 +29,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
     </div>
     <div class="card-body">
         <h5 class="card-title">Assista o vídeo que preparamos para você</h5>
-        <p class="card-text">Somos especialista em antecipação do FGTS e vamos lhe orientar de como obter o benefício. Assista com atenção o vídeo e conheça nossa empresa antes de prosseguir.</p>
+        <p class="card-text">Somos especialistas em antecipação do FGTS e vamos lhe orientar como obter o benefício. Assista com atenção o vídeo e conheça nossa empresa antes de prosseguir.</p>
         
         <div class="mt-2">
             Entrado do Vídeo
