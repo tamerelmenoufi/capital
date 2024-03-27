@@ -58,7 +58,7 @@
                     <i etapa="fgts/home.php" acao="blq" class="fa-solid fa-circle etapas" style="left:calc(0% - 5px)"></i>
                     <i etapa="fgts/autorizacao.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(25% - 15px)"></i>
                     <i etapa="fgts/cadastro.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(50% - 20px)"></i>
-                    <i etapa="fgts/cadastro.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(75% - 20px)"></i>
+                    <i etapa="fgts/cadastro.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(75% - 25px)"></i>
                     <i etapa="fgts/consulta.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
                     <div etapa="fgts/home.php" acao="blq" class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
