@@ -91,6 +91,7 @@ if($_POST['telefone']){
         $(".linha").css("width","0%");
         $("i[etapa]").removeClass("fa-solid");
         $("i[etapa]").addClass("fa-regular");
+        $("i[etapa]").attr("acao","blq");
 
         $(".enviar").click(function(){
             telefone = $("#telefone").val();
