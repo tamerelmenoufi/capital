@@ -286,6 +286,7 @@ $d = mysqli_fetch_object($result);
                 })
                 return false;
             }
+            
             $.ajax({
                 url,
                 success:function(dados){
