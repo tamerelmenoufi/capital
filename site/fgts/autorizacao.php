@@ -80,7 +80,7 @@ $d = mysqli_fetch_object($result);
         <p class="card-text">3. Logo em seguida clique em CONFIRMAR</p>
         
         <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" <?=(($d->autorizacao_vctex > 0)?'checked disabled':' id="autorizacao"')?>>
+            <input autorizacao type="checkbox" class="form-check-input" <?=(($d->autorizacao_vctex > 0)?'checked disabled':' id="autorizacao"')?>>
             <label class="form-check-label" for="autorizacao">Marque aqui, caso tenha realizado a autorização dos parceiros do banco.</label>
         </div>
 
@@ -265,6 +265,16 @@ $d = mysqli_fetch_object($result);
         })
 
         $("button[local]").click(function(){
+
+            autorizacao = $("input[autorizacao]").prop("checked")
+            if(!autorizacao){
+                $.alert({
+                    type:"red",
+                    title:"Autorização",
+                    content:"Você precisa realizar a autorização dos bancos parceiros antes de prosseguir.<br>Marque a opção de autorização na caixinha do formulário."
+                })
+                return false;
+            }
 
             url = $(this).attr("local");
 
