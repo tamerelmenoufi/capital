@@ -59,7 +59,7 @@
                 'codUsr' => $d->cliente
             ]);
 
-            echo $query = "update `consultas` set 
+            $query = "update `consultas` set 
                                             proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
                                             proposta = JSON_SET(proposta, '$.message', '{$status_msg}')
                             where codigo = '{$d->codigo}'";
