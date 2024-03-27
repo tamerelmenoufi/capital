@@ -13,6 +13,25 @@
         $result = mysqli_query($con, $query);
     }
 
+    $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    $token = $d->token;
+    $agora = time();
+
+    if($agora > $d->api_expira){
+        $retorno = $vctex->Token();
+        $dados = json_decode($retorno);
+        if($dados->statusCode == 200){
+            $tabelas = $vctex->Tabelas($dados->token->accessToken);
+            $token = $dados->token->accessToken;
+            mysqli_query($con, "update configuracoes set api_vctex_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
+        }else{
+            $tabelas = 'error';
+        }
+    }
+
     $vctex = new Vctex;
 
 
