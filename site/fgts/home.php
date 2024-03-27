@@ -81,11 +81,11 @@ $d = mysqli_fetch_object($result);
             <div id="cpf" class="form-text">Digite seu CPF confira o número antes de confirmar</div>
         </div>
 
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label class="form-label">Telefone de Contato</label>
             <div class="form-control"><?=$d->phoneNumber?></div>
             <div class="form-text">Telefone confirmado no login</div>
-        </div>
+        </div> -->
         <div class="mt-2">
             <button class="btn btn-primary btn-sm" local="fgts/autorizacao.php"><i class="fa-solid fa-angles-right"></i> Autorizar as Consultas</button>
         </div>
