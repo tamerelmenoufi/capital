@@ -67,18 +67,19 @@ if($_POST['telefone']){
 
 <div class="card" data-aos="zoom-in" data-aos-delay="200">
     <div class="card-header">
-        Pré-Cadastro
+        Identificação
     </div>
     <div class="card-body">
         <h5 class="card-title">Faça a sua identificação</h5>
-        <p class="card-text">Digite o seu telefone de contato para receber as credencias de acesso</p>
+        <p class="card-text">Para ter acesso a consulta do seu saldo de antecipação do FGTS, é necessário criar sua conta em nossa plataforma. Siga as instruções abaixo, é rápido e seguro.</p>
+        <p class="card-text">No campo abaixo, digite o seu telefone de contato direto para receber as credencias de acesso, que iremos lhe enviar por mensagem SMS ou WhatsApp</p>
         
         <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-mobile-screen-button"></i></span>
             <input type="text" id="telefone" class="form-control" inputmode="numeric" placeholder="Digite seu telefone" aria-label="Telefone" aria-describedby="addon-wrapping" >
-            <button class="btn btn-outline-secondary enviar" type="button" id="button-addon1">Enviar</button>
+            <button class="btn btn-outline-secondary enviar" type="button" id="button-addon1">Enviar Código</button>
         </div>
-        <p style="color:#534ab3; font-size:12px">Enviaremos um SMS ou WhatsApp com código de confirmação do seu do seu acesso.</p>
+        <p style="color:#534ab3; font-size:12px">Após preencher o número do telefone com DDD, enviaremos um SMS ou WhatsApp com código de confirmação com 4 (quatro números) para confirmação do seu acesso.</p>
 
     </div>
     </div>

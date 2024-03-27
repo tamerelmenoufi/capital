@@ -66,8 +66,8 @@ $d = mysqli_fetch_object($result);
         Pré-Cadastro
     </div>
     <div class="card-body">
-        <h5 class="card-title">Tela de Identificação</h5>
-        <p class="card-text">Formulário de Pré-Cadastro. Os dados a seguir são obrigatório para confirmação do seu pré-cadastro.</p>
+        <h5 class="card-title">Formulário de Identificação</h5>
+        <p class="card-text">Estamos quase finalizando, nesta tela vamos precisar apenas de algumas informações que serão necessárias para consultar o seu saldo de antecipação do FGTS.</p>
         
         <div class="mb-3">
             <label for="nome" class="form-label">Nome Completo</label>

@@ -68,7 +68,7 @@
 </head>
 
 <body>
-
+<?php include("assets/lib/scripts_body.php"); ?>
 <div class="popup">
     <span><i class="bi bi-x"></i></span>
     <div class="body"></div>

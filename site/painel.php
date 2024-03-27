@@ -68,7 +68,7 @@
 </head>
 
 <body>
-
+<?php include("assets/lib/scripts_body.php"); ?>
 <main id="main">
 <?php
 
