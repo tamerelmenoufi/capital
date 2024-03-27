@@ -62,9 +62,9 @@
                     <i etapa="fgts/consulta.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
                     <div etapa="fgts/home.php" acao="blq" class="legenda" style="left:calc(0% - 35px)">Pré<br>Cadastro</div>
-                    <div etapa="fgts/autorizacao.php" acao="blq" class="legenda" style="left:calc(25% - 50px)">Autorização<br>Para FGTS</div>
+                    <div etapa="fgts/autorizacao.php" acao="blq" class="legenda" style="left:calc(25% - 45px)">Autorização<br>Para FGTS</div>
                     <div etapa="fgts/cadastro.php" acao="blq" class="legenda" style="left:calc(50% - 50px)">Cadastro<br>Completo</div>
-                    <div etapa="fgts/cadastro.php" acao="blq" class="legenda" style="left:calc(75% - 50px)">Cadastro<br>Completo</div>
+                    <div etapa="fgts/cadastro.php" acao="blq" class="legenda" style="left:calc(75% - 55px)">Cadastro<br>Completo</div>
                     <div etapa="fgts/consulta.php" acao="blq" class="legenda" style="left:calc(100% - 65px)">Antecipação<br>FGTS</div>
 
                 </div>
