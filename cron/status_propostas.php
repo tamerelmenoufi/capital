@@ -3,7 +3,7 @@
 
     function consulta_logs($dados){
         global $con;
-        $query = "insert into `consultas_log` set 
+        echo $query = "insert into `consultas_log` set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
