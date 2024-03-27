@@ -88,6 +88,10 @@ if($_POST['telefone']){
     $(function(){
         $("#telefone").mask("(99) 99999-9999");
 
+        $(".linha").css("width","0%");
+        $("i[etapa]").removeClass("fa-solid");
+        $("i[etapa]").addClass("fa-regular");
+
         $(".enviar").click(function(){
             telefone = $("#telefone").val();
             if(!telefone){
