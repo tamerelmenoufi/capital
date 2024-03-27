@@ -119,6 +119,44 @@ $d = mysqli_fetch_object($result);
 
 
         <?php
+
+        //verificação do pré-cadastro
+        if($d->pre_cadastro > 0){
+        ?>
+            $(`i[etapa="fgts/home.php"], div[etapa="fgts/home.php"]`).attr("acao", "lib");
+            $(`i[etapa="fgts/autorizacao.php"], div[etapa="fgts/autorizacao.php"]`).attr("acao", "lib");
+        <?php
+        }else{
+        ?>
+            $(`i[etapa="fgts/home.php"], div[etapa="fgts/home.php"]`).attr("acao", "blq");
+            $(`i[etapa="fgts/autorizacao.php"], div[etapa="fgts/autorizacao.php"]`).attr("acao", "blq");
+        <?php
+        }
+
+        //verificação da autorização
+        if($d->autorizacao_vctex > 0){
+        ?>
+            $(`i[etapa="fgts/cadastro.php"], div[etapa="fgts/cadastro.php"]`).attr("acao", "lib");
+        <?php
+        }else{
+        ?>
+            $(`i[etapa="fgts/cadastro.php"], div[etapa="fgts/cadastro.php"]`).attr("acao", "blq");
+        <?php
+        }
+
+        //verificação da autorização
+        if($d->cadastro_completo > 0){
+        ?>
+            $(`i[etapa="fgts/consulta.php"], div[etapa="fgts/consulta.php"]`).attr("acao", "lib");
+        <?php
+        }else{
+        ?>
+            $(`i[etapa="fgts/consulta.php"], div[etapa="fgts/consulta.php"]`).attr("acao", "blq");
+        <?php
+        }
+        
+
+
         if($_SESSION['codUsr']){
         ?>
         localStorage.setItem("codUsr", '<?=$_SESSION['codUsr']?>');
