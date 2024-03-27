@@ -636,7 +636,7 @@ $d = mysqli_fetch_object($result);
                     }
                 })  
                               
-            }, 2000);
+            }, 1000);
 
         })
 
