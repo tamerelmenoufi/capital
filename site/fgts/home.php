@@ -274,11 +274,11 @@ $d = mysqli_fetch_object($result);
         $("button[local]").click(function(){
 
             url = $(this).attr("local");
-
+console.log(`${url}`);
             nome = $("#nome").val();
             cpf = $("#cpf").val();
 
-            console.log(`${nome} & ${cpf} & ${url}`);
+            
 
             if(!nome || !cpf){
                 $.alert({
