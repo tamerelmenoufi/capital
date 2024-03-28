@@ -239,7 +239,7 @@
         </div>
         <div class="row mt-3">
             <div class="col">
-                <button class="btn btn-success btn-lg" <?=(($cliente->cadastro_percentual < 100)?'pendentes':'simulacao')?>>
+                <button class="btn btn-success btn-lg w-100" <?=(($cliente->cadastro_percentual < 100)?'pendentes':'simulacao')?>>
                     <div class="d-flex justify-content-between">
                         <i class="fa-regular fa-hand-pointer" style="font-size:60px;"></i>
                         Clique aqui para consultar o seu saldo FGTS

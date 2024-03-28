@@ -144,7 +144,7 @@
         </div>
         <div class="row mt-3">
             <div class="col">
-                <button class="btn btn-success btn-lg" <?=(($cliente->pre_cadastro == 0)?'pendentes':'simulacao')?>>
+                <button class="btn btn-success btn-lg w-100" <?=(($cliente->pre_cadastro == 0)?'pendentes':'simulacao')?>>
                     <div class="d-flex justify-content-between">
                         <i class="fa-regular fa-hand-pointer" style="font-size:60px;"></i>
                         Clique aqui para consultar o seu saldo FGTS
