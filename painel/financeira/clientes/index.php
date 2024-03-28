@@ -60,7 +60,7 @@
                   while($d = mysqli_fetch_object($result)){
 
                     $log = json_decode($d->log);
-                    $del = 'desabled';
+                    $del = 'disabled';
                     if($log->statusCode){
                       $situacao = "{$log->statusCode} - {$log->message}";
                       $cor="orange";
