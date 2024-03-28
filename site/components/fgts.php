@@ -57,14 +57,14 @@
 
                     <i etapa="fgts/autorizacao.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(0% - 5px)"></i>
                     <i etapa="fgts/home.php" acao="blq" class="fa-solid fa-circle etapas" style="left:calc(25% - 15px)"></i>
-                    <i etapa="fgts/cadastro.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(50% - 20px)"></i>
+                    <i etapa="fgts/saldo.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(50% - 20px)"></i>
                     <i etapa="fgts/cadastro.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(75% - 25px)"></i>
                     <i etapa="fgts/consulta.php" acao="blq" class="fa-regular fa-circle etapas" style="left:calc(100% - 35px)"></i>
 
                     
                     <div etapa="fgts/autorizacao.php" acao="blq" class="legenda" style="left:calc(0% - 35px)">Autorização<br>Para FGTS</div>
                     <div etapa="fgts/home.php" acao="blq" class="legenda" style="left:calc(25% - 45px)">Pré<br>Cadastro</div>
-                    <div etapa="fgts/cadastro.php" acao="blq" class="legenda" style="left:calc(50% - 50px)">Consultar<br>Saldo</div>
+                    <div etapa="fgts/saldo.php" acao="blq" class="legenda" style="left:calc(50% - 50px)">Consultar<br>Saldo</div>
                     <div etapa="fgts/cadastro.php" acao="blq" class="legenda" style="left:calc(75% - 55px)">Cadastro<br>Completo</div>
                     <div etapa="fgts/consulta.php" acao="blq" class="legenda" style="left:calc(100% - 65px)">Antecipação<br>FGTS</div>
 
