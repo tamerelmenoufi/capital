@@ -149,168 +149,176 @@
 
     $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as status_proposta from consultas where cliente = '{$_SESSION['codUsr']}' order by codigo desc";
     $result = mysqli_query($con, $query);
-    while($d = mysqli_fetch_object($result)){
-        $dados = json_decode($d->dados);
+    if(mysqli_num_rows($result)){
+        while($d = mysqli_fetch_object($result)){
+            $dados = json_decode($d->dados);
 
-        $q = "select * from configuracoes where codigo = '1'";
-        $r = mysqli_query($con, $q);
-        $t = mysqli_fetch_object($r);
-        $tab = json_decode($t->api_vctex_tabelas);
-        foreach($tab->data as $i => $v){
-            if($v->id == $d->tabela_escolhida) $tabela_sugerida = $v->name;
-            if($v->id == $d->tabela) $tabela_resultado = $v->name;
-        }
+            $q = "select * from configuracoes where codigo = '1'";
+            $r = mysqli_query($con, $q);
+            $t = mysqli_fetch_object($r);
+            $tab = json_decode($t->api_vctex_tabelas);
+            foreach($tab->data as $i => $v){
+                if($v->id == $d->tabela_escolhida) $tabela_sugerida = $v->name;
+                if($v->id == $d->tabela) $tabela_resultado = $v->name;
+            }
 
-        if($dados->statusCode == 200 and $dados->data->simulationData->installments){
-    ?>
-        <div class="card mb-2 border-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?>">
-            <div class="card-header bg-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?> text-white">
-            <?=(($d->status_proposta and $d->status_proposta < 400)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
-            </div>
+            if($dados->statusCode == 200 and $dados->data->simulationData->installments){
+        ?>
+            <div class="card mb-2 border-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?>">
+                <div class="card-header bg-<?=(($d->status_proposta and $d->status_proposta < 400)?'success':'primary')?> text-white">
+                <?=(($d->status_proposta and $d->status_proposta < 400)?'PROPOSTA':'SIMULAÇÃO')?> - <?=strtoupper($d->consulta)?>
+                </div>
 
-            <div class="row m-1">
-                <div class="col-md-6">
-                    <div class="coluna">
-                        <label>Tabela Sugerida</label>
-                        <div><?=$tabela_sugerida?></div>
+                <div class="row m-1">
+                    <div class="col-md-6">
+                        <div class="coluna">
+                            <label>Tabela Sugerida</label>
+                            <div><?=$tabela_sugerida?></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="coluna">
+                            <label>Resultado da Tabela</label>
+                            <div><?=$tabela_resultado?></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="coluna">
-                        <label>Resultado da Tabela</label>
-                        <div><?=$tabela_resultado?></div>
+
+                <div class="row m-1">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-between">
+                            <div class="coluna"><label>Período</label></div>
+                            <div class="coluna"><label>Valor</label></div>
+                        </div>
+                        <?php
+                        foreach($dados->data->simulationData->installments as $periodo => $valor){
+                        ?>
+                        <div class="d-flex justify-content-between">
+                            <div class="coluna"><div><?=dataBr($valor->dueDate)?></div></div>
+                            <div class="coluna"><div>R$ <?=number_format($valor->amount,2,',','.')?></div></div>
+                        </div>
+                        <?php                       
+                        }
+                        ?>
                     </div>
                 </div>
-            </div>
 
-            <div class="row m-1">
-                <div class="col-md-12">
-                    <div class="d-flex justify-content-between">
-                        <div class="coluna"><label>Período</label></div>
-                        <div class="coluna"><label>Valor</label></div>
+
+                <div class="row m-1">
+                    <div class="col-md-3">
+                        <div class="coluna">
+                            <label>Data operação</label>
+                            <div><?=dataBR($d->data)?></div>
+                        </div>
                     </div>
-                    <?php
-                    foreach($dados->data->simulationData->installments as $periodo => $valor){
-                    ?>
-                    <div class="d-flex justify-content-between">
-                        <div class="coluna"><div><?=dataBr($valor->dueDate)?></div></div>
-                        <div class="coluna"><div>R$ <?=number_format($valor->amount,2,',','.')?></div></div>
+
+                    <div class="col-md-1">
+                        <div class="coluna">
+                            <label>IOF</label>
+                            <div><?=$dados->data->simulationData->iofAmount?></div>
+                        </div>
                     </div>
-                    <?php                       
+
+                    <div class="col-md-1">
+                        <div class="coluna">
+                            <label>Liberado</label>
+                            <div><?=$dados->data->simulationData->totalReleasedAmount?></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <div class="coluna">
+                            <label>Emissão</label>
+                            <div><?=$dados->data->simulationData->totalAmount?></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <div class="coluna">
+                            <label>TAC</label>
+                            <div><?=$dados->data->simulationData->contractTACAmount?></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="coluna">
+                            <label>CET anual</label>
+                            <div><?=$dados->data->simulationData->contractCETRate?></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="coluna">
+                            <label>Taxa anual</label>
+                            <div><?=$dados->data->simulationData->contractRate?></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <div class="coluna">
+                            <label>Mínimo</label>
+                            <div><?=$dados->data->simulationData->minDisbursedAmount?></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                
+                <?php
+                    if(!$d->status_proposta or $d->status_proposta >= 400){
+                ?>
+                <button proposta class="btn btn-warning btn-sm m-1">
+                    Clique aqui para solicitar proposta desta simulação
+                </button>
+                <?php
+                    if($d->status_proposta){
+                        $proposta = json_decode($d->proposta);
+                ?>
+                    <div class="alert alert-danger m-1" role="alert">
+                        <?="{$proposta->statusCode} - {$proposta->message}"?>
+                    </div>
+                <?php
                     }
-                    ?>
-                </div>
+
+                    }
+                ?>
             </div>
 
+        <?php
+            }else{
+        ?>
+        <div class="card mb-2 border-danger">
+            <div class="card-header bg-danger text-white">
+                SIMULAÇÃO - <?=strtoupper($d->consulta)?>
+            </div>
 
             <div class="row m-1">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="coluna">
-                        <label>Data operação</label>
+                        <label>Data da Operação</label>
                         <div><?=dataBR($d->data)?></div>
                     </div>
                 </div>
-
-                <div class="col-md-1">
+                <div class="col-md-8">
                     <div class="coluna">
-                        <label>IOF</label>
-                        <div><?=$dados->data->simulationData->iofAmount?></div>
-                    </div>
+                        <label>Erro - Descrição</label>
+                        <div><?="{$dados->statusCode} - {$dados->message}"?></div>
+                    </div>                
                 </div>
-
-                <div class="col-md-1">
-                    <div class="coluna">
-                        <label>Liberado</label>
-                        <div><?=$dados->data->simulationData->totalReleasedAmount?></div>
-                    </div>
-                </div>
-
-                <div class="col-md-1">
-                    <div class="coluna">
-                        <label>Emissão</label>
-                        <div><?=$dados->data->simulationData->totalAmount?></div>
-                    </div>
-                </div>
-
-                <div class="col-md-1">
-                    <div class="coluna">
-                        <label>TAC</label>
-                        <div><?=$dados->data->simulationData->contractTACAmount?></div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="coluna">
-                        <label>CET anual</label>
-                        <div><?=$dados->data->simulationData->contractCETRate?></div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="coluna">
-                        <label>Taxa anual</label>
-                        <div><?=$dados->data->simulationData->contractRate?></div>
-                    </div>
-                </div>
-
-                <div class="col-md-1">
-                    <div class="coluna">
-                        <label>Mínimo</label>
-                        <div><?=$dados->data->simulationData->minDisbursedAmount?></div>
-                    </div>
-                </div>
-
             </div>
 
-
-
-            
-            <?php
-                if(!$d->status_proposta or $d->status_proposta >= 400){
-            ?>
-            <button proposta class="btn btn-warning btn-sm m-1">
-                Clique aqui para solicitar proposta desta simulação
-            </button>
-            <?php
-                if($d->status_proposta){
-                    $proposta = json_decode($d->proposta);
-            ?>
-                <div class="alert alert-danger m-1" role="alert">
-                    <?="{$proposta->statusCode} - {$proposta->message}"?>
-                </div>
-            <?php
-                }
-
-                }
-            ?>
         </div>
-
-    <?php
-        }else{
+        <?php
+            }
+        }
+    }else{
     ?>
-    <div class="card mb-2 border-danger">
-        <div class="card-header bg-danger text-white">
-            SIMULAÇÃO - <?=strtoupper($d->consulta)?>
-        </div>
-
-        <div class="row m-1">
-            <div class="col-md-4">
-                <div class="coluna">
-                    <label>Data da Operação</label>
-                    <div><?=dataBR($d->data)?></div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="coluna">
-                    <label>Erro - Descrição</label>
-                    <div><?="{$dados->statusCode} - {$dados->message}"?></div>
-                </div>                
-            </div>
-        </div>
-
+    <div class="d-flex justify-content-center align-items-center">
+        <h3 style="margin-top:100px; clor:#a1a1a1; text-align:center"><i class="fa-regular fa-face-meh"></i><br>Você ainda não possui nenhuma consulta de saldo</h3>
     </div>
     <?php
-        }
     }
     ?>
     </div>
