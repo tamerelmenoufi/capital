@@ -316,7 +316,7 @@
     }else{
     ?>
     <div class="d-flex justify-content-center align-items-center">
-        <h3 style="margin-top:100px; clor:#a1a1a1; text-align:center"><i class="fa-regular fa-face-meh"></i><br>Você ainda não possui nenhuma consulta de saldo</h3>
+        <h3 style="margin-top:100px; color:#a1a1a1; text-align:center"><i class="fa-regular fa-face-meh" style="font-size:100px;"></i><br>Você ainda não possui nenhuma consulta de saldo</h3>
     </div>
     <?php
     }
@@ -325,7 +325,7 @@
   </div>
   <!-- <button class="btn btn-primary btn-sm atualiza">Atualizar</button> -->
     <div class="m-3 text-end">
-        <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket" style="font-size:100px;"></i> Sair do login</a>
+        <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
     </div>
 </div>
 
