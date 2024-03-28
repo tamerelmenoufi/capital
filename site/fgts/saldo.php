@@ -144,12 +144,12 @@
         </div>
         <div class="row mt-3">
             <div class="col">
-                <div class="d-flex justify-content-between">
-                    <i class="fa-regular fa-hand-pointer" style="font-size:80px;"></i>
-                    <button class="btn btn-success btn-lg" <?=(($cliente->pre_cadastro == 0)?'pendentes':'simulacao')?>>
+                <button class="btn btn-success btn-lg" <?=(($cliente->pre_cadastro == 0)?'pendentes':'simulacao')?>>
+                    <div class="d-flex justify-content-between">
+                        <i class="fa-regular fa-hand-pointer" style="font-size:80px;"></i>
                         Clique aqui para consultar o seu saldo FGTS
-                    </button>
-                </div>
+                    </div>
+                </button>
             </div>
         </div>
     </h5>
