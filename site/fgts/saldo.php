@@ -326,7 +326,7 @@
   <!-- <button class="btn btn-primary btn-sm atualiza">Atualizar</button> -->
 
     <div class="mt-2">
-        <button class="btn btn-primary btn-sm" local="fgts/cadastro.php"><i class="fa-solid fa-angles-right"></i> Preencher o formulário de cadastro completo</button>
+        <a class="btn btn-primary btn-sm" href="#" local="fgts/cadastro.php"><i class="fa-solid fa-angles-right"></i> Preencher o formulário de cadastro completo</a>
     </div>
 
     <div class="m-3 text-end">
@@ -449,7 +449,7 @@
             
         })
 
-        $("button[local]").click(function(){
+        $("a[local]").click(function(){
 
             url = $(this).attr("local");
 
