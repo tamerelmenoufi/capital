@@ -87,7 +87,7 @@ $d = mysqli_fetch_object($result);
             <div class="form-text">Telefone confirmado no login</div>
         </div> -->
         <div class="mt-2">
-            <button class="btn btn-primary btn-sm" local="fgts/autorizacao.php"><i class="fa-solid fa-angles-right"></i> Autorizar as Consultas</button>
+            <button class="btn btn-primary btn-sm" local="fgts/saldo.php"><i class="fa-solid fa-angles-right"></i> Consultar saldo FGTS</button>
         </div>
 
         <div class="mt-3 text-end">

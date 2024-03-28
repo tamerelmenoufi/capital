@@ -85,7 +85,7 @@ $d = mysqli_fetch_object($result);
         </div>
 
         <div class="mt-2">
-            <button class="btn btn-primary btn-sm" local="fgts/cadastro.php"><i class="fa-solid fa-angles-right"></i> Realizar o Cadastro Completo</button>
+            <button class="btn btn-primary btn-sm" local="fgts/home.php"><i class="fa-solid fa-angles-right"></i> Realizar o pré-cadastro</button>
         </div>
 
         <div class="mt-3 text-end">

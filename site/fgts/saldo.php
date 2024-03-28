@@ -324,6 +324,11 @@
     </div>
   </div>
   <!-- <button class="btn btn-primary btn-sm atualiza">Atualizar</button> -->
+
+    <div class="mt-2">
+        <button class="btn btn-primary btn-sm" local="fgts/cadastro.php"><i class="fa-solid fa-angles-right"></i> Preencher o formulário de cadastro completo</button>
+    </div>
+
     <div class="m-3 text-end">
         <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
     </div>
