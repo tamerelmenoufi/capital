@@ -380,7 +380,7 @@ $d = mysqli_fetch_object($result);
 
 
         <div class="mt-2">
-            <button class="btn btn-primary btn-sm" local="fgts/consulta.php"><i class="fa-solid fa-angles-right"></i> Antecipação do FGTS</button>
+            <a class="btn btn-primary btn-sm" href="#" local="fgts/consulta.php"><i class="fa-solid fa-angles-right"></i> Antecipação do FGTS</a>
         </div>
 
         <div class="mt-3 text-end">
@@ -579,7 +579,7 @@ $d = mysqli_fetch_object($result);
 
         })
 
-        $("button[local]").click(function(){
+        $("a[local]").click(function(){
 
             url = $(this).attr("local");
 
