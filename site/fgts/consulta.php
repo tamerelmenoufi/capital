@@ -463,6 +463,10 @@
 <script>
     $(function(){
 
+        <?php
+            include("barra_status.php");
+        ?>
+
         $(".atualiza").click(function(){
             $.ajax({
                 url:"fgts/consulta.php",
