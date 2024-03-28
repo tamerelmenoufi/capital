@@ -101,6 +101,7 @@
     $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
     $result = mysqli_query($con, $query);
     $cliente = mysqli_fetch_object($result);
+    $dC = $cliente;
 
     $pendentes = json_decode($cliente->campos_pendentes);
     if($pendentes) $pendentes = "- ".implode("<br>- ", $pendentes);

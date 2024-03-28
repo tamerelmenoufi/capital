@@ -59,6 +59,7 @@ if($_POST['telefone']){
 $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
 $result = mysqli_query($con, $query);
 $d = mysqli_fetch_object($result);
+$dC = $d;
 
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 //verificação da autorização
-if($d->autorizacao_vctex > 0){
+if($dC->autorizacao_vctex > 0){
 ?>
     $(`i[etapa="fgts/home.php"], div[etapa="fgts/home.php"]`).attr("acao", "lib");
     $(`i[etapa="fgts/autorizacao.php"], div[etapa="fgts/autorizacao.php"]`).attr("acao", "lib");
@@ -36,7 +36,7 @@ if($d->autorizacao_vctex > 0){
 }
 
 //verificação do pré-cadastro
-if($d->pre_cadastro > 0){
+if($dC->pre_cadastro > 0){
 ?>
     $(`i[etapa="fgts/saldo.php"], div[etapa="fgts/saldo.php"]`).attr("acao", "lib");
     $(`i[etapa="fgts/saldo.php"]`).removeClass("fa-regular");
@@ -71,7 +71,7 @@ if($d->pre_cadastro > 0){
 }
 
 //verificação da autorização
-if($d->cadastro_percentual == 100){
+if($dC->cadastro_percentual == 100){
 ?>
     $(`i[etapa="fgts/consulta.php"], div[etapa="fgts/consulta.php"]`).attr("acao", "lib");
     $(".linha").css("width","100%");
