@@ -60,7 +60,7 @@
                   while($d = mysqli_fetch_object($result)){
 
                     $log = json_decode($d->log);
-
+                    $del = 'desabled';
                     if($log->statusCode){
                       $situacao = "{$log->statusCode} - {$log->message}";
                       $cor="orange";
@@ -74,6 +74,7 @@
                     }else{
                       $situacao = "000 - Cliente sem movimentação";
                       $cor="#ccc";
+                      $del = false;
                     }
 
                 ?>
@@ -114,7 +115,7 @@
                     >
                       Editar
                     </button>
-                    <button class="btn btn-danger" delete="<?=$d->codigo?>">
+                    <button class="btn btn-danger" delete="<?=$d->codigo?>" <?=$del?>>
                       Excluir
                     </button>
                   </td>
