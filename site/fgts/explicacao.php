@@ -32,7 +32,13 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         <p class="card-text">Somos especialistas em antecipação do FGTS e vamos lhe orientar como obter o benefício. Assista com atenção o vídeo e conheça nossa empresa antes de prosseguir.</p>
         
         <div class="mt-2">
-            Entrado do Vídeo
+            <div class="ratio ratio-16x9">
+                <video width="100%" height="100%" controls>
+                    <source src="videos/autorizacao.mov" type="video/mov">
+                    <!-- <source src="movie.ogg" type="video/ogg"> -->
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
 
         <div class="mt-2">
