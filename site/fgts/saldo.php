@@ -325,7 +325,7 @@
   </div>
   <!-- <button class="btn btn-primary btn-sm atualiza">Atualizar</button> -->
     <div class="m-3 text-end">
-        <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket"></i> Sair do login</a>
+        <a class="text-danger text-decoration-none sair" style="cursor:pointer"><i class="fa-solid fa-right-from-bracket" style="font-size:100px;"></i> Sair do login</a>
     </div>
 </div>
 
