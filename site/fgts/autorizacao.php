@@ -100,7 +100,7 @@ $d = mysqli_fetch_object($result);
         </div>
 
         <div class="mt-2">
-            <button class="btn btn-primary btn-sm" local="fgts/home.php"><i class="fa-solid fa-angles-right"></i> Realizar o pré-cadastro</button>
+            <a class="btn btn-primary btn-sm" href="#" local="fgts/home.php"><i class="fa-solid fa-angles-right"></i> Realizar o pré-cadastro</a>
         </div>
 
         <div class="mt-3 text-end">
@@ -244,7 +244,7 @@ $d = mysqli_fetch_object($result);
 
         })
 
-        $("button[local]").click(function(){
+        $("a[local]").click(function(){
 
             autorizacao = $("input[autorizacao]").prop("checked")
             if(!autorizacao){
