@@ -236,7 +236,16 @@
     <h5 class="card-title">
         <div class="d-flex justify-content-between">
             <span>Simulações /Propostas</span>
-            <button class="btn btn-success btn-sm" <?=(($cliente->cadastro_percentual < 100)?'pendentes':'simulacao')?>>Verificar Saldo</button>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button class="btn btn-success btn-sm" <?=(($cliente->cadastro_percentual < 100)?'pendentes':'simulacao')?>>
+                    <div class="d-flex justify-content-between">
+                        <i class="fa-regular fa-hand-pointer" style="font-size:60px;"></i>
+                        Clique aqui para consultar o seu saldo FGTS
+                    </div>
+                </button>
+            </div>
         </div>
     </h5>
     <div class="card-text" style="min-height:400px;">
