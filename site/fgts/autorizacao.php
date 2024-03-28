@@ -2,6 +2,21 @@
 
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+if($_POST['telefone']){
+
+    $query = "select * from clientes where phoneNumber = '{$_POST['telefone']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+    if(!$d->codigo){
+        $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', data_cadastro = NOW(), validar_telefone = NOW()";
+        $result = mysqli_query($con, $query);
+        $_SESSION['codUsr'] = mysqli_insert_id($con); 
+    }else{
+        $_SESSION['codUsr'] = $d->codigo; 
+    }
+
+}
+
 if($_POST['acao'] == 'autorizacao'){
     if($_POST['autorizacao'] == 'marcar'){
         $autorizacao_vctex = "NOW()";
