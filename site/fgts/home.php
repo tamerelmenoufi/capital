@@ -72,7 +72,7 @@ $d = mysqli_fetch_object($result);
             <div class="form-text">Telefone confirmado no login</div>
         </div> -->
         <div class="mt-2">
-            <button class="btn btn-primary btn-sm" local="fgts/saldo.php"><i class="fa-solid fa-angles-right"></i> Consultar saldo FGTS</button>
+            <a class="btn btn-primary btn-sm" href="#" local="fgts/saldo.php"><i class="fa-solid fa-angles-right"></i> Consultar saldo FGTS</a>
         </div>
 
         <div class="mt-3 text-end">
@@ -198,7 +198,7 @@ $d = mysqli_fetch_object($result);
 
         })
 
-        $("button[local]").click(function(){
+        $("a[local]").click(function(){
 
             url = $(this).attr("local");
             nome = $("#nome").val();
