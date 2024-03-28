@@ -93,9 +93,9 @@ $dC = $d;
             </div>
             <div class="col-md-6">
                 <p class="card-text">2. Autorize essas duas instituições:</p>
+                <img src="fgts/img/passo_a_passo.png?1" class="img-fluid" alt="Passo a Passo">
                 <p class="card-text">QI SOCIEDADE DE CREDITO DIRETO S.A.</p>
                 <p class="card-text">CDC SOCEDADE DE CREDITO AO MICROEMPREENDEDOR X E A EMPRESA DE PEQUENO PORTE LTDA</p>
-                <img src="fgts/img/passo_a_passo.png?1" class="img-fluid" alt="Passo a Passo">
             </div>
         </div>
         
