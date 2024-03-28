@@ -350,7 +350,7 @@
                             // Carregando();
 
                             $.ajax({
-                                url:"fgts/consulta.php",
+                                url:"fgts/saldo.php",
                                 type:"POST",
                                 data:{
                                     acao:'simulacao'
