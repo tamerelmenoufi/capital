@@ -34,7 +34,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         <div class="mt-2">
             <div class="ratio ratio-16x9">
                 <video width="100%" height="100%" controls>
-                    <source src="fgts/videos/autorizacao.mp4" type="video/mov">
+                    <source src="fgts/videos/autorizacao.mp4" type="video/mp4">
                     <!-- <source src="movie.ogg" type="video/ogg"> -->
                     Your browser does not support the video tag.
                 </video>
