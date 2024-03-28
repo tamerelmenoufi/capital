@@ -85,14 +85,20 @@ $dC = $d;
         <p class="card-text">Antes de fazer a suas simulações e contratação de antecipação do FGTS, é necessário que autorize os bancos parceiros que possibilitam o acessos do seu saldo de antecipação do FGTS na CAIXA.</p>
         <p class="card-text">Preparamos um passo a passo pra você seguir e realizar a autorização de forma simples e prática.</p>
         
-        <p class="card-text">1. Baixe e instale o aplicativo FGTS.</p>
-        <p>
-        <img src="fgts/img/app_fgts.png?1" class="img-fluid" alt="Passo a Passo"></p>
-
-        <p class="card-text">2. Autorize essas duas instituições:</p>
-        <p class="card-text">QI SOCIEDADE DE CREDITO DIRETO S.A.</p>
-        <p class="card-text">CDC SOCEDADE DE CREDITO AO MICROEMPREENDEDOR X E A EMPRESA DE PEQUENO PORTE LTDA</p>
-        <img src="fgts/img/passo_a_passo.png?1" class="img-fluid" alt="Passo a Passo">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="card-text">1. Baixe e instale o aplicativo FGTS.</p>
+                <p>
+                <img src="fgts/img/app_fgts.png?1" class="img-fluid" alt="Passo a Passo"></p>
+            </div>
+            <div class="col-md-6">
+                <p class="card-text">2. Autorize essas duas instituições:</p>
+                <p class="card-text">QI SOCIEDADE DE CREDITO DIRETO S.A.</p>
+                <p class="card-text">CDC SOCEDADE DE CREDITO AO MICROEMPREENDEDOR X E A EMPRESA DE PEQUENO PORTE LTDA</p>
+                <img src="fgts/img/passo_a_passo.png?1" class="img-fluid" alt="Passo a Passo">
+            </div>
+        </div>
+        
         <p class="card-text">3. Logo em seguida clique em CONFIRMAR</p>
         
         <div class="mb-3 form-check">
