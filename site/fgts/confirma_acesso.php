@@ -73,7 +73,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
             }
             
             $.ajax({
-                url:"fgts/home.php",
+                url:"fgts/autorizacao.php",
                 type:"POST",
                 data:{
                     telefone:'<?=$_POST['telefone']?>'
