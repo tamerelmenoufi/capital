@@ -28,11 +28,14 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
         Capital Soluções - especialistas em antecipação de FGTS
     </div>
     <div class="card-body">
-        <h5 class="card-title">Assista o vídeo que preparamos para você</h5>
-        <p class="card-text">Somos especialistas em antecipação do FGTS e vamos lhe orientar como obter o benefício. Assista com atenção o vídeo e conheça nossa empresa antes de prosseguir.</p>
-        
+      
         <div class="row justify-content-center">
             <div class="col-md-8">
+
+                <h5 class="card-title">Assista o vídeo que preparamos para você</h5>
+                <p class="card-text">Somos especialistas em antecipação do FGTS e vamos lhe orientar como obter o benefício. Assista com atenção o vídeo e conheça nossa empresa antes de prosseguir.</p>
+        
+
                 <div class="mt-2">
                     <div class="ratio ratio-16x9">
                         <video width="100%" height="100%" controls autoplay>
