@@ -18,8 +18,8 @@
     // Configurações iniciais
     $month = date("n");
     $year = date("Y");
-    $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
-    $end_day_of_month = mktime(0, 0, 0, $month + 1, 1-1, $year);
+    echo $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
+    echo $end_day_of_month = mktime(0, 0, 0, $month + 1, 1-1, $year);
     $days_in_month = ($end_day_of_month - $first_day_of_month);
 
     $day_of_week = date("N", $first_day_of_month);
