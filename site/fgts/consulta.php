@@ -248,7 +248,7 @@
             </div>
         </div>
     </h5>
-    <div class="card-text" style="min-height:400px;">
+    <div class="card-text" style="min-height:300px;">
 
     <?php
 
