@@ -18,7 +18,7 @@
     // Configurações iniciais
     $month = date("n");
     $year = date("Y");
-    $days_in_month = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+    $days_in_month = cal_days_in_month(CAL_GREGORIAN, 8, 2003);
     $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
     $day_of_week = date("N", $first_day_of_month);
     $month_name = date("F", $first_day_of_month);
