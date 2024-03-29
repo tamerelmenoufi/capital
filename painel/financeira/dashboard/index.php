@@ -16,7 +16,7 @@
 
 
     // Configurações iniciais
-    $month = date("n");
+    $month = 4; //date("n");
     $year = date("Y");
     $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
     $end_day_of_month = mktime(0, 0, 0, $month + 1, 1-1, $year);
