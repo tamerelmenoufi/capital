@@ -20,7 +20,7 @@
     $year = date("Y");
     $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
     $end_day_of_month = mktime(0, 0, 0, $month + 1, 1-1, $year);
-    echo $days_in_month = (($end_day_of_month - $first_day_of_month)/84600);
+    echo $days_in_month = ((($end_day_of_month)/84600) - (($first_day_of_month)/84600));
 
     $day_of_week = date("N", $first_day_of_month);
     $month_name = date("F", $first_day_of_month);
