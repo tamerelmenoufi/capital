@@ -16,8 +16,8 @@
 
 
     // Configurações iniciais
-    $month = 8; //date("n");
-    $year = 2023; //date("Y");
+    $month = date("n");
+    $year = date("Y");
     $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
     $end_day_of_month = mktime(0, 0, 0, $month + 1, 1-1, $year);
     $days_in_month = (((($end_day_of_month)/84600) - (($first_day_of_month)/84600)) + 1);
