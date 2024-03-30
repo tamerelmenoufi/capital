@@ -85,7 +85,7 @@
                                             tabela = '{$tabela_padrao}',
                                             dados = '{$simulacao}'
                                             ";
-        sisLog( $query);
+        mysqli_query($con, $query);
 
 
         consulta_logs([
