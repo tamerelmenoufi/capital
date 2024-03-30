@@ -3,7 +3,7 @@
     global $con;
     global $_SESSION;
     $query = "select a.*, (select count(*) from menus where vinculo = a.codigo) as qt from menus a where a.vinculo = '{$v}' and a.situacao = '1' order by a.ordem asc";
-    $result = mysqli_query($con, $query);
+    $result = sisLog( $query);
     if(mysqli_num_rows($result)){
 ?>
       <ul>

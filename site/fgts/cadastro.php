@@ -2,7 +2,7 @@
 
 include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-list($bancos) = mysqli_fetch_row(mysqli_query($con, "select bancos from configuracoes where codigo = '1'"));
+list($bancos) = mysqli_fetch_row(sisLog( "select bancos from configuracoes where codigo = '1'"));
 $bancos = json_decode($bancos);
 
 $siglas = ['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'];
@@ -11,7 +11,7 @@ if($_POST['acao'] == 'cadastro_percentual'){
 
     $campos_pendentes = json_encode($_POST['campos_pendentes'], JSON_UNESCAPED_UNICODE);
     $query = "update clientes set cadastro_percentual = '{$_POST['cadastro_percentual']}', campos_pendentes='{$campos_pendentes}' where codigo = '{$_SESSION['codUsr']}'";
-    mysqli_query($con, $query);
+    sisLog( $query);
     exit();
 
 }
@@ -20,7 +20,7 @@ if($_POST['acao'] == 'salvar'){
 
     if($_POST['campo'] == 'cpf'){
         $query = "select * from clientes where cpf = '{$_POST['valor']}' and codigo != '{$_SESSION['codUsr']}'";
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
         if(mysqli_num_rows($result)){
             echo 'error';
             exit();
@@ -34,7 +34,7 @@ if($_POST['acao'] == 'salvar'){
     }
 
     $query = "update clientes set {$_POST['campo']} = '{$valor}' where codigo = '{$_SESSION['codUsr']}'";
-    mysqli_query($con, $query);
+    sisLog( $query);
     echo 'success';
     exit();
 
@@ -43,11 +43,11 @@ if($_POST['acao'] == 'salvar'){
 if($_POST['telefone']){
 
     $query = "select * from clientes where phoneNumber = '{$_POST['telefone']}'";
-    $result = mysqli_query($con, $query);
+    $result = sisLog( $query);
     $d = mysqli_fetch_object($result);
     if(!$d->codigo){
         $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', data_cadastro = NOW(), validar_telefone = NOW()";
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
         $_SESSION['codUsr'] = mysqli_insert_id($con); 
     }else{
         $_SESSION['codUsr'] = $d->codigo; 
@@ -57,7 +57,7 @@ if($_POST['telefone']){
 
 
 $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-$result = mysqli_query($con, $query);
+$result = sisLog( $query);
 $d = mysqli_fetch_object($result);
 $dC = $d;
 

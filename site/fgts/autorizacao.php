@@ -5,11 +5,11 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 if($_POST['telefone']){
 
     $query = "select * from clientes where phoneNumber = '{$_POST['telefone']}'";
-    $result = mysqli_query($con, $query);
+    $result = sisLog( $query);
     $d = mysqli_fetch_object($result);
     if(!$d->codigo){
         $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', data_cadastro = NOW(), validar_telefone = NOW()";
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
         $_SESSION['codUsr'] = mysqli_insert_id($con); 
     }else{
         $_SESSION['codUsr'] = $d->codigo; 
@@ -23,17 +23,17 @@ if($_POST['acao'] == 'autorizacao'){
     }else{
         $autorizacao_vctex = "0";
     }
-    mysqli_query($con, "update clientes set autorizacao_vctex = {$autorizacao_vctex} where codigo = '{$_SESSION['codUsr']}'");
+    sisLog( "update clientes set autorizacao_vctex = {$autorizacao_vctex} where codigo = '{$_SESSION['codUsr']}'");
 
 }
 
-mysqli_query($con, "update clientes set pre_cadastro = NOW() where pre_cadastro = 0 and codigo = '{$_SESSION['codUsr']}'");
+sisLog( "update clientes set pre_cadastro = NOW() where pre_cadastro = 0 and codigo = '{$_SESSION['codUsr']}'");
 
 if($_POST['acao'] == 'salvar'){
 
     if($_POST['campo'] == 'cpf'){
         $query = "select * from clientes where cpf = '{$_POST['valor']}' and codigo != '{$_SESSION['codUsr']}'";
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
         if(mysqli_num_rows($result)){
             echo 'error';
             exit();
@@ -41,7 +41,7 @@ if($_POST['acao'] == 'salvar'){
     }
 
     $query = "update clientes set {$_POST['campo']} = '{$_POST['valor']}' where codigo = '{$_SESSION['codUsr']}'";
-    mysqli_query($con, $query);
+    sisLog( $query);
     echo 'success';
     exit();
 
@@ -51,7 +51,7 @@ if($_POST['acao'] == 'salvar'){
 
 
 $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-$result = mysqli_query($con, $query);
+$result = sisLog( $query);
 $d = mysqli_fetch_object($result);
 $dC = $d;
 

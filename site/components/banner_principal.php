@@ -5,7 +5,7 @@ if($_GET['cod']){
 }else{
   $query = "select * from banners where situacao = '1' limit 2";
 }
-  $result = mysqli_query($con, $query);
+  $result = sisLog( $query);
   $d = mysqli_fetch_object($result);
 ?>
 <section id="hero-animated">

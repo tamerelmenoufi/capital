@@ -101,7 +101,7 @@
 
         <?php
             $query = "select * from time where situacao = '1'  order by codigo  desc";
-            $result = mysqli_query($con, $query);
+            $result = sisLog( $query);
             while($d = mysqli_fetch_object($result)){
 
               $midias = json_decode($d->canais_contatos);

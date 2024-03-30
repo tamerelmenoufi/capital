@@ -81,7 +81,7 @@
 
           <?php
           $query = "select * from noticias where situacao = '1' order by codigo desc limit 0,3";
-          $result = mysqli_query($con, $query);
+          $result = sisLog( $query);
           while($d = mysqli_fetch_object($result)){
           ?>
 

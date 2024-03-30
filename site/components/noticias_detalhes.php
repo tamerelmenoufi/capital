@@ -1,7 +1,7 @@
 <?php
 
   $query = "select * from noticias where codigo = '{$_GET['cod']}'";
-  $result = mysqli_query($con, $query);
+  $result = sisLog( $query);
   $d = mysqli_fetch_object($result);
 
 ?>
@@ -319,7 +319,7 @@
                 <div class="mt-3">
                   <?php
                   $query = "select * from noticias where codigo not in({$_GET['cod']}) and situacao = '1' order by codigo desc limit 9";
-                  $result = mysqli_query($con, $query);
+                  $result = sisLog( $query);
                   while($d = mysqli_fetch_object($result)){
                   ?>
                   <div class="post-item mt-3">

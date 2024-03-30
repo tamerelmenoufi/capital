@@ -1,7 +1,7 @@
 <?php
 
   $query = "select * from paginas_topicos where situacao = '1'";
-  $result = mysqli_query($con, $query);
+  $result = sisLog( $query);
   $d = mysqli_fetch_object($result);
 
   $topicos = json_decode($d->topicos);

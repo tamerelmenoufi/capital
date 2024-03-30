@@ -34,7 +34,7 @@
 <?php
 
     $query = "select * from configuracoes where codigo = '1'";
-    $result = mysqli_query($con, $query);
+    $result = sisLog( $query);
     $d = mysqli_fetch_object($result);
 ?><!-- ======= Contact Section ======= -->
     <style>

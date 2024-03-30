@@ -4,7 +4,7 @@ if($_GET['cod']){
 }else{
   $query = "select * from banners where situacao = '1'";
 }
-  $result = mysqli_query($con, $query);
+  $result = sisLog( $query);
 ?>
 <style>
   img[banner]{

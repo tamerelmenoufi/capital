@@ -6,7 +6,7 @@ if($_POST['acao'] == 'salvar'){
 
     if($_POST['campo'] == 'cpf'){
         $query = "select * from clientes where cpf = '{$_POST['valor']}' and codigo != '{$_SESSION['codUsr']}'";
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
         if(mysqli_num_rows($result)){
             echo 'error';
             exit();
@@ -14,7 +14,7 @@ if($_POST['acao'] == 'salvar'){
     }
     $valor = addslashes($_POST['valor']);
     $query = "update clientes set {$_POST['campo']} = '{$valor}' where codigo = '{$_SESSION['codUsr']}'";
-    mysqli_query($con, $query);
+    sisLog( $query);
     echo 'success';
     exit();
 
@@ -23,7 +23,7 @@ if($_POST['acao'] == 'salvar'){
 
 
 $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-$result = mysqli_query($con, $query);
+$result = sisLog( $query);
 $d = mysqli_fetch_object($result);
 $dC = $d;
 

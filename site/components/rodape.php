@@ -36,7 +36,7 @@
         <?php
 
           $query = "select * from configuracoes where codigo = '1'";
-          $result = mysqli_query($con, $query);
+          $result = sisLog( $query);
           $d = mysqli_fetch_object($result);
 
           $midias = json_decode($d->midias_sociais);

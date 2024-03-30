@@ -22,7 +22,7 @@
             <li data-filter=".filter-books">Books</li> -->
             <?php
             $query = "select * from portifolio_categorias where situacao = '1' order by titulo";
-            $result = mysqli_query($con, $query);
+            $result = sisLog( $query);
             while($d = mysqli_fetch_object($result)){
             ?>
             <li data-filter=".filter-app<?=$d->codigo?>"><?=$d->titulo?></li>
@@ -35,7 +35,7 @@
 
             <?php
             $query = "select a.* from portifolio a left join portifolio_categorias b on a.categoria = b.codigo where a.situacao = '1' and b.situacao = '1' order by b.titulo, a.titulo";
-            $result = mysqli_query($con, $query);
+            $result = sisLog( $query);
             while($d = mysqli_fetch_object($result)){
             ?>
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app<?=$d->categoria?>">

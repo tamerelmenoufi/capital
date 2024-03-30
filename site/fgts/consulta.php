@@ -16,13 +16,13 @@
                                             sessoes = '".json_encode($_SESSION)."',
                                             log = '{$dados['consulta']}'";
 
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
     }
 
     $vctex = new Vctex;
 
     $query = "select *, api_vctex_dados->>'$.token.accessToken' as token from configuracoes where codigo = '1'";
-    $result = mysqli_query($con, $query);
+    $result = sisLog( $query);
     $d = mysqli_fetch_object($result);
 
     $token = $d->token;
@@ -36,7 +36,7 @@
         if($dados->statusCode == 200){
             $tabelas = $vctex->Tabelas($dados->token->accessToken);
             $token = $dados->token->accessToken;
-            mysqli_query($con, "update configuracoes set api_vctex_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
+            sisLog( "update configuracoes set api_vctex_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
         }else{
             $tabelas = 'error';
         }
@@ -63,7 +63,7 @@
                                         proposta = JSON_SET(proposta, '$.message', '{$status_msg}')
                         where codigo = '{$_POST['atualiza_proposta']}'";
 
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
 
     }
 
@@ -71,7 +71,7 @@
     if($_POST['acao'] == 'simulacao'){
 
         $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
         $d = mysqli_fetch_object($result);
 
         //$tabela_padrao = $tabela_padrao;
@@ -110,7 +110,7 @@
                                             tabela = '{$tabela_padrao}',
                                             dados = '{$simulacao}'
                                             ";
-        mysqli_query($con, $query);
+        sisLog( $query);
 
 
         consulta_logs([
@@ -131,7 +131,7 @@
                     from consultas a
                          left join clientes b on a.cliente = b.codigo
                     where a.codigo = '{$_POST['proposta']}'";
-        $result = mysqli_query($con, $query);
+        $result = sisLog( $query);
         $d = mysqli_fetch_object($result);
 
         $proposta = $vctex->Credito([
@@ -188,13 +188,13 @@
                     proposta = '{$proposta}'
                     where codigo = '{$_POST['proposta']}'
                 ";
-        mysqli_query($con, $query);
+        sisLog( $query);
 
     }
 
 
     $query = "select * from clientes where codigo = '{$_SESSION['codUsr']}'";
-    $result = mysqli_query($con, $query);
+    $result = sisLog( $query);
     $cliente = mysqli_fetch_object($result);
     $dC = $cliente;
 
@@ -253,12 +253,12 @@
     <?php
 
     $query = "select *, dados->>'$.statusCode' as simulacao, proposta->>'$.statusCode' as status_proposta from consultas where cliente = '{$_SESSION['codUsr']}' order by codigo desc";
-    $result = mysqli_query($con, $query);
+    $result = sisLog( $query);
     while($d = mysqli_fetch_object($result)){
         $dados = json_decode($d->dados);
 
         $q = "select * from configuracoes where codigo = '1'";
-        $r = mysqli_query($con, $q);
+        $r = sisLog( $q);
         $t = mysqli_fetch_object($r);
         $tab = json_decode($t->api_vctex_tabelas);
         foreach($tab->data as $i => $v){

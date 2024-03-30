@@ -96,7 +96,7 @@
 
           <?php
           $query = "select * from servicos where situacao = '1' order by codigo desc";
-          $result = mysqli_query($con, $query);
+          $result = sisLog( $query);
           while($d = mysqli_fetch_object($result)){
           ?>
 
