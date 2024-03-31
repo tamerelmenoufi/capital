@@ -2,7 +2,14 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 ?>
-
+<style>
+    .calendario td{
+        font-size:12px;
+        text-align:center;
+        min-height:25px;
+        padding:5px;
+    }
+</style>
 <div class="card m-3">
   <h5 class="card-header">Sistema Capital Financeira</h5>
   <div class="card-body">
