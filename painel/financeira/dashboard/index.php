@@ -47,6 +47,8 @@
         $dados[$dt][$d->cod_cliente]['log'] = $d->log;
     }
 
+    var_dump($dados);
+
     // Cabeçalho do calendário
     echo "<h2>Calendário de $month_name $year</h2>";
     echo "<table border='1' class='calendario'>";
