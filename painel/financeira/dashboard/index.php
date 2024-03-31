@@ -81,7 +81,7 @@
                             $blank_spaces--;
                         } elseif ($day_counter <= $days_in_month) {
                             $tem = count($dados["2024-03-".str_pad($day_counter, 2, "0", STR_PAD_LEFT)]);
-                            echo "<td>{$day_counter}".(($tem)?"<div class='registros'><i class="fa-solid fa-user-pen"></i> ".$tem."</div></td>":false);
+                            echo "<td>{$day_counter}".(($tem)?"<div class='registros'><i class=\"fa-solid fa-user-pen\"></i> ".$tem."</div></td>":false);
                             $day_counter++;
                         }
                     }
