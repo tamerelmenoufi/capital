@@ -19,6 +19,15 @@
         min-height:25px;
         padding:5px;
     }
+    .registros{
+        padding:5px;
+        font-size:12px;
+        margin:5px;
+        width:100%;
+        border-radius:5px;
+        background:blue;
+        color:#fff;
+    }
 </style>
 <div class="card m-3">
   <h5 class="card-header">Sistema Capital Financeira</h5>
@@ -72,7 +81,7 @@
                             $blank_spaces--;
                         } elseif ($day_counter <= $days_in_month) {
                             $tem = count($dados["2024-03-".str_pad($day_counter, 2, "0", STR_PAD_LEFT)]);
-                            echo "<td>{$day_counter}"."<br>".$tem."</td>";
+                            echo "<td>{$day_counter}".(($tem)?"<div class='registros'><i class="fa-solid fa-user-pen"></i> ".$tem."</div></td>":false);
                             $day_counter++;
                         }
                     }
