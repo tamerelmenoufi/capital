@@ -34,7 +34,7 @@
 
     // Cabeçalho do calendário
     echo "<h2>Calendário de $month_name $year</h2>";
-    echo "<table border='1'>";
+    echo "<table border='1' class='calendario'>";
     echo "<tr><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr>";
 
     // Calcular espaços em branco para os dias do mês anterior
