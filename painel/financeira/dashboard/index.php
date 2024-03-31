@@ -39,7 +39,13 @@
     $day_of_week = date("N", $first_day_of_month);
     $month_name = date("F", $first_day_of_month);
 
-    $query = "select * from consultas where data ";
+    $dados = [];
+    $query = "select a.codigo as cod_cliente, a.nome, a.cpf, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '2024-03%' order by b.codigo asc";
+    $result = mysqli_query($con,$query);
+    while($d = mysqli_fetch_object($result)){
+        $dt = trim(explode(" ", $d->ultimo_acesso)[0]);
+        $dados[$dt][$d->cod_cliente]['log'] = $d->log;
+    }
 
     // Cabeçalho do calendário
     echo "<h2>Calendário de $month_name $year</h2>";
@@ -63,7 +69,8 @@
                 echo "<td></td>";
                 $blank_spaces--;
             } elseif ($day_counter <= $days_in_month) {
-                echo "<td>$day_counter</td>";
+                $tem = count($dados["2024-03-{$day_counter}"])
+                echo "<td>{$day_counter}"."<br>".$tem."</td>";
                 $day_counter++;
             }
         }
