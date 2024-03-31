@@ -69,7 +69,7 @@
                 echo "<td></td>";
                 $blank_spaces--;
             } elseif ($day_counter <= $days_in_month) {
-                $tem = count($dados["2024-03-{$day_counter}"]);
+                $tem = count($dados["2024-03-".str_pad($day_counter, 2, "0", STR_PAD_LEFT)]);
                 echo "<td>{$day_counter}"."<br>".$tem."</td>";
                 $day_counter++;
             }
