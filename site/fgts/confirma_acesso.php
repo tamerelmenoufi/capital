@@ -97,6 +97,14 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
         })
 
+        $.ajax({
+            url:"assets/lib/log_acessos.php",
+            success:function(dados){
+            //Retorno da função
+            // console.log(dados);
+            }
+        });
+
 
 
     })

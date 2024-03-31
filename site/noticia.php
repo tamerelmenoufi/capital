@@ -140,6 +140,15 @@
   <script src="assets/js/js.js"></script>
   <script>
     $(function(){
+
+      $.ajax({
+        url:"assets/lib/log_acessos.php",
+        success:function(dados){
+          //Retorno da função
+          // console.log(dados);
+        }
+      });
+
       setTimeout(() => {
         $("#loom-companion-mv3").remove();
       }, 1000);

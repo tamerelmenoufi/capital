@@ -149,7 +149,7 @@
         url:"assets/lib/log_acessos.php",
         success:function(dados){
           //Retorno da função
-          console.log(dados);
+          // console.log(dados);
         },
         error:function(){
           console.log('Error');
