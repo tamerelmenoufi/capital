@@ -27,7 +27,8 @@ if($_POST['acao'] == 'autorizacao'){
 
 }
 
-sisLog( "update clientes set pre_cadastro = NOW() where pre_cadastro = 0 and codigo = '{$_SESSION['codUsr']}'");
+mysqli_query($con, "update clientes set pre_cadastro = NOW() where pre_cadastro = 0 and codigo = '{$_SESSION['codUsr']}'");
+mysqli_query($con, "update clientes set ultimo_acesso = NOW() where codigo = '{$_SESSION['codUsr']}'");
 
 if($_POST['acao'] == 'salvar'){
 

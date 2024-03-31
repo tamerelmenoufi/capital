@@ -26,7 +26,7 @@
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
 
     <?php
-    $query = "select * from consultas_log ";
+    
 
 
     // Configurações iniciais
@@ -38,6 +38,8 @@
 
     $day_of_week = date("N", $first_day_of_month);
     $month_name = date("F", $first_day_of_month);
+
+    $query = "select * from consultas where data ";
 
     // Cabeçalho do calendário
     echo "<h2>Calendário de $month_name $year</h2>";
