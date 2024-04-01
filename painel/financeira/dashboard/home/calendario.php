@@ -1,6 +1,9 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    if($_POST['n']) $_SESSION['n'];
+    if($_POST['Y']) $_SESSION['Y'];
+
 
 
 ?>
@@ -9,8 +12,8 @@
         <?php
 
             // Configurações iniciais
-            echo $month = date("n");
-            $year = date("Y");
+            $month = (($_SESSION['n'])?:date("n"));
+            $year = (($_SESSION['Y'])?:date("Y"));
             $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
             $end_day_of_month = mktime(0, 0, 0, $month + 1, 1-1, $year);
             $days_in_month = (((($end_day_of_month)/84600) - (($first_day_of_month)/84600)) + 1);
@@ -19,7 +22,7 @@
             $month_name = date("F", $first_day_of_month);
 
             $dados = [];
-            $query = "select a.codigo as cod_cliente, a.nome, a.cpf, a.ultimo_acesso, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '2024-03%' order by b.codigo asc";
+            $query = "select a.codigo as cod_cliente, a.nome, a.cpf, a.ultimo_acesso, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '{$year}-{$month}%' order by b.codigo asc";
             $result = mysqli_query($con,$query);
             while($d = mysqli_fetch_object($result)){
                 $dt = trim(explode(" ", $d->ultimo_acesso)[0]);
