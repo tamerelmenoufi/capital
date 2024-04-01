@@ -39,7 +39,7 @@
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     <div class="row">
         <div class="col-md-4">
-            <div dbHome></div>
+            <div dbCalendar></div>
         </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
         $.ajax({
             url:"financeira/dashboard/home/calendario.php",
             success:function(dados){
-                $("div[dbHome]").html(dados);
+                $("div[dbCalendar]").html(dados);
             }
         })
 
