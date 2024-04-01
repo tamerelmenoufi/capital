@@ -49,7 +49,7 @@
                   <th scope="col">Data de Cadastro</th>
                   <th scope="col">Situação</th>
                   <!-- <th scope="col">Situação</th> -->
-                  <th scope="col">Ações</th>
+                  <th style="width:200px;">Ações</th>
                 </tr>
               </thead>
               <tbody>
