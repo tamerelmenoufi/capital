@@ -1,13 +1,15 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+
+
 ?>
 <div class="row">
     <div class="col-md-4">
         <?php
 
             // Configurações iniciais
-            $month = date("n");
+            echo $month = date("n");
             $year = date("Y");
             $first_day_of_month = mktime(0, 0, 0, $month, 1, $year);
             $end_day_of_month = mktime(0, 0, 0, $month + 1, 1-1, $year);
