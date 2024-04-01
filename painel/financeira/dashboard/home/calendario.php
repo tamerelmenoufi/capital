@@ -15,7 +15,7 @@
     $month_name = date("F", $first_day_of_month);
 
     $dados = [];
-    $query = "select a.codigo as cod_cliente, a.nome, a.cpf, a.ultimo_acesso, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '{$year}-{$month}%' order by b.codigo asc";
+    echo $query = "select a.codigo as cod_cliente, a.nome, a.cpf, a.ultimo_acesso, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '{$year}-{$month}%' order by b.codigo asc";
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
         $dt = trim(explode(" ", $d->ultimo_acesso)[0]);
