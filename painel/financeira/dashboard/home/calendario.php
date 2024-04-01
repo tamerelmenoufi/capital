@@ -1,10 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    if($_POST['n']) $_SESSION['n'];
-    if($_POST['Y']) $_SESSION['Y'];
-
-    print_r($_SESSION);
+    if($_POST['n']) $_SESSION['n'] = $_POST['n'];
+    if($_POST['Y']) $_SESSION['Y'] = $_POST['Y'];
 
     // Configurações iniciais
     $month = (($_SESSION['n'])?:date("n"));
