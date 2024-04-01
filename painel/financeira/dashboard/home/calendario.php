@@ -4,8 +4,6 @@
     if($_POST['n']) $_SESSION['n'];
     if($_POST['Y']) $_SESSION['Y'];
 
-
-
 ?>
 <div class="row">
     <div class="col-md-4">
