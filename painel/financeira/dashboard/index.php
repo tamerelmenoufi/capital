@@ -49,7 +49,7 @@
 
         Carregando('none');
         $.ajax({
-            url:"dashboard/home/calendario.php",
+            url:"financeira/dashboard/home/calendario.php",
             success:function(dados){
                 $("div[dbHome]").html(dados);
             }
