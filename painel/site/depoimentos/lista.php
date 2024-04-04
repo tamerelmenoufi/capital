@@ -5,7 +5,7 @@
         if($_POST['imagem']){
             unlink("../volume/depoimentos/".$_POST['imagem']);
         }
-        $query = "delete from depoimentos where codigo = '{$_POST['delete']}'";
+        echo $query = "delete from depoimentos where codigo = '{$_POST['delete']}'";
         mysqli_query($con, $query);
       }
 
