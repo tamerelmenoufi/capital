@@ -83,7 +83,7 @@
                     >
                     <i class="fa-regular fa-pen-to-square"></i> Editar
                     </button>
-                    <button class="btn btn-danger btn-sm" delete="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
+                    <button class="btn btn-danger btn-sm" deletar="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
                     <i class="fa-solid fa-trash-can"></i> Excluir
                     </button>
                   </td>
@@ -204,8 +204,8 @@
             })
         })
 
-        $("button[delete]").click(function(){
-            deletar = $(this).attr("delete");
+        $("button[deletar]").click(function(){
+            deletar = $(this).attr("deletar");
             imagem = $(this).attr("imagem");
             $.confirm({
                 content:"Deseja realmente excluir o cadastro ?",
