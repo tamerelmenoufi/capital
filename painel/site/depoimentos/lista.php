@@ -1,11 +1,11 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    if($_POST['delete']){
+    if($_POST['deletar']){
         if($_POST['imagem']){
             unlink("../volume/depoimentos/".$_POST['imagem']);
         }
-        echo $query = "delete from depoimentos where codigo = '{$_POST['delete']}'";
+        echo $query = "delete from depoimentos where codigo = '{$_POST['deletar']}'";
         mysqli_query($con, $query);
         exit();
       }
@@ -220,7 +220,7 @@
                                 url:"site/depoimentos/lista.php",
                                 type:"POST",
                                 data:{
-                                    delete:deletar,
+                                    deletar,
                                     imagem
                                 },
                                 success:function(dados){
