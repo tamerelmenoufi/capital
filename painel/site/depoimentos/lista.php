@@ -224,7 +224,7 @@
                                     imagem
                                 },
                                 success:function(dados){
-                                    $("#paginaHome").html(dados);
+                                  $("div[lista]").html(dados);
                                 }
                             })
                         }
