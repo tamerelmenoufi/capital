@@ -7,6 +7,7 @@
         }
         echo $query = "delete from depoimentos where codigo = '{$_POST['delete']}'";
         mysqli_query($con, $query);
+        exit();
       }
 
       if($_POST['situacao']){
@@ -32,7 +33,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Depoimentos XXX</h5>
+          <h5 class="card-header">Lista de Depoimentos</h5>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button
