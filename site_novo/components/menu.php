@@ -47,8 +47,23 @@
     transition: all 0.3s ease-in-out 0s;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
-    color:#144397
+    
 }
+
+
+.navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(19 63 142);
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+    }
 </style>
 
   <!-- ======= Header ======= -->
