@@ -28,12 +28,12 @@
 
 <style>
 .header .logo h1 span {
-  color: #0dacad!important;
+  color: #144397!important;
   font-weight: 500;
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-    color: #373085;
+    color: #144397;
 }
 .navbar > ul > li > a:before {
     content: "";
@@ -42,7 +42,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #393287;
+    background-color: #144397;
     visibility: hidden;
     transition: all 0.3s ease-in-out 0s;
     transform: scaleX(0);
