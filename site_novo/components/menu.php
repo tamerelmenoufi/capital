@@ -58,7 +58,7 @@
     padding: 14px 20px;
     font-family: var(--font-secondary);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: bold;
     color: rgb(19 63 142);
     white-space: nowrap;
     transition: 0.3s;
