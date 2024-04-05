@@ -47,6 +47,7 @@
     transition: all 0.3s ease-in-out 0s;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
+    color:#144397
 }
 </style>
 
