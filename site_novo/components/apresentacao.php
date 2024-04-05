@@ -4,7 +4,7 @@
 <div class="row">
 
 <div class="col-lg-6">
-<img src="assets/img/cp1.jpg"/>
+<img src="assets/img/cp1.jpg" style="height:550px"/>
 </div>
 
 
