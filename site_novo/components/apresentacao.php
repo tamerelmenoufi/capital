@@ -19,7 +19,7 @@
    
    <div style="padding:30px"> </div>
    <center> 
-    <d style="padding:10px;background:#fcce00;color:144397;font-size:22px;text-align:center;font-weight:bold">
+    <d style="padding:10px;background:#fcce00;color:144397;font-size:25px;text-align:center;font-weight:bold">
     Faça sua simulação</d>
 </center>
 </div>
