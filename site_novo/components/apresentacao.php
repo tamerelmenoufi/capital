@@ -1,320 +1,143 @@
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs">
-      <div class="container">
+<?php
 
+  $query = "select * from paginas_topicos where situacao = '1'";
+  $result = sisLog( $query);
+  $d = mysqli_fetch_object($result);
 
-      </div>
-    </div><!-- End Breadcrumbs -->
+  $topicos = json_decode($d->topicos);
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
+?>
+
+<!-- ======= About Section ======= -->
+<section id="conheca" class="about">
       <div class="container" data-aos="fade-up">
 
-        <div class="row g-5">
+        <div class="section-header">
+          <h2><?=$d->titulo?></h2>
+          <p><?=$d->descricao?></p>
+        </div>
 
-          <div class="col-lg-8">
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="row gy-4 posts-list">
+          <div class="col-lg-6">
+            <div class="about-img">
+              <img src="<?=$localPainel?>site/volume/paginas_topicos/<?=$d->imagem?>" class="img-fluid" style="border-radius:20px;">
 
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
+              <!-- <video  class="img-fluid" style="border-radius:20px; height:300px;" controls autoplay>
+                <source src="<?=$localSite?>assets/videos/institucional.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+              </video> -->
 
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More</a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More</a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More</a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More</a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-5.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      In itaque assumenda aliquam voluptatem qui temporibus iusto nisi quia. Autem vitae quas aperiam nesciunt mollitia tempora odio omnis. Ipsa odit sit ut amet necessitatibus. Quo ullam ut corrupti autem consequuntur totam dolorem.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More</a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-              <div class="col-lg-6">
-                <article class="d-flex flex-column">
-
-                  <div class="post-img">
-                    <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
-                  </div>
-
-                  <h2 class="title">
-                    <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
-                  </h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2022-01-01">Jan 1, 2022</time></a></li>
-                      <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                    </ul>
-                  </div>
-
-                  <div class="content">
-                    <p>
-                      Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et consectetur voluptatem id dolor magni impedit. Omnis dolores sit.
-                    </p>
-                  </div>
-
-                  <div class="read-more mt-auto align-self-end">
-                    <a href="blog-details.html">Read More</a>
-                  </div>
-
-                </article>
-              </div><!-- End post list item -->
-
-            </div><!-- End blog posts list -->
-
-            <div class="blog-pagination">
-              <ul class="justify-content-center">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-              </ul>
-            </div><!-- End blog pagination -->
-
+            </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
+            <h3 class="pt-0 pt-lg-5"><?=$d->subtitulo?></h3>
 
-            <div class="sidebar">
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-3">
+            
+            </ul><!-- End Tabs -->
 
-              <div class="sidebar-item search-form">
-                <h3 class="sidebar-title">Search</h3>
-                <form action="" class="mt-3">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End sidebar search formn-->
+            <!-- Tab Content -->
+            <div class="tab-content">
 
-              <div class="sidebar-item categories">
-                <h3 class="sidebar-title">Categories</h3>
-                <ul class="mt-3">
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-              </div><!-- End sidebar categories-->
 
-              <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title">Recent Posts</h3>
+            <div class="tab-pane fade show <?=(($i == 0)?'active':false)?>" id="tab<?=($i+1)?>" style="text-align:justify;">
+              <?=str_replace('&nbsp;'," ", $descricao)?>
+            </div>
+           
 
-                <div class="mt-3">
+              <!-- <div class="tab-pane fade show active" id="tab1">
 
-                  <div class="post-item mt-3">
-                    <img src="assets/img/blog/blog-recent-1.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Nihil blanditiis at in nihil autem</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
 
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-2.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Quidem autem et impedit</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
 
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-3.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
 
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-4.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Laborum corporis quo dara net para</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
+              <p class="fst-italic">A PROJECT é uma empresa pautada no desenvolvimento de soluções, execução de projetos e treinamento.</p>
+              <p class="fst-italic">Entendemos que o mercado cada vez mais globalizado se encontra em constante evolução, necessitando cada vez mais de produtos e serviços, no tempo e no local exato, ao menor custo possível.</p>
+              <p class="fst-italic">Contamos com uma equipe sólida e experiente que persegue o sucesso de forma conjunta, e que entende que a completude e somatório dos esforços entre as partes é fundamental.</p>
+              <p class="fst-italic">A atuação da PROJECT se dá tanto no privado, quanto no meio público. No segmento privado, a capacidade técnica de nosso quadro nos credencia a entregarmos resultados brilhantes, sempre com presteza no atendimento e responsabilidade ímpar na execução. No público, atuamos com uma equipe campeã, que capta e participa de processos licitatórios em todas as esferas do setor, abarcando todas as suas modalidades e tipos, entregando sempre a sociedade um serviço final de ótima qualidade.</p>
+              <p class="fst-italic">Para tanto, afim de atingir os objetivos que nos propomos nossa atuação se dá sempre de forma ética e íntegra, respeitando as normas e leis vigentes.</p> -->
 
-                  <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-5.jpg" alt="" class="flex-shrink-0">
-                    <div>
-                      <h4><a href="blog-post.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                      <time datetime="2020-01-01">Jan 1, 2020</time>
-                    </div>
-                  </div><!-- End recent post item-->
 
+
+                <!-- <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
                 </div>
+                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
 
-              </div><!-- End sidebar recent posts-->
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Incidunt non veritatis illum ea ut nisi</h4>
+                </div>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
 
-              <div class="sidebar-item tags">
-                <h3 class="sidebar-title">Tags</h3>
-                <ul class="mt-3">
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
-                </ul>
-              </div><!-- End sidebar tags-->
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Omnis ab quia nemo dignissimos rem eum quos..</h4>
+                </div>
+                <p>Eius alias aut cupiditate. Dolor voluptates animi ut blanditiis quos nam. Magnam officia aut ut alias quo explicabo ullam esse. Sunt magnam et dolorem eaque magnam odit enim quaerat. Vero error error voluptatem eum.</p> -->
 
-            </div><!-- End Blog Sidebar -->
+              <!-- </div> -->
+              <!-- End Tab 1 Content -->
+
+              <!-- <div class="tab-pane fade show" id="tab2">
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Missão</h4>
+                </div>
+                <p>Se destacar no segmento privado e público, atuando no processo como agente facilitador e provedor de meios técnicos para atividade finalística requerida.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Visão</h4>
+                </div>
+                <p>Apresentar aos clientes soluções técnicas viáveis, se posicionando sempre de maneira transparente e íntegra, sendo para o mercado nacional um referencial de probidade e aptidão no desenvolvimento da sua atividade.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Valores</h4>
+                </div>
+                <i class="fa-solid fa-check-double" style="font-size:10px; margin-left:25px;"></i> Cooperação<br>
+                <i class="fa-solid fa-check-double" style="font-size:10px; margin-left:25px;"></i> Aprimoramento<br>
+                <i class="fa-solid fa-check-double" style="font-size:10px; margin-left:25px;"></i> Integridade<br>
+                <i class="fa-solid fa-check-double" style="font-size:10px; margin-left:25px;"></i> Qualidade</p>
+
+              </div> -->
+              <!-- End Tab 2 Content -->
+
+              <!-- <div class="tab-pane fade show" id="tab3">
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Melhoria Contínua</h4>
+                </div>
+                <p>Realizamos regularmente investimentos na capacitação e na busca por processos ágeis, viáveis e seguros para a organização e seus colaboradores, de modo que, os seus serviços sejam realizados com a maior eficiência possível.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Responsabilidade</h4>
+                </div>
+                <p>Atuar com zelo em detrimento das normas legais ambientais, jurídicas e de segurança do trabalho, sendo uma forte referência nos preceitos ora estabelecidos, fortalecendo e ratificando cotidianamente o compliance.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Compromisso Social</h4>
+                </div>
+                <p>Racionalizar o uso dos recursos naturais e inserir a comunidade nos projetos, ao ponto que, o meio e o fim sejam um elo indissociável de bem feitoria ao meio ambiente e crescimento humano em aspectos diversos.</p>
+
+              </div> -->
+              <!-- End Tab 3 Content -->
+
+
+            </div>
 
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Blog Section -->
+    </section><!-- End About Section -->
