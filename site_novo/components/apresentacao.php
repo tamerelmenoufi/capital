@@ -18,7 +18,7 @@
    com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum.</p>
 
    <center> 
-    <d style="padding:25px;background:#fcce00;color:144397;font-size:30px;text-align:center">
+    <d style="margin-top:10px;padding:10px;background:#fcce00;color:144397;font-size:22px;text-align:center;font-weight:bold">
     Faça sua simulação</d>
 </center>
 </div>
