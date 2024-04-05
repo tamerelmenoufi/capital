@@ -1,10 +1,10 @@
-
-<div class="container">
 <section id="#" class="about">
+<div class="container">
+
 
 
 <div class="col-lg-6">
-<img src="img/f12.jpg"/>
+<img src="assets/img/f12.jpg"/>
 </div>
 
 
@@ -13,5 +13,6 @@
    com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum.</p>
 </div>
 
-</section>
+
 </div>
+</section>
