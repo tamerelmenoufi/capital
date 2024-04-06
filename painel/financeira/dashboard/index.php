@@ -29,6 +29,15 @@
         background:blue;
         color:#fff;
     }
+    .registros_limpo{
+        padding:5px;
+        font-size:12px;
+        margin:5px;
+        width:100%;
+        border-radius:5px;
+        background:#fff;
+        color:#fff;
+    }
 </style>
 <div class="card m-3">
   <h5 class="card-header">Sistema Capital Financeira</h5>
