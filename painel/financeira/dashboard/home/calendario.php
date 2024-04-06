@@ -22,6 +22,8 @@
         $dados[$dt][$d->cod_cliente]['log'] = $d->log;
     }
 
+    print_r($dados);
+
     // Cabeçalho do calendário
     // echo "<h2>Calendário de $month_name $year</h2>";
 ?>
