@@ -13,7 +13,7 @@
 
 .recent-blog-posts .post-box .post-title:hover {
     font-size: 24px;
-    color: #574ec2;
+    color: #fff;
     font-weight: 700;
     margin: 15px 0 0 0;
     position: relative;
@@ -73,7 +73,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 style="color:#fff;font-weight:bold" >Nossos Serviços</h2>
+          <h2 style="color:#fff;font-weight:bold;margin-top:15px" >Nossos Serviços</h2>
           <p style="color:#fff;"> Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor..</p>
         </div>
 
