@@ -46,7 +46,7 @@ if($_POST['telefone']){
     $result = sisLog( $query);
     $d = mysqli_fetch_object($result);
     if(!$d->codigo){
-        $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', data_cadastro = NOW(), validar_telefone = NOW()";
+        $query = "insert into clientes set phoneNumber = '{$_POST['telefone']}', data_cadastro = NOW(), ultimo_acesso = NOW(), validar_telefone = NOW()";
         $result = mysqli_query($con, $query);
         $_SESSION['codUsr'] = mysqli_insert_id($con); 
     }else{

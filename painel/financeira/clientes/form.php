@@ -31,7 +31,7 @@
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
         }else{
-            $query = "insert into clientes set data_cadastro = NOW(), {$attr}";
+            $query = "insert into clientes set data_cadastro = NOW(), ultimo_acesso = NOW(), {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
         }
