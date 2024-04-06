@@ -30,12 +30,11 @@
     border-color: #ffffff;
     margin: 10px;
 }
-    .botaobranco:hover {
+.botaobranco:hover {
     color: #fff;
-    background-color: #574ec2;
-    border-color: #574ec2;
+    background-color: #1f62d9;
+    border-color: #2468e1;
 }
-    
     .botaoroxo:hover {
     color: #fff;
     background-color: #574ec2;
@@ -94,7 +93,7 @@
           ?>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box"  style="background:#fff;">
+            <div class="post-box"  style="background:#fff;padding:13px">
               <div style="margin-top:10px;height:267px" class="post-img"><img src="<?=$localPainel?>site/volume/servicos/<?=$d->imagem?>" class="img-fluid" alt=""></div>
               <!-- <div class="meta">
                 <span class="post-date">Tue, December 12</span>
