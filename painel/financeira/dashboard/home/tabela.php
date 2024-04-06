@@ -68,6 +68,23 @@
 <script>
     $(function(){
         
+      $("button[filtro]").click(function(){
+
+        filtro = $(this).attr("filtro");
+        periodo = $(this).attr("periodo");
+        Carregando();
+        $.ajax({
+          url:"financeira/dashboard/home/filtro.php",
+          data:{
+            filtro,
+            periodo
+          },
+          success:function(dados){
+            $(".LateralDireita").html(dados);
+          }
+        })
+
+      })
         
     })
 </script>
