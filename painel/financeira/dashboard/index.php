@@ -25,6 +25,7 @@
         font-size:12px;
         margin:5px;
         width:100%;
+        height:25px;
         border-radius:5px;
         background:blue;
         color:#fff;
@@ -35,6 +36,7 @@
         font-size:12px;
         margin:5px;
         width:100%;
+        height:25px;
         border-radius:5px;
         background:#fff;
         color:#fff;
