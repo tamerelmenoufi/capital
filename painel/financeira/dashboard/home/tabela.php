@@ -3,16 +3,16 @@
 
     $data = (($_POST['data'])?:date("Y-m"));
 
-    echo $query = "select
+    $query = "select
                 (select count(*) from clientes where data_cadastro like '{$data}%') as novos_cadastros,
                 (select count(*) from consultas where data like '{$data}%') as simulacoes,
                 (select count(*) from consultas where data like '{$data}%' and dados->>'$.statusCode' = '200') as simulacoes_positiva,
                 (select count(*) from consultas where data like '{$data}%' and dados->>'$.statusCode' != '200') as simulacoes_negativa,
 
-                (select count(*) from consultas where data like '{$data}%' and proposta is not null) as propostas,
-                (select count(*) from consultas where data like '{$data}%' and proposta is not null and proposta->>'$.statusCode' = '130') as propostas_pagas,
-                (select count(*) from consultas where data like '{$data}%' and proposta is not null and proposta->>'$.statusCode' in ('200', '95', '60', '61')) as propostas_pendentes,
-                (select count(*) from consultas where data like '{$data}%' and proposta is not null and proposta->>'$.statusCode' not in ('200', '130', '95', '60', '61')) as propostas_erro
+                (select count(*) from consultas where data like '{$data}%' and proposta->>'$.statusCode') as propostas,
+                (select count(*) from consultas where data like '{$data}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' = '130') as propostas_pagas,
+                (select count(*) from consultas where data like '{$data}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' in ('200', '95', '60', '61')) as propostas_pendentes,
+                (select count(*) from consultas where data like '{$data}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' not in ('200', '130', '95', '60', '61')) as propostas_erro
             ";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
