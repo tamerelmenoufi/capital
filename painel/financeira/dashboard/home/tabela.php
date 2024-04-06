@@ -18,13 +18,13 @@
 
     $dados = [
         ['NC', 'Novos Cadastros', $d->novos_cadastros],
-        ['SR', 'Simulações Realizadas' => $d->simulacoes],
-        ['SS', 'Simulações bem Sucedidas' => $d->simulacoes_positiva],
-        ['SN', 'Simulações Negadas' => $d->simulacoes_negativa],
-        ['PR', 'Propostas Realizadas' => $d->propostas],
-        ['AP', 'Antecipação Paga' => $d->propostas_pagas],
-        ['PP', 'Propostas com Pendências' => $d->propostas_pendentes],
-        ['PN', 'Propostas Negadas' => $d->propostas_erro]
+        ['SR', 'Simulações Realizadas', $d->simulacoes],
+        ['SS', 'Simulações bem Sucedidas', $d->simulacoes_positiva],
+        ['SN', 'Simulações Negadas', $d->simulacoes_negativa],
+        ['PR', 'Propostas Realizadas', $d->propostas],
+        ['AP', 'Antecipação Paga', $d->propostas_pagas],
+        ['PP', 'Propostas com Pendências', $d->propostas_pendentes],
+        ['PN', 'Propostas Negadas', $d->propostas_erro]
     ];
 ?>
 <table class="table table-hover">
