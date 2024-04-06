@@ -16,10 +16,11 @@
 
     $dados = [];
     $query = "select a.codigo as cod_cliente, a.nome, a.cpf, a.ultimo_acesso, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%' order by b.codigo asc";
+    $query = "select ultimo_acesso, count(*) as quantidade from clientes where ultimo_acesso like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%'";
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
         $dt = trim(explode(" ", $d->ultimo_acesso)[0]);
-        $dados[$dt][$d->cod_cliente]['log'] = $d->log;
+        $dados[$dt] = $d->quantidade;
     }
 
     // print_r($dados);
@@ -73,7 +74,7 @@
                 echo "<td></td>";
                 $blank_spaces--;
             } elseif ($day_counter <= $days_in_month) {
-                $tem = count($dados["{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."-".str_pad($day_counter, 2, "0", STR_PAD_LEFT)]);
+                $tem = $dados["{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."-".str_pad($day_counter, 2, "0", STR_PAD_LEFT)];
                 echo "<td>{$day_counter}".(($tem)?"<div class='registros'><i class=\"fa-solid fa-user-pen\"></i> ".$tem."</div>":false)."</td>";
                 $day_counter++;
             }
