@@ -17,9 +17,11 @@
     $dados = [];
     $query = "select a.codigo as cod_cliente, a.nome, a.cpf, a.ultimo_acesso, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%' order by b.codigo asc";
     $query = "select ultimo_acesso from clientes where ultimo_acesso like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%'";
+    $query = "select * from sisLog where data like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%' and tabela = 'clientes' and registro->>'$[0]' > 0 group by registro->>'$[0]'";
+
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
-        $dt = trim(explode(" ", $d->ultimo_acesso)[0]);
+        $dt = trim(explode(" ", $d->data)[0]);
         $dados[$dt]++;
     }
 
