@@ -17,19 +17,20 @@
     $d = mysqli_fetch_object($result);
 
     $dados = [
-        'Novos Cadastros' => $d->novos_cadastros,
-        'Simulações Realizadas' => $d->simulacoes,
-        'Simulações bem sucedidas' => $d->simulacoes_positiva,
-        'Simulações Negadas' => $d->simulacoes_negativa,
-        'Propostas Realizadas' => $d->propostas,
-        'Antecipação Paga' => $d->propostas_pagas,
-        'Propostas com Pendências' => $d->propostas_pendentes,
-        'Propostas Negadas' => $d->propostas_erro
+        ['NC', 'Novos Cadastros', $d->novos_cadastros],
+        ['SR', 'Simulações Realizadas' => $d->simulacoes],
+        ['SS', 'Simulações bem Sucedidas' => $d->simulacoes_positiva],
+        ['SN', 'Simulações Negadas' => $d->simulacoes_negativa],
+        ['PR', 'Propostas Realizadas' => $d->propostas],
+        ['AP', 'Antecipação Paga' => $d->propostas_pagas],
+        ['PP', 'Propostas com Pendências' => $d->propostas_pendentes],
+        ['PN', 'Propostas Negadas' => $d->propostas_erro]
     ];
 ?>
 <table class="table table-hover">
   <thead>
     <tr>
+      <th scope="col">Sigla</th>
       <th scope="col">Descrição</th>
       <th scope="col">Quanidade</th>
     </tr>
@@ -39,8 +40,9 @@
     foreach($dados as $item => $valor){
 ?>
     <tr>
-      <td><?=$item?></td>
-      <td><?=$valor?></td>
+      <td><?=$valor[0]?></td>
+      <td><?=$valor[1]?></td>
+      <td><?=$valor[2]?></td>
     </tr>
 <?php
     }
