@@ -89,7 +89,7 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box"  style="background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);padding:13px">
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(21,24,200,1) 48%);padding:13px">
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#144397">
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
