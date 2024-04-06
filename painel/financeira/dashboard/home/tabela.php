@@ -43,7 +43,19 @@
     <tr>
       <td class="text-center"><?=$valor[0]?></td>
       <td><?=$valor[1]?></td>
-      <td class="text-center"><?=$valor[2]?></td>
+      <td class="text-center">
+        <button
+            class="btn btn-primary btn-sm"
+            filtro="<?=$valor[0]?>"
+            periodo="<?=$data?>"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasDireita"
+            role="button"
+            aria-controls="offcanvasDireita"
+        >
+            <?=$valor[2]?>
+        </button>
+    </td>
     </tr>
 <?php
     }
