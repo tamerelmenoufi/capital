@@ -107,6 +107,18 @@
                 },
                 success:function(dados){
                     $("div[dbCalendar]").html(dados);
+
+                    $.ajax({
+                        url:"financeira/dashboard/home/tabela.php",
+                        type:"POST",
+                        data:{
+                            data:`${Y}-${n}`
+                        },
+                        success:function(dados){
+                            $("div[dbTabela").html(dados);
+                        }
+                    })
+
                 }
             });
         })

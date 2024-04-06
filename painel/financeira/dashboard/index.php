@@ -69,15 +69,24 @@
             url:"financeira/dashboard/home/calendario.php",
             success:function(dados){
                 $("div[dbCalendar]").html(dados);
+                
+                dateN = $("select[dateN]").val();
+                dateY = $("select[dateY]").val();
+                $.ajax({
+                    url:"financeira/dashboard/home/tabela.php",
+                    type:"POST",
+                    data:{
+                        data:`${dateY}-${dateN}`
+                    },
+                    success:function(dados){
+                        $("div[dbTabela").html(dados);
+                    }
+                })
+                
             }
         })
 
-        $.ajax({
-            url:"financeira/dashboard/home/tabela.php",
-            success:function(dados){
-                $("div[dbTabela").html(dados);
-            }
-        })
+
 
     })
 </script>
