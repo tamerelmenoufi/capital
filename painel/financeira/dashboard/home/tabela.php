@@ -53,7 +53,7 @@
             role="button"
             aria-controls="offcanvasDireita"
         >
-            <?=$valor[2]?>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> <?=$valor[2]?>
         </button>
     </td>
     </tr>
