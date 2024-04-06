@@ -75,6 +75,7 @@
         Carregando();
         $.ajax({
           url:"financeira/dashboard/home/filtro.php",
+          type:"POST",
           data:{
             filtro,
             periodo
