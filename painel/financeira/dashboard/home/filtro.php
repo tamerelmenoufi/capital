@@ -1,5 +1,22 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+
+        $periodo = explode("-",$_POST['periodo']);
+        if($periodo[2]) $periodo = "{$periodo[2]}/{$periodo[1]}/{$periodo[0]}";
+        else $periodo = "{$periodo[1]}/{$periodo[0]}";
+
+        $dicionario = [
+            'NC' => 'Novos Cadastros',
+            'SR' => 'Simulações Realizadas',
+            'SS' => 'Simulações bem Sucedidas',
+            'SN' => 'Simulações Negadas',
+            'PR' => 'Propostas Realizadas',
+            'AP' => 'Antecipação Paga',
+            'PP' => 'Propostas com Pendências',
+            'PN' => 'Propostas Negadas'
+        ];
+
+
 ?>
 <style>
   .legenda_status{
@@ -15,7 +32,7 @@
 
 </style>
 
-<h4 class="Titulo<?=$md5?>"><?=$_POST['filtro']?> - <?=$_POST['periodo']?></h4>
+<h4 class="Titulo<?=$md5?>"><?=$dicionario[$_POST['filtro']]?></h4>
 
 
 <div class="col">
@@ -24,7 +41,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Clientes </h5>
+          <h5 class="card-header">Período de <?=$periodo?> </h5>
           <div class="card-body">
 
             <div class="table-responsive">
