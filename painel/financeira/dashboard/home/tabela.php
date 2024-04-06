@@ -3,11 +3,12 @@
 
     $data = (($_POST['data'])?:date("Y-m"));
 
-    $query = "select
+    echo $query = "select
                 (select count(*) from clientes where data_cadastro like '{$data}%') as novos_cadastros,
                 (select count(*) from consultas where data like '{$data}%') as simulacoes,
                 (select count(*) from consultas where data like '{$data}%' and dados->>'$.statusCode' = '200') as simulacoes_positiva,
                 (select count(*) from consultas where data like '{$data}%' and dados->>'$.statusCode' != '200') as simulacoes_negativa,
+
                 (select count(*) from consultas where data like '{$data}%' and proposta is not null) as propostas,
                 (select count(*) from consultas where data like '{$data}%' and proposta is not null and proposta->>'$.statusCode' = '130') as propostas_pagas,
                 (select count(*) from consultas where data like '{$data}%' and proposta is not null and proposta->>'$.statusCode' in ('200', '95', '60', '61')) as propostas_pendentes,
