@@ -16,6 +16,17 @@
             'PN' => 'Propostas Negadas'
         ];
 
+        $querys = [
+            'NC' => "select a.*, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a where a.data_cadastro like '{$_POST['periodo']}%'",
+            'SR' => "select a.dados as log, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%'",
+            'SS' => "select a.dados as log, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and a.dados->>'$.statusCode' = '200'",
+            'SN' => "select a.dados as log, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and a.dados->>'$.statusCode' != '200'",
+            'PR' => "select a.proposta as log, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode'",
+            'AP' => "select a.proposta as log, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' = '130'",
+            'PP' => "select a.proposta as log, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' in ('200', '95', '60', '61')) as propostas_pendentes",
+            'PN' => "select a.proposta as log, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' not in ('200', '130', '95', '60', '61')) as propostas_erro"
+        ];
+
 
 ?>
 <style>
@@ -56,7 +67,7 @@
               </thead>
               <tbody>
                 <?php
-                  $query = "select a.*, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a order by a.data_cadastro desc";
+                  $query = $querys[$_POST['filtro']];
                   $result = mysqli_query($con, $query);
                   $k = 1;
                   while($d = mysqli_fetch_object($result)){
