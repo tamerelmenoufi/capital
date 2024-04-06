@@ -87,6 +87,7 @@
         // 'banner_principal3',
         'sobre',
         'servicos',
+        'depoimentos',
         'time',
         'noticias',
         //'galeria',
