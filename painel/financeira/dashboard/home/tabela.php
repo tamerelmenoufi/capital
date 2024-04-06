@@ -30,9 +30,9 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col text-center">Sigla</th>
+      <th scope="col" class="text-center">Sigla</th>
       <th scope="col">Descrição</th>
-      <th scope="col text-center">Quanidade</th>
+      <th scope="col" class="text-center">Quanidade</th>
     </tr>
   </thead>
   <tbody>
