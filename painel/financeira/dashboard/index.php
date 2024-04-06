@@ -28,6 +28,7 @@
         border-radius:5px;
         background:blue;
         color:#fff;
+        cursor:pointer;
     }
     .registros_limpo{
         padding:5px;
