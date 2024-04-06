@@ -65,12 +65,16 @@
 
   }
   </style>
+
+<div style="background:#144397;color:#fff">
+
     <section id="servicos"  style="padding:0px" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Nossos Produtos</h2>
+          <h2>Nossos Serviços</h2>
+          <p> Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor..</p>
         </div>
 
         <div class="row">
@@ -141,3 +145,5 @@
       </div>
 
     </section><!-- End Recent Blog Posts Section -->
+
+        </div>
