@@ -73,8 +73,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Nossos Serviços</h2>
-          <p> Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor..</p>
+          <h2 style="color:#fff;font-weight:bold" >Nossos Serviços</h2>
+          <p style="color:#fff;"> Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor..</p>
         </div>
 
         <div class="row">
