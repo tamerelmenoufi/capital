@@ -19,17 +19,18 @@
     position: relative;
     transition: 0.3s;
 }
-    .botaoverde{
-      padding: 15px;
-      padding-left: 35px;
-      padding-right: 35px;
-      border-radius: 25px 2px 25px;
-      font-size: 17px;
-      color: #fff;
-    background-color: #393287;
-    border-color: #393287;
-    }
-    .botaoverde:hover {
+.botaobranco {
+    padding: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 0;
+    font-size: 17px;
+    color: #144397;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin: 10px;
+}
+    .botaobranco:hover {
     color: #fff;
     background-color: #574ec2;
     border-color: #574ec2;
@@ -93,11 +94,11 @@
                 <span class="post-date">Tue, December 12</span>
                 <span class="post-author"> / Julia Parker</span>
               </div> -->
-              <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
-              <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
-              <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
+              <a href="servico.php?cod=<?=$d->codigo?>"><h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff"><?=$d->titulo?></h3>
+              <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;color:#fff"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p> </a>
+             <!-- <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
                 <button type="button" class="botao botaoroxo">Leia Mais<i class="bi bi-arrow-right"></i></button>
-              </a>
+              </a>-->
             </div>
           </div>
 
@@ -134,8 +135,8 @@
 
           <center style="margin-top:20px">
           <a href="servico_categoria.php">
-         <button type="button" class=" botaoverde">
-          Outros produtos
+         <button type="button" class=" botaobranco">
+          Outros serviços
         </button></a>
       </center>
 
