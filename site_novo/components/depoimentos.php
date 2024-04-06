@@ -79,7 +79,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 style="color:#fff;font-weight:bold;margin-top:15px" >Depoimentos</h2>
+          <h2 style="color:#fff;font-weight:bold;margin-top:25px" >Depoimentos</h2>
           
         </div>
 
@@ -89,7 +89,7 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class=""  style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
-            box-shadow: 2px 2px 5px #000;padding:10px">
+            box-shadow: 0px 0px 5px #000;padding:10px">
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
@@ -104,7 +104,7 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class=""   style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
-            box-shadow: 2px 2px 5px #000;padding:10px">
+            box-shadow: 0px 0px 5px #000;padding:10px">
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
@@ -118,7 +118,7 @@
           
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="" style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
-            box-shadow: 2px 2px 5px #000;padding:10px">
+            box-shadow: 0px 0px 5px #000;padding:10px">
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
