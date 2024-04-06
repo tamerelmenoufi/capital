@@ -16,11 +16,11 @@
 
     $dados = [];
     $query = "select a.codigo as cod_cliente, a.nome, a.cpf, a.ultimo_acesso, b.log, b.codigo from consultas_log b left join clientes a on a.codigo = b.cliente where a.ultimo_acesso like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%' order by b.codigo asc";
-    $query = "select ultimo_acesso, count(*) as quantidade from clientes where ultimo_acesso like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%'";
+    $query = "select ultimo_acesso from clientes where ultimo_acesso like '{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."%'";
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
         $dt = trim(explode(" ", $d->ultimo_acesso)[0]);
-        $dados[$dt] = $d->quantidade;
+        $dados[$dt]++;
     }
 
     // print_r($dados);
