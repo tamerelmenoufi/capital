@@ -36,7 +36,7 @@
   </thead>
   <tbody>
 <?php
-    foreach($dados => $item as $valor){
+    foreach($dados as $item => $valor){
 ?>
     <tr>
       <td><?=$item?></td>
