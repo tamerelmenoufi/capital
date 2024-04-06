@@ -30,9 +30,9 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Sigla</th>
+      <th scope="col text-center">Sigla</th>
       <th scope="col">Descrição</th>
-      <th scope="col">Quanidade</th>
+      <th scope="col text-center">Quanidade</th>
     </tr>
   </thead>
   <tbody>
@@ -40,9 +40,9 @@
     foreach($dados as $item => $valor){
 ?>
     <tr>
-      <td><?=$valor[0]?></td>
+      <td class="text-center"><?=$valor[0]?></td>
       <td><?=$valor[1]?></td>
-      <td><?=$valor[2]?></td>
+      <td class="text-center"><?=$valor[2]?></td>
     </tr>
 <?php
     }
