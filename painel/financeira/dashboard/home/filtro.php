@@ -6,14 +6,25 @@
     border-left:5px solid;
     border-left-color:green;
   }
+  .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+
 </style>
+
+<h4 class="Titulo<?=$md5?>"><?=$_POST['filtro']?> - <?=$_POST['periodo']?></h4>
+
+
 <div class="col">
   <div class="m-3">
 
     <div class="row">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Lista de Clientes</h5>
+          <h5 class="card-header">Lista de Clientes </h5>
           <div class="card-body">
 
             <div class="table-responsive">
