@@ -88,9 +88,9 @@
 
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box"  style="background:#fff;padding:13px">
-            <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#144397">
-          O que <b style="background:#000">dizem</b> <br>
+            <div class="post-box"  style="background:#000c7c;padding:13px">
+            <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#144397">
+          O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
               <div style="margin-top:10px;height:267px" class="post-img">
               <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
