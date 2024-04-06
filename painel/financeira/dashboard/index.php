@@ -53,6 +53,9 @@
         <div class="col-md-4">
             <div dbCalendar></div>
         </div>
+        <div class="col-md-4">
+            <div dbTabela></div>
+        </div>
     </div>
   </div>
 </div>
@@ -66,6 +69,13 @@
             url:"financeira/dashboard/home/calendario.php",
             success:function(dados){
                 $("div[dbCalendar]").html(dados);
+            }
+        })
+
+        $.ajax({
+            url:"financeira/dashboard/home/tabela.php",
+            success:function(dados){
+                $("div[dbTabela").html(dados);
             }
         })
 
