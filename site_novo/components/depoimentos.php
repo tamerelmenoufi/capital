@@ -156,12 +156,12 @@
           </div> -->
 
 
-          <center style="margin-top:20px">
+          <!--<center style="margin-top:20px">
           <a href="servico_categoria.php">
          <button type="button" class=" botaobranco">
           Outros serviços
         </button></a>
-      </center>
+      </center>-->
 
 
         </div>
