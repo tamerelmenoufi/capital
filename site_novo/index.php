@@ -85,13 +85,14 @@
          //  'video',
         // 'banner_principal2',
         // 'banner_principal3',
-        'sobre',
+        
         'servicos',
         'depoimentos',
-        'time',
-        'noticias',
+        'sobre',
+        //'time',
+       // 'noticias',
         //'galeria',
-        'banner_depoimentos',
+        //'banner_depoimentos',
 
 
         // 'pagina_interna',
