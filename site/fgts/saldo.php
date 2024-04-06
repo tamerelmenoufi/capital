@@ -9,7 +9,7 @@
     function consulta_logs($dados){
         global $_SESSION;
         global $con;
-        $query = "insert into `consultas_log` set 
+        $query = "insert into consultas_log set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$_SESSION['codUsr']}',
                                             data = NOW(),

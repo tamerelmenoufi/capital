@@ -8,7 +8,7 @@
             'codUsr' => $dados['codUsr'],
             'acao' => 'cron'
         ];
-        $query = "insert into `consultas_log` set 
+        $query = "insert into consultas_log set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
