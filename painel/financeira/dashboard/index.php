@@ -70,7 +70,7 @@
             success:function(dados){
                 $("div[dbCalendar]").html(dados);
                 
-                dateN = $("select[dateN]").val();
+                dateN = ("00" + $("select[dateN]").val()).slice(-2);
                 dateY = $("select[dateY]").val();
                 $.ajax({
                     url:"financeira/dashboard/home/tabela.php",

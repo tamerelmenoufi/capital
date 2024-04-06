@@ -96,7 +96,7 @@
 <script>
     $(function(){
         $("button[dateAcao]").click(function(){
-            n = $("select[dateN]").val();
+            n = ("00" + $("select[dateN]").val()).slice(-2);
             Y = $("select[dateY]").val();
             $.ajax({
                 url:"financeira/dashboard/home/calendario.php",
