@@ -65,6 +65,12 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   }
+
+  .recent-blog-posts .post-box .post-img {
+    overflow: hidden;
+    position: relative;
+    border-radius: 0px;
+}
   </style>
 
 <div style="background:#144397;color:#fff">
@@ -88,7 +94,7 @@
           ?>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
+            <div class="post-box"  style="background:#144397;">
               <div style="margin-top:10px;height:267px" class="post-img"><img src="<?=$localPainel?>site/volume/servicos/<?=$d->imagem?>" class="img-fluid" alt=""></div>
               <!-- <div class="meta">
                 <span class="post-date">Tue, December 12</span>
