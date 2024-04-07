@@ -83,6 +83,10 @@
 
             $pre_cadastro++;
             $autorizacao++;
+        }else if($d->pre_cadastro){
+
+            $pre_cadastro++;
+            
         }
 
 ?>
