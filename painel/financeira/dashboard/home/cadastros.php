@@ -44,24 +44,24 @@
         <div class="col-md-5"><?=$d->nome?></div>
         <div class="col-md-2"><?=$d->cpf?></div>
         <div class="col-md-1 text-center">
-            <span class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Pré-cadastro</span>
-            <i class="fa-regular fa-circle"></i>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Pré-cadastro <i class="fa-regular fa-circle"></i></div>
+            <div class="d-none d-md-block"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1 text-center">
-            <span class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Autorização</span>
-            <i class="fa-regular fa-circle"></i>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Autorização <i class="fa-regular fa-circle"></i></div>
+            <div class="d-none d-md-block"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1 text-center">
-            <span class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Simulação</span>
-            <i class="fa-regular fa-circle"></i>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Simulação <i class="fa-regular fa-circle"></i></div>
+            <div class="d-none d-md-block"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1 text-center">
-            <span class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Cadastro</span>
-            <i class="fa-regular fa-circle"></i>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Cadastro <i class="fa-regular fa-circle"></i></div>
+            <div class="d-none d-md-block"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1 text-center">
-            <span class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Contrato</span>
-            <i class="fa-regular fa-circle"></i>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Contrato <i class="fa-regular fa-circle"></i></div>
+            <div class="d-none d-md-block"><i class="fa-regular fa-circle"></i></div>
         </div>
         
         
