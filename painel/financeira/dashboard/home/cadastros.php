@@ -11,8 +11,8 @@
 
 <div class="d-none d-md-block">
     <div class="row">
-        <div class="col-md-5 fw-bold text-center">Nome</div>
-        <div class="col-md-2 fw-bold text-center">CPF</div>
+        <div class="col-md-5 fw-bold">Nome</div>
+        <div class="col-md-2 fw-bold">CPF</div>
         <div class="col-md-1 fw-bold text-center">Pré-cadastro</div>
         <div class="col-md-1 fw-bold text-center">Autorização</div>
         <div class="col-md-1 fw-bold text-center">Simulação</div>
