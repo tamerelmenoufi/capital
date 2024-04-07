@@ -36,11 +36,11 @@
   </thead>
   <tbody> -->
 <?php
-    echo $query = "select 
+    $query = "select 
                     a.*,
                     (select count(*) from consultas where cliente = a.codigo) as simulacao,
                     (select count(*) from consultas where cliente = a.codigo and proposta->>'$.statusCode') as contrato
-                from a.clientes where a.data_cadastro like '{$data}%'";
+                from clientes a where a.data_cadastro like '{$data}%'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
