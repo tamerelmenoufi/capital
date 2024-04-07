@@ -48,24 +48,24 @@
         <div class="col-md-5"><?=(($d->nome)?:'<span class="text-danger">Sem Identificação</span>')?></div>
         <div class="col-md-2"><?=(($d->cpf)?:'<span class="text-danger">000.000.000-00</span>')?></div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->pre_cadastro > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i> Pré-cadastro</div>
-            <div class="d-none d-md-block text-center"><i class="<?=(($d->pre_cadastro > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->pre_cadastro > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i> Pré-cadastro</div>
+            <div class="d-none d-md-block text-center"><i class="<?=(($d->pre_cadastro > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->autorizacao_vctex > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i> Autorização</div>
-            <div class="d-none d-md-block text-center"><i class="<?=(($d->autorizacao_vctex > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->autorizacao_vctex > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i> Autorização</div>
+            <div class="d-none d-md-block text-center"><i class="<?=(($d->autorizacao_vctex > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->simulacao > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i> Simulação</div>
-            <div class="d-none d-md-block text-center"><i class="<?=(($d->simulacao > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->simulacao > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i> Simulação</div>
+            <div class="d-none d-md-block text-center"><i class="<?=(($d->simulacao > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->cadastro_percentual == 100)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i> Cadastro</div>
-            <div class="d-none d-md-block text-center"><i class="<?=(($d->cadastro_percentual == 100)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->cadastro_percentual == 100)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i> Cadastro</div>
+            <div class="d-none d-md-block text-center"><i class="<?=(($d->cadastro_percentual == 100)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->contrato > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i> Contrato</div>
-            <div class="d-none d-md-block text-center"><i class="<?=(($d->contrato > 0)?"fa-solid fa-circle-check":"fa-regular fa-circle")?>"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->contrato > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i> Contrato</div>
+            <div class="d-none d-md-block text-center"><i class="<?=(($d->contrato > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle")?>"></i></div>
         </div>
     </div>
     
