@@ -9,7 +9,7 @@
 ?>
 <h5>Cadastros no período de <?=$dt?></h5>
 
-<div class="row">
+<div class="row d-none d-md-block">
     <div class="col-md-5">Nome</div>
     <div class="col-md-2">CPF</div>
     <div class="col-md-1">Pré-cadastro</div>
