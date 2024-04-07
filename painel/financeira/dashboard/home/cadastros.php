@@ -147,10 +147,64 @@
     </div>
     <div class="col-md-6 mt-3">
         <h1>Gráficos</h1>
+        <canvas id="grafico" style="margin-top:30px;"></canvas>
     </div>    
 </div>
 
 <script>
+
+
+    ///////////////////////// Grafico ////////////////////////////////////////////////////////////
+
+
+    new Chart("grafico", {
+        type: "horizontalBar",
+        data: {
+            labels: ['Pré-Cadastro','Autorização','Simulação','Cadastros','Contratos'],
+            datasets: [{
+            label: 'Pré-cadastro',
+            data: [<?=$pre_cadastro?>],
+            borderColor: "blue",
+            backgroundColor:"rgb(2, 62, 198, 0.7)",
+            fill: false
+            },{
+            label: 'Autorização',
+            data: [<?=$autorizacao?>],
+            borderColor: "green",
+            backgroundColor:"rgb(1, 174, 50, 0.7)",
+            fill: false
+            },{
+            label: 'Simulação',
+            data: [<?=$simulacao?>],
+            borderColor: "gray",
+            backgroundColor:"rgb(116, 116, 116, 0.7)",
+            fill: false
+            },{
+            label: 'Cadastros',
+            data: [<?=$cadastro?>],
+            borderColor: "red",
+            backgroundColor:"rgb(200, 3, 54, 0.7)",
+            fill: false
+            },{
+            label: 'Contratos',
+            data: [<?=$contrato?>],
+            borderColor: "orange",
+            backgroundColor:"rgb(247, 152, 2, 0.7)",
+            fill: false
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Gráfico de Representação dos Cadastros",
+                fontSize: 16
+            }
+        }
+    });
+    
+
+
     $(function(){
       Carregando('none');
         
