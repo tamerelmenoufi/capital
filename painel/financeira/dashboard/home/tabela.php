@@ -68,6 +68,7 @@
 
 <script>
     $(function(){
+      Carregando('none');
         
       $("button[filtro]").click(function(){
 
