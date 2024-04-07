@@ -15,7 +15,7 @@
                                             data = NOW(),
                                             sessoes = '".json_encode($_SESSION)."',
                                             log = '{$dados['consulta']}',
-                                            log_unico = '".md5($dados['consulta'])."'";
+                                            log_unico = '".md5($dados['consulta'].$dados['proposta'])."'";
 
         $result = sisLog( $query);
     }

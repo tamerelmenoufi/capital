@@ -14,8 +14,7 @@
                                             data = NOW(),
                                             sessoes = '".json_encode($sessoes)."',
                                             log = '{$dados['consulta']}',
-                                            log_unico = '".md5($dados['consulta'])."'
-                                            ";
+                                            log_unico = '".md5($dados['consulta'].$dados['proposta'])."'";
 
         $result = mysqli_query($con, $query);
     }
