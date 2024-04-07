@@ -38,7 +38,7 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
-    <div class="row bg-success bg-opacity-10">
+    <div class="row bg-success bg-opacity-10 p-1 border-bottom">
         <div class="col-md-5"><?=$d->nome?></div>
         <div class="col-md-2"><?=$d->cpf?></div>
         <div class="col-md-1 text-center"><i class="fa-regular fa-circle"></i></div>
