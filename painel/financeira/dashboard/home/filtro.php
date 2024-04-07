@@ -74,21 +74,32 @@
                   while($d = mysqli_fetch_object($result)){
 
                     $log = json_decode($d->log);
-                    $del = 'disabled';
-                    if($log->statusCode){
+
+                    $situacao = "{$log->statusCode} - {$log->message}";
+
+                    if($log->statusCode and $_POST['filtro'] == 'NC'){
                       $situacao = "{$log->statusCode} - {$log->message}";
                       $cor="orange";
-                    }else if($log->proposalStatusId){
+                    }else if($log->proposalStatusId and $_POST['filtro'] == 'NC'){
                       $situacao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
                       if($log->proposalStatusId == 130){
                         $cor="green";
                       }else{
                         $cor="red";
                       }
-                    }else{
+                    }else if($_POST['filtro'] == 'NC'){
                       $situacao = "000 - Cliente sem movimentação";
                       $cor="#ccc";
-                      $del = false;
+                    }else if(in_array($log->statusCode, ['200'])){
+                      $cor="orange";
+                    }else if(!in_array($log->statusCode, ['200']) and $_POST['filtro'] == 'SN'){
+                      $cor="red";
+                    }else if(in_array($log->statusCode, ['130'])){
+                      $cor="green";
+                    }else if(in_array($log->statusCode, ['200', '95', '60', '61'])){
+                      $cor="orange";
+                    }else if(in_array($log->statusCode, ['200', '130', '95', '60', '61'])){
+                      $cor="red";
                     }
 
                 ?>
