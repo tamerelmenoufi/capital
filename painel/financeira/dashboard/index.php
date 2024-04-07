@@ -74,10 +74,12 @@
         $.ajax({
             url:"financeira/dashboard/home/calendario.php",
             success:function(dados){
+
                 $("div[dbCalendar]").html(dados);
                 
                 dateN = ("00" + $("select[dateN]").val()).slice(-2);
                 dateY = $("select[dateY]").val();
+                
                 $.ajax({
                     url:"financeira/dashboard/home/tabela.php",
                     type:"POST",

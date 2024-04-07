@@ -91,17 +91,6 @@
           }
         })
 
-        $.ajax({
-          url:"financeira/dashboard/home/cadastros.php",
-          type:"POST",
-          data:{
-              data:periodo
-          },
-          success:function(dados){
-              $("div[dbCadastros").html(dados);
-          }
-        })
-
       })
         
     })

@@ -120,14 +120,28 @@
                         }
                     })
 
+                    $.ajax({
+                        url:"financeira/dashboard/home/cadastros.php",
+                        type:"POST",
+                        data:{
+                            data:`${Y}-${n}`
+                        },
+                        success:function(dados){
+                            $("div[dbCadastros").html(dados);
+                        }
+                    })
+
                 }
             });
         })
 
 
         $(".registros").click(function(){
+            
             Carregando();
+            
             data = $(this).attr("data");
+
             $.ajax({
                 url:"financeira/dashboard/home/tabela.php",
                 type:"POST",
@@ -138,6 +152,18 @@
                     $("div[dbTabela").html(dados);
                 }
             })
+
+            $.ajax({
+                url:"financeira/dashboard/home/cadastros.php",
+                type:"POST",
+                data:{
+                    data
+                },
+                success:function(dados){
+                    $("div[dbCadastros").html(dados);
+                }
+            })
+
         })
     })
 </script>
