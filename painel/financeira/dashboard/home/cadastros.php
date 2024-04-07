@@ -158,7 +158,7 @@
 
 
     new Chart("grafico", {
-        type: "horizontalBar",
+        type: "bar",
         data: {
             labels: ['Pré-Cadastro','Autorização','Simulação','Cadastros','Contratos'],
             datasets: [{
