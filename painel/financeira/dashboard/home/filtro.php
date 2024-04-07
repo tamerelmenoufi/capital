@@ -125,13 +125,13 @@
 
 
 
-                  <!-- <td><?=$k?></td>
+                  <!-- <td><?=$k?></td>-->
                   <!-- <td><?=$d->cod_cliente?></td> -->
-                  <td><?=$d->nome?></td>
+                  <!-- <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td class="legenda_status" style="border-left-color:<?=$cor?>;">
                     <?=$situacao?>
-                  </td> -->
+                  </td>  -->
 
 
                 </tr>
