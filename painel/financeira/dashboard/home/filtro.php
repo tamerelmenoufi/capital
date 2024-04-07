@@ -57,7 +57,7 @@
 
             <div class="table-responsive">
             <table class="table table-striped table-hover">
-              <thead>
+              <!-- <thead>
                 <tr>
                   <th scope="col">#</th>
                   <!-- <th scope="col">Código</th> -->
@@ -65,7 +65,7 @@
                   <th scope="col">CPF</th>
                   <th scope="col">Situação</th>
                 </tr>
-              </thead>
+              </thead> -->
               <tbody>
                 <?php
                   $query = $querys[$_POST['filtro']];
@@ -111,13 +111,29 @@
 
                 ?>
                 <tr>
-                  <td><?=$k?></td>
+
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <div><?=$d->nome?></div>
+                      <div><?=$d->cpf?></div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <div class="legenda_status" style="border-left-color:<?=$cor?>;"><?=$situacao?></div>
+                    </div>
+                  </td>
+
+
+
+
+                  <!-- <td><?=$k?></td>
                   <!-- <td><?=$d->cod_cliente?></td> -->
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td class="legenda_status" style="border-left-color:<?=$cor?>;">
                     <?=$situacao?>
-                  </td>
+                  </td> -->
+
+
                 </tr>
                 <?php
                 $k++;
