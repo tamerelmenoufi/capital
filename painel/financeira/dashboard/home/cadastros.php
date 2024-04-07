@@ -36,7 +36,7 @@
   </thead>
   <tbody> -->
 <?php
-    $query = "select 
+    echo $query = "select 
                     a.*,
                     (select count(*) from consultas where cliente = a.codigo) as simulacao,
                     (select count(*) from consultas where cliente = a.codigo and proposta->>'$.statusCode') as contrato
