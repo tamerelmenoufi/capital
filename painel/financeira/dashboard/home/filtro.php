@@ -100,6 +100,8 @@
                       $cor="orange";
                     }else if(in_array($log->statusCode, ['200', '130', '95', '60', '61'])){
                       $cor="red";
+                    }else{
+                      $cor="red";
                     }
 
                 ?>
