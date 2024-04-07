@@ -17,14 +17,14 @@
         ];
 
         $querys = [
-            'NC' => "select a.*, a.codigo as cod_cliente, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a where a.data_cadastro like '{$_POST['periodo']}%'",
-            'SR' => "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%'",
-            'SS' => "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and a.dados->>'$.statusCode' = '200'",
-            'SN' => "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and a.dados->>'$.statusCode' != '200'",
-            'PR' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode'",
-            'AP' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' = '130'",
-            'PP' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' in ('200', '95', '60', '61')",
-            'PN' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' not in ('200', '130', '95', '60', '61')"
+            'NC' => "select a.*, a.codigo as cod_cliente, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a where a.data_cadastro like '{$_POST['periodo']}%' order by b.nome asc",
+            'SR' => "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' order by b.nome asc",
+            'SS' => "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and a.dados->>'$.statusCode' = '200' order by b.nome asc",
+            'SN' => "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and a.dados->>'$.statusCode' != '200' order by b.nome asc",
+            'PR' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' order by b.nome asc",
+            'AP' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' = '130' order by b.nome asc",
+            'PP' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' and proposta->>'$.statusCode' in ('200', '95', '60', '61') order by b.nome asc",
+            'PN' => "select a.proposta as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '{$_POST['periodo']}%' and proposta->>'$.statusCode' not in ('200', '130', '95', '60', '61') order by b.nome asc"
         ];
 
 
