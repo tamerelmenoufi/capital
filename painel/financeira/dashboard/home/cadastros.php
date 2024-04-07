@@ -42,6 +42,9 @@
                     (select count(*) from consultas where cliente = a.codigo and proposta->>'$.statusCode') as contrato
                 from clientes a where a.data_cadastro like '{$data}%'";
     $result = mysqli_query($con, $query);
+
+    $pre_cadastro = $autorizacao = $simulacao = $cadastro = $contrato = 0;
+
     while($d = mysqli_fetch_object($result)){
 
 
@@ -50,15 +53,36 @@
             $d->autorizacao_vctex = true;
             $d->simulacao = true;
             $d->cadastro_percentual = 100;
+
+            $pre_cadastro++;
+            $autorizacao++;
+            $simulacao++;
+            $cadastro++;
+            $contrato++;
+
         }else if($d->cadastro_percentual == 100){
             $d->pre_cadastro = true;
             $d->autorizacao_vctex = true;
             $d->simulacao = true;
+
+            $pre_cadastro++;
+            $autorizacao++;
+            $simulacao++;
+            $cadastro++;
+            
         }else if($d->simulacao){
             $d->pre_cadastro = true;
             $d->autorizacao_vctex = true;
+
+            $pre_cadastro++;
+            $autorizacao++;
+            $simulacao++;
+
         }else if($d->autorizacao_vctex){
             $d->pre_cadastro = true;
+
+            $pre_cadastro++;
+            $autorizacao++;
         }
 
 ?>
@@ -104,12 +128,26 @@
   <!-- </tbody>
 </table> -->
 
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-hover">
+        <tbody>
+            <tr><th>Pré-cadastro</th><td><?=$pre_cadastro?></td></tr>
+            <tr><th>Autorização</th><td><?=$autorizacao?></td></tr>
+            <tr><th>Simulação</th><td><?=$simulacao?></td></tr>
+            <tr><th>Cadastro</th><td><?=$cadastro?></td></tr>
+            <tr><th>Contrato</th><td><?=$contrato?></td></tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h1>Gráficos</h1>
+    </div>    
+</div>
 
 <script>
     $(function(){
       Carregando('none');
-        
-      
         
     })
 </script>
