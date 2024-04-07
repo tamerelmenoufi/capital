@@ -29,11 +29,11 @@
     <tr>
       <td class="text-center"><?=$d->nome?></td>
       <td><?=$d->cpf?></td>
-      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
-      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
-      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
-      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
-      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle"></i></td>
     </tr>
 <?php
     }
