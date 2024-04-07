@@ -60,7 +60,7 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Código</th>
+                  <!-- <th scope="col">Código</th> -->
                   <th scope="col">Nome</th>
                   <th scope="col">CPF</th>
                   <th scope="col">Situação</th>
@@ -112,7 +112,7 @@
                 ?>
                 <tr>
                   <td><?=$k?></td>
-                  <td><?=$d->cod_cliente?></td>
+                  <!-- <td><?=$d->cod_cliente?></td> -->
                   <td><?=$d->nome?></td>
                   <td><?=$d->cpf?></td>
                   <td class="legenda_status" style="border-left-color:<?=$cor?>;">
