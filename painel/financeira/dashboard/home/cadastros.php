@@ -133,19 +133,19 @@
 </table> -->
 
 <div class="row mt-3">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-3">
         <h5>Níveis dos Cadastros</h5>
         <table class="table table-hover">
         <tbody>
-            <tr><th>Pré-cadastro</th><td><?=$pre_cadastro?></td></tr>
-            <tr><th>Autorização</th><td><?=$autorizacao?></td></tr>
-            <tr><th>Simulação</th><td><?=$simulacao?></td></tr>
-            <tr><th>Cadastro</th><td><?=$cadastro?></td></tr>
-            <tr><th>Contrato</th><td><?=$contrato?></td></tr>
+            <tr><th>Pré-cadastro</th><td class="text-center"><?=$pre_cadastro?></td></tr>
+            <tr><th>Autorização</th><td class="text-center"><?=$autorizacao?></td></tr>
+            <tr><th>Simulação</th><td class="text-center"><?=$simulacao?></td></tr>
+            <tr><th>Cadastro</th><td class="text-center"><?=$cadastro?></td></tr>
+            <tr><th>Contrato</th><td class="text-center"><?=$contrato?></td></tr>
         </tbody>
         </table>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mt-3">
         <h1>Gráficos</h1>
     </div>    
 </div>
