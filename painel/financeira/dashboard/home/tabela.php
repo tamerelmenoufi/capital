@@ -32,7 +32,7 @@
     if($d1) $dt = "{$d1}/{$m1}/{$Y1}";
     else $dt = "{$m1}/{$Y1}";
 ?>
-<h5>Solicitações no período <?=$dt?></h5>
+<h5>Solicitações no período de <?=$dt?></h5>
 <table class="table table-hover">
   <thead>
     <tr>
