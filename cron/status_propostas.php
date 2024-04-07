@@ -13,7 +13,9 @@
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
                                             sessoes = '".json_encode($sessoes)."',
-                                            log = '{$dados['consulta']}'";
+                                            log = '{$dados['consulta']}',
+                                            log_unico = '".md5($dados['consulta'])."'
+                                            ";
 
         $result = mysqli_query($con, $query);
     }

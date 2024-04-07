@@ -14,7 +14,8 @@
                                             cliente = '{$_SESSION['codUsr']}',
                                             data = NOW(),
                                             sessoes = '".json_encode($_SESSION)."',
-                                            log = '{$dados['consulta']}'";
+                                            log = '{$dados['consulta']}',
+                                            log_unico = '".md5($dados['consulta'])."'";
 
         $result = sisLog( $query);
     }
