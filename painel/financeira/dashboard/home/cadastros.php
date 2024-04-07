@@ -38,14 +38,14 @@
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
-    <div class="row">
+    <div class="row bg-light">
         <div class="col-md-5"><?=$d->nome?></div>
         <div class="col-md-2"><?=$d->cpf?></div>
-        <div class="col-md-1"><i class="fa-regular fa-circle"></i></div>
-        <div class="col-md-1"><i class="fa-regular fa-circle"></i></div>
-        <div class="col-md-1"><i class="fa-regular fa-circle"></i></div>
-        <div class="col-md-1"><i class="fa-regular fa-circle"></i></div>
-        <div class="col-md-1"><i class="fa-regular fa-circle"></i></div>
+        <div class="col-md-1 text-center"><i class="fa-regular fa-circle"></i></div>
+        <div class="col-md-1 text-center"><i class="fa-regular fa-circle"></i></div>
+        <div class="col-md-1 text-center"><i class="fa-regular fa-circle"></i></div>
+        <div class="col-md-1 text-center"><i class="fa-regular fa-circle"></i></div>
+        <div class="col-md-1 text-center"><i class="fa-regular fa-circle"></i></div>
     </div>
     
     <!-- <tr>
