@@ -118,7 +118,7 @@
                       <div class="p-2"><?=$d->cpf?></div>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="legenda_status p-2" style="border-left-color:<?=$cor?>;"><?=$situacao?></div>
+                      <div class="legenda_status p-2" style="border-left-color:<?=$cor?>; font-size:12px; color:#a1a1a1;"><?=$situacao?></div>
                     </div>
                   </td>
 
