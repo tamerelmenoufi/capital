@@ -11,13 +11,13 @@
 
 <div class="d-none d-md-block">
     <div class="row">
-        <div class="col-md-5 text-bold">Nome</div>
-        <div class="col-md-2">CPF</div>
-        <div class="col-md-1">Pré-cadastro</div>
-        <div class="col-md-1">Autorização</div>
-        <div class="col-md-1">Simulação</div>
-        <div class="col-md-1">Cadastro</div>
-        <div class="col-md-1">Contrato</div>
+        <div class="col-md-5 fw-bold text-center">Nome</div>
+        <div class="col-md-2 fw-bold text-center">CPF</div>
+        <div class="col-md-1 fw-bold text-center">Pré-cadastro</div>
+        <div class="col-md-1 fw-bold text-center">Autorização</div>
+        <div class="col-md-1 fw-bold text-center">Simulação</div>
+        <div class="col-md-1 fw-bold text-center">Cadastro</div>
+        <div class="col-md-1 fw-bold text-center">Contrato</div>
     </div>
 </div>
 
