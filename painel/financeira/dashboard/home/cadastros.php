@@ -132,7 +132,7 @@
   <!-- </tbody>
 </table> -->
 
-<div class="row">
+<div class="row mt-3">
     <div class="col-md-6">
         <h5>Níveis dos Cadastros</h5>
         <table class="table table-hover">
