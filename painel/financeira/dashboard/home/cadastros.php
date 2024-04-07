@@ -9,14 +9,16 @@
 ?>
 <h5>Cadastros no período de <?=$dt?></h5>
 
-<div class="row d-none d-md-block">
-    <div class="col-md-5">Nome</div>
-    <div class="col-md-2">CPF</div>
-    <div class="col-md-1">Pré-cadastro</div>
-    <div class="col-md-1">Autorização</div>
-    <div class="col-md-1">Simulação</div>
-    <div class="col-md-1">Cadastro</div>
-    <div class="col-md-1">Contrato</div>
+<div class="d-none d-md-block">
+    <div class="row">
+        <div class="col-md-5">Nome</div>
+        <div class="col-md-2">CPF</div>
+        <div class="col-md-1">Pré-cadastro</div>
+        <div class="col-md-1">Autorização</div>
+        <div class="col-md-1">Simulação</div>
+        <div class="col-md-1">Cadastro</div>
+        <div class="col-md-1">Contrato</div>
+    </div>
 </div>
 
 
