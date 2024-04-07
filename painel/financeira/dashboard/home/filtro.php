@@ -59,9 +59,9 @@
             <table class="table table-striped table-hover">
               <!-- <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">#</th> -->
                   <!-- <th scope="col">Código</th> -->
-                  <th scope="col">Nome</th>
+                  <!-- <th scope="col">Nome</th>
                   <th scope="col">CPF</th>
                   <th scope="col">Situação</th>
                 </tr>
