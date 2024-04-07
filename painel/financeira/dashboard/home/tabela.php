@@ -28,6 +28,7 @@
         ['PN', 'Propostas Negadas', $d->propostas_erro]
     ];
 ?>
+<h5>Filtro para o período <?=$data?></h5>
 <table class="table table-hover">
   <thead>
     <tr>

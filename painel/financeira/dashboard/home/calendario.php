@@ -77,9 +77,10 @@
                 $blank_spaces--;
             } elseif ($day_counter <= $days_in_month) {
                 $tem = $dados["{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."-".str_pad($day_counter, 2, "0", STR_PAD_LEFT)];
+                $data = "{$year}-".str_pad($month, 2, "0", STR_PAD_LEFT)."-".str_pad($day_counter, 2, "0", STR_PAD_LEFT);
                 echo "<td>{$day_counter}".
                 (($tem)?
-                        "<div class='registros'><i class=\"fa-solid fa-user-pen\"></i> ".$tem."</div>"
+                        "<div class='registros' data='{$data}'><i class=\"fa-solid fa-user-pen\"></i> ".$tem."</div>"
                        :
                         "<div class='registros_limpo'></div>"
                 ).
@@ -121,6 +122,22 @@
 
                 }
             });
+        })
+
+
+        $(".registros").click(function(){
+            Carregando();
+            data = $(this).attr("data");
+            $.ajax({
+                url:"financeira/dashboard/home/tabela.php",
+                type:"POST",
+                data:{
+                    data
+                },
+                success:function(dados){
+                    $("div[dbTabela").html(dados);
+                }
+            })
         })
     })
 </script>
