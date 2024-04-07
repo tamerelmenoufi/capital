@@ -112,6 +112,8 @@
                   <td><?=$d->cpf?></td>
                   <td class="legenda_status" style="border-left-color:<?=$cor?>;">
                     <?=$situacao?>
+                    <br><br>
+                    <?=$d->log?>
                   </td>
                 </tr>
                 <?php
