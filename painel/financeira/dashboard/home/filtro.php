@@ -114,11 +114,11 @@
 
                   <td>
                     <div class="d-flex justify-content-between">
-                      <div><?=$d->nome?></div>
-                      <div><?=$d->cpf?></div>
+                      <div class="p-2"><?=$d->nome?></div>
+                      <div class="p-2"><?=$d->cpf?></div>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="legenda_status" style="border-left-color:<?=$cor?>;"><?=$situacao?></div>
+                      <div class="legenda_status p-2" style="border-left-color:<?=$cor?>;"><?=$situacao?></div>
                     </div>
                   </td>
 
