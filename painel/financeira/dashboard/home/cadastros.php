@@ -48,7 +48,7 @@
     while($d = mysqli_fetch_object($result)){
 
 
-        if($d->contrato){
+        if($d->contrato > 0){
             $d->pre_cadastro = true;
             $d->autorizacao_vctex = true;
             $d->simulacao = true;
@@ -70,7 +70,7 @@
             $simulacao++;
             $cadastro++;
             
-        }else if($d->simulacao){
+        }else if($d->simulacao > 0){
             $d->pre_cadastro = true;
             $d->autorizacao_vctex = true;
 
@@ -78,15 +78,15 @@
             $autorizacao++;
             $simulacao++;
 
-        }else if($d->autorizacao_vctex){
+        }else if($d->autorizacao_vctex > 0){
             $d->pre_cadastro = true;
 
             $pre_cadastro++;
             $autorizacao++;
-        }else if($d->pre_cadastro){
+        }else if($d->pre_cadastro > 0){
 
             $pre_cadastro++;
-            
+
         }
 
 ?>
