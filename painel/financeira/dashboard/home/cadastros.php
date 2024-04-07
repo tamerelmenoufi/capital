@@ -13,7 +13,11 @@
     <tr>
       <th scope="col" class="text-center">Nome</th>
       <th scope="col">CPF</th>
-      <th scope="col" class="text-center">Evolução</th>
+      <th scope="col" class="text-center">Pré-cadastro</th>
+      <th scope="col" class="text-center">Autorização</th>
+      <th scope="col" class="text-center">Simulação</th>
+      <th scope="col" class="text-center">Cadastro</th>
+      <th scope="col" class="text-center">Contrato</th>
     </tr>
   </thead>
   <tbody>
@@ -25,13 +29,11 @@
     <tr>
       <td class="text-center"><?=$d->nome?></td>
       <td><?=$d->cpf?></td>
-      <td class="text-center">
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-label="Segment one" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-success" role="progressbar" aria-label="Segment two" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar bg-info" role="progressbar" aria-label="Segment three" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      </td>
+      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
+      <td class="text-center"><i class="fa-regular fa-circle-check"></i></td>
     </tr>
 <?php
     }
