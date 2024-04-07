@@ -27,8 +27,12 @@
         ['PP', 'Propostas com Pendências', $d->propostas_pendentes],
         ['PN', 'Propostas Negadas', $d->propostas_erro]
     ];
+
+    list($Y1,$m1,$d1) = explode("-",$data);
+    if($d1) $dt = "{$d1}/{$m1}/{$Y1}";
+    else $dt = "{$m1}/{$Y1}";
 ?>
-<h5>Filtro para o período <?=$data?></h5>
+<h5>Solicitações no período <?=$dt?></h5>
 <table class="table table-hover">
   <thead>
     <tr>
