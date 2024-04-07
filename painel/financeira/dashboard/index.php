@@ -57,6 +57,12 @@
             <div dbTabela></div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div dbCadastros></div>
+        </div>
+    </div>
   </div>
 </div>
 
@@ -80,6 +86,17 @@
                     },
                     success:function(dados){
                         $("div[dbTabela").html(dados);
+                    }
+                })
+
+                $.ajax({
+                    url:"financeira/dashboard/home/cadastros.php",
+                    type:"POST",
+                    data:{
+                        data:`${dateY}-${dateN}`
+                    },
+                    success:function(dados){
+                        $("div[dbCadastros").html(dados);
                     }
                 })
                 
