@@ -134,6 +134,7 @@
 
 <div class="row">
     <div class="col-md-6">
+        <h5>Níveis dos Cadastros</h5>
         <table class="table table-hover">
         <tbody>
             <tr><th>Pré-cadastro</th><td><?=$pre_cadastro?></td></tr>
