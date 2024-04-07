@@ -44,23 +44,23 @@
         <div class="col-md-5"><?=$d->nome?></div>
         <div class="col-md-2"><?=$d->cpf?></div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Pré-cadastro <i class="fa-regular fa-circle"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="fa-regular fa-circle"></i> Pré-cadastro</div>
             <div class="d-none d-md-block text-center"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Autorização <i class="fa-regular fa-circle"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="fa-regular fa-circle"></i> Autorização</div>
             <div class="d-none d-md-block text-center"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Simulação <i class="fa-regular fa-circle"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="fa-regular fa-circle"></i> Simulação</div>
             <div class="d-none d-md-block text-center"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Cadastro <i class="fa-regular fa-circle"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="fa-regular fa-circle"></i> Cadastro</div>
             <div class="d-none d-md-block text-center"><i class="fa-regular fa-circle"></i></div>
         </div>
         <div class="col-md-1">
-            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none">Contrato <i class="fa-regular fa-circle"></i></div>
+            <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="fa-regular fa-circle"></i> Contrato</div>
             <div class="d-none d-md-block text-center"><i class="fa-regular fa-circle"></i></div>
         </div>
         
