@@ -75,7 +75,12 @@
 
                     $log = json_decode($d->log);
 
-                    $situacao = "{$log->statusCode} - {$log->message}";
+                    if($log->statusCode and $log->message){
+                      $situacao = "{$log->statusCode} - {$log->message}";
+                    }else{
+                      $situacao = "Situação detalhada não identificada";
+                    }
+                    
 
                     if($log->statusCode and $_POST['filtro'] == 'NC'){
                       $situacao = "{$log->statusCode} - {$log->message}";
