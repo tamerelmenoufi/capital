@@ -43,6 +43,24 @@
                 from clientes a where a.data_cadastro like '{$data}%'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
+
+
+        if($d->contrato){
+            $d->pre_cadastro = true;
+            $d->autorizacao_vctex = true;
+            $d->simulacao = true;
+            $d->cadastro_percentual = 100;
+        }else if($d->cadastro_percentual == 100){
+            $d->pre_cadastro = true;
+            $d->autorizacao_vctex = true;
+            $d->simulacao = true;
+        }else if($d->simulacao){
+            $d->pre_cadastro = true;
+            $d->autorizacao_vctex = true;
+        }else if($d->autorizacao_vctex){
+            $d->pre_cadastro = true;
+        }
+
 ?>
     <div class="row bg-success bg-opacity-10 p-2 border-bottom">
         <div class="col-md-5"><?=$d->codigo?> <?=(($d->nome)?:'<span class="text-danger">Sem Identificação</span>')?></div>
@@ -78,7 +96,6 @@
       <td class="text-center"><i class="fa-regular fa-circle"></i></td>
       <td class="text-center"><i class="fa-regular fa-circle"></i></td>
     </tr> -->
-
 
 <?php
     }
