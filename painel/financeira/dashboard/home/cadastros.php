@@ -45,7 +45,7 @@
     while($d = mysqli_fetch_object($result)){
 ?>
     <div class="row bg-success bg-opacity-10 p-2 border-bottom">
-        <div class="col-md-5"><?=(($d->nome)?:'<span class="text-danger">Sem Identificação</span>')?></div>
+        <div class="col-md-5"><?=$d->codigo?> <?=(($d->nome)?:'<span class="text-danger">Sem Identificação</span>')?></div>
         <div class="col-md-2"><?=(($d->cpf)?:'<span class="text-danger">000.000.000-00</span>')?></div>
         <div class="col-md-1">
             <div class="d-block d-md-none d-lg-none d-xl-none d-xxl-none"><i class="<?=(($d->pre_cadastro > 0)?"fa-solid fa-circle-check text-success":"fa-regular fa-circle opacity-25")?>"></i> Pré-cadastro</div>
