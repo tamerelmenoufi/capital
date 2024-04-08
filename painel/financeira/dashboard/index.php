@@ -1,6 +1,25 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    function rotulo_valores($d){
+        list($a, $m) = explode("/",$d);
+        $r = [
+            '01' => 'Jan',
+            '02' => 'Fev',
+            '03' => 'Mar',
+            '04' => 'Abr',
+            '05' => 'Mai',
+            '06' => 'Jun',
+            '07' => 'Jul',
+            '08' => 'Ago',
+            '09' => 'Set',
+            '10' => 'Out',
+            '11' => 'Nov',
+            '12' => 'Dez'
+        ];
+        return "{$r[$m]}/$a";
+    }
+
     $query = "select
                 (select count(*) from clientes) as clientes,
                 (select count(*) from consultas) as simulacoes,
@@ -71,21 +90,6 @@
   <h5 class="card-header">Sistema Capital Financeira</h5>
   <div class="card-body">
 
-
-<!-- <div class="alert alert-secondary" role="alert">
-A simple secondary alert—check it out!
-</div>
-<div class="alert alert-success" role="alert">
-A simple success alert—check it out!
-</div>
-<div class="alert alert-danger" role="alert">
-A simple danger alert—check it out!
-</div>
-<div class="alert alert-warning" role="alert">
-A simple warning alert—check it out!
-</div> -->
-
-
     <div class="row">
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
@@ -127,7 +131,7 @@ A simple warning alert—check it out!
         ?>
         <div class="col-md-1">
             <div class="alert alert-success" role="alert">
-                <div><?=$valor_rotulo[$i]?></div>
+                <div><?=rotulo_valores($valor_rotulo[$i])?></div>
                 <h6>R$ <?=number_format($d->$opc,2,',','.')?></h6>
             </div>
         </div>
