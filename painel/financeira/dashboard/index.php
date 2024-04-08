@@ -9,7 +9,7 @@
                 (select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130') as valor,
             ";
     $q = [];
-    for($i=0 $i<12; $i++){
+    for($i=0; $i<12; $i++){
         $dt = date("Y-m-d", mktime(0,0,0,date("m") - $i,date("d"), date("Y")));
         $q[] = "(select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130' and data like '{$dt}%') as valor{$i}";
     }
