@@ -32,45 +32,115 @@
     if($d1) $dt = "{$d1}/{$m1}/{$Y1}";
     else $dt = "{$m1}/{$Y1}";
 ?>
-<h5>Solicitações no período de <?=$dt?></h5>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col" class="text-center">Sigla</th>
-      <th scope="col">Descrição</th>
-      <th scope="col" class="text-center">Quanidade</th>
-    </tr>
-  </thead>
-  <tbody>
-<?php
-    foreach($dados as $item => $valor){
-?>
-    <tr>
-      <td class="text-center"><?=$valor[0]?></td>
-      <td><?=$valor[1]?></td>
-      <td class="text-center">
-        <button
-            class="btn btn-primary btn-sm"
-            filtro="<?=$valor[0]?>"
-            periodo="<?=$data?>"
-            data-bs-toggle="offcanvas"
-            href="#offcanvasDireita"
-            role="button"
-            aria-controls="offcanvasDireita"
-        >
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> <?=$valor[2]?>
-        </button>
-    </td>
-    </tr>
-<?php
-    }
 
-?>
-  </tbody>
-</table>
+<div class="row">
+    <div class="col-md-6">
+      <h5>Solicitações no período de <?=$dt?></h5>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Sigla</th>
+            <th scope="col">Descrição</th>
+            <th scope="col" class="text-center">Quanidade</th>
+          </tr>
+        </thead>
+        <tbody>
+      <?php
+          foreach($dados as $item => $valor){
+
+            eval("\${$valor[0]} = {$valor[2]};");
+      ?>
+          <tr>
+            <td class="text-center"><?=$valor[0]?></td>
+            <td><?=$valor[1]?></td>
+            <td class="text-center">
+              <button
+                  class="btn btn-primary btn-sm"
+                  filtro="<?=$valor[0]?>"
+                  periodo="<?=$data?>"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasDireita"
+                  role="button"
+                  aria-controls="offcanvasDireita"
+              >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <?=$valor[2]?>
+              </button>
+          </td>
+          </tr>
+      <?php
+          }
+
+      ?>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+          <canvas id="solicitacoes" style="margin-top:30px;"></canvas>
+    </div>
+</div>
+
+
 
 
 <script>
+
+    ///////////////////////// Grafico ////////////////////////////////////////////////////////////
+
+
+    new Chart("solicitacoes", {
+        type: "bar",
+        data: {
+            labels: ['Novos Cadastros','Simulações Realizadas','Simulações bem Sucedidas','Simulações Negadas','Propostas Realizadas', 'Antecipação Paga', 'Propostas com Pendências', 'Propostas Negadas'],
+            datasets: [{
+                data: ['<?=$NC?>', '<?=$SR?>', '<?=$SS?>', '<?=$SN?>', '<?=$PR?>', '<?=$AP?>', '<?=$PP?>', '<?=$PN?>'],
+                label: 'Solicitações',
+                borderColor: "blue",
+                backgroundColor:"rgb(2, 62, 198, 0.7)",
+                fill: false
+            }]
+            // datasets: [{
+            // label: 'Pré-cadastro',
+            // data: [<?=$pre_cadastro?>],
+            // borderColor: "blue",
+            // backgroundColor:"rgb(2, 62, 198, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Autorização',
+            // data: [<?=$autorizacao?>],
+            // borderColor: "green",
+            // backgroundColor:"rgb(1, 174, 50, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Simulação',
+            // data: [<?=$simulacao?>],
+            // borderColor: "gray",
+            // backgroundColor:"rgb(116, 116, 116, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Cadastros',
+            // data: [<?=$cadastro?>],
+            // borderColor: "red",
+            // backgroundColor:"rgb(200, 3, 54, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Contratos',
+            // data: [<?=$contrato?>],
+            // borderColor: "orange",
+            // backgroundColor:"rgb(247, 152, 2, 0.7)",
+            // fill: false
+            // }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Gráfico de Representação dos Cadastros",
+                fontSize: 16
+            }
+        }
+    });
+
+
     $(function(){
       Carregando('none');
         

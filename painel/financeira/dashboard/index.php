@@ -53,7 +53,7 @@
         <div class="col-md-4">
             <div dbCalendar></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             <div dbTabela></div>
         </div>
     </div>
@@ -79,7 +79,7 @@
                 
                 dateN = ("00" + $("select[dateN]").val()).slice(-2);
                 dateY = $("select[dateY]").val();
-                
+
                 $.ajax({
                     url:"financeira/dashboard/home/tabela.php",
                     type:"POST",
