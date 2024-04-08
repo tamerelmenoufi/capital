@@ -128,7 +128,7 @@ A simple warning alert—check it out!
         <div class="col-md-1">
             <div class="alert alert-success" role="alert">
                 <div><?=$valor_rotulo[$i]?></div>
-                <h5><?=number_format($d->$opc,2,',','.')?></h5>
+                <h6>R$ <?=number_format($d->$opc,2,',','.')?></h6>
             </div>
         </div>
         <?php
