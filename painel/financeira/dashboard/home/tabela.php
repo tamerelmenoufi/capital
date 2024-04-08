@@ -142,6 +142,7 @@
           plugins:{
             tooltip: {
               callbacks: {
+                title:'TESTE ',
                 label:((tooltipItem, data) => {
                   console.log(tooltipItem);
                   console.log(data);
