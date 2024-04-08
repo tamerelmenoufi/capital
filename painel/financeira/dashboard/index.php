@@ -123,11 +123,12 @@ A simple warning alert—check it out!
     <div class="row">
         <?php
         for($i=0;$i<12;$i++){
+            $opc = "valor{$i}";
         ?>
         <div class="col-md-1">
             <div class="alert alert-success" role="alert">
                 <div><?=$valor_rotulo[$i]?></div>
-                <h1><?=$d->"valor{$i}"?></h1>
+                <h1><?=$d->$opc?></h1>
             </div>
         </div>
         <?php
