@@ -135,7 +135,7 @@
                 role="alert" 
                 valores_dias<?=((!$d->$opc)?'BLQ':false)?>="<?=$valor_rotulo[$i]?>"
                 <?php
-                if(!$d->$opc){
+                if($d->$opc){
                 ?>                
                 data-bs-toggle="offcanvas"
                 href="#offcanvasDireita"
