@@ -107,7 +107,7 @@ A simple warning alert—check it out!
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Valor Acumulado</div>
-                <h1><?=$d->valor?></h1>
+                <h1>R$ <?=number_format($d->valor,2,',','.')?></h1>
             </div>
         </div>
     </div>
