@@ -45,9 +45,10 @@
                   while($d = mysqli_fetch_object($result)){
                     $totais_valor = $totais_valor + $d->valor;
                     $totais_contratos = $totais_contratos + $d->contratos;
+                    list($data, $hora) = explode(" ",$d->data);
                 ?>
                 <tr>
-                  <td><?=dataBr($d->data)?></td>
+                  <td><?=dataBr($data)?></td>
                   <td><?=$d->contratos?></td>
                   <td>R$ <?=number_format($d->valor,2,",",".")?></td>
                 </tr>
