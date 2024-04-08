@@ -122,7 +122,7 @@ A simple warning alert—check it out!
 
     <div class="row">
         <?php
-        for($i=12;$i>0;$i--){
+        for($i=11;$i>=0;$i--){
             $opc = "valor{$i}";
         ?>
         <div class="col-md-1">
