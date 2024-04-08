@@ -140,7 +140,7 @@
             }
           },
           plugins:{
-            tooltips: {
+            tooltip: {
               callbacks: {
                 label:((tooltipItem, data) => {
                   console.log(tooltipItem);
