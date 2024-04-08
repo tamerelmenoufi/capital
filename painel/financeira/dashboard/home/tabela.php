@@ -137,10 +137,10 @@
                 display: true,
                 text: "Gráfico de Representação dos Cadastros",
                 fontSize: 16
-            },
-
+            }
+          },
+          plugins:{
             tooltips: {
-              mode: 'label',
               callbacks: {
                 label:((tooltipItem, data) => {
                   console.log(tooltipItem);
