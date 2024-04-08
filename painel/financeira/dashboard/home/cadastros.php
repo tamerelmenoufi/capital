@@ -163,7 +163,7 @@
             labels: ['Pré-Cadastro','Autorização','Simulação','Cadastros','Contratos'],
             datasets: [{
                 data: ['<?=$pre_cadastro?>', '<?=$autorizacao?>', '<?=$simulacao?>', '<?=$cadastro?>', '<?=$contrato?>'],
-                label: ['Pré-Cadastro','Autorização','Simulação','Cadastros','Contratos'],
+                label: 'Cadastros',
                 borderColor: "blue",
                 backgroundColor:"rgb(2, 62, 198, 0.7)",
                 fill: false
