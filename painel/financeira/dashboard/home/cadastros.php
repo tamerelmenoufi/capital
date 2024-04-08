@@ -161,7 +161,9 @@
         type: "bar",
         data: {
             labels: ['Pré-Cadastro','Autorização','Simulação','Cadastros','Contratos'],
-            datasets: ['<?=$pre_cadastro?>', '<?=$autorizacao?>', '<?=$simulacao?>', '<?=$cadastro?>', '<?=$contrato?>'],
+            datasets: [{
+                data: ['<?=$pre_cadastro?>', '<?=$autorizacao?>', '<?=$simulacao?>', '<?=$cadastro?>', '<?=$contrato?>']
+            }]
             // datasets: [{
             // label: 'Pré-cadastro',
             // data: [<?=$pre_cadastro?>],
