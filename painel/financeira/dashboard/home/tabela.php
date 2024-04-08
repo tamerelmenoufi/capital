@@ -139,6 +139,7 @@
               fontSize: 16
           },
           tooltips: {
+            enabled: true,
             callbacks: {
               ticks: {
                 label: function(tooltipItem, data) {
