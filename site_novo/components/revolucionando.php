@@ -79,7 +79,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 style="color:#fff;font-weight:bold;margin-top:15px;font-size:25px" >Me revolucionando</h2>
+          <h2 style="color:#fff;font-weight:bold;margin-top:15px;font-size:45px" >Me revolucionando</h2>
           <p style="color:#fff;"> Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor..</p>
         </div>
 
@@ -93,17 +93,13 @@
           ?>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box"  style="background:#fff;padding:13px">
-              <div style="margin-top:10px;height:267px" class="post-img"><img src="<?=$localPainel?>site/volume/servicos/<?=$d->imagem?>" class="img-fluid" alt=""></div>
-              <!-- <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div> -->
-              <a href="servico.php?cod=<?=$d->codigo?>"><h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#144397"><?=$d->titulo?></h3>
-              <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;color:#144397"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p> </a>
-             <!-- <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
-                <button type="button" class="botao botaoroxo">Leia Mais<i class="bi bi-arrow-right"></i></button>
-              </a>-->
+            <div class=""  style="background:#fff;padding:13px">
+              <div style="margin-top:10px;height:267px" class="post-img">
+             
+           
+              <p class="" style="color:#fff;font-weight:bold">TOP 01</p>
+              <p class="" style="color:#fff;font-weight:bold">no norte</p>
+              
             </div>
           </div>
 
