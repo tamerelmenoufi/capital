@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     function rotulo_valores($d){
-        list($a, $m) = explode("/",$d);
+        list($m, $a) = explode("/",$d);
         $r = [
             '01' => 'Jan',
             '02' => 'Fev',
