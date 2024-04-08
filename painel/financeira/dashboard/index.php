@@ -10,7 +10,7 @@
             ";
     $q = [];
     for($i=0; $i<12; $i++){
-        $dt = date("Y-m-d", mktime(0,0,0,date("m") - $i,date("d"), date("Y")));
+        $dt = date("Y-m", mktime(0,0,0,date("m") - $i,date("d"), date("Y")));
         $valor_rotulo[$i] = date("m/Y", mktime(0,0,0,date("m") - $i,date("d"), date("Y")));
         $q[] = "(select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130' and data like '{$dt}%') as valor{$i}";
     }
