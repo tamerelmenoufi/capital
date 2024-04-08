@@ -16,7 +16,7 @@
     }else if($_SESSION['ProjectPainel']->perfil == 'site'){
         $url = "site/home/index.php";
     }else if($_SESSION['ProjectPainel']->perfil == 'consulta'){
-        $url = "site/home/index.php";
+        $url = "financeira/home/index.php";
     }else{
         $url = "src/login/index.php";
     }

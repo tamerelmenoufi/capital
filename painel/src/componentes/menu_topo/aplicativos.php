@@ -42,7 +42,7 @@
                 if(
                     $_SESSION['ProjectPainel']->perfil == 'adm' or 
                     $_SESSION['ProjectPainel']->perfil == 'financeiro' or
-                    $_SESSION['ProjectPainel']->perfil == 'consultas'
+                    $_SESSION['ProjectPainel']->perfil == 'consulta'
                 ){
                 ?>
                     <div class="col-4">
@@ -71,7 +71,7 @@
                     if(
                         $_SESSION['ProjectPainel']->perfil == 'adm' or 
                         $_SESSION['ProjectPainel']->perfil == 'site' or 
-                        $_SESSION['ProjectPainel']->perfil == 'consultas'
+                        $_SESSION['ProjectPainel']->perfil == 'consulta'
                     ){
                     ?>
                     <div class="col-4">
