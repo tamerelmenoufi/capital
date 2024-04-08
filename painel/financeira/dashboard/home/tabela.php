@@ -139,17 +139,14 @@
                 fontSize: 16
             },
 
-
             tooltips: {
               mode: 'label',
               callbacks: {
                 title: function() {
-                return 'Xibata';
+                  return 'Xibata';
+                }
               }
             }
-
-
-        }
     });
 
 
