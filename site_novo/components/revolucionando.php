@@ -86,27 +86,17 @@
         <div class="row">
 
 
-          <?php
-          $query = "select * from servicos where situacao = '1' order by codigo desc limit 0,3";
-          $result = sisLog( $query);
-          while($d = mysqli_fetch_object($result)){
-          ?>
-
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class=""  style="background:#fff;padding:13px">
-              <div style="margin-top:10px;height:267px" class="post-img">
+         
              
            
               <p class="" style="color:#fff;font-weight:bold">TOP 01</p>
               <p class="" style="color:#fff;font-weight:bold">no norte</p>
               
             </div>
-          </div>
+          
 
-          <?php
-          }
-          ?>
-
+        
           <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
