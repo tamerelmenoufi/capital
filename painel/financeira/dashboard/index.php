@@ -118,7 +118,7 @@
         <div class="col-md-3">
             <div class="alert alert-primary" role="alert">
                 <div>Pagamentos Acumulados</div>
-                <h1 class="contagem">R$ <?=number_format($d->valor,2,',','.')?></h1>
+                <h1>R$ <?=number_format($d->valor,2,',','.')?></h1>
             </div>
         </div>
     </div>
