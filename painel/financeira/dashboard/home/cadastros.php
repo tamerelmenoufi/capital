@@ -146,7 +146,7 @@
         </table>
     </div>
     <div class="col-md-6 mt-3">
-        <h5>Gráfico de Representação dos Cadastros</h5>
+        <h5>Gráfico de Representação dos Níveis de Cadastros</h5>
         <canvas id="grafico" style="margin-top:30px;"></canvas>
     </div>    
 </div>
