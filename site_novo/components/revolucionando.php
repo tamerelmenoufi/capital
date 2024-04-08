@@ -85,8 +85,7 @@
 
         <div class="row">
 
-        <div class="container">
-          
+
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
          
              
@@ -150,7 +149,7 @@
         </button></a>
       </center>-->
 
-     </div>
+
         </div>
 
       </div>
