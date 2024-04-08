@@ -89,7 +89,7 @@
         'servicos',
         'depoimentos',
         'sobre',
-        //'time',
+        'revolucionando',
        // 'noticias',
         //'galeria',
         //'banner_depoimentos',
