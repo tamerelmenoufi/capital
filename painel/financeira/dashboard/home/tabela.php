@@ -90,7 +90,7 @@
     new Chart("solicitacoes", {
         type: "bar",
         data: {
-            labels: ['Novos Cadastros','Simulações Realizadas','Simulações bem Sucedidas','Simulações Negadas','Propostas Realizadas', 'Antecipação Paga', 'Propostas com Pendências', 'Propostas Negadas'],
+            labels: ['N.C.','S.R.','S.S.','S.N.','P.R.', 'A.P.', 'P.P.', 'P.N.'],
             datasets: [{
                 data: ['<?=$NC?>', '<?=$SR?>', '<?=$SS?>', '<?=$SN?>', '<?=$PR?>', '<?=$AP?>', '<?=$PP?>', '<?=$PN?>'],
                 label: 'Solicitações',
