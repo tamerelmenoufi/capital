@@ -140,9 +140,11 @@
           },
           tooltips: {
             callbacks: {
-              label:function(tooltipItem, data){
-                console.log(tooltipItem);
-                console.log(data);
+              ticks: {
+                label: function(tooltipItem, data) {
+                    console.log(tooltipItem)
+                    console.log(data)
+                  }
               }
             }
           }
