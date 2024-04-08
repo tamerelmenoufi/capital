@@ -137,12 +137,9 @@
                 display: true,
                 text: "Gráfico de Representação dos Cadastros",
                 fontSize: 16
-            }
-          },
-          plugins:{
-            tooltip: {
+            },
+            tooltips: {
               callbacks: {
-                title:'TESTE ',
                 label:((tooltipItem, data) => {
                   console.log(tooltipItem);
                   console.log(data);
