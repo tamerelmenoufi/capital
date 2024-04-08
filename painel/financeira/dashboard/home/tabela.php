@@ -142,9 +142,10 @@
             tooltips: {
               mode: 'label',
               callbacks: {
-                title: function() {
-                  return 'Xibata';
-                }
+                label:((tooltipItem, data) => {
+                  console.log(tooltipItem);
+                  console.log(data);
+                })
               }
             }
           }
