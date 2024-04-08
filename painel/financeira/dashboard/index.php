@@ -130,7 +130,15 @@
             $opc = "valor{$i}";
         ?>
         <div class="col-md-1">
-            <div class="alert alert-success" role="alert">
+            <div 
+                class="alert alert-success" 
+                role="alert" 
+                valores_dias<?=((!$d->$opc)?'BLQ':false)?>="<?=$valor_rotulo[$i]?>"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+            >
                 <div><?=rotulo_valores($valor_rotulo[$i])?></div>
                 <h6>R$ <?=number_format($d->$opc,2,',','.')?></h6>
             </div>
@@ -199,6 +207,20 @@
                 })
                 
             }
+        })
+
+        $("div[valores_dias]").click(function(){
+            periodo = $(this).attr("valores_dias");
+            $.ajax({
+                    url:"financeira/dashboard/home/pagamentos_diarios.php",
+                    type:"POST",
+                    data:{
+                        periodo
+                    },
+                    success:function(dados){
+                        $(".LateralDireita").html(dados);
+                    }
+                })
         })
 
 

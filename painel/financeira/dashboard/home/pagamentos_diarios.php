@@ -1,0 +1,68 @@
+<?php
+        include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+?>
+<style>
+  .legenda_status{
+    border-left:5px solid;
+    border-left-color:green;
+  }
+  .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+
+</style>
+
+<h4 class="Titulo<?=$md5?>">Pagamentos por Período</h4>
+
+
+<div class="col">
+  <div class="m-3">
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h5 class="card-header">Período de <?=$_POST['periodo']?> </h5>
+          <div class="card-body">
+
+            <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  echo $query = "select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130' and data like '{$_post['periodo']}%' order by data asc";
+                  $result = mysqli_query($con, $query);
+                  while($d = mysqli_fetch_object($result)){
+                ?>
+                <tr>
+                  <td><?=dataBr($d->data)?></td>
+                  <td>R$ <?=number_format($d->valor,2,",",".")?></td>
+                </tr>
+                <?php
+                  }
+                ?>
+              </tbody>
+            </table>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+    $(function(){
+        Carregando('none');
+ 
+    })
+</script>
