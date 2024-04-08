@@ -104,9 +104,9 @@ A simple warning alert—check it out!
                 <h1><?=$d->pagos?></h1>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="alert alert-primary" role="alert">
-                <div>Valor Acumulado</div>
+                <div>Pagamentos Acumulados</div>
                 <h1>R$ <?=number_format($d->valor,2,',','.')?></h1>
             </div>
         </div>
