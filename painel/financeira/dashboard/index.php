@@ -11,6 +11,7 @@
     $q = [];
     for($i=0; $i<12; $i++){
         $dt = date("Y-m-d", mktime(0,0,0,date("m") - $i,date("d"), date("Y")));
+        $valor_rotulo[$i] = date("m/Y", mktime(0,0,0,date("m") - $i,date("d"), date("Y")));
         $q[] = "(select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130' and data like '{$dt}%') as valor{$i}";
     }
     $query = $query.implode(", ", $q);
@@ -119,6 +120,20 @@ A simple warning alert—check it out!
     </div>
 
 
+    <div class="row">
+        <?php
+        for($i=0;$i<12;$i++){
+        ?>
+        <div class="col-md-1">
+            <div class="alert alert-success" role="alert">
+                <div><?=$valor_rotulo[$i]?></div>
+                <h1><?=$d->"valor{$i}"?></h1>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+    </div>
 
 
 
