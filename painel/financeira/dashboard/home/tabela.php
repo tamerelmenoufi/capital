@@ -75,7 +75,8 @@
       </table>
     </div>
     <div class="col-md-6">
-          <canvas id="solicitacoes" style="margin-top:30px;"></canvas>
+      <h5>Representação Gráfica das Solicitações</h5>
+      <canvas id="solicitacoes" style="margin-top:30px;"></canvas>
     </div>
 </div>
 
