@@ -94,31 +94,31 @@
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Clientes</div>
-                <h1><?=$d->clientes?></h1>
+                <h1 class="contagem"><?=$d->clientes?></h1>
             </div>
         </div>
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Simulações</div>
-                <h1><?=$d->simulacoes?></h1>
+                <h1 class="contagem"><?=$d->simulacoes?></h1>
             </div>
         </div>
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Contratos</div>
-                <h1><?=$d->contratos?></h1>
+                <h1 class="contagem"><?=$d->contratos?></h1>
             </div>
         </div>
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Contratos Pagos</div>
-                <h1><?=$d->pagos?></h1>
+                <h1 class="contagem"><?=$d->pagos?></h1>
             </div>
         </div>
         <div class="col-md-3">
             <div class="alert alert-primary" role="alert">
                 <div>Pagamentos Acumulados</div>
-                <h1>R$ <?=number_format($d->valor,2,',','.')?></h1>
+                <h1 class="contagem">R$ <?=number_format($d->valor,2,',','.')?></h1>
             </div>
         </div>
     </div>
@@ -182,6 +182,21 @@
     $(function(){
 
         Carregando('none');
+
+        $('.contagem').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 5000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+
+
         $.ajax({
             url:"financeira/dashboard/home/calendario.php",
             success:function(dados){
