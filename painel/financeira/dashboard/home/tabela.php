@@ -137,7 +137,18 @@
                 display: true,
                 text: "Gráfico de Representação dos Cadastros",
                 fontSize: 16
+            },
+
+
+            tooltips: {
+              mode: 'label',
+              callbacks: {
+                title: function() {
+                return 'Xibata';
+              }
             }
+
+
         }
     });
 
