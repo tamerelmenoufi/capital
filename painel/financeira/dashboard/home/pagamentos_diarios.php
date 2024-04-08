@@ -49,7 +49,8 @@
                 <tr>
                   <td><?=dataBr($d->data)?></td>
                   <td><?=$d->contratos?></td>
-                  <td>R$ <?=number_format($d->valor,2,",",".")?></td>
+                  <!-- <td>R$ <?=number_format($d->valor,2,",",".")?></td> -->
+                  <td>R$ <?=$d->valor?></td>
                 </tr>
                 <?php
                   }
