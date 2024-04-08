@@ -132,21 +132,21 @@
             // }]
         },
         options: {
-            legend: {display: false},
-            title: {
-                display: true,
-                text: "Gráfico de Representação dos Cadastros",
-                fontSize: 16
-            },
-            tooltips: {
-              callbacks: {
-                label:((tooltipItem, data) => {
-                  console.log(tooltipItem);
-                  console.log(data);
-                })
+          legend: {display: false},
+          title: {
+              display: true,
+              text: "Gráfico de Representação dos Cadastros",
+              fontSize: 16
+          },
+          tooltips: {
+            callbacks: {
+              label:function(tooltipItem, data){
+                console.log(tooltipItem);
+                console.log(data);
               }
             }
           }
+        }
     });
 
 
