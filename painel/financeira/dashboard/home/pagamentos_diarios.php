@@ -41,7 +41,10 @@
                   list($m, $a) = explode("/", $_POST['periodo']);
                   $query = "select sum(dados->'$.data.simulationData.totalReleasedAmount') as valor, data, count(*) as contratos from consultas where proposta->>'$.statusCode' = '130' and data like '{$a}-{$m}%' group by day(data) order by data asc";
                   $result = mysqli_query($con, $query);
+                  $totais_valor = $totais_contratos = 0;
                   while($d = mysqli_fetch_object($result)){
+                    $totais_valor += $d->valor;
+                    $totais_contratos += $d->contratos;
                 ?>
                 <tr>
                   <td><?=dataBr($d->data)?></td>
@@ -51,6 +54,11 @@
                 <?php
                   }
                 ?>
+                <tr>
+                  <td style="text-align:right">TOTAIS</td>
+                  <td><?=$totais_contratos?></td>
+                  <td>R$ <?=number_format($$totais_valor,2,",",".")?></td>
+                </tr>
               </tbody>
             </table>
                 </div>
