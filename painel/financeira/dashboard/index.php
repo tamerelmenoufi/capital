@@ -6,8 +6,14 @@
                 (select count(*) from consultas) as simulacoes,
                 (select count(*) from consultas where proposta->>'$.statusCode') as contratos,
                 (select count(*) from consultas where proposta->>'$.statusCode' = '130') as pagos,
-                (select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130') as valor
+                (select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130') as valor,
             ";
+    $q = [];
+    for($i=0 $i<12; $i++){
+        $dt = date("Y-m-d", mktime(0,0,0,date("m") - $i,date("d"), date("Y")));
+        $q[] = "(select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130' and data like '{$dt}%') as valor{$i}";
+    }
+    $query = $query.implode(", ", $q);
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
