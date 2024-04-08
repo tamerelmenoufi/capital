@@ -42,6 +42,8 @@
     </div>
     <?php
     }
+    if($_SESSION['ProjectPainel']->perfil == 'adm' or $_SESSION['ProjectPainel']->perfil == 'site'){
+
     ?>
     <div class="row mb-1 menu-cinza">
       <div class="col">
@@ -117,6 +119,9 @@
         </a>
       </div>
     </div>
+    <?php
+    }
+    ?>
 
 
   </div>

@@ -81,6 +81,7 @@
                         <option value="adm" <?=(($d->perfil == 'adm')?'selected':false)?>>Administrador</option>
                         <option value="site" <?=(($d->perfil == 'site')?'selected':false)?>>Site</option>
                         <option value="financeiro" <?=(($d->perfil == 'financeiro')?'selected':false)?>>Financeiro</option>
+                        <option value="consulta" <?=(($d->perfil == 'consulta')?'selected':false)?>>Consulta</option>
                     </select>
                     <label for="email">Perfil</label>
                 </div>
