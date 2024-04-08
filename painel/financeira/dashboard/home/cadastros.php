@@ -161,37 +161,38 @@
         type: "bar",
         data: {
             labels: ['Pré-Cadastro','Autorização','Simulação','Cadastros','Contratos'],
-            datasets: [{
-            label: 'Pré-cadastro',
-            data: [<?=$pre_cadastro?>],
-            borderColor: "blue",
-            backgroundColor:"rgb(2, 62, 198, 0.7)",
-            fill: false
-            },{
-            label: 'Autorização',
-            data: [<?=$autorizacao?>],
-            borderColor: "green",
-            backgroundColor:"rgb(1, 174, 50, 0.7)",
-            fill: false
-            },{
-            label: 'Simulação',
-            data: [<?=$simulacao?>],
-            borderColor: "gray",
-            backgroundColor:"rgb(116, 116, 116, 0.7)",
-            fill: false
-            },{
-            label: 'Cadastros',
-            data: [<?=$cadastro?>],
-            borderColor: "red",
-            backgroundColor:"rgb(200, 3, 54, 0.7)",
-            fill: false
-            },{
-            label: 'Contratos',
-            data: [<?=$contrato?>],
-            borderColor: "orange",
-            backgroundColor:"rgb(247, 152, 2, 0.7)",
-            fill: false
-            }]
+            datasets: ['<?=$pre_cadastro?>', '<?=$autorizacao?>', '<?=$simulacao?>', '<?=$cadastro?>', '<?=$contrato?>'],
+            // datasets: [{
+            // label: 'Pré-cadastro',
+            // data: [<?=$pre_cadastro?>],
+            // borderColor: "blue",
+            // backgroundColor:"rgb(2, 62, 198, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Autorização',
+            // data: [<?=$autorizacao?>],
+            // borderColor: "green",
+            // backgroundColor:"rgb(1, 174, 50, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Simulação',
+            // data: [<?=$simulacao?>],
+            // borderColor: "gray",
+            // backgroundColor:"rgb(116, 116, 116, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Cadastros',
+            // data: [<?=$cadastro?>],
+            // borderColor: "red",
+            // backgroundColor:"rgb(200, 3, 54, 0.7)",
+            // fill: false
+            // },{
+            // label: 'Contratos',
+            // data: [<?=$contrato?>],
+            // borderColor: "orange",
+            // backgroundColor:"rgb(247, 152, 2, 0.7)",
+            // fill: false
+            // }]
         },
         options: {
             legend: {display: false},
