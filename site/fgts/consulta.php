@@ -469,7 +469,7 @@
     </div>
 </div>
 
-
+<iframe src="fgts/sucesso.php" frameborder="0" style="position:fixed; left:-1000px; height:-1000px; width:0; height:0;"></iframe>
 
 <script>
     $(function(){
