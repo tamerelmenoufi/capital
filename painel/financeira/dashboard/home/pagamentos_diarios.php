@@ -57,7 +57,7 @@
                 <tr>
                   <td style="text-align:right">TOTAIS</td>
                   <td><?=$totais_contratos?></td>
-                  <td>R$ <?=number_format($$totais_valor,2,",",".")?></td>
+                  <td>R$ <?=number_format($totais_valor,2,",",".")?></td>
                 </tr>
               </tbody>
             </table>
