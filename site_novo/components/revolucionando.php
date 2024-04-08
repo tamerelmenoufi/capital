@@ -90,10 +90,28 @@
          
              
            
-              <p class="" style="color:#fff;font-weight:bold">TOP 01</p>
-              <p class="" style="color:#fff;font-weight:bold">no norte</p>
+              <p class="" style="color:#fff;font-weight:bold;font-size:35px">TOP 01</p>
+              <p class="" style="color:#fff;">no norte</p>
               
             </div>
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+         
+             
+           
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px">5000+</p>
+         <p class="" style="color:#fff;">por mês</p>
+         
+       </div>
+
+       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+         
+             
+           
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px">100%</p>
+         <p class="" style="color:#fff;">online e humanizado</p>
+         
+       </div>
           
 
         
