@@ -38,7 +38,7 @@
               <tbody>
                 <?php
                   list($m, $a) = explode("/", $_POST['periodo']);
-                  $query = "select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130' and data like '{$a}-{$m}%' order by data asc";
+                  echo $query = "select sum(dados->'$.data.simulationData.totalReleasedAmount') from consultas where proposta->>'$.statusCode' = '130' and data like '{$a}-{$m}%' order by data asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>
