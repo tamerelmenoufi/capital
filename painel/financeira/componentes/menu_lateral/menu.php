@@ -30,7 +30,9 @@
         </a>
       </div>
     </div>
-
+    <?php
+      if($_SESSION['ProjectPainel']->perfil == 'adm' or $_SESSION['ProjectPainel']->perfil == 'financeiro'){
+    ?>
     <div class="row mb-1 menu-cinza">
       <div class="col">
         <a url="financeira/clientes/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -73,7 +75,9 @@
       </div>
     </div> -->
 
-
+    <?php
+      }
+    ?>
 
 
   </div>

@@ -2,18 +2,18 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 ?><!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 
   <title>capitalsolucoes</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  
   <!-- Favicons -->
   <link href="assets/img/icone.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,25 +80,20 @@
     $componentes = [
         'menu',
         // 'banner_principal',
-         'banner_principal_scroll',
-          'apresentacao',
-         //  'video',
+        //'banner_principal_scroll',
         // 'banner_principal2',
         // 'banner_principal3',
-        
-        'servicos',
-        'depoimentos',
-        'sobre',
-        'revolucionando',
-       // 'noticias',
+        //'sobre',
+        //'time',
+        //'noticias',
         //'galeria',
         //'banner_depoimentos',
-
-
+        
         // 'pagina_interna',
         // 'pagina_interna2',
         // 'mais_noticias',
         // 'noticias_detalhes',
+          'revolucionando',
         // 'produtos_servicos',
         // 'clientes',
         // 'destaque',
@@ -108,26 +103,22 @@
         // 'planos',
         // 'faq',
         //
-        'contato',
-        'rodape'
+        //'contato',
+        'rodape',
+
     ];
 
     foreach($componentes as $i => $v){
         include("components/{$v}.php");
     }
 
-
-
 ?>
 </main><!-- End #main -->
 
-  <a href="#" style="color: #fff ;background-color: #154fb7;border-color: #154fb7;" class="scroll-top d-flex align-items-center justify-content-center btn btn-primary">
+  <a href="#" style="background-color: #534ab3;border-color: #534ab3" class="scroll-top d-flex align-items-center justify-content-center" style="bg-primary">
     <i class="bi bi-arrow-up-short"></i></a>
 
-    <div ><a href="#" style="color: #fff ;background-color: #154fb7;border-color: #154fb7;" class="scroll-top d-flex align-items-center justify-content-center btn btn-primary">
-    ANTECIPE SEU FGTS</a></div>
-
-  <!-- <div id="preloader"></div> -->
+  <div id="preloader"></div>
 
 
 
@@ -146,7 +137,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/js.js?opc123"></script>
+  <script src="assets/js/js.js"></script>
 
 
   <script>
@@ -157,9 +148,6 @@
         success:function(dados){
           //Retorno da função
           // console.log(dados);
-        },
-        error:function(){
-          console.log('Error');
         }
       });
 
@@ -167,10 +155,8 @@
       setTimeout(() => {
         $("#loom-companion-mv3").remove();
       }, 1000);
-    })
+  })
   </script>
-
-
 </body>
 
 </html>

@@ -16,7 +16,7 @@
   <footer id="footer" class="footer">
 
 
-    <div class="footer-legal text-center" style="background:#393286">
+    <div class="footer-legal text-center" style="background:#144397">
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">

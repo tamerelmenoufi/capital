@@ -74,62 +74,47 @@
 
 <div style="background:#144397;color:#fff">
 
-    <section id="depoimentos"  style="padding:0px" class="recent-blog-posts">
+    <section id="revolucionando"  style="padding:0px" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 style="color:#fff;font-weight:bold;margin-top:25px" >Depoimentos</h2>
-          
+          <h2 style="color:#fff;font-weight:bold;margin-top:15px;font-size:45px" >Me revolucionando</h2>
+          <p style="color:#fff;"> Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor..</p>
         </div>
 
         <div class="row">
 
 
-
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class=""  style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
-            box-shadow: 0px 0px 5px #000;padding:10px">
-            <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
-          O que <b style="background:#000">dizem</b> <br> nossos clientes
-          </h3>
-              <div style="margin-top:10px;height:200px" class="post-img">
-              <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
-              
-              
-            </div>
-          </div>
-
          
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class=""   style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
-            box-shadow: 0px 0px 5px #000;padding:10px">
-            <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
-          O que <b style="background:#000">dizem</b> <br> nossos clientes
-          </h3>
-              <div style="margin-top:10px;height:200px" class="post-img">
-              <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
-              
+             
+           
+              <p class="" style="color:#fff;font-weight:bold;font-size:35px">TOP 01</p>
+              <p class="" style="color:#fff;">no norte</p>
               
             </div>
-          </div>
 
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+         
+             
+           
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px">5000+</p>
+         <p class="" style="color:#fff;">por mês</p>
+         
+       </div>
+
+       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+         
+             
+           
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px">100%</p>
+         <p class="" style="color:#fff;">online e humanizado</p>
+         
+       </div>
           
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="" style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
-            box-shadow: 0px 0px 5px #000;padding:10px">
-            <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
-          O que <b style="background:#000">dizem</b> <br> nossos clientes
-          </h3>
-              <div style="margin-top:10px;height:200px" class="post-img">
-              <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
-              
-              
-            </div>
-          </div>
 
-     
+        
           <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
@@ -157,8 +142,7 @@
           </div> -->
 
 
-          <div style="padding:30px"></div>
-          <!--<center style="margin-top:20px">
+         <!-- <center style="margin-top:20px">
           <a href="servico_categoria.php">
          <button type="button" class=" botaobranco">
           Outros serviços
