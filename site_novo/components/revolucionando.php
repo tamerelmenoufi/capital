@@ -85,32 +85,35 @@
 
         <div class="row">
 
+        <div class="container">
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
          
-             
+             <center>
            
               <p class="" style="color:#fff;font-weight:bold;font-size:35px">TOP 01</p>
               <p class="" style="color:#fff;">no norte</p>
+
+</center>
               
             </div>
 
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
          
-             
+            <center>
            
          <p class="" style="color:#fff;font-weight:bold;font-size:35px">5000+</p>
          <p class="" style="color:#fff;">por mês</p>
-         
+         </center>
        </div>
 
        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
          
              
-           
+       <center>
          <p class="" style="color:#fff;font-weight:bold;font-size:35px">100%</p>
          <p class="" style="color:#fff;">online e humanizado</p>
-         
+         </center>
        </div>
           
 
@@ -149,7 +152,7 @@
         </button></a>
       </center>-->
 
-
+     </div>
         </div>
 
       </div>
