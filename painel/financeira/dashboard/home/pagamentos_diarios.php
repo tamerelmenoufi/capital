@@ -43,8 +43,8 @@
                   $result = mysqli_query($con, $query);
                   $totais_valor = $totais_contratos = 0;
                   while($d = mysqli_fetch_object($result)){
-                    $totais_valor += $d->valor;
-                    $totais_contratos += $d->contratos;
+                    $totais_valor = $totais_valor + $d->valor;
+                    $totais_contratos = $totais_contratos + $d->contratos;
                 ?>
                 <tr>
                   <td><?=dataBr($d->data)?></td>
