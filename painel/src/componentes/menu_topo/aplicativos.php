@@ -39,7 +39,11 @@
             <li class="MenuLogin">
                 <div class="row">
                 <?php
-                if($_SESSION['ProjectPainel']->perfil == 'adm' or $_SESSION['ProjectPainel']->perfil == 'financeiro'){
+                if(
+                    $_SESSION['ProjectPainel']->perfil == 'adm' or 
+                    $_SESSION['ProjectPainel']->perfil == 'financeiro' or
+                    $_SESSION['ProjectPainel']->perfil == 'consultas'
+                ){
                 ?>
                     <div class="col-4">
                         <div app="financeira" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
@@ -64,7 +68,11 @@
                         </div>
                     </div> -->
                     <?php
-                    if($_SESSION['ProjectPainel']->perfil == 'adm' or $_SESSION['ProjectPainel']->perfil == 'site'){
+                    if(
+                        $_SESSION['ProjectPainel']->perfil == 'adm' or 
+                        $_SESSION['ProjectPainel']->perfil == 'site' or 
+                        $_SESSION['ProjectPainel']->perfil == 'consultas'
+                    ){
                     ?>
                     <div class="col-4">
                         <div app="site" class="card w-100 d-flex align-items-center justify-content-center appIcons" >
