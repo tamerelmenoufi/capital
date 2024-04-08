@@ -134,10 +134,17 @@
                 class="alert alert-success" 
                 role="alert" 
                 valores_dias<?=((!$d->$opc)?'BLQ':false)?>="<?=$valor_rotulo[$i]?>"
+                <?php
+                if(!$d->$opc){
+                ?>                
                 data-bs-toggle="offcanvas"
                 href="#offcanvasDireita"
                 role="button"
                 aria-controls="offcanvasDireita"
+                style="cursor:pointer"
+                <?php
+                }
+                ?>
             >
                 <div><?=rotulo_valores($valor_rotulo[$i])?></div>
                 <h6>R$ <?=number_format($d->$opc,2,',','.')?></h6>
