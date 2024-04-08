@@ -122,6 +122,10 @@ A simple warning alert—check it out!
 
     <div class="row">
         <?php
+
+        setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        echo strftime('%A, %d de %B de %Y', strtotime('today'));
         for($i=0;$i<12;$i++){
             $opc = "valor{$i}";
         ?>
