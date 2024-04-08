@@ -124,7 +124,7 @@
   <a href="#" style="color: #fff ;background-color: #154fb7;border-color: #154fb7;" class="scroll-top d-flex align-items-center justify-content-center btn btn-primary">
     <i class="bi bi-arrow-up-short"></i></a>
 
-    <div style="padding:10px"><a href="#" style="color: #fff ;background-color: #154fb7;border-color: #154fb7;" class="scroll-top d-flex align-items-center justify-content-center btn btn-primary">
+    <div ><a href="#" style="color: #fff ;background-color: #154fb7;border-color: #154fb7;" class="scroll-top d-flex align-items-center justify-content-center btn btn-primary">
     ANTECIPE SEU FGTS</a></div>
 
   <!-- <div id="preloader"></div> -->
