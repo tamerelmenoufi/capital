@@ -90,8 +90,8 @@
          
              
            
-              <p class="" style="color:#fff;font-weight:bold;font-size:35px">TOP 01</p>
-              <p class="" style="color:#fff;">no norte</p>
+              <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center">TOP 01</p>
+              <p class="" style="color:#fff;text-align:center">no norte</p>
               
             </div>
 
@@ -99,8 +99,8 @@
          
              
            
-         <p class="" style="color:#fff;font-weight:bold;font-size:35px">5000+</p>
-         <p class="" style="color:#fff;">por mês</p>
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center">5000+</p>
+         <p class="" style="color:#fff;text-align:center">por mês</p>
          
        </div>
 
@@ -108,8 +108,8 @@
          
              
            
-         <p class="" style="color:#fff;font-weight:bold;font-size:35px">100%</p>
-         <p class="" style="color:#fff;">online e humanizado</p>
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center">100%</p>
+         <p class="" style="color:#fff;text-align:center">online e humanizado</p>
          
        </div>
           
