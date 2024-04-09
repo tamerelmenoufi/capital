@@ -143,9 +143,6 @@
   <script>
     $(function(){
 
-
-
-
       $('.contagem').each(function () {
         console.log($(this).attr("valor"));
           $(this).prop('Counter',0).animate({
