@@ -155,13 +155,13 @@
       </div>
       <div class="">
   <div class="row">
-    <div class="col-sm-6 col-md-6 d-block .d-sm-none"><img src="assets/img/cp22.jpg" class="img-fluid" style="height:900px"/></div>
-    <div class="col-sm-6 offset-sm-2 col-md-6 offset-md-0 d-block .d-sm-none"><img src="assets/img/cp23.jpg" class="img-fluid" style="height:900px"/></div>
+    <div class="col-sm-6 col-md-6 d-block d-sm-none"><img src="assets/img/cp22.jpg" class="img-fluid" style="height:900px"/></div>
+    <div class="col-sm-6 offset-sm-2 col-md-6 offset-md-0 d-block d-sm-none"><img src="assets/img/cp23.jpg" class="img-fluid" style="height:900px"/></div>
   </div>
  
   <div class="d-flex justify-content-center">
-  <img src="assets/img/cp22.jpg" class="img-fluid .d-none .d-sm-block" style="width:400px"/>
-  <img src="assets/img/cp23.jpg" class="img-fluid .d-none .d-sm-block" style="width:400px"/>
+  <img src="assets/img/cp22.jpg" class="img-fluid d-none d-sm-block" style="width:400px"/>
+  <img src="assets/img/cp23.jpg" class="img-fluid d-none d-sm-block" style="width:400px"/>
   
 </div>
 
