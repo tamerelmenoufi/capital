@@ -8,11 +8,11 @@
 
     function consulta_logs($dados){
         global $con;
-        echo $query = "insert into consultas_log set 
+        $query = "insert into consultas_log set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
-                                            sessoes = null,
+                                            sessoes = '{}',
                                             log = '{$dados['consulta']}',
                                             log_unico = '".md5($dados['consulta'].$dados['proposta'])."'";
 
