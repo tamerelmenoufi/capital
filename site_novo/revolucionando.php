@@ -146,25 +146,24 @@
 
 
 
-      setTimeout(() => {
-        $('.contagem').each(function () {
-            $(this).prop('Counter',0).animate({
-                Counter: $(this).attr("valor")
-            }, {
-                duration: 5000,
-                easing: 'swing',
-                step: function (now) {
-                    tipo = $(this).attr("tipo")
-                    if(tipo == 'moeda'){
-                        $(this).text(Math.ceil(now).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
-                    }else{
-                        $(this).text(Math.ceil(now));
-                    }
-                    
-                }
-            });
-        });        
-      }, 10000);
+      $('.contagem').each(function () {
+        console.log($(this).attr("valor"));
+          $(this).prop('Counter',0).animate({
+              Counter: $(this).attr("valor")
+          }, {
+              duration: 5000,
+              easing: 'swing',
+              step: function (now) {
+                  tipo = $(this).attr("tipo")
+                  if(tipo == 'moeda'){
+                      $(this).text(Math.ceil(now).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+                  }else{
+                      $(this).text(Math.ceil(now));
+                  }
+                  
+              }
+          });
+      });        
 
       $.ajax({
         url:"assets/lib/log_acessos.php",
