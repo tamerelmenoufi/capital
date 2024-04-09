@@ -27,7 +27,7 @@
     $msg_list[] = [
         'to' =>  $d->phoneNumber,
         'message' => "Envio de mensagem Capital Soluções",
-        'reference' => "lote-".date("YmdHis");
+        'reference' => "lote-".date("YmdHis")
         ];
 
     $response = sendMultiple($msg_list);
