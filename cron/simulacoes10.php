@@ -43,10 +43,8 @@
     }
 
 
-        $codUsr = 103;
 
-
-        $query = "select * from clientes where codigo = '{$codUsr}'";
+        $query = "select * from clientes where simulacao_10 = '0' and cpf != ''";
         $result = sisLog( $query);
         $d = mysqli_fetch_object($result);
 
@@ -80,7 +78,7 @@
         $query = "insert into consultas set 
                                             consulta = '{$consulta}',
                                             operadora = 'VCTEX',
-                                            cliente = '{$codUsr}',
+                                            cliente = '{$d->codigo}',
                                             data = NOW(),
                                             tabela_escolhida = '{$tabela_escolhida}',
                                             tabela = '{$tabela_padrao}',
@@ -92,8 +90,10 @@
         consulta_logs([
             'proposta' => mysqli_insert_id($con),
             'consulta' => $simulacao,
-            'codUsr' => $codUsr
+            'codUsr' => $d->codigo
         ]);
+
+        mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
 
         exit();
 
