@@ -149,7 +149,7 @@
                 <div><?=rotulo_valores($valor_rotulo[$i])?></div>
                 <h6
                     class="contagem"
-                    valor="<?=$valor_rotulo[$i]?>"
+                    valor="<?=$d->$opc?>"
                     tipo="moeda"  
                 >R$ <?=number_format($d->$opc,2,',','.')?></h6>
             </div>
