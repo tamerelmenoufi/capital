@@ -24,15 +24,30 @@
         } 
     
     }
-
+?>
+<table width="100%" border="1">
+    <tr>
+        <td>#</td>
+        <td>Nome</td>
+        <td>CPF</td>
+        <td>Telefone</td>
+    </tr>
+<?php
+    $cnt = 1;
     foreach($linhas as $i => $l){
         if($i > 0){
             $c = explode("	",$l);
-            echo trim($c[0])."<br>".
-            formatCpf(trim($c[1]))."<br>".
-            formatTelefone(trim($c[2]))."<br>".
-            "<hr>";
+?>            
+    <tr>
+        <td><?=$cnt?></td>
+        <td><?=trim($c[0])?></td>
+        <td><?=formatCpf(trim($c[1]))?></td>
+        <td><?=formatTelefone(trim($c[2]))?></td>
+    </tr>
+<?php
+    $cnt++;
         }
     }
 
 ?>
+</table>
