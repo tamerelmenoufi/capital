@@ -29,7 +29,7 @@
     $nome = explode(" ",trim($d->nome))[0];
     $valor = number_format($log->data->simulationData->totalReleasedAmount,2,',','.');
 
-    $mensagem = "Capital Soluções Informa: {$nome}, seu FGTS atualizou, já pode antecipar R${$valor}. Acesse capitalsolucoesam.com.br é fácil, Rápido e Seguro.";
+    $mensagem = "Capital Soluções Informa: {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br é fácil, Rápido e Seguro.";
     $caracteres = strlen($mensagem); 
     $msg_list[] = [
         'to' =>  str_replace(['(',')',' ','-'],false,$d->phoneNumber),
@@ -38,7 +38,7 @@
         'caracteres' => $caracteres,
         ];
     }
-    
+
     print_r($msg_list);
 
     
