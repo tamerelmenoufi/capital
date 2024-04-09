@@ -184,13 +184,13 @@
         Carregando('none');
 
         $('.contagem').each(function () {
-            tipo = $(this).attr("tipo")
             $(this).prop('Counter',0).animate({
                 Counter: $(this).attr("valor")
             }, {
                 duration: 5000,
                 easing: 'swing',
                 step: function (now) {
+                    tipo = $(this).attr("tipo")
                     if(tipo == 'moeda'){
                         $(this).text(Math.ceil(now).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
                     }else{
