@@ -94,25 +94,25 @@
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Clientes</div>
-                <h1 class="contagem"><?=$d->clientes?></h1>
+                <h1 class="contagem" valor="<?=$d->clientes?>" tipo="numero"><?=$d->clientes?></h1>
             </div>
         </div>
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Simulações</div>
-                <h1 class="contagem"><?=$d->simulacoes?></h1>
+                <h1 class="contagem" valor="<?=$d->simulacoes?>" tipo="numero"><?=$d->simulacoes?></h1>
             </div>
         </div>
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Contratos</div>
-                <h1 class="contagem"><?=$d->contratos?></h1>
+                <h1 class="contagem" valor="<?=$d->contratos?>" tipo="numero"><?=$d->contratos?></h1>
             </div>
         </div>
         <div class="col-md-2">
             <div class="alert alert-primary" role="alert">
                 <div>Contratos Pagos</div>
-                <h1 class="contagem"><?=$d->pagos?></h1>
+                <h1 class="contagem" valor="<?=$d->pagos?>" tipo="numero"><?=$d->pagos?></h1>
             </div>
         </div>
         <div class="col-md-3">
@@ -184,13 +184,19 @@
         Carregando('none');
 
         $('.contagem').each(function () {
+            tipo = $(this).attr("tipo")
             $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
+                Counter: $(this).attr("valor")
             }, {
                 duration: 5000,
                 easing: 'swing',
                 step: function (now) {
-                    $(this).text(Math.ceil(now));
+                    if(tipo == 'meda'){
+                        $(this).text(Math.ceil(now).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+                    }else{
+                        $(this).text(Math.ceil(now));
+                    }
+                    
                 }
             });
         });
