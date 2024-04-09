@@ -118,7 +118,10 @@
                       <div class="p-2" style="font-size:12px;"><i class="fa-solid fa-id-card"></i> <?=(($d->cpf)?:"<span class='text-danger'>000.000.000-00</span>")?></div>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="legenda_status p-2" style="border-left-color:<?=$cor?>; font-size:12px; color:#a1a1a1;"><?=$situacao?></div>
+                      <div class="legenda_status p-2" style="border-left-color:<?=$cor?>; font-size:12px; color:#a1a1a1;">
+                        <?=$situacao?>
+                        <?=((in_array($log->statusCode, ['200']) and $_POST['filtro'] == 'SS')?"<br>{$valor_credito}":false)?>
+                      </div>
                     </div>
                   </td>
 
