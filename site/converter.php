@@ -1,4 +1,5 @@
 <?php
+    include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 
     $lista = file_get_contents("converter.csv");
     $linhas = explode("\n", $lista);
@@ -34,10 +35,13 @@
     </tr>
 <?php
     $cnt = 1;
+    $query = [];
     foreach($linhas as $i => $l){
         if($i > 0){
             $c = explode("	",$l);
         if( trim($c[0]) and formatCpf(trim($c[1])) and formatTelefone(trim($c[2])) ){
+
+            $query[] = "('".trim($c[0])."', '".formatCpf(trim($c[1]))."', '2024-04-09 00:00:00', '2024-04-09 00:00:00', '".formatTelefone(trim($c[2]))."', '2024-04-09 00:00:00', '2024-04-09 00:00:00')";
 ?>            
     <tr>
         <td><?=$cnt?></td>
@@ -50,6 +54,9 @@
         }
         }
     }
+
+    echo $query = "INSERT INTO clientes (nome, cpf, data_cadastro, ultimo_acesso, phoneNumber, pre_cadastro, autorizacao_vctex) VALUES ".implode(", ",$query);
+
 
 ?>
 </table>
