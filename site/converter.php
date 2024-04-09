@@ -4,9 +4,12 @@
     $linhas = explode("\n", $lista);
 
     foreach($linhas as $i => $l){
-        if($i>0){
+        if($i > 0){
             $c = explode("	",$l);
-            echo $c[0]."<hr>";
+            echo trim($c[0])."<br>".
+            trim($c[1])."<br>".
+            trim($c[2])."<br>".
+            "<hr>";
         }
     }
 
