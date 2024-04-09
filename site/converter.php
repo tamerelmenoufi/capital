@@ -5,7 +5,8 @@
 
     foreach($linhas as $i => $l){
         if($i>0){
-            echo $l."<hr>";
+            $c = explode("	",$l);
+            echo $c[0]."<hr>";
         }
     }
 
