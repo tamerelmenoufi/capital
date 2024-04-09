@@ -154,14 +154,14 @@
 
       </div>
 
-      <div class="">
+      <div class="row">
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
-      <img src="assets/img/cp22.jpeg"/>
+      <img src="assets/img/cp22.jpeg" class="img-fluit"/>
       </div>
 
       <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
-      
+      <img src="assets/img/cp22.jpeg" class="img-fluit"/>
       </div>
  </div>
     </section><!-- End Recent Blog Posts Section -->
