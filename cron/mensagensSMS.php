@@ -1,6 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    exit();
+
     function sendMultiple($msg){
         
         $content = http_build_query($msg);
