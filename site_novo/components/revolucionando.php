@@ -154,6 +154,16 @@
 
       </div>
 
+      <div class="">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
+      <img src="assets/img/cp22.jpeg"/>
+      </div>
+
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
+      
+      </div>
+ </div>
     </section><!-- End Recent Blog Posts Section -->
 
         </div>
