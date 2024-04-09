@@ -120,7 +120,7 @@
                     <div class="d-flex justify-content-between">
                       <div class="legenda_status p-2" style="border-left-color:<?=$cor?>; font-size:12px; color:#a1a1a1;">
                         <?=$situacao?>
-                        <?=((in_array($log->statusCode, ['200']) and $_POST['filtro'] == 'SS')?"<br>{$valor_credito}":false)?>
+                        <?=((in_array($log->statusCode, ['200']) and $_POST['filtro'] == 'SS')?"<br><span class='text-success'>Saldo encontrado R$ ".number_format($log->data->simulationData->totalReleasedAmount,2,',','.')."</span>":false)?>
                       </div>
                     </div>
                   </td>
