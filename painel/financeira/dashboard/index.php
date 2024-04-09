@@ -187,29 +187,6 @@
 
         Carregando('none');
 
-        setInterval(() => {
-            $('.contagem').each(function () {
-            console.log($(this).attr("valor"));
-                $(this).prop('Counter',0).animate({
-                    Counter: $(this).attr("valor")
-                }, {
-                    duration: 5000,
-                    easing: 'swing',
-                    step: function (now) {
-                        tipo = $(this).attr("tipo")
-                        if(tipo == 'moeda'){
-                            $(this).text(Math.ceil(now).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
-                        }else{
-                            $(this).text(Math.ceil(now));
-                        }
-                        
-                    }
-                });
-            });        
-        }, 10000);
-
-
-
         $.ajax({
             url:"financeira/dashboard/home/calendario.php",
             success:function(dados){
