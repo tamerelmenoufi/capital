@@ -153,7 +153,14 @@
         </div>
 
       </div>
+      
+  <div class="d-flex justify-content-center">
+  <img src="assets/img/cp22.jpg" class="img-fluid" style=""/>
+  <img src="assets/img/cp23.jpg" class="img-fluid" style=""/>
+</div>
 
+
+     
     </section><!-- End Recent Blog Posts Section -->
 
         </div>
