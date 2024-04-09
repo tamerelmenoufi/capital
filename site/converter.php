@@ -4,7 +4,9 @@
     $linhas = explode("\n", $lista);
 
     foreach($linhas as $i => $l){
-        echo $l."<hr>";
+        if($i>0){
+            echo $l."<hr>";
+        }
     }
 
 ?>
