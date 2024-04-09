@@ -136,7 +136,7 @@
                 valores_dias<?=((!$d->$opc)?'BLQ':false)?>="<?=$valor_rotulo[$i]?>"
                 <?php
                 if($d->$opc){
-                ?>                
+                ?>              
                 data-bs-toggle="offcanvas"
                 href="#offcanvasDireita"
                 role="button"
@@ -147,7 +147,11 @@
                 ?>
             >
                 <div><?=rotulo_valores($valor_rotulo[$i])?></div>
-                <h6>R$ <?=number_format($d->$opc,2,',','.')?></h6>
+                <h6
+                    class="contagem"
+                    valor="<?=$valor_rotulo[$i]?>"
+                    tipo="moeda"  
+                >R$ <?=number_format($d->$opc,2,',','.')?></h6>
             </div>
         </div>
         <?php
