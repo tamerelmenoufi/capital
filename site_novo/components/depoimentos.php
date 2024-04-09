@@ -96,7 +96,7 @@
               <div style="margin-top:10px;" class="post-img">
               <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Rafael souza</p>
-              <p style="color:#fff;font-size:12px;text-align:center">ANTECIPE O FGTS</p>
+              <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               
             </div>
           </div>
@@ -112,7 +112,7 @@
               <div style="margin-top:10px;" class="post-img">
               <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Tamer Mohamed</p>
-              <p style="color:#fff;font-size:12px;text-align:center">ANTECIPE O FGTS</p>
+              <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               
             </div>
           </div>
@@ -127,7 +127,7 @@
               <div style="margin-top:10px;" class="post-img">
               <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Ellem Salvador</p>
-              <p style="color:#fff;font-size:12px;text-align:center">ANTECIPE O FGTS</p>
+              <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               
             </div>
           </div>
