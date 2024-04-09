@@ -25,7 +25,7 @@
     $d = mysqli_fetch_object($result);
 
     $msg_list[] = [
-        'to' =>  $d->phoneNumber,
+        'to' =>  str_replace(['(',')',' ','-'],false,$d->phoneNumber),
         'message' => "Envio de mensagem Capital Soluções",
         'reference' => "lote-".date("YmdHis")
         ];
