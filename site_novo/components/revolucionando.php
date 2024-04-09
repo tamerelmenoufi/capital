@@ -153,17 +153,23 @@
         </div>
 
       </div>
+      
+      
+      <div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+    <img src="assets/img/cp22.jpeg" class="img-fluit"/>
+    </div>
+    
+    <div class="col">
+    <img src="assets/img/cp22.jpeg" class="img-fluit"/>
+    </div>
+  </div>
+</div>
 
-      <div class="row">
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
-      <img src="assets/img/cp22.jpeg" class="img-fluit"/>
-      </div>
 
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
-      <img src="assets/img/cp22.jpeg" class="img-fluit"/>
-      </div>
- </div>
+     
     </section><!-- End Recent Blog Posts Section -->
 
         </div>
