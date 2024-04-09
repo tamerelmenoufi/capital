@@ -44,7 +44,7 @@
       }
     </style>
 
-    <section id="contact" class="contact" style="padding:0px">
+    <section id="contact" class="contact" style="padding:0px!important">
     
 
         <div style="background:#144397">
@@ -68,7 +68,7 @@
     Fale conosco</d>
 </center>
 
-
+<div style="padding:15px"> </div>
 
     </div>
 
