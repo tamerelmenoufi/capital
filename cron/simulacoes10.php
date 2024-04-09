@@ -12,7 +12,7 @@
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
-                                            sessoes = '{}',
+                                            sessoes = '{\"codUsr\":\"{$dados['codUsr']}\"}',
                                             log = '{$dados['consulta']}',
                                             log_unico = '".md5($dados['consulta'].$dados['proposta'])."'";
 
@@ -92,7 +92,7 @@
         consulta_logs([
             'proposta' => mysqli_insert_id($con),
             'consulta' => $simulacao,
-            'sisUsr' => $codUsr
+            'codUsr' => $codUsr
         ]);
 
         exit();
