@@ -153,10 +153,10 @@
         </div>
 
       </div>
-      <div class="container text-center">
+      <div class="">
   <div class="row">
-    <div class="col-sm-5 col-md-6"><img src="assets/img/cp22.jpg" class="img-fluit"/></div>
-    <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="assets/img/cp23.jpg" class="img-fluit"/></div>
+    <div class="col-sm-6 col-md-6"><img src="assets/img/cp22.jpg" class="img-fluit" style="height:900px"/></div>
+    <div class="col-sm-6 offset-sm-2 col-md-6 offset-md-0"><img src="assets/img/cp23.jpg" class="img-fluit" style="height:900px"/></div>
   </div>
  
    
