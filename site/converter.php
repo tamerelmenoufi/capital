@@ -37,6 +37,7 @@
     foreach($linhas as $i => $l){
         if($i > 0){
             $c = explode("	",$l);
+        if( trim($c[0]) and formatCpf(trim($c[1])) and formatTelefone(trim($c[2])) ){
 ?>            
     <tr>
         <td><?=$cnt?></td>
@@ -46,6 +47,7 @@
     </tr>
 <?php
     $cnt++;
+        }
         }
     }
 
