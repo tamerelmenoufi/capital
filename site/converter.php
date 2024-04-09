@@ -1,6 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 
+    exit();
+
     $lista = file_get_contents("converter.csv");
     $linhas = explode("\n", $lista);
 
@@ -55,7 +57,7 @@
         }
     }
 
-    echo $query = "INSERT INTO clientes (nome, cpf, data_cadastro, ultimo_acesso, phoneNumber, pre_cadastro, autorizacao_vctex) VALUES ".implode(", ",$query);
+    // echo $query = "INSERT INTO clientes (nome, cpf, data_cadastro, ultimo_acesso, phoneNumber, pre_cadastro, autorizacao_vctex) VALUES ".implode(", ",$query);
 
 
 ?>
