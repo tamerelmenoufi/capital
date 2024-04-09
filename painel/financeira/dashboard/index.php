@@ -191,7 +191,7 @@
                 duration: 5000,
                 easing: 'swing',
                 step: function (now) {
-                    if(tipo == 'meda'){
+                    if(tipo == 'moeda'){
                         $(this).text(Math.ceil(now).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
                     }else{
                         $(this).text(Math.ceil(now));
