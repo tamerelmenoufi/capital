@@ -22,7 +22,7 @@
 
     $query = "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '2024-04-09%' and a.dados->>'$.statusCode' = '200' order by b.nome asc";
     $result = sisLog( $query);
-    $d = mysqli_fetch_object($result);
+    while($d = mysqli_fetch_object($result)){
 
     $log = json_decode($d->log);
 
@@ -33,11 +33,12 @@
     $caracteres = strlen($mensagem); 
     $msg_list[] = [
         'to' =>  str_replace(['(',')',' ','-'],false,$d->phoneNumber),
-        'message' => "Envio de mensagem Capital Soluções",
+        'message' => $mensagem,
         'reference' => "lote-".date("YmdHis"),
         'caracteres' => $caracteres,
         ];
-
+    }
+    
     print_r($msg_list);
 
     
