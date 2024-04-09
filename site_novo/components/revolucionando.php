@@ -90,7 +90,7 @@
          
              
            
-              <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center">TOP 01</p>
+              <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center">TOP <span class="contagem" valor="1" tipo="numero">1</span></p>
               <p class="" style="color:#fff;text-align:center">no norte</p>
               
             </div>
@@ -99,7 +99,7 @@
          
              
            
-         <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center">5000+</p>
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center"><span class="contagem" valor="5000" tipo="numero">5000</span>+</p>
          <p class="" style="color:#fff;text-align:center">por mês</p>
          
        </div>
@@ -108,7 +108,7 @@
          
              
            
-         <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center">100%</p>
+         <p class="" style="color:#fff;font-weight:bold;font-size:35px;text-align:center"><span class="contagem" valor="100" tipo="numero">100</span>%</p>
          <p class="" style="color:#fff;text-align:center">online e humanizado</p>
          
        </div>
