@@ -16,7 +16,7 @@
   <footer id="footer" class="footer">
 
 
-    <div class="footer-legal " style="background:#144397;padding:10px">
+    <div class="footer-legal " style="background:#144397;padding:20px">
      <p style="color:#fff;font-weight:bold">
      © Copyright capitalsolucoes. Todos os direitos reservados
     </p>
