@@ -95,7 +95,7 @@
             'sisUsr' => $codUsr
         ]);
 
-        // exit();
+        exit();
 
 
 
