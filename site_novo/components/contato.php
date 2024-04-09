@@ -45,14 +45,13 @@
     </style>
 
     <section id="contact" class="contact">
-      <div class="container">
+    
 
-        <div class="section-header">
-          <h2>Contatos</h2>
+        <div style="background:#144397">
+          <p style="color:#fff;font-size:35px">Perguntas Frequentes</p>
+    </div>
 
-        </div>
-
-      </div>
+      
 
       <div class="exibir_mapa">
       <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3984.0578054013845!2d-60.02677828524287!3d-3.07924319775767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMDQnNDUuMyJTIDYwwrAwMScyOC41Ilc!5e0!3m2!1spt-BR!2sbr!4v1675953069641!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
