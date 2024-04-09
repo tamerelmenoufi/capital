@@ -22,6 +22,14 @@
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div class="copyright">
             &copy; Copyright <strong><span>capitalsolucoes</span></strong>. Todos os direitos reservados
+
+
+            <p style="color:#fff">
+            A Vip Promotora não é uma instituição financeira e não realiza operações de crédito diretamente. A Vip Promotora é uma plataforma digital que atua como correspondente bancário para facilitar o processo de contratação de empréstimos. Como correspondente bancário, seguimos as diretrizes do Banco Central do Brasil, nos termos da Resolução nº. 3.954, de 24 de fevereiro de 2011. Toda avaliação de crédito será realizada conforme a política de crédito da Instituição Financeira escolhida pelo usuário.Antes da contratação de qualquer serviço através de nossos parceiros, você receberá todas as condições e informações relativas ao produto a ser contrato,de forma completa e transparente. As taxas de juros, margem consignável e prazo de pagamento praticados nos empréstimos com consignação em pagamentodos Governos Federais, Estaduais e Municipais, Forças armadas e INSS observam as determinações de cada convênio, bem como a política de créditoda instituição financeira a ser utilizada. AOM SOLUCOES FINANCEIRAS
+            </p> 
+
+            <p style="color:#fff">- CNPJ 33.636.801/0001-05 | Endereço: Rua Castro Alves, 176 - Andar 1 - 88101-160 - Campinas, São José -SC</p>
+           
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->
