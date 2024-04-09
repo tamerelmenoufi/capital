@@ -31,7 +31,7 @@
 
     $mensagem = "Capital Soluções Informa: {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br é fácil, Rápido e Seguro.";
     $caracteres = strlen($mensagem); 
-    echo $mensagem."<br>";
+    // echo $mensagem."<br>";
     $msg_list[] = [
         'to' =>  str_replace(['(',')',' ','-'],false,$d->phoneNumber),
         'message' => $mensagem,
@@ -40,7 +40,7 @@
         ];
     }
 
-    // print_r($msg_list);
+    print_r($msg_list);
 
     
 
