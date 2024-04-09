@@ -187,7 +187,9 @@
 
         Carregando('none');
 
+        setTimeout(() => {
         $('.contagem').each(function () {
+          console.log($(this).attr("valor"));
             $(this).prop('Counter',0).animate({
                 Counter: $(this).attr("valor")
             }, {
@@ -203,7 +205,8 @@
                     
                 }
             });
-        });
+        });        
+      }, 10000);
 
 
 
