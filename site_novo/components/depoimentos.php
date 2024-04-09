@@ -110,7 +110,8 @@
           </h3>
               <div style="margin-top:10px;height:200px" class="post-img">
               <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
-              
+              <p style="color:#fff;font-size:15px;font-weight:bold;text-align:center"> Tamer Mohamed</p>
+              <p style="color:#fff">ANTECIPE O FGTS</p>
               
             </div>
           </div>
