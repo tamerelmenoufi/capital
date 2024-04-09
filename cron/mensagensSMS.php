@@ -44,7 +44,7 @@
 
     
 
-    $response = sendMultiple($msg_list);
+    // $response = sendMultiple($msg_list);
 
     // mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
 
