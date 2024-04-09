@@ -153,20 +153,13 @@
         </div>
 
       </div>
-      
-      
       <div class="container text-center">
-  <div class="row align-items-start">
-    <div class="col">
-    <img src="assets/img/cp22.jpeg" class="img-fluit"/>
-    </div>
-    
-    <div class="col">
-    <img src="assets/img/cp22.jpeg" class="img-fluit"/>
-    </div>
+  <div class="row">
+    <div class="col-sm-5 col-md-6"><img src="assets/img/cp22.jpeg" class="img-fluit"/></div>
+    <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="assets/img/cp22.jpeg" class="img-fluit"/></div>
   </div>
-</div>
-
+ 
+   
 
 
      
