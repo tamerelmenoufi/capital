@@ -20,7 +20,7 @@
 
 
 
-    $query = "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '2024-04-09%' and a.dados->>'$.statusCode' = '200' order by b.nome asc";
+    $query = "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '2024-04-09%' and a.dados->>'$.statusCode' = '200' group by b.cpf order by b.nome asc";
     $result = sisLog( $query);
     while($d = mysqli_fetch_object($result)){
 
@@ -36,7 +36,7 @@
         'to' =>  str_replace(['(',')',' ','-'],false,$d->phoneNumber),
         'message' => $mensagem,
         'reference' => "lote-".date("YmdHis"),
-        'caracteres' => $caracteres,
+        // 'caracteres' => $caracteres,
         ];
     }
 
@@ -44,7 +44,7 @@
 
     
 
-    // $response = sendMultiple($msg_list);
+    $response = sendMultiple($msg_list);
 
     // mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
 
