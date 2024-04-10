@@ -153,7 +153,9 @@
 
       </div>
 
-
+      <div class="container" data-aos="fade-up">
+      <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-6">
 
       <div style="margin-top:20px">
           <p style="color:#144397;font-size:25px;text-align:center;font-weight:bold;font-style:italic">Perguntas Frequentes</p>
@@ -175,6 +177,36 @@
     <d style="padding:10px;background:#fcce00;color:#144397;font-size:25px;text-align:center;font-weight:bold">
     Fale conosco</d>
 </center>
+
+          </div>
+
+          <div class="col-lg-6">
+          <div class="info">
+              <h3>Entre em contato</h3>
+
+
+
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>E-mail:</h4>
+                  <p><?=$d->email?></p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Telefone:</h4>
+                  <p><?=$d->telefone?></p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+
+          </div>
+
 
 <div style="padding:15px"> </div>
 
