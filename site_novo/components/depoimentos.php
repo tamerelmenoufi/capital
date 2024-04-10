@@ -125,7 +125,14 @@
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
               <div style="margin-top:10px;" class="post-img">
-              <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
+              
+              
+              <audio controls>
+  
+          
+              <source src="assets/img/audio.mp3" type="audio/mpeg">
+
+              </audio>
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Ellem Salvador</p>
               <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               
