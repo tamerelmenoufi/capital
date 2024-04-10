@@ -153,7 +153,19 @@
 
       </div>
 
+    </section><!-- End About Section -->
+
+
+    <div class="container">
+
+<div class="row gy-5 gx-lg-5">
+
+  <div class="col-lg-5">
+
+    <div class="info">
      
+
+      <div class="info-item d-flex">
       <div style="margin-top:20px">
           <p style="color:#144397;font-size:25px;text-align:center;font-weight:bold;font-style:italic">Perguntas Frequentes</p>
 
@@ -175,38 +187,6 @@
     Fale conosco</d>
 </center>
 
-<div style="padding:15px"> </div>
-
-
-    </section><!-- End About Section -->
-
-
-    <div class="container">
-
-<div class="row gy-5 gx-lg-5">
-
-  <div class="col-lg-5">
-
-    <div class="info">
-      <h3>Entre em contato</h3>
-
-
-
-
-      <div class="info-item d-flex">
-        <i class="bi bi-envelope flex-shrink-0"></i>
-        <div>
-          <h4>E-mail:</h4>
-          <p><?=$d->email?></p>
-        </div>
-      </div><!-- End Info Item -->
-
-      <div class="info-item d-flex">
-        <i class="bi bi-phone flex-shrink-0"></i>
-        <div>
-          <h4>Telefone:</h4>
-          <p><?=$d->telefone?></p>
-        </div>
       </div><!-- End Info Item -->
 
     </div>
