@@ -185,10 +185,7 @@
         </p>
 
         <div style="padding:15px"> </div>
-   <center> 
-    <d style="padding:10px;background:#fcce00;color:#144397;font-size:25px;text-align:center;font-weight:bold">
-    Fale conosco</d>
-</center>
+
   </div>
               
             </div>
@@ -207,7 +204,7 @@
               </div>
 
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" id="message" placeholder="Sua mensagem" required></textarea>
+                <textarea class="form-control" name="message" id="message" placeholder="Escreva sua duvida aqui" required></textarea>
               </div>
               <div class="text-center"><button type="submit" class="botaodiferente" style="
                 background: #ffffff;
