@@ -220,7 +220,7 @@
             >  
                 <div class="col-md-9" style="" >
                     Este site utiliza cookies confiáveis e inofensivos para garantir uma melhor experiência de navegação. <br> 
-                    <a style="font-size:16px;" href="#">Política de Privacidade. </a>
+                    <a style="font-size:16px;" href="servico.php?cod=politica">Política de Privacidade. </a>
                 </div>
             
                 <div class="col-md-3" style="" >
