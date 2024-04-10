@@ -81,11 +81,11 @@
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; background:#3a338b !important;color:#fff">
+    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; background:#144397 !important;color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2 style="">Todos os Produtos</h2>
+          <h2 style="">Todos os serviços</h2>
 
         </div>
 
