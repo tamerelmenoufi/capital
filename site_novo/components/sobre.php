@@ -181,6 +181,8 @@
           </div>
 
           <div class="col-lg-6">
+
+
           <div class="info">
               <h3>Entre em contato</h3>
 
@@ -207,7 +209,41 @@
 
           </div>
 
+          <div class="col-lg-7">
+            <form class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nome Completo" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                </div>
+              </div>
 
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" id="message" placeholder="Sua mensagem" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit" class="botaodiferente" style="
+                background: #ffffff;
+    border: 0;
+    padding: 13px 50px;
+    color: #393286;
+    transition: 0.4s;
+    border-radius: 25px;
+    border-left: 10px #393286 solid;
+    border-right: #393286 10px solid;
+    border-top: #393286 solid 1px;
+    border-bottom: #393286 solid 1px;
+              "
+              >Enviar</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+          </div>
+</div>
+</div>
 <div style="padding:15px"> </div>
 
 
