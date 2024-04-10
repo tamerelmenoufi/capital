@@ -54,24 +54,24 @@
       border-radius: 25px 2px 25px;
       font-size: 17px;
       color: #fff;
-    background-color: #393287;
-    border-color: #393287;
+    background-color: #144397;
+    border-color: #144397;
     }
     .botaoverde:hover {
     color: #fff;
-    background-color: #574ec2;
-    border-color: #574ec2;
+    background-color: #1d5ac8;
+    border-color: #1d5ac8;
 }
     
     .botaoroxo:hover {
     color: #fff;
-    background-color: #574ec2;
-    border-color: #574ec2;
+    background-color: #1d5ac8;
+    border-color: #1d5ac8;
 }
  .botaoroxo {
     color: #fff;
-    background-color: #393287;
-    border-color: #393287;
+    background-color: #144397;
+    border-color: #144397;
 }
 .botao {
     display: inline-block;
