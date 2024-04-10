@@ -231,3 +231,53 @@
 
         </div>
 </div>
+
+
+
+<script>
+      $(function(){
+        $.ajax({
+          url:"plugins/visualizar_mapa.php",
+          success:function(dados){
+            $(".exibir_mapa").html(dados);
+          }
+        });
+
+
+        $( "form.php-email-form" ).on( "submit", function( event ) {
+
+          event.preventDefault();
+          // materia = editor.getData();
+          data = $( this ).serialize();
+          // data.push({name:'materia', value:editor});
+          // console.log(data);
+
+          $.ajax({
+            url:"plugins/enviar_email.php",
+            type:"POST",
+            data,
+            success:function(dados){
+
+              $("#name").val('');
+              $("#email").val('');
+              $("#message").val('');
+
+              $.alert({
+                content:dados,
+                type:"orange",
+                title:false,
+                buttons:{
+                  'ok':{
+                    text:'<i class="fa-solid fa-check"></i> OK',
+                    btnClass:'btn btn-warning'
+                  }
+                }
+              });
+
+            }
+          });
+        });
+
+
+      })
+    </script>
