@@ -195,6 +195,7 @@
           <div class="col-lg-7">
             <form class="php-email-form">
               <div class="row">
+                <p style="color:#144397;font-size:15px">Você continua com duvidas, escreva-as para que nos possamos ajuda-lo(a).  </p>
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nome Completo" required>
                 </div>
