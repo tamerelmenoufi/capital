@@ -7,7 +7,7 @@
 } */
 
 .footer .footer-legal .social-links a:hover {
-    background: #534ab3;
+    background: #144397;
     text-decoration: none;
 }
   </style>
