@@ -195,7 +195,7 @@
           <div class="col-lg-7">
             <form class="php-email-form">
               <div class="row">
-                <p style="color:#144397;font-size:15px">Você continua com duvidas, escreva-as para que nos possamos ajuda-lo(a).  </p>
+                <p style="color:#144397;font-size:18px;text-align:center;margin-top:25px">Você continua com dúvidas, escreva-as para que nos possamos ajuda-lo(a).  </p>
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nome Completo" required>
                 </div>
@@ -205,7 +205,7 @@
               </div>
 
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" id="message" placeholder="Escreva sua duvida aqui" required></textarea>
+                <textarea class="form-control" name="message" id="message" placeholder="..Escreva sua dúvida aqui.." required></textarea>
               </div>
               <div class="text-center"><button type="submit" class="botaodiferente" style="
                 background: #ffffff;
