@@ -155,18 +155,18 @@
 
 
 
-      <div style="background:#144397">
-          <p style="color:#fff;font-size:25px;text-align:center;font-weight:bold;font-style:italic">Perguntas Frequentes</p>
+      <div style="margin-top:20px">
+          <p style="color:#144397;font-size:25px;text-align:center;font-weight:bold;font-style:italic">Perguntas Frequentes</p>
 
-          <p style="color:#fff;font-size:18px;text-align:center;">
+          <p style="color:#144397;font-size:18px;text-align:center;">
       O que preciso para sacar meu FGTS?
         </p>
 
-        <p style="color:#fff;font-size:18px;text-align:center;">
+        <p style="color:#144397;font-size:18px;text-align:center;">
      Quais os documentos necessários para fazer a contratação?
         </p>
 
-        <p style="color:#fff;font-size:18px;text-align:center;">
+        <p style="color:#144397;font-size:18px;text-align:center;">
       Consigo fazer a contratação online?
         </p>
 
