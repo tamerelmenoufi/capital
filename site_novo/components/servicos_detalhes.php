@@ -54,24 +54,24 @@
       border-radius: 25px 2px 25px;
       font-size: 17px;
       color: #fff;
-    background-color: #393287;
-    border-color: #393287;
+    background-color: #144397;
+    border-color: #144397;
     }
     .botaoverde:hover {
     color: #fff;
-    background-color: #574ec2;
-    border-color: #574ec2;
+    background-color: #1d5ac8;
+    border-color: #1d5ac8;
 }
     
     .botaoroxo:hover {
     color: #fff;
-    background-color: #574ec2;
-    border-color: #574ec2;
+    background-color: #1d5ac8;
+    border-color: #1d5ac8;
 }
  .botaoroxo {
     color: #fff;
-    background-color: #393287;
-    border-color: #393287;
+    background-color: #144397;
+    border-color: #144397;
 }
 .botao {
     display: inline-block;
@@ -92,11 +92,17 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
   }
+  .breadcrumbs {
+    padding: 15px 0;
+    background: rgba(var(--color-secondary-rgb), 0.05);
+    min-height: 40px;
+    margin-top: 90px;
+}
 
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary breadcrumbs" style="background:#3a338b !important;color:#fff">
+    <div class="bg-primary breadcrumbs" style="background:#144397 !important;color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
@@ -329,7 +335,7 @@
               <!-- End sidebar categories-->
 
               <div class="sidebar-item recent-posts">
-                <h3 class="sidebar-title" style="color:#393287">Nossos produtos</h3>
+                <h3 class="sidebar-title" style="color:#144397">Nossos serviços</h3>
 
                 <div class="mt-3">
                   <?php
@@ -351,7 +357,7 @@
 
                 </div>
                <center style="margin-top:20px"> 
-               <a href='servico_categoria.php' type="button" class="botao botaoroxo"> Mais produtos</a>
+               <a href='servico_categoria.php' type="button" class="botao botaoroxo"> Mais serviços</a>
                <a href='./' type="button" class="botao botaoroxo">Voltar ao inicio</a>
               </center>
               </div><!-- End sidebar recent posts-->

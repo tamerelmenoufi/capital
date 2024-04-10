@@ -68,6 +68,14 @@
 </head>
 
 <body>
+
+<style>
+  .btn-warning {
+    color: #dee2e6;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+  </style>
 <?php include("assets/lib/scripts_body.php"); ?>
 <div class="popup">
     <span><i class="bi bi-x"></i></span>
@@ -82,14 +90,17 @@
         // 'banner_principal',
          'banner_principal_scroll',
           'apresentacao',
+          'depoimentos',
+          'revolucionando',
+          'sobre',
          //  'video',
         // 'banner_principal2',
         // 'banner_principal3',
         
         'servicos',
-        'depoimentos',
-        'sobre',
-        'revolucionando',
+        
+        
+        
        // 'noticias',
         //'galeria',
         //'banner_depoimentos',
@@ -189,6 +200,58 @@
       }, 1000);
     })
   </script>
+
+  <!-- SCRIPT DA POLITICA DE PRIVACIDADE -->
+  <?php
+        if($_GET['u'] != 'politica_privacidade'){
+        ?>
+           
+            <div
+            style="margin:0px;position:fixed!important; top:0; right:0; left:0; bottom:0;
+            background-color:#000000d6;z-index:99999999999;"
+            id="exemplo1_fundo"
+            >  
+            </div>
+        <?php
+        }
+        ?>       
+            
+            <div class=" "
+            style=" margin:0px;position:fixed!important; bottom:0;
+            background-color:#000000d6;z-index:999999999999;padding:20px;width:100%;color:#fff;font-weight:bold"
+            id="exemplo1"
+            >  
+                <div class="col-md-9" style="" >
+                    Este site utiliza cookies confiáveis e inofensivos para garantir uma melhor experiência de navegação. <br> 
+                    <a style="font-size:16px;" href="politica.php?">Política de Privacidade. </a>
+                </div>
+            
+                <div class="col-md-3" style="" >
+                    <span><a id="ocultar" style="border-radius:16px;margin:5px;font-size:16px;" class="btn btn-warning pull-right"  role="button">Aceitar</a></span>
+                </div> 
+            </div>  
+            
+        <script>
+            $(function(){
+                
+                verifica = window.localStorage.getItem('aceita_cookie');
+                
+                if(verifica === '1'){
+                    $("#exemplo1, #exemplo1_fundo").hide();
+                }
+                
+                $("#ocultar").click(function () {
+                    $("#exemplo1, #exemplo1_fundo").hide();
+                    window.localStorage.setItem('aceita_cookie', '1');
+                });
+                
+                
+                
+            })
+        </script>
+        <!-- SCRIPT DA POLITICA DE PRIVACIDADE -->
+
+
 
 
 </body>

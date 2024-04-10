@@ -93,8 +93,11 @@
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
-              <div style="margin-top:10px;" class="post-img">
-              <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
+         <center>
+          <audio controls>         
+              <source src="assets/img/audio.mp3" type="audio/mpeg">
+              </audio></center>
+
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Rafael souza</p>
               <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               
@@ -109,8 +112,11 @@
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
-              <div style="margin-top:10px;" class="post-img">
-              <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
+          <center>
+          <audio controls>         
+              <source src="assets/img/audio.mp3" type="audio/mpeg">
+              </audio></center>
+
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Tamer Mohamed</p>
               <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               
@@ -125,7 +131,13 @@
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
               <div style="margin-top:10px;" class="post-img">
-              <img src="assets/img/audio.png" class="img-fluid" alt=""></div>
+              
+              
+              <center>
+          <audio controls>         
+              <source src="assets/img/audio.mp3" type="audio/mpeg">
+              </audio></center>
+
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Ellem Salvador</p>
               <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               

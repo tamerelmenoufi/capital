@@ -13,7 +13,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2><?=$d->titulo?></h2>
+        <h2 style="color:#144397;font-weight:bold;margin-top:25px" ><?=$d->titulo?></h2>
+        
           <p><?=$d->descricao?></p>
         </div>
 
@@ -152,4 +153,131 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+
+     
+     
+
+
+
+    </section>
+    
+    <!-- End About Section -->
+
+
+      <div class="container">
+
+        <div class="row gy-5 gx-lg-5">
+
+          <div class="col-lg-5">
+
+            <div class="info">
+            
+            <div style="margin-top:20px">
+          <p style="color:#144397;font-size:25px;text-align:center;font-weight:bold;font-style:italic">Perguntas Frequentes</p>
+
+          <p style="color:#144397;font-size:18px;text-align:center;">
+      O que preciso para sacar meu FGTS?
+        </p>
+
+        <p style="color:#144397;font-size:18px;text-align:center;">
+     Quais os documentos necessários para fazer a contratação?
+        </p>
+
+        <p style="color:#144397;font-size:18px;text-align:center;">
+      Consigo fazer a contratação online?
+        </p>
+
+        <div style="padding:15px"> </div>
+
+  </div>
+              
+            </div>
+
+          </div>
+
+          <div class="col-lg-7">
+            <form class="php-email-form">
+              <div class="row">
+                <p style="color:#144397;font-size:18px;text-align:center;margin-top:25px">Você continua com dúvidas, escreva-as para que nos possamos ajuda-lo(a).  </p>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nome Completo" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                </div>
+              </div>
+
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" id="message" placeholder="..Escreva sua dúvida aqui.." required></textarea>
+              </div>
+              <div class="text-center"><button type="submit" class="botaodiferente" style="
+                
+                background: #ffffff;
+                border: 0;
+                padding: 13px 50px;
+                color: #144397;
+                transition: 0.4s;
+                border-radius: 25px;
+                border-left: 10px #144397 solid;
+                border-right: #144397 10px solid;
+                border-top: #144397 solid 1px;
+                border-bottom: #144397 solid 1px;
+                margin-top: 10px;
+              
+              "
+              >Enviar</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+</div>
+
+
+
+<script>
+      $(function(){
+        $.ajax({
+          url:"plugins/visualizar_mapa.php",
+          success:function(dados){
+            $(".exibir_mapa").html(dados);
+          }
+        });
+
+
+        $( "form.php-email-form" ).on( "submit", function( event ) {
+
+          event.preventDefault();
+          // materia = editor.getData();
+          data = $( this ).serialize();
+          // data.push({name:'materia', value:editor});
+          // console.log(data);
+
+          $.ajax({
+            url:"plugins/enviar_email.php",
+            type:"POST",
+            data,
+            success:function(dados){
+
+              $("#name").val('');
+              $("#email").val('');
+              $("#message").val('');
+
+              $.alert({
+                content:dados,
+                type:"orange",
+                title:false,
+                buttons:{
+                  'ok':{
+                    text:'<i class="fa-solid fa-check"></i> OK',
+                    btnClass:'btn btn-warning'
+                  }
+                }
+              });
+
+            }
+          });
+        });
+
+
+      })
+    </script>
