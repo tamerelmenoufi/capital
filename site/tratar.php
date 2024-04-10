@@ -15,5 +15,5 @@
         }
 
     }
-
-    var_dump($delete);
+    $delete = implode(",",$delete);
+    echo $query = "delete from clientes where codigo in({$delete})";
