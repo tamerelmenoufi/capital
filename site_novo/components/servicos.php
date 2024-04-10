@@ -72,7 +72,7 @@
 }
   </style>
 
-<div style="background:#144397;color:#fff;padding:10px">
+<div style="background:#144397;color:#fff">
 
     <section id="servicos"  style="padding:0px" class="recent-blog-posts">
 
