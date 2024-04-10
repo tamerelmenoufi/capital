@@ -68,6 +68,14 @@
 </head>
 
 <body>
+
+<style>
+  .btn-warning {
+    color: #dee2e6;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+  </style>
 <?php include("assets/lib/scripts_body.php"); ?>
 <div class="popup">
     <span><i class="bi bi-x"></i></span>
@@ -205,7 +213,7 @@
         }
         ?>       
             
-            <div class="container "
+            <div class=" "
             style=" margin:0px;position:fixed!important; bottom:0;
             background-color:#000000d6;z-index:999999999999;padding:20px;width:100%;color:#fff;font-weight:bold"
             id="exemplo1"
