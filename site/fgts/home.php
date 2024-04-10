@@ -58,13 +58,13 @@ $dC = $d;
         
         <div class="mb-3">
             <label for="nome" class="form-label">Nome Completo</label>
-            <input acao type="text" class="form-control" id="nome" aria-describedby="nome" value="<?=$d->nome?>">
+            <input acao type="text" class="form-control" id="nome" aria-describedby="nome" value="<?=$d->nome?>" <?=(($d->cpf)?'readonly':false)?>>
             <div id="nome" class="form-text">Digite seu nome completo conforme seu documento de identificação</div>
         </div>
 
         <div class="mb-3">
             <label for="cpf" class="form-label">Número CPF</label>
-            <input acao type="text" class="form-control" inputmode="numeric" id="cpf" aria-describedby="cpf" value="<?=$d->cpf?>">
+            <input acao type="text" class="form-control" inputmode="numeric" id="cpf" aria-describedby="cpf" value="<?=$d->cpf?>" <?=(($d->cpf)?'readonly':false)?>>
             <div id="cpf" class="form-text">Digite seu CPF confira o número antes de confirmar</div>
         </div>
 
