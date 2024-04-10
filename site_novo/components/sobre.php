@@ -13,7 +13,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-        <h2 style="color:#fff;font-weight:bold;margin-top:25px" ><?=$d->titulo?></h2>
+        <h2 style="color:#144397;font-weight:bold;margin-top:25px" ><?=$d->titulo?></h2>
         
           <p><?=$d->descricao?></p>
         </div>
@@ -159,7 +159,9 @@
 
 
 
-    </section><!-- End About Section -->
+    </section>
+    
+    <!-- End About Section -->
 
 
       <div class="container">
@@ -225,3 +227,4 @@
           </div><!-- End Contact Form -->
 
         </div>
+</div>
