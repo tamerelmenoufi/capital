@@ -93,7 +93,7 @@
 
   }
 
-  breadcrumbs {
+  .breadcrumbs {
     padding: 15px 0;
     background: rgba(var(--color-secondary-rgb), 0.05);
     min-height: 40px;
