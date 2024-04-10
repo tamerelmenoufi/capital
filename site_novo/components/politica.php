@@ -93,10 +93,17 @@
 
   }
 
+  breadcrumbs {
+    padding: 15px 0;
+    background: rgba(var(--color-secondary-rgb), 0.05);
+    min-height: 40px;
+    margin-top: 90px;
+}
+
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary breadcrumbs" style="background:##144397 !important;color:#fff">
+    <div class="bg-primary breadcrumbs" style="background:#144397 !important;color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
