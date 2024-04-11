@@ -150,8 +150,8 @@
 
       
    <center> 
-    <d style="padding:10px;background:#fcce00;color:#144397;font-size:25px;text-align:center;font-weight:bold;padding-top:5px;padding-right:25px;padding-left:25px">
-    Mais serviços</d>
+    <a href="servico_categoria.php"><d style="padding:10px;background:#fcce00;color:#144397;font-size:25px;text-align:center;font-weight:bold;padding-top:5px;padding-right:25px;padding-left:25px">
+    Mais serviços</d></a>
 </center>
 <div style="padding:10px"> </div>
       </div>
