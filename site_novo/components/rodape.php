@@ -22,6 +22,10 @@
 
     <div class="d-flex flex-column align-items-center align-items-lg-start">
       <div class="copyright">
+      <p style="color:#144397;font-size:18px;text-align:center;font-weight:bold;font-style:italic">UNIDADE CIDADE NOVA</p>
+
+
+
         &copy; Copyright <strong><span>capitalsolucoes</span></strong>. Todos os direitos reservados
       </div>
       <div class="credits">
