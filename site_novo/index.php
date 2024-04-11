@@ -76,6 +76,11 @@
     border-color: #0d6efd;
 }
 
+.rodape1:hover {
+    background: #ffdd2c;
+    color:#144397;
+}
+
 .rodape1 {
   color:#144397;
   margin-right:55px;
