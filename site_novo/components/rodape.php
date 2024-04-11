@@ -28,6 +28,7 @@
 
     </div>
     <div class="col-6">
+      <div class="social-links">
     <?php
 
 $query = "select * from configuracoes where codigo = '1'";
@@ -52,7 +53,8 @@ foreach($midias_sociais as $ind => $url){
 <?php
   }
 }
-?>
+?> 
+</div>
     </div>
   </div>
 </div>
