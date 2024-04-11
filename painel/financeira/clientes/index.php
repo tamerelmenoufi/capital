@@ -25,6 +25,24 @@
       <div class="col">
         <div class="card">
           <h5 class="card-header">Lista de Clientes</h5>
+
+          <?php
+          if($_SESSION['ProjectPainel']->codigo == 2){
+          ?>
+          <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          </div>
+          <?php
+          }
+          ?>
           <div class="card-body">
             <div style="display:flex; justify-content:end">
                 <button
