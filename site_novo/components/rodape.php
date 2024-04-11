@@ -64,7 +64,7 @@ foreach($midias_sociais as $ind => $url){
   </div>
 </div>
 
-<div style="text-align:center;font-size:14px;margin-bottom:2px"> &copy; Copyright <strong><span>capitalsolucoes</span></strong>. 
+<div style="text-align:center;font-size:14px;padding-bottom:2px"> &copy; Copyright <strong><span>capitalsolucoes</span></strong>. 
 <a style="color:#fff; text-decoration:underline" href="#">Todos os direitos reservados </a></div>
 
 
