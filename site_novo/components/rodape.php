@@ -10,6 +10,11 @@
 
     text-decoration: none;
 }
+
+.footer .footer-legal {
+    padding: 30px 0;
+    background: #134192;
+}
   </style>
 
   <!-- ======= Footer ======= -->
