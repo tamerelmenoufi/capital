@@ -29,7 +29,7 @@ background:none;
     </div>
     <div class="col-3">
     <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic;margin-bottom:0px">UNIDADE MANOA</p>
-<p style="color:#fff">Av. Francisco Queiroz, 02 - <br> Manoa</p>
+<p style="color:#fff">Av. Francisco Queiroz, 02  <br> Manoa</p>
 
     </div>
     <div class="col-6">
