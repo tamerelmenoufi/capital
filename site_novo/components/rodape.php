@@ -22,11 +22,11 @@
 
     <div class="d-flex flex-column align-items-center align-items-lg-start">
       <div class="copyright">
-      <span style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic">UNIDADE CIDADE NOVA</p>
+      <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic">UNIDADE CIDADE NOVA</p>
 <p style="color:#fff">Rua Prof. felix Valois, 61<br> Cidade nova</p>
 
 <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic">UNIDADE MANOA</p>
-<p style="color:#fff">Av. Francisco Queiroz, 02 -Cidade nova</p>
+<p style="color:#fff">Av. Francisco Queiroz, 02 - <br> Manoa</p>
 
 
 
