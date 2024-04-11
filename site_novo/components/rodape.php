@@ -73,8 +73,8 @@
 
 </footer><!-- End Footer -->
 
-
-<div class="container text-center" style="background:#144397">
+<div style="background:#144397">
+<div class="container text-center" >
   <div class="row align-items-center">
     <div class="col-3">
     <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic;margin-bottom:0px">UNIDADE CIDADE NOVA</p>
@@ -113,4 +113,5 @@ foreach($midias_sociais as $ind => $url){
 ?>
     </div>
   </div>
+</div>
 </div>
