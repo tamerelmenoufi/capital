@@ -96,6 +96,7 @@
     border-radius: 4px;
     transition: all 0.4s;
     padding: 10px;
+    font-weight:bold;
 }
   </style>
 <?php include("assets/lib/scripts_body.php"); ?>
