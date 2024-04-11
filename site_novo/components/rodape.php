@@ -7,7 +7,7 @@
 } */
 
 .footer .footer-legal .social-links a:hover {
-    background: #144397;
+
     text-decoration: none;
 }
   </style>
@@ -16,7 +16,7 @@
   
 
 <footer id="footer" class="footer" style="background:#144397">
-<div class="container text-center" >
+<div class="container text-center footer-legal" >
   <div class="row align-items-center">
     <div class="col-3">
     <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic;margin-bottom:0px">UNIDADE CIDADE NOVA</p>
