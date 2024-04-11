@@ -28,10 +28,9 @@
 <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic;margin-bottom:10px">UNIDADE MANOA</p>
 <p style="color:#fff">Av. Francisco Queiroz, 02 - <br> Manoa</p>
 
-
-
-        &copy; Copyright <strong><span>capitalsolucoes</span></strong>. Todos os direitos reservados
       </div>
+
+      <p style="color:#fff;text-align:center"> &copy; Copyright <strong><span>capitalsolucoes</span></strong>. Todos os direitos reservados </p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
