@@ -65,9 +65,27 @@ foreach($midias_sociais as $ind => $url){
 </div>
 
 <div style="text-align:center;font-size:14px;padding-bottom:2px"> &copy; Copyright <strong><span>capitalsolucoes</span></strong>. 
-<a style="color:#fff; text-decoration:underline" href="#">Todos os direitos reservados </a></div>
+<a class="popup" popup="componentes/popup.php" style="color:#fff; text-decoration:underline" >Todos os direitos reservados </a></div>
 
 
 </footer>
+
+
+<script>
+    $(function(){
+        
+        $(".popup").click(function(){
+            url = $(this).attr("popup");
+            console.log(url);
+            $.dialog({
+                title:false,
+                content:"url:"+url,
+                columnClass:"col-md-6"
+            })
+        });        
+    });
+    
+</script>
+
 
 
