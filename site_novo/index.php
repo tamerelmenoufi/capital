@@ -88,7 +88,7 @@
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: 15px;
+  bottom: 30px;
     z-index: 995;
     background: #ffdd2c;
     width: auto;
