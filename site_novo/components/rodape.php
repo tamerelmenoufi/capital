@@ -13,7 +13,7 @@
 
 .footer .footer-legal {
     padding: 30px 0;
-
+background:none;
 }
   </style>
 
@@ -64,8 +64,8 @@ foreach($midias_sociais as $ind => $url){
   </div>
 </div>
 
-<div style="text-align:center"> &copy; Copyright <strong><span>capitalsolucoes</span></strong>. 
-<a style="color:#fff; text-decoration-style: solid" href="#">Todos os direitos reservados </a></div>
+<div style="text-align:center;font-size:14px"> &copy; Copyright <strong><span>capitalsolucoes</span></strong>. 
+<a style="color:#fff; text-decoration-style:underline" href="#">Todos os direitos reservados </a></div>
 
 
 </footer>
