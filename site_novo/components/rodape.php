@@ -15,7 +15,7 @@
   <!-- ======= Footer ======= -->
   
 
-<footer id="footer" class="footer" style=" style="background:#144397"">
+<footer id="footer" class="footer" style="background:#144397">
 <div class="container text-center" >
   <div class="row align-items-center">
     <div class="col-3">
