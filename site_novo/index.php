@@ -83,7 +83,7 @@
 
 .rodape1 {
   color:#144397;
-  margin-right:55px;
+  margin-right:45px;
   position: fixed;
   visibility: hidden;
   opacity: 0;

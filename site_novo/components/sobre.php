@@ -223,6 +223,7 @@
                 border-top: #144397 solid 1px;
                 border-bottom: #144397 solid 1px;
                 margin-top: 10px;
+                margin-bottom:10px;
               
               "
               >Enviar</button></div>
