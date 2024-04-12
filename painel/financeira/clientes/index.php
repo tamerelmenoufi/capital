@@ -174,6 +174,9 @@
         $("button[novoCadastro]").click(function(){
             cpf = $("#cpf_novo").val();
             if(!cpf){
+              let myOffCanvas = document.getElementById('offcanvasDireita');
+              let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+              openedCanvas.hide();
               $.alert({
                 content:"Favor informe o número do CPF",
                 title:"Identificação do Cadastro",
@@ -183,6 +186,9 @@
             }
 
             if(cpf.length != 14 || !validarCPF(cpf)){
+              let myOffCanvas = document.getElementById('offcanvasDireita');
+              let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+              openedCanvas.hide();
               $.alert({
                 content:"Número de CPF informado inválido",
                 title:"Erro de CPF",
