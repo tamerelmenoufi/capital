@@ -1,5 +1,10 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
+
+    $nome = "Tamer Mohamed Elmenoufi                               ";
+    echo $nome."\n";
+    echo trim($nome);
+
     exit();
     $query = "SELECT a.codigo, a.cpf, a.cadastro_percentual, (select count(*) from clientes where cpf = a.cpf) as `qt` FROM clientes a where a.cpf != '' group by a.cpf, a.codigo ORDER BY qt desc, a.cpf";
     $result = mysqli_query($con, $query);
