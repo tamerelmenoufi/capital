@@ -26,25 +26,32 @@
         <div class="card">
           <h5 class="card-header">Lista de Clientes</h5>
 
-          <?php
-          if($_SESSION['ProjectPainel']->codigo == 2){
-          ?>
-          <div class="input-group m-3">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-          </div>
-          <?php
-          }
-          ?>
+
           <div class="card-body">
-            <div style="display:flex; justify-content:end">
+
+          <div class="row">
+            <div class="col-md-8">
+            <?php
+            if($_SESSION['ProjectPainel']->codigo == 2){
+            ?>
+            <div class="input-group m-3">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+              <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            </div>
+            <?php
+            }
+            ?>            
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <input type="text" class="form-control" id="cpf_novo">
                 <button
                     novoCadastro
                     class="btn btn-success"
@@ -52,7 +59,10 @@
                     href="#offcanvasDireita"
                     role="button"
                     aria-controls="offcanvasDireita"
-                >Novo</button>
+                >Novo</button>                
+              </div>
+            </div>
+
             </div>
 
             <div class="table-responsive">
@@ -157,9 +167,33 @@
 <script>
     $(function(){
         Carregando('none');
+
         $("button[novoCadastro]").click(function(){
+            cpf = $("#cpf_novo").val();
+            if(!cpf){
+              $.alert({
+                content:"Favor informe o número do CPF",
+                title:"Identificação do Cadastro",
+                type:'red'
+              })
+              return false;
+            }
+
+            if(cpf.length != 14 || !validarCPF(cpf)){
+              $.alert({
+                content:"Número de CPF informado inválido",
+                title:"Erro de CPF",
+                type:'red'
+              })
+              return false;              
+            }
+
             $.ajax({
                 url:"financeira/clientes/form.php",
+                type:"POST",
+                data:{
+                  cpf_novo:cpf
+                },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
