@@ -141,34 +141,34 @@
                             \"feeScheduleId\": {$d->tabela},
                             \"financialId\": \"{$d->financialId}\",
                             \"borrower\": {
-                            \"name\": \"{$d->nome}\",
+                            \"name\": \"".trim($d->nome)."\",
                             \"cpf\": \"".numero($d->cpf)."\",
                             \"birthdate\": \"{$d->birthdate}\",
                             \"gender\": \"{$d->gender}\",
                             \"phoneNumber\": \"".numero($d->phoneNumber)."\",
-                            \"email\": \"{$d->email}\",
+                            \"email\": \"".trim($d->email)."\",
                             \"maritalStatus\": \"{$d->maritalStatus}\",
-                            \"nationality\": \"{$d->nationality}\",
-                            \"naturalness\": \"{$d->naturalness}\",
-                            \"motherName\": \"{$d->motherName}\",
-                            \"fatherName\": \"{$d->fatherName}\",
+                            \"nationality\": \"".trim($d->nationality)."\",
+                            \"naturalness\": \"".trim($d->naturalness)."\",
+                            \"motherName\": \"".trim($d->motherName)."\",
+                            \"fatherName\": \"".trim($d->fatherName)."\",
                             \"pep\": {$d->pep}
                             },
                             \"document\": {
                             \"type\": \"{$d->document_type}\",
                             \"number\": \"".numero($d->document_number)."\",
-                            \"issuingState\": \"{$d->document_issuingState}\",
-                            \"issuingAuthority\": \"{$d->document_issuingAuthority}\",
+                            \"issuingState\": \"".trim($d->document_issuingState)."\",
+                            \"issuingAuthority\": \"".trim($d->document_issuingAuthority)."\",
                             \"issueDate\": \"{$d->document_issueDate}\"
                             },
                             \"address\": {
                             \"zipCode\": \"".numero($d->address_zipCode)."\",
-                            \"street\": \"{$d->address_street}\",
-                            \"number\": \"{$d->address_number}\",
+                            \"street\": \"".trim($d->address_street)."\",
+                            \"number\": \"".trim($d->address_number)."\",
                             \"complement\": null,
-                            \"neighborhood\": \"{$d->address_neighborhood}\",
-                            \"city\": \"{$d->address_city}\",
-                            \"state\": \"{$d->address_state}\"
+                            \"neighborhood\": \"".trim($d->address_neighborhood)."\",
+                            \"city\": \"".trim($d->address_city)."\",
+                            \"state\": \"".trim($d->address_state)."\"
                             },
                             \"disbursementBankAccount\": {
                             \"bankCode\": \"".numero($d->bankCode)."\",
