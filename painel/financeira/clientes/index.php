@@ -51,6 +51,7 @@
             </div>
             <div class="col-md-4">
               <div class="input-group">
+                <span class="input-group-text">CPF</span>
                 <input type="text" class="form-control" id="cpf_novo">
                 <button
                     novoCadastro
@@ -167,6 +168,8 @@
 <script>
     $(function(){
         Carregando('none');
+
+        $("#cpf_novo").mask("999.999.999-99");
 
         $("button[novoCadastro]").click(function(){
             cpf = $("#cpf_novo").val();
