@@ -2,7 +2,7 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
         if($_POST['cpf_novo']){
-            $d = mysqli_query($con, "select * from clientes where cpf = '{$_POST['cpf_novo']}'");
+            $d = mysqli_fetch_object(mysqli_query($con, "select * from clientes where cpf = '{$_POST['cpf_novo']}'"));
             if($d->codigo) $_POST['cod'] = $d->codigo;
         }
 
