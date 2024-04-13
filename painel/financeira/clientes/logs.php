@@ -26,6 +26,17 @@
 <?php
     $query = "select * from consultas_log where cliente = '{$_POST['cliente']}' order by data desc";
     $result = mysqli_query($con, $query);
+
+    if(!mysqli_num_rows($result)){
+?>
+
+<center>
+    <h1 style="color:#a1a1a1; margin-top:100px;">Cliente sem Eventos</h1>
+</center>
+
+<?php
+    }
+
     while($d = mysqli_fetch_object($result)){
         $sessoes =  json_decode($d->sessoes);
         $log = json_decode($d->log);
