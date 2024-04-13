@@ -69,6 +69,15 @@
       </div>
     </div>
 
+
+    <div class="row  mb-1 menu-cinza">
+      <div class="col">
+        <a url="site/destaques/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-regular fa-newspaper"></i> Destaques
+        </a>
+      </div>
+    </div>
+
     <div class="row  mb-1 menu-cinza">
       <div class="col">
         <a url="site/noticias/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
