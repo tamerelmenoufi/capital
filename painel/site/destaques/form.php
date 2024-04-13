@@ -104,9 +104,9 @@
       <!-- </div> -->
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="video" name="video" placeholder="https://www.youtube.com/watch?v=LXb3EKWsInQ" value="<?=$d->video?>">
+        <input type="text" class="form-control" id="video" name="video" value="<?=$d->video?>">
         <label for="video">Encorporar Vídeo (Youtube)</label>
-        <div class="form-text">Digite o endereço do vídeo no Youtube.</div>
+        <div class="form-text">Digite o endereço do vídeo no Youtube (Ex.: https://www.youtube.com/watch?v=LXb3EKWsInQ).</div>
       </div>
 
 
