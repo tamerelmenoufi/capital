@@ -2,7 +2,8 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['acao'] == 'wapp'){
-      SendTxt();
+      echo SendTxt();
+      exit();
     }
 
     if($_POST['delete']){
@@ -473,6 +474,7 @@
                 },
                 success:function(dados){
                     // $("#paginaHome").html(dados);
+                    console.log(dados);
                 }
             })          
         })
