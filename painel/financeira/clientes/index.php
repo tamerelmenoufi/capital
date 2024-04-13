@@ -211,7 +211,7 @@
                       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Ações
                       </button>
-                      <ul class="dropdown-menu">
+                      <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#" vctex="<?=$d->cpf?>"><i class="fa-solid fa-dollar-sign"></i> VcTex</a></li>
                         <!-- <li><a class="dropdown-item" href="#" facta="<?=$d->cpf?>"><i class="fa-solid fa-dollar-sign"></i> Facta</a></li> -->
                         <li><a 
