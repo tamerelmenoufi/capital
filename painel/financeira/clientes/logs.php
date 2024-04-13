@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['detalhes']){
-        $detalhes = (base64_decode($_POST['detalhes']), JSON_PRETTY_PRINT);
+        $detalhes = base64_decode($_POST['detalhes']);
         echo "<pre>{$detalhes}</pre>";
         exit();
     }
