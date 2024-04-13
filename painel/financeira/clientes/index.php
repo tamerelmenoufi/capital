@@ -210,7 +210,14 @@
     $(function(){
         Carregando('none');
 
-        $("#cpf_novo, input[texto_busca]").mask("999.999.999-99");
+        $("#cpf_novo").mask("999.999.999-99");
+        <?php
+        if(!$_SESSION['busca_campo'] or $_SESSION['busca_campo'] == 'cpf'){
+        ?>
+        $("input[texto_busca]").mask("999.999.999-99");
+        <?php
+        }
+        ?>
 
         $("a[campo]").click(function(){
           campo = $(this).attr("campo");
