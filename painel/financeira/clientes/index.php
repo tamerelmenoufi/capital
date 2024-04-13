@@ -15,10 +15,12 @@
     if($_POST['acao'] == 'busca'){
       $_SESSION['busca_campo'] = $_POST['campo'];
       $_SESSION['busca_titulo'] = $_POST['titulo'];
+      $_SESSION['texto_busca'] = $_POST['busca'];
     }
     if($_POST['acao'] == 'limpar'){
       $_SESSION['busca_campo'] = false;
-      $_SESSION['busca_titulo'] = false;      
+      $_SESSION['busca_titulo'] = false;  
+      $_SESSION['texto_busca'] = false;    
     }
 ?>
 <style>
@@ -50,7 +52,7 @@
                 <li><a class="dropdown-item" href="#" campo="nome">Nome</a></li>
                 <li><a class="dropdown-item" href="#" campo="status">Situação</a></li>
               </ul>
-              <input texto_busca type="text" class="form-control" <?=(($_SESSION['busca_campo'] == 'status')?'style="display:none"':false)?>>
+              <input texto_busca type="text" class="form-control" <?=(($_SESSION['busca_campo'] == 'status')?'style="display:none"':false)?> value="<?=$_SESSION['texto_busca']?>">
               <select texto_busca class="form-select" <?=(($_SESSION['busca_campo'] != 'status')?'style="display:none"':false)?>>
                 <option value="">:: Selecione o Status ::</option>
                 <?php
@@ -58,7 +60,7 @@
                 $r = mysqli_query($con,$q);
                 while($s = mysqli_fetch_object($r)){
                 ?>
-                <option value="<?="{$s->status}-{$s->descricao}"?>"><?="{$s->status}-{$s->descricao}"?></option>
+                <option value="<?="{$s->status}-{$s->descricao}"?>" <?=(("{$s->status}-{$s->descricao}" == $_SESSION['texto_busca'])?'selected':false)?>><?="{$s->status}-{$s->descricao}"?></option>
                 <?php
                 }
                 ?>
@@ -244,6 +246,12 @@
         $("button[busca_resultado]").click(function(){
           campo = $("button[campo]").attr("campo");
           titulo = $("button[titulo]").attr("titulo");
+          if(campo == 'status'){
+            busca = $("select[texto_busca]").val();
+          }else{
+            busca = $("input[texto_busca]").val();
+          }
+          
           Carregando();
           $.ajax({
                 url:"financeira/clientes/index.php",
@@ -251,6 +259,7 @@
                 data:{
                   campo,
                   titulo,
+                  busca,
                   acao:'busca'
                 },
                 success:function(dados){
