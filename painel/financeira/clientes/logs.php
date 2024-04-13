@@ -1,13 +1,29 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    $c = mysqli_fetch_object(mysqli_query($con, "select * from clientes where codigo = '{$_POST['cliente']}'"));
+
+
     // if($_POST['detalhes']){
     //     $detalhes = json_decode(base64_decode($_POST['detalhes']));
     //     $detalhes = json_encode($detalhes, JSON_PRETTY_PRINT);
     //     echo "{$detalhes}";
     //     exit();
     // }
+?>
+<style>
+    .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
+</style>
+<h4 class="Titulo<?=$md5?>">Eventos (Logs)</h4>
 
+<h5><?=$c->nome?></h5>
+<h6><?=$c->cpf?></h6>
+<?php
     $query = "select * from consultas_log where cliente = '{$_POST['cliente']}' order by data desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
