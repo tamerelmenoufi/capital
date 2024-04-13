@@ -239,19 +239,6 @@
                         ?>
                       </ul>
                     </div>
-
-
-                    <button
-                      class="btn btn-worning"
-                      style="margin-bottom:1px"
-                      logs="<?=$d->codigo?>"
-                      data-bs-toggle="offcanvas"
-                      href="#offcanvasDireita"
-                      role="button"
-                      aria-controls="offcanvasDireita"
-                    >
-                      <i class="fa-solid fa-clipboard-list"></i>
-                    </button>
                     <?php
                     }
                     ?>
