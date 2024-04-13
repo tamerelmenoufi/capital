@@ -6,7 +6,7 @@
 <div class="col-lg-6">
 <div> 
   <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center">
-    <img class="img-fluid" src="assets/img/cp1.jpg" style="height:550px"/>
+    <img class="img-fluid" src="assets/img/cp1.jpg" style="max-height:550px"/>
   </a>
 </div>
 </div>
