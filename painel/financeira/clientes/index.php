@@ -193,15 +193,16 @@
 
             $("input[texto_busca]").css("display", "block");
             $("select[texto_busca]").css("display", "none");
-            
-          }else{
-            $("input[texto_busca]").css("display", "none");
-            $("select[texto_busca]").css("display", "block");
 
+            
             if(campo == 'cpf'){
               $("input[texto_busca]").mask("999.999.999-99");
             }
 
+
+          }else{
+            $("input[texto_busca]").css("display", "none");
+            $("select[texto_busca]").css("display", "block");
           }
 
         })
