@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['detalhes']){
-        $detalhes = json_decode(base64_decode($_POST['detalhes']), JSON_PRETTY_PRINT);
+        $detalhes = (base64_decode($_POST['detalhes']), JSON_PRETTY_PRINT);
         echo "<pre>{$detalhes}</pre>";
         exit();
     }
@@ -25,13 +25,13 @@
         }
 
 ?>
-    <div class="card">
+    <div class="card mb-3">
     <div class="card-header">
         <?=$titulo?>
     </div>
     <div class="card-body">
         <p class="card-text"><?=$descricao?></p>
-        <a href="#" detalhes="<?=$detalhes?>" class="btn btn-warnin btn-sm">Log</a>
+        <a detalhes="<?=$detalhes?>" class="btn btn-warning btn-sm">Log</a>
     </div>
     </div>
 <?php
