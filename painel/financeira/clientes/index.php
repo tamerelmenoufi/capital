@@ -58,7 +58,7 @@
           <div class="row">
             <div class="col-md-8">
             <?php
-            if($_SESSION['ProjectPainel']->codigo == 2){
+            // if($_SESSION['ProjectPainel']->codigo == 2){
             ?>
             <div class="input-group">
               <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" campo="<?=(($_SESSION['busca_campo'])?:'cpf')?>" titulo="<?=(($_SESSION['busca_titulo'])?:'CPF')?>"><?=(($_SESSION['busca_titulo'])?:'CPF')?></button>
@@ -84,7 +84,7 @@
               <button busca_limpar class="btn btn-danger" title="Limpar a Busca"><i class="fa-solid fa-eraser"></i></button>  
             </div>
             <?php
-            }
+            // }
             ?>            
             </div>
             <div class="col-md-4">
