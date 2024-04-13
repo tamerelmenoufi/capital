@@ -220,8 +220,8 @@
                               role="button"
                               aria-controls="offcanvasDireita"
                             ><i class="fa-solid fa-clipboard-list"></i> Eventos</a></li>
-                        <li><a class="dropdown-item" href="#" vctext="<?=$d->codigo?>">VcTex</a></li>
-                        <!-- <li><a class="dropdown-item" href="#" facta="<?=$d->codigo?>">Facta</a></li> -->
+                        <li><a class="dropdown-item" href="#" vctex="<?=$d->cpf?>">VcTex</a></li>
+                        <!-- <li><a class="dropdown-item" href="#" facta="<?=$d->cpf?>">Facta</a></li> -->
                         <li><a 
                               class="dropdown-item" 
                               edit="<?=$d->codigo?>"
