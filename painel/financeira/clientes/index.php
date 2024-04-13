@@ -35,15 +35,20 @@
             if($_SESSION['ProjectPainel']->codigo == 2){
             ?>
             <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" campo="<?=(($_SESSION['busca_campo'])?:'cpf')?>" titulo="<?=(($_SESSION['busca_titulo'])?:'CPF')?>"><?=(($_SESSION['busca_titulo'])?:'CPF')?></button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                <li><a class="dropdown-item" href="#" campo="cpf">CPF</a></li>
+                <li><a class="dropdown-item" href="#" campo="nome">Nome</a></li>
+                <li><a class="dropdown-item" href="#" campo="status">Situação</a></li>
               </ul>
-              <input type="text" class="form-control" aria-label="Text input with dropdown button">
+              <input texto_busca type="text" class="form-control" <?=(($_SESSION['busca_campo'] == 'status')?'style="display:none"':false)?>>
+              <select texto_busca class="select-control" <?=(($_SESSION['busca_campo'] != 'status')?'style="display:none"':false)?>>
+                <option value="1">Teste 1</option>
+                <option value="2">Teste 2</option>
+                <option value="3">Teste 3</option>
+                <option value="4">Teste 4</option>
+                <option value="5">Teste 5</option>
+              </select>
             </div>
             <?php
             }
@@ -169,7 +174,33 @@
     $(function(){
         Carregando('none');
 
-        $("#cpf_novo").mask("999.999.999-99");
+        $("#cpf_novo, input[texto_busca]").mask("999.999.999-99");
+
+        $("a[campo]").click(function(){
+          campo = $(this).attr("campo");
+          titulo = $(this).text();
+
+          $("input[texto_busca]").val('');
+          $("select[texto_busca]").val('');
+          
+          $("button[campo]").attr("campo", campo);
+          $("button[titulo]").attr("titulo", titulo);
+
+          if(campo != 'status'){
+            $("input[texto_busca]").css("display", "block");
+            $("select[texto_busca]").css("display", "none");
+            
+          }else{
+            if(campo == 'cpf'){
+              $("input[texto_busca]").mask("999.999.999-99");
+            }else{
+              $("input[texto_busca]").unmask();
+            }
+            $("input[texto_busca]").css("display", "none");
+            $("select[texto_busca]").css("display", "block");
+          }
+
+        })
 
         $("button[novoCadastro]").click(function(){
             cpf = $("#cpf_novo").val();
