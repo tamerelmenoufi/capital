@@ -25,7 +25,7 @@
             }
         }
 
-        echo $d->log;
+        echo $d->sessoes;
 
 ?>
     <div class="card mb-3">
