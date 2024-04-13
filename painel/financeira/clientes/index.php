@@ -26,10 +26,15 @@
 
     if($_SESSION['busca_campo'] == 'cpf'){
       $where = " and a.cpf = '{$_SESSION['texto_busca']}' ";
+      $limit = false;
     }else if($_SESSION['busca_campo'] == 'nome'){
       $where = " and a.nome like '%".trim($_SESSION['texto_busca'])."%' ";
+      $limit = false;
     }elseif($_SESSION['busca_campo'] == 'status'){
       $where = " and (select count(*) from consultas_log where cliente = a.codigo and (concat(log->>'$.statusCode','-',log->>'$.message') = '{$_SESSION['texto_busca']}' or concat(log->>'$.proposalStatusId','-',log->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}') and ativo = '1') > 0 ";
+      $limit = false;
+    }else{
+      $limit = " limit 50 ";
     }
 
 ?>
@@ -139,7 +144,7 @@
                                   (select log from consultas_log where cliente = a.codigo and ativo = '1') as log
                             from clientes a 
                             where 1 {$where}
-                            order by a.data_cadastro desc";
+                            order by a.data_cadastro desc {$limit}";
                   if($_SESSION['ProjectPainel']->codigo == 2) echo $query;
                   $result = mysqli_query($con, $query);
                   $k = 1;
