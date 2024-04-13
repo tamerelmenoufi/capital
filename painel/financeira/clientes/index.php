@@ -409,7 +409,7 @@
             })
         })
 
-        $("button[logs]").click(function(){
+        $("button[logs], a[logs]").click(function(){
             cliente = $(this).attr("logs");
             $.ajax({
                 url:"financeira/clientes/logs.php",
