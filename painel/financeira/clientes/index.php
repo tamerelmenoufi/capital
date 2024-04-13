@@ -65,8 +65,8 @@
                 }
                 ?>
               </select>
-              <button busca_resultado class="btn btn-success" label="Fazer Busca"><i class="fa-solid fa-magnifying-glass"></i></button>  
-              <button busca_limpar class="btn btn-danger" label="Limpar Busca"><i class="fa-solid fa-eraser"></i></button>  
+              <button busca_resultado class="btn btn-success" title="Fazer Busca"><i class="fa-solid fa-magnifying-glass"></i></button>  
+              <button busca_limpar class="btn btn-danger" title="Limpar Busca"><i class="fa-solid fa-eraser"></i></button>  
             </div>
             <?php
             }
