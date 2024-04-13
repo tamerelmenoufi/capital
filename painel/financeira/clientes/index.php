@@ -130,7 +130,7 @@
                   <th scope="col">Data de Cadastro</th>
                   <th scope="col">Situação</th>
                   <!-- <th scope="col">Situação</th> -->
-                  <th style="width:250px;">Ações</th>
+                  <th style="width:60px;">Ações</th>
                 </tr>
               </thead>
               <tbody>
