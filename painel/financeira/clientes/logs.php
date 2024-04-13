@@ -28,7 +28,8 @@
             $descricao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
             $detalhes = base64_encode($d->log);
         }   
-        // echo $d->sessoes;
+        echo $d->sessoes;
+        echo $d->log;
 
 ?>
     <div class="card mb-3">
