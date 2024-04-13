@@ -34,7 +34,7 @@
         <div class="card">
           <h5 class="card-header">Lista de Destaques</h5>
           <div class="card-body">
-            <div style="display:flex; justify-content:end">
+            <!-- <div style="display:flex; justify-content:end">
                 <button
                     novoCadastro
                     class="btn btn-success"
@@ -43,7 +43,7 @@
                     role="button"
                     aria-controls="offcanvasDireita"
                 ><i class="fa-regular fa-file"></i> Novo</button>
-            </div>
+            </div> -->
 
             <div class="table-responsive">
             <table class="table table-striped table-hover">
@@ -62,13 +62,13 @@
                 ?>
                 <tr>
                   <td style="white-space: nowrap;"><?=$d->titulo?></td>
-                  <td style="white-space: nowrap;">
+                  <!-- <td style="white-space: nowrap;">
 
                   <div class="form-check form-switch">
                     <input class="form-check-input situacao" type="checkbox" <?=(($d->situacao)?'checked':false)?> situacao="<?=$d->codigo?>">
                   </div>
 
-                  </td>
+                  </td> -->
                   <td style="white-space: nowrap;">
                     <button
                       class="btn btn-primary btn-sm"
@@ -80,9 +80,9 @@
                     >
                     <i class="fa-regular fa-pen-to-square"></i> Editar
                     </button>
-                    <button class="btn btn-danger btn-sm" delete="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
+                    <!-- <button class="btn btn-danger btn-sm" delete="<?=$d->codigo?>" imagem="<?=$d->imagem?>">
                     <i class="fa-solid fa-trash-can"></i> Excluir
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
                 <?php
