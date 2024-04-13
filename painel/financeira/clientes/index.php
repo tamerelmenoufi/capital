@@ -204,7 +204,7 @@
                   </td> -->
                   <td>
                     <?php
-                    if($_SESSION['ProjectPainel']->codigo == 2){
+                    // if($_SESSION['ProjectPainel']->codigo == 2){
                     ?>
 
                     <div class="dropdown">
@@ -240,16 +240,16 @@
                       </ul>
                     </div>
                     <?php
-                    }
+                    // }
                     ?>
-                    <button vctex="<?=$d->cpf?>" class="btn btn-warning">
+                    <!-- <button vctex="<?=$d->cpf?>" class="btn btn-warning">
                       VCTEX
-                    </button>
+                    </button> -->
                     <!-- <button facta="<?=$d->cpf?>" class="btn btn-warning">
                       FACTA
                     </button> -->
 
-                    <button
+                    <!-- <button
                       class="btn btn-primary"
                       style="margin-bottom:1px"
                       edit="<?=$d->codigo?>"
@@ -262,7 +262,7 @@
                     </button>
                     <button class="btn btn-danger" delete="<?=$d->codigo?>" <?=$del?>>
                       Excluir
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
                 <?php
