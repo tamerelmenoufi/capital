@@ -45,12 +45,14 @@
               <select texto_busca class="form-select" <?=(($_SESSION['busca_campo'] != 'status')?'style="display:none"':false)?>>
                 <option value="">:: Selecione o Status ::</option>
                 <?php
-                $q = "select log from consultas_log where cliente = a.codigo order by codigo desc";
+                $q = "select * from status order by status asc";
+                $r = mysqli_query($con,$q);
+                while($s = mysqli_fetch_object($r)){
                 ?>
-                <option value="2">Teste 2</option>
-                <option value="3">Teste 3</option>
-                <option value="4">Teste 4</option>
-                <option value="5">Teste 5</option>
+                <option value="<?="{$s->status}-{$s->descricao}"?>"><?="{$s->status}-{$s->descricao}"?></option>
+                <?php
+                }
+                ?>
               </select>
             </div>
             <?php
