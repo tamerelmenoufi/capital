@@ -4,6 +4,7 @@
     if($_POST['acao'] == 'wapp'){
       $wgw = new wgw;
       echo $wgw->SendTxt();
+      echo $wgw->SendAudio();
       exit();
     }
 
