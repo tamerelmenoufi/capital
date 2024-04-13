@@ -63,11 +63,11 @@ class wgw {
 
     public function SendTxt($dados = false){
 
-        gravando();
+        $this->gravando();
 
         sleep(10);
 
-        pausaGravando();
+        $this->pausaGravando();
 
         sleep(1);
 
