@@ -38,7 +38,7 @@
     </div>
     <div class="card-body">
         <p class="card-text"><?=$descricao?></p>
-        <span style="color:#a1a1a1; font-size:12px;"><?=dataBr($d->data)?></span>
+        <span style="color:#a1a1a1; font-size:12px;">Processada em: <?=dataBr($d->data)?></span>
         <!-- <a detalhes="<?=$detalhes?>" class="btn btn-warning btn-sm">Log</a> -->
     </div>
     </div>
