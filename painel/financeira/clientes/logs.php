@@ -1,11 +1,62 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    if($_POST['detalhes']){
+        $detalhes = json_decode(base64_decode($_POST['detalhes']), JSON_PRETTY_PRINT);
+        echo "<pre>{$detalhes}</pre>";
+        exit();
+    }
+
     $query = "select * from consultas_log where cliente = '{$_POST['cliente']}' order by data desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
-        echo $d->sessoes;
-        echo "<br><br>";
-        echo $d->log;
-        echo "<hr>";
+        $sessoes =  json_decode($d->sessoes);
+        $log = json_decode($d->log);
+
+        if($sessoes->acao == 'cron'){
+            $titulo = "Sistema";
+            if($log->statusCode){
+                $descricao = "{$log->statusCode} - {$log->message}";
+                $detalhes = base64_encode($d->log);
+            }else if($log->proposalStatusId){
+                $descricao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
+                $detalhes = base64_encode($d->log);
+            }
+        }
+
+?>
+    <div class="card">
+    <div class="card-header">
+        <?=$titulo?>
+    </div>
+    <div class="card-body">
+        <p class="card-text"><?=$descricao?></p>
+        <a href="#" detalhes="<?=$detalhes?>" class="btn btn-warnin btn-sm">Log</a>
+    </div>
+    </div>
+<?php
     }
+?>
+
+<script>
+    $(function(){
+        $("a[detalhes]").click(function(){
+            detalhes = $(this).attr("detalhes");
+            $.ajax({
+                type:"POST",
+                data:{
+                    detalhes,
+                },
+                url:"financeira/clientes/logs.php",
+                success:function(dados){
+                    $.alert({
+                        content:dados,
+                        title:"Log",
+                        type:"blue",
+                        columnClass:"col-md-8"
+                    })
+                }
+            })
+        })
+    })
+</script>
