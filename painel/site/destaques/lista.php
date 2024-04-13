@@ -50,7 +50,7 @@
               <thead>
                 <tr>
                   <th scope="col" style="width:100%">Título</th>
-                  <th scope="col">Situação</th>
+                  <!-- <th scope="col">Situação</th> -->
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
