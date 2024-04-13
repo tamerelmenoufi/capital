@@ -137,7 +137,7 @@
                   $query = "select 
                                   a.*,
                                   (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log,
-                                  (select codigo from consultas_log where cliente = a.codigo order by codigo desc limit 1) as ativo,
+                                  (select codigo from consultas_log where cliente = a.codigo order by codigo desc limit 1) as ativo
                             from clientes a 
                             where 1 {$where}
                             order by a.data_cadastro desc";
