@@ -230,7 +230,13 @@
                               role="button"
                               aria-controls="offcanvasDireita"
                             >Editar</a></li>
+                        <?php
+                        if(!$del){
+                        ?>
                         <li><a class="dropdown-item" href="#" delete="<?=$d->codigo?>">Excluir</a></li>
+                        <?php
+                        }
+                        ?>
                       </ul>
                     </div>
 
