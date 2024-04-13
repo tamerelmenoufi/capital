@@ -18,7 +18,7 @@
             $titulo = "Sistema - Operação automática (Tarefas)";
         }else if($sessoes->ProjectPainel){
              $titulo = "Manual - usuário / Consultores (Painel)";
-        }else if($log->codUsr){
+        }else if($sessoes->codUsr){
              $titulo = "Cliente - Realizada pela aplicação (Site)";
         }
         if($log->statusCode){
@@ -28,8 +28,8 @@
             $descricao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
             $detalhes = base64_encode($d->log);
         }   
-        echo $d->sessoes;
-        echo $d->log;
+        // echo $d->sessoes;
+        // echo $d->log;
 
 ?>
     <div class="card mb-3">
