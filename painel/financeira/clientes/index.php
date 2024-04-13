@@ -220,8 +220,8 @@
                               role="button"
                               aria-controls="offcanvasDireita"
                             ><i class="fa-solid fa-clipboard-list"></i> Eventos</a></li>
-                        <li><a class="dropdown-item" href="#" vctex="<?=$d->cpf?>">VcTex</a></li>
-                        <!-- <li><a class="dropdown-item" href="#" facta="<?=$d->cpf?>">Facta</a></li> -->
+                        <li><a class="dropdown-item" href="#" vctex="<?=$d->cpf?>"><i class="fa-solid fa-dollar-sign"></i> VcTex</a></li>
+                        <!-- <li><a class="dropdown-item" href="#" facta="<?=$d->cpf?>"><i class="fa-solid fa-dollar-sign"></i> Facta</a></li> -->
                         <li><a 
                               class="dropdown-item" 
                               edit="<?=$d->codigo?>"
@@ -229,11 +229,11 @@
                               href="#offcanvasDireita"
                               role="button"
                               aria-controls="offcanvasDireita"
-                            >Editar</a></li>
+                            ><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
                         <?php
                         if(!$del){
                         ?>
-                        <li><a class="dropdown-item" href="#" delete="<?=$d->codigo?>">Excluir</a></li>
+                        <li><a class="dropdown-item" href="#" delete="<?=$d->codigo?>"><i class="fa-solid fa-trash-can"></i> Excluir</a></li>
                         <?php
                         }
                         ?>
