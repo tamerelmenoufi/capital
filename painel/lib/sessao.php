@@ -1,3 +1,3 @@
 <?php
     include("includes.php");
-    print_r($_SESSION);
+    echo json_encode($_SESSION);
