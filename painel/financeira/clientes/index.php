@@ -206,6 +206,35 @@
                     <?php
                     if($_SESSION['ProjectPainel']->codigo == 2){
                     ?>
+
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Ações
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a 
+                              class="dropdown-item" 
+                              logs="<?=$d->codigo?>"
+                              data-bs-toggle="offcanvas"
+                              href="#offcanvasDireita"
+                              role="button"
+                              aria-controls="offcanvasDireita"
+                            ><i class="fa-solid fa-clipboard-list"></i> Eventos</a></li>
+                        <li><a class="dropdown-item" href="#" vctext="<?=$d->codigo?>">VcTex</a></li>
+                        <!-- <li><a class="dropdown-item" href="#" facta="<?=$d->codigo?>">Facta</a></li> -->
+                        <li><a 
+                              class="dropdown-item" 
+                              edit="<?=$d->codigo?>"
+                              data-bs-toggle="offcanvas"
+                              href="#offcanvasDireita"
+                              role="button"
+                              aria-controls="offcanvasDireita"
+                            >Editar</a></li>
+                        <li><a class="dropdown-item" href="#" delete="<?=$d->codigo?>">Excluir</a></li>
+                      </ul>
+                    </div>
+
+
                     <button
                       class="btn btn-worning"
                       style="margin-bottom:1px"
@@ -394,7 +423,7 @@
             })
         })
 
-        $("button[vctex]").click(function(){
+        $("button[vctex], a[vctex]").click(function(){
             valor = $(this).attr("vctex");
             $.ajax({
                 url:"financeira/vctex/consulta.php",
@@ -411,7 +440,7 @@
             })
         })
 
-        $("button[facta]").click(function(){
+        $("button[facta], a[facta]").click(function(){
             valor = $(this).attr("facta");
             $.ajax({
                 url:"financeira/facta/consulta.php",
@@ -428,7 +457,7 @@
             })
         })
 
-        $("button[edit]").click(function(){
+        $("button[edit], a[edit]").click(function(){
             cod = $(this).attr("edit");
             $.ajax({
                 url:"financeira/clientes/form.php",
@@ -442,7 +471,7 @@
             })
         })
 
-        $("button[delete]").click(function(){
+        $("button[delete], a[delete]").click(function(){
             deletar = $(this).attr("delete");
             $.confirm({
                 content:"Deseja realmente excluir o cadastro ?",
