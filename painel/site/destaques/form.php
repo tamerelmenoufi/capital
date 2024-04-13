@@ -109,7 +109,7 @@
         <div class="form-text">Digite o endereço do vídeo no Youtube (Ex.: https://www.youtube.com/watch?v=LXb3EKWsInQ).</div>
       </div>
 
-
+<!-- 
       <div class="form-floating">
         <select id="situacao" name="situacao" class="form-control" placeholder="Situação">
           <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
@@ -117,7 +117,7 @@
         </select>
         <label for="situacao">Banner</label>
         <div class="form-text">Selecione a imagem para o Banner</div>
-      </div>
+      </div> -->
 
 
 
