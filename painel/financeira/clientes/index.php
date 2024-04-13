@@ -66,7 +66,7 @@
                 ?>
               </select>
               <button busca_resultado class="btn btn-success"><i class="fa-solid fa-magnifying-glass"></i></button>  
-              <button busca_limpar class="btn btn-success"><i class="fa-solid fa-eraser"></i></button>  
+              <button busca_limpar class="btn btn-danger"><i class="fa-solid fa-eraser"></i></button>  
             </div>
             <?php
             }
