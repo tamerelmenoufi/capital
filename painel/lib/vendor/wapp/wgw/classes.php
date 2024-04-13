@@ -82,7 +82,7 @@ class wgw {
 
     }
 
-    public function SendTxt($dados = false){
+    public function SendAudio($dados = false){
 
         $this->acao('g');
 
