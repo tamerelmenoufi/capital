@@ -42,7 +42,7 @@
                 <li><a class="dropdown-item" href="#" campo="status">Situação</a></li>
               </ul>
               <input texto_busca type="text" class="form-control" <?=(($_SESSION['busca_campo'] == 'status')?'style="display:none"':false)?>>
-              <select texto_busca class="select-control" <?=(($_SESSION['busca_campo'] != 'status')?'style="display:none"':false)?>>
+              <select texto_busca class="form-select" <?=(($_SESSION['busca_campo'] != 'status')?'style="display:none"':false)?>>
                 <option value="1">Teste 1</option>
                 <option value="2">Teste 2</option>
                 <option value="3">Teste 3</option>
@@ -183,12 +183,14 @@
           $("input[texto_busca]").val('');
           $("select[texto_busca]").val('');
 
+          $("input[texto_busca]").unmask();
+
           $("button[campo]").attr("campo", campo);
           $("button[titulo]").attr("titulo", titulo);
           $("button[titulo]").text(titulo);
 
           if(campo != 'status'){
-            
+
             $("input[texto_busca]").css("display", "block");
             $("select[texto_busca]").css("display", "none");
             
@@ -198,8 +200,6 @@
 
             if(campo == 'cpf'){
               $("input[texto_busca]").mask("999.999.999-99");
-            }else{
-              $("input[texto_busca]").unmask();
             }
 
           }
