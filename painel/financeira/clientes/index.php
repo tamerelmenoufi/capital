@@ -145,7 +145,7 @@
                             from clientes a 
                             where 1 {$where}
                             order by a.data_cadastro desc {$limit}";
-                  if($_SESSION['ProjectPainel']->codigo == 2) echo $query;
+                  // if($_SESSION['ProjectPainel']->codigo == 2) echo $query;
                   $result = mysqli_query($con, $query);
                   $k = 1;
                   while($d = mysqli_fetch_object($result)){
