@@ -43,7 +43,7 @@ class wgw {
 
     public function SendTxt($dados = false){
 
-        $this->acao('d');
+        $this->acao('g');
 
         sleep(10);
 
