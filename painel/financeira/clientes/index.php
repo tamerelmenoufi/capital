@@ -119,7 +119,7 @@
 
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsiveXXX">
             <table class="table table-striped table-hover">
               <thead>
                 <tr>
