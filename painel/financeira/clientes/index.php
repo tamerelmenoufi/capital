@@ -61,6 +61,7 @@
             // if($_SESSION['ProjectPainel']->codigo == 2){
             ?>
             <div class="input-group">
+              <span class="input-group-text">Buscar por</span>
               <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" campo="<?=(($_SESSION['busca_campo'])?:'cpf')?>" titulo="<?=(($_SESSION['busca_titulo'])?:'CPF')?>"><?=(($_SESSION['busca_titulo'])?:'CPF')?></button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#" campo="cpf">CPF</a></li>
