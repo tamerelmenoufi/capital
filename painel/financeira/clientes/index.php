@@ -212,14 +212,6 @@
                         Ações
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a 
-                              class="dropdown-item" 
-                              logs="<?=$d->codigo?>"
-                              data-bs-toggle="offcanvas"
-                              href="#offcanvasDireita"
-                              role="button"
-                              aria-controls="offcanvasDireita"
-                            ><i class="fa-solid fa-clipboard-list"></i> Eventos</a></li>
                         <li><a class="dropdown-item" href="#" vctex="<?=$d->cpf?>"><i class="fa-solid fa-dollar-sign"></i> VcTex</a></li>
                         <!-- <li><a class="dropdown-item" href="#" facta="<?=$d->cpf?>"><i class="fa-solid fa-dollar-sign"></i> Facta</a></li> -->
                         <li><a 
@@ -230,6 +222,14 @@
                               role="button"
                               aria-controls="offcanvasDireita"
                             ><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
+                        <li><a 
+                          class="dropdown-item" 
+                          logs="<?=$d->codigo?>"
+                          data-bs-toggle="offcanvas"
+                          href="#offcanvasDireita"
+                          role="button"
+                          aria-controls="offcanvasDireita"
+                        ><i class="fa-solid fa-clipboard-list"></i> Eventos</a></li>
                         <?php
                         if(!$del){
                         ?>
