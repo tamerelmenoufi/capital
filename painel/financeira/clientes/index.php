@@ -22,6 +22,16 @@
       $_SESSION['busca_titulo'] = false;  
       $_SESSION['texto_busca'] = false;    
     }
+
+
+    if($_SESSION['campo'] == 'cpf'){
+      $where = " and a.cpf = '{$_SESSION['texto_busca']}' ";
+    }else if($_SESSION['campo'] == 'nome'){
+      $where = " and a.nome like '%".trim($_SESSION['texto_busca'])."%' ";
+    }elseif($_SESSION['campo'] == 'status'){
+      $where = " and (select count(*) from consultas_log where cliente = a.codigo order by codigo desc limit 1) > 0 ";
+    }
+
 ?>
 <style>
   .legenda_status{
@@ -124,7 +134,13 @@
 
                   }
 
-                  $query = "select a.*, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a order by a.data_cadastro desc";
+                  $query = "select 
+                                  a.*,
+                                  (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log 
+                            from clientes a 
+                            where 1 {$where}
+                            order by a.data_cadastro desc";
+                  if($_SESSION['ProjectPainel']->codigo == 2) echo $query;
                   $result = mysqli_query($con, $query);
                   $k = 1;
                   while($d = mysqli_fetch_object($result)){
