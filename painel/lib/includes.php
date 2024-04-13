@@ -11,11 +11,17 @@
     include("/capitalinc/connect.php");
     $con = AppConnect('capital');
 
+    //Configurações diversas
+    include("/capitalinc/config.php");
+
     // include("/appinc/connect.php");
     include("fn.php");
 
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/api/vctex.php");
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/api/facta.php");
+
+    //Bibliotecas de comunicação
+    include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/vendor/wapp/wgw/classes.php");
 
     $md5 = md5(date("YmdHis"));
 

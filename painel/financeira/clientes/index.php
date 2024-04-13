@@ -1,6 +1,10 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    if($_POST['acao'] == 'wapp'){
+      SendTxt();
+    }
+
     if($_POST['delete']){
       $query = "delete from clientes where codigo = '{$_POST['delete']}'";
       mysqli_query($con, $query);
@@ -37,6 +41,8 @@
       $limit = " limit 50 ";
     }
 
+
+
 ?>
 <style>
   .legenda_status{
@@ -58,6 +64,11 @@
           <div class="row">
             <div class="col-md-8">
             <?php
+            if($_SESSION['ProjectPainel']->codigo == 2){
+              echo '<button Wapp class="btn btn-success" title="Realizar a Busca">Wapp</button> ';
+            }
+
+
             // if($_SESSION['ProjectPainel']->codigo == 2){
             ?>
             <div class="input-group">
@@ -452,6 +463,19 @@
             })
 
         });
+
+        $("button[Wapp]").click(function(){
+            $.ajax({
+                url:"financeira/clientes/index.php",
+                type:"POST",
+                data:{
+                    acao:'wapp'
+                },
+                success:function(dados){
+                    // $("#paginaHome").html(dados);
+                }
+            })          
+        })
 
     })
 </script>
