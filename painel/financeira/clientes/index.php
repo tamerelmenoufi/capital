@@ -11,6 +11,15 @@
       mysqli_query($con, $query);
       exit();
     }
+
+    if($_POST['acao'] == 'busca'){
+      $_SESSION['busca_campo'] = $_POST['campo'];
+      $_SESSION['busca_titulo'] = $_POST['titulo'];
+    }
+    if($_POST['acao'] == 'limpar'){
+      $_SESSION['busca_campo'] = false;
+      $_SESSION['busca_titulo'] = false;      
+    }
 ?>
 <style>
   .legenda_status{
@@ -54,6 +63,8 @@
                 }
                 ?>
               </select>
+              <button busca_resultado class="btn btn-success"><i class="fa-solid fa-magnifying-glass"></i></button>  
+              <button busca_limpar class="btn btn-success"><i class="fa-solid fa-eraser"></i></button>  
             </div>
             <?php
             }
@@ -228,6 +239,38 @@
             $("select[texto_busca]").css("display", "block");
           }
 
+        })
+
+        $("button[busca_resultado]").click(function(){
+          campo = $("button[campo]").attr("campo");
+          titulo = $("button[titulo]").attr("titulo");
+          Carregando();
+          $.ajax({
+                url:"financeira/clientes/index.php",
+                type:"POST",
+                data:{
+                  campo,
+                  titulo,
+                  acao:'busca'
+                },
+                success:function(dados){
+                  $("#paginaHome").html(dados);
+                }
+            })
+        })
+
+        $("button[busca_limpar]").click(function(){
+          Carregando();
+          $.ajax({
+                url:"financeira/clientes/index.php",
+                type:"POST",
+                data:{
+                  acao:'limpar'
+                },
+                success:function(dados){
+                  $("#paginaHome").html(dados);
+                }
+            })
         })
 
         $("button[novoCadastro]").click(function(){
