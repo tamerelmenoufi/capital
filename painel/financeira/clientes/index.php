@@ -43,7 +43,10 @@
               </ul>
               <input texto_busca type="text" class="form-control" <?=(($_SESSION['busca_campo'] == 'status')?'style="display:none"':false)?>>
               <select texto_busca class="form-select" <?=(($_SESSION['busca_campo'] != 'status')?'style="display:none"':false)?>>
-                <option value="1">Teste 1</option>
+                <option value="">:: Selecione o Status ::</option>
+                <?php
+                $q = "select log from consultas_log where cliente = a.codigo order by codigo desc";
+                ?>
                 <option value="2">Teste 2</option>
                 <option value="3">Teste 3</option>
                 <option value="4">Teste 4</option>
@@ -88,6 +91,24 @@
               </thead>
               <tbody>
                 <?php
+
+                  $query = "select * from consultas_log";
+                  $result = mysqli_query($con, $query);
+                  while($d = mysqli_fetch_object($resul)){
+
+                    $log = json_decode($d->log);
+                    if($log->statusCode){
+                      $status = $log->statusCode;
+                      $descricao = $log->message;
+                    }else if($log->proposalStatusId){
+                      $status = $log->proposalStatusId;
+                      $descricao = $log->proposalStatusDisplayTitle;
+                    }
+
+                    mysqli_query($con, "insert into status set status = '{$status}', descricao = '{$descricao}', unico = '".md5($status.$descricao)."'");
+
+                  }
+
                   $query = "select a.*, (select log from consultas_log where cliente = a.codigo order by codigo desc limit 1) as log from clientes a order by a.data_cadastro desc";
                   $result = mysqli_query($con, $query);
                   $k = 1;
