@@ -3,7 +3,7 @@
 
     if($_POST['detalhes']){
         $detalhes = base64_decode($_POST['detalhes']);
-        echo "<pre>{$detalhes}</pre>";
+        echo "{$detalhes}";
         exit();
     }
 
