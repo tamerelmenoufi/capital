@@ -8,13 +8,15 @@
             'codUsr' => $dados['codUsr'],
             'acao' => 'cron'
         ];
+        mysqli_query($con, "update consultas_log set ativo = '0' where cliente = '{$dados['codUsr']}'");
         $query = "insert into consultas_log set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = '{$dados['codUsr']}',
                                             data = NOW(),
                                             sessoes = '".json_encode($sessoes)."',
                                             log = '{$dados['consulta']}',
-                                            log_unico = '".md5($dados['consulta'].$dados['proposta'])."'";
+                                            log_unico = '".md5($dados['consulta'].$dados['proposta'])."',
+                                            ativo = '1'";
 
         $result = mysqli_query($con, $query);
     }

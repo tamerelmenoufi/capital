@@ -9,13 +9,15 @@
     function consulta_logs($dados){
         global $_SESSION;
         global $con;
+        mysqli_query($con, "update consultas_log set ativo = '0' where cliente = (select cliente from consultas where codigo = '{$dados['proposta']}')");
         $query = "insert into consultas_log set 
                                             consulta = '{$dados['proposta']}',
                                             cliente = (select cliente from consultas where codigo = '{$dados['proposta']}'),
                                             data = NOW(),
                                             sessoes = '".json_encode($_SESSION)."',
                                             log = '{$dados['consulta']}',
-                                            log_unico = '".md5($dados['consulta'].$dados['proposta'])."'";
+                                            log_unico = '".md5($dados['consulta'].$dados['proposta'])."',
+                                            ativo = '1'";
 
         $result = mysqli_query($con, $query);
     }
