@@ -67,6 +67,15 @@ body {
                     $(".CorpoApp").html(dados);
                 }
             });
+
+            setInterval(() => {
+                $.ajax({
+                    url:"lib/sessao.php",
+                    success:function(dados){
+                        $("body").attr("sessao",dados);
+                    }
+                });                
+            }, 5000);
         })
 
 
