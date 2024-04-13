@@ -39,6 +39,13 @@
     <div class="card-body">
         <p class="card-text"><?=$descricao?></p>
         <span style="color:#a1a1a1; font-size:12px;">Processada em: <?=dataBr($d->data)?></span>
+        <?php
+        if($d->ativo){
+        ?>
+        <span class="text-success" style="font-size:12px; margin-left:20px;"><i class="fa-solid fa-check"></i> status atual</span>
+        <?php
+        }
+        ?>
         <!-- <a detalhes="<?=$detalhes?>" class="btn btn-warning btn-sm">Log</a> -->
     </div>
     </div>
