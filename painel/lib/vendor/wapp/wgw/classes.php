@@ -45,7 +45,7 @@ class wgw {
 
         $this->acao('g');
 
-        sleep(10);
+        sleep(20);
 
         $this->acao('p');
 
