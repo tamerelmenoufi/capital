@@ -2,7 +2,8 @@
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['acao'] == 'wapp'){
-      echo SendTxt();
+      $wgw = new wgw;
+      echo $wgw->SendTxt();
       exit();
     }
 
