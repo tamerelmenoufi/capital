@@ -24,11 +24,11 @@
     }
 
 
-    if($_SESSION['campo'] == 'cpf'){
+    if($_SESSION['busca_campo'] == 'cpf'){
       $where = " and a.cpf = '{$_SESSION['texto_busca']}' ";
-    }else if($_SESSION['campo'] == 'nome'){
+    }else if($_SESSION['busca_campo'] == 'nome'){
       $where = " and a.nome like '%".trim($_SESSION['texto_busca'])."%' ";
-    }elseif($_SESSION['campo'] == 'status'){
+    }elseif($_SESSION['busca_campo'] == 'status'){
       $where = " and (select count(*) from consultas_log where cliente = a.codigo order by codigo desc limit 1) > 0 ";
     }
 
