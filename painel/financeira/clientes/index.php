@@ -94,7 +94,7 @@
 
                   $query = "select * from consultas_log";
                   $result = mysqli_query($con, $query);
-                  while($d = mysqli_fetch_object($resul)){
+                  while($d = mysqli_fetch_object($result)){
 
                     $log = json_decode($d->log);
                     if($log->statusCode){
