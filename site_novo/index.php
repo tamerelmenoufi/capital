@@ -112,7 +112,6 @@
         'menu',
         // 'banner_principal',
          'banner_principal_scroll',
-          'banner_principal3',
           'apresentacao',
           'depoimentos',
           'revolucionando',
