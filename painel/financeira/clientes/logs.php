@@ -1,12 +1,12 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    if($_POST['detalhes']){
-        $detalhes = json_decode(base64_decode($_POST['detalhes']));
-        $detalhes = json_encode($detalhes, JSON_PRETTY_PRINT);
-        echo "{$detalhes}";
-        exit();
-    }
+    // if($_POST['detalhes']){
+    //     $detalhes = json_decode(base64_decode($_POST['detalhes']));
+    //     $detalhes = json_encode($detalhes, JSON_PRETTY_PRINT);
+    //     echo "{$detalhes}";
+    //     exit();
+    // }
 
     $query = "select * from consultas_log where cliente = '{$_POST['cliente']}' order by data desc";
     $result = mysqli_query($con, $query);
@@ -38,7 +38,8 @@
     </div>
     <div class="card-body">
         <p class="card-text"><?=$descricao?></p>
-        <a detalhes="<?=$detalhes?>" class="btn btn-warning btn-sm">Log</a>
+        <span style="color:#a1a1a1; font-size:12px;"><?=dataBr($d->data)?></span>
+        <!-- <a detalhes="<?=$detalhes?>" class="btn btn-warning btn-sm">Log</a> -->
     </div>
     </div>
 <?php
