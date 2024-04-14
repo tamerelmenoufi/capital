@@ -87,7 +87,7 @@
 
 
           <?php
-          $query = "select * from depoimentos where situacao = '1' order by rand limit 3";
+          $query = "select * from depoimentos where situacao = '1' order by rand() limit 3";
           $result = mysqli_query($con, $query);
           while($d = mysqli_fetch_object($result)){
           ?>
