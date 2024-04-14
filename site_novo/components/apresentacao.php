@@ -13,8 +13,9 @@ $d = mysqli_fetch_object($result);
 
 <div class="col-lg-6">
 <div> 
-  <a <?=(($d->video)?"href='{$d->video}' class='glightbox btn-watch-video d-flex align-items-center'":false)?> >
+  <a <?=(($d->video)?"href='{$d->video}' class='glightbox btn-watch-video d-flex align-items-center'":false)?> style="position:relative" >
     <img class="img-fluid" src="<?=$localPainel?>site/volume/destaques/<?=$d->imagem?>" style="max-height:550px"/>
+    <i class="fa-brands fa-youtube" style="position:absolute; left:50%; top:50%; margin-left:-25px; margin-top:-25px; z-index:1; color:#a1a1a1; font-size:50px;"></i>
   </a>
 </div>
 </div>
