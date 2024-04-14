@@ -22,18 +22,26 @@ $d = mysqli_fetch_object($result);
 
 <div class="col-lg-6">
   <div style="color:#144397">
-  <div style="padding:30px"> </div>
+    <div style="padding:30px"> </div>
 
     <p style="font-size:35px;font-weight:bold;text-align:center"> <?=$d->titulo?> </p>
     <p><?=$d->materia?></p>
    
-   <div style="padding:30px"> </div>
-   <center> 
-    <d style="padding:10px;background:#fcce00;color:144397;font-size:25px;text-align:center;font-weight:bold">
-    Faça sua simulação</d>
-</center>
+    <?php
+    if(trim($d->botao_titulo)){
+    ?>
+    <div style="padding:30px"> </div>
+    <center> 
+      <a <?=(($d->botao_url)?"href='{$d->botao_url}'":false)?> <?=((strtolower(substr($d->botao_url,0,4)) == 'http')?"target='_blank'":false)?> style="padding:10px;background:#fcce00;color:144397;font-size:25px;text-align:center;font-weight:bold; text-decoration:none;">
+      <?=$d->botao_titulo?></a>
+    </center>
+    <?php
+    }
+    ?>
+  </div>
+
 </div>
-</div>
+
 
 </div>
 </div>
