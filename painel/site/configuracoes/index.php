@@ -35,6 +35,20 @@
         </div>
     </div>
 </div>
+
+
+<div class="m-3">
+    <div class="card">
+        <h5 class="card-header">Direitos reservados</h5>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12 direitos"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <script>
     $(function(){
 
@@ -66,6 +80,13 @@
             url:"site/configuracoes/midias_sociais.php",
             success:function(dados){
                 $(".midias_sociais").html(dados);
+            }
+        });
+
+        $.ajax({
+            url:"site/configuracoes/direitos.php",
+            success:function(dados){
+                $(".direitos").html(dados);
             }
         });
     })
