@@ -13,7 +13,7 @@ $d = mysqli_fetch_object($result);
 
 <div class="col-lg-6">
 <div class='d-flex align-items-center'> 
-  <a video <?=(($d->video)?"href='{$d->video}' class='glightbox btn-watch-video'":false)?> style="position:relative; border:1px red solid" >
+  <a video <?=(($d->video)?"href='{$d->video}' class='glightbox btn-watch-video'":false)?> style="position:relative;" >
     <img class="img-fluid" src="<?=$localPainel?>site/volume/destaques/<?=$d->imagem?>" style="max-height:550px"/>
     <?php
     if(trim($d->video)){
