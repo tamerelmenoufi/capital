@@ -98,10 +98,10 @@
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
           O que <b style="background:#000">dizem</b> <br> nossos clientes
           </h3>
-         <center>
+         <div class="d-flex justify-content-center">
           <audio controls>         
               <source src="<?=$localPainel?>site/volume/depoimentos/<?=$d->imagem?>" type="audio/mpeg">
-              </audio></center>
+              </audio></div>
 
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> <?=$d->nome?></p>
               <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px"><?=$d->empresa?></p>
