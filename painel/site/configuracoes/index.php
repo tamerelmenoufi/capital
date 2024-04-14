@@ -39,7 +39,7 @@
 
 <div class="m-3">
     <div class="card">
-        <h5 class="card-header">Direitos reservados</h5>
+        <h5 class="card-header">Direitos Reservados</h5>
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12 direitos"></div>

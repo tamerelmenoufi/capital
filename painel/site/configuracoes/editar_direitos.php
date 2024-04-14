@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    if($_POST['acao'] == 'contatos'){
+    if($_POST['acao'] == 'direitos'){
 
         $dados = $_POST;
         unset($dados['acao']);
