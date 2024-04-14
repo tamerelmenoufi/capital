@@ -52,11 +52,11 @@ $d = mysqli_fetch_object($result);
   $(function(){
 
     $("a[video]").on( "mouseover", function() {
-      $(this).css("color","red");
+      $(this).children("i").css("color","red");
     });
 
     $("a[video]").on( "mouseout", function() {
-      $(this).css("color","#a1a1a1");
+      $(this).children("i").css("color","#a1a1a1");
     })
 
   })
