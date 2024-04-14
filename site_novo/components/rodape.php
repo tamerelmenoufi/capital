@@ -65,7 +65,7 @@ foreach($midias_sociais as $ind => $url){
 </div>
 
 <div style="text-align:center;font-size:14px;padding-bottom:2px;margin-top:40px"> &copy; Copyright <strong><span>capitalsolucoes</span></strong>. 
-<a class="janela" janela="assets/components/popup.php" style="color:#fff; text-decoration:underline; cursor:pointer" >Todos os direitos reservados </a></div>
+<a class="janela" janela="components/popup.php" style="color:#fff; text-decoration:underline; cursor:pointer" >Todos os direitos reservados </a></div>
 
 
 </footer>
