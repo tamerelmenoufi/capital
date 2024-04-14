@@ -109,6 +109,18 @@
         <div class="form-text">Digite o endereço do vídeo no Youtube (Ex.: https://www.youtube.com/watch?v=LXb3EKWsInQ).</div>
       </div>
 
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="botao_titulo" name="botao_titulo" value="<?=$d->botao_titulo?>">
+        <label for="botao_titulo">Título do Botão</label>
+        <div class="form-text">Digite o nome do botão na área de destaque (a ausência da informação desabilita o botão)</div>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="botao_url" name="botao_url" value="<?=$d->botao_url?>">
+        <label for="botao_url">Linque do Botão</label>
+        <div class="form-text">Digite o linque ou endereço URL para o direcionamento do botão</div>
+      </div>
+
       <!-- 
       <div class="form-floating">
         <select id="situacao" name="situacao" class="form-control" placeholder="Situação">

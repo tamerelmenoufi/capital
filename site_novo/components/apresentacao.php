@@ -1,3 +1,11 @@
+<?php
+
+$query = "select * from destaques";
+$result = sisLog( $query);
+$d = mysqli_fetch_object($result);
+
+?>
+
 <section id="destaque" class="about">
 <div class="container">
 
@@ -5,8 +13,8 @@
 
 <div class="col-lg-6">
 <div> 
-  <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center">
-    <img class="img-fluid" src="assets/img/cp1.jpg" style="max-height:550px"/>
+  <a <?=(($d->video)?"href='{$d->video}' class='glightbox btn-watch-video d-flex align-items-center'":false)?> >
+    <img class="img-fluid" src="<?=$localPainel?>site/volume/destaques/<?=$d->imagem?>" style="max-height:550px"/>
   </a>
 </div>
 </div>
@@ -16,9 +24,8 @@
   <div style="color:#144397">
   <div style="padding:30px"> </div>
 
-    <p style="font-size:35px;font-weight:bold;text-align:center"> Titulo </p>
-<p>  Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor desconhecido pegou uma prova de tipos e a misturou para fazer um livro de espécimes de tipos. Ela sobreviveu não apenas a cinco séculos, mas também ao salto para a composição tipográfica eletrônica, permanecendo essencialmente inalterada. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente,
-   com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum.</p>
+    <p style="font-size:35px;font-weight:bold;text-align:center"> <?=$d->titulo?> </p>
+    <p><?=$d->materia?></p>
    
    <div style="padding:30px"> </div>
    <center> 
