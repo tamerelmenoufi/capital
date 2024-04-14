@@ -15,7 +15,7 @@ $d = mysqli_fetch_object($result);
 <div class='glightbox btn-watch-video d-flex align-items-center'> 
   <a <?=(($d->video)?"href='{$d->video}'":false)?> style="position:relative; border:1px red solid" >
     <img class="img-fluid" src="<?=$localPainel?>site/volume/destaques/<?=$d->imagem?>" style="max-height:550px"/>
-    <i class="fa-brands fa-youtube" style="position:absolute; left:50%; top:50%; margin-left:-25px; margin-top:-25px; z-index:1; color:#a1a1a1; font-size:50px;"></i>
+    <i class="fa-brands fa-youtube" style="position:absolute; left:50%; top:50%; margin-left:-50px; margin-top:-50px; z-index:1; color:#a1a1a1; font-size:100px;"></i>
   </a>
 </div>
 </div>
