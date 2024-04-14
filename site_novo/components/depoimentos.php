@@ -89,7 +89,7 @@
           <?php
           $query = "select * from depoimentos where situacao = '1' order by rand limit 3";
           $result = mysqli_query($con, $query);
-          while($d = mysql_fetch_object($result)){
+          while($d = mysqli_fetch_object($result)){
           ?>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
@@ -100,7 +100,7 @@
           </h3>
          <center>
           <audio controls>         
-              <source src="assets/img/audio.mp3" type="audio/mpeg">
+              <source src="<?=$localPainel?>site/volume/depoimentos/<?=$d->imagem?>" type="audio/mpeg">
               </audio></center>
 
               <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> <?=$d->nome?></p>
