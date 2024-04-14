@@ -136,16 +136,16 @@
         <label for="depoimento">Depoimento</label>
         <div class="form-text">Digite o seu depoimento.</div>
       </div>
-
+      -->
 
       <div class="form-floating">
         <select id="situacao" name="situacao" class="form-control" placeholder="Situação">
           <option value="1" <?=(($d->situacao == '1')?'selected':false)?>>Liberado</option>
           <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
         </select>
-        <label for="situacao">Banner</label>
-        <div class="form-text">Selecione a imagem para o Banner</div>
-      </div> -->
+        <label for="situacao">Situação</label>
+        <div class="form-text">Definir a publicação do depoimento</div>
+      </div>
 
 
 
