@@ -50,14 +50,14 @@
               <thead>
                 <tr>
                   <th scope="col" style="width:50%">Nome</th>
-                  <th scope="col" style="width:50%">Servico</th>
+                  <th scope="col" style="width:50%">Empresa</th>
                   <th scope="col">Situação</th>
                   <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                  $query = "select * from depoimentos where tipo = 'audio' order by nome asc";
+                  $query = "select * from depoimentos order by nome asc";
                   $result = mysqli_query($con, $query);
                   while($d = mysqli_fetch_object($result)){
                 ?>

@@ -82,18 +82,13 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nome do serviço" value="<?=$d->empresa?>">
-        <label for="empresa">Serviço Contratado</label>
-        <div class="form-text">Digite o nome do serviço contratado pelo cliente.</div>
+        <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nome da Empresa" value="<?=$d->empresa?>">
+        <label for="empresa">Nome</label>
+        <div class="form-text">Digite o nome de sua Empresa.</div>
       </div>
 
       <div showImage class="form-floating" style="display:<?=(($d->imagem)?'block':'none')?>">
-        <!-- <img src="<?=$localPainel?>site/volume/depoimentos/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" /> -->
-        <audio controls>
-          <!-- <source src="<?=$localPainel?>site/volume/depoimentos/<?=$d->imagem?>" type="audio/ogg"> -->
-          <source src="<?=$localPainel?>site/volume/depoimentos/<?=$d->imagem?>" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
+        <img src="<?=$localPainel?>site/volume/depoimentos/<?=$d->imagem?>" class="img-fluid mt-3 mb-3" alt="" />
       </div>
 
 
@@ -105,10 +100,10 @@
         <input type="hidden" id="imagem_nome" name="imagem_nome" value="" />
         <input type="hidden" id="imagem" name="imagem" value="<?=$d->imagem?>" />
         <!-- <label for="url">Banner</label> -->
-        <div class="form-text mb-3">Selecione o depoimento em áudio (formato MP3)</div>
+        <div class="form-text mb-3">Selecione foto sua ou de sua empresa</div>
       <!-- </div> -->
 
-      <!-- <div class="mb-3 form-floating">
+      <div class="mb-3 form-floating">
         <?php
         for($i=1;$i<=5;$i++){
         ?>
@@ -145,7 +140,7 @@
         </select>
         <label for="situacao">Banner</label>
         <div class="form-text">Selecione a imagem para o Banner</div>
-      </div> -->
+      </div>
 
 
 
@@ -155,7 +150,6 @@
 
       <input type="hidden" id="acao" name="acao" value="salvar" >
       <input type="hidden" id="codigo" name="codigo" value="<?=$d->codigo?>" >
-      <input type="hidden" id="tipo" name="tipo" value="audio" >
     </form>
 
 <script>
