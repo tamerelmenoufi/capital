@@ -51,11 +51,11 @@ $d = mysqli_fetch_object($result);
 <script>
   $(function(){
 
-    $("a[video]").mouseover(function(){
+    $("a[video]").on( "mouseover", function() {
       $(this).css("color","red");
     });
-    
-    $("a[video]").mouseout(function(){
+
+    $("a[video]").on( "mouseout", function() {
       $(this).css("color","#a1a1a1");
     })
 
