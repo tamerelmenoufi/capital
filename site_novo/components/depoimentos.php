@@ -86,6 +86,11 @@
         <div class="row">
 
 
+          <?php
+          $query = "select * from depoimentos where situacao = '1' order by rand limit 3";
+          $result = mysqli_query($con, $query);
+          while($d = mysql_fetch_object($result)){
+          ?>
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class=""  style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
@@ -98,15 +103,19 @@
               <source src="assets/img/audio.mp3" type="audio/mpeg">
               </audio></center>
 
-              <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> Rafael souza</p>
-              <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
+              <p style="color:#fff;font-size:16px;font-weight:bold;text-align:center"> <?=$d->nome?></p>
+              <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px"><?=$d->empresa?></p>
               
             </div>
           </div>
 
+          <?php
+          }
+          ?>
+
          
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class=""   style="radial-gradient(circle, rgb(23 48 195) 0%, rgb(19 22 151) 48%)padding:13px;
             box-shadow: 0px 0px 5px #000;padding:10px">
             <h3 class="" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;color:#fff">
@@ -142,7 +151,7 @@
               <p style="color:#fff;font-size:12px;text-align:center;margin-top:-15px">ANTECIPE O FGTS</p>
               
             </div>
-          </div>
+          </div> -->
 
      
           <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
