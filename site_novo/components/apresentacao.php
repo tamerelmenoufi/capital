@@ -13,7 +13,7 @@ $d = mysqli_fetch_object($result);
 
 <div class="col-lg-6">
 <div class='glightbox btn-watch-video d-flex align-items-center'> 
-  <a <?=(($d->video)?"href='{$d->video}'":false)?> style="position:relative; border:1px red solid" >
+  <a video <?=(($d->video)?"href='{$d->video}'":false)?> style="position:relative; border:1px red solid" >
     <img class="img-fluid" src="<?=$localPainel?>site/volume/destaques/<?=$d->imagem?>" style="max-height:550px"/>
     <i class="fa-brands fa-youtube" style="position:absolute; left:50%; top:50%; margin-left:-50px; margin-top:-50px; z-index:1; color:#a1a1a1; font-size:100px;"></i>
   </a>
@@ -47,3 +47,15 @@ $d = mysqli_fetch_object($result);
 </div>
 </div>
 </section>
+
+<script>
+  $(function(){
+
+    $("a[video]").mouseover(function(){
+      $(this).css("color","red");
+    }).mouseout(function(){
+      $(this).css("color","#a1a1a1");
+    })
+
+  })
+</script>
