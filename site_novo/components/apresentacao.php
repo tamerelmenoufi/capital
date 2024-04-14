@@ -53,7 +53,9 @@ $d = mysqli_fetch_object($result);
 
     $("a[video]").mouseover(function(){
       $(this).css("color","red");
-    }).mouseout(function(){
+    });
+    
+    $("a[video]").mouseout(function(){
       $(this).css("color","#a1a1a1");
     })
 
