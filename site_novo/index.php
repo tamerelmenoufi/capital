@@ -37,7 +37,7 @@
   <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css?1" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: HeroBiz - v2.1.0
