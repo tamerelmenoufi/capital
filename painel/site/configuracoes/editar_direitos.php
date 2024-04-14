@@ -7,7 +7,7 @@
         unset($dados['acao']);
 
         $campos = [];
-        $campos['direitos'] = "direitos = '".json_encode($_POST['direitos'])."'";
+        $campos['direitos'] = "direitos = '".$_POST['direitos']."'";
 
         $query = "update configuracoes set  ".implode(", ",$campos)." WHERE codigo = '1'";
         mysqli_query($con, $query);
