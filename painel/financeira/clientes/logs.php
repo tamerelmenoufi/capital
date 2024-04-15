@@ -50,10 +50,10 @@
         }
         if($log->statusCode){
             $descricao = "{$log->statusCode} - {$log->message}";
-            $detalhes = base64_encode($d->log);
+            $detalhes = $d->sessoes; //base64_encode($d->log);
         }else if($log->proposalStatusId){
             $descricao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
-            $detalhes = base64_encode($d->log);
+            $detalhes = $d->sessoes; //base64_encode($d->log);
         }   
         // echo $d->sessoes;
         // echo $d->log;
