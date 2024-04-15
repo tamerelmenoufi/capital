@@ -40,11 +40,12 @@
     while($d = mysqli_fetch_object($result)){
         $sessoes =  json_decode($d->sessoes);
         $log = json_decode($d->log);
-
+        $usuario = false;
         if($sessoes->acao == 'cron'){
             $titulo = "Sistema - Operação automática (Tarefas)";
         }else if($sessoes->ProjectPainel){
              $titulo = "Manual - usuário / Consultores (Painel)";
+             $usuario = $sessoes->ProjectPainel->nome;
         }else if($sessoes->codUsr){
              $titulo = "Cliente - Realizada pela aplicação (Site)";
         }
@@ -65,6 +66,13 @@
     </div>
     <div class="card-body">
         <p class="card-text"><?=$descricao?></p>
+        <?php
+        if($usuario){
+        ?>
+        <span style="color:#a1a1a1; font-size:12px;">Atendente: <?=$usuario?></span><br>
+        <?php
+        }
+        ?>
         <span style="color:#a1a1a1; font-size:12px;">Processada em: <?=dataBr($d->data)?></span>
         <?php
         if($d->ativo){
