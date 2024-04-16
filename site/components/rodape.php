@@ -25,11 +25,11 @@ background:none;
   <div class="row align-items-center">
     <div class="col-md-3  ">
     <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic;margin-bottom:0px">UNIDADE CIDADE NOVA</p>
-<p style="color:#fff">Rua Prof. felix Valois, 61<br> Cidade nova</p>
+<p style="color:#fff">Rua Prof. felix Valois, 61<br> Cidade nova - Manaus/AM</p>
     </div>
     <div class="col-md-3">
     <p style="color:#fff;font-size:18px;text-align:center;font-weight:bold;font-style:italic;margin-bottom:0px">UNIDADE MANOA</p>
-<p style="color:#fff">Av. Francisco Queiroz, 02  <br> Manoa</p>
+<p style="color:#fff">Av. Francisco Queiroz, 02  <br> Manoa - Manaus/AM</p>
 
     </div>
     <div class="col-md-6">
