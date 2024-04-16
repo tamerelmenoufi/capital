@@ -82,99 +82,55 @@
 </style>
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:20px; background:#144397 !important;color:#fff">
+    <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:45px; background:#144397 !important;color:#fff">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
           <h2 style="">Perguntas Frequentes</h2>
-
         </div>
 
+
+
+        <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Accordion Item #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
       </div>
-    </div><!-- End Breadcrumbs -->
- <div class="container aos-init aos-animate">
-        <div class="row">
-
-          <?php
-          $query = "select * from servicos where situacao = '1' order by codigo desc";
-          $result = sisLog( $query);
-          while($d = mysqli_fetch_object($result)){
-          ?>
-
-          <div style="margin-top:15px" class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <div class="post-img"><img src="<?=$localPainel?>site/volume/servicos/<?=$d->imagem?>" class="img-fluid" alt=""></div>
-              <!-- <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div> -->
-              <h3 class="post-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?=$d->titulo?></h3>
-              <p style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;"><?=strip_tags(str_replace('<',' <',str_replace('>','> ',$d->materia)))?></p>
-
-              <a href="servico.php?cod=<?=$d->codigo?>" class="mt-3 mb-3">
-                <button type="button" class="botao botaoroxo">Leia Mais<i class="bi bi-arrow-right"></i></button>
-              </a>
-
-
-            </div>
-          </div>
-
-          <?php
-          }
-          ?>
-
-          <!-- <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis aliquid necessitatibus tempora consectetur doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
-              </div>
-              <h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam veritatis dicta nihil...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div> -->
-
-        </div>
-
-<!-- <center style="margin-top:20px">
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Proximo</a>
-      </li>
-    </ul>
-  </nav>
-</center> -->
-
-        <div class="col-lg-12" style="padding:10px;text-align:right">
-
-    <a style="color:#fff;" href="./">
-    <button style="margin-top:10px;padding:10px;"  type="button"  class=" botaoverde ">
-                Voltar ao inicio</button></a>
- </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
       </div>
-
-    </section><!-- End Recent Blog Posts Section -->
+</section><!-- End Breadcrumbs -->
+ 
