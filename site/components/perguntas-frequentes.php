@@ -88,10 +88,10 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2 style="">Perguntas Frequentes</h2>
         </div>
+        
+</div>
 
-
-
-        <div class="accordion" id="accordionExample">
+<div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -129,7 +129,7 @@
     </div>
   </div>
 </div>
-</div>
+
 
       </div>
 </section><!-- End Breadcrumbs -->
