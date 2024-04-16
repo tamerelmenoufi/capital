@@ -7,7 +7,7 @@
 ?>
 
 <style>
-    .bg-poup{
+    /* .bg-poup{
         background:#000;
     }
    
@@ -20,7 +20,7 @@
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 </style>   
 <div class="col-md-12">
     <?=$d->direitos?>
