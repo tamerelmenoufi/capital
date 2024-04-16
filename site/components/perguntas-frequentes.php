@@ -1,5 +1,5 @@
     <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="recent-blog-posts" class="recent-blog-posts">
+   
 
 <style>
 
@@ -81,6 +81,8 @@
   }
 </style>
 
+
+
     <!-- ======= Breadcrumbs ======= -->
     <div class="bg-primary breadcrumbs" class="breadcrumbs" style="margin-top:45px; background:#144397 !important;color:#fff">
       <div class="container">
@@ -91,7 +93,9 @@
         
 </div>
 
-<div class="accordion" id="accordionExample">
+      </div>
+
+      <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -130,7 +134,4 @@
   </div>
 </div>
 
-
-      </div>
-</section><!-- End Breadcrumbs -->
  
