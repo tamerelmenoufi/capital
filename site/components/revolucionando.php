@@ -155,19 +155,19 @@
       </div>
   <div class="d-block d-sm-none">
     <div class="row">
-      <div class="col-sm-6 col-md-6"><img src="assets/img/cp22.jpg" class="img-fluid" style=""/><p>Unidade Manoa</p></div>
-      <div class="col-sm-6 offset-sm-2 col-md-6 offset-md-0 "><img src="assets/img/cp23.jpg" class="img-fluid" style=""/><p>Unidade Cidade Nova</p></div>
+      <div class="col-sm-6 col-md-6"><img src="assets/img/cp22.jpg" class="img-fluid" style=""/><p class="text-center">Unidade Manoa</p></div>
+      <div class="col-sm-6 offset-sm-2 col-md-6 offset-md-0 "><img src="assets/img/cp23.jpg" class="img-fluid" style=""/><p class="text-center">Unidade Cidade Nova</p></div>
     </div>
   </div>  
   <div class="d-none d-sm-block">
     <div class="d-flex justify-content-center">
       <div class="d-flex justify-content-center flex-column">
         <img src="assets/img/cp22.jpg" class="img-fluid" style="width:400px;border-radius:25px;padding:18px"/>
-        <span>Unidade Manoa</span>
+        <p class="text-center">Unidade Manoa</p>
       </div>
       <div class="d-flex justify-content-center flex-column">
         <img src="assets/img/cp23.jpg" class="img-fluid" style="width:400px;border-radius:25px;padding:18px"/>
-        <span>Unidade Cidade Nova</span>
+        <p class="text-center">Unidade Cidade Nova</p>
       </div>
     </div>
   </div>
