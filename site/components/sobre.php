@@ -54,7 +54,7 @@
             <?php
             foreach($topicos->descricao as $i => $descricao){
             ?>
-            <div class="tab-pane fade show <?=(($i == 0)?'active':false)?>" id="tab<?=($i+1)?>" style="text-align:justify;">
+            <div class="tab-pane fade show <?=(($i == 0)?'active':false)?>" id="tab<?=($i+1)?>" style="text-align:justify; color:var(--color-secondary-light)">
               <?=str_replace('&nbsp;'," ", $descricao)?>
             </div>
             <?php
