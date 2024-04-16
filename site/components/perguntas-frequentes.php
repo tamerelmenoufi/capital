@@ -95,6 +95,11 @@
       </div>
 
       
+
+  
+
+      </div>
+
       <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
@@ -133,8 +138,7 @@
     </div>
   </div>
 </div>
-  
 
-      </div>
+
 </section><!-- End Breadcrumbs -->
  
