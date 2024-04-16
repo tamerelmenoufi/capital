@@ -9,4 +9,4 @@
     // $localSite = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/site/";
 
     $localPainel = "https://painel.capitalsolucoesam.com.br/";
-    $localSite = "https://site.capitalsolucoesam.com.br/";
+    $localSite = "https://capitalsolucoesam.com.br/";
