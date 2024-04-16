@@ -75,11 +75,6 @@ foreach($midias_sociais as $ind => $url){
 </footer>
 
 
-<a href="./fgts.php" style="" class=" rodape1 scroll-top   active">
-ANTECIPE SEU FGTS
-    </a>-
-
-
 <script>
     $(function(){
         
