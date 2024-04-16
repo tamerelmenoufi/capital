@@ -13,9 +13,9 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-        <h2 style="color:#144397;font-weight:bold;margin-top:25px" ><?=$d->titulo?></h2>
+        <h2 style="color:#fff;font-weight:bold;margin-top:25px" ><?=$d->titulo?></h2>
         
-          <p><?=$d->descricao?></p>
+          <p style="color:#fff;"><?=$d->descricao?></p>
         </div>
 
         <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
@@ -41,7 +41,7 @@
               <?php
               foreach($topicos->titulo as $i => $tipico){
               ?>
-              <li><a class="nav-link <?=(($i == 0)?'active':false)?>" data-bs-toggle="pill" href="#tab<?=($i+1)?>"><?=$tipico?></a></li>
+              <li><a style="color:#fff" class="nav-link <?=(($i == 0)?'active':false)?>" data-bs-toggle="pill" href="#tab<?=($i+1)?>"><?=$tipico?></a></li>
               <?php
               }
               ?>
@@ -173,17 +173,17 @@
             <div class="info">
             
             <div style="margin-top:20px">
-          <p style="color:#144397;font-size:25px;text-align:center;font-weight:bold;font-style:italic">Perguntas Frequentes</p>
+          <p style="color:#fff;font-size:25px;text-align:center;font-weight:bold;font-style:italic">Perguntas Frequentes</p>
 
-          <p style="color:#144397;font-size:18px;text-align:center;">
+          <p style="color:#fff;font-size:18px;text-align:center;">
       O que preciso para sacar meu FGTS?
         </p>
 
-        <p style="color:#144397;font-size:18px;text-align:center;">
+        <p style="color:#fff;font-size:18px;text-align:center;">
      Quais os documentos necessários para fazer a contratação?
         </p>
 
-        <p style="color:#144397;font-size:18px;text-align:center;">
+        <p style="color:#fff;font-size:18px;text-align:center;">
       Consigo fazer a contratação online?
         </p>
 
@@ -203,7 +203,7 @@
           <div class="col-lg-7">
             <form class="php-email-form">
               <div class="row">
-                <p style="color:#144397;font-size:18px;text-align:center;margin-top:25px">Você continua com dúvidas, escreva-as para que nos possamos ajuda-lo(a).  </p>
+                <p style="color:#fff;font-size:18px;text-align:center;margin-top:25px">Você continua com dúvidas, escreva-as para que nos possamos ajuda-lo(a).  </p>
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nome Completo" required>
                 </div>
