@@ -160,8 +160,14 @@
   </div>
  
   <div class="d-flex justify-content-center">
-  <img src="assets/img/cp22.jpg" class="img-fluid d-none d-sm-block" style="width:400px;border-radius:25px;padding:18px"/>
-  <img src="assets/img/cp23.jpg" class="img-fluid d-none d-sm-block" style="width:400px;border-radius:25px;padding:18px"/>
+    <div class="d-flex justify-content-center flex-column">
+      <img src="assets/img/cp22.jpg" class="img-fluid d-none d-sm-block" style="width:400px;border-radius:25px;padding:18px"/>
+      <span>Unidade Manoa</span>
+    </div>
+    <div class="d-flex justify-content-center flex-column">
+      <img src="assets/img/cp23.jpg" class="img-fluid d-none d-sm-block" style="width:400px;border-radius:25px;padding:18px"/>
+      <span>Unidade Cidade Nova</span>
+    </div>  
   
 </div>
 
