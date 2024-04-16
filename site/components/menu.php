@@ -28,12 +28,12 @@
 
 <style>
 .header .logo h1 span {
-  color: #0dacad!important;
+  color: #144397!important;
   font-weight: 500;
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-    color: #373085;
+    color: #144397;
 }
 .navbar > ul > li > a:before {
     content: "";
@@ -42,12 +42,28 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #393287;
+    background-color: #144397;
     visibility: hidden;
     transition: all 0.3s ease-in-out 0s;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
+    
 }
+
+
+.navbar a, .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(19 63 142);
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+    }
 </style>
 
   <!-- ======= Header ======= -->
@@ -57,7 +73,7 @@
 
       <a href="index.php" class=" d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" style="height:55px !important;" alt="">
+        <img src="assets/img/logonovacp.png" style="height:75px !important;" alt="">
        
       </a>
 
