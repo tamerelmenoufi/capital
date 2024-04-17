@@ -87,13 +87,15 @@
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
-
-
+        $proposta = mysqli_insert_id($con);
+        $verifica = mysqli_num_rows(mysqli_query($con, "select * from consultas_log where log_unico = '".md5($simulacao.$proposta)."'"));
+        if(!$verifica){
         consulta_logs([
-            'proposta' => mysqli_insert_id($con),
+            'proposta' => $proposta,
             'consulta' => $simulacao,
             'codUsr' => $d->codigo
         ]);
+        }
 
         mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
 

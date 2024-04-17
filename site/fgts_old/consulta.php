@@ -56,10 +56,13 @@
         $status_cod = $retorno->proposalStatusId;
         $status_msg = $retorno->proposalStatusDisplayTitle;
 
+        $verifica = mysqli_num_rows(mysqli_query($con, "select * from consultas_log where log_unico = '".md5($consulta.$_POST['atualiza_proposta'])."'"));
+        if(!$verifica){
         consulta_logs([
             'proposta' => $_POST['atualiza_proposta'],
             'consulta' => $consulta
         ]);
+        }
 
         $query = "update `consultas` set 
                                         proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
@@ -114,12 +117,14 @@
                                             dados = '{$simulacao}'
                                             ";
         mysqli_query($con, $query);
-
-
+        $proposta = mysqli_insert_id($con);
+        $verifica = mysqli_num_rows(mysqli_query($con, "select * from consultas_log where log_unico = '".md5($simulacao.$proposta)."'"));
+        if(!$verifica){
         consulta_logs([
-            'proposta' => mysqli_insert_id($con),
+            'proposta' => $proposta,
             'consulta' => $simulacao
         ]);
+        }
 
         // exit();
 
@@ -181,11 +186,13 @@
                             }
                         }"
         ]);
-
+        $verifica = mysqli_num_rows(mysqli_query($con, "select * from consultas_log where log_unico = '".md5($proposta.$_POST['proposta'])."'"));
+        if(!$verifica){
         consulta_logs([
             'proposta' => $_POST['proposta'],
             'consulta' => $proposta
         ]);
+        }
 
         $query = "update consultas set 
                     proposta = '{$proposta}'

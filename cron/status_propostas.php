@@ -58,11 +58,14 @@
             $status_cod = $retorno->proposalStatusId;
             $status_msg = $retorno->proposalStatusDisplayTitle;
 
+            $verifica = mysqli_num_rows(mysqli_query($con, "select * from consultas_log where log_unico = '".md5($consulta.$d->codigo)."'"));
+            if(!$verifica){
             consulta_logs([
                 'proposta' => $d->codigo,
                 'consulta' => $consulta,
                 'codUsr' => $d->cliente
             ]);
+            }
 
             $query1 = "update `consultas` set 
                                             proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
