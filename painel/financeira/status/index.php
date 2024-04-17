@@ -1,14 +1,5 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
-
-    if($_POST['acao'] == 'wapp'){
-      $wgw = new wgw;
-      echo $wgw->SendTxt();
-      echo $wgw->SendAudio();
-      exit();
-    }
-
-
 ?>
 <style>
   .legenda_status{
@@ -27,18 +18,6 @@
 
           <div class="card-body">
 
-          <div class="row">
-            <div class="col-md-12">
-            <?php
-            if($_SESSION['ProjectPainel']->codigo == 2){
-              echo '<button Wapp class="btn btn-success" title="Realizar a Busca">Wapp</button> ';
-            }
-
-
-            // if($_SESSION['ProjectPainel']->codigo == 2){
-            ?>  
-            </div>
-          </div>
 
             <div class="table-responsiveXXX">
             <table class="table table-striped table-hover">
@@ -115,20 +94,6 @@
             })
         })
 
-        
-        $("button[Wapp]").click(function(){
-            $.ajax({
-                url:"financeira/clientes/index.php",
-                type:"POST",
-                data:{
-                    acao:'wapp'
-                },
-                success:function(dados){
-                    // $("#paginaHome").html(dados);
-                    console.log(dados);
-                }
-            })          
-        })
 
     })
 </script>
