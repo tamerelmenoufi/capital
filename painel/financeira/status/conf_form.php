@@ -97,7 +97,7 @@
         <div id="mensagem_descricao" class="form-text">Digite conteúdo de sua mensagem</div>
     </div>
 
-    <div showImage_arq class="form-floating" style="display:<?=(($d->arquivo)?'block':'none')?>">
+    <div showImage_arq class="form-floating" style="display:<?=(($m->arquivo)?'block':'none')?>">
         <img src="volume/wapp/status/<?="{$d->codigo}/{$m->arquivo}"?>" class="img-fluid mt-3 mb-3" alt="" />
     </div>
 
