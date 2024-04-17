@@ -131,6 +131,10 @@ $(function(){
             success:function(dados){
                 console.log(dados)
                 $.ajax({
+                    type:"POST",
+                    data:{
+                        cod:'<?=$d->codigo?>'
+                    },
                     url:"financeira/status/conf.php",
                     success:function(dados){
                         $(".LateralDireita").html(dados);
