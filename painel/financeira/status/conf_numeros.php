@@ -26,7 +26,7 @@
     <span style="color:#a1a1a1">Incluir no formato ex:. 5592988887777 e os números separados por vírgulas.</span>
     <p><span style="color:#a1a1a1">Exemplo: 5591988887777,5592991234567,5511987655678</span></p>
     <textarea id="numeros" class="form-control" rows="10"><?=$d->telefones_teste?></textarea>
-    <button voltar type="button" class="btn btn-primary">Salvar</button>
+    <button voltar type="button" class="btn btn-primary mt-3">Salvar</button>
 
   </div>
 </div>
