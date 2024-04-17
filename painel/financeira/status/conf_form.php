@@ -37,11 +37,11 @@
               $campos[] = "{$i} = '{$v}'";
             }
             if($_POST['codigo']){
-              $query = "UPDATE status set ".implode(", ",$campos)." WHERE codigo = '{$_POST['codigo']}'";
+              $query = "UPDATE status_mensagens set ".implode(", ",$campos)." WHERE codigo = '{$_POST['codigo']}'";
               mysqli_query($con, $query);
               $acao = mysqli_affected_rows($con);
             }else{
-              echo $query = "INSERT INTO status set ".implode(", ",$campos)."";
+              echo $query = "INSERT INTO status_mensagens set ".implode(", ",$campos)."";
               mysqli_query($con, $query);
               $acao = mysqli_affected_rows($con);
             }
