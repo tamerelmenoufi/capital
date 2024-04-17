@@ -177,6 +177,7 @@
                 },
                 success:function(dados){
                     $.alert(dados);
+                    Carregando('none');
                     //$(".LateralDireita").html(dados);
                     // let myOffCanvas = document.getElementById('offcanvasDireita');
                     // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
