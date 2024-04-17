@@ -109,6 +109,7 @@
     <input type="hidden" id="imagem_arq" name="imagem_arq" value="<?=$m->arquivo?>" />
     <div class="form-text mb-3">Anexar um arquivo</div>
 
+    <button voltar type="button" class="btn btn-primary">Voltar</button>
     <button type="submit" class="btn btn-primary">Submit</button>
     <input type="hidden" name="status" id="status" value="<?=$d->codigo?>" />
     <input type="hidden" id="acao" name="acao" value="salvar" >
@@ -152,6 +153,34 @@ $(function(){
     });
 
 
+    $("button[voltar]" ).on( "submit", function( event ) {
+
+        data = [];
+
+        event.preventDefault();
+
+        data = $( this ).serialize();
+
+        $.ajax({
+            url:"financeira/status/conf.php",
+            type:"POST",
+            data,
+            success:function(dados){
+                console.log(dados)
+                $.ajax({
+                    type:"POST",
+                    data:{
+                        cod:'<?=$d->codigo?>'
+                    },
+                    url:"financeira/status/conf.php",
+                    success:function(dados){
+                        $(".LateralDireita").html(dados);
+                    }
+                });
+
+            }
+        });
+    });
 
     if (window.File && window.FileList && window.FileReader) {
 
