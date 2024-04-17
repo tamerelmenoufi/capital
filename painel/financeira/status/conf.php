@@ -54,16 +54,16 @@
         ?>
         <div class="alert alert-primary d-flex align-items-center" role="alert">
             <i class="fa-solid fa-file-lines"></i>
-            <div style="margin-right:10px;">
+            <a style="margin-right:10px;" href="volume/wapp/status/<?="{$d->codigo}/{$m->arquivo}"?>" target="_blank">
                 Arquivo Anexo
-            </div>
+            </a>
         </div>
         <?php  
                 }
 
 
             }elseif($m->tipo == 'img'){
-                echo "<div class='d-flex justify-content-center'><img class='img-fluid' src='{$m->arquivo}' /></div>";
+                echo "<div class='d-flex justify-content-center'><img class='img-fluid' src='volume/wapp/status/{$d->codigo}/{$m->arquivo}' /></div>";
             }
             if($m->mensagem){
                 echo "<p>{$m->mensagem}</p>";
