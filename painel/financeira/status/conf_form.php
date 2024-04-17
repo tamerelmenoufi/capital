@@ -83,7 +83,7 @@
 <form>
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" value="<?=$m->nome?>" aria-describedby="nome_descricao">
+        <input type="text" class="form-control" name="nome" id="nome" value="<?=$m->nome?>" aria-describedby="nome_descricao">
         <div id="nome_descricao" class="form-text">Digite o nome de identificação da mensagem</div>
     </div>
 
