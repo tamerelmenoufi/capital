@@ -37,7 +37,7 @@
         $("button[voltar]" ).on( "click", function( event ) {
             Carregando();
 
-            numeros = $(#numeros).val();
+            numeros = $("#numeros").val();
             $.ajax({
                 url:"financeira/status/conf_numeros.php",
                 type:"POST",
