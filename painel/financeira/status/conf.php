@@ -194,7 +194,7 @@
                     envio
                 },
                 success:function(dados){
-                    $.alert(dados);
+                    $.alert("Envios processados!");
                     Carregando('none');
                     //$(".LateralDireita").html(dados);
                     // let myOffCanvas = document.getElementById('offcanvasDireita');

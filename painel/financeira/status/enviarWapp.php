@@ -29,6 +29,6 @@
         );
 
         $contexto = stream_context_create($opcoes);
-        echo $result   = file_get_contents('http://wapp.mohatron.com/tme.php', false, $contexto);
+        $result   = file_get_contents('http://wapp.mohatron.com/tme.php', false, $contexto);
 
 ?>
