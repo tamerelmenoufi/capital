@@ -75,7 +75,7 @@
                 <label class="form-check-label" for="flexSwitchCheckChecked">Disponibilizar mensagem</label>
             </div>
             <button enviar="<?=$m->codigo?>" class="btn btn-outline-success btn-sm"><i class="fa-brands fa-whatsapp"></i> Enviar</button>
-            <button class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i> Excluir</button>
+            <button excluir=<?=$m->codigo?>" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i> Excluir</button>
         </div>
   </div>
 </div>
@@ -118,6 +118,45 @@
                     // openedCanvas.hide();
                 }
             });            
+        })
+
+        $("button[excluir]").click(function(){
+            excluir = $(this).attr("enviar");
+
+                    $.confirm({
+                        content:"Dejse realmente excluir a mensagem?",
+                        title:"Aviso de exclusão",
+                        buttons:{
+                            'Sim':{
+                                text:'Sim',
+                                btnClass:'btn btn-danger btn-sm',
+                                action:function(){
+                                    $.ajax({
+                                        url:"financeira/status/enviarWapp.php",
+                                        type:"POST",
+                                        data:{
+                                            envio
+                                        },
+                                        success:function(dados){
+                                            $.alert(dados);
+                                            //$(".LateralDireita").html(dados);
+                                            // let myOffCanvas = document.getElementById('offcanvasDireita');
+                                            // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                                            // openedCanvas.hide();
+                                        }
+                                    });
+                        }
+                    },
+                    'Nao':{
+                        text:'Não',
+                        btnClass:'btn btn-secondary btn-sm',
+                        action:function(){
+
+                        }
+                    }
+                }
+            })
+                        
         })
 
 
