@@ -107,7 +107,7 @@
 
         $("button[novo]").click(function(){
             $.ajax({
-                url:"financeira/status/conf_form.php",
+                url:"financeira/status/conf.php",
                 type:"POST",
                 data:{
                     cod:'<?=$d->codigo?>'
@@ -125,7 +125,7 @@
             editar = $(this).attr("editar");
             Carregando();
             $.ajax({
-                url:"financeira/status/conf.php",
+                url:"financeira/status/conf_form.php",
                 type:"POST",
                 data:{
                     cod:'<?=$d->codigo?>',
