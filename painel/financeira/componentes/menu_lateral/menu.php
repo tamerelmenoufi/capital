@@ -39,7 +39,21 @@
           <i class="fa-solid fa-chart-line"></i> Clientes
         </a>
       </div>
-    </div>    
+    </div>
+    
+    <?php
+      if($_SESSION['ProjectPainel']->perfil == 'adm'){
+    ?>
+    <div class="row mb-1 menu-cinza">
+      <div class="col">
+        <a url="financeira/status/index.php" class="text-decoration-none texto-cinza" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-chart-line"></i> Status
+        </a>
+      </div>
+    </div>
+    <?php
+      }
+    ?>
 
     <div class="row mb-1 menu-cinza">
       <div class="col">
