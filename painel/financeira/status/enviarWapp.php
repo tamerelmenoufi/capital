@@ -11,7 +11,7 @@
                 'mensagem' => (($d->mensagem)?:''),
                 'instancia' => 2,
                 'tipo' => (($d->tipo)?:''), //img, arq
-                'arquivo' => (($arquivo)?"https://painel.capitalsolucoesam.com.br/volume/wapp/status/{$d->status}/{$d->arquivo}":'') //URL ou Bse64
+                'arquivo' => (($d->arquivo)?"https://painel.capitalsolucoesam.com.br/volume/wapp/status/{$d->status}/{$d->arquivo}":'') //URL ou Bse64
             )
         );
         $opcoes = array('http' =>
