@@ -85,7 +85,7 @@
             </div>
             <button editar="<?=$m->codigo?>" class="btn btn-outline-primary btn-sm"><i class="fa-regular fa-pen-to-square"></i> Editar</button>
             <button enviar="<?=$m->codigo?>" class="btn btn-outline-success btn-sm"><i class="fa-brands fa-whatsapp"></i> Enviar</button>
-            <button excluir=<?=$m->codigo?>" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i> Excluir</button>
+            <button excluir=<?=$m->status?>" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i> Excluir</button>
         </div>
   </div>
 </div>
