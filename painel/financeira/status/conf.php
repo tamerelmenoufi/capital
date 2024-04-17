@@ -87,8 +87,8 @@
         ?>
         <div class="d-flex justify-content-between">
             <div class="form-check form-switch">
-                <input situacao="<?=$m->codigo?>" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" <?=(($m->situacao)?'checked':false)?>>
-                <label class="form-check-label" for="flexSwitchCheckChecked">Disponibilizar mensagem</label>
+                <input situacao="<?=$m->codigo?>" class="form-check-input" type="checkbox" role="switch" id="situacao<?=$m->codigo?>" <?=(($m->situacao)?'checked':false)?>>
+                <label class="form-check-label" for="situacao<?=$m->codigo?>">Disponibilizar mensagem</label>
             </div>
             <button editar="<?=$m->codigo?>" class="btn btn-outline-primary btn-sm"><i class="fa-regular fa-pen-to-square"></i> Editar</button>
             <button enviar="<?=$m->codigo?>" class="btn btn-outline-success btn-sm"><i class="fa-brands fa-whatsapp"></i> Enviar</button>
