@@ -141,7 +141,7 @@
         })
 
 
-        $("input[situacao]").click(function(){
+        $("input[situacao]").change(function(){
             situacao = $(this).attr("situacao");
             
             if($(this).prop("checked") == true){
