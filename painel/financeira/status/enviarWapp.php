@@ -8,10 +8,10 @@
         $dadosParaEnviar = http_build_query(
             array(
                 'numeros' => [559291886570],
-                'mensagem' => (($d->mensagem)?:false),
+                'mensagem' => (($d->mensagem)?:''),
                 'instancia' => 2,
-                'tipo' => (($d->tipo)?:false), //img, arq
-                'arquivo' => (($arquivo)?"https://painel.capitalsolucoesam.com.br/volume/wapp/status/{$d->status}/{$d->arquivo}":false) //URL ou Bse64
+                'tipo' => (($d->tipo)?:''), //img, arq
+                'arquivo' => (($arquivo)?"https://painel.capitalsolucoesam.com.br/volume/wapp/status/{$d->status}/{$d->arquivo}":'') //URL ou Bse64
             )
         );
         $opcoes = array('http' =>
