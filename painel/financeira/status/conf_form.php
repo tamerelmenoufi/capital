@@ -158,7 +158,7 @@ $(function(){
         $.ajax({
             type:"POST",
             data:{
-                cod:'<?=$d->codigo?>'
+                cod:'<?=$_POST['cod']?>'
             },
             url:"financeira/status/conf.php",
             success:function(dados){
