@@ -130,7 +130,7 @@
         })
 
         $("button[excluir]").click(function(){
-            excluir = $(this).attr("enviar");
+            excluir = $(this).attr("excluir");
 
                     $.confirm({
                         content:"Dejse realmente excluir a mensagem?",
@@ -144,7 +144,8 @@
                                         url:"financeira/status/conf.php",
                                         type:"POST",
                                         data:{
-                                            excluir
+                                            excluir,
+                                            cod:'<?=$d->codigo?>'
                                         },
                                         success:function(dados){
                                             $(".LateralDireita").html(dados);
