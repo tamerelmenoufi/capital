@@ -102,6 +102,23 @@
             });            
         })
 
+        $("button[enviar]").click(function(){
+            envio = $(this).attr("enviar");
+            $.ajax({
+                url:"financeira/status/enviarWapp.php",
+                type:"POST",
+                data:{
+                    envio
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                    // let myOffCanvas = document.getElementById('offcanvasDireita');
+                    // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    // openedCanvas.hide();
+                }
+            });            
+        })
+
 
     })
 </script>
