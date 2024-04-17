@@ -27,7 +27,7 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-print_r($d);
+// print_r($d);
 
     $token = $d->token;
     $agora = time();
