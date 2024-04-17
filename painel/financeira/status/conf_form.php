@@ -23,6 +23,8 @@
               $ext = substr($_POST['imagem_nome_arq'], strripos($_POST['imagem_nome_arq'],'.'), strlen($_POST['imagem_nome_arq']));
               $nome = md5($_POST['base64_arq'].$_POST['imagem_tipo_arq'].$_POST['imagem_nome_arq'].date("YmdHis")).$ext;
       
+              if(!is_dir("../../volume")) mkdir("../../volume");
+              if(!is_dir("../../volume/wapp")) mkdir("../../volume/wapp");
               if(!is_dir("../../volume/wapp/{$_POST['status']}")) mkdir("../../volume/wapp/{$_POST['status']}");
               if(file_put_contents("../../volume/wapp/{$_POST['status']}/".$nome, $img)){
                 $dados['arquivo'] = $nome;
