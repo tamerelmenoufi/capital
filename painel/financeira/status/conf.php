@@ -54,7 +54,7 @@
         ?>
         <div class="alert alert-primary d-flex align-items-center" role="alert">
             <i class="fa-solid fa-file-lines"></i>
-            <div>
+            <div style="margin-right:10px;">
                 Arquivo Anexo
             </div>
         </div>
