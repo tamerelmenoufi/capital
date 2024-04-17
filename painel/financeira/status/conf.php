@@ -82,3 +82,26 @@
 <?php
     }
 ?>
+
+<script>
+    $(function(){
+
+        $("button[novo]").click(function(){
+            $.ajax({
+                url:"financeira/status/conf_form.php",
+                type:"POST",
+                data:{
+                    cod:'<?=$d->codigo?>'
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                    // let myOffCanvas = document.getElementById('offcanvasDireita');
+                    // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    // openedCanvas.hide();
+                }
+            });            
+        })
+
+
+    })
+</script>
