@@ -45,7 +45,8 @@
 
     echo $query = "select *, proposta->>'$.data.proposalId' as proposalId from consultas where proposta->>'$.statusCode' in ('200', '60', '110', '61', '95')";
     $result = mysqli_query($con, $query);
-    if(mysqli_num_rows($result)){
+
+    // if(mysqli_num_rows($result)){
         while($d = mysqli_fetch_object($result)){
 
             $consulta = $vctex->Conculta([
@@ -70,4 +71,4 @@
             $result = mysqli_query($con, $query);
 
         }
-    }
+    // }
