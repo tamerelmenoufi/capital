@@ -130,7 +130,7 @@ $(function(){
         event.preventDefault();
 
         data = $( this ).serialize();
-
+        Carregando();
         $.ajax({
             url:"financeira/status/conf_form.php",
             type:"POST",
@@ -154,7 +154,7 @@ $(function(){
 
 
     $("button[voltar]" ).on( "click", function( event ) {
-
+        Carregando();
         $.ajax({
             type:"POST",
             data:{
