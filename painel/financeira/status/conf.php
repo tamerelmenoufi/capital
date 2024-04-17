@@ -26,7 +26,7 @@
     $result = mysqli_query($con, $query);
     while($m = mysqli_fetch_object($result)){
 ?>
-<div class="card">
+<div class="card mt-3">
   <div class="card-header">
     <?=$m->nome?>
   </div>
