@@ -76,7 +76,7 @@ $(function(){
                         var type = file.type;
                         var name = file.name;
                         console.log(type);
-                        if(type.indexOf("image")){
+                        if(type.indexOf("image") != -1){
 
                         //*
                         //////////////////////////////////////////////////////////////////
