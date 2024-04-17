@@ -155,31 +155,17 @@ $(function(){
 
     $("button[voltar]" ).on( "click", function( event ) {
 
-        data = [];
-
-        event.preventDefault();
-
-        data = $( this ).serialize();
-
         $.ajax({
-            url:"financeira/status/conf.php",
             type:"POST",
-            data,
+            data:{
+                cod:'<?=$d->codigo?>'
+            },
+            url:"financeira/status/conf.php",
             success:function(dados){
-                console.log(dados)
-                $.ajax({
-                    type:"POST",
-                    data:{
-                        cod:'<?=$d->codigo?>'
-                    },
-                    url:"financeira/status/conf.php",
-                    success:function(dados){
-                        $(".LateralDireita").html(dados);
-                    }
-                });
-
+                $(".LateralDireita").html(dados);
             }
         });
+
     });
 
     if (window.File && window.FileList && window.FileReader) {
