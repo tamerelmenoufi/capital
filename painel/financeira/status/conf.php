@@ -96,6 +96,8 @@
 <script>
     $(function(){
 
+        Carregando('none');
+
         $("button[novo]").click(function(){
             $.ajax({
                 url:"financeira/status/conf_form.php",
