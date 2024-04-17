@@ -11,6 +11,8 @@
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
+        $msg = trim(str_replace("\n","\\n",$d->mensagem));
+
         $dadosParaEnviar = http_build_query(
             array(
                 'numeros' => $numeros,
