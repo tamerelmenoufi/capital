@@ -45,7 +45,7 @@
     }
 
 
-    echo $query = "select *, proposta->>'$.data.proposalId' as proposalId from consultas where proposta->>'$.statusCode' in ('200', '60', '110', '61', '95')";
+    $query = "select *, proposta->>'$.data.proposalId' as proposalId from consultas where proposta->>'$.statusCode' in ('200', '60', '110', '61', '95')";
     $result = mysqli_query($con, $query);
     if(mysqli_num_rows($result)){
         while($d = mysqli_fetch_object($result)){
@@ -64,12 +64,12 @@
                 'codUsr' => $d->cliente
             ]);
 
-            $query = "update `consultas` set 
+            $query1 = "update `consultas` set 
                                             proposta = JSON_SET(proposta, '$.statusCode', '{$status_cod}'),
                                             proposta = JSON_SET(proposta, '$.message', '{$status_msg}')
                             where codigo = '{$d->codigo}'";
 
-            $result = mysqli_query($con, $query);
+            $result1 = mysqli_query($con, $query1);
 
         }
     }
