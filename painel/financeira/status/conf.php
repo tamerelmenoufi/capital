@@ -150,7 +150,7 @@
                 opc = '0';
             }
             $.ajax({
-                url:"financeira/status/conf_form.php",
+                url:"financeira/status/conf.php",
                 type:"POST",
                 data:{
                     cod:'<?=$d->codigo?>',
