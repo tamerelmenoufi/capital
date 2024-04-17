@@ -153,7 +153,7 @@ $(function(){
     });
 
 
-    $("button[voltar]" ).on( "submit", function( event ) {
+    $("button[voltar]" ).on( "click", function( event ) {
 
         data = [];
 
