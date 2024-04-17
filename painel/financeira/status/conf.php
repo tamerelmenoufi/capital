@@ -116,6 +116,7 @@
 
         $("button[editar]").click(function(){
             editar = $(this).attr("editar");
+            Carregando();
             $.ajax({
                 url:"financeira/status/conf_form.php",
                 type:"POST",
@@ -133,6 +134,7 @@
         })
 
         $("button[enviar]").click(function(){
+            Carregando();
             envio = $(this).attr("enviar");
             $.ajax({
                 url:"financeira/status/enviarWapp.php",
@@ -161,6 +163,7 @@
                                 text:'Sim',
                                 btnClass:'btn btn-danger btn-sm',
                                 action:function(){
+                                    Carregando();
                                     $.ajax({
                                         url:"financeira/status/conf.php",
                                         type:"POST",
