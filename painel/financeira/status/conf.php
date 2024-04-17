@@ -1,5 +1,8 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
+
+        print_r($_POST);
+
 ?>
 <style>
     .Titulo<?=$md5?>{
