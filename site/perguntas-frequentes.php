@@ -92,7 +92,7 @@
         // 'pagina_interna',
         // 'pagina_interna2',
         // 'mais_noticias',
-         'depoimentos',
+         'perguntas-frequentes',
         // 'produtos_servicos',
         // 'clientes',
         // 'destaque',
