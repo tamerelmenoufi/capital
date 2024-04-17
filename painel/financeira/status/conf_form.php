@@ -62,7 +62,7 @@
         }
 
 
-        $query = "select * from status where codigo = '{$_POST['cod']}'";
+        $query = "select * from status where codigo = '{$_POST['editar']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
