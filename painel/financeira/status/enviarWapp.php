@@ -1,13 +1,19 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+        $query = "SELECT * FROM `wapp_config` where codigo = '1'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+
+        $numeros = explode(",", $d->telefones_teste);
+
         $query = "select * from status_mensagens where codigo = '{$_POST['envio']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
         $dadosParaEnviar = http_build_query(
             array(
-                'numeros' => [559291886570],
+                'numeros' => $numeros,
                 'mensagem' => (($d->mensagem)?:''),
                 'instancia' => 2,
                 'tipo' => (($d->tipo)?:''), //img, arq
