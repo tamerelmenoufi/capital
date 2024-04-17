@@ -53,9 +53,8 @@
                 }else{
         ?>
         <div class="alert alert-primary d-flex align-items-center" role="alert">
-            <i class="fa-solid fa-file-lines"></i>
             <a style="margin-right:10px;" href="volume/wapp/status/<?="{$d->codigo}/{$m->arquivo}"?>" target="_blank">
-                Arquivo Anexo
+                <i class="fa-solid fa-file-lines"></i> Arquivo Anexo
             </a>
         </div>
         <?php  
