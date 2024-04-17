@@ -19,7 +19,7 @@
 
 <div class="card mt-3">
   <div class="card-header">
-    <?=$m->nome?>
+    Lista de Números (WhatsApp)
   </div>
   <div class="card-body">
     <p>Cadastre no campo abaixo os números dos testefones WhatsApp utilizados para os testes.</p>
