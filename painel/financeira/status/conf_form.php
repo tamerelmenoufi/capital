@@ -41,7 +41,7 @@
               mysqli_query($con, $query);
               $acao = mysqli_affected_rows($con);
             }else{
-              $query = "INSERT INTO status set ".implode(", ",$campos)."";
+              echo $query = "INSERT INTO status set ".implode(", ",$campos)."";
               mysqli_query($con, $query);
               $acao = mysqli_affected_rows($con);
             }
@@ -129,9 +129,9 @@ $(function(){
             type:"POST",
             data,
             success:function(dados){
-
+                console.log(dados)
                 $.ajax({
-                    url:"financeira/status/conf_form.php",
+                    url:"financeira/status/conf.php",
                     success:function(dados){
                         $(".LateralDireita").html(dados);
                     }
