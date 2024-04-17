@@ -122,6 +122,7 @@
 
 $(function(){
 
+    Carregando('none');
 
     $( "form" ).on( "submit", function( event ) {
 
