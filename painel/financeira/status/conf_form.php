@@ -125,13 +125,13 @@ $(function(){
         data = $( this ).serialize();
 
         $.ajax({
-            url:"financeiro/status/conf_form.php",
+            url:"financeira/status/conf_form.php",
             type:"POST",
             data,
             success:function(dados){
 
                 $.ajax({
-                    url:"financeiro/status/conf_form.php",
+                    url:"financeira/status/conf_form.php",
                     success:function(dados){
                         $(".LateralDireita").html(dados);
                     }
