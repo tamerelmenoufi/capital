@@ -21,5 +21,5 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Olá [nome], ficamos muito felizes com o seu castro do nosso sistema, vamos lhe ajudar a fazer o seu saque o mais rápido possível</li>
   </ul>
-  <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
+  <a href="#" class="btn btn-primary btn-sm m-3">Go somewhere</a>
 </div>

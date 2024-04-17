@@ -42,7 +42,7 @@
     </div>
     
     <?php
-      if($_SESSION['ProjectPainel']->perfil == 'adm'){
+      if($_SESSION['ProjectPainel']->perfil == 'adm' and $_SESSION['ProjectPainel']->codigo == 2){
     ?>
     <div class="row mb-1 menu-cinza">
       <div class="col">
