@@ -26,8 +26,9 @@
       
               if(!is_dir("../../volume")) mkdir("../../volume");
               if(!is_dir("../../volume/wapp")) mkdir("../../volume/wapp");
-              if(!is_dir("../../volume/wapp/{$_POST['status']}")) mkdir("../../volume/wapp/{$_POST['status']}");
-              if(file_put_contents("../../volume/wapp/{$_POST['status']}/".$nome, $img)){
+              if(!is_dir("../../volume/wapp/status")) mkdir("../../volume/wapp/status");
+              if(!is_dir("../../volume/wapp/status/{$_POST['status']}")) mkdir("../../volume/wapp/status/{$_POST['status']}");
+              if(file_put_contents("../../volume/wapp/status/{$_POST['status']}/".$nome, $img)){
                 $dados['arquivo'] = $nome;
               }
 
