@@ -11,6 +11,12 @@
 
         }
 
+        if($_POST['situacao']){
+            
+            mysqli_query($con, "update status_mensagens set situacao = '{$_POST['opc']}' where codigo = '{$_POST['situacao']}'");
+
+        }
+
         $query = "select * from status where codigo = '{$_POST['cod']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
@@ -81,7 +87,7 @@
         ?>
         <div class="d-flex justify-content-between">
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <input situacao="<?=$m->codigo?>" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" <?=(($m->situacao)?'checked':false)?>>
                 <label class="form-check-label" for="flexSwitchCheckChecked">Disponibilizar mensagem</label>
             </div>
             <button editar="<?=$m->codigo?>" class="btn btn-outline-primary btn-sm"><i class="fa-regular fa-pen-to-square"></i> Editar</button>
@@ -119,7 +125,7 @@
             editar = $(this).attr("editar");
             Carregando();
             $.ajax({
-                url:"financeira/status/conf_form.php",
+                url:"financeira/status/conf.php",
                 type:"POST",
                 data:{
                     cod:'<?=$d->codigo?>',
@@ -127,6 +133,32 @@
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
+                    // let myOffCanvas = document.getElementById('offcanvasDireita');
+                    // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    // openedCanvas.hide();
+                }
+            });            
+        })
+
+
+        $("input[situacao]").click(function(){
+            situacao = $(this).attr("situacao");
+            
+            if($(this).prop("checked") == true){
+                opc = '1';
+            }else{
+                opc = '0';
+            }
+            $.ajax({
+                url:"financeira/status/conf_form.php",
+                type:"POST",
+                data:{
+                    cod:'<?=$d->codigo?>',
+                    situacao,
+                    opc
+                },
+                success:function(dados){
+                    // $(".LateralDireita").html(dados);
                     // let myOffCanvas = document.getElementById('offcanvasDireita');
                     // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     // openedCanvas.hide();
