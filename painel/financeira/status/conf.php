@@ -24,7 +24,7 @@
     <button novo type="button" class="btn btn-success btn-sm">Novo</button>
 </div>
 <?php
-    $query = "select * from status_mensagem where status = '{$d->codigo}' order by codigo desc";
+    $query = "select * from status_mensagens where status = '{$d->codigo}' order by codigo desc";
     $result = mysqli_query($con, $query);
     while($m = mysqli_fetch_object($result)){
 ?>
