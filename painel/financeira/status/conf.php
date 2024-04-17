@@ -111,7 +111,8 @@
                     envio
                 },
                 success:function(dados){
-                    $(".LateralDireita").html(dados);
+                    $.alert(dados);
+                    //$(".LateralDireita").html(dados);
                     // let myOffCanvas = document.getElementById('offcanvasDireita');
                     // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                     // openedCanvas.hide();
