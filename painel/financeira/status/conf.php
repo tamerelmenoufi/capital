@@ -20,6 +20,6 @@
   </div>
   <div class="card-body">
         Olá [nome], ficamos muito felizes com o seu castro do nosso sistema, vamos lhe ajudar a fazer o seu saque o mais rápido possível
-        <p><a href="#" class="btn btn-primary btn-sm m-3">Go somewhere</a></p>
+        <p><a href="#" class="btn btn-primary btn-sm">Go somewhere</a></p>
   </div>
 </div>
