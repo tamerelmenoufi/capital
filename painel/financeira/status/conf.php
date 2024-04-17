@@ -4,9 +4,10 @@
         if($_POST['excluir']){
 
             $e = mysqli_fetch_object(mysqli_query($con, "select * from status_mensagens where codigo = '{$_POST['excluir']}'"));
-            if(is_file("../../volume/wapp/status/{$e->status}/{$e->arquivo}")) unlink("../../volume/wapp/status/{$e->status}/{$e->arquivo}");
-
-            mysqli_query($con, "delete from status_mensagens where codigo = '{$_POST['excluir']}'");
+            echo "select * from status_mensagens where codigo = '{$_POST['excluir']}'";
+            //if(is_file("../../volume/wapp/status/{$e->status}/{$e->arquivo}")) unlink("../../volume/wapp/status/{$e->status}/{$e->arquivo}");
+            
+            //mysqli_query($con, "delete from status_mensagens where codigo = '{$_POST['excluir']}'");
 
         }
 
