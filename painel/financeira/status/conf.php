@@ -36,6 +36,7 @@
 
 <div class="d-flex flex-row-reverse">
     <button novo type="button" class="btn btn-success btn-sm"><i class="fa-solid fa-comment-medical"></i> Novo</button>
+    <button telefones type="button" class="btn btn-warning btn-sm"><i class="fa-solid fa-comment-medical"></i><i class="fa-solid fa-gears"></i> Telefones</button>
 </div>
 <?php
     $query = "select * from status_mensagens where status = '{$d->codigo}' order by codigo desc";
@@ -108,6 +109,23 @@
         $("button[novo]").click(function(){
             $.ajax({
                 url:"financeira/status/conf.php",
+                type:"POST",
+                data:{
+                    cod:'<?=$d->codigo?>'
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                    // let myOffCanvas = document.getElementById('offcanvasDireita');
+                    // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                    // openedCanvas.hide();
+                }
+            });            
+        })
+
+
+        $("button[telefones]").click(function(){
+            $.ajax({
+                url:"financeira/status/conf_numeros.php",
                 type:"POST",
                 data:{
                     cod:'<?=$d->codigo?>'
