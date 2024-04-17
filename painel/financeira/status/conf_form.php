@@ -1,6 +1,60 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+
+        if($_POST['acao'] == 'salvar'){
+
+            $dados = $_POST;
+            unset($dados['acao']);
+            unset($dados['codigo']);
+      
+            //Imagem
+            $img = false;
+            unset($dados['base64_arq']);
+            unset($dados['imagem_tipo_arq']);
+            unset($dados['imagem_nome_arq']);
+      
+            if($_POST['base64_arq'] and $_POST['imagem_tipo_arq'] and $_POST['imagem_nome_arq']){
+      
+              if($_POST['imagem_arq']) unlink("../../volume/wapp/{$_POST['status']}/{$_POST['imagem_arq']}");
+      
+              $base64 = explode('base64,', $_POST['base64_arq']);
+              $img = base64_decode($base64[1]);
+              $ext = substr($_POST['imagem_nome_arq'], strripos($_POST['imagem_nome_arq'],'.'), strlen($_POST['imagem_nome_arq']));
+              $nome = md5($_POST['base64_arq'].$_POST['imagem_tipo_arq'].$_POST['imagem_nome_arq'].date("YmdHis")).$ext;
+      
+              if(!is_dir("../../volume/wapp/{$_POST['status']}")) mkdir("../../volume/wapp/{$_POST['status']}");
+              if(file_put_contents("../../volume/wapp/{$_POST['status']}/".$nome, $img)){
+                $dados['arquivo'] = $nome;
+              }
+            }
+            //Fim da Verificação da Imagem
+      
+            $campos = [];
+            foreach($dados as $i => $v){
+              $campos[] = "{$i} = '{$v}'";
+            }
+            if($_POST['codigo']){
+              $query = "UPDATE status set ".implode(", ",$campos)." WHERE codigo = '{$_POST['codigo']}'";
+              mysqli_query($con, $query);
+              $acao = mysqli_affected_rows($con);
+            }else{
+              $query = "INSERT INTO status set ".implode(", ",$campos)."";
+              mysqli_query($con, $query);
+              $acao = mysqli_affected_rows($con);
+            }
+      
+            if($acao){
+              echo "Atualização realizada com sucesso!";
+            }else{
+              echo "Nenhuma alteração foi registrada!";
+            }
+      
+            exit();
+      
+        }
+
+
         $query = "select * from status where codigo = '{$_POST['cod']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
@@ -26,13 +80,13 @@
 <form>
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" aria-describedby="nome_descricao">
+        <input type="text" class="form-control" id="nome" value="<?=$m->nome?>" aria-describedby="nome_descricao">
         <div id="nome_descricao" class="form-text">Digite o nome de identificação da mensagem</div>
     </div>
 
     <div class="mb-3">
         <label for="mensagem" class="form-label">Mensagem</label>
-        <textarea class="form-control" style="height:100px;" id="mensagem" name="mensagem" placeholder="Descrição do Banner"><?=$d->mensagem?></textarea>
+        <textarea class="form-control" style="height:100px;" id="mensagem" name="mensagem" placeholder="Descrição do Banner"><?=$m->mensagem?></textarea>
         <div id="mensagem_descricao" class="form-text">Digite conteúdo de sua mensagem</div>
     </div>
 
@@ -45,17 +99,45 @@
     <input type="hidden" id="base64_arq" name="base64_arq" value="" />
     <input type="hidden" id="imagem_tipo_arq" name="imagem_tipo_arq" value="" />
     <input type="hidden" id="imagem_nome_arq" name="imagem_nome_arq" value="" />
-    <input type="hidden" id="imagem_arq" name="imagem_arq" value="<?=$d->arquivo?>" />
+    <input type="hidden" id="imagem_arq" name="imagem_arq" value="<?=$m->arquivo?>" />
     <div class="form-text mb-3">Anexar um arquivo</div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
     <input type="hidden" name="status" id="status" value="<?=$d->codigo?>" />
+    <input type="hidden" id="acao" name="acao" value="salvar" >
+    <input type="hidden" id="codigo" name="codigo" value="<?=$m->codigo?>" >
 </form>
 
 <script>
 
 
 $(function(){
+
+
+    $( "form" ).on( "submit", function( event ) {
+
+        data = [];
+
+        event.preventDefault();
+
+        data = $( this ).serialize();
+
+        $.ajax({
+            url:"financeiro/status/conf_form.php",
+            type:"POST",
+            data,
+            success:function(dados){
+
+                $.ajax({
+                    url:"financeiro/status/conf_form.php",
+                    success:function(dados){
+                        $(".LateralDireita").html(dados);
+                    }
+                });
+
+            }
+        });
+    });
 
 
 
@@ -106,7 +188,7 @@ $(function(){
                             ctx.drawImage(img, 0, 0, img.width, img.height);
 
                             // $('.Foto').append(img);      // SHOW THE IMAGES OF THE BROWSER.
-                            console.log(canvas.toDataURL(file.type));
+                            // console.log(canvas.toDataURL(file.type));
 
                             ///////
 
