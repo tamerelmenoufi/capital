@@ -18,13 +18,13 @@
 </style>
 <h4 class="Titulo<?=$md5?>">Mensagens - Wapp</h4>
 
-<h5><?="{$d->ststus} - {$d->descricao}"?></h5>
+<h5><?="{$d->status} - {$d->descricao}"?></h5>
 
 <div class="d-flex flex-row-reverse">
     <button novo type="button" class="btn btn-success btn-sm">Novo</button>
 </div>
 <?php
-    $query = "select * from ststus_mensagem where ststus = '{$d->codigo}' order by codigo desc";
+    $query = "select * from ststus_mensagem where status = '{$d->codigo}' order by codigo desc";
     $result = mysqli_query($con, $query);
     while($m = mysqli_fetch_object($result)){
 ?>
