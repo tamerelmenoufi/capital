@@ -1,6 +1,15 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+        if($_POST['excluir']){
+
+            $e = mysqli_fetch_object(mysqli_query($con, "select * status_mensagens where codigo = '{$_POST['excluir']}'"));
+            if(is_file("../../volume/wapp/status/{$e->status}/{$e->arquivo}")) unlink("../../volume/wapp/status/{$e->status}/{$e->arquivo}");
+
+            mysqli_query($con, "delete from status_mensagens where codigo = '{$_POST['excluir']}'");
+
+        }
+
         $query = "select * from status where codigo = '{$_POST['cod']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
@@ -132,14 +141,13 @@
                                 btnClass:'btn btn-danger btn-sm',
                                 action:function(){
                                     $.ajax({
-                                        url:"financeira/status/enviarWapp.php",
+                                        url:"financeira/status/conf.php",
                                         type:"POST",
                                         data:{
-                                            envio
+                                            excluir
                                         },
                                         success:function(dados){
-                                            $.alert(dados);
-                                            //$(".LateralDireita").html(dados);
+                                            $(".LateralDireita").html(dados);
                                             // let myOffCanvas = document.getElementById('offcanvasDireita');
                                             // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
                                             // openedCanvas.hide();
