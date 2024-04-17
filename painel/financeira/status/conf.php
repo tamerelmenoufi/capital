@@ -1,8 +1,6 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-        print_r($_POST);
-
         $query = "select * from status where codigo = '{$_POST['cod']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
@@ -21,7 +19,7 @@
 <h5><?="{$d->status} - {$d->descricao}"?></h5>
 
 <div class="d-flex flex-row-reverse">
-    <button novo type="button" class="btn btn-success btn-sm">Novo</button>
+    <button novo type="button" class="btn btn-success btn-sm"><i class="fa-solid fa-comment-medical"></i> Novo</button>
 </div>
 <?php
     $query = "select * from status_mensagens where status = '{$d->codigo}' order by codigo desc";
@@ -79,7 +77,6 @@
             </div>
             <button class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-trash-can"></i> Excluir</button>
         </div>
-        <p></p>
   </div>
 </div>
 <?php
