@@ -12,7 +12,7 @@
   
     $query = "SELECT * FROM `wapp_config` where codigo = '1'";
     $result = mysqli_query($con, $query);
-    $d = mysql_fetch_object($result);
+    $d = mysqli_fetch_object($result);
     
 ?>
 
