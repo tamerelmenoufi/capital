@@ -16,7 +16,7 @@
         $dadosParaEnviar = http_build_query(
             array(
                 'numeros' => $numeros,
-                'mensagem' => (($d->mensagem)?:''),
+                'mensagem' => (($msg)?:''),
                 'instancia' => 2,
                 'tipo' => (($d->tipo)?:''), //img, arq
                 'arquivo' => (($d->arquivo)?"https://painel.capitalsolucoesam.com.br/volume/wapp/status/{$d->status}/{$d->arquivo}":'') //URL ou Bse64
