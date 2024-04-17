@@ -75,7 +75,7 @@ $(function(){
                         var Base64 = f.target.result;
                         var type = file.type;
                         var name = file.name;
-
+                        console.log(type);
                         if(type.indexOf("image")){
 
                         //*
@@ -136,14 +136,13 @@ $(function(){
                             var type = file.type;
                             var name = file.name;
 
-                            if(opc == 'mb'){
-                                $("#base64_arq").val(Base64);
-                                $("#imagem_tipo_arq").val(type);
-                                $("#imagem_nome_arq").val(name);
+                            $("#base64_arq").val(Base64);
+                            $("#imagem_tipo_arq").val(type);
+                            $("#imagem_nome_arq").val(name);
 
-                                $("div[showImage_arq] img").attr("src",Base64);
-                                $("div[showImage_arq]").css("display",'block');
-                            }
+                            $("div[showImage_arq] img").attr("src",Base64);
+                            $("div[showImage_arq]").css("display",'block');
+                        
                         }
 
 
