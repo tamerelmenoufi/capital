@@ -62,7 +62,7 @@
         }
 
 
-        $query = "select * from status where codigo = '{$_POST['editar']}'";
+        $query = "select * from status where codigo = '{$_POST['cod']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 
@@ -80,7 +80,7 @@
 <h5><?="{$d->status} - {$d->descricao}"?></h5>
 
 <?php
-    $query = "select * from status_mensagens where codigo = '{$_POST['msg']}'";
+    $query = "select * from status_mensagens where codigo = '{$_POST['editar']}'";
     $result = mysqli_query($con, $query);
     $m = mysqli_fetch_object($result);
 ?>
