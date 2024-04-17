@@ -13,6 +13,7 @@
             unset($dados['base64_arq']);
             unset($dados['imagem_tipo_arq']);
             unset($dados['imagem_nome_arq']);
+            unset($dados['imagem_arq']);
       
             if($_POST['base64_arq'] and $_POST['imagem_tipo_arq'] and $_POST['imagem_nome_arq']){
       
@@ -108,6 +109,7 @@
     <input type="hidden" name="status" id="status" value="<?=$d->codigo?>" />
     <input type="hidden" id="acao" name="acao" value="salvar" >
     <input type="hidden" id="codigo" name="codigo" value="<?=$m->codigo?>" >
+    <input type="hidden" id="tipo_arquivo" name="tipo_arquivo" value="<?=$m->tipo_arquivo?>" >
 </form>
 
 <script>
@@ -204,6 +206,7 @@ $(function(){
                             $("#base64_arq").val(Base64);
                             $("#imagem_tipo_arq").val(type);
                             $("#imagem_nome_arq").val(name);
+                            $("#tipo_arquivo").val('img');
 
                             $("div[showImage_arq] img").attr("src",Base64);
                             $("div[showImage_arq]").css("display",'block');
@@ -227,12 +230,12 @@ $(function(){
                             $("#base64_arq").val(Base64);
                             $("#imagem_tipo_arq").val(type);
                             $("#imagem_nome_arq").val(name);
+                            $("#tipo_arquivo").val('arq');
 
                             $("div[showImage_arq] img").attr("src",Base64);
                             $("div[showImage_arq]").css("display",'block');
                         
                         }
-
 
 
                     };
