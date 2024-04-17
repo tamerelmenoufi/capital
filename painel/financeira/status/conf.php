@@ -7,7 +7,7 @@
             
             if(is_file("../../volume/wapp/status/{$e->status}/{$e->arquivo}")) unlink("../../volume/wapp/status/{$e->status}/{$e->arquivo}");
             
-            //mysqli_query($con, "delete from status_mensagens where codigo = '{$_POST['excluir']}'");
+            mysqli_query($con, "delete from status_mensagens where codigo = '{$_POST['excluir']}'");
 
         }
 

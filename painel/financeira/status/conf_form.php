@@ -17,7 +17,7 @@
       
             if($_POST['base64_arq'] and $_POST['imagem_tipo_arq'] and $_POST['imagem_nome_arq']){
       
-              if($_POST['imagem_arq']) unlink("../../volume/wapp/{$_POST['status']}/{$_POST['imagem_arq']}");
+              if(is_file("../../volume/wapp/status/{$_POST['status']}/{$_POST['imagem_arq']}")) unlink("../../volume/wapp/status/{$_POST['status']}/{$_POST['imagem_arq']}");
       
               $base64 = explode('base64,', $_POST['base64_arq']);
               $img = base64_decode($base64[1]);
