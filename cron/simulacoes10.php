@@ -87,7 +87,7 @@
                 $wgw->SendTxt([
                     'de' => $ConfWappNumero,
                     'para' => '5592981490562',
-                    'mensagem' => "Proposta gerada com sucesso para {$d->nome} - CPF: {$d->cpf}\nContato de telefone +55{$d->phoneNumber}"
+                    'mensagem' => "Proposta gerada com sucesso para {$d->nome}\nContato de telefone +55{$d->phoneNumber}"
                 ]);
 
                 $nome = explode(" ",trim($d->nome))[0];
