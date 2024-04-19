@@ -46,10 +46,13 @@
 
 
 
-        $query = "select * from clientes where simulacao_10 = '0' and cpf != '' limit 5";
+        $query = "select * from clientes where simulacao_10 = '0' and cpf != '' limit 1";
         $result = sisLog( $query);
         while($d = mysqli_fetch_object($result)){
             set_time_limit(90);
+
+            mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
+
             //$tabela_padrao = $tabela_padrao;
             $tabela_escolhida = $tabela_padrao;
 
@@ -79,6 +82,7 @@
             $verifica = json_decode($simulacao);
 
             if($verifica->statusCode == 200){
+
                 $wgw = new wgw;
                 $wgw->SendTxt([
                     'de' => $ConfWappNumero,
@@ -124,14 +128,13 @@
             $proposta = mysqli_insert_id($con);
             $verifica = mysqli_num_rows(mysqli_query($con, "select * from consultas_log where log_unico = '".md5($simulacao.$proposta)."'"));
             if(!$verifica){
-            consulta_logs([
-                'proposta' => $proposta,
-                'consulta' => $simulacao,
-                'codUsr' => $d->codigo
-            ]);
+                consulta_logs([
+                    'proposta' => $proposta,
+                    'consulta' => $simulacao,
+                    'codUsr' => $d->codigo
+                ]);
             }
 
-            mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
         }
         // exit();
 
