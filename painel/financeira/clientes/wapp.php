@@ -35,7 +35,7 @@
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Mensagens WhatsApp</h4>
-
-<h5><?=$c->nome?></h5>
-<h6><?=$c->cpf?></h6>
+<div class="topo<?=$md5?>"><h5><?=$c->nome?><?=$c->cpf?></h5></div>
+<div class="palco<?=$md5?>"></div>
+<div class="rodape<?=$md5?>"></div>
 
