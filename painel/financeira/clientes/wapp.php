@@ -24,7 +24,7 @@
         background:yellow;
         width:100%;
         bottom:150px;
-        top:40px;        
+        top:90px;        
     }    
     .rodape<?=$md5?>{
         position:absolute;
