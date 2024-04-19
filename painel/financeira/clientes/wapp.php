@@ -8,7 +8,7 @@
     }
 
     if($_POST['acao'] == 'receber'){
-        $query = "select * from wapp_chat where de '{$_POST['de']}' and para = '{$_POST['para']}' and data > '{$_POST['data']}' order by data desc ";
+        echo $query = "select * from wapp_chat where de '{$_POST['de']}' and para = '{$_POST['para']}' and data > '{$_POST['data']}' order by data desc ";
         $result = mysqli_query($con, $query);
         $retorno = [];
         while($d = mysqli_fetch_object($result)){
