@@ -23,11 +23,14 @@
     }
     .palco<?=$md5?>{
         position:absolute;
-        background:yellow;
         left:0;
+        top:90px;
+        bottom:85px;
         right:0;
-        bottom:150px;
-        top:90px;        
+        background-color:#f7f7f7;
+        overflow:auto;
+        border-left:3px solid #e4e4e4;
+        padding:10px;      
     }    
     .rodape<?=$md5?>{
         position:absolute;
