@@ -25,6 +25,8 @@
 
     $c = mysqli_fetch_object(mysqli_query($con, "select * from clientes where codigo = '{$_POST['mensagens']}'"));
 
+    $phoneNumber = str_replace([' ','-','(',')'],false,trim($c->phoneNumber));
+
 ?>
 
 <style>
@@ -65,7 +67,34 @@
 </style>
 <h4 class="Titulo<?=$md5?>">Mensagens WhatsApp</h4>
 <div class="topo<?=$md5?>"><i class="fa-regular fa-comment-dots"></i> <?=$c->nome?></div>
-<div class="palco<?=$md5?>"></div>
+<div class="palco<?=$md5?>">
+    <?php
+        $query = "select * from wapp_chat where (de = '{$ConfWappNumero}' and para = '{$phoneNumber}' or de = '{$phoneNumber}' and para = '{$ConfWappNumero}') order by data asc";
+        $result = mysqli_query($con, $query);
+        while($m = mysqli_fetch_object($result)){
+
+            if($m->de == $ConfWappNumero){
+    ?>
+            <div class="d-flex flex-row-reverse">
+                <div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">
+                    <div class="text-start" style="border:solid 0px red;"><?=$m->mensagem?></div>
+                    <div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;"><?=dataBr($m->data)?></div>
+                </div>
+            </div>
+    <?php
+            }else{
+    ?>
+            <div class="d-flex flex-row">
+                <div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">
+                    <div class="text-start" style="border:solid 0px red;"><?=$m->mensagem?></div>
+                    <div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;"><?=dataBr($m->data)?></div>
+                </div>
+            </div>
+    <?php
+            }
+        }
+    ?>
+</div>
 <div class="rodape<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center m-3">
         <i class="fa-regular fa-face-smile p-3"></i>
@@ -78,8 +107,6 @@
 <script>
     $(function(){
         
-        
-
 
         $("#chatMensagem").keypress(function(e){
             val = $(this).val();
@@ -90,16 +117,9 @@
                      '</div>' +
                      '</div>';
 
-            layout2 = '<div class="d-flex flex-row">'+
-                     '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
-                     '<div class="text-start" style="border:solid 0px red;">'+val+'</div>' +
-                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">12:17</div>' +
-                     '</div>' +
-                     '</div>';
-
             if(e.which == 13 && val) {
                 $(".palco<?=$md5?>").append(layout);
-                $(".palco<?=$md5?>").append(layout2);
+                
                 $("#chatMensagem").val('');
 
                 altura = $(".palco<?=$md5?>").prop("scrollHeight");
@@ -111,8 +131,8 @@
                     type:"POST",
                     data:{
                         mensagem:val,
-                        de:'<?=str_replace([' ','-','(',')'],false,trim($ConfWappNumero))?>',
-                        para:'<?=str_replace([' ','-','(',')'],false,trim($c->phoneNumber))?>',
+                        de:'<?=$ConfWappNumero?>',
+                        para:'<?=$phoneNumber?>',
                         acao:'enviar'
                     },
                     success:function(dados){
@@ -129,8 +149,8 @@
                 type:"POST",
                 dataType:"JSON",
                 data:{
-                    de:'<?=str_replace([' ','-','(',')'],false,trim($c->phoneNumber))?>',
-                    para:'<?=str_replace([' ','-','(',')'],false,trim($ConfWappNumero))?>',
+                    de:'<?=$ConfWappNumero?>',
+                    para:'<?=$phoneNumber?>',
                     acao:'receber'
                 },
                 success:function(dados){
