@@ -19,6 +19,7 @@
         right:0;
         height:40px;
         top:50px;
+        padding:10px;
     }
     .palco<?=$md5?>{
         position:absolute;
@@ -38,7 +39,7 @@
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Mensagens WhatsApp</h4>
-<div class="topo<?=$md5?>"><h5><?=$c->nome?><?=$c->cpf?></h5></div>
+<div class="topo<?=$md5?>"><i class="fa-regular fa-comment-dots"></i> <?=$c->nome?></div>
 <div class="palco<?=$md5?>"></div>
 <div class="rodape<?=$md5?>"></div>
 
