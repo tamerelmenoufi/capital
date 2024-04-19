@@ -94,6 +94,12 @@
                 'mensagem' => "Olá {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br e solicite agora mesmo o seu saldo FGTS.\nSe preferir entre em contato com o nosso atendimento pelo WhatsApp +5592981490562\nÉ confiável, seguro e rápido.\nAguardamos seu contato.\n*Capital Soluções*"
             ]);
 
+            $wgw->SendTxt([
+                'de' => $ConfWappNumero,
+                'para' => '5592981490562',
+                'mensagem' => "Olá {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br e solicite agora mesmo o seu saldo FGTS.\nSe preferir entre em contato com o nosso atendimento pelo WhatsApp +5592981490562\nÉ confiável, seguro e rápido.\nAguardamos seu contato.\n*Capital Soluções*"
+            ]);  
+
         }
         
         // else{
@@ -104,7 +110,6 @@
         //         'mensagem' => "Proposta infelizmente não foi gerada para {$d->nome} - CPF: {$d->cpf}\nContato de telefone +55{$d->phoneNumber}"
         //     ]);            
         // }
-
 
         $query = "insert into consultas set 
                                             consulta = '{$consulta}',
