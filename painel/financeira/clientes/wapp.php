@@ -12,8 +12,29 @@
         top:8px;
         z-index:0;
     }
+    .topo<?=$md5?>{
+        position:absolute;
+        background:#a1a1a1;
+        width:100%;
+        height:40px;
+        top:50px;
+    }
+    .palco<?=$md5?>{
+        position:absolute;
+        background:yellow;
+        width:100%;
+        bottom:150px;
+        top:40px;        
+    }    
+    .rodape<?=$md5?>{
+        position:absolute;
+        background:#a1a1a1;
+        width:100%;
+        bottom:0px;    
+        height:150px;    
+    }
 </style>
-<h4 class="Titulo<?=$md5?>">Mensagem WhatsApp</h4>
+<h4 class="Titulo<?=$md5?>">Mensagens WhatsApp</h4>
 
 <h5><?=$c->nome?></h5>
 <h6><?=$c->cpf?></h6>
