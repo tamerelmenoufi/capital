@@ -47,11 +47,11 @@ class wgw {
 
         $this->acao(['acao'=>'d','para'=>$dados['para']]);
 
-        sleep(20);
+        // sleep(20);
 
         $this->acao(['acao'=>'d','para'=>$dados['para']]);
 
-        sleep(1);
+        // sleep(1);
 
         $curl = curl_init();
         
@@ -90,11 +90,11 @@ class wgw {
 
         $this->acao(['acao'=>'g','para'=>$dados['para']]);
 
-        sleep(20);
+        // sleep(20);
 
         $this->acao(['acao'=>'p','para'=>$dados['para']]);
         
-        sleep(1);
+        // sleep(1);
 
         $curl = curl_init();
 
