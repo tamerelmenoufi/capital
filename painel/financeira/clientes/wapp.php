@@ -50,3 +50,8 @@
     </div>
 </div>
 
+<script>
+    $(function(){
+        $("#chatMensagem").focus();
+    })
+</script>
