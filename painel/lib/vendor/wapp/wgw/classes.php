@@ -8,7 +8,7 @@ class wgw {
         return $Conf['wgw-key'];
     }
 
-    public function acao($dados = 'd'){
+    public function acao($dados = false){
         global $ConfWappNumero;
         $acao = [
             'd' => 'SendChatStateComposing',
@@ -49,7 +49,7 @@ class wgw {
 
         sleep(20);
 
-        $this->acao('p');
+        $this->acao(['acao'=>'d','para'=>$dados['para']]);
 
         sleep(1);
 
