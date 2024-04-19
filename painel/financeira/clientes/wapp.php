@@ -111,8 +111,8 @@
                     type:"POST",
                     data:{
                         mensagem:val,
-                        de:'<?=str_replace([' ','-','(',')',false],trim($ConfWappNumero))?>',
-                        para:'<?=str_replace([' ','-','(',')',false],trim($c->telefone))?>',
+                        de:'<?=str_replace([' ','-','(',')'],false,trim($ConfWappNumero))?>',
+                        para:'<?=str_replace([' ','-','(',')'],false,trim($c->telefone))?>',
                         acao:'enviar'
                     },
                     success:function(dados){
@@ -129,8 +129,8 @@
                 type:"POST",
                 dataType:"JSON",
                 data:{
-                    de:'<?=str_replace([' ','-','(',')',false],trim($c->telefone))?>',
-                    para:'<?=str_replace([' ','-','(',')',false],trim($ConfWappNumero))?>',
+                    de:'<?=str_replace([' ','-','(',')'],false,trim($c->telefone))?>',
+                    para:'<?=str_replace([' ','-','(',')'],false,trim($ConfWappNumero))?>',
                     acao:'receber'
                 },
                 success:function(dados){
