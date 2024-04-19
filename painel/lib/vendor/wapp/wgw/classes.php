@@ -28,7 +28,7 @@ class wgw {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => 'apikey='.$this->key().'&phone_number=12046500801&contact_phone_number=5592991886570',
+        CURLOPT_POSTFIELDS => 'apikey='.$this->key().'&phone_number=12266700079&contact_phone_number=5592991886570',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/x-www-form-urlencoded'
         ),
@@ -105,7 +105,7 @@ class wgw {
           CURLOPT_CUSTOMREQUEST => 'POST',
           CURLOPT_POSTFIELDS =>'{
         "apikey" : "'.$this->key().'",
-        "phone_number" : "12046500801",
+        "phone_number" : "12266700079",
         "contact_phone_number" : "5592991886570",
         "message_custom_id" : "'.date("YmdHis").'",
         "message_type" : "ptt",
