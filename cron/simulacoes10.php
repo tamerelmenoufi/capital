@@ -85,7 +85,24 @@
                 'para' => '5592981490562',
                 'mensagem' => "Proposta gerada com sucesso para {$d->nome} - CPF: {$d->cpf}\nContato de telefone +55{$d->phoneNumber}"
             ]);
+
+            $nome = explode(" ",trim($d->nome))[0];
+            $valor = number_format($verifica->data->simulationData->totalReleasedAmount,2,',','.');
+            $wgw->SendTxt([
+                'de' => $ConfWappNumero,
+                'para' => '55'.str_replace(['(',')',' ','-'],false,trim($d->phoneNumber)),
+                'mensagem' => "Olá {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br e solicite agora mesmo a o seu saldo FGTS.\nSe preferir entre em contato com o nosso atendimento pelo WhatsApp +5592981490562\nÉ confiável, seguro e rápido.\nAguardamos seu contato.\n*Capital Soluções*"
+            ]);
+
         }
+
+        $wgw = new wgw;
+        $wgw->SendTxt([
+            'de' => $ConfWappNumero,
+            'para' => '5592991886570',
+            'mensagem' => "Olá {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br e solicite agora mesmo a o seu saldo FGTS.\nSe preferir entre em contato com o nosso atendimento pelo WhatsApp +5592981490562\nÉ confiável, seguro e rápido.\nAguardamos seu contato.\n*Capital Soluções*"
+        ]);
+        
         // else{
         //     $wgw = new wgw;
         //     $wgw->SendTxt([
