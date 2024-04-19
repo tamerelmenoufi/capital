@@ -160,7 +160,7 @@
 
                     console.log(dados);
 
-                    dados.each(function(r){
+                    dados.foreach(function(r){
 
                         layout = '<div class="d-flex flex-row">'+
                         '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
