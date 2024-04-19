@@ -152,8 +152,8 @@
                 type:"POST",
                 dataType:"JSON",
                 data:{
-                    de:'<?=$ConfWappNumero?>',
-                    para:'<?=$phoneNumber?>',
+                    de:'<?=$phoneNumber?>',
+                    para:'<?=$ConfWappNumero?>',
                     ultimo_acesso,
                     acao:'receber'
                 },
