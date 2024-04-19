@@ -232,6 +232,18 @@
                           aria-controls="offcanvasDireita"
                         ><i class="fa-solid fa-clipboard-list"></i> Eventos</a></li>
                         <?php
+                        if($_SESSION['ProjectPainel']->codigo == 2){
+                        ?>
+                        <li><a 
+                          class="dropdown-item" 
+                          mensagens="<?=$d->codigo?>"
+                          data-bs-toggle="offcanvas"
+                          href="#offcanvasDireita"
+                          role="button"
+                          aria-controls="offcanvasDireita"
+                        ><i class="fa-brands fa-whatsapp"></i> Mensagens</a></li>
+                        <?php
+                        }
                         if(!$del){
                         ?>
                         <li><a class="dropdown-item" href="#" delete="<?=$d->codigo?>"><i class="fa-solid fa-trash-can"></i> Excluir</a></li>
@@ -410,6 +422,20 @@
                 type:"POST",
                 data:{
                   cliente
+                },
+                success:function(dados){
+                  $(".LateralDireita").html(dados);
+                }
+            })
+        })
+
+        $("a[mensagens]").click(function(){
+            mensagem = $(this).attr("logs");
+            $.ajax({
+                url:"financeira/clientes/wapp.php",
+                type:"POST",
+                data:{
+                  mensagem
                 },
                 success:function(dados){
                   $(".LateralDireita").html(dados);
