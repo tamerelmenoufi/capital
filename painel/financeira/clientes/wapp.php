@@ -3,7 +3,16 @@
 
     if($_POST['acao'] == 'enviar'){
         $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
-        mysqli_query($con, $query);
+        if(mysqli_query($con, $query)){
+
+            $wgw = new wgw;
+            $wgw->SendTxt([
+              'mensagem'=>$_POST['mensagem'],
+              'para'=>'55'.$_POST['para']
+            ]);
+
+        }
+
         exit();
     }
 
