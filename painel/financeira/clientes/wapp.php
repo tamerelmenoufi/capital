@@ -35,7 +35,7 @@
         left:0;
         right:0;
         bottom:0px;    
-        height:150px;    
+        height:85px;    
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Mensagens WhatsApp</h4>
