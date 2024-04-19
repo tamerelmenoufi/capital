@@ -11,6 +11,8 @@
     include("/capitalinc/connect.php");
     $con = AppConnect('capital');
 
+    $ConfWappNumero = '12046500801';
+
     //Configurações diversas
     include("/capitalinc/config.php");
 
@@ -35,4 +37,4 @@
     $localPainel = "https://painel.capitalsolucoesam.com.br/";
     $localSite = "https://capitalsolucoesam.com.br/";
 
-    $ConfWappNumero = '12046500801';
+    
