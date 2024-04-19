@@ -15,21 +15,24 @@
     .topo<?=$md5?>{
         position:absolute;
         background:#a1a1a1;
-        width:100%;
+        left:0;
+        right:0;
         height:40px;
         top:50px;
     }
     .palco<?=$md5?>{
         position:absolute;
         background:yellow;
-        width:100%;
+        left:0;
+        right:0;
         bottom:150px;
         top:90px;        
     }    
     .rodape<?=$md5?>{
         position:absolute;
         background:#a1a1a1;
-        width:100%;
+        left:0;
+        right:0;
         bottom:0px;    
         height:150px;    
     }
