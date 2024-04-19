@@ -15,6 +15,7 @@
             $retorno[] = [
                 'de'=>$d->de,
                 'para'=>$d->para,
+                'mensagem'=>$d->mensagem,
                 'data'=>dataBr($d->data),
                 'ultimo_acesso'=>$d->data
             ];
@@ -179,7 +180,7 @@
 
                 }
             });
-        }, 1000);
+        }, 10000);
 
     })
 </script>
