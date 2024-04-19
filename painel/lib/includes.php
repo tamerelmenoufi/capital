@@ -11,7 +11,7 @@
     include("/capitalinc/connect.php");
     $con = AppConnect('capital');
 
-    $ConfWappNumero = '12046500801';
+    $ConfWappNumero = '12266700079';
 
     //Configurações diversas
     include("/capitalinc/config.php");
