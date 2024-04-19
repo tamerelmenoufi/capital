@@ -92,6 +92,7 @@
             </div>
     <?php
             }
+            $ultimo_acesso = $m->data;
         }
     ?>
 </div>
@@ -119,7 +120,7 @@
 
             if(e.which == 13 && val) {
                 $(".palco<?=$md5?>").append(layout);
-                
+
                 $("#chatMensagem").val('');
 
                 altura = $(".palco<?=$md5?>").prop("scrollHeight");
@@ -144,6 +145,7 @@
 
 
         verificarMensagem = setInterval(() => {
+            ultimo_acesso = $("#chatMensagem").attr("ultimo_acesso");
             $.ajax({
                 url:"inanceira/clientes/wapp.php",
                 type:"POST",
@@ -151,6 +153,7 @@
                 data:{
                     de:'<?=$ConfWappNumero?>',
                     para:'<?=$phoneNumber?>',
+                    ultimo_acesso,
                     acao:'receber'
                 },
                 success:function(dados){
