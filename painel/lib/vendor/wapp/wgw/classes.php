@@ -86,6 +86,8 @@ class wgw {
 
     public function SendAudio($dados = false){
 
+      global $ConfWappNumero;
+
         $this->acao(['acao'=>'g','para'=>$dados['para']]);
 
         sleep(20);
