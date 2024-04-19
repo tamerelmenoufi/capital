@@ -76,6 +76,24 @@
 
         $consulta = uniqid();
 
+        $verifica = json_decode($simulacao);
+
+        if($verifica->statusCode == 200){
+            $wgw = new wgw;
+            $wgw->SendTxt([
+                'de' => $ConfWappNumero,
+                'para' => '5592991886570',
+                'mensagem' => "Proposta gerada com sucesso para {$d->nome} - CPF: {$d->cpf}\nContato de telefone +55{$d->phoneNumber}"
+            ]);
+        }else{
+            $wgw = new wgw;
+            $wgw->SendTxt([
+                'de' => $ConfWappNumero,
+                'para' => '5592991886570',
+                'mensagem' => "Proposta infelizmente não foi gerada para {$d->nome} - CPF: {$d->cpf}\nContato de telefone +55{$d->phoneNumber}"
+            ]);            
+        }
+
 
         $query = "insert into consultas set 
                                             consulta = '{$consulta}',

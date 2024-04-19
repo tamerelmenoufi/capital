@@ -64,11 +64,11 @@ class wgw {
           CURLOPT_CUSTOMREQUEST => 'POST',
           CURLOPT_POSTFIELDS =>'{
         "apikey" : "'.$this->key().'",
-        "phone_number" : "12046500801",
-        "contact_phone_number" : "5592991886570",
+        "phone_number" : "'.$dados['de'].'",
+        "contact_phone_number" : "'.$dados['para'].'",
         "message_custom_id" : "'.date("YmdHis").'",
         "message_type" : "text",
-        "message_body" : "Teste de Msg\\n_Italico_ \\n*negrito*\\n~tachado~\\n```Monoespaçado```\\n😜"
+        "message_body" : "'.$dados['mensagem'].'"
         }',
           CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json'
