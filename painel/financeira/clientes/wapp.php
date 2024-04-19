@@ -2,10 +2,26 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if($_POST['acao'] == 'enviar'){
-        $query = "select";
+        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
+        mysqli_query($con, $query);
         exit();
     }
 
+    if($_POST['acao'] == 'receber'){
+        $query = "select * from wapp_chat where de '{$_POST['de']}' and para = '{$_POST['para']}' and data > '{$_POST['data']}' order by data desc ";
+        $result = mysqli_query($con, $query);
+        $retorno = [];
+        while($d = mysqli_fetch_object($result)){
+            $retorno[] = [
+                'de'=>$d->de,
+                'para'=>$d->para,
+                'data'=>dataBr($d->data),
+                'ultimo_acesso'=>$d->data
+            ];
+        }
+        echo json_encode($retorno);
+        exit();
+    }
 
     $c = mysqli_fetch_object(mysqli_query($con, "select * from clientes where codigo = '{$_POST['mensagens']}'"));
 
@@ -53,7 +69,7 @@
 <div class="rodape<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center m-3">
         <i class="fa-regular fa-face-smile p-3"></i>
-        <input type="text" class="form-control p-3" id="chatMensagem" aria-describedby="chatMensagem">
+        <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
         <i class="fa-solid fa-microphone p-3"></i>
         <i class="fa-regular fa-paper-plane p-3"></i>
     </div>
@@ -119,19 +135,22 @@
                 },
                 success:function(dados){
 
+                    dados.each(function(r){
 
-                    layout = '<div class="d-flex flex-row">'+
-                     '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
-                     '<div class="text-start" style="border:solid 0px red;">'+dados.mensagem+'</div>' +
-                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+dados.data+'</div>' +
-                     '</div>' +
-                     '</div>';
+                        layout = '<div class="d-flex flex-row">'+
+                        '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+                        '<div class="text-start" style="border:solid 0px red;">'+r.mensagem+'</div>' +
+                        '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+r.data+'</div>' +
+                        '</div>' +
+                        '</div>';
 
-                    $(".palco<?=$md5?>").append(layout);
+                        $(".palco<?=$md5?>").append(layout);
 
-                    altura = $(".palco<?=$md5?>").prop("scrollHeight");
-                    div = $(".palco<?=$md5?>").height();
-                    $(".palco<?=$md5?>").scrollTop(altura + div);
+                        altura = $(".palco<?=$md5?>").prop("scrollHeight");
+                        div = $(".palco<?=$md5?>").height();
+                        $(".palco<?=$md5?>").scrollTop(altura + div);    
+                        $("#chatMensagem").attr('ultimo_acesso', r.ultimo_acesso);                    
+                    })
 
                     console.log(dados);
                 }
