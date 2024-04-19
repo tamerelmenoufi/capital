@@ -9,7 +9,7 @@ class wgw {
     }
 
     public function acao($dados = 'd'){
-
+        global $ConfWappNumero;
         $acao = [
             'd' => 'SendChatStateComposing',
             'g' => 'SendChatStateRecording',
@@ -20,7 +20,7 @@ class wgw {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://app.whatsgw.com.br/api/WhatsGw/'.$acao[$dados],
+        CURLOPT_URL => 'https://app.whatsgw.com.br/api/WhatsGw/'.$acao[$dados['acao']],
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -28,7 +28,7 @@ class wgw {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => 'apikey='.$this->key().'&phone_number=12266700079&contact_phone_number=5592991886570',
+        CURLOPT_POSTFIELDS => 'apikey='.$this->key().'&phone_number='.$ConfWappNumero.'&contact_phone_number='.$dados['para'],
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/x-www-form-urlencoded'
         ),
@@ -43,7 +43,9 @@ class wgw {
 
     public function SendTxt($dados = false){
 
-        $this->acao('d');
+      global $ConfWappNumero;
+
+        $this->acao(['acao'=>'d','para'=>$dados['para']]);
 
         sleep(20);
 
@@ -64,7 +66,7 @@ class wgw {
           CURLOPT_CUSTOMREQUEST => 'POST',
           CURLOPT_POSTFIELDS =>'{
         "apikey" : "'.$this->key().'",
-        "phone_number" : "'.$dados['de'].'",
+        "phone_number" : "'.$ConfWappNumero.'",
         "contact_phone_number" : "'.$dados['para'].'",
         "message_custom_id" : "'.date("YmdHis").'",
         "message_type" : "text",
@@ -84,12 +86,12 @@ class wgw {
 
     public function SendAudio($dados = false){
 
-        $this->acao('g');
+        $this->acao(['acao'=>'g','para'=>$dados['para']]);
 
         sleep(20);
 
-        $this->acao('p');
-
+        $this->acao(['acao'=>'p','para'=>$dados['para']]);
+        
         sleep(1);
 
         $curl = curl_init();
@@ -105,8 +107,8 @@ class wgw {
           CURLOPT_CUSTOMREQUEST => 'POST',
           CURLOPT_POSTFIELDS =>'{
         "apikey" : "'.$this->key().'",
-        "phone_number" : "12266700079",
-        "contact_phone_number" : "5592991886570",
+        "phone_number" : "'.$ConfWappNumero.'",
+        "contact_phone_number" : "'.$dados['para'].'",
         "message_custom_id" : "'.date("YmdHis").'",
         "message_type" : "ptt",
         "check_status" : "1",

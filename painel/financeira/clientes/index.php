@@ -5,10 +5,12 @@
       $wgw = new wgw;
       echo $wgw->SendTxt([
         'mensagem'=>'Envio de teste',
-        'de'=>'12266700079',
         'para'=>'5592991886570'
       ]);
-      echo $wgw->SendAudio();
+      echo $wgw->SendAudio([
+        'mensagem'=>'Envio de teste',
+        'para'=>'5592991886570'
+      ]);
       exit();
     }
 
