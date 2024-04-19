@@ -147,7 +147,7 @@
         verificarMensagem = setInterval(() => {
             ultimo_acesso = $("#chatMensagem").attr("ultimo_acesso");
             $.ajax({
-                url:"inanceira/clientes/wapp.php",
+                url:"financeira/clientes/wapp.php",
                 type:"POST",
                 dataType:"JSON",
                 data:{
