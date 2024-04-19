@@ -46,7 +46,7 @@
 
 
 
-        $query = "select * from clientes where simulacao_10 = '0' and cpf != '' limit 10";
+        $query = "select * from clientes where simulacao_10 = '0' and cpf != '' limit 5";
         $result = sisLog( $query);
         while($d = mysqli_fetch_object($result)){
             set_time_limit(90);
