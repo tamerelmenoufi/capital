@@ -149,7 +149,7 @@
             $.ajax({
                 url:"financeira/clientes/wapp.php",
                 type:"POST",
-                typeData:"JSON",
+                dataType:"JSON",
                 data:{
                     de:'<?=$ConfWappNumero?>',
                     para:'<?=$phoneNumber?>',
