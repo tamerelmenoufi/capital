@@ -1,6 +1,12 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    if($_POST['acao'] == 'enviar'){
+        $query = "select";
+        exit();
+    }
+
+
     $c = mysqli_fetch_object(mysqli_query($con, "select * from clientes where codigo = '{$_POST['mensagens']}'"));
 
 ?>
@@ -84,9 +90,53 @@
                 div = $(".palco<?=$md5?>").height();
                 $(".palco<?=$md5?>").scrollTop(altura + div);
 
+                $.ajax({
+                    url:"financeira/clientes/wapp.php",
+                    type:"POST",
+                    data:{
+                        mensagem:val,
+                        de:'<?=str_replace([' ','-','(',')',false],trim($ConfWappNumero))?>',
+                        para:'<?=str_replace([' ','-','(',')',false],trim($c->telefone))?>',
+                        acao:'enviar'
+                    },
+                    success:function(dados){
 
-                // console.log('precionei o teclado!' + val)
+                    }
+                })
             }
         });
+
+
+        verificarMensagem = setInterval(() => {
+            $.ajax({
+                url:"inanceira/clientes/wapp.php",
+                type:"POST",
+                dataType:"JSON",
+                data:{
+                    de:'<?=str_replace([' ','-','(',')',false],trim($c->telefone))?>',
+                    para:'<?=str_replace([' ','-','(',')',false],trim($ConfWappNumero))?>',
+                    acao:'receber'
+                },
+                success:function(dados){
+
+
+                    layout = '<div class="d-flex flex-row">'+
+                     '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+                     '<div class="text-start" style="border:solid 0px red;">'+dados.mensagem+'</div>' +
+                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+dados.data+'</div>' +
+                     '</div>' +
+                     '</div>';
+
+                    $(".palco<?=$md5?>").append(layout);
+
+                    altura = $(".palco<?=$md5?>").prop("scrollHeight");
+                    div = $(".palco<?=$md5?>").height();
+                    $(".palco<?=$md5?>").scrollTop(altura + div);
+
+                    console.log(dados);
+                }
+            });
+        }, 1000);
+
     })
 </script>

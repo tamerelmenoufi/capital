@@ -34,3 +34,5 @@
 
     $localPainel = "https://painel.capitalsolucoesam.com.br/";
     $localSite = "https://capitalsolucoesam.com.br/";
+
+    $ConfWappNumero = '12046500801';
