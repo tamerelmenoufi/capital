@@ -31,7 +31,7 @@
     }    
     .rodape<?=$md5?>{
         position:absolute;
-        background:#a1a1a1;
+        background:#eee;
         left:0;
         right:0;
         bottom:0px;    
