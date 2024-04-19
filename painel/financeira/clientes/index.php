@@ -430,7 +430,7 @@
         })
 
         $("a[mensagens]").click(function(){
-            mensagem = $(this).attr("logs");
+            mensagem = $(this).attr("mensagens");
             $.ajax({
                 url:"financeira/clientes/wapp.php",
                 type:"POST",
