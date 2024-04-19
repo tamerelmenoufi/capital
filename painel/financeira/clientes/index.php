@@ -3,7 +3,11 @@
 
     if($_POST['acao'] == 'wapp'){
       $wgw = new wgw;
-      // echo $wgw->SendTxt();
+      echo $wgw->SendTxt([
+        'mensagem'=>'Envio de teste',
+        'de'=>'12266700079',
+        'para'=>'5592991886570'
+      ]);
       echo $wgw->SendAudio();
       exit();
     }
