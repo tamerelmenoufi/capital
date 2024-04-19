@@ -14,7 +14,7 @@
     }
     .topo<?=$md5?>{
         position:absolute;
-        background:#a1a1a1;
+        background:#eee;
         left:0;
         right:0;
         height:40px;
