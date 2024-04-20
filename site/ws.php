@@ -12,7 +12,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
     <script>
-        const socket = io('https://capitalsolucoesam.com.br:3000');
+        const socket = io('http://206.81.10.165:3000');
 
         socket.on('chat message', function(msg){
             const messages = document.getElementById('messages');
