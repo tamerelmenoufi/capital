@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    exit();
+    // exit();
 
     function sendMultiple($msg){
         
@@ -22,7 +22,7 @@
 
 
 
-    $query = "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '2024-04-09%' and a.dados->>'$.statusCode' = '200' group by b.cpf order by b.nome asc";
+    $query = "select a.dados as log, a.cliente as cod_cliente, b.* from consultas a left join clientes b on a.cliente = b.codigo where a.data like '2024-04-19%' and a.dados->>'$.statusCode' = '200' group by b.cpf order by b.nome asc";
     $result = sisLog( $query);
     while($d = mysqli_fetch_object($result)){
 
@@ -33,7 +33,7 @@
 
     $mensagem = "Capital Soluções Informa: {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br é fácil, Rápido e Seguro.";
     $caracteres = strlen($mensagem); 
-    // echo $mensagem."<br>";
+    echo $mensagem."<br>";
     $msg_list[] = [
         'to' =>  str_replace(['(',')',' ','-'],false,$d->phoneNumber),
         'message' => $mensagem,
