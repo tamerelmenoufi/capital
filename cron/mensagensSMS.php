@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    // exit();
+    exit();
 
     function sendMultiple($msg){
         
