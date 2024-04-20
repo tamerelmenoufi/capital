@@ -168,15 +168,14 @@
                 },
                 success:function(dados){
 
-                    console.log(dados.length);
                     console.log(dados);
 
-                    for(i=0;i<dados.length;i++){
+                    $.each(dados, function () {
 
                         layout = '<div class="d-flex flex-row">'+
                         '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
-                        '<div class="text-start" style="border:solid 0px red;">'+dados[i].mensagem+'</div>' +
-                        '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+dados[i].data+'</div>' +
+                        '<div class="text-start" style="border:solid 0px red;">'+this.mensagem+'</div>' +
+                        '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+this.data+'</div>' +
                         '</div>' +
                         '</div>';
 
@@ -185,8 +184,9 @@
                         altura = $(".palco<?=$md5?>").prop("scrollHeight");
                         div = $(".palco<?=$md5?>").height();
                         $(".palco<?=$md5?>").scrollTop(altura + div);    
-                        $("#chatMensagem").attr('ultimo_acesso', dados[i].ultimo_acesso);                    
-                    }
+                        $("#chatMensagem").attr('ultimo_acesso', this.ultimo_acesso);   
+
+                    })
 
                 }
             });
