@@ -186,6 +186,12 @@ ANTECIPE SEU FGTS
   <script>
     $(function(){
 
+    $.dialog({
+      content:'url:popup.php',
+      title:'Dia de Antecipação FGTS',
+      columnClass:'col-6'
+    });
+
 
       $('.contagem').each(function () {
         console.log($(this).attr("valor"));
