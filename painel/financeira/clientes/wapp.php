@@ -168,6 +168,7 @@
                 },
                 success:function(dados){
 
+                    console.log(dados.length);
                     console.log(dados);
 
                     for(i=0;i<dados.length;i++){
