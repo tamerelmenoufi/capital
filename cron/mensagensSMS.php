@@ -33,7 +33,7 @@
 
     $mensagem = "Capital Soluções Informa: {$nome}, seu FGTS atualizou, já pode antecipar R\${$valor}. Acesse capitalsolucoesam.com.br é fácil, Rápido e Seguro.";
     $caracteres = strlen($mensagem); 
-    echo $mensagem."<br>";
+    // echo $mensagem."<br>";
     $msg_list[] = [
         'to' =>  str_replace(['(',')',' ','-'],false,$d->phoneNumber),
         'message' => $mensagem,
@@ -61,7 +61,7 @@
     
     // print_r($msg_list);
 
-    // $response = sendMultiple($msg_list);
+    if($_GET['p'] == 'xyz'){ $response = sendMultiple($msg_list); }else{ echo 'Sem autorização'; }
 
     // mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
 
