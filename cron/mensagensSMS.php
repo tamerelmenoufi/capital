@@ -13,7 +13,7 @@
                 'content' => $content,
             )
         ));
-                
+        
         echo $result = file_get_contents('http://sms.mohatron.com/pontal.php', null, $context);
         $r = json_decode($result);
         
@@ -64,8 +64,6 @@
     if($_GET['p'] == 'xyz'){ $response = sendMultiple($msg_list); }else{ echo 'Sem autorização'; }
 
     // mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
-
-
 
 
 
