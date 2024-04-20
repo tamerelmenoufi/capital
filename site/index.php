@@ -188,7 +188,7 @@ ANTECIPE SEU FGTS
 
     $.dialog({
       content:'url:popup.php',
-      title:'Dia de Antecipação FGTS',
+      title:'<h1 class="text-center">Dia de Antecipação FGTS</h1>',
       columnClass:'col-12'
     });
 
