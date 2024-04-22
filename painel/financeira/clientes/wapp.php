@@ -118,7 +118,9 @@
 <script>
     $(function(){
         
-        
+        altura = $(".palco<?=$md5?>").prop("scrollHeight");
+        div = $(".palco<?=$md5?>").height();
+        $(".palco<?=$md5?>").scrollTop(altura + div);
 
 
         $("#chatMensagem").keypress(function(e){
