@@ -6,26 +6,29 @@
     <title>WebSocket Client</title>
 </head>
 <body>
-    <input id="messageInput" type="text">
-    <button onclick="sendMessage()">Send Message</button>
-    <ul id="messages"></ul>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <h1>WebSocket Client</h1>
+    <input type="text" id="messageInput" placeholder="Digite sua mensagem">
+    <button onclick="sendMessage()">Enviar</button>
+    <div id="messages"></div>
+    
     <script>
-        const socket = io('http://206.81.10.165:3000');
+        const socket = new WebSocket('ws://capitalsolucoesam.com.br:3000');
+        const messagesDiv = document.getElementById('messages');
 
-        socket.on('chat message', function(msg){
-            const messages = document.getElementById('messages');
-            const li = document.createElement('li');
-            li.textContent = msg;
-            messages.appendChild(li);
-        });
+        socket.onopen = function () {
+            console.log('Conexão estabelecida com sucesso.');
+        };
+
+        socket.onmessage = function (event) {
+            const message = event.data;
+            messagesDiv.innerHTML += `<div>${message}</div>`;
+        };
 
         function sendMessage() {
-            const input = document.getElementById('messageInput');
-            const message = input.value;
-            socket.emit('chat message', message);
-            input.value = '';
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+            socket.send(message);
+            messageInput.value = '';
         }
     </script>
 </body>
