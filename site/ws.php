@@ -59,6 +59,15 @@
         socket.onerror = function(error) {
         alert(`[error]`);
         };
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+            console.log(message);
+            socket.send(message);
+            console.log('mensagem enviada')
+            messageInput.value = '';
+        }
     </script>
 </body>
 </html>
