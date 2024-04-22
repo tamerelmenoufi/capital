@@ -45,13 +45,23 @@
     }
 
 
-
-        $query = "select * from clientes where simulacao_10 = '0' and cpf != '' limit 1";
+        $cods = [];
+        $query = "select * from clientes where simulacao_10 = '0' and cpf != '' limit 10";
         $result = sisLog( $query);
         while($d = mysqli_fetch_object($result)){
+            $cods[] = $d->codigo;
+        }
+
+        if(!$cods) exit();
+
+        mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo in (".implode(",", $cods).")");
+
+        $query = "select * from clientes where codigo in (".implode(",", $cods).")";
+        $result = sisLog( $query);
+        while($d = mysqli_fetch_object($result)){        
             set_time_limit(90);
 
-            mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
+            //mysqli_query($con, "update clientes set simulacao_10 = '1' where codigo = '{$d->codigo}'");
 
             //$tabela_padrao = $tabela_padrao;
             $tabela_escolhida = $tabela_padrao;
