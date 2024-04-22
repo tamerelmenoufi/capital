@@ -21,6 +21,7 @@
 
         socket.onmessage = function (event) {
             const message = event.data;
+            console.log(message)
             messagesDiv.innerHTML += `<div>${message}</div>`;
         };
 
