@@ -12,7 +12,7 @@
     <div id="messages"></div>
     
     <script>
-        const socket = new WebSocket('ws://capitalsolucoesam.com.br:3000');
+        const socket = new WebSocket('wss://capitalsolucoesam.com.br:3000');
         const messagesDiv = document.getElementById('messages');
 
         socket.onopen = function () {
