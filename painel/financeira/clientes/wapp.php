@@ -118,6 +118,8 @@
 <script>
     $(function(){
         
+        
+
 
         $("#chatMensagem").keypress(function(e){
             val = $(this).val();
