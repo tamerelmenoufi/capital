@@ -5,6 +5,7 @@
     $query = "select * from banco where migrado = '0' limit 1000";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
+        set_time_limit(90);
 
         $tem = mysqli_fetch_object(mysqli_query($con, "select * from clientes where codigo = '{$d->codigo}'"));
 
