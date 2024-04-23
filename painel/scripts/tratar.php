@@ -8,7 +8,7 @@
     $i=0;
     foreach($linhas as $i => $colunas){
 
-        $cols = explode("   ",$colunas);
+        $cols = explode("	",$colunas);
         $data = [$cols[0], $cols[1], $cols[2]];
 
         if($i%100 == 0 and $i > 0){
