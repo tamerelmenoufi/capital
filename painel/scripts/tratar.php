@@ -12,7 +12,7 @@
         $data = [$cols[0], $cols[1], $cols[2]];
 
         if($i%100 == 0 and $i > 0){
-            echo $query."('".implode("'),('")."');</br></br>";
+            echo $query."('".implode("'),('",$data)."');</br></br>";
         }
         $i++;
     }
