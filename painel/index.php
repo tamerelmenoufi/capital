@@ -22,11 +22,12 @@
     }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en" translate="no">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="img/icone.png" rel="icon">
+    <meta name="google" content="notranslate">
     <title>capitalsolucoes - Painel de controle</title>
     <?php
     include("lib/header.php");
