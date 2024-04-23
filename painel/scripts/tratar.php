@@ -16,7 +16,7 @@
         $cpf = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
 
         $fone = preg_replace('/[^0-9]/', '', $cols[2]);
-        $fone = '(' . substr($fone, 0, 2) . ') ' . substr($fone, 2, 1) . substr($fone, 3, 4) . '-' . substr($fone, 7);
+        $fone = '(' . substr($fone, 0, 2) . ') ' . substr($fone, 3, 5) . '-' . substr($fone, 7);
 
         $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
 
