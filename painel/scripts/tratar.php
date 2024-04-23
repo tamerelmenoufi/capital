@@ -11,14 +11,14 @@
     foreach($linhas as $i => $colunas){
         set_time_limit(100);
         $cols = explode("	",$colunas);
+
         $cpf = preg_replace('/[^0-9]/', '', $cols[0]);
         $cpf = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
 
         $fone = preg_replace('/[^0-9]/', '', $cols[2]);
         $fone = '(' . substr($fone, 0, 2) . ') ' . substr($fone, 2, 1) . substr($fone, 3, 4) . '-' . substr($fone, 7);
 
-
-        $data[] = "('{$cols[0]}', '{$cols[1]}', '{$cols[2]}')";
+        $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
 
         if($i%100 == 0 and $i > 0){
             $comando = $query.implode(", ",$data);
