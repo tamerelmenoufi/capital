@@ -29,7 +29,7 @@
             $comando = $query.implode(", ",$data);
             mysqli_query($con, $comando);
             echo $i.", ";
-            exit();
+            // exit();
         }
         
 
