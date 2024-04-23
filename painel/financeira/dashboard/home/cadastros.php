@@ -40,7 +40,7 @@
                     a.*,
                     (select count(*) from consultas where cliente = a.codigo) as simulacao,
                     (select count(*) from consultas where cliente = a.codigo and proposta->>'$.statusCode') as contrato
-                from clientes a where a.data_cadastro like '{$data}%'";
+                from clientes a where a.data_cadastro like '{$data}%' limit 100";
     $result = mysqli_query($con, $query);
 
     $pre_cadastro = $autorizacao = $simulacao = $cadastro = $contrato = 0;
