@@ -207,7 +207,7 @@
         ]);
         
         $query = "update consultas set 
-                    proposta = '{$proposta}'
+                    proposta = '".addslashes($proposta)."'
                     where codigo = '{$_POST['proposta']}'
                 ";
         file_put_contents('../../teste.txt', $proposta."\n\n".$query);
