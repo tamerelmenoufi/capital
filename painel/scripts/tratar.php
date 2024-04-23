@@ -23,14 +23,15 @@
 
         if(!in_array($cpf, $cpfs)){
             $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
+            $i++;
         }
-        
+
         if($i%100 == 0 and $i > 0){
             $comando = $query.implode(", ",$data);
             mysqli_query($con, $comando);
             echo $i.", ";
             exit();
         }
-        $i++;
+        
 
     }
