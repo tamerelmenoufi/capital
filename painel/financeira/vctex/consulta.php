@@ -15,7 +15,7 @@
                                             cliente = (select cliente from consultas where codigo = '{$dados['proposta']}'),
                                             data = NOW(),
                                             sessoes = '".json_encode($_SESSION)."',
-                                            log = '{$dados['consulta']}',
+                                            log = '".addslashes($dados['consulta'])."',
                                             log_unico = '".md5($dados['consulta'].$dados['proposta'])."',
                                             ativo = '1'";
 
