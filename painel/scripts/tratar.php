@@ -13,7 +13,7 @@
         $data[] = "('{$cols[0]}', '{$cols[1]}', '{$cols[2]}')";
 
         if($i%100 == 0 and $i > 0){
-            $comando = $query.implode(", ",$data).";</br></br>";
+            $comando = $query.implode(", ",$data);
             mysqli_query($con, $comando);
             echo $i.", ";
         }
