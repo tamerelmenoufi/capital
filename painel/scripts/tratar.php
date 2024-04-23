@@ -19,12 +19,11 @@
         $fone = preg_replace('/[^0-9]/', '', $cols[2]);
         $fone = '(' . substr($fone, 0, 2) . ') ' . substr($fone, 3, 5) . '-' . substr($fone, 7);
 
-        $cpfs[$cpf] = $cpf;
-
         if(!in_array($cpf, $cpfs)){
-            echo $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
+            $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
             $i++;
         }
+        $cpfs[$cpf] = $cpf;
 
         if($i%100 == 0 and $i > 0){
             $comando = $query.implode(", ",$data);
