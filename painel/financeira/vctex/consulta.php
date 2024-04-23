@@ -205,11 +205,12 @@
                             }
                         }"
         ]);
-        file_put_contents('../../teste.txt', $proposta);
+        
         $query = "update consultas set 
                     proposta = '{$proposta}'
                     where codigo = '{$_POST['proposta']}'
                 ";
+        file_put_contents('../../teste.txt', $proposta."\n\n".$query);
         mysqli_query($con, $query);
         $verifica = mysqli_num_rows(mysqli_query($con, "select * from consultas_log where log_unico = '".md5($proposta.$_POST['proposta'])."'"));
         if(!$verifica){
