@@ -8,13 +8,14 @@
     $data = [];
     $i=0;
     foreach($linhas as $i => $colunas){
-
+        set_time_limit(100);
         $cols = explode("	",$colunas);
         $data[] = "('{$cols[0]}', '{$cols[1]}', '{$cols[2]}')";
 
         if($i%100 == 0 and $i > 0){
             $comando = $query.implode(", ",$data).";</br></br>";
             mysqli_query($con, $comando);
+            echo $i.", ";
         }
         $i++;
 
