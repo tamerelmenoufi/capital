@@ -22,7 +22,7 @@
         $cpfs[$cpf] = $cpf;
 
         if(!in_array($cpf, $cpfs)){
-            $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
+            echo $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
             $i++;
         }
 
