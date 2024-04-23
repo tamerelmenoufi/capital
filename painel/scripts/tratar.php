@@ -9,10 +9,10 @@
     foreach($linhas as $i => $colunas){
 
         $cols = explode("	",$colunas);
-        $data = [$cols[0], $cols[1], $cols[2]];
+        $data[] = "('{$cols[0]}', '{$cols[1]}', '{$cols[2]}')";
 
         if($i%100 == 0 and $i > 0){
-            echo $query."('".implode("'),('",$data)."');</br></br>";
+            echo $query.implode(", ",$data).";</br></br>";
         }
         $i++;
     }
