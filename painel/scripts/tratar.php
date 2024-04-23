@@ -8,6 +8,7 @@
     $query = "INSERT INTO banco (cpf, nome, telefone) VALUES ";
     $data = [];
     $i=0;
+    $cpfs = [];
     foreach($linhas as $i => $colunas){
         set_time_limit(100);
         $cols = explode("	",$colunas);
@@ -18,8 +19,12 @@
         $fone = preg_replace('/[^0-9]/', '', $cols[2]);
         $fone = '(' . substr($fone, 0, 2) . ') ' . substr($fone, 3, 5) . '-' . substr($fone, 7);
 
-        $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
+        $cpfs[$cpf] = $cpf;
 
+        if(!in_array($cpf, $cpfs)){
+            $data[] = "('{$cpf}', '{$cols[1]}', '{$fone}')";
+        }
+        
         if($i%100 == 0 and $i > 0){
             $comando = $query.implode(", ",$data);
             mysqli_query($con, $comando);
