@@ -11,7 +11,7 @@
 
     <script>
         // const ws = new WebSocket("ws://206.81.10.165:9501");
-        const ws = new WebSocket("wss://ws.capitalsolucoesam.com.br/ws/");
+        const ws = new WebSocket("wss://ws.capitalsolucoesam.com.br/ws");
         const input = document.querySelector('input');
         const output = document.querySelector('output');
 
