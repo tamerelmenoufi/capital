@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 
-    exit();
+    // exit();
     echo $query = "SELECT a.codigo, a.cpf, a.cadastro_percentual, (select count(*) from clientes where cpf = a.cpf) as `qt` FROM clientes a where a.cpf != '' group by a.cpf, a.codigo ORDER BY qt desc, a.cpf limit 1";
     $result = mysqli_query($con, $query);
     $duplicado = [];
