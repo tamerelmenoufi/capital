@@ -3,39 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cliente</title>
+    <title>Cliente JavaScript</title>
 </head>
 <body>
-    <output></output>
-    <input type="text" />
+    <h1>Cliente JavaScript</h1>
+    <textarea id="message" rows="4" cols="50"></textarea><br>
+    <button onclick="sendMessage()">Enviar</button>
+    <div id="response"></div>
 
     <script>
-        const ws = new WebSocket("ws://206.81.10.165:9501");
-        const input = document.querySelector('input');
-        const output = document.querySelector('output');
+        function sendMessage() {
+            var message = document.getElementById("message").value;
 
-        ws.addEventListener('open', console.log);
-        ws.addEventListener('message', console.log);
-        
-        ws.addEventListener('message', message => {
-            const dados = JSON.parse(message.data);
-            if(dados.type === 'chat'){
-                output.append('Outro: ' + dados.text, document.createElement('br'));
-            }
-        });
-
-
-        ws.addEventListener('keypress', e => {
-            console.log(e)
-            if(e.code === 'Enter'){
-                const valor = input.value;
-                output.append('Eu: ' + dados.text, document.createElement('br'));
-                ws.send(valor);
-                input.value = '';
-            }
-        });
-
-
+            // Criando uma requisição AJAX para enviar a mensagem para o servidor
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "ws://206.81.10.165:9501", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    document.getElementById("response").innerText = xhr.responseText;
+                }
+            };
+            xhr.send(message);
+        }
     </script>
 </body>
 </html>
