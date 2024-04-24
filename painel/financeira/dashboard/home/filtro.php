@@ -68,7 +68,7 @@
               </thead> -->
               <tbody>
                 <?php
-                  $query = $querys[$_POST['filtro']];
+                  $query = $querys[$_POST['filtro']]." limit 100";
                   $result = mysqli_query($con, $query);
                   $k = 1;
                   while($d = mysqli_fetch_object($result)){
