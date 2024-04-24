@@ -7,7 +7,7 @@
     $duplicado = [];
     $delete = [];
     while($d = mysqli_fetch_object($result)){
-
+        set_time_limit(30);
         if($d->qt > 1){
             if(!$duplicado[$d->cpf]) $duplicado[$d->cpf] = $d->codigo;
             else{
