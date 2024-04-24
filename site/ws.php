@@ -7,7 +7,6 @@
 </head>
 <body>
     <output></output>
-    <input></input>
     <input type="text" />
 
     <script>
