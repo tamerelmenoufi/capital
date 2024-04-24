@@ -1,6 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 
+    exit();
 
     ///////////////////////// SIMULACAO SEM CLIENTE////////////////////
 
