@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 
-    $query = "select *, count(*) qt from clientes where origem = 'BIQ' group by cpf order by qt desc limit 1";
+    $query = "select *, count(*) qt from clientes where origem = 'BIQ' group by cpf order by qt desc limit 10";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
@@ -20,7 +20,8 @@
             }
             echo "<hr>";
             $delete = implode(",",$delete);
-            echo $qdel = "delete from clientes where codigo in({$delete})";
+            $qdel = "delete from clientes where codigo in({$delete})";
+            mysqli_query($con, $qdel);
         }
 
     }
