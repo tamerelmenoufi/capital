@@ -18,11 +18,10 @@
         ws.addEventListener('message', console.log);
         
         ws.addEventListener('message', message => {
-            console.log(message)
-            // const dados = JSON.parse(message.data);
-            // if(dados.type === 'chat'){
-            //     output.append('Outro: ' + dados.text, document.createElement('br'));
-            // }
+            const dados = JSON.parse(message.data);
+            if(dados.type === 'chat'){
+                output.append('Outro: ' + dados.text, document.createElement('br'));
+            }
         });
 
 
