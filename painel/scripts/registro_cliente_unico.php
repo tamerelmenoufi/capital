@@ -1,6 +1,21 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 
+
+    ///////////////////////// SIMULACAO SEM CLIENTE////////////////////
+
+    $query = "SELECT a.*, b.nome, b.cpf FROM consultas a left join clientes b on a.cliente = b.codigo where b.cpf is null limit 1000";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+        $cods[] = $d->codigo;
+    }
+    if($cods) $codigos = implode(", ", $cods);
+    if($codigos) mysqli_query($con, "delete from consultas where codigo in ({$codigos})");
+    echo $codigos;
+
+    exit();
+    ///////////////////REGISTROS UNICOS /////////////////////////////
+
     $query = "select *, count(*) qt from clientes where origem = 'BIQ' group by cpf order by qt desc limit 10";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
