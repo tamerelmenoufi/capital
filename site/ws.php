@@ -18,10 +18,11 @@
         ws.addEventListener('message', console.log);
         
         ws.addEventListener('message', message => {
-            const dados = JSON.parse(message.data);
-            if(dados.type === 'chat'){
-                output.append('Outro: ' + dados.text, document.createElement('br'));
-            }
+            console.log(message)
+            // const dados = JSON.parse(message.data);
+            // if(dados.type === 'chat'){
+            //     output.append('Outro: ' + dados.text, document.createElement('br'));
+            // }
         });
 
 
@@ -29,7 +30,7 @@
             console.log(e)
             if(e.code === 'Enter'){
                 const valor = input.value;
-                output.append('Eu: ' + dados.text, document.createElement('br'));
+                output.append('Eu: ' + valor, document.createElement('br'));
                 ws.send(valor);
                 input.value = '';
             }
