@@ -3,71 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSocket Client</title>
+    <title>Cliente</title>
 </head>
 <body>
-    <h1>WebSocket Client</h1>
-    <input type="text" id="messageInput" placeholder="Digite sua mensagem">
-    <button onclick="sendMessage()">Enviar</button>
-    <div id="messages"></div>
-    
+    <output></output>
+    <input></input>
+    <input type="text" />
+
     <script>
-        /*const socket = new WebSocket('ws://capital.mohatron.com:3000');
-        const messagesDiv = document.getElementById('messages');
+        const ws = new WebSocket("206.81.10.165:9501");
+        const input = document.querySelector('input');
+        const output = document.querySelector('output');
 
-        socket.onopen = function () {
-            console.log('Conexão estabelecida com sucesso.');
-        };
+        ws.addEventListener('open', console.log);
+        ws.addEventListener('message', console.log);
+        
+        ws.addEventListener('message', message => {
+            const dados = JSON.parse(message.data);
+            if(dados.type === 'chat'){
+                output.append('Outro: ' + dados.text, document.createElement('br'));
+            }
+        });
 
-        socket.onmessage = function (event) {
-            const message = event.data;
-            console.log(event)
-            messagesDiv.innerHTML += `<div>${message}</div>`;
-        };
 
-        function sendMessage() {
-            const messageInput = document.getElementById('messageInput');
-            const message = messageInput.value;
-            console.log(message);
-            socket.send(message);
-            console.log('mensagem enviada')
-            messageInput.value = '';
-        }*/
+        ws.addEventListener('keypress', e => {
+            if(e.code === 'Enter'){
+                const valor = input.value;
+                output.append('Eu: ' + dados.text, document.createElement('br'));
+                ws.send(valor);
+                input.value = '';
+            }
+        });
 
-        let socket = new WebSocket("wss://javascript.info/article/websocket/demo/hello");
 
-        socket.onopen = function(e) {
-        console.log("[open] Connection established");
-        console.log("Sending to server");
-        socket.send("My name is John");
-        };
-
-        socket.onmessage = function(event) {
-        console.log(`[message] Data received from server: ${event.data}`);
-        };
-
-        socket.onclose = function(event) {
-        if (event.wasClean) {
-            console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
-        } else {
-            // e.g. server process killed or network down
-            // event.code is usually 1006 in this case
-            alert('[close] Connection died');
-        }
-        };
-
-        socket.onerror = function(error) {
-        alert(`[error]`);
-        };
-
-        function sendMessage() {
-            const messageInput = document.getElementById('messageInput');
-            const message = messageInput.value;
-            console.log(message);
-            socket.send(message);
-            console.log('mensagem enviada')
-            messageInput.value = '';
-        }
     </script>
 </body>
 </html>
