@@ -26,7 +26,6 @@
 
 
         ws.addEventListener('keypress', e => {
-            console.log(e)
             if(e.code === 'Enter'){
                 const valor = input.value;
                 output.append('Eu: ' + dados.text, document.createElement('br'));
