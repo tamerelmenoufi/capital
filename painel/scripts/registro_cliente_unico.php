@@ -19,6 +19,7 @@
                 }
             }
             echo "<hr>";
+            $delete = implode(",",$delete);
             echo $qdel = "delete from clientes where codigo in({$delete})";
         }
 
