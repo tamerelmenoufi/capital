@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/site/assets/lib/includes.php");
 
     $query = "select *, count(*) qt from clientes where origem = 'BIQ' group by cpf order by qt desc limit 1";
-    $result = mysqli_query($query);
+    $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
         set_time_limit(90);
