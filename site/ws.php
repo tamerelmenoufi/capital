@@ -26,7 +26,10 @@
         });
 
 
-        ws.addEventListener('keypress', e => {
+
+
+
+        input.addEventListener('keypress', e => {
             console.log(e)
             if(e.code === 'Enter'){
                 const valor = input.value;
