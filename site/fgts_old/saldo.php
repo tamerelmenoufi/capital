@@ -20,6 +20,9 @@
                                             ativo = '1'";
 
         $result = sisLog( $query);
+
+        mysqli_query($con, "update clientes set status_atual = '{$dados['consulta']}' where codigo = '{$_SESSION['codUsr']}'");
+        
     }
 
     $vctex = new Vctex;

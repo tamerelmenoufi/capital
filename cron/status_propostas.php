@@ -19,6 +19,8 @@
                                             ativo = '1'";
 
         $result = mysqli_query($con, $query);
+
+        mysqli_query($con, "update clientes set status_atual = '{$dados['consulta']}' where codigo = '{$dados['codUsr']}'");
     }
 
     $vctex = new Vctex;

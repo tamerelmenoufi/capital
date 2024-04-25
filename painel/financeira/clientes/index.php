@@ -161,7 +161,7 @@
 
                   // }
 
-                  echo $query = "select 
+                  $query = "select 
                                   a.*
                             from clientes a 
                             where 1 {$where}
