@@ -81,7 +81,8 @@ body {
                                         ${dados.text}
                                     </div>
                                 </div>`;
-                    $("body").append(mensagem);*/
+                    */
+                    $("body").append(dados.text);
                 }
             });
             //websocked
