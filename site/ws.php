@@ -10,7 +10,7 @@
     <input type="text" />
 
     <script>
-        const ws = new WebSocket("ws.capitalsolucoesam.com.br");
+        const ws = new WebSocket("/ws.capitalsolucoesam.com.br");
         const input = document.querySelector('input');
         const output = document.querySelector('output');
 
