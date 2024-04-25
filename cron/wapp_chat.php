@@ -1,6 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
-    $retorno = [ "type" => "chat", "text" => date("Y-m-d H:i:s")];
+    $mensagem = "A mensagem foi enviada por {$_POST['idChat']} com o conteúdo {$_POST['text']}";
+
+    $retorno = [ "type" => "chat", "text" => $mensagem];
     
     echo json_encode($retorno);
