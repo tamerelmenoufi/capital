@@ -167,14 +167,13 @@
                             where 1 {$where}
                             order by a.data_cadastro desc {$limit}";
                   // if($_SESSION['ProjectPainel']->codigo == 2) echo $query;
-                  exit();
                   $result = mysqli_query($con, $query);
                   $k = 1;
                   while($d = mysqli_fetch_object($result)){
 
                     // mysqli_query($con, "update consultas_log set ativo = '1' where codigo = '{$d->ativo}'");
 
-                    $log = json_decode($d->log);
+                    $log = json_decode($d->status_atual);
                     $del = 'disabled';
                     if($log->statusCode){
                       $situacao = "{$log->statusCode} - {$log->message}";
