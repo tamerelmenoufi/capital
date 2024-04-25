@@ -45,7 +45,7 @@
       $limit = false;
     }elseif($_SESSION['busca_campo'] == 'status'){
       // $where = " and (select count(*) from consultas_log where cliente = a.codigo and (concat(log->>'$.statusCode','-',log->>'$.message') = '{$_SESSION['texto_busca']}' or concat(log->>'$.proposalStatusId','-',log->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}') and ativo = '1') > 0 ";
-      $where = " and status_atual where cliente = a.codigo and (concat(log->>'$.statusCode','-',log->>'$.message') = '{$_SESSION['texto_busca']}' or concat(log->>'$.proposalStatusId','-',log->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}') and ativo = '1') > 0 ";
+      $where = " and ( concat(a.status_atual->>'$.statusCode','-',a.status_atual->>'$.message') = '{$_SESSION['texto_busca']}' or concat(a.status_atual->>'$.proposalStatusId','-',a.status_atual->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}' ) ";
       $limit = false;
     }else{
       $limit = " limit 50 ";
@@ -162,8 +162,7 @@
                   // }
 
                   echo $query = "select 
-                                  a.*,
-                                  (select log from consultas_log where cliente = a.codigo and ativo = '1') as log
+                                  a.*
                             from clientes a 
                             where 1 {$where}
                             order by a.data_cadastro desc {$limit}";
