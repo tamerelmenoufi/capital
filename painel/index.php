@@ -70,19 +70,19 @@ body {
                 const dados = JSON.parse(message.data);
                 if(dados.type === 'chat'){
                     console.log(dados.text);
-                    /*mensagem = `<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false">
-                                    <div class="toast-header">
-                                        <img src="..." class="rounded me-2" alt="...">
-                                        <strong class="me-auto">Bootstrap</strong>
-                                        <small>11 mins ago</small>
-                                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                    </div>
-                                    <div class="toast-body">
-                                        ${dados.text}
-                                    </div>
-                                </div>`;
-                    */
-                    $("body").append(dados.text);
+                    //*
+                    mensagem =  `<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false">`.
+                                `    <div class="toast-header">` +
+                                `        <img src="..." class="rounded me-2" alt="...">` +
+                                `        <strong class="me-auto">Bootstrap</strong>` +
+                                `        <small>11 mins ago</small>` +
+                                `        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>` +
+                                `    </div>` +
+                                `    <div class="toast-body">` +
+                                `        ${dados.text}</div>` +
+                                `</div>`;
+                    //*/
+                    $("body").append(mensagem);
                 }
             });
             //websocked
