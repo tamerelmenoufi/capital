@@ -44,7 +44,8 @@
       $where = " and a.nome like '%".trim($_SESSION['texto_busca'])."%' ";
       $limit = false;
     }elseif($_SESSION['busca_campo'] == 'status'){
-      $where = " and (select count(*) from consultas_log where cliente = a.codigo and (concat(log->>'$.statusCode','-',log->>'$.message') = '{$_SESSION['texto_busca']}' or concat(log->>'$.proposalStatusId','-',log->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}') and ativo = '1') > 0 ";
+      // $where = " and (select count(*) from consultas_log where cliente = a.codigo and (concat(log->>'$.statusCode','-',log->>'$.message') = '{$_SESSION['texto_busca']}' or concat(log->>'$.proposalStatusId','-',log->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}') and ativo = '1') > 0 ";
+      $where = " and status_atual where cliente = a.codigo and (concat(log->>'$.statusCode','-',log->>'$.message') = '{$_SESSION['texto_busca']}' or concat(log->>'$.proposalStatusId','-',log->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}') and ativo = '1') > 0 ";
       $limit = false;
     }else{
       $limit = " limit 50 ";
