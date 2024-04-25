@@ -71,15 +71,8 @@ body {
                 if(dados.type === 'chat'){
                     console.log(dados.text);
                     //*
-                    mensagem =  `<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false">` +
-                                `    <div class="toast-header">` +
-                                `       ` +
-                                `        <strong class="me-auto">Bootstrap</strong>` +
-                                `        <small>11 mins ago</small>` +
-                                `        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>` +
-                                `    </div>` +
-                                `    <div class="toast-body">` +
-                                `        ${dados.text}</div>` +
+                    mensagem =  `<div style"position:fixed; bottom:20px; right:20px; width:200px; height:60px; z-index:99999" >` +
+                                `${dados.text}` +
                                 `</div>`;
                     //*/
                     $("body").append(mensagem);
