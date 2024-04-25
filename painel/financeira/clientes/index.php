@@ -143,24 +143,24 @@
               <tbody>
                 <?php
 
-                  $query = "select * from consultas_log";
-                  $result = mysqli_query($con, $query);
-                  while($d = mysqli_fetch_object($result)){
+                  // $query = "select * from consultas_log";
+                  // $result = mysqli_query($con, $query);
+                  // while($d = mysqli_fetch_object($result)){
 
-                    $log = json_decode($d->log);
-                    if($log->statusCode){
-                      $status = $log->statusCode;
-                      $descricao = $log->message;
-                    }else if($log->proposalStatusId){
-                      $status = $log->proposalStatusId;
-                      $descricao = $log->proposalStatusDisplayTitle;
-                    }
+                  //   $log = json_decode($d->log);
+                  //   if($log->statusCode){
+                  //     $status = $log->statusCode;
+                  //     $descricao = $log->message;
+                  //   }else if($log->proposalStatusId){
+                  //     $status = $log->proposalStatusId;
+                  //     $descricao = $log->proposalStatusDisplayTitle;
+                  //   }
 
-                    mysqli_query($con, "insert into status set status = '{$status}', descricao = '{$descricao}', unico = '".md5($status.$descricao)."'");
+                  //   mysqli_query($con, "insert into status set status = '{$status}', descricao = '{$descricao}', unico = '".md5($status.$descricao)."'");
 
-                  }
+                  // }
 
-                  $query = "select 
+                  echo $query = "select 
                                   a.*,
                                   (select log from consultas_log where cliente = a.codigo and ativo = '1') as log
                             from clientes a 
@@ -168,6 +168,7 @@
                             order by a.data_cadastro desc {$limit}";
                   // if($_SESSION['ProjectPainel']->codigo == 2) echo $query;
                   $result = mysqli_query($con, $query);
+                  exit();
                   $k = 1;
                   while($d = mysqli_fetch_object($result)){
 
