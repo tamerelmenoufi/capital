@@ -71,7 +71,7 @@ body {
                 if(dados.type === 'chat'){
                     console.log(dados.text);
                     //*
-                    mensagem =  `<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false">`.
+                    mensagem =  `<div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false">` +
                                 `    <div class="toast-header">` +
                                 `        <img src="..." class="rounded me-2" alt="...">` +
                                 `        <strong class="me-auto">Bootstrap</strong>` +
