@@ -77,7 +77,7 @@
 </style>
 <h4 class="Titulo<?=$md5?>">Mensagens WhatsApp</h4>
 <div class="topo<?=$md5?>"><i class="fa-regular fa-comment-dots"></i> <?=$c->nome?></div>
-<div class="palco<?=$md5?>">
+<div class="palco<?=$md5?>" up<?=$phoneNumber?>>
     <?php
         $query = "select * from wapp_chat where (de = '{$ConfWappNumero}' and para = '{$phoneNumber}' or de = '{$phoneNumber}' and para = '{$ConfWappNumero}') order by data asc";
         $result = mysqli_query($con, $query);
@@ -106,7 +106,7 @@
         }
     ?>
 </div>
-<div class="rodape<?=$md5?>" up<?=$phoneNumber?>>
+<div class="rodape<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center m-3">
         <i class="fa-regular fa-face-smile p-3"></i>
         <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
