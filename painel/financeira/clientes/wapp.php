@@ -158,43 +158,43 @@
         });
 
 
-        verificarMensagem = setInterval(() => {
-            ultimo_acesso = $("#chatMensagem").attr("ultimo_acesso");
-            $.ajax({
-                url:"financeira/clientes/wapp.php",
-                type:"POST",
-                dataType:"JSON",
-                data:{
-                    de:'<?=$phoneNumber?>',
-                    para:'<?=$ConfWappNumero?>',
-                    ultimo_acesso,
-                    acao:'receber'
-                },
-                success:function(dados){
+        // verificarMensagem = setInterval(() => {
+        //     ultimo_acesso = $("#chatMensagem").attr("ultimo_acesso");
+        //     $.ajax({
+        //         url:"financeira/clientes/wapp.php",
+        //         type:"POST",
+        //         dataType:"JSON",
+        //         data:{
+        //             de:'<?=$phoneNumber?>',
+        //             para:'<?=$ConfWappNumero?>',
+        //             ultimo_acesso,
+        //             acao:'receber'
+        //         },
+        //         success:function(dados){
 
-                    console.log(dados);
+        //             console.log(dados);
 
-                    $.each(dados, function () {
+        //             $.each(dados, function () {
 
-                        layout = '<div class="d-flex flex-row">'+
-                        '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
-                        '<div class="text-start" style="border:solid 0px red;">'+this.mensagem+'</div>' +
-                        '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+this.data+'</div>' +
-                        '</div>' +
-                        '</div>';
+        //                 layout = '<div class="d-flex flex-row">'+
+        //                 '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+        //                 '<div class="text-start" style="border:solid 0px red;">'+this.mensagem+'</div>' +
+        //                 '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+this.data+'</div>' +
+        //                 '</div>' +
+        //                 '</div>';
 
-                        $(".palco<?=$md5?>").append(layout);
+        //                 $(".palco<?=$md5?>").append(layout);
 
-                        altura = $(".palco<?=$md5?>").prop("scrollHeight");
-                        div = $(".palco<?=$md5?>").height();
-                        $(".palco<?=$md5?>").scrollTop(altura + div);    
-                        $("#chatMensagem").attr('ultimo_acesso', this.ultimo_acesso);   
+        //                 altura = $(".palco<?=$md5?>").prop("scrollHeight");
+        //                 div = $(".palco<?=$md5?>").height();
+        //                 $(".palco<?=$md5?>").scrollTop(altura + div);    
+        //                 $("#chatMensagem").attr('ultimo_acesso', this.ultimo_acesso);   
 
-                    })
+        //             })
 
-                }
-            });
-        }, 10000);
+        //         }
+        //     });
+        // }, 10000);
 
     })
 </script>
