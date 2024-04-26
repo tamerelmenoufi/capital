@@ -68,7 +68,7 @@ body {
             ws.addEventListener('message', message => {
                 console.log(message)
                 const dados = JSON.parse(message.data);
-                dados.each(function(d){
+                dados.forEach(function(d){
                     if(d.type === 'chat'){
                         // console.log(dados.text);
                         if(d.text){
