@@ -71,7 +71,7 @@ body {
                 dados.forEach(function(d){
                     // console.log(d)
                     if(d.type === 'chat'){
-                        console.log(dados.text);
+                        console.log(d.text);
                         if(d.text){
                             // mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${d.text}</div>`;
                             // $("body").append(mensagem);
@@ -85,11 +85,11 @@ body {
                             '</div>' +
                             '</div>';
 
-                            $(`.palco<?=$md5?>[up${d.de}]`).append(layout);
+                            $(`div[up${d.de}]`).append(layout);
 
-                            altura = $(`.palco<?=$md5?>[up${d.de}]`).prop("scrollHeight");
-                            div = $(`.palco<?=$md5?>[up${d.de}]`).height();
-                            $(`.palco<?=$md5?>[up${d.de}]`).scrollTop(altura + div);    
+                            altura = $(`div[up${d.de}]`).prop("scrollHeight");
+                            div = $(`div[up${d.de}]`).height();
+                            $(`div[up${d.de}]`).scrollTop(altura + div);    
 
 
 
