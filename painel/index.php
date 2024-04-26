@@ -69,6 +69,7 @@ body {
                 console.log(message)
                 const dados = JSON.parse(message.data);
                 dados.forEach(function(d){
+                    console.log(d)
                     if(d.type === 'chat'){
                         // console.log(dados.text);
                         if(d.text){
