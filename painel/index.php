@@ -83,11 +83,11 @@ body {
                             '</div>' +
                             '</div>';
 
-                            $(`.palco<?=$md5?>[up${de}]`).append(layout);
+                            $(`.palco<?=$md5?>[up${d.de}]`).append(layout);
 
-                            altura = $(`.palco<?=$md5?>[up${de}]`).prop("scrollHeight");
-                            div = $(`.palco<?=$md5?>[up${de}]`).height();
-                            $(`.palco<?=$md5?>[up${de}]`).scrollTop(altura + div);    
+                            altura = $(`.palco<?=$md5?>[up${d.de}]`).prop("scrollHeight");
+                            div = $(`.palco<?=$md5?>[up${d.de}]`).height();
+                            $(`.palco<?=$md5?>[up${d.de}]`).scrollTop(altura + div);    
 
 
 
