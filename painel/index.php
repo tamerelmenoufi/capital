@@ -71,7 +71,7 @@ body {
                 if(dados.type === 'chat'){
                     console.log(dados.text);
                     mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${dados.text}</div>`;
-                    $("body").append(mensagem);
+                    //$("body").append(mensagem);
                 }
             });
             //websocked
