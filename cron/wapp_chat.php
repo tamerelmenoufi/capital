@@ -7,7 +7,7 @@
     $result = mysqli_query($con, $query);
     $retorno = [];
     while($d = mysqli_fetch_object($result)){
-        $retorno[] = [ "type" => "chat", "text" => $d->mensagem, "de" => $d->de, "para" => $d->para ];
+        $retorno[] = [ "type" => "chat", "text" => $d->mensagem, "de" => $d->de, "para" => $d->para, "data" => dataBr($d->data)];
     }
 
     // $mensagem = "A mensagem foi enviada por {$_POST['idChat']} com o conteúdo {$_POST['text']}";

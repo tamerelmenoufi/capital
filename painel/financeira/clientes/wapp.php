@@ -106,7 +106,7 @@
         }
     ?>
 </div>
-<div class="rodape<?=$md5?>">
+<div class="rodape<?=$md5?>" up<?=$phoneNumber?>>
     <div class="d-flex justify-content-between align-items-center m-3">
         <i class="fa-regular fa-face-smile p-3"></i>
         <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">

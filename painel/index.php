@@ -73,8 +73,24 @@ body {
                     if(d.type === 'chat'){
                         // console.log(dados.text);
                         if(d.text){
-                            mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${d.text}</div>`;
-                            $("body").append(mensagem);
+                            // mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${d.text}</div>`;
+                            // $("body").append(mensagem);
+
+                            layout = '<div class="d-flex flex-row">'+
+                            '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+                            '<div class="text-start" style="border:solid 0px red;">'+d.text+'</div>' +
+                            '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
+                            '</div>' +
+                            '</div>';
+
+                            $(`.palco<?=$md5?>[up${de}]`).append(layout);
+
+                            altura = $(`.palco<?=$md5?>[up${de}]`).prop("scrollHeight");
+                            div = $(`.palco<?=$md5?>[up${de}]`).height();
+                            $(`.palco<?=$md5?>[up${de}]`).scrollTop(altura + div);    
+
+
+
                         }
                     }                    
                 })
