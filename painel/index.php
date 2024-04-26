@@ -71,12 +71,12 @@ body {
                 dados.forEach(function(d){
                     // console.log(d)
                     if(d.type === 'chat'){
-                        console.log(d.text);
+                        // console.log(d.text);
                         if(d.text){
                             // mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${d.text}</div>`;
                             // $("body").append(mensagem);
 
-                            console.log('atualizacao' + ' up'+d.de)
+                            // console.log('atualizacao' + ' up'+d.de)
 
                             layout = '<div class="d-flex flex-row">'+
                             '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
