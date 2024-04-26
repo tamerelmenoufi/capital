@@ -47,7 +47,7 @@ body {
 
 </style>
 
-  <body>
+  <body chatData="<?=date("Y-m-d H:i:s")?>">
 
     <div class="Carregando">
         <div><i class="fa-solid fa-rotate fa-pulse"></i></div>
@@ -66,12 +66,14 @@ body {
             const ws = new WebSocket("wss://ws.capitalsolucoesam.com.br/");
 
             ws.addEventListener('message', message => {
-                console.log(message)
+                // console.log(message)
                 const dados = JSON.parse(message.data);
                 if(dados.type === 'chat'){
-                    console.log(dados.text);
-                    mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${dados.text}</div>`;
-                    //$("body").append(mensagem);
+                    // console.log(dados.text);
+                    if(dados.text){
+                        mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${dados.text}</div>`;
+                        //$("body").append(mensagem);
+                    }
                 }
             });
             //websocked
