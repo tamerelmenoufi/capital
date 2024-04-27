@@ -13,6 +13,9 @@
         top:8px;
         z-index:0;
     }
+    tr{
+        cursor:pointer;
+    }
 
 </style>
 
@@ -46,7 +49,8 @@
                                     (select concat(mensagem,'^',data) from wapp_chat where max(a.codigo) = codigo) as mensagem,
                                     b.nome,
                                     b.status_atual as log,
-                                    b.codigo as cod_cliente
+                                    b.codigo as cod_cliente,
+                                    b.phoneNumber
                             from wapp_chat a left join clientes b on a.de = REPLACE(REPLACE(REPLACE(REPLACE(b.phoneNumber, '(', ''), ')', ''), '-', ''), ' ', '') 
                             where a.de != '{$ConfWappNumero}' 
                             group by a.de 
@@ -98,7 +102,7 @@
                   <td>
                     <div class="d-flex justify-content-between">
                       <div class="p-2" style="font-size:12px;"><i class="fa-solid fa-user"></i> <?=(($d->nome)?:"<span class='text-danger'>Sem Identificação</span>")?></div>
-                      <div class="p-2" style="font-size:12px;"><i class="fa-solid fa-id-card"></i> <?=(($d->phoneNumber)?:"<span class='text-danger'>Não Registrado</span>")?> (<?=$d->phoneNumber?>)</div>
+                      <div class="p-2" style="font-size:12px;"><i class="fa-solid fa-mobile-screen-button"></i> <?=(($d->phoneNumber)?:"<span class='text-danger'>Não Registrado</span>")?> (<?=$d->phoneNumber?>)</div>
                     </div>
                     <div class="d-flex justify-content-between">
                       <div class="legenda_status p-2" style="border-left-color:<?=$cor?>; font-size:12px; color:#a1a1a1;">
