@@ -86,7 +86,16 @@
         height:85px;    
     }
 </style>
-<h4 class="Titulo<?=$md5?>">Mensagens WhatsApp</h4>
+<h4 class="Titulo<?=$md5?>">
+    <div class="d-flex justify-content-between align-items-center">
+        <span>Mensagens WhatsApp</span>
+        <div style="position:relative">
+            <span style="position:absolute; background-color:green; border-radius:100%; width:15px; height:15px; right:10px; top:10px;"></span>
+            <i class="fa-solid fa-comments"></i>
+        </div>
+        
+    </div>
+</h4>
 <div class="topo<?=$md5?>"><i class="fa-regular fa-comment-dots"></i> <?=$c->nome?></div>
 <div chatWindow="open" class="palco<?=$md5?>" up<?=$phoneNumber?>>
     <?php
@@ -118,7 +127,7 @@
             }
             $ultimo_acesso = $m->data;
         }
-        
+
         if($update){
             mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
         }
