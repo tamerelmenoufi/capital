@@ -46,9 +46,6 @@ body {
 }
 .toast-container{
     position:fixed!important;
-    min-height:100px;
-    min-width:150px;
-    border:solid 1px red;
 }
 
 </style>
@@ -95,25 +92,29 @@ body {
                             altura = $(`div[up${d.de}]`).prop("scrollHeight");
                             div = $(`div[up${d.de}]`).height();
                             $(`div[up${d.de}]`).scrollTop(altura + div);    
-
+                            <?php
+                            if($_SESSION['ProjectPainel']->login == 'tamer'){
+                            ?>
                             chatAtivo = $(`div[up${d.de}]`).attr("ativo");
                             if(!chatAtivo){
                                 alerta = `<div popup${d.de} class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                                 <div class="toast-header">
-                                                    <img src="..." class="rounded me-2" alt="...">
-                                                    <strong class="me-auto">Bootstrap</strong>
+                                                    <img src="img/icone.php" class="rounded me-2" alt="...">
+                                                    <strong class="me-auto">${d.de}</strong>
                                                     <small>11 mins ago</small>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    <button close="${d.de}" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                                 </div>
                                                 <div class="toast-body">
-                                                    Hello, world! This is a toast message.
+                                                    ${d.text}
                                                 </div>
                                             </div>`;
                                 $(".toast-container").append(alerta);
                                 $(`div[popup${d.de}]`).show();
                                 console.log(alerta)
                             }
-
+                            <?php
+                            }
+                            ?>
                         }
                     }                    
                 })
@@ -138,6 +139,11 @@ body {
                     }
                 });                
             }, 5000);
+
+            $(docuemnto).off('click').on('click','button[close]', function(){
+                janela = $(this).attr("close");
+                $(`div[popup${d.de}]`).remove();
+            })
         })
 
 
