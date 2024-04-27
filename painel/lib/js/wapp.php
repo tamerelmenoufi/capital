@@ -49,7 +49,10 @@
                                             </div>
                                             <div 
                                                 class="toast-body"
-                                                
+                                                data-bs-toggle="offcanvas"
+                                                href="#offcanvasDireita"
+                                                role="button"
+                                                aria-controls="offcanvasDireita"
                                                 abrirMensagem="${d.codigo}"
                                             >
                                                 ${d.text}
