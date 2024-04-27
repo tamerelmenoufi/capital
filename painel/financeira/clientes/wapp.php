@@ -148,6 +148,8 @@
 
 <script>
     $(function(){
+
+        Carregando('none');
         
         altura = $(".palco<?=$md5?>").prop("scrollHeight");
         div = $(".palco<?=$md5?>").height();
