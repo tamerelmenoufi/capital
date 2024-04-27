@@ -37,7 +37,7 @@
                         div = $(`div[up${d.de}]`).height();
                         $(`div[up${d.de}]`).scrollTop(altura + div);    
                         
-                        if(d.de == '92991886570' && $("div[chatWindow]").attr("chatWindow") == "open"){
+                        if(d.de == '92991886570' && $("div[chatWindow]").attr("chatWindow") != "open"){
                         chatAtivo = $(`div[up${d.de}]`).attr("ativo");
                         if(!chatAtivo){
                             alerta = `<div popup${d.de} class="toast" role="alert" aria-live="assertive" aria-atomic="true">
