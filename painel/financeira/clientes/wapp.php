@@ -94,7 +94,7 @@
     <div class="d-flex justify-content-between align-items-center">
         <span>Mensagens WhatsApp</span>
         <div style="position:relative" listaClientesChat="open">
-            <span style="position:absolute; background-color:green; border-radius:100%; width:10px; height:10px; right:0px; top:-5px;"></span>
+            <span style="position:absolute; background-color:#dcf8c6; border-radius:100%; width:10px; height:10px; right:0px; top:-5px; opacity:0;"></span>
             <i class="fa-solid fa-comments"></i>
         </div>
         
@@ -135,6 +135,8 @@
         if($update){
             mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
         }
+
+        $msgs = mysqli_fetch_object(mysqli_query($con, "select count(*) as qt from wapp_chat where recebida != '1'"));
     ?>
 </div>
 <div class="rodape<?=$md5?>">
@@ -154,6 +156,12 @@
         altura = $(".palco<?=$md5?>").prop("scrollHeight");
         div = $(".palco<?=$md5?>").height();
         $(".palco<?=$md5?>").scrollTop(altura + div);
+
+        
+
+        if($("div[listaClientesChat]").attr("listaClientesChat") == 'open'){
+            $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
+        }
 
 
         $("#chatMensagem").keypress(function(e){

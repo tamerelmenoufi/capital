@@ -39,6 +39,7 @@
                         
                         if(d.de == '92991886570' && $("div[chatWindow]").attr("chatWindow") != "open"){
                             chatAtivo = $(`div[up${d.de}]`).attr("ativo");
+                            listaUsuariosChat = $("tr[selecionarChat]").attr("selecionarChat");
                             if(!chatAtivo){
                                 alerta = `<div popup${d.de} class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                                 <div class="toast-header">
@@ -60,7 +61,15 @@
                                             </div>`;
                                 $(".toast-container").append(alerta);
                                 $(`div[popup${d.de}]`).show();
+                                
                                 console.log(alerta)
+                            }else if(listaUsuariosChat*1 > 0){
+                                $.ajax({
+                                    url:"financeira/clientes/wapp_lista.php",
+                                    success:function(dados){
+                                        $(".LateralDireita").html(dados);
+                                    }
+                                })                                
                             }else{
                                 $.ajax({
                                     url:"financeira/clientes/wapp.php",
@@ -73,6 +82,10 @@
                                        
                                     }
                                 })
+                            }
+
+                            if($("div[listaClientesChat]").attr("listaClientesChat") == 'open'){
+                                $(this).children("span").css("opacity",'1');
                             }
                         }
                     }
