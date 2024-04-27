@@ -191,6 +191,7 @@
         });
 
         $("div[listaClientesChat]").click(function(){
+            Carregando();
             $.ajax({
                     url:"financeira/clientes/wapp_lista.php",
                     success:function(dados){
