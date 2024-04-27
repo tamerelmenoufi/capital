@@ -22,27 +22,27 @@
         exit();
     }
 
-    if($_POST['acao'] == 'receber'){
-        $query = "select * from wapp_chat where de = '{$_POST['de']}' and para = '{$_POST['para']}' and data > '{$_POST['ultimo_acesso']}' order by data desc ";
-        $result = mysqli_query($con, $query);
-        $retorno = [];
-        $update = [];
-        while($d = mysqli_fetch_object($result)){
-            $retorno[] = [
-                'de'=>$d->de,
-                'para'=>$d->para,
-                'mensagem'=>$d->mensagem,
-                'data'=>dataBr($d->data),
-                'ultimo_acesso'=>$d->data
-            ];
-            $update[] = $d->codigo;
-        }
-        echo json_encode($retorno);
-        if($update){
-            mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
-        }
-        exit();
-    }
+    // if($_POST['acao'] == 'receber'){
+    //     $query = "select * from wapp_chat where de = '{$_POST['de']}' and para = '{$_POST['para']}' and data > '{$_POST['ultimo_acesso']}' order by data desc ";
+    //     $result = mysqli_query($con, $query);
+    //     $retorno = [];
+    //     $update = [];
+    //     while($d = mysqli_fetch_object($result)){
+    //         $retorno[] = [
+    //             'de'=>$d->de,
+    //             'para'=>$d->para,
+    //             'mensagem'=>$d->mensagem,
+    //             'data'=>dataBr($d->data),
+    //             'ultimo_acesso'=>$d->data
+    //         ];
+    //         $update[] = $d->codigo;
+    //     }
+    //     echo json_encode($retorno);
+    //     if($update){
+    //         mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
+    //     }
+    //     exit();
+    // }
 
     $c = mysqli_fetch_object(mysqli_query($con, "select * from clientes where codigo = '{$_POST['mensagens']}'"));
 
@@ -92,6 +92,7 @@
     <?php
         $query = "select * from wapp_chat where (de = '{$ConfWappNumero}' and para = '{$phoneNumber}' or de = '{$phoneNumber}' and para = '{$ConfWappNumero}') order by data asc";
         $result = mysqli_query($con, $query);
+        $update = [];
         while($m = mysqli_fetch_object($result)){
 
             if($m->de == $ConfWappNumero){
@@ -104,6 +105,8 @@
             </div>
     <?php
             }else{
+
+                $update[] = $m->codigo;
     ?>
             <div class="d-flex flex-row">
                 <div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">
@@ -114,6 +117,9 @@
     <?php
             }
             $ultimo_acesso = $m->data;
+            if($update){
+                mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
+            }
         }
     ?>
 </div>
