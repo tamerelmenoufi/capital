@@ -110,7 +110,7 @@
                                                                 -webkit-transform: scaleX(-1); 
                                                                 transform: scaleX(-1);"
                                                                 ></i>
-                      <div class="p-2" style="font-size:12px; color:#a1a1a1;">
+                      <div class="p-2 w-100" style="font-size:12px; color:#a1a1a1;">
                         <span style="color:#333"><?=$mensagem?></span><br><?=dataBr($data)?>
                       </div>
                     </div>
