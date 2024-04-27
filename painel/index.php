@@ -55,6 +55,8 @@ body {
 
     <div class="CorpoApp"></div>
 
+
+    <div class="toast-container bottom-0 end-0 p-3"></div>
     <?php
     include("lib/footer.php");
     ?>
@@ -101,7 +103,7 @@ body {
                                                     Hello, world! This is a toast message.
                                                 </div>
                                             </div>`;
-                                $("body").append(alerta);
+                                $("toast-container").append(alerta);
                                 $(`div[popup${d.de}]`).show();
                                 console.log(alerta)
                             }
