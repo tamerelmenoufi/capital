@@ -140,7 +140,7 @@ body {
                 });                
             }, 5000);
 
-            $('button[close]').off('click').on('click', function(){
+            $('button[close]').click(function(){
                 janela = $(this).attr("close");
                 $(`div[popup${janela}]`).remove();
             })
