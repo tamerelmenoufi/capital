@@ -142,7 +142,8 @@ body {
 
             $(document).on("click","button[close]",function() {
                 janela = $(this).attr("close");
-                $(`div[popup${janela}]`).remove();
+                // $(`div[popup${janela}]`).remove();
+                $(this).parent("div").parent("div").remove();
             });
         })
 
