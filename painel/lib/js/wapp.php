@@ -42,7 +42,7 @@
                         if(!chatAtivo){
                             alerta = `<div popup${d.de} class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                                             <div class="toast-header">
-                                                <img src="img/icone.php" class="rounded me-2" alt="...">
+                                                <img src="img/icone.png" class="rounded me-2" alt="...">
                                                 <strong class="me-auto">${d.de}</strong>
                                                 <small>11 mins ago</small>
                                                 <button close="${d.de}" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
