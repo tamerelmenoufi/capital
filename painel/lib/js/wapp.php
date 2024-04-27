@@ -38,30 +38,42 @@
                         $(`div[up${d.de}]`).scrollTop(altura + div);    
                         
                         if(d.de == '92991886570' && $("div[chatWindow]").attr("chatWindow") != "open"){
-                        chatAtivo = $(`div[up${d.de}]`).attr("ativo");
-                        if(!chatAtivo){
-                            alerta = `<div popup${d.de} class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                            <div class="toast-header">
-                                                <img src="img/icone.png" style="max-height:25px;" class="rounded me-2" alt="...">
-                                                <strong class="me-auto">${((d.nome)?d.nome:d.de)}</strong>
-                                                <small>11 mins ago</small>
-                                                <button close="${d.de}" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                                            </div>
-                                            <div 
-                                                class="toast-body"
-                                                data-bs-toggle="offcanvas"
-                                                href="#offcanvasDireita"
-                                                role="button"
-                                                aria-controls="offcanvasDireita"
-                                                abrirMensagem="${d.codigo}"
-                                            >
-                                                ${d.text}
-                                            </div>
-                                        </div>`;
-                            $(".toast-container").append(alerta);
-                            $(`div[popup${d.de}]`).show();
-                            console.log(alerta)
-                        }
+                            chatAtivo = $(`div[up${d.de}]`).attr("ativo");
+                            if(!chatAtivo){
+                                alerta = `<div popup${d.de} class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                                <div class="toast-header">
+                                                    <img src="img/icone.png" style="max-height:25px;" class="rounded me-2" alt="...">
+                                                    <strong class="me-auto">${((d.nome)?d.nome:d.de)}</strong>
+                                                    <small>11 mins ago</small>
+                                                    <button close="${d.de}" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                </div>
+                                                <div 
+                                                    class="toast-body"
+                                                    data-bs-toggle="offcanvas"
+                                                    href="#offcanvasDireita"
+                                                    role="button"
+                                                    aria-controls="offcanvasDireita"
+                                                    abrirMensagem="${d.codigo_cliente}"
+                                                >
+                                                    ${d.text}
+                                                </div>
+                                            </div>`;
+                                $(".toast-container").append(alerta);
+                                $(`div[popup${d.de}]`).show();
+                                console.log(alerta)
+                            }else{
+                                $.ajax({
+                                    url:"financeira/clientes/wapp.php",
+                                    type:"POST",
+                                    data:{
+                                        codigo_mensagem:d.codigo_mensagem,
+                                        acao:'mensagem_lida'
+                                    },
+                                    success:function(dados){
+                                       
+                                    }
+                                })
+                            }
                         }
                     }
                 }                    

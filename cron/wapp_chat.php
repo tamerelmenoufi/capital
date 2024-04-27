@@ -14,7 +14,8 @@
                         "de" => $d->de,
                         "nome" => $nome,
                         "para" => $d->para,
-                        "codigo" => $d->cod_cliente,
+                        "codigo_cliente" => $d->cod_cliente,
+                        "codigo_mensagem" => $d->codigo,
                         "data" => dataBr($d->data)];
     }
 

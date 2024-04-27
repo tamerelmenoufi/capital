@@ -1,6 +1,12 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
+    if($_POST['acao'] == 'mensagem_lida'){
+        $query = "update wapp_chat set recebida = '1' where codigo = '{$_POST['codigo_mensagem']}'";
+        mysqli_query($con, $query);
+        exit();
+    }
+
     if($_POST['acao'] == 'enviar'){
         $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
         if(mysqli_query($con, $query)){
@@ -20,6 +26,7 @@
         $query = "select * from wapp_chat where de = '{$_POST['de']}' and para = '{$_POST['para']}' and data > '{$_POST['ultimo_acesso']}' order by data desc ";
         $result = mysqli_query($con, $query);
         $retorno = [];
+        $update = [];
         while($d = mysqli_fetch_object($result)){
             $retorno[] = [
                 'de'=>$d->de,
@@ -28,8 +35,12 @@
                 'data'=>dataBr($d->data),
                 'ultimo_acesso'=>$d->data
             ];
+            $update[] = $d->codigo;
         }
         echo json_encode($retorno);
+        if($update){
+            mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
+        }
         exit();
     }
 
