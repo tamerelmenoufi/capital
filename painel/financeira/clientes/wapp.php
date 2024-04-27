@@ -86,11 +86,14 @@
         bottom:0px;    
         height:85px;    
     }
+    div[listaClientesChat]{
+        cursor:pointer;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center">
         <span>Mensagens WhatsApp</span>
-        <div style="position:relative">
+        <div style="position:relative" listaClientesChat="open">
             <span style="position:absolute; background-color:green; border-radius:100%; width:10px; height:10px; right:0px; top:-5px;"></span>
             <i class="fa-solid fa-comments"></i>
         </div>
@@ -184,6 +187,15 @@
                 })
             }
         });
+
+        $("div[listaClientesChat]").click(function(){
+            $.ajax({
+                    url:"financeira/clientes/wapp_lista.php",
+                    success:function(dados){
+                        $(".LateralDireita").html(dados);
+                    }
+                })
+        })
 
 
         // verificarMensagem = setInterval(() => {

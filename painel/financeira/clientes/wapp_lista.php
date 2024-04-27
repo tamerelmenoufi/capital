@@ -43,10 +43,10 @@
                 <?php
                   $query = "select 
                                     max(a.codigo) as cod,
-                                    (select mensagem from wapp_chat where max(a.codigo) = codigo) as mensagem,
+                                    (select concat(mensagem,'^',data) from wapp_chat where max(a.codigo) = codigo) as mensagem,
                                     b.nome,
-                                    b.status_atual as log
-                                    
+                                    b.status_atual as log,
+                                    b.codigo as cod_cliente
                             from wapp_chat a left join clientes b on a.de = REPLACE(REPLACE(REPLACE(REPLACE(b.phoneNumber, '(', ''), ')', ''), '-', ''), ' ', '') 
                             where a.de != '{$ConfWappNumero}' 
                             group by a.de 
@@ -93,7 +93,7 @@
                     // }
                     list($mensagem, $data) = explode("^",$d->mensagem);
                 ?>
-                <tr>
+                <tr selecionarChat="<?=$d->cod_cliente?>">
 
                   <td>
                     <div class="d-flex justify-content-between">
@@ -139,6 +139,22 @@
 <script>
     $(function(){
         Carregando('none');
+
+        $("tr[selecionarChat]").click(function(){
+            Carregando();
+            mensagens = $(this).attr("selecionarChat");
+            $.ajax({
+                url:"financeira/clientes/wapp.php",
+                type:"POST",
+                data:{
+                  mensagens
+                },
+                success:function(dados){
+                  $(".LateralDireita").html(dados);
+                }
+            })
+
+        })
  
     })
 </script>
