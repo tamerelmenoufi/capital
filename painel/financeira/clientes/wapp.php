@@ -156,7 +156,7 @@
         altura = $(".palco<?=$md5?>").prop("scrollHeight");
         div = $(".palco<?=$md5?>").height();
         $(".palco<?=$md5?>").scrollTop(altura + div);
-
+        $(".toast").remove();
         
 
         if($("div[listaClientesChat]").attr("listaClientesChat") == 'open'){
