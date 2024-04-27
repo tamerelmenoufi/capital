@@ -10,8 +10,4 @@
         $retorno[] = [ "type" => "chat", "text" => $d->mensagem, "de" => $d->de, "para" => $d->para, "data" => dataBr($d->data)];
     }
 
-    // $mensagem = "A mensagem foi enviada por {$_POST['idChat']} com o conteúdo {$_POST['text']}";
-
-    // $retorno = [ "type" => "chat", "text" => $mensagem];
-    
     echo json_encode($retorno);
