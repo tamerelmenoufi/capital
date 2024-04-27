@@ -140,10 +140,10 @@ body {
                 });                
             }, 5000);
 
-            $('button[close]').click(function(){
+            $(document).on("click","button[close]",function() {
                 janela = $(this).attr("close");
                 $(`div[popup${janela}]`).remove();
-            })
+            });
         })
 
 
