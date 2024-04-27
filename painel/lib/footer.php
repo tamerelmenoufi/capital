@@ -7,5 +7,3 @@
 
 
 <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
-
-<script src="<?=$localPainel?>lib/js/wapp.js" ></script>
