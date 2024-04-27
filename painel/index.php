@@ -44,6 +44,12 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+.toast-container{
+    position:fixed!important;
+    min-height:100px;
+    min-width:150px;
+    border:solid 1px red;
+}
 
 </style>
 
@@ -103,7 +109,7 @@ body {
                                                     Hello, world! This is a toast message.
                                                 </div>
                                             </div>`;
-                                $("toast-container").append(alerta);
+                                $(".toast-container").append(alerta);
                                 $(`div[popup${d.de}]`).show();
                                 console.log(alerta)
                             }
