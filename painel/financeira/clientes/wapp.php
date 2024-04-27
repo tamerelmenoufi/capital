@@ -55,7 +55,7 @@
         position:absolute;
         left:60px;
         top:8px;
-        right:0px;
+        right:20px;
         z-index:0;
     }
     .topo<?=$md5?>{
