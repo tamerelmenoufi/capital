@@ -37,7 +37,7 @@
                         div = $(`div[up${d.de}]`).height();
                         $(`div[up${d.de}]`).scrollTop(altura + div);    
                         
-                        if(d.de == '92991886570'){
+                        if(d.de == '92991886570' && $("div[chatWindow]").attr("chatWindow") == "open"){
                         chatAtivo = $(`div[up${d.de}]`).attr("ativo");
                         if(!chatAtivo){
                             alerta = `<div popup${d.de} class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -77,6 +77,7 @@
 
         $("div[abrirMensagem]").click(function(){
             mensagens = $(this).attr("abrirMensagem");
+            $(".toast").remove();
             $.ajax({
                 url:"financeira/clientes/wapp.php",
                 type:"POST",
