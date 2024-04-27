@@ -140,9 +140,9 @@ body {
                 });                
             }, 5000);
 
-            $(docuemnt).off('click').on('click','button[close]', function(){
+            $('button[close]').off('click').on('click', function(){
                 janela = $(this).attr("close");
-                $(`div[popup${d.de}]`).remove();
+                $(`div[popup${janela}]`).remove();
             })
         })
 
