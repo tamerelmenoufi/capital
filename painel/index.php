@@ -73,10 +73,7 @@ body {
                     if(d.type === 'chat'){
                         // console.log(d.text);
                         if(d.text){
-                            // mensagem =  `<div style="position:fixed; background:#a1a1a1; padding:20px; bottom:20px; right:20px; width:200px; height:auto; z-index:99999" >${d.text}</div>`;
-                            // $("body").append(mensagem);
-
-                            // console.log('atualizacao' + ' up'+d.de)
+                            
 
                             layout = '<div class="d-flex flex-row">'+
                             '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
@@ -91,7 +88,21 @@ body {
                             div = $(`div[up${d.de}]`).height();
                             $(`div[up${d.de}]`).scrollTop(altura + div);    
 
-
+                            chatAtivo = $(`div[up${d.de}]`).attr("ativo");
+                            if(!chatAtivo){
+                                alerta = `  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                                <div class="toast-header">
+                                                    <img src="..." class="rounded me-2" alt="...">
+                                                    <strong class="me-auto">Bootstrap</strong>
+                                                    <small>11 mins ago</small>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                </div>
+                                                <div class="toast-body">
+                                                    Hello, world! This is a toast message.
+                                                </div>
+                                            </div>`;
+                                $("body").append(alerta);
+                            }
 
                         }
                     }                    
