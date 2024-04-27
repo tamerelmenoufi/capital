@@ -4,8 +4,8 @@
 ?>
 <style>
   .legenda_status{
-    border-left:5px solid;
-    border-left-color:green;
+    /* border-left:5px solid;
+    border-left-color:green; */
   }
   .Titulo<?=$md5?>{
         position:absolute;
