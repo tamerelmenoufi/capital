@@ -44,9 +44,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-.toast-container{
-    position:fixed!important;
-}
 
 </style>
 

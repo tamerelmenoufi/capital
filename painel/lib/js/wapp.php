@@ -1,3 +1,12 @@
+<style>
+    .toast-container{
+        position:fixed!important;
+    }
+    .toast-body{
+        cursor:pointer;
+    }
+</style>
+
 <script>
     $(function(){
 
@@ -38,7 +47,11 @@
                                                 <small>11 mins ago</small>
                                                 <button close="${d.de}" type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                                             </div>
-                                            <div class="toast-body">
+                                            <div 
+                                                class="toast-body"
+                                                
+                                                abrirMensagem="${d.codigo}"
+                                            >
                                                 ${d.text}
                                             </div>
                                         </div>`;
@@ -62,16 +75,16 @@
         });
 
 
-        $("a[mensagens]").click(function(){
-            mensagens = $(this).attr("mensagens");
+        $("div[abrirMensagem]").click(function(){
+            mensagens = $(this).attr("abrirMensagem");
             $.ajax({
                 url:"financeira/clientes/wapp.php",
                 type:"POST",
                 data:{
-                mensagens
+                    mensagens
                 },
                 success:function(dados){
-                $(".LateralDireita").html(dados);
+                    $(".LateralDireita").html(dados);
                 }
             })
         })
