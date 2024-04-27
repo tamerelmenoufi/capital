@@ -105,7 +105,7 @@
                       <div class="p-2" style="font-size:12px;"><i class="fa-solid fa-mobile-screen-button"></i> <?=(($d->phoneNumber)?:"<span class='text-danger'>Não Registrado</span>")?></div>
                     </div>
                     <div class="d-flex justify-content-between">
-                      <div class="legenda_status p-2" style="border-left-color:<?=$cor?>; font-size:12px; color:#a1a1a1;">
+                      <div class="legenda_status p-2" style="font-size:12px; color:#a1a1a1;">
                         <span style="color:#333"><?=$mensagem?></span><br><?=dataBr($data)?>
                       </div>
                     </div>
