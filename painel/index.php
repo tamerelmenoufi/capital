@@ -102,6 +102,7 @@ body {
                                                 </div>
                                             </div>`;
                                 $("body").append(alerta);
+                                console.log(alerta)
                             }
 
                         }
