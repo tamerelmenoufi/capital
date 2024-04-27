@@ -105,6 +105,11 @@
                       <div class="p-2" style="font-size:12px;"><i class="fa-solid fa-mobile-screen-button"></i> <?=(($d->phoneNumber)?:"<span class='text-danger'>Não Registrado</span>")?></div>
                     </div>
                     <div class="d-flex justify-content-between">
+                      <i class="fa-regular fa-comment" style = "-moz-transform: scaleX(-1); 
+                                                                -o-transform: scaleX(-1); 
+                                                                -webkit-transform: scaleX(-1); 
+                                                                transform: scaleX(-1);"
+                                                                ></i>
                       <div class="p-2" style="font-size:12px; color:#a1a1a1;">
                         <span style="color:#333"><?=$mensagem?></span><br><?=dataBr($data)?>
                       </div>
