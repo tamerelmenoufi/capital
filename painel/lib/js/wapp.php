@@ -75,7 +75,7 @@
         });
 
 
-        $("div[abrirMensagem]").click(function(){
+        $(document).on("click","div[abrirMensagem]",function() {
             mensagens = $(this).attr("abrirMensagem");
             $(".toast").remove();
             $.ajax({
