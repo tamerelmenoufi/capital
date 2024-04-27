@@ -6,6 +6,7 @@
     $query = "SELECT a.*, b.codigo as cod_cliente, b.nome FROM wapp_chat a left join clientes b on REPLACE(REPLACE(REPLACE(REPLACE(b.phoneNumber, '(', ''), ')', ''), '-', ''), ' ', '') = a.de where a.data >= '{$tempo}'";
     $result = mysqli_query($con, $query);
     $retorno = [];
+    $update = [];
     while($d = mysqli_fetch_object($result)){
         $nome = explode(" ", trim($d->nome))[0];
         $retorno[] = [ 
@@ -17,6 +18,11 @@
                         "codigo_cliente" => $d->cod_cliente,
                         "codigo_mensagem" => $d->codigo,
                         "data" => dataBr($d->data)];
+        if($d->cod_cliente) $update[] = $d->cod_cliente;
+    }
+
+    if($update){
+        mysqli_query($con, "update clientes set ultimo_chat = NOW() where codigo in (".implode(", ",$update).")");
     }
 
     echo json_encode($retorno);
