@@ -90,8 +90,7 @@ body {
 
                             chatAtivo = $(`div[up${d.de}]`).attr("ativo");
                             if(!chatAtivo){
-                                alerta = `<div style="position:fixed; z-index:9999; left:10px; bottom:10px;">
-                                            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                alerta = `<div class="toastX" role="alert" aria-live="assertive" aria-atomic="true">
                                                 <div class="toast-header">
                                                     <img src="..." class="rounded me-2" alt="...">
                                                     <strong class="me-auto">Bootstrap</strong>
@@ -101,7 +100,6 @@ body {
                                                 <div class="toast-body">
                                                     Hello, world! This is a toast message.
                                                 </div>
-                                            </div>
                                             </div>`;
                                 $("body").append(alerta);
                                 console.log(alerta)
