@@ -117,9 +117,10 @@
     <?php
             }
             $ultimo_acesso = $m->data;
-            if($update){
-                mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
-            }
+        }
+        
+        if($update){
+            mysqli_query($con, "update wapp_chat set recebida = '1' where codigo in(".implode(', ', $update).") and recebida != '1'");
         }
     ?>
 </div>
