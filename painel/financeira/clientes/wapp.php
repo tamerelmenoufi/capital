@@ -91,7 +91,7 @@
     <div class="d-flex justify-content-between align-items-center">
         <span>Mensagens WhatsApp</span>
         <div style="position:relative">
-            <span style="position:absolute; background-color:green; border-radius:100%; width:10px; height:10px; right:0px; top:0px;"></span>
+            <span style="position:absolute; background-color:green; border-radius:100%; width:10px; height:10px; right:0px; top:-5px;"></span>
             <i class="fa-solid fa-comments"></i>
         </div>
         
