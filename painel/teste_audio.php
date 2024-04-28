@@ -172,7 +172,7 @@
 }
 </style>
 
-<div class="microfone">
+<div class="microfone" normal>
   <div class="radio"></div>
   <i class="icon fas fa-microphone"></i>
 </div>

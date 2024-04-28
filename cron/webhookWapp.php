@@ -11,6 +11,7 @@
             $query = "insert into wapp_chat set 
                                                 de = '".substr($_POST['contact_phone_number'],2,strlen($_POST['contact_phone_number']))."',
                                                 para = '{$_POST['phone_number']}',
+                                                tipo = '{$_POST['message_type']}',
                                                 mensagem = '{$_POST['message_body']}',
                                                 data = NOW()";
             mysqli_query($con, $query);
