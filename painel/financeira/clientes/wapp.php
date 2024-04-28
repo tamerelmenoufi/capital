@@ -304,13 +304,16 @@
         $("i[statusGravacao]").click(function(){
             acao = $(this).attr("statusGravacao");
             if(acao == 'play'){
+                var audioPlayer = $('#audioPlayer')[0];
                 $(".mensagem_texto").removeClass("oculta");
                 $(".mensagem_texto").addClass("exibe");
                 
                 $(".mensagem_audio").removeClass("exibe");
                 $(".mensagem_audio").addClass("oculta"); 
 
-                $("#audioPlayer").stop();
+                if (!audioPlayer.paused) {
+                    audioPlayer.pause();
+                }
 
             }
 
