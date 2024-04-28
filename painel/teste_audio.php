@@ -4,7 +4,7 @@
 <head>
   <script>
   
-    let audioIN = { audio: true };
+    let audioIN = { audio: false };
     //  audio is true, for recording
   
     // Access the permission for use
@@ -120,7 +120,7 @@
     play, pause, and volume-->
   
   <!--for play the audio-->
-  <!-- <audio id="adioPlay" controls></audio> -->
+  <audio id="adioPlay" controls></audio>
 </body>
   
 </html>
