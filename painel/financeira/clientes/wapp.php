@@ -93,8 +93,8 @@
 
     /* Estilos do microfone */
     .microfone {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: transparent;
     border-radius: 50%;
     position: relative;
@@ -105,8 +105,6 @@
 
     /* Estilos do ícone de microfone */
     .icon {
-    color: white;
-    font-size: 48px;
     z-index:1;
     }
 
@@ -192,7 +190,7 @@
         <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
         <div class="microfone" normal>
             <div class="radio"></div>
-            <i class="fa-solid fa-microphone p-3"></i>
+            <i class="fa-solid fa-microphone p-3 icon"></i>
         </div>
         <i class="fa-regular fa-paper-plane p-3"></i>
     </div>
