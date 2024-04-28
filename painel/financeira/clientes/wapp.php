@@ -233,13 +233,13 @@
 
 
         ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
-
+        var mediaRecorder;
 
         $(".microfone").click(function(){
             acao = $(this).attr("acao");
 
             if(acao == "normal"){
-                var mediaRecorder;
+                
                 var chunks = [];
                 $(".radio").css("opacity","1");
                 $(".mensagem_texto").removeClass("exibe");
