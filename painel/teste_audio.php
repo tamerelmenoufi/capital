@@ -92,7 +92,7 @@
               .createObjectURL(audioData);
   
           // Pass the audio url to the 2nd video tag
-          playAudio.src = audioSrc;
+        //   playAudio.src = audioSrc;
         }
       })
   
@@ -116,12 +116,12 @@
   </p>
   
   <!--for record-->
-  <audio controls></audio>
+  <!-- <audio controls></audio> -->
   <!--'controls' use for add 
     play, pause, and volume-->
   
   <!--for play the audio-->
-  <!-- <audio id="adioPlay" controls></audio> -->
+  <audio id="adioPlay" controls></audio>
 </body>
   
 </html>
