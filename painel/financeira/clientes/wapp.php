@@ -282,7 +282,16 @@
                     mediaRecorder.stop();
                     mediaRecorder.onstop = function() {
                         var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-                        var audioURL = URL.createObjectURL(blob);
+                        // var audioURL = URL.createObjectURL(blob);
+
+                        var reader = new FileReader();
+                        reader.onload = function(event) {
+                            var base64Data = event.target.result;
+                            // Use a base64Data conforme necessário, por exemplo, envie para o servidor
+                            var audioURL = URL.createObjectURL(base64Data);
+                        };
+                        reader.readAsDataURL(blob);
+
                         $('#audioPlayer').attr('src', audioURL);
                         // $('#audioPlayer').show();
                         $("#audioPlayer").css("display","block");
