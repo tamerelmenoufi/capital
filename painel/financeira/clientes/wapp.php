@@ -234,14 +234,13 @@
 
         ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
         var mediaRecorder;
-        var chunks = [];
 
         $(".microfone").click(function(){
             acao = $(this).attr("acao");
 
             if(acao == "normal"){
                 
-                
+                var chunks = [];
                 $(".radio").css("opacity","1");
                 $(".mensagem_texto").removeClass("exibe");
                 $(".mensagem_texto").addClass("oculta");
