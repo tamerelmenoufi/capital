@@ -328,7 +328,7 @@
 
                 if (!audioPlayer.paused) {
                     audioPlayer.pause();
-                    $('#audioPlayer').attr("src",'');
+                    $('#audioPlayer').removeAttr("src");
                 }
 
             }
