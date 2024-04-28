@@ -237,9 +237,10 @@
 
         $(".microfone").click(function(){
             acao = $(this).attr("acao");
-            var mediaRecorder;
-            var chunks = [];
+
             if(acao == "normal"){
+                var mediaRecorder;
+                var chunks = [];
                 $(".radio").css("opacity","1");
                 $(".mensagem_texto").removeClass("exibe");
                 $(".mensagem_texto").addClass("oculta");
