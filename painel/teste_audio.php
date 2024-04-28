@@ -128,8 +128,8 @@
 <style>
 /* Estilos do microfone */
 .microfone {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   background-color: transparent;
   border-radius: 50%;
   position: relative;
