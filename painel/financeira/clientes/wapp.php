@@ -467,10 +467,10 @@
                 base64 = audio.split('base64,');
                 console.log('audio:'+base64[1])
                 /// acao de envio
-                // EnviaMensagemAudio(val);
+                EnviaMensagemAudio(val);
                 removePlayer();
             }else if(val) {
-                // EnviaMensagemText(val);
+                EnviaMensagemText(val);
                 $("#chatMensagem").val('');
             }
 
