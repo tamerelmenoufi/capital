@@ -261,6 +261,8 @@
                 $("i[statusGravacao]").removeClass("fa-trash-can");
                 $("i[statusGravacao]").attr("statusGravacao","gravando");
 
+                $("i[enviar]").css("display","none");
+
                 $("#chatMensagem").val('');
 
                 /////////////Gravação/////////////////////
@@ -283,6 +285,8 @@
             }else{
                 $(".radio").css("opacity","0");
                 $('#audioPlayer').attr('src', '');
+                $("i[enviar]").css("display","block");
+
                 ///////////////Iniçio da açao de gravação/////////////////////////
                 console.log('audio finalizado')
                 if (mediaRecorder && mediaRecorder.state !== 'inactive') {
@@ -396,7 +400,7 @@
         })
 
         $("i[enviar]").off('click').on('click', function(){
-            
+
             audio = '';
             val = '';
             base64 = [];
