@@ -110,28 +110,29 @@
 
     /* Estilos do "rádio luminoso" */
     .radio {
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: radio-pulse 1s ease-in-out infinite ;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: radio-pulse 1s ease-in-out infinite ;
+        opacity:0;
     }
 
     /* Animação do "rádio luminoso" */
     @keyframes radio-pulse {
-    0% {
-        width: 5px;
-        height: 5px;
-    }
-    100% {
-        width: 50px;
-        height: 50px;
-        opacity: 0;
-    }
+        0% {
+            width: 5px;
+            height: 5px;
+        }
+        100% {
+            width: 50px;
+            height: 50px;
+            opacity: 0;
+        }
     }
     /* Estilo do microfone */
 </style>
@@ -188,7 +189,7 @@
     <div class="d-flex justify-content-between align-items-center m-3">
         <i class="fa-regular fa-face-smile p-3"></i>
         <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
-        <div class="microfone" normal>
+        <div class="microfone" acao="normal">
             <div class="radio"></div>
             <i class="fa-solid fa-microphone p-3 icon"></i>
         </div>
@@ -210,6 +211,17 @@
         if($("div[listaClientesChat]").attr("listaClientesChat") == 'open'){
             $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
         }
+
+        $(".microfone").click(function(){
+            acao = $(this).attr("acao");
+            if(acao == "normal"){
+                $(".radio").css("opacity","1");
+                $(this).attr("acao","gravando");
+            }else{
+                $(".radio").css("opacity","0");
+                $(this).attr("acao","normal");
+            }
+        })
 
 
         $("#chatMensagem").keypress(function(e){
