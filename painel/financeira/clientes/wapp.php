@@ -231,6 +231,11 @@
             $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
         }
 
+
+        ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
+        var mediaRecorder;
+        var chunks = [];
+
         $(".microfone").click(function(){
             acao = $(this).attr("acao");
             if(acao == "normal"){
@@ -240,42 +245,28 @@
                 
                 $(".mensagem_audio").removeClass("oculta");
                 $(".mensagem_audio").addClass("exibe");
+
+                /////////////Gravação/////////////////////
+                console.log('audio iniciado')
+                navigator.mediaDevices.getUserMedia({audio: true})
+                .then(function(stream) {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = function(e) {
+                        chunks.push(e.data);
+                    };
+                    mediaRecorder.start();
+                })
+                .catch(function(err) {
+                    console.error('Erro ao acessar o microfone: ', err);
+                });
+                ////////Fim da gravação////////////////////////
+
                 
                 $(this).attr("acao","gravando");
             }else{
                 $(".radio").css("opacity","0");
                 
-                // $(".mensagem_texto").removeClass("oculta");
-                // $(".mensagem_texto").addClass("exibe");
-                
-                // $(".mensagem_audio").removeClass("exibe");
-                // $(".mensagem_audio").addClass("oculta");
-                
-                $(this).attr("acao","normal");
-            }
-        })
-
-        ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
-        var mediaRecorder;
-        var chunks = [];
-
-        $(".microfone").click(function(){
-            acao = $(this).attr("acao");
-            if(acao == "normal"){
-                console.log('audio iniciado')
-                navigator.mediaDevices.getUserMedia({audio: true})
-                    .then(function(stream) {
-                        mediaRecorder = new MediaRecorder(stream);
-                        mediaRecorder.ondataavailable = function(e) {
-                            chunks.push(e.data);
-                        };
-                        mediaRecorder.start();
-                    })
-                    .catch(function(err) {
-                        console.error('Erro ao acessar o microfone: ', err);
-                    });
-            }
-            else{
+                ///////////////Iniçio da açao de gravação/////////////////////////
                 console.log('audio finalizado')
                 if (mediaRecorder && mediaRecorder.state !== 'inactive') {
                 console.log('audio acao')
@@ -286,10 +277,19 @@
                         $('#audioPlayer').attr('src', audioURL);
                         $('#audioPlayer').show();
                     };
-                }                
-            }
+                }  
+                /////////////////Fim da ação//////////////////////////////////////
+
+                // $(".mensagem_texto").removeClass("oculta");
+                // $(".mensagem_texto").addClass("exibe");
                 
-        });
+                // $(".mensagem_audio").removeClass("exibe");
+                // $(".mensagem_audio").addClass("oculta");
+                
+                $(this).attr("acao","normal");
+            }
+        })
+
         //////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
 
 
