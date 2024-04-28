@@ -205,7 +205,7 @@
         <div class="mensagem_audio oculta w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <i class="fa-solid fa-microphone p-3 text-danger"></i>
-                <div class="form-control p-3">  <audio controls id="audioPlayer" style="display:none;"></audio> Gravando ...</div>
+                <div class="form-control p-3">  <audio controls id="audioPlayer" style="display:none;"></audio> <span gravando>Gravando ...</span></div>
             </div>
         </div>        
         <div class="microfone" acao="normal">
@@ -246,6 +246,9 @@
                 $(".mensagem_audio").removeClass("oculta");
                 $(".mensagem_audio").addClass("exibe");
 
+                $("#audioPlayer").css("display","none");
+                $("span[gravando]").css("display","block");
+
                 /////////////Gravação/////////////////////
                 console.log('audio iniciado')
                 navigator.mediaDevices.getUserMedia({audio: true})
@@ -275,7 +278,9 @@
                         var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
                         var audioURL = URL.createObjectURL(blob);
                         $('#audioPlayer').attr('src', audioURL);
-                        $('#audioPlayer').show();
+                        // $('#audioPlayer').show();
+                        $("#audioPlayer").css("display","block");
+                        $("span[gravando]").css("display","none");
                     };
                 }  
                 /////////////////Fim da ação//////////////////////////////////////
