@@ -89,6 +89,53 @@
     div[listaClientesChat]{
         cursor:pointer;
     }
+
+
+    /* Estilos do microfone */
+    .microfone {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    /* Estilos do ícone de microfone */
+    .icon {
+    color: white;
+    font-size: 48px;
+    z-index:1;
+    }
+
+    /* Estilos do "rádio luminoso" */
+    .radio {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: radio-pulse 1s ease-in-out infinite ;
+    }
+
+    /* Animação do "rádio luminoso" */
+    @keyframes radio-pulse {
+    0% {
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+    }
+    /* Estilo do microfone */
 </style>
 <h4 class="Titulo<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center">
@@ -143,7 +190,10 @@
     <div class="d-flex justify-content-between align-items-center m-3">
         <i class="fa-regular fa-face-smile p-3"></i>
         <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
-        <i class="fa-solid fa-microphone p-3"></i>
+        <div class="microfone" normal>
+            <div class="radio"></div>
+            <i class="fa-solid fa-microphone p-3"></i>
+        </div>
         <i class="fa-regular fa-paper-plane p-3"></i>
     </div>
 </div>
