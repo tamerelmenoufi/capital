@@ -128,8 +128,8 @@
 <style>
 /* Estilos do microfone */
 .microfone {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   background-color: transparent;
   border-radius: 50%;
   position: relative;
@@ -147,8 +147,8 @@
 
 /* Estilos do "rádio luminoso" */
 .radio {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   background-color: red;
   border-radius: 50%;
   position: absolute;
@@ -165,8 +165,8 @@
     height: 20px;
   }
   100% {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     opacity: 0;
   }
 }
