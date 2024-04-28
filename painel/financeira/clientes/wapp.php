@@ -315,7 +315,7 @@
             mediaRecorder.start();
             console.log('inicio da gravação')
 
-            dataArray = [];
+            
 
             mediaRecorder.ondataavailable = function (ev) {
                 dataArray.push(ev.data);
@@ -359,7 +359,7 @@
         //   playAudio.src = audioSrc; /////////////////////
           $("#audioPlay").attr("src", audioSrc);
           $("#audioPlay").css("display", "block");
-
+        }
         })
   
         // If audio data available then push 
@@ -367,7 +367,7 @@
 
   
 
-        }
+
       })
   
       // If any error occurs then handles the error 
