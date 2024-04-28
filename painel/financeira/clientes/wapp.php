@@ -112,8 +112,8 @@
 
     /* Estilos do "rádio luminoso" */
     .radio {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: red;
     border-radius: 50%;
     position: absolute;
@@ -126,12 +126,12 @@
     /* Animação do "rádio luminoso" */
     @keyframes radio-pulse {
     0% {
-        width: 20px;
-        height: 20px;
+        width: 5px;
+        height: 5px;
     }
     100% {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         opacity: 0;
     }
     }
