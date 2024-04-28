@@ -205,7 +205,7 @@
         <div class="mensagem_audio oculta w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <i statusGravacao="gravando" class="fa-solid fa-microphone p-2 text-danger"></i>
-                <div class="form-control">  <audio controls id="audioPlayer" style="display:none;"></audio> <span class="m-2" gravando>Gravando ...</span></div>
+                <div class="form-control">  <audio controls id="audioPlayer" style="display:none; height:40px;"></audio> <span class="m-2" gravando>Gravando ...</span></div>
             </div>
         </div>        
         <div class="microfone" acao="normal">
