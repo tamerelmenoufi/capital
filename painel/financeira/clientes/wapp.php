@@ -328,8 +328,9 @@
 
                 if (!audioPlayer.paused) {
                     audioPlayer.pause();
-                    $('#audioPlayer').removeAttr("src");
                 }
+
+                $('#audioPlayer').removeAttr("src");
 
             }
 
