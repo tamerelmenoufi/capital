@@ -388,7 +388,7 @@
                 })
         })
 
-        $("i[enviar]").click(function(){
+        $("i[enviar]").off('click').on('click', function(){
             audio = '';
             val = '';
             base64 = [];
