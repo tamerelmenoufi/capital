@@ -124,9 +124,8 @@
   <audio id="adioPlay" controls></audio>
 
 
-
-  <style>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
 /* Estilos do microfone */
 .microfone {
   width: 100px;
@@ -134,6 +133,15 @@
   background-color: #444;
   border-radius: 50%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos do ícone de microfone */
+.icon {
+  color: white;
+  font-size: 48px;
 }
 
 /* Estilos do "rádio luminoso" */
@@ -161,12 +169,12 @@
     opacity: 0;
   }
 }
+</style>
 
-  </style>
-
-    <div class="microfone">
-        <div class="radio"></div>
-    </div>
+<div class="microfone">
+  <i class="icon fas fa-microphone"></i>
+  <div class="radio"></div>
+</div>
 
 
 </body>
