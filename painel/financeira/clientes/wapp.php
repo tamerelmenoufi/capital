@@ -234,13 +234,22 @@
             acao = $(this).attr("acao");
             if(acao == "normal"){
                 $(".radio").css("opacity","1");
-                $(".mensagem_texto").css("display","none !important");
-                $(".mensagem_audio").css("display","block !important");
+                $(".mensagem_texto").removeClass("exibe");
+                $(".mensagem_texto").addClass("oculta");
+                
+                $(".mensagem_audio").removeClass("oculta");
+                $(".mensagem_audio").addClass("exibe");
+                
                 $(this).attr("acao","gravando");
             }else{
                 $(".radio").css("opacity","0");
-                $(".mensagem_texto").css("display","block !important");
-                $(".mensagem_audio").css("display","none !important");
+                
+                $(".mensagem_texto").removeClass("oculta");
+                $(".mensagem_texto").addClass("exibe");
+                
+                $(".mensagem_audio").removeClass("exibe");
+                $(".mensagem_audio").addClass("oculta");
+                
                 $(this).attr("acao","normal");
             }
         })
