@@ -142,6 +142,7 @@
 .icon {
   color: white;
   font-size: 48px;
+  z-index:1;
 }
 
 /* Estilos do "rádio luminoso" */
