@@ -288,8 +288,7 @@
                         reader.onload = function(event) {
                             var base64Data = event.target.result;
                             // Use a base64Data conforme necessário, por exemplo, envie para o servidor
-                            var audioURL = URL.createObjectURL(base64Data);
-                            $('#audioPlayer').attr('src', audioURL);
+                            $('#audioPlayer').attr('src', base64Data);
                         };
                         reader.readAsDataURL(blob);
 
