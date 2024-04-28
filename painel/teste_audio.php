@@ -172,8 +172,8 @@
 </style>
 
 <div class="microfone">
-  <i class="icon fas fa-microphone"></i>
   <div class="radio"></div>
+  <i class="icon fas fa-microphone"></i>
 </div>
 
 
