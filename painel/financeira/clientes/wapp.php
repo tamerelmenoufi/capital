@@ -135,13 +135,19 @@
         }
     }
     /* Estilo do microfone */
-
+    .microfone{
+        cursor:pointer;
+    }
     .exibe{
         display:block!important;
     }
 
     .oculta{
         display:none!important;
+    }
+
+    i[enviar]{
+        cursor:pointer;
     }
 
 </style>
@@ -212,7 +218,7 @@
             <div class="radio"></div>
             <i class="fa-solid fa-microphone p-3 icon"></i>
         </div>
-        <i class="fa-regular fa-paper-plane p-3"></i>
+        <i enviar class="fa-regular fa-paper-plane p-3"></i>
     </div>
 </div>
 
@@ -322,6 +328,7 @@
 
                 if (!audioPlayer.paused) {
                     audioPlayer.pause();
+                    $('#audioPlayer').attr("src",'');
                 }
 
             }
@@ -331,8 +338,8 @@
         //////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
 
 
-        $("#chatMensagem").keypress(function(e){
-            val = $(this).val();
+        function EnviaMensagemText(val){
+            
             layout = '<div class="d-flex flex-row-reverse">'+
                      '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
                      '<div class="text-start" style="border:solid 0px red;">'+val+'</div>' +
@@ -340,28 +347,34 @@
                      '</div>' +
                      '</div>';
 
+            $(".palco<?=$md5?>").append(layout);
+
+            $("#chatMensagem").val('');
+
+            altura = $(".palco<?=$md5?>").prop("scrollHeight");
+            div = $(".palco<?=$md5?>").height();
+            $(".palco<?=$md5?>").scrollTop(altura + div);
+
+            $.ajax({
+                url:"financeira/clientes/wapp.php",
+                type:"POST",
+                data:{
+                    mensagem:val,
+                    de:'<?=$ConfWappNumero?>',
+                    para:'<?=$phoneNumber?>',
+                    acao:'enviar'
+                },
+                success:function(dados){
+
+                }
+            })
+        }
+        
+        
+        $("#chatMensagem").keypress(function(e){
+            val = $(this).val();
             if(e.which == 13 && val) {
-                $(".palco<?=$md5?>").append(layout);
-
-                $("#chatMensagem").val('');
-
-                altura = $(".palco<?=$md5?>").prop("scrollHeight");
-                div = $(".palco<?=$md5?>").height();
-                $(".palco<?=$md5?>").scrollTop(altura + div);
-
-                $.ajax({
-                    url:"financeira/clientes/wapp.php",
-                    type:"POST",
-                    data:{
-                        mensagem:val,
-                        de:'<?=$ConfWappNumero?>',
-                        para:'<?=$phoneNumber?>',
-                        acao:'enviar'
-                    },
-                    success:function(dados){
-
-                    }
-                })
+                EnviaMensagemText(val);
             }
         });
 
@@ -375,6 +388,19 @@
                 })
         })
 
+        $("i[enviar]").click(function(){
+            audio = $('#audioPlayer').attr("src");
+            val = $("#chatMensagem").val();
+
+            if(audio){
+                base64 = audio.split('base64,');
+                console.log('audio:'+base64[1])
+            }else if(val) {
+                //EnviaMensagemText(val);
+                console.log('text:'+val)
+            }
+
+        });
 
         // verificarMensagem = setInterval(() => {
         //     ultimo_acesso = $("#chatMensagem").attr("ultimo_acesso");
