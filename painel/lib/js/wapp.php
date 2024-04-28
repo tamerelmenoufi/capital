@@ -23,13 +23,23 @@
                     // console.log(d.text);
                     if(d.text){
                         
-
-                        layout = '<div class="d-flex flex-row">'+
-                        '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
-                        '<div class="text-start" style="border:solid 0px red;">'+d.text+'</div>' +
-                        '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
-                        '</div>' +
-                        '</div>';
+                        if(d.tipo == 'text'){
+                            texto = d.text;
+                            layout = '<div class="d-flex flex-row">'+
+                            '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+                            '<div class="text-start" style="border:solid 0px red;">'+d.text+'</div>' +
+                            '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
+                            '</div>' +
+                            '</div>';
+                        }else if(d.tipo == 'audio'){
+                            texto = 'Áudio recebido';
+                            layout = '<div class="d-flex flex-row">'+
+                            '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+                            '<div class="text-start" style="border:solid 0px red;"><audio controls style="height:40px;" src="$m->mensagem" src="'+d.text+'"></audio></div>' +
+                            '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
+                            '</div>' +
+                            '</div>';                            
+                        }
 
                         $(`div[up${d.de}]`).append(layout);
 
@@ -56,7 +66,7 @@
                                                     aria-controls="offcanvasDireita"
                                                     abrirMensagem="${d.codigo_cliente}"
                                                 >
-                                                    ${d.text}
+                                                    ${texto}
                                                 </div>
                                             </div>`;
                                 $(".toast-container").append(alerta);
