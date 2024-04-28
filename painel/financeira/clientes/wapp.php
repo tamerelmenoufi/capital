@@ -408,6 +408,10 @@
 
 
         function EnviaMensagemAudio(val){
+
+            base64 = [];
+            base64 = val.split('base64,');
+            console.log('audio:'+base64[1])
             
             layout = '<div class="d-flex flex-row-reverse">'+
                      '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
@@ -426,7 +430,7 @@
                 url:"financeira/clientes/wapp.php",
                 type:"POST",
                 data:{
-                    mensagem:val,
+                    mensagem:base64[1],
                     de:'<?=$ConfWappNumero?>',
                     para:'<?=$phoneNumber?>',
                     acao:'enviarAudio'
@@ -459,15 +463,12 @@
 
             audio = '';
             val = '';
-            base64 = [];
             audio = $('#audioPlayer').attr("src");
             val = $("#chatMensagem").val();
 
             if(audio){
-                base64 = audio.split('base64,');
-                console.log('audio:'+base64[1])
                 /// acao de envio
-                EnviaMensagemAudio(base64[1]);
+                EnviaMensagemAudio(audio);
                 removePlayer();
             }else if(val) {
                 EnviaMensagemText(val);
