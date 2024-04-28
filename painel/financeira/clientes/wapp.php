@@ -261,6 +261,8 @@
                 $("i[statusGravacao]").removeClass("fa-trash-can");
                 $("i[statusGravacao]").attr("statusGravacao","gravando");
 
+                $("#chatMensagem").val('');
+
                 /////////////Gravação/////////////////////
                 console.log('audio iniciado')
                 navigator.mediaDevices.getUserMedia({audio: true})
