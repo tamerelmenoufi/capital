@@ -137,7 +137,11 @@
     /* Estilo do microfone */
 
     .mensagem_texto{
+        display:block;
+    }
 
+    .mensagem_audio{
+        display:none;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
@@ -195,6 +199,10 @@
             <i class="fa-regular fa-face-smile p-3"></i>
             <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
         </div>
+        <div class="d-flex justify-content-between align-items-center w-100 mensagem_audio">
+            <i class="fa-solid fa-microphone p-3 text-danger"></i>
+            Gravando ...
+        </div>        
         <div class="microfone" acao="normal">
             <div class="radio"></div>
             <i class="fa-solid fa-microphone p-3 icon"></i>
@@ -222,9 +230,13 @@
             acao = $(this).attr("acao");
             if(acao == "normal"){
                 $(".radio").css("opacity","1");
+                $(".mensagem_texto").css("display","none");
+                $(".mensagem_audio").css("display","block");
                 $(this).attr("acao","gravando");
             }else{
                 $(".radio").css("opacity","0");
+                $(".mensagem_texto").css("display","block");
+                $(".mensagem_audio").css("display","none");
                 $(this).attr("acao","normal");
             }
         })
