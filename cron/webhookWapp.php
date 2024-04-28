@@ -10,7 +10,7 @@
 
             if($_POST['message_type'] == 'audio'){
                 $mensagem = "data:audio/ogg; codecs=opus;base64,{$_POST['message_body']}";
-                file_put_contents('audio'.$_POST['[message_body_extension]'], base64_decode($_POST['message_body']));
+                file_put_contents('audio'.$_POST['message_body_extension'], base64_decode($_POST['message_body']));
             }else{
                 $mensagem = $_POST['message_body'];
             }
