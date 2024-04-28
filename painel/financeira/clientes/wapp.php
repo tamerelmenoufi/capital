@@ -236,13 +236,13 @@
             acao = $(this).attr("acao");
             if(acao == "normal"){
                 $(".radio").css("opacity","1");
-                $(".mensagem_texto").css("display","none!important");
-                $(".mensagem_audio").css("display","block!important");
+                $(".mensagem_texto").css("display","none !important");
+                $(".mensagem_audio").css("display","block !important");
                 $(this).attr("acao","gravando");
             }else{
                 $(".radio").css("opacity","0");
-                $(".mensagem_texto").css("display","block!important");
-                $(".mensagem_audio").css("display","none!important");
+                $(".mensagem_texto").css("display","block !important");
+                $(".mensagem_audio").css("display","none !important");
                 $(this).attr("acao","normal");
             }
         })
