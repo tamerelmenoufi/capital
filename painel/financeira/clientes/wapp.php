@@ -467,7 +467,7 @@
                 base64 = audio.split('base64,');
                 console.log('audio:'+base64[1])
                 /// acao de envio
-                EnviaMensagemAudio(val);
+                EnviaMensagemAudio(base64[1]);
                 removePlayer();
             }else if(val) {
                 EnviaMensagemText(val);
