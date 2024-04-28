@@ -245,11 +245,11 @@
             }else{
                 $(".radio").css("opacity","0");
                 
-                $(".mensagem_texto").removeClass("oculta");
-                $(".mensagem_texto").addClass("exibe");
+                // $(".mensagem_texto").removeClass("oculta");
+                // $(".mensagem_texto").addClass("exibe");
                 
-                $(".mensagem_audio").removeClass("exibe");
-                $(".mensagem_audio").addClass("oculta");
+                // $(".mensagem_audio").removeClass("exibe");
+                // $(".mensagem_audio").addClass("oculta");
                 
                 $(this).attr("acao","normal");
             }
