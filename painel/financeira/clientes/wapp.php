@@ -234,13 +234,14 @@
 
         ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
         var mediaRecorder;
+        var chunks = [];
 
         $(".microfone").click(function(){
             acao = $(this).attr("acao");
 
             if(acao == "normal"){
                 
-                var chunks = [];
+                
                 $(".radio").css("opacity","1");
                 $(".mensagem_texto").removeClass("exibe");
                 $(".mensagem_texto").addClass("oculta");
@@ -277,6 +278,7 @@
                 console.log('audio acao')
                     mediaRecorder.stop();
                     mediaRecorder.onstop = function() {
+                        $('#audioPlayer').attr('src', '');
                         var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
                         var audioURL = URL.createObjectURL(blob);
                         $('#audioPlayer').attr('src', audioURL);
