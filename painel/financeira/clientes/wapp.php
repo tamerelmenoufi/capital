@@ -136,14 +136,12 @@
     }
     /* Estilo do microfone */
 
-    .mensagem_texto{
+    .exibe{
         display:block!important;
-        width:100%;
     }
 
-    .mensagem_audio{
+    .oculta{
         display:none!important;
-        width:100%;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
@@ -197,13 +195,13 @@
 </div>
 <div class="rodape<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center m-3">
-        <div class="mensagem_texto">
+        <div class="mensagem_texto exibe w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <i class="fa-regular fa-face-smile p-3"></i>
                 <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
             </div>
         </div>
-        <div class="mensagem_audio">
+        <div class="mensagem_audio oculta w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <i class="fa-solid fa-microphone p-3 text-danger"></i>
                 Gravando ...
