@@ -130,7 +130,7 @@
 .microfone {
   width: 100px;
   height: 100px;
-  background-color: #444;
+  background-color: transparent;
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -146,8 +146,8 @@
 
 /* Estilos do "rádio luminoso" */
 .radio {
-  width: 20px;
-  height: 20px;
+  width: 100px;
+  height: 100px;
   background-color: red;
   border-radius: 50%;
   position: absolute;
