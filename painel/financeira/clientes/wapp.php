@@ -260,6 +260,7 @@
         var chunks = [];
 
         $('div[acao="normal"]').on('click', function() {
+            console.log('audio iniciado')
             navigator.mediaDevices.getUserMedia({audio: true})
                 .then(function(stream) {
                     mediaRecorder = new MediaRecorder(stream);
@@ -274,7 +275,9 @@
         });
 
         $('div[acao="gravando"]').on('click', function() {
+            console.log('audio finalizado')
             if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+            console.log('audio acao')
                 mediaRecorder.stop();
                 mediaRecorder.onstop = function() {
                     var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
