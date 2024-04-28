@@ -4,7 +4,7 @@
 <head>
   <script>
   
-    let audioIN = { audio: false };
+    let audioIN = { audio: true };
     //  audio is true, for recording
   
     // Access the permission for use
@@ -22,13 +22,14 @@
         // 'srcObject' is a property which 
         // takes the media object
         // This is supported in the newer browsers
-        if ("srcObject" in audio) {
-          audio.srcObject = mediaStreamObj;
-        }
-        else {   // Old version
-          audio.src = window.URL
-            .createObjectURL(mediaStreamObj);
-        }
+        
+        // if ("srcObject" in audio) {
+        //   audio.srcObject = mediaStreamObj;
+        // }
+        // else {   // Old version
+        //   audio.src = window.URL
+        //     .createObjectURL(mediaStreamObj);
+        // }
   
         // It will play the audio
         audio.onloadedmetadata = function (ev) {
