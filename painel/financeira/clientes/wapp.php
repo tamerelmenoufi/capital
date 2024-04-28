@@ -204,7 +204,7 @@
         </div>
         <div class="mensagem_audio oculta w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
-                <i class="fa-solid fa-microphone p-3 text-danger"></i>
+                <i statusGravacao="gravando" class="fa-solid fa-microphone p-3 text-danger"></i>
                 <div class="form-control">  <audio controls id="audioPlayer" style="display:none;"></audio> <span class="m-3" gravando>Gravando ...</span></div>
             </div>
         </div>        
@@ -251,6 +251,10 @@
                 $("#audioPlayer").css("display","none");
                 $("span[gravando]").css("display","block");
 
+                $("i[statusGravacao]").addClass("fa-microphone");
+                $("i[statusGravacao]").removeClass("fa-trash-can");
+                $("i[statusGravacao]").attr("statusGravacao","gravando");
+
                 /////////////Gravação/////////////////////
                 console.log('audio iniciado')
                 navigator.mediaDevices.getUserMedia({audio: true})
@@ -283,18 +287,31 @@
                         // $('#audioPlayer').show();
                         $("#audioPlayer").css("display","block");
                         $("span[gravando]").css("display","none");
+
+                        $("i[statusGravacao]").removeClass("fa-microphone");
+                        $("i[statusGravacao]").addClass("fa-trash-can");
+                        $("i[statusGravacao]").attr("statusGravacao","play");
                     };
                 }  
                 /////////////////Fim da ação//////////////////////////////////////
 
-                // $(".mensagem_texto").removeClass("oculta");
-                // $(".mensagem_texto").addClass("exibe");
-                
-                // $(".mensagem_audio").removeClass("exibe");
-                // $(".mensagem_audio").addClass("oculta");
+
                 
                 $(this).attr("acao","normal");
             }
+        })
+
+        $("i[statusGravacao]").click(function(){
+            acao = $(this).attr("statusGravacao");
+            if(acao == 'play'){
+                $(".mensagem_texto").removeClass("oculta");
+                $(".mensagem_texto").addClass("exibe");
+                
+                $(".mensagem_audio").removeClass("exibe");
+                $(".mensagem_audio").addClass("oculta"); 
+
+            }
+
         })
 
         //////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
