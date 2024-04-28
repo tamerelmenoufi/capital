@@ -314,6 +314,14 @@
         $('div[acao="normal"]').click(function(){
             mediaRecorder.start();
             console.log('inicio da gravação')
+
+            dataArray = [];
+
+            mediaRecorder.ondataavailable = function (ev) {
+                dataArray.push(ev.data);
+            }
+
+
         })
   
         // // Stop event
@@ -325,14 +333,8 @@
         $('div[acao="gravando"]').click(function(){
             mediaRecorder.stop();
             console.log('fim da gravação')
-        })
-  
-        // If audio data available then push 
-        // it to the chunk array
-        mediaRecorder.ondataavailable = function (ev) {
-          dataArray.push(ev.data);
-        }
-  
+
+
         // Chunk array to store the audio data 
         let dataArray = [];
   
@@ -357,6 +359,14 @@
         //   playAudio.src = audioSrc; /////////////////////
           $("#audioPlay").attr("src", audioSrc);
           $("#audioPlay").css("display", "block");
+
+        })
+  
+        // If audio data available then push 
+        // it to the chunk array
+
+  
+
         }
       })
   
