@@ -289,10 +289,11 @@
                             var base64Data = event.target.result;
                             // Use a base64Data conforme necessário, por exemplo, envie para o servidor
                             var audioURL = URL.createObjectURL(base64Data);
+                            $('#audioPlayer').attr('src', audioURL);
                         };
                         reader.readAsDataURL(blob);
 
-                        $('#audioPlayer').attr('src', audioURL);
+                        // $('#audioPlayer').attr('src', audioURL);
                         // $('#audioPlayer').show();
                         $("#audioPlayer").css("display","block");
                         $("span[gravando]").css("display","none");
