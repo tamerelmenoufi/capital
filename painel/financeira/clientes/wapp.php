@@ -389,6 +389,9 @@
         })
 
         $("i[enviar]").click(function(){
+            audio = '';
+            val = '';
+            base64 = [];
             audio = $('#audioPlayer').attr("src");
             val = $("#chatMensagem").val();
 
