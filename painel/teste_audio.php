@@ -122,6 +122,53 @@
   
   <!--for play the audio-->
   <audio id="adioPlay" controls></audio>
+
+
+
+  <style>
+
+/* Estilos do microfone */
+.microfone {
+  width: 100px;
+  height: 100px;
+  background-color: #444;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Estilos do "rádio luminoso" */
+.radio {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: radio-pulse 1s ease-in-out infinite alternate;
+}
+
+/* Animação do "rádio luminoso" */
+@keyframes radio-pulse {
+  0% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+}
+
+  </style>
+
+    <div class="microfone">
+        <div class="radio"></div>
+    </div>
+
+
 </body>
   
 </html>
