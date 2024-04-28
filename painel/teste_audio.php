@@ -36,7 +36,7 @@
   
           // Play the audio in the 2nd audio
           // element what is being recorded
-          audio.play();
+        //   audio.play();
         };
   
         // Start record
@@ -92,7 +92,7 @@
               .createObjectURL(audioData);
   
           // Pass the audio url to the 2nd video tag
-        //   playAudio.src = audioSrc;
+          playAudio.src = audioSrc;
         }
       })
   
