@@ -22,7 +22,7 @@
         // 'srcObject' is a property which 
         // takes the media object
         // This is supported in the newer browsers
-        
+
         // if ("srcObject" in audio) {
         //   audio.srcObject = mediaStreamObj;
         // }
@@ -116,7 +116,7 @@
   </p>
   
   <!--for record-->
-  <audio controls></audio>
+  <!-- <audio controls></audio> -->
   <!--'controls' use for add 
     play, pause, and volume-->
   
