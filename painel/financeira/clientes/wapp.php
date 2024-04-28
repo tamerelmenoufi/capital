@@ -318,22 +318,26 @@
             }
         })
 
+
+        function removePlayer(){
+            var audioPlayer = $('#audioPlayer')[0];
+            $(".mensagem_texto").removeClass("oculta");
+            $(".mensagem_texto").addClass("exibe");
+            
+            $(".mensagem_audio").removeClass("exibe");
+            $(".mensagem_audio").addClass("oculta"); 
+
+            if (!audioPlayer.paused) {
+                audioPlayer.pause();
+            }
+
+            $('#audioPlayer').removeAttr("src");
+        }
+
         $("i[statusGravacao]").click(function(){
             acao = $(this).attr("statusGravacao");
             if(acao == 'play'){
-                var audioPlayer = $('#audioPlayer')[0];
-                $(".mensagem_texto").removeClass("oculta");
-                $(".mensagem_texto").addClass("exibe");
-                
-                $(".mensagem_audio").removeClass("exibe");
-                $(".mensagem_audio").addClass("oculta"); 
-
-                if (!audioPlayer.paused) {
-                    audioPlayer.pause();
-                }
-
-                $('#audioPlayer').removeAttr("src");
-
+                removePlayer()
             }
 
         })
@@ -401,6 +405,10 @@
             if(audio){
                 base64 = audio.split('base64,');
                 console.log('audio:'+base64[1])
+                /// acao de envio
+
+                removePlayer();
+
             }else if(val) {
                 //EnviaMensagemText(val);
                 console.log('text:'+val)
