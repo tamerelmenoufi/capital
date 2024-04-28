@@ -137,11 +137,11 @@
     /* Estilo do microfone */
 
     .mensagem_texto{
-        display:block;
+        display:block!important;
     }
 
     .mensagem_audio{
-        display:none;
+        display:none!important;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
@@ -230,13 +230,13 @@
             acao = $(this).attr("acao");
             if(acao == "normal"){
                 $(".radio").css("opacity","1");
-                $(".mensagem_texto").css("display","none");
-                $(".mensagem_audio").css("display","block");
+                $(".mensagem_texto").css("display","none!important");
+                $(".mensagem_audio").css("display","block!important");
                 $(this).attr("acao","gravando");
             }else{
                 $(".radio").css("opacity","0");
-                $(".mensagem_texto").css("display","block");
-                $(".mensagem_audio").css("display","none");
+                $(".mensagem_texto").css("display","block!important");
+                $(".mensagem_audio").css("display","none!important");
                 $(this).attr("acao","normal");
             }
         })
