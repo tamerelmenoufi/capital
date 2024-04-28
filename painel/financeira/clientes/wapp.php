@@ -271,14 +271,13 @@
                 $(this).attr("acao","gravando");
             }else{
                 $(".radio").css("opacity","0");
-                
+                $('#audioPlayer').attr('src', '');
                 ///////////////Iniçio da açao de gravação/////////////////////////
                 console.log('audio finalizado')
                 if (mediaRecorder && mediaRecorder.state !== 'inactive') {
                 console.log('audio acao')
                     mediaRecorder.stop();
                     mediaRecorder.onstop = function() {
-                        $('#audioPlayer').attr('src', '');
                         var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
                         var audioURL = URL.createObjectURL(blob);
                         $('#audioPlayer').attr('src', audioURL);
