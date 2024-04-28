@@ -7,18 +7,27 @@
         exit();
     }
 
-    if($_POST['acao'] == 'enviar'){
-        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
+    if($_POST['acao'] == 'enviarText'){
+        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = 'text', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
         if(mysqli_query($con, $query)){
-
             $wgw = new wgw;
             $wgw->SendTxt([
               'mensagem'=>$_POST['mensagem'],
               'para'=>'55'.$_POST['para']
             ]);
-
         }
+        exit();
+    }
 
+    if($_POST['acao'] == 'enviarAudio'){
+        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = 'audio', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
+        if(mysqli_query($con, $query)){
+            $wgw = new wgw;
+            $wgw->SendAudio([
+              'mensagem'=>$_POST['mensagem'],
+              'para'=>'55'.$_POST['para']
+            ]);
+        }
         exit();
     }
 
@@ -169,11 +178,27 @@
         $update = [];
         while($m = mysqli_fetch_object($result)){
 
+
+            switch($m->tipo){
+                case 'text':{
+                    $mensagem = $m->mensagem;
+                    break;
+                }
+                case 'audio':{
+                    $mensagem = "<audio controls style='height:40px;' src='{$m->mensagem}'></audio>";
+                    break;
+                }
+                default:{
+                    $mensagem = false;
+                }
+            }
+
+
             if($m->de == $ConfWappNumero){
     ?>
             <div class="d-flex flex-row-reverse">
                 <div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">
-                    <div class="text-start" style="border:solid 0px red;"><?=$m->mensagem?></div>
+                    <div class="text-start" style="border:solid 0px red;"><?=$mensagem?></div>
                     <div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;"><?=dataBr($m->data)?></div>
                 </div>
             </div>
@@ -184,7 +209,7 @@
     ?>
             <div class="d-flex flex-row">
                 <div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">
-                    <div class="text-start" style="border:solid 0px red;"><?=$m->mensagem?></div>
+                    <div class="text-start" style="border:solid 0px red;"><?=$mensagem?></div>
                     <div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;"><?=dataBr($m->data)?></div>
                 </div>
             </div>
@@ -373,7 +398,38 @@
                     mensagem:val,
                     de:'<?=$ConfWappNumero?>',
                     para:'<?=$phoneNumber?>',
-                    acao:'enviar'
+                    acao:'enviarText'
+                },
+                success:function(dados){
+
+                }
+            })
+        }
+
+
+        function EnviaMensagemAudio(val){
+            
+            layout = '<div class="d-flex flex-row-reverse">'+
+                     '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
+                     '<div class="text-start" style="border:solid 0px red;"><audio controls style="height:40px;" src="'+val+'"></audio></div>' +
+                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">12:17</div>' +
+                     '</div>' +
+                     '</div>';
+
+            $(".palco<?=$md5?>").append(layout);
+
+            altura = $(".palco<?=$md5?>").prop("scrollHeight");
+            div = $(".palco<?=$md5?>").height();
+            $(".palco<?=$md5?>").scrollTop(altura + div);
+
+            $.ajax({
+                url:"financeira/clientes/wapp.php",
+                type:"POST",
+                data:{
+                    mensagem:val,
+                    de:'<?=$ConfWappNumero?>',
+                    para:'<?=$phoneNumber?>',
+                    acao:'enviarAudio'
                 },
                 success:function(dados){
 
@@ -411,12 +467,11 @@
                 base64 = audio.split('base64,');
                 console.log('audio:'+base64[1])
                 /// acao de envio
-
+                // EnviaMensagemAudio(val);
                 removePlayer();
-
             }else if(val) {
-                //EnviaMensagemText(val);
-                console.log('text:'+val)
+                // EnviaMensagemText(val);
+                $("#chatMensagem").val('');
             }
 
         });
