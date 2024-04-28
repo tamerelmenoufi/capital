@@ -310,6 +310,8 @@
                 $(".mensagem_audio").removeClass("exibe");
                 $(".mensagem_audio").addClass("oculta"); 
 
+                $("#audioPlayer").stop();
+
             }
 
         })
