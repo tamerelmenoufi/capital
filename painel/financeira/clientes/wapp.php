@@ -204,7 +204,7 @@
         <div class="mensagem_audio oculta w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <i class="fa-solid fa-microphone p-3 text-danger"></i>
-                Gravando ...
+                <div class="form-control p-3">Gravando ...</div>
             </div>
         </div>        
         <div class="microfone" acao="normal">
