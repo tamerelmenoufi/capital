@@ -67,7 +67,7 @@
         // If audio data available then push 
         // it to the chunk array
         mediaRecorder.ondataavailable = function (ev) {
-         // dataArray.push(ev.data);
+          dataArray.push(ev.data);
         }
   
         // Chunk array to store the audio data 
@@ -120,7 +120,7 @@
     play, pause, and volume-->
   
   <!--for play the audio-->
-  <audio id="adioPlay" controls></audio>
+  <!-- <audio id="adioPlay" controls></audio> -->
 </body>
   
 </html>
