@@ -313,6 +313,7 @@
 
         $('div[acao="normal"]').click(function(){
             mediaRecorder.start();
+            console.log('inicio da gravação')
         })
   
         // // Stop event
@@ -323,6 +324,7 @@
 
         $('div[acao="gravando"]').click(function(){
             mediaRecorder.stop();
+            console.log('fim da gravação')
         })
   
         // If audio data available then push 
