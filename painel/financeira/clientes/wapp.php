@@ -259,33 +259,36 @@
         var mediaRecorder;
         var chunks = [];
 
-        $('div[acao="normal"]').on('click', function() {
-            console.log('audio iniciado')
-            navigator.mediaDevices.getUserMedia({audio: true})
-                .then(function(stream) {
-                    mediaRecorder = new MediaRecorder(stream);
-                    mediaRecorder.ondataavailable = function(e) {
-                        chunks.push(e.data);
-                    };
-                    mediaRecorder.start();
-                })
-                .catch(function(err) {
-                    console.error('Erro ao acessar o microfone: ', err);
-                });
-        });
-
-        $('div[acao="gravando"]').on('click', function() {
-            console.log('audio finalizado')
-            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-            console.log('audio acao')
-                mediaRecorder.stop();
-                mediaRecorder.onstop = function() {
-                    var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-                    var audioURL = URL.createObjectURL(blob);
-                    $('#audioPlayer').attr('src', audioURL);
-                    $('#audioPlayer').show();
-                };
+        $(".microfone").click(function(){
+            acao = $(this).attr("acao");
+            if(acao == "normal"){
+                console.log('audio iniciado')
+                navigator.mediaDevices.getUserMedia({audio: true})
+                    .then(function(stream) {
+                        mediaRecorder = new MediaRecorder(stream);
+                        mediaRecorder.ondataavailable = function(e) {
+                            chunks.push(e.data);
+                        };
+                        mediaRecorder.start();
+                    })
+                    .catch(function(err) {
+                        console.error('Erro ao acessar o microfone: ', err);
+                    });
             }
+            else{
+                console.log('audio finalizado')
+                if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                console.log('audio acao')
+                    mediaRecorder.stop();
+                    mediaRecorder.onstop = function() {
+                        var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+                        var audioURL = URL.createObjectURL(blob);
+                        $('#audioPlayer').attr('src', audioURL);
+                        $('#audioPlayer').show();
+                    };
+                }                
+            }
+                
         });
         //////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
 
