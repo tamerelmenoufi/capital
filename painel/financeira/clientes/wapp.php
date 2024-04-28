@@ -22,9 +22,10 @@
     if($_POST['acao'] == 'enviarAudio'){
         $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = 'audio', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
         if(mysqli_query($con, $query)){
+            $base64 = explode("base64,", $_POST['mensagem']);
             $wgw = new wgw;
             $wgw->SendAudio([
-              'mensagem'=>$_POST['mensagem'],
+              'mensagem'=>trim($base64[1]),
               'para'=>'55'.$_POST['para']
             ]);
         }
@@ -410,8 +411,6 @@
         function EnviaMensagemAudio(val){
 
             base64 = [];
-            base64 = val.split('base64,');
-            console.log('audio:'+base64[1])
             
             layout = '<div class="d-flex flex-row-reverse">'+
                      '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
@@ -430,7 +429,7 @@
                 url:"financeira/clientes/wapp.php",
                 type:"POST",
                 data:{
-                    mensagem:base64[1],
+                    mensagem:val,
                     de:'<?=$ConfWappNumero?>',
                     para:'<?=$phoneNumber?>',
                     acao:'enviarAudio'

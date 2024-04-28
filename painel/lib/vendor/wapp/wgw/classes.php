@@ -116,7 +116,7 @@ class wgw {
         "check_status" : "1",
         "message_body_mimetype" : "audio/ogg; codecs=opus",
         "message_body_filename" : "file.ogg",
-        "message_body" : "'.base64_decode($dados['mensagem']).'"
+        "message_body" : "'.$dados['mensagem'].'"
         }',
           CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json'
