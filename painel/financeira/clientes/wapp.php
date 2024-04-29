@@ -351,7 +351,9 @@
         $(".grupo_anexos").click(function(){
             status = $(this).attr("status");
             if(status == 'open'){
+                console.log('passou')
                 $(".anexos").hide();
+                console.log('aqui')
                 $(this).attr("status","close");
             }else{
                 $(".anexos").show();
