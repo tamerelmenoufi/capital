@@ -177,6 +177,7 @@
         padding:10px;
         background:#eee;
         cursor:pointer;
+        display:none;
     }
     .botao_anexo{
         width:40px;
@@ -271,7 +272,7 @@
     <div class="d-flex justify-content-between align-items-center m-3">
         <div class="mensagem_texto exibe w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
-                <i class="fa-solid fa-paperclip p-3"></i>
+                <i class="fa-solid fa-paperclip p-3 grupo_anexos" status="close" style="cursor:pointer"></i>
                 <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
             </div>
         </div>
@@ -346,6 +347,17 @@
         if($("div[listaClientesChat]").attr("listaClientesChat") == 'open'){
             $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
         }
+
+        $(".grupo_anexos").click(function(){
+            status = $(this).attr("status");
+            if(status == 'open'){
+                $(".anexos").hidden();
+                $(this).attr("status","close");
+            }else{
+                $(".anexos").show();
+                $(this).attr("status","open");
+            }
+        })
 
 
         ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
