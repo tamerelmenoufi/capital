@@ -237,13 +237,13 @@
     <div class="d-flex justify-content-between align-items-center m-3">
         <div class="mensagem_texto exibe w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
-                <i class="fa-regular fa-face-smile p-3"></i>
+                <i class="fa-solid fa-paperclip p-3"></i>
                 <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
             </div>
         </div>
         <div class="mensagem_audio oculta w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
-                <i statusGravacao="gravando" class="fa-solid fa-paperclip p-2 text-danger"></i>
+                <i statusGravacao="gravando" class="fa-solid fa-microphone p-2 text-danger"></i>
                 <div class="form-control">  <audio controls id="audioPlayer" style="display:none; height:40px;"></audio> <span class="m-2" gravando>Gravando ...</span></div>
             </div>
         </div>        
@@ -290,7 +290,7 @@
                 $("#audioPlayer").css("display","none");
                 $("span[gravando]").css("display","block");
 
-                $("i[statusGravacao]").addClass("fa-paperclip");
+                $("i[statusGravacao]").addClass("fa-microphone");
                 $("i[statusGravacao]").removeClass("fa-trash-can");
                 $("i[statusGravacao]").attr("statusGravacao","gravando");
                 $("i[statusGravacao]").css("cursor","normal");
@@ -343,7 +343,7 @@
                         $("#audioPlayer").css("display","block");
                         $("span[gravando]").css("display","none");
 
-                        $("i[statusGravacao]").removeClass("fa-paperclip");
+                        $("i[statusGravacao]").removeClass("fa-microphone");
                         $("i[statusGravacao]").addClass("fa-trash-can");
                         $("i[statusGravacao]").attr("statusGravacao","play");
                         $("i[statusGravacao]").css("cursor","pointer");
