@@ -184,6 +184,10 @@
         background:green;
         border-radius:100%;
     }
+    .nome_botao_anexo{
+        color:#a1a1a1;
+        font-size:12px;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center">
@@ -275,14 +279,23 @@
 <div class="anexos">
     <div class="row">
     <div class="col">
-            <div class="d-flex justify-content-center align-items-center botao_anexo"><i class="fa-solid fa-file"></i></div>
+        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+            <i class="fa-solid fa-file"></i>
+            <span class="nome_botao_anexo">Documento</span>
         </div>
-        <div class="col">
-            <div class="d-flex justify-content-center align-items-center botao_anexo"><i class="fa-solid fa-file"></i></div>
+        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+            <i class="fa-regular fa-image"></i>
+            <span class="nome_botao_anexo">Imagem</span>
         </div>
-        <div class="col">
-            <div class="d-flex justify-content-center align-items-center botao_anexo"><i class="fa-solid fa-file"></i></div>
+        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+            <i class="fa-solid fa-file-audio"></i>
+            <span class="nome_botao_anexo">Áudio</span>
         </div>
+        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+            <i class="fa-solid fa-file-video"></i>
+            <span class="nome_botao_anexo">Vídeo</span>
+        </div>
+            
     </div>
 </div>
 
