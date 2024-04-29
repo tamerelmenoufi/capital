@@ -359,13 +359,17 @@
             }
         })
 
-
-        $(".microfone, i[enviar], #chatMensagem").click(function(){
+        function fecharGrupoAnexos(){
             status = $(".grupo_anexos").attr("status");
             if(status == 'open'){
                 $(".anexos").hide();
                 $(".grupo_anexos").attr("status","close");
-            }
+            }            
+        }
+
+
+        $(".microfone, #chatMensagem").click(function(){
+            fecharGrupoAnexos()
         })
 
         ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
@@ -565,7 +569,7 @@
         })
 
         $("i[enviar]").off('click').on('click', function(){
-
+            fecharGrupoAnexos()
             audio = '';
             val = '';
             audio = $('#audioPlayer').attr("src");
