@@ -166,7 +166,17 @@
     i[enviar]{
         cursor:pointer;
     }
-
+    .anexos{
+        position:absolute;
+        left:10px;
+        bottom:100px;
+        width:200px;
+        height:120px;
+        border:solid 1px #ccc;
+        border-radius:3px;
+        padding:10px;
+        background:#eee;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center">
@@ -254,6 +264,11 @@
         <i enviar class="fa-regular fa-paper-plane p-3"></i>
     </div>
 </div>
+
+<div class="anexos">
+    
+</div>
+
 
 <script>
     $(function(){
