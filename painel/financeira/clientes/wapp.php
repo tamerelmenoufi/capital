@@ -279,28 +279,28 @@
 
 <div class="anexos">
     <div class="row">
-        <div class="col">
+        <div class="col d-flex align-items-center">
             <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-success-rgb), 1)">
                 <i class="fa-solid fa-file"></i>
             </div>
             <div class="nome_botao_anexo">Documento</div>
         </div>
 
-        <div class="col">
+        <div class="col d-flex align-items-center">
             <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-warning-rgb), 1)">
                 <i class="fa-regular fa-image"></i>
             </div>
             <div class="nome_botao_anexo">Imagem</div>
         </div>
 
-        <div class="col">
+        <div class="col d-flex align-items-center">
             <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgb(var(--bs-primary-rgb), 1)">
                 <i class="fa-solid fa-file-audio"></i>
             </div>
             <div class="nome_botao_anexo">Áudio</div>
         </div>
 
-        <div class="col">
+        <div class="col d-flex align-items-center">
             <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-danger-rgb), 1)">
                 <i class="fa-solid fa-file-video"></i>
             </div>
