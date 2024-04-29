@@ -20,9 +20,16 @@
     }
 
     if($_POST['acao'] == 'enviarAudio'){
-        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = 'audio', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
+
+        $base64 = explode("base64,", $_POST['mensagem']);
+
+        if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat")) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat");
+        if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"))) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"));
+        $mensagem = date("Y-m-d")."/".md5($_POST['mensagem'].date("YmdHis")).".ogg";
+        file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/{$mensagem}", base64_decode($base64[1]));
+
+        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = 'audio', mensagem = '{$mensagem}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
         if(mysqli_query($con, $query)){
-            $base64 = explode("base64,", $_POST['mensagem']);
             $wgw = new wgw;
             $wgw->SendAudio([
               'mensagem'=>trim($base64[1]),
