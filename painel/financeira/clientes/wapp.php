@@ -195,7 +195,7 @@
         right:0;
         top:0;
         bottom:0;
-        border:solid 1px red;
+        opacity:0;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
