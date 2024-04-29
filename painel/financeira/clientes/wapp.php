@@ -286,6 +286,7 @@
                 $("i[statusGravacao]").addClass("fa-microphone");
                 $("i[statusGravacao]").removeClass("fa-trash-can");
                 $("i[statusGravacao]").attr("statusGravacao","gravando");
+                $("i[statusGravacao]").css("cursor","normal");
 
                 $("i[enviar]").css("display","none");
 
@@ -338,6 +339,7 @@
                         $("i[statusGravacao]").removeClass("fa-microphone");
                         $("i[statusGravacao]").addClass("fa-trash-can");
                         $("i[statusGravacao]").attr("statusGravacao","play");
+                        $("i[statusGravacao]").css("cursor","pointer");
                     };
                 }  
                 /////////////////Fim da ação//////////////////////////////////////
