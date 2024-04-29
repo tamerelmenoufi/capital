@@ -39,6 +39,21 @@
                             '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
                             '</div>' +
                             '</div>';                            
+                        }else if(d.tipo == 'document'){
+                            texto = 'Arquivo Recebido';
+                            layout = '<div class="d-flex flex-row">'+
+                            '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+                            '<div class="text-start" style="border:solid 0px red;">'+
+                            '<ul class="list-group">'+ 
+                            '<a href="'+d.text+'" class="list-group-item d-flex justify-content-between align-items-center">'+ 
+                            texto +
+                            '<i class="fa-solid fa-up-right-from-square"></i>'+
+                            '</a>'+
+                            '</ul>'+
+                            '</div>' +
+                            '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
+                            '</div>' +
+                            '</div>';                            
                         }
 
                         $(`div[up${d.de}]`).append(layout);

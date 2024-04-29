@@ -39,6 +39,53 @@
         exit();
     }
 
+
+    if($_POST['acao'] == 'enviarAnexos'){
+
+        //tipo, type, name, base64
+
+        $base64 = explode("base64,", $_POST['base64']);
+
+        $ext = explode(".",$_POST['name']);
+        $ext = ".".$ext[count($ext)-1];
+
+        if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat")) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat");
+        if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"))) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"));
+        $mensagem = date("Y-m-d")."/".md5($_POST['base64'].date("YmdHis")).$ext;
+        file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/{$mensagem}", base64_decode($base64[1]));
+
+        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = '{$_POST['tipo']}', mensagem = '{$mensagem}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
+        if(mysqli_query($con, $query)){
+            $wgw = new wgw;
+            $wgw->SendAnexo([
+              'mensagem'=>"{$localPainel}/src/volume/wappChat/{$mensagem}",
+              'tipo'=>$_POST['tipo'],
+              'type'=>$_POST['type'],
+              'name'=>$_POST['name'],
+              'para'=>'55'.$_POST['para']
+            ]);
+        }
+        
+        switch($_POST['tipo']){
+            case 'document':{
+                $retorno = "<ul class='list-group'> 
+                                <a href='{$mensagem}' class='list-group-item d-flex justify-content-between align-items-center'> 
+                                    Arquivo Enviado
+                                    <i class='fa-solid fa-up-right-from-square'></i>
+                                </a>
+                            </ul>";
+                break;
+            }
+            case 'image':{
+                $retorno = "<img src='{$mensagem}' style='width:100%' />";
+                break;
+            }
+        }
+
+        echo $retorno;
+        exit();
+    }
+
     // if($_POST['acao'] == 'receber'){
     //     $query = "select * from wapp_chat where de = '{$_POST['de']}' and para = '{$_POST['para']}' and data > '{$_POST['ultimo_acesso']}' order by data desc ";
     //     $result = mysqli_query($con, $query);
@@ -231,6 +278,19 @@
                     $mensagem = "<audio controls style='height:40px;' src='{$localPainel}/src/volume/wappChat/{$m->mensagem}'></audio>";
                     break;
                 }
+                case 'document':{
+                    $mensagem = "<ul class='list-group'> 
+                                    <a href='{$localPainel}/src/volume/wappChat/{$m->mensagem}' class='list-group-item d-flex justify-content-between align-items-center'> 
+                                        Arquivo Enviado
+                                        <i class='fa-solid fa-up-right-from-square'></i>
+                                    </a>
+                                </ul>";
+                    break;
+                }
+                case 'image':{
+                    $mensagem = "<img src='{$localPainel}/src/volume/wappChat/{$m->mensagem}' style='width:100%' />";
+                    break;
+                }
                 default:{
                     $mensagem = false;
                 }
@@ -294,7 +354,7 @@
     <div class="row">
         <div class="col" style="position:relative;">
             <div class="d-flex justify-content-center align-items-center flex-column">
-                <input type="file" accept=".pdf, application/pdf">
+                <input type="file" tipo="document" accept=".pdf, application/pdf">
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-success-rgb), 1)">
                     <i class="fa-solid fa-file"></i>
                 </div>
@@ -304,7 +364,7 @@
 
         <div class="col" style="position:relative;">
             <div class="d-flex justify-content-center align-items-center flex-column">
-                <input type="file" accept="image/png, image/jpeg, image/jpg, image/gif" >
+                <input type="file" tipo="image" accept="image/png, image/jpeg, image/jpg, image/gif" >
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-warning-rgb), 1)">
                     <i class="fa-regular fa-image"></i>
                 </div>
@@ -549,6 +609,40 @@
                 }
             })
         }
+
+
+        function EnviaMensagemAnexos(tipo, type, name, base64 ){
+
+            $.ajax({
+                url:"financeira/clientes/wapp.php",
+                type:"POST",
+                data:{
+                    tipo,
+                    type,
+                    name,
+                    base64,
+                    de:'<?=$ConfWappNumero?>',
+                    para:'<?=$phoneNumber?>',
+                    acao:'enviarAnexos'
+                },
+                success:function(dados){
+
+                    layout = '<div class="d-flex flex-row-reverse">'+
+                    '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
+                    '<div class="text-start" style="border:solid 0px red;">'+dados+'</div>' +
+                    '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">12:17</div>' +
+                    '</div>' +
+                    '</div>';
+
+                    $(".palco<?=$md5?>").append(layout);
+
+                    altura = $(".palco<?=$md5?>").prop("scrollHeight");
+                    div = $(".palco<?=$md5?>").height();
+                    $(".palco<?=$md5?>").scrollTop(altura + div);
+
+                }
+            })
+        }
         
         
         $("#chatMensagem").keypress(function(e){
@@ -586,43 +680,87 @@
 
         });
 
-        // verificarMensagem = setInterval(() => {
-        //     ultimo_acesso = $("#chatMensagem").attr("ultimo_acesso");
-        //     $.ajax({
-        //         url:"financeira/clientes/wapp.php",
-        //         type:"POST",
-        //         dataType:"JSON",
-        //         data:{
-        //             de:'<?=$phoneNumber?>',
-        //             para:'<?=$ConfWappNumero?>',
-        //             ultimo_acesso,
-        //             acao:'receber'
-        //         },
-        //         success:function(dados){
+        
 
-        //             console.log(dados);
+        if (window.File && window.FileList && window.FileReader) {
 
-        //             $.each(dados, function () {
+            $('input[type="file"]').change(function () {
 
-        //                 layout = '<div class="d-flex flex-row">'+
-        //                 '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
-        //                 '<div class="text-start" style="border:solid 0px red;">'+this.mensagem+'</div>' +
-        //                 '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+this.data+'</div>' +
-        //                 '</div>' +
-        //                 '</div>';
+                tipo = $(this).attr("tipo");
 
-        //                 $(".palco<?=$md5?>").append(layout);
+                if ($(this).val()) {
+                    var files = $(this).prop("files");
+                    for (var i = 0; i < files.length; i++) {
+                        (function (file) {
+                            var fileReader = new FileReader();
+                            fileReader.onload = function (f) {
 
-        //                 altura = $(".palco<?=$md5?>").prop("scrollHeight");
-        //                 div = $(".palco<?=$md5?>").height();
-        //                 $(".palco<?=$md5?>").scrollTop(altura + div);    
-        //                 $("#chatMensagem").attr('ultimo_acesso', this.ultimo_acesso);   
 
-        //             })
+                                var type = file.type;
+                                var name = file.name;
 
-        //         }
-        //     });
-        // }, 10000);
+                                if(tipo == 'image'){
+                                //*
+                                //////////////////////////////////////////////////////////////////
+
+                                var img = new Image();
+                                img.src = f.target.result;
+
+                                img.onload = function () {
+
+                                    // CREATE A CANVAS ELEMENT AND ASSIGN THE IMAGES TO IT.
+                                    var canvas = document.createElement("canvas");
+
+                                    var value = 50;
+
+                                    // RESIZE THE IMAGES ONE BY ONE.
+                                    w = img.width;
+                                    h = img.height;
+                                    img.width = 800 //(800 * 100)/img.width // (img.width * value) / 100
+                                    img.height = (800 * h / w) //(img.height/100)*img.width // (img.height * value) / 100
+
+                                    var ctx = canvas.getContext("2d");
+                                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                    canvas.width = img.width;
+                                    canvas.height = img.height;
+                                    ctx.drawImage(img, 0, 0, img.width, img.height);
+
+                                    var Base64 = canvas.toDataURL(file.type); //f.target.result;
+
+                                    // $("#encode_file").val(Base64);
+                                    // $("#encode_file").attr("nome", name);
+                                    // $("#encode_file").attr("tipo", type);
+
+                                    EnviaMensagemAnexos(tipo, type, name, Base64 )
+
+
+
+                                }
+
+                                //////////////////////////////////////////////////////////////////
+                                //*/
+                                }else{
+
+                                    var Base64 = f.target.result;
+
+                                    // $("#base64").val(Base64);
+                                    // $("#imagem_tipo").val(type);
+                                    // $("#imagem_nome").val(name);
+
+                                    EnviaMensagemAnexos(tipo, type, name, Base64 )
+
+
+                                }
+
+                            };
+                            fileReader.readAsDataURL(file);
+                        })(files[i]);
+                    }
+                }
+            });
+        } else {
+            alert('Nao suporta HTML5');
+        }
 
     })
 </script>
