@@ -69,7 +69,7 @@
         switch($_POST['tipo']){
             case 'document':{
                 $retorno = "<ul class='list-group'> 
-                                <a href='{$mensagem}' class='list-group-item d-flex justify-content-between align-items-center'> 
+                                <a href='{$mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
                                     Arquivo Enviado
                                     <i class='fa-solid fa-up-right-from-square'></i>
                                 </a>
