@@ -54,7 +54,18 @@
                             '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
                             '</div>' +
                             '</div>';                            
+                        }else if(d.tipo == 'image'){
+                            texto = 'Arquivo Recebido';
+                            layout = '<div class="d-flex flex-row">'+
+                            '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
+                            '<div class="text-start" style="border:solid 0px red;">'+
+                            '<img src="'+d.text+'" style="width:100%" />'+
+                            '</div>' +
+                            '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+d.data+'</div>' +
+                            '</div>' +
+                            '</div>';                            
                         }
+
 
                         $(`div[up${d.de}]`).append(layout);
 
