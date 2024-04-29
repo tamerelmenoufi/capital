@@ -348,7 +348,7 @@
             $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
         }
 
-        $(".grupo_anexos", document).click(function(){
+        $(".grupo_anexos").click(function(){
             status = $(".grupo_anexos").attr("status");
             if(status == 'open'){
                 $(".anexos").hide();
@@ -359,6 +359,14 @@
             }
         })
 
+
+        $(document).click(function(){
+            status = $(".grupo_anexos").attr("status");
+            if(status == 'close'){
+                $(".anexos").show();
+                $(".grupo_anexos").attr("status","open");
+            }
+        })
 
         ///////////////////////////////////////FUNCAO DO AUDIO//////////////////////////////////
         var mediaRecorder;
