@@ -287,7 +287,7 @@
 
 <div class="anexos">
     <div class="row">
-        <div class="col">
+        <div class="col" style="position:relative;">
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-success-rgb), 1)">
                     <i class="fa-solid fa-file"></i>
@@ -296,7 +296,7 @@
             </div>
         </div>
 
-        <div class="col">
+        <div class="col" style="position:relative;">
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <input type="file" >
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-warning-rgb), 1)">
