@@ -228,7 +228,7 @@
                     break;
                 }
                 case 'audio':{
-                    $mensagem = "<audio controls style='height:40px;' src='{$m->mensagem}'></audio>";
+                    $mensagem = "<audio controls style='height:40px;' src='{$localPainel}/src/volume/{$m->mensagem}'></audio>";
                     break;
                 }
                 default:{
