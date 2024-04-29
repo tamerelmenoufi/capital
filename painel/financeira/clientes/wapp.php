@@ -173,7 +173,7 @@
         width:auto;
         height:auto;
         border:solid 1px #ccc;
-        border-radius:3px;
+        border-radius:10px;
         padding:10px;
         background:#eee;
         cursor:pointer;
