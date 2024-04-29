@@ -45,7 +45,7 @@
                             '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
                             '<div class="text-start" style="border:solid 0px red;">'+
                             '<ul class="list-group">'+ 
-                            '<a href="'+d.text+'" class="list-group-item d-flex justify-content-between align-items-center">'+ 
+                            '<a href="'+d.text+'" target="_blank" class="list-group-item d-flex justify-content-between align-items-center">'+ 
                             texto +
                             '<i class="fa-solid fa-up-right-from-square ms-3"></i>'+
                             '</a>'+
