@@ -7,11 +7,12 @@
     $result = mysqli_query($con, $query);
     $retorno = [];
     $update = [];
+    $listaFiles = ['audio', 'image', 'document'];
     while($d = mysqli_fetch_object($result)){
         $nome = explode(" ", trim($d->nome))[0];
         $retorno[] = [ 
                         "type" => "chat",
-                        "text" => ((($d->tipo == 'audio')?$localPainel."/src/volume/wappChat/":false).$d->mensagem),
+                        "text" => (((in_array($d->tipo,$listaFiles))?$localPainel."/src/volume/wappChat/":false).$d->mensagem),
                         "de" => $d->de,
                         "nome" => $nome,
                         "para" => $d->para,
