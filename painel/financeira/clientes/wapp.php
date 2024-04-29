@@ -362,9 +362,9 @@
 
         $(document).click(function(){
             status = $(".grupo_anexos").attr("status");
-            if(status == 'close'){
-                $(".anexos").show();
-                $(".grupo_anexos").attr("status","open");
+            if(status == 'open'){
+                $(".anexos").hide();
+                $(".grupo_anexos").attr("status","close");
             }
         })
 
