@@ -134,14 +134,6 @@ class wgw {
 
       global $ConfWappNumero;
 
-        $this->acao(['acao'=>'g','para'=>$dados['para']]);
-
-        // sleep(20);
-
-        $this->acao(['acao'=>'p','para'=>$dados['para']]);
-        
-        // sleep(1);
-
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -162,7 +154,8 @@ class wgw {
         "check_status" : "1",
         "message_body_mimetype" : "'.$dados['type'].'",
         "message_body_filename" : "'.$dados['name'].'",
-        "message_body" : "'.$dados['mensagem'].'"
+        "message_body" : "'.$dados['mensagem'].'",
+        "download":1
         }',
           CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json'
@@ -172,7 +165,7 @@ class wgw {
         $response = curl_exec($curl);
         
         curl_close($curl);
-        // echo $response;
+        echo $response;
 
     }
     
