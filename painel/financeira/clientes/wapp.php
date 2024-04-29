@@ -278,24 +278,33 @@
 
 <div class="anexos">
     <div class="row">
-    <div class="col">
-        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
-            <i class="fa-solid fa-file"></i>
-            <span class="nome_botao_anexo">Documento</span>
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+                <i class="fa-solid fa-file"></i>
+                <span class="nome_botao_anexo">Documento</span>
+            </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
-            <i class="fa-regular fa-image"></i>
-            <span class="nome_botao_anexo">Imagem</span>
+
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+                <i class="fa-regular fa-image"></i>
+                <span class="nome_botao_anexo">Imagem</span>
+            </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
-            <i class="fa-solid fa-file-audio"></i>
-            <span class="nome_botao_anexo">Áudio</span>
+
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+                <i class="fa-solid fa-file-audio"></i>
+                <span class="nome_botao_anexo">Áudio</span>
+            </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
-            <i class="fa-solid fa-file-video"></i>
-            <span class="nome_botao_anexo">Vídeo</span>
+
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
+                <i class="fa-solid fa-file-video"></i>
+                <span class="nome_botao_anexo">Vídeo</span>
+            </div>
         </div>
-            
     </div>
 </div>
 
