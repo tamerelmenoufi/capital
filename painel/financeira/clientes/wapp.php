@@ -299,7 +299,7 @@
 
         <div class="col" style="position:relative;">
             <div class="d-flex justify-content-center align-items-center flex-column">
-                <input type="file" >
+                <input type="file" accept="image/png, image/jpeg, image/jpg, image/gif" >
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-warning-rgb), 1)">
                     <i class="fa-regular fa-image"></i>
                 </div>
