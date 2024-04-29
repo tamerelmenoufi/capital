@@ -196,6 +196,7 @@
         top:0;
         bottom:0;
         opacity:0;
+        cursor:pointer;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
