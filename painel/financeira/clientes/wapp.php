@@ -71,7 +71,7 @@
                 $retorno = "<ul class='list-group'> 
                                 <a href='{$mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
                                     Arquivo Enviado
-                                    <i class='fa-solid fa-up-right-from-square'></i>
+                                    <i class='fa-solid fa-up-right-from-square ms-3'></i>
                                 </a>
                             </ul>";
                 break;
@@ -633,6 +633,8 @@
                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">12:17</div>' +
                     '</div>' +
                     '</div>';
+
+                    fecharGrupoAnexos();
 
                     $(".palco<?=$md5?>").append(layout);
 

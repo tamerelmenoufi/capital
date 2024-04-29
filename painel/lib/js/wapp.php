@@ -47,7 +47,7 @@
                             '<ul class="list-group">'+ 
                             '<a href="'+d.text+'" class="list-group-item d-flex justify-content-between align-items-center">'+ 
                             texto +
-                            '<i class="fa-solid fa-up-right-from-square"></i>'+
+                            '<i class="fa-solid fa-up-right-from-square ms-3"></i>'+
                             '</a>'+
                             '</ul>'+
                             '</div>' +
