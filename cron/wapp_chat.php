@@ -11,7 +11,7 @@
         $nome = explode(" ", trim($d->nome))[0];
         $retorno[] = [ 
                         "type" => "chat",
-                        "text" => ((($d->tipo == 'audio')?$localPainel."/src/":false).$d->mensagem),
+                        "text" => ((($d->tipo == 'audio')?$localPainel."/src/volume/":false).$d->mensagem),
                         "de" => $d->de,
                         "nome" => $nome,
                         "para" => $d->para,
