@@ -182,6 +182,7 @@
         height:50px;
         color:#fff;
         background:green;
+        border-radius:100%;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
