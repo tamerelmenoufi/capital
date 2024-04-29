@@ -281,7 +281,7 @@
                 case 'document':{
                     $mensagem = "<ul class='list-group'> 
                                     <a href='{$localPainel}/src/volume/wappChat/{$m->mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
-                                        Arquivo Enviado
+                                        ".(($m->de == $ConfWappNumero)?"Arquivo Recebido":"Arquivo Enviado")."
                                         <i class='fa-solid fa-up-right-from-square ms-3'></i>
                                     </a>
                                 </ul>";
