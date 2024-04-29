@@ -189,6 +189,14 @@
         text-align:center;
         width:100%;
     }
+    input[type="file"]{
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        border:solid 1px red;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center">
@@ -290,6 +298,7 @@
 
         <div class="col">
             <div class="d-flex justify-content-center align-items-center flex-column">
+                <input type="file" >
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-warning-rgb), 1)">
                     <i class="fa-regular fa-image"></i>
                 </div>
@@ -297,7 +306,7 @@
             </div>
         </div>
 
-        <div class="col">
+        <!-- <div class="col">
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgb(var(--bs-primary-rgb), 1)">
                     <i class="fa-solid fa-file-audio"></i>
@@ -313,7 +322,7 @@
                 </div>
                 <div class="nome_botao_anexo">Vídeo</div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
