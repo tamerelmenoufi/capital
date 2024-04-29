@@ -348,7 +348,7 @@
             $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
         }
 
-        $(".grupo_anexos").click(function(){
+        $(".grupo_anexos", document).click(function(){
             status = $(".grupo_anexos").attr("status");
             if(status == 'open'){
                 $(".anexos").hide();
