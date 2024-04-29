@@ -280,7 +280,7 @@
                 }
                 case 'document':{
                     $mensagem = "<ul class='list-group'> 
-                                    <a href='{$localPainel}/src/volume/wappChat/{$m->mensagem}' class='list-group-item d-flex justify-content-between align-items-center'> 
+                                    <a href='{$localPainel}/src/volume/wappChat/{$m->mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
                                         Arquivo Enviado
                                         <i class='fa-solid fa-up-right-from-square'></i>
                                     </a>
