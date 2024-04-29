@@ -360,7 +360,7 @@
         })
 
 
-        $(document).click(function(){
+        $(".microfone, i[enviar], #chatMensagem").click(function(){
             status = $(".grupo_anexos").attr("status");
             if(status == 'open'){
                 $(".anexos").hide();
