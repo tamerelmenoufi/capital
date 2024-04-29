@@ -8,7 +8,11 @@
 
         if($_POST['event'] == 'message' and $_POST['chat_type'] == 'user'){
 
-            if($_POST['message_type'] == 'audio'){
+            if(
+                $_POST['message_type'] == 'audio' or 
+                $_POST['message_type'] == 'document' or 
+                $_POST['message_type'] == 'image'
+            ){
                 if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat")) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat");
                 if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"))) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"));
                 $mensagem = date("Y-m-d")."/".md5($_POST['message_filename'].$_POST['message_body'].date("YmdHis")).$_POST['message_body_extension'];
