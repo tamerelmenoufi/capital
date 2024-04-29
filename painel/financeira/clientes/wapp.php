@@ -171,7 +171,7 @@
         left:10px;
         bottom:70px;
         width:auto;
-        height:70px;
+        height:auto;
         border:solid 1px #ccc;
         border-radius:3px;
         padding:10px;
