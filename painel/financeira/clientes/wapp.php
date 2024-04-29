@@ -186,7 +186,9 @@
     }
     .nome_botao_anexo{
         color:#a1a1a1;
-        font-size:12px;
+        font-size:10px;
+        text-align:center;
+        width:100%;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
@@ -282,28 +284,28 @@
             <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
                 <i class="fa-solid fa-file"></i>
             </div>
-            <span class="nome_botao_anexo">Documento</span>
+            <div class="nome_botao_anexo">Documento</div>
         </div>
 
         <div class="col">
             <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
                 <i class="fa-regular fa-image"></i>
             </div>
-            <span class="nome_botao_anexo">Imagem</span>
+            <div class="nome_botao_anexo">Imagem</div>
         </div>
 
         <div class="col">
             <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
                 <i class="fa-solid fa-file-audio"></i>
             </div>
-            <span class="nome_botao_anexo">Áudio</span>
+            <div class="nome_botao_anexo">Áudio</div>
         </div>
 
         <div class="col">
             <div class="d-flex justify-content-center align-items-center flex-column botao_anexo">
                 <i class="fa-solid fa-file-video"></i>
             </div>
-            <span class="nome_botao_anexo">Vídeo</span>
+            <div class="nome_botao_anexo">Vídeo</div>
         </div>
     </div>
 </div>
