@@ -280,28 +280,28 @@
 <div class="anexos">
     <div class="row">
         <div class="col">
-            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgb(57,50,135,.5)">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgba(var(--bs-success-rgb), .5)">
                 <i class="fa-solid fa-file"></i>
             </div>
             <div class="nome_botao_anexo">Documento</div>
         </div>
 
         <div class="col">
-            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgb(57,50,135,.5)">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgba(var(--bs-success-rgb), .5)">
                 <i class="fa-regular fa-image"></i>
             </div>
             <div class="nome_botao_anexo">Imagem</div>
         </div>
 
         <div class="col">
-            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgb(57,50,135,.5)">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgb(var(--bs-success-rgb), .5)">
                 <i class="fa-solid fa-file-audio"></i>
             </div>
             <div class="nome_botao_anexo">Áudio</div>
         </div>
 
         <div class="col">
-            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgb(57,50,135,.5)">
+            <div class="d-flex justify-content-center align-items-center flex-column botao_anexo" style="background-color:rgba(var(--bs-success-rgb), .5)">
                 <i class="fa-solid fa-file-video"></i>
             </div>
             <div class="nome_botao_anexo">Vídeo</div>
