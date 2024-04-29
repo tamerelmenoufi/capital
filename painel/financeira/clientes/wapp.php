@@ -169,13 +169,19 @@
     .anexos{
         position:absolute;
         left:10px;
-        bottom:100px;
-        width:200px;
-        height:120px;
+        bottom:70px;
+        width:auto;
+        height:70px;
         border:solid 1px #ccc;
         border-radius:3px;
         padding:10px;
         background:#eee;
+    }
+    .botao_anexo{
+        width:50px;
+        height:50px;
+        color:#fff;
+        background:green;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">
@@ -266,7 +272,17 @@
 </div>
 
 <div class="anexos">
-    
+    <div class="row">
+    <div class="col">
+            <div class="d-flex justify-content-center align-items-center botao_anexo"><i class="fa-solid fa-file"></i></div>
+        </div>
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center botao_anexo"><i class="fa-solid fa-file"></i></div>
+        </div>
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center botao_anexo"><i class="fa-solid fa-file"></i></div>
+        </div>
+    </div>
 </div>
 
 
