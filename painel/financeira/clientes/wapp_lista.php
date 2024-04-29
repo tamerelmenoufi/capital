@@ -46,7 +46,7 @@
                 <?php
                   $query = "select 
                                     max(a.codigo) as cod,
-                                    (select concat(mensagem,'^',data) from wapp_chat where max(a.codigo) = codigo) as mensagem,
+                                    (select concat(mensagem,'^',data,'^',tipo) from wapp_chat where max(a.codigo) = codigo) as mensagem,
                                     b.nome,
                                     b.status_atual as log,
                                     b.codigo as cod_cliente,
@@ -95,7 +95,22 @@
                     // }else{
                     //   $cor="red";
                     // }
-                    list($mensagem, $data) = explode("^",$d->mensagem);
+                    list($mensagem, $data, $tipo) = explode("^",$d->mensagem);
+
+                    switch($tipo){
+                      case 'text':{
+                          $mensagem = $mensagem;
+                        break;
+                      }
+                      case 'audio':{
+                          $mensagem = "Mensagem de áudio";
+                        break;
+                      }
+                      default:{
+                        $mensagem = false;
+                      }
+                    }
+
                 ?>
                 <tr selecionarChat="<?=$d->cod_cliente?>">
 
