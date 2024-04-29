@@ -291,7 +291,7 @@
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <input type="file" >
                 <div class="d-flex justify-content-center align-items-center botao_anexo" style="background-color:rgba(var(--bs-success-rgb), 1)">
-                    <i class="fa-solid fa-file" accept=".pdf"></i>
+                    <i class="fa-solid fa-file" accept=".pdf, application/pdf"></i>
                 </div>
                 <div class="nome_botao_anexo">PDF</div>
             </div>
