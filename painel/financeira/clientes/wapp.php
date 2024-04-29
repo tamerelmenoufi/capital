@@ -176,18 +176,21 @@
         border-radius:3px;
         padding:10px;
         background:#eee;
+        cursor:pointer;
     }
     .botao_anexo{
         width:40px;
         height:40px;
         color:#fff;
         border-radius:100%;
+        cursor:pointer;
     }
     .nome_botao_anexo{
         color:#a1a1a1;
         font-size:10px;
         text-align:center;
         width:100%;
+        cursor:pointer;
     }
     input[type="file"]{
         position:absolute;
