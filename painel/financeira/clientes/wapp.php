@@ -287,6 +287,15 @@
                                 </ul>";
                     break;
                 }
+                case 'file':{
+                    $mensagem = "<ul class='list-group'> 
+                                    <a href='{$localPainel}/src/volume/wappChat/{$m->mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
+                                        ".(($m->de == $ConfWappNumero)?"Arquivo Enviado":"Arquivo Recebido")."
+                                        <i class='fa-solid fa-up-right-from-square ms-3'></i>
+                                    </a>
+                                </ul>";
+                    break;
+                }
                 case 'image':{
                     $mensagem = "<img src='{$localPainel}/src/volume/wappChat/{$m->mensagem}' style='width:100%' />";
                     break;

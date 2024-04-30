@@ -6,12 +6,16 @@
         
         // $_POST = json_decode(file_get_contents('php://input'), true);
 
+        //Tipos de mensagem retorno///////////////
+        // text,image,video,document,file,audio,location
+
         if($_POST['event'] == 'message' and $_POST['chat_type'] == 'user'){
 
             if(
                 $_POST['message_type'] == 'audio' or 
                 $_POST['message_type'] == 'document' or 
-                $_POST['message_type'] == 'image'
+                $_POST['message_type'] == 'image' or 
+                $_POST['message_type'] == 'file'
             ){
                 if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat")) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat");
                 if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"))) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"));

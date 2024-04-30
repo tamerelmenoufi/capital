@@ -7,7 +7,7 @@
     $result = mysqli_query($con, $query);
     $retorno = [];
     $update = [];
-    $listaFiles = ['audio', 'image', 'document'];
+    $listaFiles = ['audio', 'image', 'document', 'file'];
     while($d = mysqli_fetch_object($result)){
         $nome = explode(" ", trim($d->nome))[0];
         $retorno[] = [ 
