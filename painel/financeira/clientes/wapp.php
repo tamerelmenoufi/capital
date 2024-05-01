@@ -25,7 +25,7 @@
 
         if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat")) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat");
         if(!is_dir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"))) mkdir("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/".date("Y-m-d"));
-        $mensagem = date("Y-m-d")."/".md5($_POST['mensagem'].date("YmdHis")).".ogg";
+        $mensagem = date("Y-m-d")."/".md5($_POST['mensagem'].date("YmdHis")).".mp3";
         file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/{$mensagem}", base64_decode($base64[1]));
 
         $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = 'audio', mensagem = '{$mensagem}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
