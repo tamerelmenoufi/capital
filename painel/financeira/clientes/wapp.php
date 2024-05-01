@@ -54,7 +54,14 @@
         $mensagem = date("Y-m-d")."/".md5($_POST['base64'].date("YmdHis")).$ext;
         file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/painel/src/volume/wappChat/{$mensagem}", base64_decode($base64[1]));
 
-        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = '{$_POST['tipo']}', mensagem = '{$mensagem}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
+        $query = "insert into wapp_chat set 
+                                            de = '{$_POST['de']}', 
+                                            para = '{$_POST['para']}', 
+                                            tipo = '{$_POST['tipo']}', 
+                                            documento = '{$_POST['name']}', 
+                                            mensagem = '{$mensagem}', 
+                                            usuario = '{$_SESSION['ProjectPainel']->codigo}', 
+                                            data = NOW()";
         if(mysqli_query($con, $query)){
             $wgw = new wgw;
             $wgw->SendAnexo([
@@ -70,7 +77,16 @@
             case 'document':{
                 $retorno = "<ul class='list-group'> 
                                 <a href='{$localPainel}/src/volume/wappChat/{$mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
-                                    Arquivo Enviado
+                                    {$_POST['name']}
+                                    <i class='fa-solid fa-up-right-from-square ms-3'></i>
+                                </a>
+                            </ul>";
+                break;
+            }
+            case 'file':{
+                $retorno = "<ul class='list-group'> 
+                                <a href='{$localPainel}/src/volume/wappChat/{$mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
+                                    {$_POST['name']}
                                     <i class='fa-solid fa-up-right-from-square ms-3'></i>
                                 </a>
                             </ul>";
@@ -279,18 +295,20 @@
                     break;
                 }
                 case 'document':{
+                    //".(($m->de == $ConfWappNumero)?"Arquivo Enviado":"Arquivo Recebido")."
                     $mensagem = "<ul class='list-group'> 
                                     <a href='{$localPainel}/src/volume/wappChat/{$m->mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
-                                        ".(($m->de == $ConfWappNumero)?"Arquivo Enviado":"Arquivo Recebido")."
+                                        {$m->documento}
                                         <i class='fa-solid fa-up-right-from-square ms-3'></i>
                                     </a>
                                 </ul>";
                     break;
                 }
                 case 'file':{
+                    //".(($m->de == $ConfWappNumero)?"Arquivo Enviado":"Arquivo Recebido")."
                     $mensagem = "<ul class='list-group'> 
                                     <a href='{$localPainel}/src/volume/wappChat/{$m->mensagem}' target='_blank' class='list-group-item d-flex justify-content-between align-items-center'> 
-                                        ".(($m->de == $ConfWappNumero)?"Arquivo Enviado":"Arquivo Recebido")."
+                                        {$m->documento}
                                         <i class='fa-solid fa-up-right-from-square ms-3'></i>
                                     </a>
                                 </ul>";
@@ -559,7 +577,7 @@
             layout = '<div class="d-flex flex-row-reverse">'+
                      '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
                      '<div class="text-start" style="border:solid 0px red;">'+val+'</div>' +
-                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">12:17</div>' +
+                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+formatarDataHora()+' </div>' +
                      '</div>' +
                      '</div>';
 
@@ -594,7 +612,7 @@
             layout = '<div class="d-flex flex-row-reverse">'+
                      '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
                      '<div class="text-start" style="border:solid 0px red;"><audio controls style="height:40px;" src="'+val+'"></audio></div>' +
-                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">12:17</div>' +
+                     '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+formatarDataHora()+' </div>' +
                      '</div>' +
                      '</div>';
 
@@ -639,7 +657,7 @@
                     layout = '<div class="d-flex flex-row-reverse">'+
                     '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#dcf8c6; border:0; border-radius:10px;">'+
                     '<div class="text-start" style="border:solid 0px red;">'+dados+'</div>' +
-                    '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">12:17</div>' +
+                    '<div class="text-end" style="color:#b6a29a; font-size:10px; border:solid 0px black;">'+formatarDataHora()+' </div>' +
                     '</div>' +
                     '</div>';
 

@@ -17,6 +17,7 @@
                         "nome" => $nome,
                         "para" => $d->para,
                         "tipo" => $d->tipo,
+                        "documento" => $d->documento,
                         "codigo_cliente" => $d->cod_cliente,
                         "codigo_mensagem" => $d->codigo,
                         "data" => dataBr($d->data)];

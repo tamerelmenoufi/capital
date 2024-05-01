@@ -29,6 +29,7 @@
                                                 de = '".substr($_POST['contact_phone_number'],2,strlen($_POST['contact_phone_number']))."',
                                                 para = '{$_POST['phone_number']}',
                                                 tipo = '{$_POST['message_type']}',
+                                                documento = '{$_POST['message_filename']}',
                                                 mensagem = '{$mensagem}',
                                                 data = NOW()";
             mysqli_query($con, $query);

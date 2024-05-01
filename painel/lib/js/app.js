@@ -112,3 +112,34 @@ var CopyMemory = function (text) {
         $txt.remove();
     }
 };
+
+
+// Função para adicionar um zero à esquerda para números menores que 10
+function addZero(number) {
+    if (number < 10) {
+      return "0" + number;
+    }
+    return number;
+  }
+  
+  // Função para formatar a data e hora atual no formato brasileiro
+  function formatarDataHora() {
+    var dataAtual = new Date();
+    
+    var dia = addZero(dataAtual.getDate());
+    var mes = addZero(dataAtual.getMonth() + 1); // Mês é baseado em zero, então é necessário adicionar 1
+    var ano = dataAtual.getFullYear();
+    
+    var hora = addZero(dataAtual.getHours());
+    var minutos = addZero(dataAtual.getMinutes());
+    var segundos = addZero(dataAtual.getSeconds());
+    
+    var dataFormatada = dia + "/" + mes + "/" + ano;
+    var horaFormatada = hora + ":" + minutos + ":" + segundos;
+    
+    return dataFormatada + " " + horaFormatada;
+  }
+  
+  // Exemplo de uso
+  console.log("Data e hora atual formatada: " + formatarDataHora());
+  
