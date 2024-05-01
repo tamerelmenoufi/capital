@@ -32,7 +32,7 @@
                             '</div>' +
                             '</div>';
                         }else if(d.tipo == 'audio'){
-                            texto = 'Áudio recebido';
+                            texto = d.documento;
                             layout = '<div class="d-flex flex-row">'+
                             '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
                             '<div class="text-start" style="border:solid 0px red;"><audio controls style="height:40px;" src="'+d.text+'"></audio></div>' +
@@ -40,7 +40,7 @@
                             '</div>' +
                             '</div>';                            
                         }else if(d.tipo == 'document'){
-                            texto = 'Arquivo Recebido';
+                            texto = d.documento;
                             layout = '<div class="d-flex flex-row">'+
                             '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
                             '<div class="text-start" style="border:solid 0px red;">'+
@@ -55,7 +55,7 @@
                             '</div>' +
                             '</div>';                            
                         }else if(d.tipo == 'file'){
-                            texto = 'Arquivo Recebido';
+                            texto = d.documento;
                             layout = '<div class="d-flex flex-row">'+
                             '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
                             '<div class="text-start" style="border:solid 0px red;">'+
@@ -70,7 +70,7 @@
                             '</div>' +
                             '</div>';                            
                         }else if(d.tipo == 'image'){
-                            texto = 'Arquivo Recebido';
+                            texto = d.documento;
                             layout = '<div class="d-flex flex-row">'+
                             '<div class="d-inline-flex flex-column m-1 p-2" style="max-width:60%; background-color:#ffffff; border:0; border-radius:10px;">'+
                             '<div class="text-start" style="border:solid 0px red;">'+
