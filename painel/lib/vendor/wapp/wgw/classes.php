@@ -112,7 +112,7 @@ class wgw {
         "phone_number" : "'.$ConfWappNumero.'",
         "contact_phone_number" : "'.$dados['para'].'",
         "message_custom_id" : "'.date("YmdHis").'",
-        "message_type" : "ptt",
+        "message_type" : "audio",
         "check_status" : "1",
         "message_body_mimetype" : "audio/ogg; codecs=opus",
         "message_body_filename" : "audio_'.date('YmdHis').'.ogg",
