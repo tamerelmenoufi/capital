@@ -200,7 +200,7 @@
 
                 altura = $(".exibeEmail").prop("scrollHeight");
                 div = $(".exibeEmail").height();
-                $(".exibeEmail").scrollTop(altura + div);
+                $(".exibeEmail").scrollTop((altura + div)*1000);
 
                 $.ajax({
                     url:"chats/entrada/send.php",
@@ -236,7 +236,7 @@
 
                     altura = $(".exibeEmail").prop("scrollHeight");
                     div = $(".exibeEmail").height();
-                    $(".exibeEmail").scrollTop(altura + div);
+                    $(".exibeEmail").scrollTop((altura + div)*1000);
 
 
                     console.log(dados);
