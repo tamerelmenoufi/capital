@@ -86,7 +86,7 @@
 
                         altura = $(`div[up${d.de}]`).prop("scrollHeight");
                         div = $(`div[up${d.de}]`).height();
-                        $(`div[up${d.de}]`).scrollTop((altura + div)*1000);    
+                        $(`div[up${d.de}]`).scrollTop((altura + div));    
 
                         //d.de == '92991886570' && 
                         if($("div[chatWindow]").attr("chatWindow") != "open"){
