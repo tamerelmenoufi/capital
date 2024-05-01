@@ -141,5 +141,5 @@ function addZero(number) {
   }
   
   // Exemplo de uso
-  console.log("Data e hora atual formatada: " + formatarDataHora());
+  console.log(formatarDataHora());
   
