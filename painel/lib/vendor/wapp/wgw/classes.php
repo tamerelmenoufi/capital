@@ -114,8 +114,8 @@ class wgw {
         "message_custom_id" : "'.date("YmdHis").'",
         "message_type" : "audio",
         "check_status" : "1",
-        "message_body_mimetype" : "audio/ogg; codecs=opus",
-        "message_body_filename" : "audio_'.date('YmdHis').'.ogg",
+        "message_body_mimetype" : "audio/mpeg",
+        "message_body_filename" : "audio_'.date('YmdHis').'.mp3",
         "message_body" : "'.$dados['mensagem'].'"
         }',
           CURLOPT_HTTPHEADER => array(
