@@ -87,8 +87,8 @@
                         altura = $(`div[up${d.de}]`).prop("scrollHeight");
                         div = $(`div[up${d.de}]`).height();
                         $(`div[up${d.de}]`).scrollTop(altura + div);    
-                        
-                        if(d.de == '92991886570' && $("div[chatWindow]").attr("chatWindow") != "open"){
+                        //d.de == '92991886570' && 
+                        if($("div[chatWindow]").attr("chatWindow") != "open"){
                             chatAtivo = $(`div[up${d.de}]`).attr("ativo");
                             listaUsuariosChat = $("tr[selecionarChat]").attr("selecionarChat");
                             if(!chatAtivo){
