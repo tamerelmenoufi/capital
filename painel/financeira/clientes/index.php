@@ -238,7 +238,7 @@
                           aria-controls="offcanvasDireita"
                         ><i class="fa-solid fa-clipboard-list"></i> Eventos</a></li>
                         <?php
-                        if($_SESSION['ProjectPainel']->codigo == 2){
+                        //if($_SESSION['ProjectPainel']->codigo == 2){
                         ?>
                         <li><a 
                           class="dropdown-item" 
@@ -249,7 +249,7 @@
                           aria-controls="offcanvasDireita"
                         ><i class="fa-brands fa-whatsapp"></i> Mensagens</a></li>
                         <?php
-                        }
+                        //}
                         if(!$del){
                         ?>
                         <li><a class="dropdown-item" href="#" delete="<?=$d->codigo?>"><i class="fa-solid fa-trash-can"></i> Excluir</a></li>
