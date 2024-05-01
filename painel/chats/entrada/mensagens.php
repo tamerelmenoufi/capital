@@ -31,7 +31,7 @@ for($i=0;$i<100;$i++){
 
         altura = $(".exibeEmail").prop("scrollHeight");
         div = $(".exibeEmail").height();
-        $(".exibeEmail").scrollTop((altura + div)*1000);
+        $(".exibeEmail").scrollTop((altura + div));
 
 
 
