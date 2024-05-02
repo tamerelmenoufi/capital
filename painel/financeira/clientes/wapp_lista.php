@@ -52,7 +52,6 @@
                                     b.codigo as cod_cliente,
                                     b.phoneNumber
                             from wapp_chat a left join clientes b on a.de = REPLACE(REPLACE(REPLACE(REPLACE(b.phoneNumber, '(', ''), ')', ''), '-', ''), ' ', '') 
-                            where a.de != '{$ConfWappNumero}' 
                             group by a.de 
                             order by a.data desc 
                             limit 100";
