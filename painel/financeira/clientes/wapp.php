@@ -360,7 +360,7 @@
         <div class="mensagem_texto exibe w-100">
             <div class="d-flex justify-content-between align-items-center w-100">
                 <i class="fa-solid fa-paperclip p-3 grupo_anexos" status="close" style="cursor:pointer"></i>
-                <input type="text" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
+                <input type="text" autocomplete="off" class="form-control p-3" id="chatMensagem" ultimo_acesso="<?=$ultimo_acesso?>" aria-describedby="chatMensagem">
             </div>
         </div>
         <div class="mensagem_audio oculta w-100">
