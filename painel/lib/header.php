@@ -12,7 +12,7 @@
 <script src="<?=$localPainel?>lib/vendor/chart/chart.min.js" ></script>
 
 <link href="<?=$localPainel?>lib/css/app.css" rel="stylesheet">
-<script src="<?=$localPainel?>lib/js/app.js" ></script>
+<script src="<?=$localPainel?>lib/js/app.js?123" ></script>
 
 
 <!-- JQUERY UI -->
