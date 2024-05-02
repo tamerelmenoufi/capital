@@ -2,9 +2,9 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
-        $_POST = file_get_contents('php://input');
+        // $_POST = file_get_contents('php://input');
         
-        // $_POST = json_decode(file_get_contents('php://input'), true);
+        $_POST = json_decode(file_get_contents('php://input'), true);
 
         //Tipos de mensagem retorno///////////////
         // text,image,video,document,file,audio,location
