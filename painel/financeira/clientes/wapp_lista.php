@@ -47,12 +47,13 @@
                   $query = "select 
                                     max(a.codigo) as cod,
                                     (select concat(mensagem,'^',data,'^',tipo) from wapp_chat where max(a.codigo) = codigo) as mensagem,
+                                    IF(a.de = '{$ConfWappNumero}',a.para, a.de) as agrupar,
                                     b.nome,
                                     b.status_atual as log,
                                     b.codigo as cod_cliente,
                                     b.phoneNumber
                             from wapp_chat a left join clientes b on a.de = REPLACE(REPLACE(REPLACE(REPLACE(b.phoneNumber, '(', ''), ')', ''), '-', ''), ' ', '') or a.para = REPLACE(REPLACE(REPLACE(REPLACE(b.phoneNumber, '(', ''), ')', ''), '-', ''), ' ', '') 
-                            group by a.de, a.para 
+                            group by agrupar 
                             order by a.data desc 
                             limit 100";
                   $result = mysqli_query($con, $query);
