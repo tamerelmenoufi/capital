@@ -44,7 +44,10 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-
+<div class="toast-container bottom-0 end-0 p-3"></div>
+.{
+    overflow:auto;
+}
 </style>
 
   <body chatData="<?=date("Y-m-d H:i:s")?>">
@@ -56,7 +59,9 @@ body {
     <div class="CorpoApp"></div>
 
 
-    <div class="toast-container bottom-0 end-0 p-3"></div>
+    <div class="toast-container bottom-0 end-0 p-3">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
     <?php
     include("lib/footer.php");
     include("lib/js/wapp.php");
