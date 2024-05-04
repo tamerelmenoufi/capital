@@ -44,8 +44,8 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-<div class="toast-container bottom-0 end-0 p-3"></div>
-.{
+
+.toast-container{
     overflow:auto;
 }
 </style>
