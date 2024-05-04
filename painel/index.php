@@ -47,6 +47,8 @@ body {
 
 .toast-container{
     overflow:auto;
+    border:solid 1px red;
+    display:block;
 }
 </style>
 
