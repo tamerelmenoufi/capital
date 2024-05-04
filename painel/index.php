@@ -51,6 +51,7 @@ body {
     bottom:10px;
     border:solid 1px red;
     display:block;
+    z-index:99999;
 }
 </style>
 
