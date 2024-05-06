@@ -21,11 +21,11 @@
                         "codigo_cliente" => $d->cod_cliente,
                         "codigo_mensagem" => $d->codigo,
                         "data" => dataBr($d->data)];
-        if($d->cod_cliente) $update[] = $d->cod_cliente;
+        // if($d->cod_cliente) $update[] = $d->cod_cliente;
     }
 
     if($update){
-        mysqli_query($con, "update clientes set ultimo_chat = NOW() where codigo in (".implode(", ",$update).")");
+        // mysqli_query($con, "update clientes set ultimo_chat = NOW() where codigo in (".implode(", ",$update).")");
     }
 
     echo json_encode($retorno);

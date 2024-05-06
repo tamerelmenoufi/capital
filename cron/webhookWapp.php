@@ -34,6 +34,8 @@
                                                 data = NOW()";
             mysqli_query($con, $query);
 
+            // REPLACE(REPLACE(REPLACE(REPLACE(b.phoneNumber, '(', ''), ')', ''), '-', ''), ' ', '') = a.de
+
         }
 
     file_put_contents("wgw.txt", print_r($_POST, true));
