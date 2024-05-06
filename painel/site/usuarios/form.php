@@ -90,6 +90,12 @@
                     <input type="text" name="login" id="login" class="form-control" placeholder="Login" value="<?=$d->login?>">
                     <label for="login">Login</label>
                 </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" name="wapp" id="wapp" value="1" <?=(($d->wapp)?'checked':false)?>>
+                    <label class="form-check-label" for="wapp">Permissão para atendimento WhatsApp</label>
+                </div>
+
                 <?php
                 }
                 ?>
