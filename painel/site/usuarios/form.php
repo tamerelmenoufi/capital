@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="wapp" <?=(($d->wapp)?'checked':false)?>>
+                    <input type="checkbox" class="form-check-input" id="wapp" value="1" <?=(($d->wapp)?'checked':false)?>>
                     <label class="form-check-label" for="wapp">Permissão para atendimento WhatsApp</label>
                 </div>
 
@@ -166,7 +166,7 @@
 
                 if($('#wapp').prop("checked") == true){
                     campos.push({name: 'wapp', value: '1'})
-                }else{
+                }else if($('#wapp').val() == '1'){
                     campos.push({name: 'wapp', value: '0'})
                 }
                 
