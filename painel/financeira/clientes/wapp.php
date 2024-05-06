@@ -11,7 +11,6 @@
         $query = "insert into wapp_chat set 
                                             de = '{$_POST['de']}', 
                                             para = '{$_POST['para']}', 
-                                            comunicacao = '".(($_POST['de'] == $ConfWappNumero)?$_POST['para']:$_POST['de'])."', 
                                             tipo = 'text', 
                                             mensagem = '{$_POST['mensagem']}', 
                                             usuario = '{$_SESSION['ProjectPainel']->codigo}', 
