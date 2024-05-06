@@ -59,7 +59,7 @@ body {
     <div class="toast-container bottom-0 end-0 p-3"></div>
     <?php
     include("lib/footer.php");
-    include("lib/js/wapp.php");
+    if($_SESSION['ProjectPainel']->wapp) include("lib/js/wapp.php");
     ?>
 
     <script>
