@@ -8,7 +8,14 @@
     }
 
     if($_POST['acao'] == 'enviarText'){
-        $query = "insert into wapp_chat set de = '{$_POST['de']}', para = '{$_POST['para']}', tipo = 'text', mensagem = '{$_POST['mensagem']}', usuario = '{$_SESSION['ProjectPainel']->codigo}', data = NOW()";
+        $query = "insert into wapp_chat set 
+                                            de = '{$_POST['de']}', 
+                                            para = '{$_POST['para']}', 
+                                            comunicacao = '".(($_POST['de'] == $ConfWappNumero)?$_POST['para']:$_POST['de'])."', 
+                                            tipo = 'text', 
+                                            mensagem = '{$_POST['mensagem']}', 
+                                            usuario = '{$_SESSION['ProjectPainel']->codigo}', 
+                                            data = NOW()";
         if(mysqli_query($con, $query)){
             $wgw = new wgw;
             $wgw->SendTxt([
