@@ -16,9 +16,9 @@
         </div>
     </div>
 </div>
-<div class="row g-0">
-    <div class="col-4 listaWapp"></div>
-    <div class="col-8 mensagensaWapp"></div>
+<div style="position:absolute; top:40px; left:0; right:0; bottom:0;">
+    <div style="position:absolute; left:0; top:0; bottom:0; width:40%; overflow:auto; border:solid 1px red; " class="listaWapp"></div>
+    <div style="position:absolute; right:0; top:0; bottom:0; width:60%; overflow:auto; border:solid 1px green" class="mensagensaWapp"></div>
 </div>
 
 <script>
