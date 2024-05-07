@@ -78,7 +78,7 @@ body {
     if($_SESSION['ProjectPainel']->login == 'tamer'){
     ?>
     <div class="popupWappButton">
-        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-whatsapp" style="font-size:30px;"></i>
     </div>
     <?php
     }
