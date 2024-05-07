@@ -3,24 +3,10 @@
 
 ?>
 <style>
-  .legenda_status{
-    /* border-left:5px solid;
-    border-left-color:green; */
+  tr{
+      cursor:pointer;
   }
-  .Titulo<?=$md5?>{
-        position:absolute;
-        left:60px;
-        top:8px;
-        z-index:0;
-    }
-    tr{
-        cursor:pointer;
-    }
-
 </style>
-
-<h4 class="Titulo<?=$md5?>">Últimas Conversas</h4>
-
 
 <div class="col">
   <div class="m-3">
@@ -33,15 +19,7 @@
 
             <div class="table-responsive">
             <table class="table table-striped table-hover">
-              <!-- <thead>
-                <tr>
-                  <th scope="col">#</th> -->
-                  <!-- <th scope="col">Código</th> -->
-                  <!-- <th scope="col">Nome</th>
-                  <th scope="col">CPF</th>
-                  <th scope="col">Situação</th>
-                </tr>
-              </thead> -->
+
               <tbody>
                 <?php
                   $query = "select 
@@ -61,41 +39,6 @@
                   $k = 1;
                   while($d = mysqli_fetch_object($result)){
 
-                    // $log = json_decode($d->log);
-
-                    // if($log->statusCode and $log->message){
-                    //   $situacao = "{$log->statusCode} - {$log->message}";
-                    // }else{
-                    //   $situacao = "Situação detalhada não identificada";
-                    // }
-                    
-
-                    // if($log->statusCode and $_POST['filtro'] == 'NC'){
-                    //   $situacao = "{$log->statusCode} - {$log->message}";
-                    //   $cor="orange";
-                    // }else if($log->proposalStatusId and $_POST['filtro'] == 'NC'){
-                    //   $situacao = "{$log->proposalStatusId} - {$log->proposalStatusDisplayTitle}";
-                    //   if($log->proposalStatusId == 130){
-                    //     $cor="green";
-                    //   }else{
-                    //     $cor="red";
-                    //   }
-                    // }else if($_POST['filtro'] == 'NC'){
-                    //   $situacao = "000 - Cliente sem movimentação";
-                    //   $cor="#ccc";
-                    // }else if(in_array($log->statusCode, ['200'])){
-                    //   $cor="orange";
-                    // }else if(!in_array($log->statusCode, ['200']) and $_POST['filtro'] == 'SN'){
-                    //   $cor="red";
-                    // }else if(in_array($log->statusCode, ['130'])){
-                    //   $cor="green";
-                    // }else if(in_array($log->statusCode, ['200', '95', '60', '61'])){
-                    //   $cor="orange";
-                    // }else if(in_array($log->statusCode, ['200', '130', '95', '60', '61'])){
-                    //   $cor="red";
-                    // }else{
-                    //   $cor="red";
-                    // }
                     list($mensagem, $data, $tipo) = explode("^",$d->mensagem);
 
                     switch($tipo){
@@ -131,17 +74,6 @@
                       </div>
                     </div>
                   </td>
-
-
-
-
-                  <!-- <td><?=$k?></td>-->
-                  <!-- <td><?=$d->cod_cliente?></td> -->
-                  <!-- <td><?=$d->nome?></td>
-                  <td><?=$d->cpf?></td>
-                  <td class="legenda_status" style="border-left-color:<?=$cor?>;">
-                    <?=$situacao?>
-                  </td>  -->
 
 
                 </tr>

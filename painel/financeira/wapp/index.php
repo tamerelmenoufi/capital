@@ -1,7 +1,14 @@
 <?php
         include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 ?>
-
+<style>
+    .listaWapp{
+        position:relative;
+    }
+    .mensagensaWapp{
+        position:relative;
+    }
+</style>
 <div class="row g-0">
     <div class="col-12">
         <div class="d-flex justify-content-end">
