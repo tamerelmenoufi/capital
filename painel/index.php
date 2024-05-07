@@ -44,6 +44,17 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+.popupWappBg{
+    position:fixed;
+    right:0;
+    top:0;
+    bottom:0;
+    left:0;
+    background-color:#000;
+    opacity:0.7;
+    z-index: 998;
+    display:none;
+}
 .popupWapp{
     position:fixed;
     right:0;
@@ -65,7 +76,7 @@ body {
     background-color:green;
     color:#fff;
     cursor:pointer;
-    z-index: 999;
+    z-index: 997;
 }
 </style>
 
@@ -75,6 +86,7 @@ body {
         <div><i class="fa-solid fa-rotate fa-pulse"></i></div>
     </div>
 
+    <div class="popupWappBg"></div>
     <div class="popupWapp"></div>
     <?php
     if($_SESSION['ProjectPainel']->login == 'tamer'){
@@ -121,6 +133,7 @@ body {
                     success:function(dados){
                         $(".popupWapp").html(dados);
                         $(".popupWapp").show();
+                        $(".popupWappBg").show();
                     }
                 });                  
                 

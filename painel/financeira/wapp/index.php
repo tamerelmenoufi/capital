@@ -36,6 +36,7 @@
         
         $(".fechaPopupWapp").click(function(){
             $(".popupWapp").css("display","none");
+            $(".popupWappBg").css("display","none");
             $(".popupWapp").html('');
             $("body").css("overflow", "auto");
         })
