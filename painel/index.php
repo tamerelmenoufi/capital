@@ -64,6 +64,7 @@ body {
     border-radius:10px;
     background-color:green;
     color:#fff;
+    cursor:pointer;
     z-index: 99999;
 }
 </style>
@@ -117,7 +118,9 @@ body {
                 $(this).css("display","none");
             })
 
-
+            $(".popupWappButton").click(function(){
+                $(".popupWapp").show();
+            })
 
 
 
