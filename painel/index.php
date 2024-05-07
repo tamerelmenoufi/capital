@@ -44,7 +44,15 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-
+.popupWapp{
+    position:fixed;
+    right:0;
+    top:0;
+    bottom:0;
+    width:var(--popupWapp-width);
+    background-color:#fff;
+    z-index: 99999;
+}
 </style>
 
   <body chatData="<?=date("Y-m-d H:i:s")?>">
@@ -52,6 +60,8 @@ body {
     <div class="Carregando">
         <div><i class="fa-solid fa-rotate fa-pulse"></i></div>
     </div>
+
+    <div class="popupWapp"></div>
 
     <div class="CorpoApp"></div>
 
@@ -81,6 +91,29 @@ body {
                     }
                 });                
             }, 5000);
+
+            $(".popupWapp").click(function(){
+                $(this).css("display","none");
+            })
+
+            
+
+
+
+            if( navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)
+            ){
+                $(".popupWapp").css("--popupWapp-width","100%")
+            }
+            else {
+                $(".popupWapp").css("--popupWapp-width","800px")
+            }
+
 
 
         })
