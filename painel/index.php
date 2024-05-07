@@ -51,7 +51,7 @@ body {
     bottom:0;
     width:var(--popupWapp-width);
     background-color:#fff;
-    z-index: 99999;
+    z-index: 999;
     display:none;
 }
 .popupWappButton{
@@ -65,7 +65,7 @@ body {
     background-color:green;
     color:#fff;
     cursor:pointer;
-    z-index: 99999;
+    z-index: 999;
 }
 </style>
 
