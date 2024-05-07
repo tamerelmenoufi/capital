@@ -6,6 +6,9 @@
   tr{
       cursor:pointer;
   }
+  .wapp-select{
+    background-color:#ccc;
+  }
 </style>
 
 <div class="col">
@@ -98,8 +101,8 @@
         Carregando('none');
 
         $("tr[selecionarChat]").click(function(){
-            $("tr[selecionarChat]").removeClass("bg-primary text-white");
-            $(this).addClass("bg-primary text-white");
+            $("tr[selecionarChat]").removeClass("wapp-select");
+            $(this).addClass("wapp-select");
             Carregando();
             mensagens = $(this).attr("selecionarChat");
             $.ajax({
