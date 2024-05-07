@@ -3,10 +3,20 @@
 ?>
 <style>
     .listaWapp{
-        position:relative;
+        position:absolute; 
+        left:0; 
+        top:0; 
+        bottom:0; 
+        width:40%; 
+        overflow:auto; 
     }
     .mensagensaWapp{
-        position:relative;
+        position:absolute; 
+        right:0; 
+        top:0; 
+        bottom:0; 
+        width:60%; 
+        overflow:auto; 
     }
 </style>
 <div class="row g-0">
@@ -17,8 +27,8 @@
     </div>
 </div>
 <div style="position:absolute; top:40px; left:0; right:0; bottom:0;">
-    <div style="position:absolute; left:0; top:0; bottom:0; width:40%; overflow:auto; border:solid 1px red; " class="listaWapp"></div>
-    <div style="position:absolute; right:0; top:0; bottom:0; width:60%; overflow:auto; border:solid 1px green" class="mensagensaWapp"></div>
+    <div class="listaWapp"></div>
+    <div class="mensagensaWapp"></div>
 </div>
 
 <script>
