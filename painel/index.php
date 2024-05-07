@@ -114,10 +114,6 @@ body {
                 });                
             }, 5000);
 
-            $(".popupWapp").click(function(){
-                $(this).css("display","none");
-            })
-
             $(".popupWappButton").click(function(){
                 $(".popupWapp").show();
             })

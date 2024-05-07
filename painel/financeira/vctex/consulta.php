@@ -43,6 +43,7 @@
             mysqli_query($con, "update configuracoes set api_vctex_expira = '".($agora + $dados->token->expires)."', api_vctex_dados = '{$retorno}', api_vctex_tabelas = '{$tabelas}' where codigo = '1'");
         }else{
             $tabelas = 'error';
+            file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/painel/error.txt", $retorno );
         }
     }
 
