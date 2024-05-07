@@ -33,8 +33,7 @@
 
 <script>
     $(function(){
-        Carregando('none')
-
+        
         $(".fechaPopupWapp").click(function(){
             $(".popupWapp").css("display","none");
             $(".popupWapp").html('');
