@@ -139,7 +139,7 @@ body {
                 $(".popupWapp").css("--popupWapp-width","100%")
             }
             else {
-                $(".popupWapp").css("--popupWapp-width","800px")
+                $(".popupWapp").css("--popupWapp-width","60%")
             }
 
 
