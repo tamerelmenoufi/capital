@@ -89,7 +89,7 @@ body {
     <div class="popupWappBg"></div>
     <div class="popupWapp"></div>
     <?php
-    if($_SESSION['ProjectPainel']->login == 'tamer'){
+    if($_SESSION['ProjectPainel']->wapp){
     ?>
     <div class="popupWappButton">
         <i class="fa-brands fa-whatsapp" style="font-size:30px;"></i>
