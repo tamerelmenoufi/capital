@@ -52,6 +52,7 @@ body {
     width:var(--popupWapp-width);
     background-color:#fff;
     z-index: 99999;
+    display:none;
 }
 </style>
 
@@ -96,7 +97,7 @@ body {
                 $(this).css("display","none");
             })
 
-            
+
 
 
 
