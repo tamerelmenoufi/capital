@@ -54,6 +54,17 @@ body {
     z-index: 99999;
     display:none;
 }
+.popupWappButton{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    width:auto;
+    height:auto;
+    padding:10px;
+    border-radius:10px;
+    background-color:#fff;
+    z-index: 99999;
+}
 </style>
 
   <body chatData="<?=date("Y-m-d H:i:s")?>">
@@ -63,7 +74,15 @@ body {
     </div>
 
     <div class="popupWapp"></div>
-
+    <?php
+    if($_SESSION['ProjectPainel']->login == 'tamer'){
+    ?>
+    <div class="popupWappButton">
+        <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <?php
+    }
+    ?>
     <div class="CorpoApp"></div>
 
 
