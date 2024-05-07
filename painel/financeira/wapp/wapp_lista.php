@@ -98,8 +98,8 @@
         Carregando('none');
 
         $("tr[selecionarChat]").click(function(){
-            $("tr[selecionarChat]").removeClass("bg-primary");
-            $(this).addClass("bg-primary");
+            $("tr[selecionarChat]").removeClass("bg-primary text-white");
+            $(this).addClass("bg-primary text-white");
             Carregando();
             mensagens = $(this).attr("selecionarChat");
             $.ajax({
