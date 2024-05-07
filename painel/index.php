@@ -115,7 +115,15 @@ body {
             }, 5000);
 
             $(".popupWappButton").click(function(){
-                $(".popupWapp").show();
+                Carregando();
+                $.ajax({
+                    url:"financeira/wapp/index.php",
+                    success:function(dados){
+                        $(".popupWapp").html(dados);
+                        $(".popupWapp").show();
+                    }
+                });                  
+                
             })
 
 
