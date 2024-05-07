@@ -37,7 +37,10 @@
         $(".fechaPopupWapp").click(function(){
             $(".popupWapp").css("display","none");
             $(".popupWapp").html('');
+            $("body").css("overflow", "auto");
         })
+
+        $("body").css("overflow", "hidden");
         
         $.ajax({
             url:"financeira/wapp/wapp_lista.php",
