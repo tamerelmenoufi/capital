@@ -99,7 +99,7 @@
 
         $("tr[selecionarChat]").click(function(){
             $("tr[selecionarChat]").removeClass("bg-primary");
-            $(this).class("bg-primary");
+            $(this).addClass("bg-primary");
             Carregando();
             mensagens = $(this).attr("selecionarChat");
             $.ajax({
