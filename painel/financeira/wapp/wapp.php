@@ -172,9 +172,9 @@
         bottom:0px;    
         height:85px;    
     }
-    div[listaClientesChat]{
+    /* div[listaClientesChat]{
         cursor:pointer;
-    }
+    } */
 
 
     /* Estilos do microfone */
@@ -275,10 +275,10 @@
 <h4 class="Titulo<?=$md5?>">
     <div class="d-flex justify-content-between align-items-center">
         <span>Mensagens WhatsApp</span>
-        <div style="position:relative" listaClientesChat="open">
+        <!-- <div style="position:relative" listaClientesChat="open">
             <span style="position:absolute; background-color:#dcf8c6; border-radius:100%; width:10px; height:10px; right:0px; top:-5px; opacity:0;"></span>
             <i class="fa-solid fa-comments"></i>
-        </div>
+        </div> -->
         
     </div>
 </h4>
@@ -437,9 +437,9 @@
         $(".toast").remove();
         
 
-        if($("div[listaClientesChat]").attr("listaClientesChat") == 'open'){
-            $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
-        }
+        // if($("div[listaClientesChat]").attr("listaClientesChat") == 'open'){
+        //     $(this).children("span").css("opacity",'<?=(($msgs->qt)?'1':'0')?>');
+        // }
 
         $(".grupo_anexos").click(function(){
             status = $(".grupo_anexos").attr("status");
@@ -596,7 +596,7 @@
             $(".palco<?=$md5?>").scrollTop(altura + div);
 
             $.ajax({
-                url:"financeira/clientes/wapp.php",
+                url:"financeira/wapp/wapp.php",
                 type:"POST",
                 data:{
                     mensagem:val,
@@ -629,7 +629,7 @@
             $(".palco<?=$md5?>").scrollTop(altura + div);
 
             $.ajax({
-                url:"financeira/clientes/wapp.php",
+                url:"financeira/wapp/wapp.php",
                 type:"POST",
                 data:{
                     mensagem:val,
@@ -647,7 +647,7 @@
         function EnviaMensagemAnexos(tipo, type, name, base64 ){
 
             $.ajax({
-                url:"financeira/clientes/wapp.php",
+                url:"financeira/wapp/wapp.php",
                 type:"POST",
                 data:{
                     tipo,
@@ -687,15 +687,15 @@
             }
         });
 
-        $("div[listaClientesChat]").click(function(){
-            Carregando();
-            $.ajax({
-                    url:"financeira/clientes/wapp_lista.php",
-                    success:function(dados){
-                        $(".LateralDireita").html(dados);
-                    }
-                })
-        })
+        // $("div[listaClientesChat]").click(function(){
+        //     Carregando();
+        //     $.ajax({
+        //             url:"financeira/wapp/wapp_lista.php",
+        //             success:function(dados){
+        //                 $(".mensagensaWapp").html(dados);
+        //             }
+        //         })
+        // })
 
         $("i[enviar]").off('click').on('click', function(){
             fecharGrupoAnexos()

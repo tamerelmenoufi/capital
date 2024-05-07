@@ -169,13 +169,13 @@
             Carregando();
             mensagens = $(this).attr("selecionarChat");
             $.ajax({
-                url:"financeira/clientes/wapp.php",
+                url:"financeira/wapp/wapp.php",
                 type:"POST",
                 data:{
                   mensagens
                 },
                 success:function(dados){
-                  $(".LateralDireita").html(dados);
+                  $(".mensagensaWapp").html(dados);
                 }
             })
 
