@@ -10,4 +10,15 @@
 
     $localPainel = "https://painel.capitalsolucoesam.com.br/";
     $localSite = "https://capitalsolucoesam.com.br/";
-    $UrlWhatsApp = false;
+
+    $origem = explode(".",$_SERVER['HTTP_X_FORWARDED_HOST'])[0];
+
+    if($origem == 'tt'){
+        $UrlWhatsApp = "https://api.whatsapp.com/send?phone=5592981931685&text=Ol%C3%A1!%20Estou%20chegando%20pelo%20TikTok%20e%20gostaria%20de%20adiantar%20o%20meu%20FGTS";
+    }else if($origem === 'fb'){
+        $UrlWhatsApp = "https://api.whatsapp.com/send?phone=5592981931685&text=Ol%C3%A1!%20Estou%20chegando%20pelo%20Facebook%20e%20gostaria%20de%20adiantar%20o%20meu%20FGTS";
+    }else{
+        $UrlWhatsApp = "https://api.whatsapp.com/send?phone=5592981931685&text=Ol%C3%A1!%20gostaria%20de%20adiantar%20o%20meu%20FGTS";
+    }
+
+    
