@@ -39,7 +39,9 @@ $d = mysqli_fetch_object($result);
     ?>
     <div style="padding:30px"> </div>
     <center> 
-      <a <?=(($d->botao_url)?"href='{$d->botao_url}'":false)?> <?=((strtolower(substr($d->botao_url,0,4)) == 'http')?"target='_blank'":false)?> style="padding:10px;background:#fcce00;color:#144397;font-size:25px;text-align:center;font-weight:bold; text-decoration:none;">
+      <!-- <a <?=(($d->botao_url)?"href='{$d->botao_url}'":false)?> <?=((strtolower(substr($d->botao_url,0,4)) == 'http')?"target='_blank'":false)?> style="padding:10px;background:#fcce00;color:#144397;font-size:25px;text-align:center;font-weight:bold; text-decoration:none;">
+      <?=$d->botao_titulo?></a> -->
+      <a href="<?=$UrlWhatsApp?>" target="_blank" style="padding:10px;background:#fcce00;color:#144397;font-size:25px;text-align:center;font-weight:bold; text-decoration:none;">
       <?=$d->botao_titulo?></a>
     </center>
     <?php

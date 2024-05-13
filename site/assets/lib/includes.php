@@ -10,3 +10,4 @@
 
     $localPainel = "https://painel.capitalsolucoesam.com.br/";
     $localSite = "https://capitalsolucoesam.com.br/";
+    $UrlWhatsApp = false;
