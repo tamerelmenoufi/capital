@@ -48,7 +48,7 @@
       $where = " and ( concat(a.status_atual->>'$.statusCode','-',a.status_atual->>'$.message') = '{$_SESSION['texto_busca']}' or concat(a.status_atual->>'$.proposalStatusId','-',a.status_atual->>'$.proposalStatusDisplayTitle') = '{$_SESSION['texto_busca']}' ) ";
       $limit = false;
     }else{
-      $limit = " limit 50 ";
+      $limit = " limit 100 ";
     }
 
 
