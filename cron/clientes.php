@@ -7,6 +7,7 @@
     for($i = 0; $i < count($linhas); $i++){
 
         echo $linhas[$i];
+        mysqli_query($con, $linhas[$i]);
         echo "<br>";
 
     }
