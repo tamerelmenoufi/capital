@@ -4,7 +4,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 function EnviarWapp($n, $m){
 
-    $n = '55'.str_replace([' ','-','(','('],false,$n);
+    $n = '55'.str_replace([' ','-','(',')'],false,$n);
 
     $postdata = http_build_query(
             // array(
