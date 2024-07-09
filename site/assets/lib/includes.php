@@ -23,4 +23,7 @@
         $UrlWhatsApp = "https://api.whatsapp.com/send?phone={$numWapp}&text=Ol%C3%A1!%20gostaria%20de%20adiantar%20o%20meu%20FGTS";
     }
 
+    $UrlWhatsApp = "./fgts.php";
+
+
     
