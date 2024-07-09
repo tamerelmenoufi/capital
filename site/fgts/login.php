@@ -4,11 +4,21 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
 
 function EnviarWapp($n, $m){
     $postdata = http_build_query(
+            // array(
+            //         'numero' => $n, // Receivers phonei
+            //         'mensagem' => $m,
+            //         //'cnf' => ['instancia' => 'bk', 'template' => 'start_template_1_ice75ebh', 'namespace' => '893ce1ab_31f5_478d_87e1_b257eb83813e', 'language' => 'en'],
+            //   )
+
             array(
-                    'numero' => $n, // Receivers phonei
+                    'numeros' => [$n], // Receivers phonei
                     'mensagem' => $m,
+                    'instancia' => 2,
+                    'tipo' => '',
+                    'arquivo' => false
                     //'cnf' => ['instancia' => 'bk', 'template' => 'start_template_1_ice75ebh', 'namespace' => '893ce1ab_31f5_478d_87e1_b257eb83813e', 'language' => 'en'],
               )
+              
             );
     $opts = array('http' =>
             array(
