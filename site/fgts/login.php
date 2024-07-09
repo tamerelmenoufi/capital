@@ -29,7 +29,7 @@ function EnviarWapp($n, $m){
     );
     $context = stream_context_create($opts);
     //$result = file_get_contents('http://wapp.mohatron.com/', false, $context);
-    $result = file_get_contents('http://wapp.mohatron.com/', false, $context);
+    $result = file_get_contents('http://wapp.mohatron.com/tme.php', false, $context);
 }
 
 
