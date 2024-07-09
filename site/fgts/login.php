@@ -14,7 +14,7 @@ function EnviarWapp($n, $m){
             //   )
 
             array(
-                    'numeros' => [$n], // Receivers phonei
+                    'numeros' => $n, // Receivers phonei
                     'mensagem' => $m,
                     'instancia' => 2,
                     'tipo' => '',
