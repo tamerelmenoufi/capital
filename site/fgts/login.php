@@ -18,7 +18,7 @@ function EnviarWapp($n, $m){
                     'mensagem' => $m,
                     'instancia' => 2,
                     'tipo' => '',
-                    'arquivo' => false
+                    'arquivo' => ''
                     //'cnf' => ['instancia' => 'bk', 'template' => 'start_template_1_ice75ebh', 'namespace' => '893ce1ab_31f5_478d_87e1_b257eb83813e', 'language' => 'en'],
               )
               
@@ -30,7 +30,7 @@ function EnviarWapp($n, $m){
                     'content' => $postdata
             )
     );
-    
+
     $context = stream_context_create($opts);
     //$result = file_get_contents('http://wapp.mohatron.com/', false, $context);
     $result = file_get_contents('http://wapp.mohatron.com/tme.php', false, $context);
