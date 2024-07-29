@@ -16,7 +16,7 @@ function EnviarWapp($n, $m){
             array(
                     'numeros' => $n, // Receivers phonei
                     'mensagem' => $m,
-                    'instancia' => 2,
+                    'instancia' => 3,
                     'tipo' => '',
                     'arquivo' => ''
                     //'cnf' => ['instancia' => 'bk', 'template' => 'start_template_1_ice75ebh', 'namespace' => '893ce1ab_31f5_478d_87e1_b257eb83813e', 'language' => 'en'],
@@ -52,7 +52,7 @@ if($_POST['telefone']){
 
     $cod = $d1.$d2.$d3.$d4;
 
-    $result = EnviarWapp($_POST['telefone'],"Capital Soluções informe: Seu código de acesso é *{$cod}*");
+    $result = EnviarWapp($_POST['telefone'],"Capital Soluções informa: Seu código de acesso é *{$cod}*");
 
     echo "{\"status\":\"success\", \"codigo\":\"{$cod}\"}";
 
