@@ -39,7 +39,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
             <button class="btn btn-outline-secondary acessar" type="button" id="button-addon1">Confirmar</button>
         </div>
         <!--<p style="color:#534ab3; font-size:12px">O seu código chega instantâneamente no seu WhatsApp. Se ainda não recebeu seu código, favor conferir o número informado se possui WhatsApp ou confira se digitou corretamente.</p>-->
-        <button class="btn btn-warning btn-sm voltar"><i class="fa-regular fa-circle-left"></i> Retornas para a tela de Identificação</button>
+        <button class="btn btn-warning btn-sm voltar mt-3"><i class="fa-regular fa-circle-left"></i> Retornas para a tela de Identificação</button>
 
     </div>
     </div>
