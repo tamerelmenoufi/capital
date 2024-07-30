@@ -30,14 +30,15 @@ include("{$_SERVER['DOCUMENT_ROOT']}/painel/lib/includes.php");
     </div>
     <div class="card-body">
         <h5 class="card-title">Confirmação de acesso a sua área restrita</h5>
-        <p class="card-text">Consulte no seu WhatsApp a mensagem envida diretamente de nossa plataforma a partir do número remetente <b>+1 (204) 410-6014</b>.</p>
+        <!--<p class="card-text">Consulte no seu WhatsApp a mensagem envida diretamente de nossa plataforma a partir do número remetente <b>+1 (204) 410-6014</b>.</p>-->
+        <p class="card-text">Digite no campo abaixo o código <b><?=$_POST['codigo']?></b> para liberar o seu acesso.</p>
         
         <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-unlock"></i></span>
             <input type="text" id="codigo_acesso" class="form-control" inputmode="numeric" placeholder="Digite o código" aria-label="Código de acesso" aria-describedby="addon-wrapping" >
             <button class="btn btn-outline-secondary acessar" type="button" id="button-addon1">Confirmar</button>
         </div>
-        <p style="color:#534ab3; font-size:12px">O seu código chega instantâneamente no seu WhatsApp. Se ainda não recebeu seu código, favor conferir o número informado se possui WhatsApp ou confira se digitou corretamente.</p>
+        <!--<p style="color:#534ab3; font-size:12px">O seu código chega instantâneamente no seu WhatsApp. Se ainda não recebeu seu código, favor conferir o número informado se possui WhatsApp ou confira se digitou corretamente.</p>-->
         <button class="btn btn-warning btn-sm voltar"><i class="fa-regular fa-circle-left"></i> Retornas para a tela de Identificação</button>
 
     </div>
