@@ -84,7 +84,7 @@ if($_POST['telefone']){
         Identificação
     </div>
     <div class="card-body">
-        <h5 class="card-title">Faça a sua identificação</h5>
+        <h5 class="card-title">Faça a sua identificação xx</h5>
         <p class="card-text">Para ter acesso a consulta do seu saldo de antecipação do FGTS, é necessário criar sua conta em nossa plataforma. Siga as instruções abaixo, é rápido e seguro.</p>
         <p class="card-text">No campo abaixo, digite o seu telefone de contato direto para receber as credencias de acesso, que iremos lhe enviar por mensagem SMS ou WhatsApp</p>
         
