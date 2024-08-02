@@ -144,7 +144,7 @@
       <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="assets/img/cp22.gif"
+            src="assets/img/capital-02.gif"
             width="900"
             height="1600"
             alt=""
