@@ -128,7 +128,7 @@
       <amp-story-page id="my-first-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="https://example.ampproject.org/helloworld/bg1.jpg"
+            src="capital-01.gif"
             width="900"
             height="1600"
             alt=""
@@ -137,7 +137,7 @@
         </amp-story-grid-layer>
 
         <amp-story-grid-layer template="vertical">
-          <h1>Teste </h1>
+         
         </amp-story-grid-layer>
 
       </amp-story-page>
@@ -153,7 +153,7 @@
 
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
-          <h1>The End</h1>
+          
         </amp-story-grid-layer>
       </amp-story-page>
     </amp-story>
