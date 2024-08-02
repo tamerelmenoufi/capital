@@ -104,7 +104,7 @@
         // 'produtos_servicos2',
         // 'planos',
         // 'faq',
-        'fgts'
+        'banner-reels'
         // 'contato',
         
     ];
