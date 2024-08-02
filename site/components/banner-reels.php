@@ -122,32 +122,35 @@
       standalone
       title="Hello Story"
       publisher="The AMP Team"
-      publisher-logo-src="assets/img/capital-02.mp4"
-      poster-portrait-src="assets/img/capital-02.mp4"
+      publisher-logo-src="https://example.com/logo/1x1.png"
+      poster-portrait-src="https://example.com/my-story/poster/3x4.jpg"
     >
       <amp-story-page id="my-first-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="assets/img/capital-01.mp4"
+            src="https://example.ampproject.org/helloworld/bg1.jpg"
             width="900"
             height="1600"
             alt=""
           >
           </amp-img>
         </amp-story-grid-layer>
+
         <amp-story-grid-layer template="vertical">
-          <h1>Hello, amp-story!</h1>
+          <h1>Teste </h1>
         </amp-story-grid-layer>
+
       </amp-story-page>
       <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="assets/img/capital-02.mp4"
+            src="assets/img/cp22.jpg"
             width="900"
             height="1600"
             alt=""
           >
           </amp-img>
+
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
           <h1>The End</h1>
