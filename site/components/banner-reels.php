@@ -122,8 +122,8 @@
       standalone
       title="Hello Story"
       publisher="The AMP Team"
-      publisher-logo-src="assets/img/capital-02.mp4""
-      poster-portrait-src="assets/img/capital-02.mp4""
+      publisher-logo-src="assets/img/capital-02.mp4"
+      poster-portrait-src="assets/img/capital-02.mp4"
     >
       <amp-story-page id="my-first-page">
         <amp-story-grid-layer template="fill">
