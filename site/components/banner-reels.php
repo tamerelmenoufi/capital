@@ -128,7 +128,7 @@
       <amp-story-page id="my-first-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="https://example.ampproject.org/helloworld/bg1.jpg"
+            src="assets/img/capital-01.mp4"
             width="900"
             height="1600"
             alt=""
@@ -142,7 +142,7 @@
       <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="https://example.ampproject.org/helloworld/bg2.gif"
+            src="assets/img/capital-02.mp4"
             width="900"
             height="1600"
             alt=""
