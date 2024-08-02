@@ -128,7 +128,7 @@
       <amp-story-page id="my-first-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="capital-01.gif"
+            src="assets/img/capital-01.gif"
             width="900"
             height="1600"
             alt=""
