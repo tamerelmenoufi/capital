@@ -141,6 +141,8 @@
         </amp-story-grid-layer>
 
       </amp-story-page>
+
+
       <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
           <amp-img
@@ -157,10 +159,10 @@
         </amp-story-grid-layer>
       </amp-story-page>
 
-      <amp-story-page id="my-second-page">
+ <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
           <amp-img
-            src="assets/img/capital-03.gif"
+            src="assets/img/capital-02.gif"
             width="900"
             height="1600"
             alt=""
