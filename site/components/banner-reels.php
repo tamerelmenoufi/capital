@@ -159,10 +159,29 @@
         </amp-story-grid-layer>
       </amp-story-page>
 
- <amp-story-page id="my-second-page">
+      <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
           <amp-img
             src="assets/img/capital-02.gif"
+            width="900"
+            height="1600"
+            alt=""
+          >
+          </amp-img>
+
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+
+
+
+ <amp-story-page id="my-second-page">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            src="assets/img/capital03.gif"
             width="900"
             height="1600"
             alt=""
