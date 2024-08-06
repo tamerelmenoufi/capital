@@ -159,8 +159,16 @@
         <amp-story-grid-layer template="vertical">
 
         <div> 
-          <button type="button" class="btn btn-primary" style="z-index: auto;">teste</button></div>
-          
+        <div id="el-fcdc29dc-6e07-4e72-a320-055fd4d2f56d"
+         class="_3faca8a">
+         <a href="https://fgts.startcredbrasil.com.br/page/fgts/simulation/stage-1/indication/2b40b6c2-0095-473b-8bb3-637b32b134e3"
+          data-tooltip-text="Contratar " 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="_254c3af" i-amphtml-orig-tabindex="0" tabindex="0">
+          <p class="_49df184 fill text-wrapper">
+            <span><span class="_af3e3cc">Teste </span>
+       </span></p></a></div>
         </amp-story-grid-layer>
       </amp-story-page>
 
