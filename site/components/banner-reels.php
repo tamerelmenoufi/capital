@@ -151,7 +151,13 @@
             height="1600"
             alt=""
           >
+
+
+          <button type="button" class="btn btn-primary">teste</button>
           </amp-img>
+
+
+
 
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
