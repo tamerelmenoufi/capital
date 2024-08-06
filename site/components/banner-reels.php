@@ -166,7 +166,8 @@
         bottom: 1%;
         width: 80%;">
          <a style="" href="https://capitalsolucoesam.com.br/fgts.php"
-          target="_blank" i-amphtml-orig-tabindex="0" tabindex="0" myObject.style.cursor = 'pointer' >
+          target="_blank" data-tooltip-text="Contratar " target="_blank" rel="noopener noreferrer" class="_254c3af" i-amphtml-orig-tabindex="0" 
+          tabindex="0"><p class="_49df184 fill text-wrapper" >
           <p class="">
             <span><span style="background: #1f303d;color:#fff;border-radius: 16px;
             padding: 6px;box-shadow: 1px 1px 2px 1px  #000;
