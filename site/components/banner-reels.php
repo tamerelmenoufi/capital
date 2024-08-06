@@ -158,9 +158,10 @@
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
 
-        <button type="button" class="btn btn-primary">teste</button>
+        
           
         </amp-story-grid-layer>
+        <button type="button" class="btn btn-primary">teste</button>
       </amp-story-page>
 
 
