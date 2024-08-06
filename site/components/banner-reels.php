@@ -155,8 +155,6 @@
           >
           </amp-img>
 
-        
-
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
 
@@ -179,6 +177,44 @@
 
         </amp-story-grid-layer>
       </amp-story-page>
+
+      <amp-story-page id="my-second-page">
+        <amp-story-grid-layer template="fill">
+          <amp-img
+            src="assets/img/passo03.gif"
+            width="900"
+            height="1600"
+            alt=""
+          >
+          </amp-img>
+
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+
+        <div id="" style="text-align:center" class="container">
+    <div id="" style="     
+        position: absolute;
+        bottom: 2%;
+        width: 80%;">
+         <a style="" href="https://capitalsolucoesam.com.br/fgts.php"
+          target="_blank" i-amphtml-orig-tabindex="0" tabindex="0" style="cursor:pointer!important" >
+            <span>
+                <span style="background: #1f303d;color:#fff;border-radius: 16px;
+            padding: 6px;box-shadow: 1px 1px 2px 1px  #000;">
+                <span class="_af3e3cc"> FGTS </span>
+        </span>
+      </span>
+  </a>
+  </div>
+</div>
+
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+
+
+
+
 
       
     <!--  <amp-story-page id="my-second-page">
