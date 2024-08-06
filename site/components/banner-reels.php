@@ -42,6 +42,8 @@
         i[etapa], div[etapa]{
             cursor:pointer;
         }
+
+
     </style>
   <html amp lang="en">
   <head>
@@ -158,21 +160,20 @@
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
 
-        <div> 
-        <div id="el-fcdc29dc-6e07-4e72-a320-055fd4d2f56d"
-         class="_3faca8a">
-         <a href="https://fgts.startcredbrasil.com.br/page/fgts/simulation/stage-1/indication/2b40b6c2-0095-473b-8bb3-637b32b134e3"
-          data-tooltip-text="Contratar " 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="_254c3af" i-amphtml-orig-tabindex="0" tabindex="0">
-          <p class="_49df184 fill text-wrapper">
-            <span><span class="_af3e3cc">Teste </span>
+        <div id="" style="position: absolute;bottom: 
+        10px;width: 50%;border: 3px solid #8AC007;
+" class="">
+         <a href="https://capitalsolucoesam.com.br/fgts.php" target="_blank">
+          <p class="">
+            <span><span style="background: #000; color:#fff;  border-radius: 2px; border: #000 solid 2px
+            
+            " span class="_af3e3cc">ANTECIPE SEU FGTS </span>
        </span></p></a></div>
+
         </amp-story-grid-layer>
       </amp-story-page>
 
-
+      
     <!--  <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
           <amp-img
