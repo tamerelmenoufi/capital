@@ -161,7 +161,7 @@
         <amp-story-grid-layer template="vertical">
 
         <div id="" style="position: absolute;bottom: 
-        10px;width: 50%;border: 3px solid #8AC007;
+        10px;width: 50%;margin-right: 50%; 
 " class="">
          <a href="https://capitalsolucoesam.com.br/fgts.php" target="_blank">
           <p class="">
