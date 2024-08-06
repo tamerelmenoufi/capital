@@ -158,10 +158,10 @@
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
 
-        
+        <div> 
+          <button type="button" class="btn btn-primary" style="z-index: auto;">teste</button></div>
           
         </amp-story-grid-layer>
-        <button type="button" class="btn btn-primary">teste</button>
       </amp-story-page>
 
 
