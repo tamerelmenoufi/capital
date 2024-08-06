@@ -167,13 +167,15 @@
         width: 80%;">
          <a style="" href="https://capitalsolucoesam.com.br/fgts.php"
           target="_blank" i-amphtml-orig-tabindex="0" tabindex="0" style="cursor:pointer!important" >
-          <p class="">
-            <span><span style="background: #1f303d;color:#fff;border-radius: 16px;
-            padding: 6px;box-shadow: 1px 1px 2px 1px  #000;
-       
-">
-            <span class="_af3e3cc">ANTECIPE SEU FGTS </span>
-       </span></span></p></a></div></div>
+            <span>
+                <span style="background: #1f303d;color:#fff;border-radius: 16px;
+            padding: 6px;box-shadow: 1px 1px 2px 1px  #000;">
+                <span class="_af3e3cc">ANTECIPE SEU FGTS </span>
+        </span>
+      </span>
+  </a>
+  </div>
+</div>
 
         </amp-story-grid-layer>
       </amp-story-page>
