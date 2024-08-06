@@ -160,16 +160,19 @@
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
 
-        <div id="" style="position: absolute;bottom: 
-        1px;width: 50%;margin-left: 135px; 
-" class="container" >
-         <a href="https://capitalsolucoesam.com.br/fgts.php" target="_blank">
+        <div id="" style="text-align:center" class="container">
+    <div id="" style="     
+        position: absolute;
+        bottom: 1%;
+        width: 80%;">
+         <a href="https://capitalsolucoesam.com.br/fgts.php" target="_blank" i-amphtml-orig-tabindex="0" tabindex="0">
           <p class="">
             <span><span style="background: #1f303d;color:#fff;border-radius: 16px;
             padding: 6px;box-shadow: 1px 1px 2px 1px  #000;
-            ">
+       
+">
             <span class="_af3e3cc">ANTECIPE SEU FGTS </span>
-       </span></p></a></div>
+       </span></span></p></a></div></div>
 
         </amp-story-grid-layer>
       </amp-story-page>
