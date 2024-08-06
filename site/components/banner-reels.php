@@ -152,9 +152,11 @@
             alt=""
           >
 
+          </amp-img>
+
+          
 
           <button type="button" class="btn btn-primary">teste</button>
-          </amp-img>
 
 
 
