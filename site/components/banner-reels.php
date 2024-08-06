@@ -163,7 +163,7 @@
         <div id="" style="text-align:center" class="container">
     <div id="" style="     
         position: absolute;
-        bottom: 1%;
+        bottom: 2%;
         width: 80%;">
          <a style="" href="https://capitalsolucoesam.com.br/fgts.php"
           target="_blank" i-amphtml-orig-tabindex="0" tabindex="0" style="cursor:pointer!important" >
