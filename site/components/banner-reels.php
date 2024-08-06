@@ -162,7 +162,7 @@
 
         <div id="" style="position: absolute;bottom: 
         1px;width: 50%;margin-left: 135px; 
-" class="">
+" class="container" >
          <a href="https://capitalsolucoesam.com.br/fgts.php" target="_blank">
           <p class="">
             <span><span style="background: #1f303d;color:#fff;border-radius: 16px;
