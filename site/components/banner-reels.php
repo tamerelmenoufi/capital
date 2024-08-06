@@ -161,13 +161,14 @@
         <amp-story-grid-layer template="vertical">
 
         <div id="" style="position: absolute;bottom: 
-        10px;width: 50%;margin-right: 50%; 
+        1px;width: 50%;margin-left: 135px; 
 " class="">
          <a href="https://capitalsolucoesam.com.br/fgts.php" target="_blank">
           <p class="">
-            <span><span style="background: #000; color:#fff;  border-radius: 2px; border: #000 solid 2px
-            
-            " span class="_af3e3cc">ANTECIPE SEU FGTS </span>
+            <span><span style="background: #1f303d;color:#fff;border-radius: 16px;
+            padding: 6px;box-shadow: 1px 1px 2px 1px  #000;
+            ">
+            <span class="_af3e3cc">ANTECIPE SEU FGTS </span>
        </span></p></a></div>
 
         </amp-story-grid-layer>
