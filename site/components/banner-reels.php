@@ -165,7 +165,7 @@
         position: absolute;
         bottom: 1%;
         width: 80%;">
-         <a href="https://capitalsolucoesam.com.br/fgts.php"
+         <a style="pointer-events: fill !important" href="https://capitalsolucoesam.com.br/fgts.php"
           target="_blank" i-amphtml-orig-tabindex="1" tabindex="1" >
           <p class="">
             <span><span style="background: #1f303d;color:#fff;border-radius: 16px;
