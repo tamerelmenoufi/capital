@@ -180,20 +180,15 @@
 
       <amp-story-page id="my-second-page">
         <amp-story-grid-layer template="fill">
-         <!-- <amp-img
-            src="assets/img/passo03.gif"
+          <amp-img
+            src="assets/img/capi-novo.gif"
             width="900"
             height="1600"
             alt=""
           >
-          </amp-img>-->
+          </amp-img>
 
-          <video controls autoplay>
-  <source src="assets/img/passo-video.mp4" type="video/mp4">
- 
-  
-</video>
-
+         
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
 
